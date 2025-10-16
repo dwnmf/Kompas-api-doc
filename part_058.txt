@@ -1,0 +1,2532 @@
+Синтаксис COM:
+LPUNKNOWN GetObject (long index);
+Входные параметры:
+
+index " номер объекта.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс IDispatch или
+IUnknown сохранённого объекта.
+3104
+
+
+
+Примечания:
+Объект " это вспомогательная информация, и визуально никак не отображается. Напри"
+мер, если создать болт как макро относительно какого"нибудь объекта (например отвер"
+стие " цилиндрическая поверхность), и запомнить это отверстие в макро болта, то при
+следующем редактирование можно получить сохранённый указатель на отверстие.
+См. также: IMacro3DDefinition::SetObject
+
+GetUserLibraryCommand  Получить номер команды 
+пользовательской библиотеки, при помощи которой можно 
+редактировать макроэлемент
+Интерфейс.
+Аналог данного метода при использовании Automation " ksUserParam::number. 
+Пример...
+Синтаксис COM:
+long GetUserLibraryCommand();
+Возвращаемое значение:
+
+Номер библиотечной " в случае успешного завершения,
+команды
+"1 " если библиотеки нет.
+
+GetUserLibraryFileName  Получить имя файла пользовательской 
+библиотеки, при помощи которой можно редактировать 
+макроэлемент
+Интерфейс...Аналог данного метода при использовании Automation "
+ksUserParam::fileName.
+ Пример...
+Синтаксис COM:
+LPOLESTR GetUserLibraryFileName();
+Возвращаемое значение:
+
+Имя файла пользова" " в случае успешного завершения,
+тельской библиотеки
+NULL " если имя файла библиотеки не 
+
+задано.
+3105
+
+
+
+GetUserLibraryName  Получить имя пользовательской 
+библиотеки, при помощи которой можно редактировать 
+макроэлемент
+Интерфейс...
+Аналог данного метода при использовании Automation " ksUserParam::libName.
+ Пример....
+Синтаксис COM:
+LPOLESTR GetUserLibraryName();
+Возвращаемое значение:
+
+Имя пользовательской " в случае успешного завершения,
+библиотеки
+NULL " если имя библиотеки не задано.
+
+GetUserParam  Получить параметры пользователя
+Интерфейс...Синтаксис Automation:
+BOOL GetUserParam (LPDISPATCH userPars);
+Выходные параметры:
+
+user " указатель на интерфейс пользовательских параме"
+Pars тров ksUserParam.
+
+Синтаксис COM:
+BOOL GetUserParam (void *value,
+unsigned int size);
+Входные параметры:
+
+value " указатель на пользовательскую структуру параметров,
+size " размер структуры параметров.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Способ получения пользовательских данных (userPars) должен совпадать со способом
+их сохранения (void*, SAFEARRAY, или DynamicArray) через
+ksMacro3DDefinition::SetUserParam.
+3106
+
+
+
+▼ Если пользовательские данные были сохранены через SAFEARRAY (userPars), то перед
+их получением нужно создать SAFEARRAY соответствующего размера (размер данных
+можно определить при помощи ksMacro3DDefinition::GetUserParamSize).
+
+▼ Если пользовательские данные были сохранены через ksUserParam::SetUserArray, то пе"
+ред их получением нужно создать UserArray, аналогичный по структуре используемому
+при сохранении, и передать его в ksUserParam::SetUserArray.
+
+GetUserParamSize  Получить размер структуры параметров 
+пользователя, хранимых в макроэлементе
+Интерфейс...Синтаксис Automation:
+long GetUserParamSize();
+Синтаксис COM:
+long GetUserParamSize();
+Возвращаемое значение:
+
+" Размер структуры параметров пользователя,
+хранимых в макроэлементе в байтах.
+
+SetObject  Сохранить указатель на объект в макро по индексу
+Интерфейс...Синтаксис Automation:
+BOOL SetObject(long index, LPDISPATCH obj);
+Синтаксис COM:
+BOOL SetObject(long index, LPUNKNOWN obj);
+Входные параметры:
+
+index " номер объекта,
+obj " указатель на интерфейс объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+Объект " это вспомогательная информация, и визуально никак не отображается. Напри"
+мер, если создать болт как макро относительно какого"нибудь объекта (например отвер"
+стие " цилиндрическая поверхность), и запомнить это отверстие в макро болта, то при
+следующем редактирование можно получить сохранённый указатель на отверстие.
+См. также: IMacro3DDefinition::GetObject
+3107
+
+
+
+SetUserParam  Установить параметры пользователя
+Интерфейс...Синтаксис Automation:
+BOOL SetUserParam (LPDISPATCH userPars);
+Входные параметры:
+
+userPars " указатель на интерфейс пользовательских параметров 
+ksUserParam.
+
+Синтаксис COM:
+BOOL SetUserParam (void *value,
+unsigned int size,
+LPOLESTR nameFile,
+LPOLESTR nameLib,
+int number );
+Входные параметры:
+
+value " указатель на пользовательскую структуру параметров,
+size " размер структуры параметров,
+nameFile " имя файла прикладной библиотеки для последующего 
+
+редактирования через библиотеку (0 " запоминается текущая 
+библиотека),
+
+nameLib " имя прикладной библиотеки для последующего редактирования 
+через библиотеку (0 " запоминается текущая библиотека),
+
+number " номер команды в прикладной библиотеке для последующего 
+редактирования через библиотеку ("1 " запоминается текущая 
+команда).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+Данный метод позволяет сохранить параметры пользователя для последующего редак"
+тирования с помощью библиотеки.
+
+Интерфейс операции объединения компонентов 
+(ksUnionComponentsDefinition и IUnionComponentsDefinition)
+Справка системы КОМПАС...
+
+Интерфейс операции объединения компонентов.
+3108
+
+
+
+ksUnionComponentsDe " интерфейс
+finition Automation
+IUnionComponentsDefi " интерфейс COM
+nition
+
+Примечания.
+
+1. Позволяет создать объединение двух или более деталей, входящих в сборку в новой или
+уже существующей детали.
+
+2. Операция доступна в режиме редактирования детали в контексте сборки.
+3. Для входа в режим редактирования детали в контексте сборки используется функция
+
+ksPart::BeginEdit.
+4. В операции объединения могут участвовать только детали. Объединить деталь с под"
+
+сборкой невозможно.
+5. При необходимости вы можете скрыть или исключить из расчета детали, объединением
+
+которых является новая деталь.
+6. Данный интерфейс можно получить, используя метод интерфейса элемента модели
+
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ ksUnionComponentsDefinition  методы
+
+PartArray  Получить массив объединяемых компонентов
+Интерфейс...Синтаксис Automation:
+LPDISPATCH PartArray();
+Синтаксис COM:
+LPPARTCOLLECTION PartArray();
+Возвращаемое значение:
+
+" Указатель на интерфейс коллекции компо"
+нентов ksPartCollection или IPartCollection.
+
+Интерфейсы копирования
+
+Интерфейс массива удаленных индексов для операций 
+копирования и массивов компонентов 
+(ksDeletedCopyCollection и IDeletedCopyCollection)
+
+ksDeletedCopyColle " интерфейс
+ction Automation
+IDeletedCopyCollecti " интерфейс COM
+on
+3109
+
+
+
+Примечание:
+
+1. Интерфейс применяется для массивов компонентов и операций копирования, для полу"
+чения информации о удаленных копиях, а также управления составом удаленных копий.
+Информация о удаленной копии выдается в виде индексов копии в узоре копирования.
+В общем случае это два индекса по ортогональным осям в плоскости узора. Для копий
+по кривой используется один индекс (первый). Значения индексов начинаются с 1.
+
+2.  Данный интерфейс можно получить от следующих интерфейсов:
+▼ Интерфейсы копирования компонентов сборки. Интерфейсы копирования. 
+
+ksDeletedCopyCollection  методы
+
+Add  Добавить объект в конец массива
+Интерфейс...Синтаксис Automation:
+BOOL Add (long index1, long index2);
+Синтаксис COM:
+BOOL GetByIndex (long index, long * index1, long * index2);
+Входные параметры:
+
+index1, " индексы удаленной копии в узоре.
+index2
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+AddAt  Добавить элемент перед элементом с заданным индексом
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.
+Синтаксис Automation:
+BOOL AddAt (long index1, long index2, long index);
+Синтаксис COM:
+BOOL AddAt (long index1, long index2, long index);
+Входные параметры:
+
+index1, " индексы удаленной копии в узоре,
+index2
+index " удаленной копии в массиве.
+
+Возвращаемое значение:
+3110
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Clear  Очистить массив
+Интерфейс...Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+BOOL Clear();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+DetachByBody  Отсоединить элемент
+Интерфейс...Синтаксис Automation:
+BOOL DetachByBody (long index1, long index2);
+Синтаксис COM:
+BOOL DetachByBody (long index1, long index2);
+Входные параметры:
+
+index1, index2 " индексы удаленной копии в узоре.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+DetachByIndex  Отсоединить элемент по индексу
+Интерфейс...Синтаксис Automation:
+BOOL DetachByIndex (long index);
+Синтаксис COM:
+BOOL DetachByIndex (long index);
+Входной параметр:
+
+index " индекс удаленной копии в массиве.
+
+Возвращаемое значение:
+3111
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Элемент массива из модели не удаляется.
+
+FindIt  Получить индекс элемента в массиве
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.htm
+Синтаксис Automation:
+long FindIt (long index1, long index2);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+"1 " если элемент не найден.
+
+Синтаксис COM:
+unsigned long FindIt ( long index1, long index2);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+0xffffffff " если элемент не найден.
+
+Входные параметры:
+
+index1, index2 " индексы удаленной копии в узоре.
+
+First  Получить индексы первой удаленной копии
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.htm
+Синтаксис Automation:
+BOOL First(long * index1, long * index2);
+Синтаксис COM:
+BOOL First(long * index1, long * index2);
+Выходные параметры:
+
+index1, " индексы удаленной копии в узоре.
+index2
+3112
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetByIndex  Получить индексы удаленной копии по индексу
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.htm
+Синтаксис Automation:
+BOOL GetByIndex (long index, long * index1, long * index2);
+Синтаксис COM:
+BOOL GetByIndex (long index, long * index1, long * index2);
+Входной параметр:
+
+index " индекс удаленной копии в массиве.
+
+Выходные параметры:
+
+index1, index2 " индексы удаленной копии в узоре.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetCount  Получить количество элементов в массиве
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.htm
+Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+long GetCount();
+Возвращаемое значение:
+
+" количество элементов массива.
+3113
+
+
+
+Last  Получить индексы последней удаленной копии
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.htm
+Синтаксис Automation:
+BOOL Last (long * index1, long * index2);
+Синтаксис COM:
+BOOL Last (long * index1, long * index2);
+Выходные параметры:
+
+index1, index2 " индексы удаленной копии в узоре.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Next  Получить индексы следующей удаленной копии
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.htm
+Синтаксис Automation:
+BOOL Next (long * index1, long * index2);
+Синтаксис COM:
+BOOL Next (long * index1, long * index2);
+Выходные параметры:
+
+index1, index2 " индексы удаленной копии в узоре.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Prev  Получить индексы предыдущей удаленной копии
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.htm
+Синтаксис Automation:
+BOOL Prev (long * index1, long * index2);
+Синтаксис COM:
+BOOL Prev (long * index1, long * index2);
+3114
+
+
+
+Выходные параметры:
+
+index1, index2 " индексы удаленной копии в узоре.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Refresh  Обновить массив
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.htm
+Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetByIndex  Заменить элемент
+Интерфейс...Справка системы КОМПАС...
+Glava_48_Obzhie_svedeniy.htm
+Синтаксис Automation:
+BOOL SetByIndex (long index1, long index2, long index);
+Синтаксис COM:
+BOOL SetByIndex (long index1, long index2, long index);
+Входные параметры:
+
+index1, index2 " индексы удаленной копии в узоре,
+index " удаленной копии в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3115
+
+
+
+Копия элементов детали по параллелограммной сетке( 
+Интерфейсы ksMeshCopyDefinition и ICopyMeshDefinition)
+Справка системы КОМПАС...
+Glava_49_Massiv_po_setke.htm#COPY_MESH_PATTERN_main
+Интерфейс операции копирования по сетке.
+
+ksMeshCopyDefin " интерфейс Automation
+ition
+ICopyMeshDefinit " интерфейс COM
+ion
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ICopyMeshDefinition  свойства
+
+angle1  Угол наклона первой оси в текущей системе координат
+Интерфейс...Справка системы КОМПАС...
+Glava_49_Massiv_po_setke.htm#COPY_MESH_PATTERN_main
+Тип данных: double
+Синтаксис Automation:
+
+angle1 = iCopyMesh.angle1 Получить свойство(* )
+iCopyMesh.angle1 = angle1 Установить свойство (* )
+angle1 = Получить свойство (**)
+iCopyMesh.GetAngle1()
+iCopyMesh.SetAngle1(angle1) Установить свойство (**)
+
+angle2  Угол наклона второй оси относительно первой
+Интерфейс...Справка системы КОМПАС...
+Glava_49_Massiv_po_setke.htm#COPY_MESH_PATTERN_main
+Тип данных: double
+Синтаксис Automation:
+
+angle2 = iCopyMesh.angle2 Получить свойство(* )
+iCopyMesh.angle2 = angle2 Установить свойство (* )
+angle2 = Получить свойство (**)
+iCopyMesh.GetAngle2()
+iCopyMesh.SetAngle2(angle2) Установить свойство (**)
+3116
+
+
+
+count1  Количество копий вдоль первой оси
+Интерфейс...Справка системы КОМПАС...
+Glava_49_Massiv_po_setke.htm#COPY_MESH_PATTERN_main
+Тип данных: long
+Синтаксис Automation:
+
+count1 = iCopyMesh.count1 Получить свойство(* )
+iCopyMesh.count1 = count1 Установить свойство (* )
+count1 = Получить свойство (**)
+iCopyMesh.GetCount1()
+iCopyMesh.SetCount1(count1) Установить свойство (**)
+
+count2  Количество копий вдоль второй оси
+Интерфейс...Справка системы КОМПАС...
+Glava_49_Massiv_po_setke.htm#COPY_MESH_PATTERN_main
+Тип данных: long
+Синтаксис Automation:
+
+count2 = iCopyMesh.count2 Получить свойство(* )
+iCopyMesh.count2 = count2 Установить свойство (* )
+count2 = Получить свойство (**)
+iCopyMesh.GetCount2()
+iCopyMesh.SetCount2(count2) Установить свойство (**)
+
+factor1  Признак полного шага вдоль первой оси
+Интерфейс...Справка системы КОМПАС...
+Glava_49_Massiv_po_setke.htm#COPY_MESH_PATTERN_main
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " свойство step1 устанавливает расстояние между 
+крайними элементами вдоль первой оси,
+
+FALSE " свойство step1 устанавливает расстояние между 
+соседними элементами вдоль первой оси.
+
+Синтаксис Automation:
+
+factor1 = iCopyMesh.factor1 Получить свойство(* )
+iCopyMesh.factor1 = factor1 Установить свойство (* )
+factor1 = Получить свойство (**)
+iCopyMesh.GetFactor1()
+iCopyMesh.SetFactor1(factor1) Установить свойство (**)
+3117
+
+
+
+factor2  Признак полного шага вдоль второй оси
+Интерфейс...Справка системы КОМПАС...
+Glava_49_Massiv_po_setke.htm#COPY_MESH_PATTERN_main
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " свойство step2 устанавливает расстояние между 
+крайними элементами вдоль второй оси,
+
+FALSE " свойство step2 устанавливает расстояние между 
+соседними элементами вдоль второй оси.
+
+Синтаксис Automation:
+
+factor2 = iCopyMesh.factor2 Получить свойство(* )
+iCopyMesh.factor2 = factor2 Установить свойство (* )
+factor2 = Получить свойство (**)
+iCopyMesh.GetFactor2()
+iCopyMesh.SetFactor2(factor2) Установить свойство (**)
+
+geomArray  Признак использования геометрического 
+копирования
+Интерфейс...Справка системы КОМПАС...
+Glava_49_Massiv_po_setke.htm#COPY_MESH_PATTERN_main
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " использовать геометрическое копирование. Содержимое 
+операций"источников (грани, ребра) копируется без 
+пересчета. В простых случаях операция ускоряется, но 
+возможны ошибки при копировании скруглений и фасок на 
+криволинейных поверхностях,
+
+FALSE " при копировании все операции"источники строятся 
+заново, т.е. производится полноценный расчет.
+
+Синтаксис Automation:
+
+geomArray = Получить свойство(* )
+ICopyMeshDefinition.geomArray
+ICopyMeshDefinition.geomArray = Установить свойство (* )
+geomArray
+geomArray = Получить свойство (**)
+ICopyMeshDefinition.GetGeomArray()
+3118
+
+
+
+ICopyMeshDefinition.SetGeomArray( Установить свойство (**)
+geomArray)
+
+insideFlag  Признак наличия копий внутри сетки
+Интерфейс...Справка системы КОМПАС...
+Glava_49_Massiv_po_setke.htm#COPY_MESH_PATTERN_main
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " оставлять копии во всех узлах сетки,
+FALSE " оставлять копии по периметру сетки.
+
+Синтаксис Automation:
+
+insideFlag = iCopyMesh.insideFlag Получить свойство(* )
+iCopyMesh.insideFlag = insideFlag Установить свойство (* )
+insideFlag = Получить свойство (**)
+iCopyMesh.GetInsideFlag()
+iCopyMesh.SetInsideFlag(insideFlag) Установить свойство (**)
+
+step1  Шаг вдоль первой оси
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+step1 = iCopyMesh.step1 Получить свойство(* )
+iCopyMesh.step1 = stept1 Установить свойство (* )
+step1 = Получить свойство (**)
+iCopyMesh.GetStep1()
+iCopyMesh.SetStep1(step1 Установить свойство (**)
+)
+
+step2  Шаг вдоль второй оси
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+step2 = iCopyMesh.step2 Получить свойство(* )
+3119
+
+
+
+iCopyMesh.step2 = stept2 Установить свойство (* )
+step2 = Получить свойство (**)
+iCopyMesh.GetStep2()
+iCopyMesh.SetStep2(step2 Установить свойство (**)
+)
+
+ICopyMeshDefinition методы
+
+DeletedCollection  Получить массив индексов удаленных копий
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH DeletedCollection();
+Синтаксис COM:
+LPDELETEDCOPYCOLLECTION DeletedCollection();
+Возвращаемое значение:
+
+указатель на интерфейс ksDeletedCopyCollection или " в случае успешного 
+IDeletedCopyCollection завершения,
+NULL " в случае неудачи.
+
+Примечание:
+Интерфейс применяется для массивов компонентов и операций копирования, для полу"
+чения информации о удаленных копиях, а также управления составом удаленных копий.
+Информация о удаленной копии выдается в виде индексов копии в узоре копирования.
+В общем случае это два индекса по ортогональным осям в плоскости узора. Для копий
+по кривой используется один индекс (первый). Значения индексов начинаются с 1.
+
+GetAxis1 Получить первую ось операции
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetAxis1();
+Синтаксис COM:
+LPENTITY GetAxis1();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity " в случае
+или IEntity. успешного за"
+
+вершения,
+NULL " в случае неуда"
+
+чи.
+3120
+
+
+
+Примечание:
+Направление сетки можно определить, указывая ребра или оси, вдоль которых строится
+сетка. Если ось 1 определена, то игнорируется свойство angle1 (Угол наклона 1"ой оси).
+
+GetAxis2  Получить вторую ось операции
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetAxis2();
+Синтаксис COM:
+LPENTITY GetAxis2();
+Возвращаемое значение:
+
+указатель на интерфейс ksEntity или " в случае
+IEntity. успешного за"
+
+вершения,
+NULL " в случае неуда"
+
+чи.
+
+Примечание:
+Направление сетки можно определить, указывая ребра или оси, вдоль которых строится
+сетка. Если ось 2 определена, то игнорируется свойство angle2 (Угол наклона 2"ой оси).
+
+GetCopyParamAlongAxis  Получить параметры копирования 
+вдоль оси
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetCopyParamAlongAxis (BOOL firstAxis, 
+double * angle, 
+long * count, 
+double * step, 
+BOOL * factor);
+Синтаксис COM:
+BOOL GetCopyParamAlongAxis (BOOL firstAxis, 
+double * angle, 
+long * count, 
+double * step, 
+BOOL * factor);
+3121
+
+
+
+Выходные параметры:
+
+firstAxis " ось:
+TRUE " первая,
+FALSE " вторая,
+
+angle " угол наклона оси,
+count " количество копий,
+step " шаг вдоль оси,
+factor " признак полного шага.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+OperationArray  Получить указатель на массив элементов для 
+копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+IDispatch * OperationArray();
+Синтаксис COM:
+LPENTITYCOLLECTION OperationArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва элементов, подлежащих копированию
+ksEntityCollection или IEntityCollection.
+
+SetAxis1  Задать первую ось операции
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetAxis1 (LPDISPATCH entity);
+Синтаксис COM:
+BOOL SetAxis1 (LPENTITY);
+Входные параметры:
+
+entity " указатель на интерфейс ksEntity или IEntity (ось или 
+прямолинейное ребро).
+3122
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Направление сетки можно определить, указывая ребра или оси, вдоль которых строится
+сетка. Если ось 1 определена, то игнорируется свойство angle1 (Угол наклона 1"ой оси).
+
+SetAxis2 Задать вторую ось операции
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetAxis2 (LPDISPATCH entity);
+Синтаксис COM:
+BOOL SetAxis2 (LPENTITY);
+Входные параметры:
+
+entity " указатель на интерфейс ksEntity или IEntity (ось или 
+прямолинейное ребро).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Направление сетки можно определить, указывая ребра или оси, вдоль которых строится
+сетка. Если ось 1 определена, то игнорируется свойство angle2 (Угол наклона 2"ой оси).
+
+SetCopyParamAlongAxis  Установить параметры копирования 
+вдоль оси
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetCopyParamAlongAxis (BOOL firstAxis, 
+double angle, 
+long count, 
+double step, 
+BOOL factor);
+Синтаксис COM:
+3123
+
+
+
+BOOL SetCopyParamAlongAxis (BOOL firstAxis, 
+double angle, 
+long count, 
+double step, 
+BOOL factor);
+Входные параметры:
+
+firstAxis " ось:
+TRUE " первая,
+FALSE " вторая,
+
+angle " угол наклона оси,
+count " количество копий,
+step " шаг вдоль оси,
+factor " признак полного шага.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Копия элементов детали по кривой (Интерфейсы 
+ksCurveCopyDefinition и ICopyCurveDefinition)
+Справка системы КОМПАС...
+
+Интерфейс операции копирования по кривой.
+
+ksCurveCopyDefin " интерфейс
+ition Automation
+ICopyCurveDefinit " интерфейс COM
+ion
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksCurveCopyDefinition  свойства
+
+count  Количество копий
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+3124
+
+
+
+Синтаксис Automation:
+
+count = iCopyCurve.count Получить свойство(* )
+iCopyCurve.count = count Установить свойство (* )
+count = Получить свойство (**)
+iCopyCurve.GetСount()
+iCopyCurve.SetСount(count Установить свойство (**)
+)
+
+factor  Признак полного шага
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " полный шаг,
+FALSE " шаг между соседними копиями.
+
+Синтаксис Automation:
+
+factor = iCopyCurve.factor Получить свойство(* )
+iCopyCurve.factor = factor Установить свойство (* )
+factor = Получить свойство (**)
+iCopyCurve.GetFactor()
+iCopyCurve.SetFactor(facto Установить свойство (**)
+r)
+
+fullCurve  Признак распределения копий
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " по всей длине траектории,
+FALSE " по шагу и количеству.
+
+Синтаксис Automation:
+
+fullCurve = iCopyCurve.fullCurve Получить свойство(* )
+iCopyCurve.fullCurve = fullCurve Установить свойство (* )
+fullCurve = Получить свойство (**)
+iCopyCurve.GetFullCurve()
+iCopyCurve.SetFullCurve(fullCurve) Установить свойство (**)
+3125
+
+
+
+geomArray  Признак использования геометрического 
+копирования
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " использовать геометрическое копирование. Содержимое 
+операций источников (грани, ребра) копируется без 
+пересчета. В простых случаях операция ускоряется, но 
+возможны ошибки при копировании скруглений и фасок на 
+криволинейных поверхностях;
+
+FALSE " при копировании все операции"источники строятся 
+заново, т.е. производится полноценный расчет.
+
+Синтаксис Automation:
+
+geomArray = Получить свойство(* )
+iCopyCurveDefinition.geomArray
+iCopyCurveDefinition.geomArray = Установить свойство (* )
+geomArray
+geomArray = Получить свойство (**)
+iCopyCurveDefinition.GetGeomArray()
+iCopyCurveDefinition.SetGeomArray( Установить свойство (**)
+geomArray)
+
+keepAngle  Признак сохранения угла элементов относительно 
+траектории в начальной точке
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " сохранять угол,
+FALSE " не сохранять угол.
+
+Синтаксис Automation:
+
+keepAngle = iCopyCurve.keepAngle Получить свойство(* )
+3126
+
+
+
+iCopyCurve.keepAngle = keepAngle Установить свойство (* )
+keepAngle = iCopyCurve.GetKeepAngle() Получить свойство (**)
+iCopyCurve.SetKeepAngle(keepAngle) Установить свойство (**)
+
+sence  Направление копирования
+Интерфейс...Справка системы КОМПАС...
+make_copy.htm#copy_of_curve
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " по часовой стрелке,
+FALSE " против часовой стрелки.
+
+Синтаксис Automation:
+
+sence = iCopyCurve.sence Получить свойство(* )
+iCopyCurve.sence = sence Установить свойство (* )
+sence = Получить свойство (**)
+iCopyCurve.GetSence()
+iCopyCurve.SetSence(sence) Установить свойство (**)
+
+step  Шаг копирования
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+step = iCopyCurve.step Получить свойство(* )
+iCopyCurve.step = step Установить свойство (* )
+step = Получить свойство (**)
+iCopyCurve.GetStep()
+iCopyCurve.SetStep(step) Установить свойство (**)
+3127
+
+
+
+ksCurveCopyDefinition  методы
+
+OperationArray  Получить указатель на массив элементов для 
+копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+IDispatch * OperationArray();
+Синтаксис COM:
+LPENTITYCOLLECTION OperationArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва операций, подлежащих копированию
+ksEntityCollection или IEntityCollection.
+
+CurveArray  Получить указатель на массив кривых, образующих 
+траекторию копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+IDispatch * CurveArray();
+Синтаксис COM:
+LPENTITYCOLLECTION CurveArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва кривых ksEntityCollection или IEntityCollection.
+
+DeletedCollection  Получить массив индексов удаленных копий
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH DeletedCollection();
+Синтаксис COM:
+LPDELETEDCOPYCOLLECTION DeletedCollection();
+Возвращаемое значение:::/
+Glava_50_Massiv_po_koncentr_setke.htm#CIRCULAR_PATTERN_main
+3128
+
+
+
+указатель на интерфейс ksDeletedCopyCollection или " в случае 
+IDeletedCopyCollection успешного 
+
+завершения,
+NULL " в случае неудачи.
+
+Примечание:
+Интерфейс применяется для массивов компонентов и операций копирования, для полу"
+чения информации о удаленных копиях, а также управления составом удаленных копий.
+Информация о удаленной копии выдается в виде индексов копии в узоре копирования.
+В общем случае это два индекса по ортогональным осям в плоскости узора. Для копий
+по кривой используется один индекс (первый). Значения индексов начинаются с 1.
+
+Копия элементов детали по концентрической сетке 
+(Интерфейсы ksCircularCopyDefinition, 
+ICopyCircularDefinition)
+Справка системы КОМПАС...
+
+Интерфейс операции копирования по окружности.
+
+ksCircularCopyDefinition " интерфейс Automation
+ICopyCircularDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ICopyCircularDefinition  свойства
+
+count1  Количество копий в радиальном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+Синтаксис Automation:
+
+count1 = iCopyCirc.count1 Получить свойство(* )
+iCopyCirc.count1 = count1 Установить свойство (* )
+count1 = iCopyCirc.GetCount1() Получить свойство (**)
+iCopyCirc.SetCount1(count1) Установить свойство (**)
+3129
+
+
+
+count2  Количество копий в кольцевом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+Синтаксис Automation:
+
+count2 = iCopyCirc.count2 Получить свойство(* )
+iCopyCirc.count2 = count2 Установить свойство (* )
+count2 = iCopyCirc.GetCount2() Получить свойство (**)
+iCopyCirc.SetCount2(count2) Установить свойство (**)
+
+factor1  Признак полного шага в радиальном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " свойство step1 устанавливает расстояние между 
+крайними элементами массива в радиальном направлении,
+
+FALSE " свойство  step1 устанавливает расстояние между 
+соседними элементами массива в радиальном 
+направлении.
+
+Синтаксис Automation:
+
+factor1 = iCopyCirc.factor1 Получить свойство(* )
+iCopyCirc.factor1 = factor1 Установить свойство (* )
+factor1 = Получить свойство (**)
+iCopyCirc.GetFactor1()
+iCopyCirc.SetFactor1(factor1) Установить свойство (**)
+
+factor2  Признак полного шага в кольцевом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " свойство step2 устанавливает расстояние между 
+крайними элементами массива в кольцевом направлении,
+3130
+
+
+
+FALSE " свойство step2 устанавливает расстояние между 
+соседними элементами массива в кольцевом направлении.
+
+Синтаксис Automation:
+
+factor2 = iCopyCirc.factor2 Получить свойство(* )
+iCopyCirc.factor2 = factor2 Установить свойство (* )
+factor2 = iCopyCirc.GetFactor2() Получить свойство (**)
+iCopyCirc.SetFactor2(factor2) Установить свойство (**)
+
+geomArray  Признак использования геометрического 
+копирования
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRU " использовать геометрическое копирование.
+E Содержимое операций источников (грани, ре"
+
+бра) копируется без пересчета. В простых случа"
+ях операция ускоряется, но возможны ошибки
+при копировании скруглений и фасок на криво"
+линейных поверхностях,
+
+FAL " при копировании все операции"источники
+SE строятся заново, т.е. производится полноцен"
+
+ный расчет.
+
+Синтаксис Automation:
+
+geomArray = Получить свойство(* )
+iCircularCopyDefinition.geomArray
+iCircularCopyDefinition.geomArray = Установить свойство (* )
+geomArray
+iCircularCopyDefinition.GetGeomArray() Получить свойство (**)
+iCircularCopyDefinition.SetGeomArray( Установить свойство (**)
+geomArray)
+
+inverce  Признак направления копирования
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+3131
+
+
+
+TRUE " обратное направление,
+FALSE " прямое направление.
+
+Синтаксис Automation:
+
+inverce = iCopyCirc.inverce Получить свойство(* )
+iCopyCirc.inverce = inverce Установить свойство (* )
+inverce = iCopyCirc.GetInverce() Получить свойство (**)
+iCopyCirc.SetInverce(inverce) Установить свойство (**)
+
+step1  Шаг копирования в радиальном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+step1 = iCopyCirc.step1 Получить свойство(* )
+iCopyCirc.step1 = stept1 Установить свойство (* )
+step1 = iCopyCirc.GetStep1() Получить свойство (**)
+iCopyCirc.SetStep1(step1) Установить свойство (**)
+
+step2  Шаг в кольцевом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+Синтаксис Automation:
+
+step2 = iCopyCirc.step2 Получить свойство(* )
+iCopyCirc.step2 = stept2 Установить свойство (* )
+step2 = iCopyCirc.GetStep2() Получить свойство (**)
+iCopyCirc.SetStep2(step2) Установить свойство (**)
+
+ICopyCircularDefinition  методы
+
+DeletedCollection  Получить массив индексов удаленных копий
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+3132
+
+
+
+LPDISPATCH DeletedCollection();
+Синтаксис COM:
+LPDELETEDCOPYCOLLECTION DeletedCollection();
+Возвращаемое значение:
+
+указатель на интерфейс ksDeletedCopyCollection или " в случае успешного 
+IDeletedCopyCollection завершения,
+NULL " в случае неудачи.
+
+Примечание:
+Интерфейс применяется для массивов компонентов и операций копирования, для полу"
+чения информации о удаленных копиях, а также управления составом удаленных копий.
+Информация о удаленной копии выдается в виде индексов копии в узоре копирования.
+В общем случае это два индекса по ортогональным осям в плоскости узора. Для копий
+по кривой используется один индекс (первый). Значения индексов начинаются с 1.
+
+GetAxis  Получить ось копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetAxis();
+Синтаксис COM:
+LPENTITY  GetAxis();
+Возвращаемое значение:
+
+" указатель на интерфейс оси ksEntity или IEntity.
+
+GetCopyParamAlongDir  Получить параметры копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetCopyParamAlongDir (long* count, 
+double* step, 
+BOOL* factor, 
+BOOL dir);
+Синтаксис COM:
+BOOL GetCopyParamAlongDir (long* count, 
+3133
+
+
+
+double* step, 
+BOOL* factor, 
+BOOL dir)
+Выходные параметры:
+
+count " количество копий,
+step " шаг,
+factor " признак полного шага,
+dir " направление копирования.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetOperationArray  Получить указатель на массив элементов для 
+копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetOperationArray();
+Синтаксис COM:
+LPENTITYCOLLECTION GetOperationArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва элементов, подлежащих копированию
+ksEntityCollection или IEntityCollection.
+
+SetAxis  Установить ось копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetAxis(LPDISPATCH axis);
+Синтаксис COM:
+BOOL SetAxis(LPENTITY axis);
+Входной параметр:
+
+axis " указатель на интерфейс оси ksEntity или IEntity.
+3134
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetCopyParamAlongDir  Установить параметры копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetCopyParamAlongDir (long count, 
+double step, 
+BOOL factor, 
+BOOL dir);
+Синтаксис COM:
+BOOL SetCopyParamAlongDir (long count, 
+double step, 
+BOOL factor, 
+BOOL dir) 
+Входные параметры:
+
+count " количество копий,
+step " шаг,
+factor " признак полного шага,
+dir " направление копирования.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Зеркальная копия элементов детали Интерфейсы 
+ksMirrorCopyDefinition, IMirrorDefinition)
+Справка системы КОМПАС...
+
+Интерфейс зеркальной копии.
+
+ksMirrorCopyDefi " интерфейс
+nition Automation
+IMirrorDefinition " интерфейс COM
+
+Примечание:
+3135
+
+
+
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IMirrorDefinition  методы
+
+GetPlane  Получить плоскость симметрии (зеркального 
+копирования)
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс плоскости ksEntity или
+IEntity.
+
+OperationArray  Получить указатель на интерфейс массива 
+копируемых элементов
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetOperationArray();
+Синтаксис COM:
+LPENTITYCOLLECTION OperationArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва копируемых элементов ksEntityCollection или
+IEntityCollection.
+
+SetPlane  Установить плоскость симметрии (зеркального 
+копирования)
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+3136
+
+
+
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс плоскости ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Зеркальная копия элементов детали (Интерфейсы 
+ksMirrorCopyAllDefinition, IMirrorAllDefinition)
+Справка системы КОМПАС...
+
+Интерфейс зеркального отражения всех элементов.
+
+ksMirrorCopyAllDefin " интерфейс
+ition Automation
+IMirrorAllDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IMirrorAllDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+3137
+
+
+
+GetPlane  Получить плоскость отражения
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс плоскости отражения
+ksEntity или IEntity.
+
+SetPlane  Установить плоскость отражения
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс плоскости отражения ksEntity или 
+IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Интерфейсы копирования компонентов сборки
+
+Копия компонентов сборки по параллельной сетке 
+(Интерфейсы ksMeshPartArrayDefinition, 
+IMeshPartArrayDefinition)
+Справка системы КОМПАС...
+
+Интерфейс операции копирования компонентов сборки по параллелограм
+мной сетке.
+3138
+
+
+
+ksMeshPartArrayDefin " интерфейс
+ition Automation
+IMeshPartArrayDefinit " интерфейс COM
+ion
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksMeshPartArrayDefinition  свойства
+
+angle1 Угол наклона первой оси в текущей системе координат
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+angle1 = iMeshArray.angle1 Получить свойство(* )
+iMeshArray.angle1 = angle1 Установить свойство (* )
+angle1 = Получить свойство (**)
+iMeshArray.GetAngle1()
+iMeshArray.SetAngle1(angle1) Установить свойство (**)
+
+angle2  Угол наклона второй оси сетки относительно первой
+Интерфейс...Справка системы КОМПАС...
+49_3_1_Napravlenie_pervoy_osi.htm
+Тип данных: double
+Синтаксис Automation:
+
+angle2 = iMeshArray.angle2 Получить свойство(* )
+iMeshArray.angle2 = angle2 Установить свойство (* )
+angle2 = Получить свойство (**)
+iMeshArray.GetAngle2()
+iMeshArray.SetAngle2(angle2) Установить свойство (**)
+
+count1  Количество копий вдоль первой оси
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+3139
+
+
+
+Синтаксис Automation:
+
+count1 = iMeshArray.count1 Получить свойство(* )
+iMeshArray.count1 = count1 Установить свойство (* )
+count1 = Получить свойство (**)
+iMeshArray.GetCount1()
+iMeshArray.SetCount1(count1) Установить свойство (**)
+
+count2  Количество копий вдоль второй оси
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+Синтаксис Automation:
+
+count2 = iMeshArray.count2 Получить свойство(* )
+iMeshArray.count2 = count2 Установить свойство (* )
+count2 = Получить свойство (**)
+iMeshArray.GetCount2()
+iMeshArray.SetCount2(count2) Установить свойство (**)
+
+factor1  Признак полного шага копирования вдоль первой оси
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " свойство step1 устанавливает расстояние между 
+крайними элементами вдоль 1"ой оси,
+
+FALSE " свойство step1 устанавливает расстояние между 
+соседними элементами вдоль 1"ой оси.
+
+Синтаксис Automation:
+
+factor1 = iMeshArray.factor1 Получить свойство(* )
+iMeshArray.factor1 = factor1 Установить свойство (* )
+factor1 = Получить свойство (**)
+iMeshArray.GetFactor1()
+iMeshArray.SetFactor1(factor1) Установить свойство (**)
+3140
+
+
+
+factor2  Признак полного шага копирования вдоль второй оси
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " свойство step2 устанавливает расстояние между 
+крайними элементами вдоль второй оси,
+
+FALSE " свойство step2 устанавливает расстояние между 
+соседними элементами вдоль второй оси.
+
+Синтаксис Automation:
+
+factor2 = iMeshArray.factor2 Получить свойство(* )
+iMeshArray.factor2 = factor2 Установить свойство (* )
+factor2 = Получить свойство (**)
+iMeshArray.GetFactor2()
+iMeshArray.SetFactor2(factor2) Установить свойство (**)
+
+insideFlag  Признак наличия копий внутри сетки
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " оставлять экземпляры копий во всех узлах сетки,
+FALSE " оставлять экземпляры копий только по периметру сетки.
+
+Синтаксис Automation:
+
+insideFlag = iMeshArray.insideFlag Получить свойство(* )
+iMeshArray.insideFlag = insideFlag Установить свойство (* )
+insideFlag = Получить свойство (**)
+iMeshArray.GetInsideFlag()
+iMeshArray.SetInsideFlag(insideFlag) Установить свойство (**)
+
+step1  Шаг копирования вдоль первой оси
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+3141
+
+
+
+step1 = iMeshArray.step1 Получить свойство(* )
+iMeshArray.step1 = stept1 Установить свойство (* )
+step1 = Получить свойство (**)
+iMeshArray.GetStep1()
+iMeshArray.SetStep1(step1 Установить свойство (**)
+)
+
+step2  Шаг копирования вдоль второй оси
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+step2 = iMeshArray.step2 Получить свойство(* )
+iMeshArray.step2 = stept2 Установить свойство (* )
+step2 = Получить свойство (**)
+iMeshArray.GetStep2()
+iMeshArray.SetStep2(step2 Установить свойство (**)
+)
+
+ksMeshPartArrayDefinition  методы
+
+DeletedCollection  Получить массив индексов удаленных копий
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH DeletedCollection();
+Синтаксис COM:
+LPDELETEDCOPYCOLLECTION DeletedCollection();
+Возвращаемое значение:
+
+указатель на интерфейс ksDeletedCopyCollection или " в случае успешного 
+IDeletedCopyCollection. завершения,
+NULL " в случае неудачи.
+
+Примечание:
+Интерфейс применяется для массивов компонентов и операций копирования, для полу"
+чения информации о удаленных копиях, а также управления составом удаленных копий.
+Информация о удаленной копии выдается в виде индексов копии в узоре копирования.
+3142
+
+
+
+В общем случае это два индекса по ортогональным осям в плоскости узора. Для копий
+по кривой используется один индекс (первый). Значения индексов начинаются с 1.
+
+GetAxis1  Получить первую ось сетки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetAxis1();
+Синтаксис COM:
+LPENTITY GetAxis1();
+Возвращаемое значение:
+
+" указатель на интерфейс оси ksEntity или IEntity.
+
+GetAxis2  Получить вторую ось сетки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetAxis2();
+Синтаксис COM:
+LPENTITY GetAxis2();
+Возвращаемое значение:
+
+" указатель на интерфейс оси ksEntity или IEntity.
+
+GetCopyParamAlongAxis  Получить параметры копирования 
+вдоль оси
+Интерфейс...Справка системы КОМПАС...
+CM_COPY_MESH_PATTERN.htm
+Синтаксис Automation:
+BOOL GetCopyParamAlongAxis (BOOL firstAxis, 
+double * angle, 
+long * count, 
+double * step, 
+3143
+
+
+
+BOOL * factor);
+Синтаксис COM:
+BOOL GetCopyParamAlongAxis (BOOL firstAxis, 
+double * angle, 
+long * count, 
+double * step, 
+BOOL * factor);
+Выходные параметры:
+
+firstAxis " ось:
+TRUE " первая,
+FALSE " вторая,
+
+angle " угол наклона оси,
+count " количество копий,
+step " шаг вдоль оси,
+factor " признак полного шага.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+PartArray  Получить указатель на массив компонентов для 
+копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH PartArray();
+Синтаксис COM:
+LPPARTCOLLECTION PartArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва компонентов, подлежащих копированию
+ksPartCollection или IPartCollection.
+
+SetAxis1  Установить первую ось сетки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+3144
+
+
+
+BOOL SetAxis1 (LPDISPATCH axis);
+Синтаксис COM:
+BOOL SetAxis1 (LPENTITY axis);
+Входной параметр:
+
+axis " указатель на интерфейс оси ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetAxis2  Установить вторую ось сетки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetAxis2 (LPDISPATCH axis);
+Синтаксис COM:
+BOOL SetAxis2 (LPENTITY axis);
+Входной параметр:
+
+axis " указатель на интерфейс оси операции ksEntity
+или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetCopyParamAlongAxis  Установить параметры копирования 
+вдоль оси
+Интерфейс...Справка системы КОМПАС...
+CM_COPY_MESH_PATTERN.htm
+Синтаксис Automation:
+BOOL SetCopyParamAlongAxis (BOOL firstAxis, 
+double angle, 
+long count, 
+double step, 
+BOOL factor);
+Синтаксис COM:
+BOOL SetCopyParamAlongAxis (BOOL firstAxis, 
+3145
+
+
+
+double angle, 
+long count, 
+double step, 
+BOOL factor);
+Входные параметры:
+
+firstAxis " ось:
+TRUE " первая,
+FALSE " вторая,
+
+angle " угол наклона оси,
+count " количество копий,
+step " шаг вдоль оси,
+factor " признак полного шага.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Копия компонентов сборки по концентрической сетке 
+(Интерфейсы ksCircularPartArrayDefinition, 
+ICircularPartArrayDefinition)
+Справка системы КОМПАС...
+
+Интерфейс копирования компонентов сборки по концентрической сетке.
+
+ksCircularPartArrayDefinition " интерфейс Automation
+ICircularPartArrayDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksCircularPartArrayDefinition  свойства
+
+count1  Количество копий в радиальном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+Синтаксис Automation:
+3146
+
+
+
+count1 = iArrayCirc.count1 Получить свойство(* )
+iArrayCirc.count1 = count1 Установить свойство (* )
+count1 = Получить свойство (**)
+iArrayCirc.GetCount1()
+iArrayCirc.SetCount1(count1 Установить свойство (**)
+)
+
+count2  Количество копий в кольцевом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+Синтаксис Automation:
+
+count2 = iArrayCirc.count2 Получить свойство(* )
+iArrayCirc.count2 = count2 Установить свойство (* )
+count2 = Получить свойство (**)
+iArrayCirc.GetCount2()
+iArrayCirc.SetCount2(count2 Установить свойство (**)
+)
+
+factor1  Признак полного шага в радиальном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " свойство step1 задает расстояние между крайними в 
+радиальном направлении копиями,
+
+FALSE " свойство step1 задает расстояние между соседними в 
+радиальном направлении копиями.
+
+Синтаксис Automation:
+
+factor1 = iArrayCirc.factor1 Получить свойство(* )
+iArrayCirc.factor1 = factor1 Установить свойство (* )
+factor1 = Получить свойство (**)
+iArrayCirc.GetFactor1()
+iArrayCirc.SetFactor1(factor1) Установить свойство (**)
+3147
+
+
+
+factor2  Признак полного шага в кольцевом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " свойство step2 задает угол между крайними лучами сетки,
+FALSE " свойство step2 задает угол между соседними лучами 
+
+сетки.
+
+Синтаксис Automation:
+
+factor2 = iArrayCirc.factor2 Получить свойство(* )
+iArrayCirc.factor2 = factor2 Установить свойство (* )
+factor2 = Получить свойство (**)
+iArrayCirc.GetFactor2()
+iArrayCirc.SetFactor2(factor2) Установить свойство (**)
+
+inverce  Признак направления копирования
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " обратное направление,
+FALSE " прямое направление.
+
+Синтаксис Automation:
+
+inverce = iArrayCirc.inverce Получить свойство(* )
+iArrayCirc.inverce = inverce Установить свойство (* )
+inverce = Получить свойство (**)
+iArrayCirc.GetInverce()
+iArrayCirc.SetInverce(inverce) Установить свойство (**)
+
+keepAngle  Признак сохранения угла копий
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " обратное направление,
+3148
+
+
+
+FALSE " прямое направление.
+Синтаксис Automation:
+
+keepAngle = iCircularPartArray.keepAngle Получить свойство(* )
+iCircularPartArray.keepAngle = keepAngle Установить свойство (* )
+keepAngle = iCircularPartArray.GetKeepAngle() Получить свойство (**)
+iCircularPartArray.SetKeepAngle( keepAngle ) Установить свойство (**)
+
+Примечание:
+Если значение свойства равно TRUE, то необходимо сохранять угол копий.
+
+step1  Шаг копирования в радиальном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+step1 = iArrayCirc.step1 Получить свойство(* )
+iArrayCirc.step1 = stept1 Установить свойство (* )
+step1 = Получить свойство (**)
+iArrayCirc.GetStep1()
+iArrayCirc.SetStep1(step1) Установить свойство (**)
+
+step2  Шаг копирования в кольцевом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+step2 = iArrayCirc.step2 Получить свойство(* )
+iArrayCirc.step2 = stept2 Установить свойство (* )
+step2 = Получить свойство (**)
+iArrayCirc.GetStep2()
+iArrayCirc.SetStep2(step2) Установить свойство (**)
+
+ ksCircularPartArrayDefinition  методы
+
+DeletedCollection  Получить массив индексов удаленных копий
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+3149
+
+
+
+LPDISPATCH DeletedCollection();
+Синтаксис COM:
+LPDELETEDCOPYCOLLECTION DeletedCollection();
+Возвращаемое значение:
+
+указатель на интерфейс ksDeletedCopyCollection или " в случае успешного 
+IDeletedCopyCollection завершения,
+NULL " в случае неудачи.
+
+Примечание:
+Интерфейс применяется для массивов компонентов и операций копирования, для полу"
+чения информации об удаленных копиях, а также управления составом удаленных ко"
+пий. Информация об удаленной копии выдается в виде индексов копии в узоре копиро"
+вания. В общем случае это два индекса по ортогональным осям в плоскости узора. Для
+копий по кривой используется один индекс (первый). Значения индексов начинаются с
+1.
+
+GetAxis  Получить указатель на ось копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetAxis();
+Синтаксис COM:
+LPENTITY GetAxis();
+Возвращаемое значение:
+
+" указатель на интерфейс оси ksEntity или IEntity.
+
+GetCopyParamAlongDir  Получить параметры копирования
+Интерфейс...Справка системы КОМПАС...
+CM_COPY_CIRCULAR_PATTERN.htm
+Синтаксис Automation:
+BOOL GetCopyParamAlongDir (long* count, 
+double* step, 
+BOOL* factor, 
+BOOL dir);
+Синтаксис COM:
+BOOL GetCopyParamAlongDir (long* count, 
+double* step, 
+3150
+
+
+
+BOOL* factor, 
+BOOL dir)
+Выходные параметры:
+
+count " количество копий,
+step " шаг,
+factor " признак полного шага,
+dir " направление.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+PartArray  Указатель на массив компонентов для копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH PartArray();
+Синтаксис COM:
+LPPARTCOLLECTION PartArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва операций, подлежащих копированию
+ksPartCollection или IPartCollection.
+
+SetAxis  Установить указатель на ось копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetAxis (LPDISPATCH axis);
+Синтаксис COM:
+BOOL SetAxis (LPENTITY axis);
+Входной параметр:
+
+axis " указатель на интерфейс оси ksEntity или IEntity.
+
+Возвращаемое значение:
+3151
+
+
+
+TRUE " в случае успешного завершения.
+
+SetCopyParamAlongDir  Установить параметры копирования
+Интерфейс...Справка системы КОМПАС...
+CM_COPY_CIRCULAR_PATTERN.htm
+Синтаксис Automation:
+BOOL SetCopyParamAlongDir (long count, 
+double step, 
+BOOL factor, 
+BOOL dir);
+Синтаксис COM:
+BOOL SetCopyParamAlongDir (long count, 
+double step, 
+BOOL factor, 
+BOOL dir)
+Входные параметры:
+
+count " количество копий,
+step " шаг,
+factor " признак полного шага,
+dir " направление.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Копия компонентов сборки по кривой (Интерфейсы 
+ksCurvePartArrayDefinition, ICurvePartArrayDefinition)
+Справка системы КОМПАС...
+
+Интерфейс операции копирования компонентов сборки по кривой.
+
+ksCurvePartArrayDefin " интерфейс Automation
+ition
+ICurvePartArrayDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition .
+3152
+
+
+
+ksCurvePartArrayDefinition  свойства
+
+count  Количество копий
+Интерфейс... Справка системы КОМПАС...
+
+Тип данных: long
+Синтаксис Automation:
+
+count = iArrayCurve.count Получить свойство(* )
+iArrayCurve.count = count Установить свойство (* )
+count = Получить свойство (**)
+iArrayCurve.GetСount()
+iArrayCurve.SetСount(coun Установить свойство (**)
+t)
+
+factor  Признак полного шага
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " свойство step устанавливает расстояние между крайними 
+элементами массива вдоль траектории,
+
+FALSE " свойство step устанавливает расстояние между 
+соседними элементами массива вдоль траектории.
+
+Синтаксис Automation:
+
+factor = iArrayCurve.factor Получить свойство(* )
+iArrayCurve.factor = factor Установить свойство (* )
+factor = Получить свойство (**)
+iArrayCurve.GetFactor()
+iArrayCurve.SetFactor(factor) Установить свойство (**)
+
+fullCurve  Признак расположения копий вдоль всей траектории
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+3153
+
+
+
+TRUE " первый и последний элементы массива располагаются 
+соответственно в начальной и конечной точках траектории. 
+Свойства step и factor определяются автоматически с 
+учетом условия count.
+
+FALSE " элементы массива располагаются вдоль траектории в 
+соответствии со свойствами step, factor и count.
+
+Синтаксис Automation:
+
+fullCurve = iArrayCurve.fullCurve Получить свойство(* )
+iArrayCurve.fullCurve = fullCurve Установить свойство (* )
+fullCurve = Получить свойство (**)
+iArrayCurve.GetFullCurve()
+iArrayCurve.SetFullCurve(fullCurve) Установить свойство (**)
+
+keepAngle  Признак сохранения угла между исходным 
+элементом и траекторией в начальной точке
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " угол сохраняется,
+FALSE " угол не сохраняется.
+
+Синтаксис Automation:
+
+keepAngle = iArrayCurve.keepAngle Получить свойство(* )
+iArrayCurve.keepAngle = keepAngle Установить свойство (* )
+keepAngle = iArrayCurve.GetKeepAngle() Получить свойство (**)
+iArrayCurve.SetKeepAngle(keepAngle) Установить свойство (**)
+
+sence  Направление копирования
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " прямое направление,
+FALSE " обратное направление.
+3154
+
+
+
+Синтаксис Automation:
+
+sence = iArrayCurve.sence Получить свойство(* )
+iArrayCurve.sence = sence Установить свойство (* )
+sence = Получить свойство (**)
+iArrayCurve.GetSence()
+iArrayCurve.SetSence(sence) Установить свойство (**)
+
+step  Шаг копирования
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+step = iArrayCurve.step Получить свойство(* )
+iArrayCurve.step = step Установить свойство (* )
+step = Получить свойство (**)
+iArrayCurve.GetStep()
+iArrayCurve.SetStep(step) Установить свойство (**)
+
+ksCurvePartArrayDefinition  методы
+
+CurveArray  Получить указатель на массив кривых, 
+определяющих траекторию копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH CurveArray();
+Синтаксис COM:
+LPDISPATCH CurveArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва кривых, по которым происходит копирование
+ksEntityCollection или IEntityCollection.
+3155
+
+
+
+DeletedCollection  Получить массив индексов удаленных копий
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH DeletedCollection();
+Синтаксис COM:
+LPDELETEDCOPYCOLLECTION DeletedCollection();
+Возвращаемое значение:
+
+указатель на интерфейс ksDeletedCopyCollection или " в случае успешного 
+IDeletedCopyCollection завершения,
+NULL " в случае неудачи.
+
+Примечание:
+Интерфейс применяется для массивов компонентов и операций копирования, для полу"
+чения информации об удаленных копиях, а также управления составом удаленных ко"
+пий. Информация об удаленной копии выдается в виде индексов копии в узоре копиро"
+вания. В общем случае это два индекса по ортогональным осям в плоскости узора. Для
+копий по кривой используется один индекс (первый). Значения индексов начинаются с
+1.
+
+PartArray  Получить указатель на массив компонентов для 
+копирования
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH PartArray();
+Синтаксис COM:
+LPPARTCOLLECTION PartArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва операций, подлежащих копированию
+ksPartCollection или IPartCollection.
+3156
+
+
+
+Копия компонентов сборки по образцу (Интерфейсы 
+ksDerivativePartArrayDefinition, 
+IDerivativePartArrayDefinition)
+Справка системы КОМПАС...
+Glava_56_Massiv_po_obrazcu.htm
+Интерфейс копирования компонентов сборки по образцу.
+
+ksDerivativePartArrayDefini " интерфейс Automation
+tion
+IDerivativePartArrayDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksDerivativePartArrayDefinition  методы
+
+DeletedCollection  Получить массив индексов удаленных копий
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH DeletedCollection();
+Синтаксис COM:
+LPDELETEDCOPYCOLLECTION DeletedCollection();
+Возвращаемое значение:
+
+указатель на интерфейс ksDeletedCopyCollection или " в случае успешного 
+IDeletedCopyCollection завершения,
+NULL " в случае неудачи.
+
+Примечание:
+Интерфейс применяется для массивов компонентов и операций копирования, для полу"
+чения информации о удаленных копиях, а также управления составом удаленных копий.
+Информация о удаленной копии выдается в виде индексов копии в узоре копирования.
+В общем случае это два индекса по ортогональным осям в плоскости узора. Для копий
+по кривой используется один индекс (первый). Значения индексов начинаются с 1.
+3157
+
+
+
+GetDeriv  Получить указатель на интерфейс массиваобразца
+Интерфейс...Справка системы КОМПАС...
+Glava_56_Massiv_po_obrazcu.htm
+Синтаксис Automation:
+LPDISPATCH GetDeriv();
+Синтаксис COM:
+LPENTITY GetDeriv();
+Возвращаемое значение:
+
+" указатель на интерфейс массива"образца
+ksEntity или IEntity.
+
+PartArray  Получить указатель на массив компонентов для 
+копирования
+Интерфейс...Справка системы КОМПАС...
+Glava_56_Massiv_po_obrazcu.htm
+Синтаксис Automation:
+LPDISPATCH PartArray();
+Синтаксис COM:
+LPPARTCOLLECTION PartArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва компонентов, подлежащих копированию
+ksPartCollection или IPartCollection.
+
+SetDeriv  Установить указатель на интерфейс массиваобразца
+Интерфейс...Справка системы КОМПАС...
+Glava_56_Massiv_po_obrazcu.htm
+Синтаксис Automation:
+BOOL SetDeriv (LPDISPATCH deriv);
+Синтаксис COM:
+BOOL SetDeriv (LPENTITY deriv);
+Входной параметр:
+3158
+
+
+
+deriv " указатель на интерфейс массива"образца ksEntity или 
+IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Интерфейсы формообразующих операций
+
+Основание — элемент выдавливания (Интерфейс 
+ksBaseExtrusionDefinition, IBaseExtrusionDefinition)
+Интерфейс параметров основания  элемента выдавливания.
+
+ksBaseExtrusionDefini " интерфейс Automation
+tion
+IBaseExtrusionDefiniti " интерфейс COM
+on
+
+Примечание:
+
+1. Данный интерфейс устарел. Рекомендуется использовать вместо него интерфейс
+ksBossExtrusionDefinition
+
+2.  Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksBaseExtrusionDefinition  свойства
+
+directionType  Направление выдавливания
+Интерфейс...Тип данных:short.
+Синтаксис Automation:
+
+directionType = Получить свойство(* )
+iBaseExtrusion.directionType
+iBaseExtrusion.directionType= Установить свойство (* )
+directionType
+directionType = Получить свойство (**)
+iBaseExtrusion.GetDirectionType()
+iBaseExtrusion.SetDirectionType(directio Установить свойство (**)
+nType)
+
+Значения свойства:
+
+Типы направлений...
+3159
+
+
+
+Примечание:
+
+1. Нормаль, проведенная к грани, всегда направлена наружу ("из тела детали").
+2. Прямое направление совпадает с нормалью, проведенной к плоскости эскиза.
+3. Для вырезаемого элемента выдавливания направление противоположно нормали.
+
+ksBaseExtrusionDefinition  методы
+
+ExtrusionParam  Получить указатель на интерфейс параметров 
+элемента выдавливания
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH ExtrusionParam();
+Синтаксис COM:
+LPEXTRUSIONPARAM ExtrusionParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksExtrusionParam или
+IExtrusionParam.
+
+GetDepthObject  Получить объект, задающий глубину 
+выдавливания
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetDepthObject (BOOL normal);
+Синтаксис COM:
+LPENTITY GetDepthObject (BOOL normal);
+Входные параметры:
+
+normal " направление выдавливания:
+(TRUE " совпадает с направлением нормали к 
+плоскости эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза).
+
+Возвращаемое значение:
+
+" указатель на интерфейс объекта глубины вы"
+давливания ksEntity или IEntity.
+3160
+
+
+
+GetSketch  Получить указатель на интерфейс эскиза элемента
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза ksEntity или
+IEntity.
+
+GetSideParam  Получить параметры выдавливания в одном 
+направлении
+Интерфейс...Синтаксис Automation:
+BOOL GetSideParam (BOOL forward, 
+short *type, 
+double *depth, 
+double *draftValue, 
+BOOL *draftOutward);
+Синтаксис COM:
+BOOL GetSideParam (BOOL forward, 
+short *type, 
+double *depth, 
+double *draftValue, 
+BOOL *draftOutward);
+Входной параметр:
+
+forward " направление выдавливания:
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Выходные параметры:
+
+type " тип выдавливания,
+depth " глубина выдавливания,
+draftValue " угол уклона,
+draftOutward " направление уклона:
+
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Возвращаемое значение:
+3161
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+ResetDepthObject  Отказаться от установленного методом 
+SetDepthObject объекта, задающего глубину выдавливания
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL ResetDepthObject (BOOL normal);
+Синтаксис COM:
+BOOL ResetDepthObject (BOOL normal);
+Входные параметры:
+3162
+
+
+
+normal " направление выдавливания:
+(TRUE " совпадает с направлением нор"
+мали к плоскости эскиза,

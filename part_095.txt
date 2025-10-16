@@ -1,0 +1,2532 @@
+}
+
+void UniqueFile_Example (void) {
+
+//запросили имя служебного файла
+UniqueFileName(fileName, 255);
+
+CreateSysFile();
+ReadSysFile();
+
+//удалить служебный файл
+RemoveUniqueFile(fileName);
+
+}; /* UniqueFile_Example */
+
+ksGetSpcObjForGeomWithLimit  пример использования
+reference pObj;
+RequestInfo  info;
+double x, y;
+memset (&info, 0, sizeof(info));
+info.prompt = "Укажите макроэлемент болт";
+reference g;
+int j = Cursor (&info, &x ,&y, 0);
+if (j)
+{
+if (ExistObj(pObj = FindObj(x, y, 1e6)) && GetObjParam(pObj, 0, 0, 0) == MACRO_OBJ )
+{
+//найдем объект спецификации по заданной геометрии
+reference spcObj = ::ksGetSpcObjForGeomWithLimit ("graphic.lyt",//имя
+//библиотеки стилей
+1,//номер 
+//стиля спецификации
+pObj ,
+0,//присланная 
+//геометрия входит 
+// в объект спецификации
+5129
+
+
+
+1, //"первый объект 
+25,//номер раздела
+313277777065.0);
+if (spcObj)
+{
+char buf[TEXT_LENGTH];
+//получим наименование объекта спецификации
+ksGetSpcObjectColumnText (spcObj,//объект спецификации
+SPC_CLM_NAME ,//тип колонки 
+1,//номер колонки данного типа
+1,//номер блока
+buf,//указатель
+TEXT_LENGTH);//длина строки s
+Message(buf);
+}
+else
+Error("Это не объект спецификации Болт");
+}
+else
+Error("Это не макроэлемент");
+}
+
+CreateSpcIterator, ksGetSpcObjectColumnText, ksSetSpcObjectColumnText 
+ пример использования
+reference spcObj = 0;
+double numbObj; //уникальный номер объекта
+  //создадим объект спецификации
+  if( ::ksSpcObjectCreate("graphic.lyt", //имя библиотеки типов
+       1,         //   номер типа спецификации
+20,  0,    //номер раздела и подраздела
+0,         //тип атрибута
+0)) {    //базовый объект
+
+    spcObj = ::ksSpcObjectEnd();
+    //запомним номер объекта
+    numbObj = ::ksGetSpcObjectNumber  ( spcObj);
+  }
+5130
+
+
+
+  //создадим итератор для навигации по объектам спецификации
+  reference iter = ::CreateSpcIterator("graphic.lyt", 1, 0);
+
+  if (!iter)
+    ::MessageBoxResult();  // неудачное завершение " выдадим результат работы нашей
+функции
+  else {
+    reference spcObj;
+    char buf[120];
+    // найдем первый объект
+    spcObj = ::MoveIterator(iter, 'F');
+    if (spcObj && ::ExistObj(spcObj)) {
+      //у всех объектов в обозначении добавим ""01"
+      //а у объекта с номером  numbObj  " ""02"
+      do {
+        //возьмем текст обозначения
+        ::ksGetSpcObjectColumnText  (spcObj
+                                    SPC_CLM_MARK, //тип колонки SPC_CLM_FORMAT...SPC_CLM_USER
+                                    1,     //номер колонки данного типа начиная с 1
+                                    buf, 120);              //указатель
+
+        double n = ::ksGetSpcObjectNumber  (spcObj);
+        //добавим к обозначению нужную добавку
+        strcat(buf, n == numbObj ? ""02"  : ""01");
+        //откроем объект на редактирование
+        ::ksSpcObjectEdit(spcObj);
+          //в этом блоке можно редактировать все колонки спецификации,
+          //подключать или отключать ассоциированную геометрию
+          //в нашем случае заменим обозначение
+          ::kSetSpcObjectColumnText  (SPC_CLM_MARK, //тип колонки
+SPC_CLM_FORMAT...SPC_CLM_USER
+                                      1,     //номер колонки данного типа начиная с 1
+                                      buf);              //указатель
+        //закроем объет после редактирования
+        ::ksSpcObjectEnd();
+        //найдем следующий объект
+5131
+
+
+
+        spcObj = ::MoveIterator(iter, 'N');
+      } while(spcObj  &&  ::ExistObj(spcObj));
+    }
+    //удалим итератор
+    ::DeleteIterator(iter);
+  }
+}
+
+ksGetSpcDocumentPagesCount  пример использования
+//функция для декомпозирования текущей спецификации и помещения ее во фрагмент
+
+//найдем текущий документ спецификацию
+reference iDoc = CreateIterator (SPC_DOCUMENT_OBJ , 0);
+
+if (iDoc)
+{
+reference pDoc = MoveIterator (iDoc, 'F');
+if (pDoc)
+{
+do
+{
+int state;
+if (GetObjParam (pDoc, &state, sizeof (state), DOCUMENT_STATE)
+&& state == stACTIVE)
+break;
+pDoc = MoveIterator(iDoc, 'N');
+}
+while (pDoc);
+}
+DeleteIterator(iDoc);//указатель на итератор
+if (pDoc)
+{
+//найдем количество листов спецификации
+int pageCount = ksGetSpcDocumentPagesCount (pDoc);
+
+//найдем габариты одного листа спецификации
+RectParam spcGabarit;
+5132
+
+
+
+GetObjGabaritRect (pDoc, &spcGabarit);
+
+//создадим фрагмент
+DocumentParam doc;
+memset (&doc, 0, sizeof (doc));
+doc.regim = 0;
+doc.type = 3;
+CreateDocument (&doc);
+for (int i = 0; i < pageCount; i)
+{
+//получили временную группу i"го листа спецификации
+reference  group =  DecomposeObj (pDoc,//указатель на объект
+0,//уровень разбиения:
+//отрезки,дуги,тексты,точки;
+0.4,//стрелка прогиба
+uint8(i1));// 0 " разбиение объекта
+// в СК вида,
+// 1" в СК листа
+if (group)
+{
+int column=i%3;
+double x = (spcGabarit.pTop.x"spcGabarit.pBot.x 5)*column;
+int row = i/3;
+double y = (spcGabarit.pTop.y"spcGabarit.pBot.y 5)*row;
+
+//сдвинули группу
+MoveObj (group, x, "y);
+
+//поставили в модель
+StoreTmpGroup (group);//указатель группы
+ClearGroup (group);
+DeleteObj(group);
+}
+}
+char buf[128];
+sprintf (buf, "Преобразовано %d листов СП", pageCount);
+Message (buf);
+}
+
+5133
+
+
+
+else
+Error("Спецификация должна быть текущей");
+}
+
+ksGetSpcTableColumn, ksGetSpcColumnType , ksGetSpcColumnNumb  
+пример использования
+char spwName[250];
+  int j1;
+  //выберем спецификацию
+  if((j1 = ksChoiceFile("*.spw","спецификации(*.spw)|*.spw|Все файлы (*.*)|*.*|",
+spwName, 250, 1)) != 0){
+    //открыть документ
+    reference pDoc = OpenDocument (spwName, 0);
+    //создать итератор по объектам СП
+    reference iter = CreateSpcIterator(0, 0, 0);
+    //встаем на первый объект спецификации
+    reference spcObj = MoveIterator(iter, 'F');
+    if (spcObj && ExistObj(spcObj)) {
+      do {
+        //узнаем количество колонок у базового объекта спецификации
+        int count = ksGetSpcTableColumn(0, 0, 0);
+        // пройдем по всем колонкам
+        for (uint i = 1; i <= count; i) {
+          unsigned int  columnType, typeNumb, block;
+          //для текущего номера определим тип колонки, номер исполнения и блок
+          if (ksGetSpcColumnType(spcObj,          //объект спецификации
+                                  i,      // номер колонки, начиная с 1
+                                  &columnType, //тип колонки SPC_CLM_FORMAT...SPC_CLM_USER
+                                  &typeNumb,     //номер колонки данного типа
+                                  &block)) {  //номер блока
+            char buf[250];
+            //возьмем текст
+            ksGetSpcObjectColumnText  (spcObj,       //объект спецификации
+                                        columnType, //тип колонки SPC_CLM_FORMAT...SPC_CLM_USER
+                                        typeNumb,     //номер колонки данного типа
+                                        block,
+5134
+
+
+
+                                        buf,          //указатель
+                                        250);        //длина строки s
+            char buf1 [128];
+            sprintf (buf1, "\ntype = %d номер =%d block = %d", columnType,typeNumb,block);
+            strcat (buf, buf1);
+            Message(buf);
+            //по типу колонки, номеру исполнения и блоку определим номер колонки
+            int colNumb = ksGetSpcColumnNumb( spcObj,         //объект спецификации
+                                               columnType, //тип колонки SPC_CLM_FORMAT...SPC_CLM_USER
+                                               typeNumb,     //номер колонки данного типа начиная
+                                               block);    //номер блока
+            sprintf (buf, "i = %d colNumb =%d", i, colNumb);
+            Message(buf);
+          }
+        }
+        //встаем на следующий объект спецификации
+        spcObj = MoveIterator(iter, 'N');
+      }  while(spcObj  &&  ExistObj(spcObj));
+    }
+    DeleteIterator(iter);
+    CloseDocument(pDoc);
+  }
+
+ksGetSpcSheetSB, ksSetSpcSheetSB  пример использования
+//откроем спецификацию
+reference pDoc = OpenDocument ("d:\\0\\4.spw", 0);
+if (pDoc)
+{
+//заполним массив листов сборки, которые нужно подключить к спецификации
+reference arr = CreateArray(CHAR_STR_ARR, 0);
+char buf [255];
+strcpy (buf, "d:\\0\\1.cdw");
+AddArrayItem (arr, "1, buf, strlen(buf)1);
+strcpy (buf, "d:\\0\\2.cdw");
+AddArrayItem (arr, "1, buf, strlen(buf)1);
+
+//подключим листы сборочного чертежа к спецификации
+5135
+
+
+
+ksSetSpcSheetSB (pDoc , arr);
+DeleteArray (arr);
+
+//просмотрим листы сборки, подключенные к спецификации
+reference p = ksGetSpcSheetSB (pDoc);
+if (p) 
+{
+for (uint i=0, count = GetArrayCount( p); i < count; i) 
+{
+char buf1[255];
+GetArrayItem(p, i, buf1, 255);
+Message(buf1);
+}
+}
+
+SaveDocument(pDoc, 0);
+CloseDocument(pDoc);
+}
+
+ksGetSpcSectionName  пример использования
+// создадим итератор по вспомогательным объектам спецификации в текущем докумен"
+те
+reference iter = ::CreateSpcIterator (0, 0, 1/*вспомогательные объекты спецификации*/);
+if (iter) {
+// встаем на первый объект спецификации
+reference spcObj = ::MoveIterator (iter, 'F');
+// проверяем, что объект действительно существует
+if (spcObj && ::ExistObj (spcObj)) {
+do {
+char spcSectionName[128]; // имя раздела спецификации
+// запрашиваем имя раздела
+if (::ksGetSpcSectionName (spcObj, spcSectionName, sizeof (spcSectionName)))
+::Message (spcSectionName);
+// встаем на следующий объект спецификации
+spcObj = ::MoveIterator (iter, 'N');
+}  while (spcObj  && ::ExistObj (spcObj));
+}
+
+5136
+
+
+
+::DeleteIterator(iter); // удаляем итератор
+}
+
+ksGetSpcStyleParam  пример использования
+SpcStyleParam par;                                      // параметры стиляСП
+     ::memset(&par.layoutName1, 0, sizeof(SpcStyleParam)); // очищаем структуру
+      // Получить параметры для стиля спецификации с номером numb из библиотеки
+nameLib
+::ksGetSpcStyleParam ("graphic.lyt",// имя библиотеки стилей
+               1,// номер стиля спецификации
+&par,// структура параметров
+sizeof (SpcStyleParam),// размер структуры параметров
+ALLPARAM);// вернуть все параметры стиля спецификации
+      ::Message (par.layoutName1); // имя файла библиотеки оформлений для первого листа
+      ::Message(par.tuning.predefinedTextFileName); // имя файла предопределенных текстов
+      int count = ::GetArrayCount (par.arrColumn);// количество элементов в массиве
+      for (int i = 0; i < count; i) {                     // проходим по массиву стилей колонок СП
+       SpcStyleColumnParam param;                       // структура параметров стиля 
+//колонки спецификации
+       ::GetArrayItem(par.arrColumn, i, &param, sizeof(SpcStyleColumnParam)); 
+// считываем i"й элемент массива
+      }
+
+Пример использования функций работы с описаниями спецификации
+reference doc = ::ksGetCurrentDocument(0);           // текущий документ
+   if (doc) {
+     SpcDescrParam param;                                 // параметры описания
+        ::memset(&param, 0, sizeof(SpcDescrParam));        // очистить параметры
+        ::strcpy(param.layoutName, "C:\\gr\\graphic.lyt"); // имя файла библиотеки 
+//стилей спецификаций
+        param.styleId = 15;                                  // номер стиля в библиотеке
+
+        if (::ksAddSpcDescription(doc, &param)) {          // добавить описание в документ
+        bool state;                                        // состояние описания СП
+          if (::ksGetSpcDescription(doc, 0, &param, &state)) { // считать описание с индексом 0
+            char buf[1000];                                  // создать сообщение
+5137
+
+
+
+            ::sprintf(buf, "индекс СП: %d,\nИмя библиотеки: %s,\nНомер стиля: %d,\nИмя фай"
+ла: %s,\nСостояние: %s",
+                       0, param.layoutName, param.styleId, param.spcName, state ? "Активный" :
+"Неактивный");
+            ::Message(buf);                                // вывести сообщение
+          }
+
+        param.styleId = 2;                                 // номер стиля в библиотеке
+          if (::ksSetSpcDescription(doc, 0, &param, state))      // изменить описание с индексом 0
+          if (::ksGetSpcDescription(doc, 0, &param, &state)) { // считать описание с индексом 0
+              char buf[1000];                                // создать сообщение
+              ::sprintf(buf, "индекс СП: %d,\nИмя библиотеки: %s,\nНомер стиля: %d,\nИмя фай"
+ла: %s,\nСостояние: %s",
+                         0, param.layoutName, param.styleId, param.spcName, state ? "Активный" :
+"Неактивный");
+              ::Message(buf);                              // вывести сообщение
+            }
+
+        ::ksDeleteSpcDescription(doc, 0);                // удалить описание с индексом 0
+        }
+      }
+
+ksSpcObjectCreate  пример использования 
+а)
+#define   SPC_NAME       5     //наименование
+
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+//  создадим объект спецификации для раздела "Детали"
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+reference  EditSpcObj(reference geom){
+
+  reference spcObj = 0;
+  //если редактируем макроэлемент, то войдем в режим редактирования объекта
+  if (::EditMacroMode()) {
+    //найдем объект спецификации по геометрии
+    spcObj = ::ksGetSpcObjForGeom("graphic.lyt" , //имя библиотеки типов 
+                                   1,         //   номер типа спецификации
+                                   0,         //для макроредактирования
+5138
+
+
+
+                                   1, 1);
+    //войдем в режим редактирования                               
+    if (!::ksSpcObjectEdit(spcObj))
+      spcObj  = 0;
+  }
+
+ //если объекта нет, войдем в режим создания объекта спецификации
+ if(spcObj ||  ::ksSpcObjectCreate("graphic.lyt", //имя библиотеки типов 
+                                   1,         //   номер типа спецификации
+                                   20,  0,    //номер раздела и подраздела
+                                   0,0)) {    //тип атрибута
+
+   //наименование
+   ::ksSpcChangeValue(SPC_NAME/*номер колонки*/ , 1, "Втулка", STRING_ATTR_TYPE );
+
+   //подключим геометрию
+   if (geom)
+     ::ksSpcIncludeReference(geom, 1);
+
+   spcObj = ::ksSpcObjectEnd();
+   //если объект спецификации создан, дадим возможность пользователю на него посмо"
+треть и отредактировать. Функцию нужно запускать вне Cursor и Placement
+   if (spcObj)
+     if (::ksEditWindowSpcObject(spcObj))
+       return spcObj;
+ }
+ return 0;
+}
+
+б)
+Для стандартных изделий в стиле спецификации (см. "graphic.lyt")  колонка "Наименова"
+ние" имеет тип значения "запись". Это значит, что наименование формируется по шабло"
+ну обозначения для данного стандартного изделия (например, болта). Шаблоны созда"
+ются на базе типов атрибутов и хранятся в библиотеке типов атрибутов, которая
+определена в стиле спецификации (например, "spc.lat").
+При простановке болта из библиотеки из базы данных заполняется некоторая структура
+данных BOLT, которая несет информацию для построения геометрии болта и формиро"
+вания обозначения.
+5139
+
+
+
+  struct BOLT {
+    float dr;/*диаметр резьбы*/
+    float p;/*шаг резьбы */
+    float s;/*размер под ключ*/
+    float h;/*высота головки */
+    float D;/* диаметр описанной окружности*/
+    float d3;/*диаметр отв. в стержне*/
+    float h2;/*высота подголовка*/
+    float  L;/*длина стержня*/
+    float l1;/*расстояние до отверстия в стержне*/
+    float b;/*длина резьбовой части*/
+    float d2;/*диаметр под головкой*/
+    float z4;/*величина фаски конца*/
+    short    k;// 1 " длина резьбы ниже ломаной (резьба только на b) ; 2 " выше ломаной
+(резьба до головки и на в)
+    unsigned short f;/*битовые маски*/
+    short klass;/*класс точности*/
+    unsigned short gost;/*номер госта*/
+  };
+  
+#define   SPC_NAME       5     //наименование
+
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+//  создадим объект спецификации для раздела "Стандартные изделия"
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+reference EditSpcObj (BOLT &tmp,  reference geom) {
+
+  reference spcObj = 0;
+  //если редактируем макро объект , то войдем в режим редактирования объекта
+  if (::EditMacroMode()) {
+    //найдем объкт спецификации по геометрии
+    spcObj = ::ksGetSpcObjForGeom("graphic.lyt" , //имя библиотеки типов 
+                                   1,         //   номер типа спецификации
+                                   0,         //для макроредактирования
+                                   1, 1);
+    //войдем в режим редактирования                               
+    if (!::ksSpcObjectEdit(spcObj))
+      spcObj  = 0;
+5140
+
+
+
+  }
+
+ if(spcObj ||  ksSpcObjectCreate("graphic.lyt" , //имя библиотеки типов 
+                                   1,         //   номер типа спецификации
+                                   25,  0,    //номер раздела и подраздела определены в стиле спецификации
+                                   308437807397.0 , 0)) //тип атрибута определен в библиотеке типов
+атрибутов spc.lat
+
+   uint uBuf;
+   //исполнение
+   if(!(tmp.f & ISPOLN)) //если исполнения нет
+     ::ksSpcVisible(SPC_NAME, 2, 0); //выключим исполнение
+   else {
+     uBuf = (uint) 2;
+     ::ksSpcVisible(SPC_NAME, 2, 1);
+     ::ksSpcChangeValue(SPC_NAME , 2, &uBuf, UINT_ATTR_TYPE );
+   }
+   
+   //изменим диаметр
+   uBuf = (uint) tmp.dr;
+   ::ksSpcChangeValue(SPC_NAME , 4, &uBuf, UINT_ATTR_TYPE );
+
+   //отследим мелкий шаг
+   if(!(tmp.f & PITCH)){//выключить шаг и его разделитель
+     ::ksSpcVisible(SPC_NAME, 5, 0);
+     ::ksSpcVisible(SPC_NAME, 6, 0);   //шаг
+   }
+   else {
+     ::ksSpcVisible(SPC_NAME, 5, 1);
+     ::ksSpcVisible(SPC_NAME, 6, 1);   //шаг
+     ::ksSpcChangeValue(SPC_NAME , 6, &tmp.p, FLOAT_ATTR_TYPE);
+   }  
+
+   // выключим поле допуска
+   ::ksSpcVisible(SPC_NAME, 7, 0);
+
+   //изменим длину
+   uBuf = (uint) tmp.L;
+5141
+
+
+
+   ::ksSpcChangeValue(SPC_NAME , 9, &uBuf, UINT_ATTR_TYPE );
+
+   // выключим класс прочности
+   ::ksSpcVisible(SPC_NAME, 10, 0);
+
+   // выключим материал
+   ::ksSpcVisible(SPC_NAME, 11, 0);
+
+   // выключим покрытие
+   ::ksSpcVisible(SPC_NAME, 12, 0);
+
+   //изменим ГОСТ
+   uBuf = (uint) tmp.gost;
+   ::ksSpcChangeValue(SPC_NAME , 14, &uBuf, UINT_ATTR_TYPE );
+
+   //подключим геометрию
+   if (geom)
+     ::ksSpcIncludeReference(geom, 1);
+
+   spcObj = ::ksSpcObjectEnd();
+   //если объект спецификации создан, дадим возможность пользователю на него посмо"
+треть и отредактировать. Функцию нужно запускать вне Cursor и Placement
+   if (spcObj)
+     if (::ksEditWindowSpcObject(spcObj))
+       return spcObj;
+ }
+ return 0;
+}
+
+в) пример создания шаблона обозначения для стандартного изделия "болт":
+
+Шаблон обозначения можно создать визуальными средствами, предоставленными
+КОМПАС"ГРАФИК для создания типа атрибута. Этот способ не требует непосредственно"
+го программирования, но приводит к затратам времени на создание шаблона, а при по"
+тере данных в библиотеке требует повторного создания утраченного шаблона. 
+Можно создать шаблон обозначения средствами apptool из библиотеки.
+
+Полное обозначение болта :
+5142
+
+
+
+  Болт 1 М12 х 1.25 "6g x 60.58.35X.16 ГОСТ 7808 " 70
+  
+Представим это обозначение в виде компонент :
+
+НомерИмя компонентыУмолчательное значениеТипОчередность сортировки
+
+1 Имя элем.Болтстрока1
+2 Исполнение1uint3
+3 РезьбаМстрока0 (не сортируется)
+4 Диаметр12uint 4 или 3 (сортирует подряд)
+5 Разделительхстрока0 (не сортируется)
+6 Шаг1.25float    5 или 3 (сортирует подряд)
+7 Поле допуска"6gстрока6 или 3 (сортирует подряд)
+8 Разделительхстрока0 (не сортируется)
+9 Длина60uint7 или 3 (сортирует подряд)
+10 Кл. прочности.58строка0 (не сортируется)
+11 Материал.35Хстрока0 (не сортируется)
+12 Покрытие.16строка0 (не сортируется)
+13 ГОСТГОСТстрока0 (не сортируется)
+14 Номер7808uint2
+15 Разделитель"строка0 (не сортируется)
+16 Год70строка0 (не сортируется)
+
+//ключи определены в стиле спецификации
+#define   ST_KEY1      100    //ключи для стандапртных изделий
+#define   ST_KEY2_GOST  5      //для стандартных изделий
+#define   ST_KEY3       1
+#define   ATTR_TYPE_LIB_NAME_KEY3      "d:\\gr\\spc.lat"  имя библиотеки типов атрибутов
+
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+//  создадим  тип атрибута болта
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+void TypeAttrBolt() {
+
+//Инициализация данных для создания шаблона
+
+//заполним структуру типа атрибута
+5143
+
+
+
+  ksAttributeType attrType;
+  strcpy(attrType.header,"Болт");   // заголовoк"комментарий типа
+  attrType.rowsCount        = 1;    // кол"во строк в таблице
+  attrType.flagVisible      = 1;    // видимый, невидимый   в таблице
+  strcpy(attrType.password,"");     // пароль, если не пустая строка  " защищает от несанкци"
+онированного изменения типа
+  attrType.columns          = CreateArray(ATTR_COLUMN_ARR,0); // динамический массив ком"
+понент записи
+  attrType.key1 = ST_KEY1;
+  attrType.key2 = ST_KEY2_GOST;
+  attrType.key3 = ST_KEY3;
+  attrType.key4 = 0;
+  ColumnInfo parStruct1;
+
+   //массив полей записи
+
+   //  колонка 1 "Имя элем."
+    strcpy(parStruct1.header, "Имя элем.");// заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;    // тип данных в столбце " см.ниже
+    parStruct1.key = 1;              // дополнительный признак,  очередность сортировки
+    strcpy(parStruct1.def,"Болт");         // значение по умолчанию
+    parStruct1.flagEnum =0;                 // флаг, включающий режим, когда значение поля
+атрибута будет заполняться из массива перечисленных значений (1"режим включен, 0"
+отключен
+    parStruct1.fieldEnum = 0;           // массив неопределенной длины перечислений (строки)
+    parStruct1.columns = 0;                // массив неопределенной длины информации о ко"
+лонках для записи
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   //  колонка 2 "Исполнение"
+    strcpy(parStruct1.header, "Исполнение"); // заголовoк"комментарий столбца
+    parStruct1.type = UINT_ATTR_TYPE;       // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 3;               // дополнительный признак,  очередность сортировки
+    strcpy(parStruct1.def,"1");             // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+5144
+
+
+
+   // колонка 3 "Резьба"
+    strcpy(parStruct1.header, "Резьба"); // заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 0;                  //   очередность сортировки
+    strcpy(parStruct1.def,"М");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 4 "Диаметр"
+    strcpy(parStruct1.header, "Диаметр"); // заголовoк"комментарий столбца
+    parStruct1.type = UINT_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 3;                  //   очередность сортировки
+    strcpy(parStruct1.def,"12");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 5 "разделитель"
+    strcpy(parStruct1.header, ""); // заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 0;                  //   очередность сортировки
+    strcpy(parStruct1.def,"х");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 6 "Шаг"
+    strcpy(parStruct1.header, "Шаг"); // заголовoк"комментарий столбца
+    parStruct1.type = FLOAT_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 3;                  //   очередность сортировки
+    strcpy(parStruct1.def,"1.25");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 7 "Поле допуска"
+5145
+
+
+
+    strcpy(parStruct1.header, "Поле допуска"); // заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 3;                  //   очередность сортировки
+    strcpy(parStruct1.def,""6g");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 8 "разделитель"   strcpy(parStruct1.header, ""); // заголовoк"комментарий стол"
+бца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 0;                  //   очередность сортировки
+    strcpy(parStruct1.def,"х");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 9 "Длина"
+    strcpy(parStruct1.header, "Длина"); // заголовoк"комментарий столбца
+    parStruct1.type = UINT_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 3;                  //   очередность сортировки
+    strcpy(parStruct1.def,"60");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 10 "Кл. прочности"
+    strcpy(parStruct1.header, "Кл. прочности"); // заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 0;                  //   очередность сортировки
+    strcpy(parStruct1.def,".58");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 11 "Материал"
+    strcpy(parStruct1.header, "Материал"); // заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см.ниже
+5146
+
+
+
+    parStruct1.key = 0;                  //   очередность сортировки
+    strcpy(parStruct1.def,".35Х");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 12 "Покрытие"
+    strcpy(parStruct1.header, "Покрытие"); // заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 0;                  //   очередность сортировки
+    strcpy(parStruct1.def,".16");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 13 "ГОСТ"
+    strcpy(parStruct1.header, "ГОСТ"); // заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 0;                  //   очередность сортировки
+    strcpy(parStruct1.def,"ГОСТ");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+    // колонка 14 "Номер"
+    strcpy(parStruct1.header, "Номер"); // заголовoк"комментарий столбца
+    parStruct1.type = UINT_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 2;                  //  очередность сортировки
+    strcpy(parStruct1.def,"7808");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+    // колонка 15 "разделитель"
+    strcpy(parStruct1.header, ""); // заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 0;                  //   очередность сортировки
+    strcpy(parStruct1.def,""");          // значение по умолчанию
+5147
+
+
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+   // колонка 16 "Год"
+    strcpy(parStruct1.header, "Год"); // заголовoк"комментарий столбца
+    parStruct1.type = STRING_ATTR_TYPE;  // тип данных в столбце " см. "ltdefine.h"
+    parStruct1.key = 0;                  //   очередность сортировки
+    strcpy(parStruct1.def,"70");          // значение по умолчанию
+
+    //добавим компоненту в массив компонент
+    AddArrayItem(attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+    // создать  шаблон  обозначения
+    
+ /*double  numbType =*/  ksCreateAttrType(&attrType,   // информация о типе атрибута
+                                       ATTR_TYPE_LIB_NAME_KEY3); // имя библиотеки типов атрибутов
+
+ MessageBoxResult();  // проверяем результат работы нашей функции
+
+ //удалим  массив колонок
+ DeleteArray(attrType.columns);
+
+}
+
+г) пример  простановки линии"выноски к объекту спецификации :
+
+//фрагмент ресурса  
+
+STRINGTABLE {
+ STR225 "Линию"выноску проставлять?"
+ STR226 "Укажите позиционную линию"выноску"
+ STR227 "!Создать новую линию"выноску !Подключить существующую"
+ STR228 "Ошибка! Объект " не позиционная линия"выноска!"
+}
+
+MENU_POS_LEADER MENU
+{
+
+5148
+
+
+
+ MENUITEM "Подключить существующую", 2
+ MENUITEM "Создать новую линию"выноску ", 1
+}
+
+extern TModule *module;
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// Отрисовать позиционную линию"выноску
+// Уже проверено , что объект спецификации есть
+// Функцию нужно запускать вне Cursor и Placement
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+void DrawPosLeader(reference _spcObj) {
+  RequestInfo info;
+  bool flag = false;
+  reference posLeater = 0;
+  double x1, y1;
+  char buf[128];
+  
+  do {
+    memset(&info, 0, sizeof(info));
+    info.commands = (char*)MENU_POS_LEADER;
+
+    module">LoadString(STR226, buf, 128); //"Укажите позиционную линию"выноску"
+    info.prompt = buf;
+    int j1 = Cursor(&info, &x1, &y1, 0);
+    switch (j1) {
+      case 1: //Создать новую линию"выноску
+        posLeater = ::ksCreateViewObject(POSLEADER_OBJ);
+        flag = false;
+        break;
+      case 2: //Подключить существующую
+        module">LoadString(STR226, buf, 128); //"Укажите линию"выноску."
+        memset(&info, 0, sizeof(info));
+        info.commands = buf;
+        if(Cursor(&info, &x1, &y1, 0)) {
+          posLeater = ::FindObj(x1, y1, 100);      // величина стороны окошка"ловушки с центром
+x,y
+          if (!(posLeater && ::GetObjParam(posLeater, 0, 0, 0) == POSLEADER_OBJ)) {
+5149
+
+
+
+             module">LoadString(STR228, buf, 128); //"Ошибка! Объект"не позиционная линия"
+выноска!"
+             Error(buf);
+             posLeater = 0;
+             flag = true;
+          }
+          else
+            flag = false;
+          break;
+        }
+        else
+          flag = false;
+        break;
+      case "1:
+        posLeater = ::FindObj(x1, y1, 100);      // величина стороны окошка"ловушки с центром
+x,y
+        if (!(posLeater && ::GetObjParam(posLeater, 0, 0, 0) == POSLEADER_OBJ)) {
+           module">LoadString(STR228, buf, 128); //"Ошибка! Объект"не позиционная линия"
+выноска!"
+           Error(buf);
+           posLeater = 0;
+           flag = true;
+        }
+        else
+          flag = false;
+      break;
+    }
+  }  while(flag);
+  
+  //линия"выноска есть, подключим ее к объекту спецификации 
+  if (posLeater ) {
+    //войдем в режим редактирования объекта спецификации
+    if (::ksSpcObjectEdit(_spcObj)) {
+      //подключим линию"выноску
+      ::ksSpcIncludeReference(posLeater, true);
+      //закроем объект спецификации
+      ::ksSpcObjectEnd();
+    }
+5150
+
+
+
+  }
+}
+
+ksGetWorkWindowColor  пример использования 
+unsigned long color = ksGetWorkWindowColor ();
+char buf [128];
+sprintf (buf, "Цвет фона рабочего окна = %ld ", color);
+Message (buf);
+
+ksGetSysOptions, ksSetSysOptions  пример использования 
+if (ksGetCurrentDocument(1)) {
+    SnapOptrions par;
+    char mes[700];
+    memset(&par, 0, sizeof(SnapOptrions));
+    //получим параметры привязок
+    ksGetSysOptions(SNAP_OPTIONS, &par, sizeof(SnapOptrions));
+    sprintf(mes            , "Привязка 'Ближайшая точка '"%s\n", par.nearestPoint   ? "включена"
+: "отключена");
+    sprintf(mes+strlen(mes), "Привязка 'Середина        '"%s\n", par.nearestMiddle  ? "включена"
+: "отключена");
+    sprintf(mes+strlen(mes), "Привязка 'Пересечение     '"%s\n", par.intersect      ? "включена"
+: "отключена");
+    sprintf(mes+strlen(mes), "Привязка 'Касание         '"%s\n", par.tangentToCurve ? "включе"
+на" : "отключена");
+    sprintf(mes+strlen(mes), "Привязка 'Нормаль         '"%s\n", par.normalToCurve  ? "вклю"
+чена" : "отключена");
+    sprintf(mes+strlen(mes), "Привязка 'По сетке        '"%s\n", par.grid           ? "включена" :
+"отключена");
+    sprintf(mes+strlen(mes), "Привязка 'Выравнивание    '"%s\n", par.xyAlign        ? "включена"
+: "отключена");
+    sprintf(mes+strlen(mes), "Привязка 'Угловая привязка'"%s\n", par.angSnap          ? "вклю"
+чена" : "отключена");
+    sprintf(mes+strlen(mes), "Привязка 'Точка на кривой '"%s\n", par.pointOnCurve   ? "вклю"
+чена" : "отключена");
+    sprintf(mes+strlen(mes), "Общие настройки : динамически %sотслеживать\n",
+par.commonOpt & SN_DYNAMICALLY   ? "" : "не ");
+    sprintf(mes+strlen(mes), "                : %sотображать текст\n"       , par.commonOpt &
+SN_ASSISTANT     ? "" : "не ");
+5151
+
+
+
+    sprintf(mes+strlen(mes), "                : %sучитывать фоновые слои и виды\n",
+par.commonOpt & SN_BACKGROUND_LAYER ? "" : "не ");
+    sprintf(mes+strlen(mes), "                : %sподавить привязки\n", par.commonOpt &
+SN_SUSPENDED ? "" : "не ");
+    sprintf(mes+strlen(mes), " угловой шаг %f", par.angleStep);
+    sprintf(mes+strlen(mes), " локальная привязка = %d", par.localSnap);
+    Message(mes);
+    //очистим структуру привязок
+    memset(&par, 0, sizeof(SnapOptrions));
+    //включим привязку Касание
+    par.tangentToCurve = 1;
+    //включим привязку Точка на кривой
+    par.pointOnCurve = 1;
+    //текст отображать
+    par.commonOpt  = par.commonOpt | SN_ASSISTANT;
+    par.angleStep = 10;
+    //локальная привязка
+    par.localSnap = SN_GRID;
+    // заменим привязки
+    ksSetSysOptions(SNAP_OPTIONS, &par, sizeof(SnapOptrions));
+  }
+
+AddStyle  пример использования 
+{
+unsigned short StyleID;
+CurveStyleParam   CrvStyle;
+
+StyleID = AddStyle (CURVE_STYLE, &CrvStyle, 
+                                     sizeof (CurveStyleParam), 0);
+}
+
+Пример создания стиля кривой, содержащего фрагменты (кривой "с картинками")
+
+LibStyle  par;   //структура параметров стиля из библиотеки
+  strcpy(par.fileName, "d:\\0\\1.lcs") ;
+  par.styleNumber = 1;
+  //получим некий стиль кривой, на базе которого сделаем свой стиль
+5152
+
+
+
+  unsigned short tl = AddStyle(CURVE_STYLE_EX,  &par, sizeof(par), 1);
+
+  CurveStyleParam curPar;
+  //берем параметры стиля
+  GetStyleParam(CURVE_STYLE_EX, tl, &curPar, sizeof(curPar));
+
+  //если стиль с картинками продолжаем
+  if (curPar.curveType == 2) {
+    CurvePatternEx par;
+    int count = GetArrayCount(curPar.pattern);
+    //убеждаемся, что в стиле есть преривистые участки
+    if (count){
+      //берем первый участок
+      GetArrayItem(curPar.pattern, // указатель на массив
+                    0,    // индекс в массиве (нумерация начинается с 0)
+                    &par,// указатель на структуру элемента
+                    sizeof(par));  // размер структуры элемента
+      //устанавливаем признак, что картинку возьмем из фрагмента
+      par.pictureType = 1;
+      //удаляем  массивы полилиний прежней картинки
+      DeleteArray(par.picture.polygon);
+      DeleteArray(par.picture.fill);
+      //подставляем фрагмент
+      strcpy(par.frwName, "d:\\0\\1.frw");
+      //заменяем первый участок в стиле
+      SetArrayItem(curPar.pattern, // указатель на массив
+                    0,    // индекс в массиве (нумерация начинается с 0)
+                    &par,// указатель на структуру элемента
+                    sizeof(par));  // размер структуры элемента
+
+    }
+  }
+  //создаем новый стиль, который будет иметь картинку, взятую из фрагмента
+  unsigned short tl1 = AddStyle(CURVE_STYLE_EX,  &curPar, sizeof(curPar), 0);
+  //создадим окружность с этим стилем
+  Circle(100,100, 50, tl1);
+5153
+
+
+
+GetStyleParam  пример использования 
+{
+CurveStyleParam   CrvStyle;
+
+GetStyleParam(CURVE_STYLE, 1, 
+                          &CrvStyle, sizeof(CurveStyleParam));
+}
+
+ksGetLibraryStylesArray  пример использования 
+//получим массив оформлений для графических документов из библиотеки graphic.lyt
+reference styleArr = ksGetLibraryStylesArray ("d:\\Kompas56\\Sys\\graphic.lyt",
+GRAPHIC_LAYOUT_STYLE_LIBRARY);// библиотека оформлений
+if (styleArr)
+{
+char buf[128];
+
+//определим количество стилей и отобразим на экране
+int count = GetArrayCount(styleArr);
+sprintf(buf, "count = %d", count);
+Message(buf);
+
+//в цикле получим информацию о каждом стиле и отобразим на экране
+for (uint i = 0; i < count; i++)
+{
+LibraryStyleParam par;
+GetArrayItem (styleArr,// указатель на массив
+i,// индекс в массиве (нумерация начинается с 0)
+&par,// указатель на структуру элемента
+sizeof (LibraryStyleParam));// размер структуры элемента
+
+sprintf(buf, "ID = %d\nname=%s", par.styleId, par.styleName);
+Message(buf);
+}
+}
+
+5154
+
+
+
+ksIsStyleInDocument, ksDeleteStyleFromDocument  пример 
+использования 
+LibStyle  par;   //структура параметров стиля кривой
+strcpy(par.fileName, "с:\\1.lcs") ;
+par.styleNumber = 1;
+par.typeAllocation = 1; //ссылка на библиотеку стилей
+//проверяем, есть ли стиль в текущем документе
+if (!ksIsStyleInDocument (CURVE_STYLE,  &par, sizeof (par), 1)) {
+Message ("Стиля в документе нет");
+unsigned short tl = AddStyle (CURVE_STYLE,  &par, sizeof (par), 1);
+LineSeg (20, 20, 70, 20, tl);
+
+CurveStyleParam par1;
+int t = GetStyleParam (CURVE_STYLE, tl, &par1, sizeof (par1));
+if (t) {
+Message (par1.name);
+//стиль уже должен быть
+if (ksIsStyleInDocument (CURVE_STYLE,  &par, sizeof (par), 1))
+Message ("Стиль в документе есть");
+//удалим стиль из документа
+ksDeleteStyleFromDocument (CURVE_STYLE,  &par, sizeof (par), 1);
+}
+    else
+      Error ("ошибка");
+  }
+
+ksGetSystemVersion  пример использования 
+Получить версию системы
+Пример :
+Для версии 5.4 Release 2 Build 1
+iMajor  = 5
+iMinor  = 4
+iRelease = 2
+iBuild  = 1
+5155
+
+
+
+ksGetSystemProfileString  пример использования 
+char buf[255];
+if (ksGetSystemProfileString("Directories", "SYS", buf, 255))
+Message(buf);
+ else
+   Error("Ключ не найден"); 
+
+ksSystemPath  Пример использования 
+{
+int BitCount;
+char *Buff;
+
+BitCount = ksSystemPath(NULL, 0, sptLIBS_FILES);
+ksSystemPath(&Buff, BitCount, sptLIBS_FILES);
+}
+
+EnableTaskAccess, PumpWaitingMessages  пример использования 
+void EnableTaskAccess_Example (void) 
+{
+EnableTaskAccess(0); //запретили доступ к задаче
+for(int i=0; i<10000; i) 
+{
+LineSeg(10, 10i, 20, 10i, 1);
+if(!(i%100)) 
+{
+//посылаем необрабатываемое сообщение своему приложению
+//для выполнения процесса в фоновом режиме
+
+::PostAppMessage(::GetCurrentTask(), 0, 0, 0);
+
+// через каждые 100 отрезков обрабатываем очередь сообщений
+// при этом Windows получает возможность выполнить свои
+// действия (например переключиться на другую задачу)
+
+PumpWaitingMessages();
+}
+
+5156
+
+
+
+}
+EnableTaskAccess(1); //разрешили доступ к задаче
+}; /* EnableTaskAccess_Example */
+
+IsEnableTaskAccess  пример использования 
+//проверяем доступ к задаче
+bool flagEnableTaskAccess = IsEnableTaskAccess();
+Message (flagEnableTaskAccess ? "Доступ разрешен" : "Доступ запрещен");
+if (flagEnableTaskAccess)
+{
+//запрещаем доступ
+EnableTaskAccess (0);
+//проверяем доступ к задаче
+flagEnableTaskAccess = IsEnableTaskAccess();
+Message (flagEnableTaskAccess ? "Доступ разрешен" : "Доступ запрещен");
+EnableTaskAccess (1);// разрешить доступ
+}
+
+ksSetCriticalProcess  пример использования 
+reference pObj;
+ RequestInfo info;
+ double x, y;
+ memset(&info, 0, sizeof(info));
+ info.prompt = "Укажите объект";
+ int j =1;
+ while(j) {
+  if(YesNo("Включить критический режим?")==1)
+   ksSetCriticalProcess ();
+  j = Cursor(&info, &x ,&y, 0);
+  if(j && ExistObj(pObj = FindObj(x, y, 1e6))){
+   LightObj(pObj, 1);
+   Message("Выделили объект");
+   LightObj(pObj, 0);
+  }
+  int rez = ReturnResult();
+  Message(rez == etLibraryClose ? "принудительное завершение выполнения библиотеки"
+5157
+
+
+
+                  : "Это не принудительное завершение");
+  if (rez != etLibraryClose)
+   j = YesNo("Продолжать?")==1;
+ }
+
+Cursor Пример использования 
+#ifndef __LIBTOOL_H
+#include <libtool.h>
+#endif
+
+int type, flag=0;
+
+//функция обратной связи для выполнения цикла в Cursor
+int far __export pascal CallBackC (int com, double *x, double *y, RequestInfo *info,
+                                    void *phantom, int/* dynamic */) {
+ Phantom *valueub = (Phantom *)phantom;
+  switch (com) {
+    case 1:
+    case 2:
+      type = com;
+    break;
+    case "1: //поставить в модель
+      MoveObj(rub">type1.gr, *x, *y);
+      StoryTmpGroup(rub">type1.gr); //поставить временную группу в вид
+      ClearGroup(rub">type1.gr);
+      break;
+  }
+
+//группа для фантома должна быть временная и обновляться при изменении вида 
+//отрисовки
+  if (rub">type1.gr)
+    DeleteObj(rub">type1.gr);
+  rub">type1.gr = NewGroup(1); // временная группа
+    if((flag==1 && com==1)||(flag==2 && com==2))
+    type = 3;
+//обновляется не только изображение но и меню для запроса
+    switch (type ) {
+5158
+
+
+
+      case 1:
+        Circle (0, 0, 20, 1);
+        info">commands =  !Квадрат !Треугольник ;
+        flag = 1;
+        break;
+      case 2:
+        LineSeg("10, 0, 10, 0, 1);
+        LineSeg(10, 0, 0, 20, 1);
+        LineSeg(0, 20,  "10, 0, 1);
+        info">commands =  !Окружность !Квадрат;
+        flag = 2;
+        break;
+      case 3:
+        LineSeg("10, 0, 10, 0, 1);
+        LineSeg(10, 0, 10, 20, 1);
+        LineSeg(10, 20,  "10, 20, 1);
+        LineSeg("10, 20,  "10, 0, 1);
+        info">commands =  !Окружность !Треугольник;
+        flag = 0;
+        break;
+    }
+  EndGroup();
+
+  return 1;
+}
+
+void Cursor_Example (void) {
+  type = 1;
+  int j = 1;
+  struct Phantom  rub;
+  rub.type1.xBase = 0;
+  rub.type1.yBase = 0;
+
+  rub.type1.scale = 1;
+  rub.phType        = 1;
+
+  rub.type1.ang  = 0;
+  double x, y;
+5159
+
+
+
+  rub.type1.gr = NewGroup(1); // временная группа
+    Circle (0, 0, 20, 1);
+  EndGroup();
+  RequestInfo  info;
+  memset(&info, 0, sizeof(info));
+  info.commands = "!Квадрат !Треугольник";
+  info.callBack = CallBackС;//указываем адрес функции обратной связи для Cursor,
+Cursor(&info , &x, &y, &rub);
+
+}; /* Cursor*/
+
+struct RequestInfo info;
+memset(&info,0,sizeof(RequestInfo));     //Структура информации
+
+info.prompt="Укажите начальную точку";
+Cursor(&info,&xBase,&yBase,0);//Начальная точка
+struct Phantom f;
+memset(&f,0,sizeof(Phantom));     //Фантом
+f.type2.xBase = xBase;
+f.type2.yBase = yBase;
+info.prompt="Укажите точку на окружности";
+f.phType=7;  // тип "резиновой" нити " окружность
+double x,y;
+//если был запущен другой процесс то не запускается второй Cursor
+if (!ksIsActiveProcessRunnig () && Cursor(&info,&x,&y,&f))
+  Circle(xBase, yBase, DistancePntPnt (xBase, yBase, x,y),1);
+else
+  Message("Запущен другой процесс");
+
+//Функция обратной связи Cursor для построения пользовательского фантома (в данном
+случае "резиновый" отрезок)
+int far __export pascal CallBackEskLinsvzLin(int com ,double *x,double *y,RequestInfo*,void
+*phantom,int dynamic) {
+  Phantom *valueub = (Phantom *)phantom;
+  if (!dynamic) {     //Фиксация точки
+    if (com == "1) {
+      StoreTmpGroup(rub">type6.gr);
+      ClearGroup(rub">type6.gr);
+5160
+
+
+
+    }
+    DeleteObj(rub">type6.gr);
+
+    return 0;
+  }
+  else {
+    if (fabs(xBase "*x) > 0.001 || fabs(yBase "*y) > 0.001) {
+      DeleteObj(rub">type6.gr);
+      rub">type6.gr = NewGroup(1);
+        LineSeg(xBase, yBase, *x, *y, 1);
+      EndGroup();
+    }
+    return 1;
+  }
+}
+
+struct RequestInfo info;
+memset(&info,0,sizeof(RequestInfo));     //Структура информации
+
+info.prompt="Укажите начальную точку";
+Cursor(&info,&xBase,&yBase,0);  //Начальная точка
+
+info.dynamic=1;
+info.callBack=CallBackEskLinsvzLin;
+
+struct Phantom f;
+memset(&f,0,sizeof(Phantom));     //Фантом
+f.type2.xBase = xBase;
+f.type2.yBase = yBase;
+f.phType=6;  //пользовательский фантом
+info.prompt="Укажите точку на линии";
+
+f.type6.gr = NewGroup(1);
+  LineSeg(xBase, yBase, xBase+0.1, yBase,1);
+EndGroup();
+double x,y;
+Cursor(&info,&x,&y,&f);
+5161
+
+
+
+Placement  Пример использования 
+#ifndef  __MATH_H
+#include <math.h>
+#endif
+
+#ifndef __LIBTOOL_H
+#include <libtool.h>
+#endif
+
+int type, flag=0;
+
+// Функция обратной связи, для выполнения цикла в Placement
+int far __export pascal CallBackP (int com, double *x, double *y, double *angl,
+                                                RequestInfo *info, void *phantom, int /* dynamic*/) {
+  Phantom *valueub = (Phantom *)phantom;
+  switch (com) {
+    case 1:
+    case 2:
+      type = com;
+    break;
+    case "1: //поставить в модель
+      MoveObj(rub">type1.gr, *x, *y);
+      if(fabs(*angl) > 0.001)
+         RotateObj(rub">type1.gr, *x, *y, *angl);
+      StoryTmpGroup(rub">type1.gr); //поставить временную группу в вид
+      ClearGroup(rub">type1.gr);
+      break;
+  }
+
+//группа для фантома должна быть временная и обновляться при изменении вида
+// отрисовки
+ if (rub">type1.gr)
+    DeleteObj(rub">type1.gr);
+  rub">type1.gr = NewGroup(1); // временная группа
+    if((flag==1 && com==1)||(flag==2 && com==2))
+    type = 3;
+5162
+
+
+
+//обновляется не только изображение но и меню для запроса
+ switch (type ) {
+      case 1:
+        Circle (0, 0, 20, 1);
+        info">commands =  !Квадрат !Треугольник ;
+        flag = 1;
+        break;
+      case 2:
+        LineSeg("10, 0, 10, 0, 1);
+        LineSeg(10, 0, 0, 20, 1);
+        LineSeg(0, 20,  "10, 0, 1);
+        info">commands =  !Окружность !Квадрат;
+        flag = 2;
+        break;
+      case 3:
+        LineSeg("10, 0, 10, 0, 1);
+        LineSeg(10, 0, 10, 20, 1);
+        LineSeg(10, 20,  "10, 20, 1);
+        LineSeg("10, 20,  "10, 0, 1);
+        info">commands =  !Окружность !Треугольник;
+        flag = 0;
+        break;
+    }
+  EndGroup();
+
+  return 1;
+}
+
+void Placement_Example (void) {
+  type = 1;
+  int j = 1;
+  struct Phantom  rub;
+  rub.type1.xBase = 0;
+  rub.type1.yBase = 0;
+
+  rub.type1.scale = 1;
+  rub.phType        = 1;
+5163
+
+
+
+  rub.type1.ang  = 0;
+  double x, y;
+  rub.type1.gr = NewGroup(1); // временная группа
+    Circle (0, 0, 20, 1);
+  EndGroup();
+RequestInfo  info;
+  memset(&info, 0, sizeof(info));
+  info.commands = "!Квадрат !Треугольник";
+  info.callBack = CallBackP;//указываем адрес функции обратной связи для Placement
+  Placement(&info, &x, &y, &rub.type1.ang, &rub);
+
+}; /* Placement_Example*/
+
+ksGetCursorPosition  Пример использования 
+//получить координаты курсора
+ typeCursorPos = YesNo("С учетом привязок?") == 1 ? 1 : 0;
+ int j ;
+ double x, y;
+ do {
+   ksGetCursorPosition(&x, &y, typeCursorPos);   // координаты курсора в миллиметрах,
+                                             // 0 " без учета привязок 1 " с учетом привязок,
+
+   char buf[255];
+   sprintf(buf, " x = %0.2f y = %0.2f; Продолжать? ", x, y);
+   j = YesNo(buf);
+ } while(j == 1);
+
+ksGetCursorLimit  Пример использования
+double x, y;                                 // координаты точки
+RequestInfo info;                            // параметры запроса
+memset(&info, 0, sizeof(info));            // очищаем параметры запроса
+info.prompt = "Укажите объект";              // строка подсказки
+double lim = ::ksGetCursorLimit();           // радиус ловушки курсора
+while (::Cursor(&info, &x ,&y, 0)) {       // запуск процесса указания точки
+reference obj = ::FindObj(x, y, lim);    // ближайщий объект
+5164
+
+
+
+if (::ExistObj(obj))                     // если объект найден и существует
+::LightObj(obj, 1);                    // подсвечиваем объект
+}
+
+GetValidator  Пример использования 
+// Описание класса обработки диалога, в котором использованы два TEdit,
+// чтобы ввести проверку интервала вводимых значений. 
+// К TEdit подключается валидатор
+
+#define DIALOG_1101
+#define IDC_EDIT11001
+#define IDC_EDIT21002
+
+//"""""""""""""""""""""""""""""""""""
+// ресурс диалога
+DIALOG_1 DIALOG 114, 71, 103, 107
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Диалог"
+FONT 8, "MS Sans Serif"
+{
+DEFPUSHBUTTON "OK", IDOK, 27, 80, 50, 14
+EDITTEXT IDC_EDIT1, 63, 24, 21, 12
+LTEXT "Исполнение", "1, 15, 27, 43, 8
+EDITTEXT IDC_EDIT2, 63, 48, 32, 12
+LTEXT "Длина", "1, 17, 50, 29, 8
+}
+
+//"""""""""""""""""""""""""""""""""""
+class TestDialog : public TDialog 
+{
+float len;
+int ispoln;
+TEdit *hLen;    //ввод длины: значение кладется в len
+TEdit *hIspoln; //ввод исполнения: значение кладется в ispoln
+public:
+TestDialog (TWindow *ptParent);
+void SetupWindow();
+5165
+
+
+
+protected :
+void EvLen();
+void EvIspoln();
+void CmOk(); // IDOK
+DECLARE_RESPONSE_TABLE(TestDialog);
+};
+
+DEFINE_RESPONSE_TABLE1(TestDialog , TDialog)
+EV_EN_KILLFOCUS  (IDC_EDIT2,  EvLen),
+EV_EN_KILLFOCUS  (IDC_EDIT1, EvIspoln),
+EV_COMMAND(IDOK, CmOk),
+END_RESPONSE_TABLE;
+
+//конструктор диалога
+//"""""""""""""""""""""""""""""""""""
+TestDialog::TestDialog(TWindow *ptParent):
+TDialog(ptParent , DIALOG_1, module),
+len(20),
+ispoln (1)
+{
+hLen     = new TEdit(this, IDC_EDIT2, 10);
+//интервал для float: тип 4;   min=0 max=100
+float minF=0, maxF=100;
+//валидатор контролирует значения типа float
+hLen">SetValidator ((TValidator *) GetValidator(&minF, &maxF, 4));
+
+hIspoln  = new TEdit (this, IDC_EDIT1, 10);
+//интервал для int: тип 2;   min=1 max=5
+//валидатор контролирует значения типа int
+int minI =1, maxI=5;
+hIspoln">SetValidator ((TValidator *) GetValidator (&minI, &maxI, 2));
+
+};
+
+//"""""""""""""""""""""""""""""""""""
+void TestDialog::SetupWindow()
+{
+char s[128];
+5166
+
+
+
+TDialog::SetupWindow();
+sprintf (s, "%.1f", len);
+hLen">SetText(s);
+sprintf (s, "%d", ispoln);
+hIspoln">SetText(s);
+}
+
+//"""""""""""""""""""""""""""""""""""
+void TestDialog::EvLen()
+{
+if (hLen">IsValid(FALSE))//мы в интервале
+{
+char buf[20];
+char *c;
+GetDlgItemText (IDC_EDIT2, buf, 10);
+len = strtod (buf, &c);
+}
+}
+
+//"""""""""""""""""""""""""""""""""""
+void TestDialog::EvIspoln()
+{
+if (hIspoln">IsValid(FALSE))//мы в интервале
+{
+char buf[20];
+char *c;
+GetDlgItemText (IDC_EDIT1, buf, 10);
+ispoln = (int) strtol (buf, &c, 10);
+}
+}
+
+//"""""""""""""""""""""""""""""""""""
+void TestDialog::CmOk()
+{
+if (!hLen">IsValid(TRUE))
+{
+hLen">SetFocus();
+return;
+5167
+
+
+
+}
+if (!hIspoln">IsValid(TRUE))
+{
+hIspoln">SetFocus();
+return;
+}
+TDialog::CmOk();
+char buf[128];
+sprintf (buf, "len=%.3f ispoln=%d",len,ispoln);
+Message (buf);
+}
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// Функция вызова диалога с использованием валидаторов
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+void TestValidator()
+{
+TestDialog *pDialog;
+pDialog = new TestDialog (GetWindowPtr((HWND)GetHWindow()));
+pDialog">Execute();
+delete pDialog;
+}
+
+ksPhantomShowHide  Пример использования 
+{
+#ifndef __LIBTOOL_H
+#include <libtool.h>
+#endif
+
+int type, flag=0;
+
+//функция обратной связи для выполнения цикла в Cursor
+int far __export pascal CallBackC (int com, double *x, double *y, RequestInfo *info,
+                                    void *phantom, int/* dynamic */) {
+ Phantom *valueub = (Phantom *)phantom;
+
+switch (com) {
+5168
+
+
+
+    case 1:
+    case 2:
+      type = com;
+    break;
+    case "1: //поставить в модель
+      MoveObj(rub">type1.gr, *x, *y);
+
+      ksPhantomShowHide (0);
+
+      StoreTmpGroup(rub">type1.gr); //поставить временную группу в вид
+      ClearGroup(rub">type1.gr);
+      break;
+  }
+
+//группа для фантома должна быть временная и обновляться при изменении вида 
+//отрисовки
+  if (rub">type1.gr)
+    DeleteObj(rub">type1.gr);
+  rub">type1.gr = NewGroup(1); // временная группа
+    if((flag==1 && com==1)||(flag==2 && com==2))
+    type = 3;
+//обновляется не только изображение но и меню для запроса
+    switch (type ) {
+      case 1:
+        Circle (0, 0, 20, 1);
+        info">commands =  !Квадрат !Треугольник ;
+        flag = 1;
+        break;
+      case 2:
+        LineSeg("10, 0, 10, 0, 1);
+        LineSeg(10, 0, 0, 20, 1);
+        LineSeg(0, 20,  "10, 0, 1);
+        info">commands =  !Окружность !Квадрат;
+        flag = 2;
+        break;
+      case 3:
+        LineSeg("10, 0, 10, 0, 1);
+        LineSeg(10, 0, 10, 20, 1);
+5169
+
+
+
+        LineSeg(10, 20,  "10, 20, 1);
+        LineSeg("10, 20,  "10, 0, 1);
+        info">commands =  !Окружность !Треугольник;
+        flag = 0;
+        break;
+    }
+  EndGroup();
+
+  return 1;
+}
+
+void Cursor_Example (void) {
+  type = 1;
+  int j = 1;
+  struct Phantom  rub;
+  rub.type1.xBase = 0;
+  rub.type1.yBase = 0;
+
+  rub.type1.scale = 1;
+  rub.phType        = 1;
+
+  rub.type1.ang  = 0;
+  double x, y;
+  rub.type1.gr = NewGroup(1); // временная группа
+    Circle (0, 0, 20, 1);
+  EndGroup();
+  RequestInfo  info;
+  memset(&info, 0, sizeof(info));
+  info.commands = "!Квадрат !Треугольник";
+  info.callBack = CallBackС;//указываем адрес  функции обратной связи для Cursor   ,
+Cursor(&info , &x, &y, &rub);
+
+}; /* Cursor*/
+}
+
+5170
+
+
+
+ksIsCursorOrPlacementDocument  Пример использования 
+
+{
+#ifndef __LIBTOOL_H
+#include <libtool.h>
+#endif
+
+int type, flag=0;
+
+//функция обратной связи для выполнения цикла в Cursor
+int far __export pascal CallBackC (int com, double *x, double *y, RequestInfo *info,
+                                    void *phantom, int/* dynamic */) {
+ Phantom *valueub = (Phantom *)phantom;
+
+rub">type1.ang  = 90;
+ksChangeObjectInLibRequest (&info, &rub);
+
+switch (com) {
+    case 1:
+    case 2:
+      type = com;
+    break;
+    case "1: //поставить в модель
+if (ksIsCursorOrPlacementDocument () == 1)      
+{
+      MoveObj(rub">type1.gr, *x, *y);
+      StoreTmpGroup(rub">type1.gr); //поставить временную группу в вид
+      ClearGroup(rub">type1.gr);
+}
+      break;
+  }
+
+//группа для фантома должна быть временная и обновляться при изменении вида 
+//отрисовки
+  if (rub">type1.gr)
+    DeleteObj(rub">type1.gr);
+  rub">type1.gr = NewGroup(1); // временная группа
+5171
+
+
+
+    if((flag==1 && com==1)||(flag==2 && com==2))
+    type = 3;
+//обновляется не только изображение но и меню для запроса
+    switch (type ) {
+      case 1:
+        Circle (0, 0, 20, 1);
+        info">commands =  !Квадрат !Треугольник ;
+        flag = 1;
+        break;
+      case 2:
+        LineSeg("10, 0, 10, 0, 1);
+        LineSeg(10, 0, 0, 20, 1);
+        LineSeg(0, 20,  "10, 0, 1);
+        info">commands =  !Окружность !Квадрат;
+        flag = 2;
+        break;
+      case 3:
+        LineSeg("10, 0, 10, 0, 1);
+        LineSeg(10, 0, 10, 20, 1);
+        LineSeg(10, 20,  "10, 20, 1);
+        LineSeg("10, 20,  "10, 0, 1);
+        info">commands =  !Окружность !Треугольник;
+        flag = 0;
+        break;
+    }
+  EndGroup();
+
+  return 1;
+}
+
+void Cursor_Example (void) {
+  type = 1;
+  int j = 1;
+  struct Phantom  rub;
+  rub.type1.xBase = 0;
+  rub.type1.yBase = 0;
+
+  rub.type1.scale = 1;
+5172
+
+
+
+  rub.phType        = 1;
+
+  rub.type1.ang  = 0;
+  double x, y;
+  rub.type1.gr = NewGroup(1); // временная группа
+    Circle (0, 0, 20, 1);
+  EndGroup();
+  RequestInfo  info;
+  memset(&info, 0, sizeof(info));
+  info.commands = "!Квадрат !Треугольник";
+  info.callBack = CallBackС;//указываем адрес функции обратной связи для Cursor,
+Cursor(&info , &x, &y, &rub);
+
+}; /* Cursor*/
+}
+
+Пример использования функций ввода параметров 
+void MessageEsc(void) {
+Message(Отказ от ввода);
+}
+
+void Read_Example (void) {
+int I;  long l;  double r;
+char s[80], buf[80];
+
+if (ReadInt(Ввод целого числа, 5, 0, 999, &i)) {
+sprintf(buf, Результат= %4d, i);
+Message(buf);
+}
+else MessageEsc();
+
+if (ReadLong(Ввод длинного целого , 77, 0, 999, &l)) {
+sprintf(buf, Результат= %4d, I);
+Message(buf);
+}
+else MessageEsc();
+5173
+
+
+
+if (ReadDouble(Ввод действительного числа, 5, 0, 999, &r)) {
+sprintf(buf, Результат= %5.1f, r);
+Message(buf);
+}
+else MessageEsc();
+
+if (ReadString(Ввод строки, s))
+Message(s);
+else MessageEsc();
+
+}; /* Read_Example */
+
+Пример использования функций выдачи сообщений 
+void Message_Example ( void ) {
+
+if ( YesNo( «Выполнять действие» ) 
+Message( «Пришло подтверждение» );
+else Message( «Отказ» );
+
+Pause( «Нажмите любую клавишу» );
+Error( «Сообщение об ошибке» );
+
+}; /* Message_Example */
+
+ReturnResult, StrResult, MessageBoxResult  пример использования 
+void ReturnResult _Example ( void ) {
+char s[80];
+
+LineSeg ( 0, 0, 0, 0, 1 ); /* совпадающие узлы отрезка */
+if ( ReturnResult ( ) ) {
+/* выдать сообщение в специальном окне */
+MessageBoxResult( );
+};
+
+Circle ( 10, 10, 0, 1 ); /* нулевой радиус окружности */
+if ( ReturnResult ( ) ) {
+5174
+
+
+
+StrResult( s, 80 );
+Error( s );
+}:
+
+}; /* ReturnResult */
+
+DrawBitmap, DrawSlide  пример использования 
+#ifndef __OWL_WINDOW_H
+#include <owl\window.h>
+#endif
+
+void DrawBitmap_Example ( void ) {
+
+// Пример файла ресурсов
+//
+//Описание слайда
+
+100 RCDATA {
+ SC, 0,
+ LS, 2, 1,
+ LN, 12, 59, 179, 59,
+ END_SLIDE
+}
+200 BITMAP 1.bmp
+
+extern TModule *module ;
+
+TWindow *st = new TWindow ( GetWindowPtr( ( HWND )GetHWindow( ) ), 0 );
+st">Attr.X =300;
+st">Attr.Y =30;
+st">Attr.W =170;
+st">Attr.H =160;
+
+st">Create( );  //создаем окно для отрисовки слайда
+DrawBitmap ( ( void* ) st">HWindow, 100 );
+DrawSlide ( ( void* ) st">HWindow, 200 );
+5175
+
+
+
+Message( Вывод слайда );
+delete st;
+
+}; /* DrawBitmap_Example */
+
+WriteSlide  пример использования 
+#ifndef __OWL_WINDOW_H
+#include <owl\window.h>
+#endif
+
+void WriteSlide_Example ( void ) {
+
+char name[128];
+double x, y;
+int slideID;
+
+ // ввод имени файла для записи слайда
+
+ if ( SaveFile(*.rc, name ) ){
+   if ( Cursor( Укажите точку привязки слайда,&x,&y,NULL,NULL ) ) {
+    if ( ReadInt( Введите идентификатор слайда, 100, 0, 32000, &slideID ) ) {
+     if ( !WriteSlide ( name, slideID, x, y ) )
+      Error( Группа селектирования пуста );
+     ClearGroup( 0 );
+    }
+   }
+ }
+
+}; /* DrawBitmap_Example */
+
+ksSlideBackground  пример использования 
+{
+ksSlideBackground ( 15 );
+}
+
+5176
+
+
+
+ksDrawSlideFromFile  Пример использования 
+//фрагмент из файла .rc
+
+1000 DIALOG 84, 66, 204, 133
+EXSTYLE WS_EX_DLGMODALFRAME
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "OK", IDOK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE |
+WS_TABSTOP, 8, 111, 50, 14
+ CONTROL "Cancel", IDCANCEL, "BUTTON", BS_PUSHBUTTON | WS_CHILD |
+WS_VISIBLE | WS_TABSTOP, 72, 111, 50, 14
+ CONTROL "", IDD_SHOW, "static", SS_BLACKFRAME | WS_CHILD | WS_VISIBLE |
+WS_BORDER, 7, 3, 105, 97
+}
+
+class TShowStatic;
+
+//Описание класса, обслуживающего диалог
+class TModDialog :public TDialog
+{
+public:
+ UINT IdSlide;
+TShowStatic* Show;
+TModDialog ( TWindow *ptParent );
+ UINT GetIdSlide( ) { return IdSlide; };
+};
+
+//Описание класса обслуживающего элемент вывода слайда
+class TShowStatic : public TStatic {
+public:
+ TShowStatic ( TModDialog * ptParent, int resourceId );
+protected :
+void       EvPaint( );
+5177
+
+
+
+DECLARE_RESPONSE_TABLE( TShowStatic );
+};
+
+DEFINE_RESPONSE_TABLE1( TShowStatic,TStatic )
+EV_WM_PAINT,
+END_RESPONSE_TABLE;
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""
+//
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""
+TShowStatic :: TShowStatic ( TModDialog *ptParent, int resourceId ):
+ TStatic( ptParent, resourceId ) {
+SetBkgndColor( GetSysColor( COLOR_APPWORKSPACE ) );
+}
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""
+//
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""
+void TShowStatic ::EvPaint( )
+{
+ TStatic::EvPaint( );
+ TModDialog * d = TYPESAFE_DOWNCAST( Parent, TModDialog );
+ if ( d )
+//  DrawSlide ( ( void * ) HWindow, d">GetIdSlide( ) );
+//  DrawBitmap ( ( void * ) HWindow, d">GetIdSlide( ) );
+//в файле "c:\\libtest\\1.rc" " находится отлаживаемый слайд
+  ksDrawSlideFromFile ( ( void * ) HWindow, "c:\\libtest\\1.rc" );
+
+}
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""
+//
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""
+TModDialog :: TModDialog ( TWindow *ptParent )
+5178
+
+
+
+ : TDialog( ptParent, 1000, module ){
+ IdSlide = 100;
+Show=new TShowStatic( this,IDD_SHOW );
+}
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""
+// Функция, вызывающая диалог с отрисовкой слайда или битмапа
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""
+void TestShowDialog( ) {
+TModDialog *pDialog;
+pDialog = new TModDialog( GetWindowPtr( ( HWND )GetHWindow( ) ) );
+pDialog">Execute( );
+delete pDialog;
+}
+
+//файл 1.rc
+100 RCDATA {
+ GB, 168, 158,
+ SC, 1,
+ LS, 0, 1,
+ LN, 69, 57, 69, 26,
+ LN, 69, 26, 74, 18,
+ LN, 74, 18, 101, 18,
+ LN, 101, 18, 105, 26,
+ LN, 105, 26, 105, 57,
+ LN, 74, 37, 101, 37,
+ AR1, 114, 57, 45, 74, 37, 69, 57,
+ AR1, 61, 57, 44, 105, 57, 101, 37,
+ AR1, 80, 28, 11, 69, 28, 74, 37,
+ AR1, 94, 28, 11, 101, 37, 105, 28,
+ LN, 69, 57, 69, 88,
+ LN, 69, 88, 74, 96,
+ LN, 74, 96, 101, 96,
+ LN, 101, 96, 105, 88,
+ LN, 105, 88, 105, 57,
+ LN, 74, 77, 101, 77,
+5179
+
+
+
+ AR1, 114, 57, 45, 69, 57, 74, 77,
+ AR1, 62, 57, 44, 103, 77, 105, 57,
+ AR1, 80, 86, 11, 74, 77, 69, 86,
+ AR1, 95, 86, 11, 106, 86, 100, 76,
+ SC, 0,
+ LS, 2, 1,
+ LN, 62, 57, 112, 57,
+ SC, 0,
+ TS, 0,
+ MA, 45, 112,
+ TX, "ГОСТ 15524"70\0"
+ MA, 37, 127,
+ TX, "Класс точности А\0"
+ MA, 37, 142,
+ TX, " гайки высокие\0"
+
+ END_SLIDE
+
+}
+
+ksDrawKompasGroup  пример использования 
+//текущим документом должен быть графический документ
+ if ( ksGetCurrentDocument( 1 ) ) {
+  TWindow *st = new TWindow ( GetWindowPtr( ( HWND )GetHWindow( ) ), 0 );
+  st">Attr.X =300;
+  st">Attr.Y =30;
+  st">Attr.W =170;
+  st">Attr.H =160;
+
+  st">Create( );  //создали окно, в котором хотим отрисовать группу
+  //создаем группу с изображением прямоугольника
+  reference gr = NewGroup( 1 );
+   Mtr( 20, 15, 45, 1 );
+   LineSeg( "10, 0, 10, 0, 1 );
+   LineSeg( 10, 0, 10, 20, 1 );
+   LineSeg( 10, 20, "10, 20, 1 );
+5180
+
+
+
+   LineSeg( "10, 20, "10, 0, 1 );
+   DeleteMtr( );
+  EndGroup( );
+  //отрисовываем группу в окне st
+  ksDrawKompasGroup ( ( void * )st">HWindow,       // несущее окно
+                 gr );       //группа
+  //для красоты рисуем рамочку по периметру окна
+  TClientDC dc(*st );
+  HPEN hPen = ( HPEN ) ::SelectObject( dc, ::CreatePen( PS_SOLID,2,RGB( 0,0,255 ) ) );
+  dc.MoveTo( 0, 0 );
+  dc.LineTo( 170, 0 );
+  dc.LineTo( 170, 160 );
+  dc.LineTo( 0, 160 );
+  dc.LineTo( 0, 0 );
+  ::DeleteObject( ::SelectObject( dc, hPen ) );
+
+  Message( "смотри" );
+  delete st;
+ }
+ else
+  Error ( "Графический документ не активен" );
+
+ksInitFilePreviewFunc  пример использования 
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// функция обратной связи для отображения в окне предварительного просмотра
+// файлов не документов КОМПАС
+// """
+int far __export pascal MyPreviewFunc( HWND HWindow, // дескриптор окна просмотра
+ char * fileName ){ // файл, который нужно показать в окне просмотра
+ if ( fileName ) {
+  char *c = strrchr( fileName, '.' );
+  if ( c && strcmp( c, ".cdw" ) && strcmp( c, ".frw" ) && strcmp( c, ".spw" ) && strcmp( c, ".kdw"
+) ) {
+   //если не документ КОМПАС отобразим имя файла
+   c = strrchr( fileName, '\\' );
+   if ( c ) {
+5181
+
+
+
+    TRect rect;
+    ::GetClientRect( HWindow, &rect );
+
+    TWindow *staticW = new TWindow( HWindow );
+
+    TDC *dc = new TClientDC(*staticW );
+    dc">TextOut( 40, ( rect.bottom " rect.top )*0.5"10, c1, strlen( c1 ) );
+
+    delete dc;
+    delete staticW;
+    return 1;
+   }
+  }
+ }
+ return 0;
+}
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+//
+// """
+extern "C" void far __export __pascal LibraryEntry( unsigned int com ){
+ switch ( com ) {
+  case 1: {
+   //установим адрес нашей функции просмотра
+   ksInitFilePreviewFunc( MyPreviewFunc );
+   char fileName[250];
+   //выберем файл
+   if( ( ksChoiceFile( 0,"Все файлы (*.* )|*.*|", fileName, 250, 1 ) ) != 0 )
+    Message( fileName );
+   // обнулим адрес
+   ksInitFilePreviewFunc( 0 );
+   // выберем файл
+   if( ( ksChoiceFile( 0,"Все файлы (*.* )|*.*|", fileName, 250, 1 ) ) != 0 )
+    Message( fileName );
+   break;
+  }
+ }
+}
+
+5182
+
+
+
+GetHWindow  пример использования 
+void GetHWindow_Example ( void ) {
+
+/* выдача сообщения в главном окне */
+
+MessageBox( GetHWindow( ), Текст заголовка окна,
+Текст сообщения,
+MB_ICONINFORMATION );
+
+}; /* GetHWindow_Example */
+
+ksDrawKompasDocument  пример использования 
+TWindow *st = new TWindow (GetWindowPtr( ( HWND )GetHWindow( ) ), 0 );
+ st">Attr.X =300;
+ st">Attr.Y =30;
+ st">Attr.W =170;
+ st">Attr.H =160;
+
+ st">Create( );  //создали окно, в котором хотим отрисовать слайд
+
+ ksDrawKompasDocument( ( void* ) st">HWindow,   // несущее окно
+               "d:\\0\\fg1.frw" ); // полное имя файла документа
+
+ Message( "Слайд КОМПАС" );
+ delete st;
+
+База данных с доступом через интерфейс ODBC
+ODBC " Open Database Connectivity представляет собой открытый интерфейс для подклю"
+чения к базам данных различных форматов, например, MS Excel, Access.
+Чтобы обеспечить связь с базой данных, необходимо подключить драйвер базы данных
+нужного типа, используя Администратор источников данных ODBC.
+
+База данных текстового формата
+База данных (БД) текстового формата представляет собой текстовый файл, содержа"
+щий таблицу значений. 
+5183
+
+
+
+Строки таблицы являются записями БД. В качестве разделителей значений в строке
+можно использовать пробел или , (запятую). Данные в столбцах должны иметь одинако"
+вый тип.
+В системе КОМПАС такие базы данных могут быть использованы, например, для хране"
+ния значений свойств параметризованных объектов. По умолчанию файлам БД тестово"
+го формата системы КОМПАС присваивается расширение loa.
+Синтаксис БД текстового формата.
+Файл БД содержит комментарии и таблицу значений. Комментариями являются следу"
+ющие элементы текста:
+" фрагмент, заключенный между символами /* и */.
+" строки, начинающиеся с //.
+Остальные строки образуют таблицу текстовой базы данных, например:
+/* a диаметр оси
+   b длина оси
+   c ширина проточки
+*/
+// a   b  c
+  25  55  1.5
+  30  55  2
+  45  80  2.5
+
+Пример использования функций работы с базами данных 
+//пример текстового файла 1.loa с тремя параметрами " шириной, высотой и типом ли"
+нии прямоугольника
+/*
+   10.0             100           1
+   15.0              80           2
+   20.0             120           1
+*/
+
+#ifndef __LIBTOOL_H
+#include <libtool.h>
+#endif
+
+#ifndef __LIBDB_H
+#include <libdb.h>
+#endif
+5184
+
+
+
+static void ReadFirstStatement(reference bd, reference r1, void *b) {
+// вспомогательная функция чтения записей
+
+  char buf[40];
+  int i;
+  do { // считываем все записи выборки
+    i= ReadRecord(bd, r1, b);
+    if (i) {
+      sprintf(buf, "a=%4.1f b=%4.1f t= %d", b">a, b">b, b">t);
+      Message(buf);
+    }
+  } while(i);
+  Message("конец выборки");
+} /* ReadFirstStatement */
+
+void ExampleDB (void) {
+  int i;
+  char buf[40];
+  struct {
+   double a;
+   double b;
+   int    t;
+  } b;
+
+// создать блок заголовка базы данных
+  reference bd = CreateDB ("TXT_DB");
+// связать с файлом  базы данных 1.loa
+  ConnectDB(bd, "1.loa");
+
+  // задаем отношение из двух действительных и одного целого поля
+  reference r1 = Relation(bd);
+   RDouble ("a");
+   RDouble ("b");
+   RInt    ("");
+  EndRelation();
+
+  // определяем запрос для считывания всех полей(колонок) записи
+5185
+
+
+
+  DoStatement(bd, r1, ""); // равносильно DoStatement(bd, r1, "1 2 3");
+
+  // cчитываем все записи
+  ReadFirstStatement(bd, r1, &b);
+
+  // выдать вторую запись
+  Condition(bd, r1, "Index1000 = 2");
+  ReadFirstStatement(bd, r1, &b);
+
+  // по условию выдать первую и третью запись(см. файл 1.loa)
+  Condition(bd, r1, "a=10 || b>100");
+  ReadFirstStatement(bd, r1, &b);
+
+  //задаем  отношение для считывания только второго поля записи
+  reference r2 = Relation(bd);
+    RChar("b", 20, 0);
+  EndRelation();
+
+// Освободить запрос базы данных
+FreeStatement(bd,  r1, «»);
+
+  DoStatement(bd, r2, "2");
+  do {
+    i= ReadRecord(bd, r2, buf);
+    if (i) {
+      Message(buf);
+    }
+  } while(i);
+  Message("конец выборки");
+
+  DisconnectDB(db);
+  // удаляем блок заголовка базы данных
+  DeleteDB(bd);
+}; /* ExampleDB */
+
+GetTableName, GetColumnName  пример использования 
+char buf[128],nameOBDC[128];//имя источника данных
+5186
+
+
+
+//создать объект, обслуживающий базу данных
+reference bd = CreateDB ("ODBC_DB");
+if (ConnectDB (bd, nameOBDC)) {
+if (GetTableName (bd, buf, 128, 'F')) {
+do {
+Message(buf);
+if (GetColumnName (bd, buf, buf, 128, 'F')) {
+do {
+Message(buf);
+} while (GetColumnName (bd, buf, buf, 128, 'N'));
+}
+} while (GetTableName (bd, buf, 128, 'N')) ;
+}
+}
+
+OpenTextFile, CloseTextFile, ReadStrFromTextFile пример использования 
+////////////////////////////////////////////////////////////////////////
+//пример текстового файла 1.loa
+   10.0             100           1
+   15.0              80            2
+   20.0             120           1
+
+////////////////////////////////////////////////////////////////////////
+//пример текстового файла запросов 11.txt  привязанный к файлу 1.loa
+1:TXT_DB
+2:1.loa
+3:1 2 3
+4:a=%.1f
+//////////////////////////////////////////////////////////////////////////
+//пример текстового файла  запросов 12.txt  привязанный к БД ACCECC c именем
+// test в ODBC.INI. ODBCSDK должен быть установлен на ПК
+1:ODBC_DB
+2:test
+3:select a,b,t from table1
+4:where a=%.1f
+//////////////////////////////////////////////////////////////////////////
+5187
+
+
+
+#ifndef __LIBTOOL_H
+#include <libtool.h>
+#endif
+
+#ifndef __LIBDB_H
+#include <libdb.h>
+#endif
+
+void DrawRect (void) {
+  char buf[40], s[128];
+  struct {
+   double a;
+   double b;
+
+   int t;
+  } r;
+
+  reference  f = OpenTextFile("11.txt");
+
+  if (EditMacroMode())   //режим редактирования
+    GetMacroParam(&r, sizeof(r));
+  else {  //cоздание нового макроэлемента
+    r.a = 20;
+    r.b = 10;
+  }
+  // считали тип БД  " "TXT_DB"
+  if (!ReadStrFromTextFile(f,buf,1)) {Error("Ошибка"); return; }
+  reference bd = CreateDB (buf);
+  // считали имя БД  " "1.loa"
+  if (!ReadStrFromTextFile(f,buf,2)) {Error("Ошибка"); return; }
+  ConnectDB(bd, buf);
+
+  //задаем отношение
+  reference r1 = Relation(bd);
+   RDouble ("a");
+   RDouble ("b");
+   RInt    ("");
+  EndRelation();
+5188
+
+
+
+  //считывать все колонки "1 2 3"
+  if (!ReadStrFromTextFile(f,buf,3)) {Error("Ошибка"); return; }
+  DoStatement(bd, r1, buf);
+  ReadDouble("задайте ширину",r.a,0,100, &r.a);
+  //считать условие   "a=%.1f"
+  if (!ReadStrFromTextFile(f,buf,4)) {Error("Ошибка"); return; }
+  sprintf (s, buf,r.a); // условие например a=10.0
+  Condition(bd, r1, s);
+  if (ReadRecord(bd, r1, &r))  {
+    reference m = Macro();
+      LineSeg(0, 0, r.a, 0, r.t);
+      LineSeg(r.a, 0, r.a, r.b, r.t);
+
+      LineSeg(r.a, r.b, 0, r.b, r.t);
+      LineSeg(0, r.b, 0, 0, r.t);
+    EndObj();
+   //записать параметры в макроэлемент
+    SetMacroParam( m, &r, sizeof(r), NULL, NULL, "1);
+  }
+  else
+    Error("прямоугольник с такими параметрами не найден в БД");
+  DeleteDB(bd);
+  CloseTextFile(f);
+
+}; /* OpenTextFile */
+
+Пример использования функций работы с динамическими массивами 
+struct User_Data// определение структуры пользовательского массива
+{
+int I;
+char *c;
+float f;
+};
+
+//функция удаляет элемент User_Data пользовательского массива
+void WINAPI DelUserFunc (void *val)
+5189
+
+
+
+{
+User_Data  *tmp = (User_Data *)val;
+Message(tmp">c);
+delete [] tmp">c;
+delete tmp;
+}
+//функция добавляет элемент User_Data в пользовательский массив
+int CreateUserItem (reference arr, int i, char *c, float f)
+{
+User_Data* tmp = new User_Data;
+tmp">i = I;
+tmp">c = new char [strlen(c) +1];
+strcpy (tmp">c, c);
+tmp">f = f;
+return  AddArrayItem (arr, "1, tmp, 0);
+}
+
+//функция выдает содержимое элемента User_Data
+void ShowUserItem (User_Data & tmp)
+{
+char buf[128];
+sprintf (buf, " i=%d f=%f\n c=%s ", tmp.i, tmp.f, tmp.c);
+Message (buf);
+}
+
+void Array_Example (void)
+{
+User_Data *tmp;
+
+//создадим пользовательский массив неопределенной длины
+reference userArr = CreateArray (USER_ARR, DelUserFunc);
+
+if (!CreateUserItem (userArr, 1, "январь", 31.)) 

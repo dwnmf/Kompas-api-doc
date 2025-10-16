@@ -1,0 +1,2532 @@
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+x = iMathPointParam.x Получить свойство (* )
+iMathPointParam.x = x Установить свойство (* )
+x = iMathPointParam.GetX() Получить свойство (**)
+iMathPointParam.SetX( x ) Установить свойство (**)
+
+ksMathPointParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры точки.
+3791
+
+
+
+Интерфейсы точек касания и сопряжения
+
+Точки касания (Интерфейс ksTAN)
+Справка системы КОМПАС..
+KOMPAS.chm::/1396_vspomogatelnye.htm#TANGENT2_LINE
+Интерфейс массива координат точек касания (структур TAN).
+Аналог данных параметров при использовании API экспортных функций " TAN " структу"
+ра параметров прямой, касательной к двум кривым.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruc.
+Смотрите также: KompasObject
+
+ksTAN  методы
+
+GetX1  Получить координату х1 первой точки касания по 
+заданному индексу в массиве
+Интерфейс...
+Синтаксис Automation:
+double GetX1 (long index);
+Входной параметр:
+
+index " номер индекса в массиве точек (допустимое значение от 0 до 
+3).
+
+Возвращаемое значение:
+
+" координата х1 первой точки касания.
+
+GetX2  Получить координату x2 второй точки касания по 
+заданному индексу в массиве
+Интерфейс...
+Синтаксис Automation:
+double GetX2 (long index);
+Входной параметр:
+
+index " номер индекса в массиве точек (допустимое значе"
+ние от 0 до 3).
+
+Возвращаемое значение:
+3792
+
+
+
+" координата x2 первой точки касания.
+
+GetY1  Получить координату y1 первой точки касания по 
+заданному индексу в массиве
+Интерфейс...
+Синтаксис Automation:
+double GetY1 (long index);
+Входной параметр:
+
+index " номер индекса в массиве точек (допустимое значение от 0 до 3).
+
+Возвращаемое значение:
+
+" координата y1 первой точки касания.
+
+GetY2  Получить координату y2 второй точки касания по 
+заданному индексу в массиве
+Интерфейс...
+Синтаксис Automation:
+double GetY2 (long index);
+Входной параметр:
+
+index " номер индекса в массиве точек (допустимое значе"
+ние от 0 до 3).
+
+Возвращаемое значение:
+
+" координата y2 первой точки касания.
+
+Точки сопряжения (Интерфейс ksCON)
+Справка системы КОМПАС...
+KOMPAS.chm::/1432_Okruznosti.htm#okr_kasateln_k_dvum_krivum
+Интерфейс массива координат точек сопряжения.
+Аналог данных параметров при использовании API экспортных функций " CON " структу"
+ра параметров сопряжения двух кривых окружностью.
+Примечание:
+3793
+
+
+
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksCON  методы
+
+GetCount  Получить количество найденных сопряжений
+Интерфейс...
+Синтаксис Automation:
+long GetCount();
+Возвращаемое значение:
+
+" количество найденных сопряжений.
+
+GetXc  Получить координату х центра сопрягающей 
+окружности
+Интерфейс...
+Синтаксис Automation:
+double GetXc (long index);
+Входной параметр:
+
+index " номер индекса сопрягающей окружноcти в массиве
+(допустимое значение от 0 до 7).
+
+Возвращаемое значение:
+
+" координата х центра сопрягающей окружности.
+
+GetX1  Получить координату х первой точки сопряжения
+Интерфейс...
+Синтаксис Automation:
+double GetX1 (long index);
+Входной параметр:
+
+index " номер индекса сопрягающей окружноcти в массиве
+(допустимое значение от 0 до 7).
+
+Возвращаемое значение:
+
+" координата x первой точки сопряжения.
+3794
+
+
+
+GetX2  Получить координату х второй точки сопряжения
+Интерфейс...
+Синтаксис Automation:
+double GetX2 (long index);
+Входной параметр:
+
+index " номер индекса сопрягающей окружноcти в массиве
+(допустимое значение от 0 до 7).
+
+Возвращаемое значение:
+
+" координата x второй точки сопряжения.
+
+GetYc  Получить координату y центра сопрягающей 
+окружности
+Интерфейс...
+Синтаксис Automation:
+double GetYc (long index);
+Входной параметр:
+
+index " номер индекса сопрягающей окружноcти в массиве
+(допустимое значение от 0 до 7).
+
+Возвращаемое значение:
+
+" координата y центра сопрягающей окружности.
+
+GetY1  Получить координату y первой точки сопряжения
+Интерфейс...
+Синтаксис Automation:
+double GetY1 (long index);
+Входной параметр:
+
+index " номер индекса сопрягающей окружноcти в массиве
+(допустимое значение от 0 до 7).
+
+Возвращаемое значение:
+3795
+
+
+
+" координата y первой точки сопряжения.
+
+GetY2  Получить координату y второй точки сопряжения
+Интерфейс...
+Синтаксис Automation:
+double GetY2 (long index);
+Входной параметр:
+
+index " номер индекса сопрягающей окружноcти в массиве
+(допустимое значение от 0 до 7).
+
+Возвращаемое значение:
+
+" координата y второй точки сопряжения.
+
+Точка (Интерфейс ksPointParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1391_Postroenie_tochek.htm#simple_point
+Интерфейс параметров точки.
+Аналог данных параметров при использовании API экспортных функций " PointParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject.
+
+ksPointParam  свойства
+
+style  Стиль отрисовки точки
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iPointParam.style Получить свойство (* )
+iPointParam.style = style Установить свойство (* )
+style = iPointParam.GetStyle() Получить свойство (**)
+iPointParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили точек..
+3796
+
+
+
+x, y  Координаты точки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+x = iPointParam.x Получить свойство (* )
+iPointParam.x = x Установить свойство (* )
+x = iPointParam.GetX() Получить свойство (**)
+iPointParam.SetX( x ) Установить свойство (**)
+
+ksPointParam  методы
+
+IniIt  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры точки.
+
+Вспомогательная прямая (Интерфейс ksLineParam)
+Интерфейс параметров вспомогательной прямой.
+Аналог данных параметров при использовании API экспортных функций " LineParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksLineParam  свойства
+
+angle  Угол наклона прямой относительно оси X
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+angle = iLineParam.angle Получить свойство (* )
+iLineParam.angle = angle Установить свойство (* )
+angle = iLineParam.GetAngle() Получить свойство (**)
+3797
+
+
+
+iLineParam.SetAngle( angle ) Установить свойство (**)
+
+x, y  Координаты точки на прямой
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+x = iLineParam.x Получить свойство (* )
+iLineParam.x = x Установить свойство (* )
+x = iLineParam.GetX() Получить свойство (**)
+iLineParam.SetX( x ) Установить свойство (**)
+
+ksLineParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE 
+
+Примечание:
+Метод обнуляет все параметры вспомогательной линии.
+
+Окружность (Интерфейс ksCircleParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1432_Okruznosti.htm#okr_po_centru_i_tochke
+Интерфейс параметров окружности.
+Аналог данных параметров при использовании API экспортных функций " CircleParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также; KompasObject
+
+ksCircleParam  свойства
+
+rad  Радиус окружности
+Интерфейс...
+3798
+
+
+
+Тип данных:double.
+Синтаксис Automation:
+
+rad = iCircleParam.rad Получить свойство (* )
+iCircleParam.rad = rad Установить свойство (* )
+rad = iCircleParam.GetRadius() Получить свойство (**)
+iCircleParam.SetRadius( rad ) Установить свойство (**)
+
+style  Стиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iCircleParam.style Получить свойство (* )
+iCircleParam.style = style Установить свойство (* )
+style = iCircleParam.GetStyle() Получить свойство (**)
+iCircleParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+xc, yc  Координаты центра окружности
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+xc = iCircleParam.xc Получить свойство (* )
+iCircleParam.xc = xc Установить свойство (* )
+xc = iCircleParam.GetXc() Получить свойство (**)
+iCircleParam.SetXc( xc ) Установить свойство (**)
+
+ksCircleParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры отрезка.
+3799
+
+
+
+Эллипс (Интерфейс ksEllipseParam)
+Интерфейс параметров эллипса.
+Аналог интерфейса при использовании API экспортных функций " структура параметров
+EllipseParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksEllipseParam  свойства
+
+a, b  Длина полуосей эллипса
+Интерфейс..
+Тип данных:double.
+Синтаксис Automation:
+
+a = iEllipseParam.a Получить свойство (* )
+iEllipseParam.a = a Установить свойство (* )
+a = iEllipseParam.GetA() Получить свойство (**)
+iEllipseParam.SetA( a ) Установить свойство (**)
+
+angle  Угол наклона оси эллипса a к оси X
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+angle = iEllipseParam.angle Получить свойство (* )
+iEllipseParam.angle = angle Установить свойство (* )
+angle = iEllipseParam.GetAngle() Получить свойство (**)
+iEllipseParam.SetAngle( angle ) Установить свойство (**)
+
+style  Стиль линии
+Интерфейс... 
+Тип данных:long.
+Синтаксис Automation:
+
+style = iEllipseParam.style Получить свойство (* )
+iEllipseParam.style = style Установить свойство (* )
+style = iEllipseParam.GetStyle() Получить свойство (**)
+iEllipseParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+3800
+
+
+
+xc, yc  Координаты центра эллипса
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+xc = iEllipseParam.xc Получить свойство (* )
+iEllipseParam.xc = xc Установить свойство (* )
+xc = iEllipseParam.GetXc() Получить свойство (**)
+iEllipseParam.SetXc( xc ) Установить свойство (**)
+
+ksEllipseParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры эллипса.
+
+Дуга эллипса (Интерфейс ksEllipseArcParam)
+Интерфейс параметров дуги эллипса.
+Аналог данных параметров при использовании API экспортных функций "
+EllipseArcParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksEllipseArcParam  свойства
+
+a, b  Длины полуосей эллипса
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+3801
+
+
+
+a = iEllipseArcParam.a Получить свойство (* )
+iEllipseArcParam.a = a Установить свойство (* )
+a = iEllipseArcParam.GetA() Получить свойство (**)
+iEllipseArcParam.SetA( a ) Установить свойство (**)
+
+angle  Угол наклона дуги эллипса (оси a) к оси X
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+angle = iEllipseArcParam.angle Получить свойство (* )
+iEllipseArcParam.angle = angle Установить свойство (* )
+angle = iEllipseArcParam.GetAngle( ) Получить свойство (**)
+iEllipseArcParam.SetAngle( angle ) Установить свойство (**)
+
+angleFirst  Начальный угол дуги относительно оси a
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+angleFirst = iEllipseArcParam.angleFirst Получить свойство (* )
+iEllipseArcParam.angleFirst = angleFirst Установить свойство (* )
+angleFirst = iEllipseArcParam.GetAngleFirst( ) Получить свойство (**)
+iEllipseArcParam.SetAngleFirst( angleFirst ) Установить свойство (**)
+
+angleSecond  Конечный угол дуги относительно оси a
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+angleSecond = iEllipseArcParam.angleSecond Получить свойство (* )
+iEllipseArcParam.angleSecond = angleSecond Установить свойство (* )
+angleSecond = iEllipseArcParam.GetAngleSecond( ) Получить свойство (**)
+iEllipseArcParam.SetAngleSecond( angleSecond ) Установить свойство (**)
+
+direction  Направление построения дуги эллипса
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+ 1 " против часовой стрелки,
+3802
+
+
+
+"1 " по часовой стрелке.
+Синтаксис Automation:
+
+direction = iEllipseArcParam.direction Получить свойство (* )
+iEllipseArcParam.direction = direction Установить свойство (* )
+direction = iEllipseArcParam.GetDirection( ) Получить свойство (**)
+iEllipseArcParam.SetDirection( direction ) Установить свойство (**)
+
+style  Стиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iEllipseArcParam.style Получить свойство (* )
+iEllipseArcParam.style = style Установить свойство (* )
+style = iEllipseArcParam.GetStyle( ) Получить свойство (**)
+iEllipseArcParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+xc, yc  Координаты центра дуги эллипса
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+xc = iEllipseArcParam.xc Получить свойство (* )
+iEllipseArcParam.xc = xc Установить свойство (* )
+xc = iEllipseArcParam.GetXc( ) Получить свойство (**)
+iEllipseArcParam.SetXc( xc ) Установить свойство (**)
+
+ksEllipseArcParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init( );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры дуги эллипса
+3803
+
+
+
+ Дуга эллипса параметрическая (Интерфейс 
+ksEllipseArcParam1)
+Интерфейс параметров для параметрического построения дуги эллипса.
+Аналог данных параметров при использовании API экспортных функций "
+EllipseArcParam1.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksEllipseArcParam1  свойства
+
+a  Полуось а дуги эллипса
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+a = iEllipseArcParam1.a Получить свойство (* )
+iEllipseArcParam1.a = a Установить свойство (* )
+a = iEllipseArcParam1.GetA() Получить свойство (**)
+iEllipseArcParam1.SetA( a ) Установить свойство (**)
+
+angle  Угол наклона дуги эллипса (оси a) к оси X
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+angle = iEllipseArcParam1.angle Получить свойство (* )
+iEllipseArcParam1.angle = angle Установить свойство (* )
+angle = iEllipseArcParam1.GetAngle() Получить свойство (**)
+iEllipseArcParam1.SetAngle( angle ) Установить свойство (**)
+
+b  Полуось b дуги эллипса
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+b = iEllipseArcParam1.b Получить свойство (* )
+iEllipseArcParam1.b = b Установить свойство (* )
+b = iEllipseArcParam1.GetB() Получить свойство (**)
+iEllipseArcParam1.SetB( b ) Установить свойство (**)
+3804
+
+
+
+direction  Направление построения
+Интерфейс...
+Тип данных:double.
+Значения свойства:
+
+ 1 " против часовой стрелки,
+"1 " по часовой стрелке.
+
+Синтаксис Automation:
+
+direction = iEllipseArcParam1.direction Получить свойство (* )
+iEllipseArcParam1.direction = direction Установить свойство (* )
+direction = iEllipseArcParam1.GetDirection() Получить свойство (**)
+iEllipseArcParam1.SetDirection( direction ) Установить свойство (**)
+
+parFirst  Начальное значение параметра
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+parFirst = iEllipseArcParam1.parFirst Получить свойство (* )
+iEllipseArcParam1.parFirst = parFirst Установить свойство (* )
+parFirst = iEllipseArcParam1.GetParFirst() Получить свойство (**)
+iEllipseArcParam1.SetParFirst( parFirst ) Установить свойство (**)
+
+parSecond  Конечное значение параметра
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+parSecond = iEllipseArcParam1.parSecond Получить свойство (* )
+iEllipseArcParam1.parSecond = parSecond Установить свойство (* )
+parSecond = iEllipseArcParam1.GetParSecond() Получить свойство (**)
+iEllipseArcParam1.SetParSecond( parSecond ) Установить свойство (**)
+
+style  Стиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+3805
+
+
+
+style = iEllipseArcParam1.style Получить свойство (* )
+iEllipseArcParam1.style = style Установить свойство (* )
+style = iEllipseArcParam1.GetStyle() Получить свойство (**)
+iEllipseArcParam1.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+xc, yc  Координаты центра дуги эллипса
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+xc = iEllipseArcParam1.xc Получить свойство (* )
+iEllipseArcParam1.xc = xc Установить свойство (* )
+xc = iEllipseArcParam1.GetXc() Получить свойство (**)
+iEllipseArcParam1.SetXc( xc ) Установить свойство (**)
+
+ksEllipseArcParam1  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры для параметрического построения дуги эллипса.
+
+Прямоугольники
+
+Прямоугольник по двум вершинам (Интерфейс 
+ksRectParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/Prjamougolqnik.htm#rectanguler
+Интерфейс параметров прямоугольника по диагональным точкам.
+Аналог данных параметров при использовании API экспортных функций " RectParam.
+Примечание:
+3806
+
+
+
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject.
+
+ksRectParam  методы
+
+GetpBot  Получить параметры левой нижней точки 
+прямоугольника
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpBot();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров математи"
+ческой точки ksMathPointParam.
+
+GetpTop  Получить параметры правой верхней точки 
+прямоугольника
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpTop();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров математи"
+ческой точки ksMathPointParam
+
+SetpBot  Установить параметры левой нижней точки 
+прямоугольника
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpBot(LPDISPATCH pBot);
+Входной параметр:
+
+pBot " указатель на интерфейс параметров мате"
+матической точки ksMathPointParam.
+
+Возвращаемое значение:
+3807
+
+
+
+TRUE " в случае удачного завершения.
+
+SetpTop  Установить параметры правой верхней точки 
+прямоугольника
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpTop (LPDISPATCH pTop);
+Входной параметр:
+
+pTop " указатель на интерфейс параметров мате"
+матической точки ksMathPointParam.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Прямоугольник по центру (Интерфейс 
+ksRectangleParam) 
+Справка системы КОМПАС: команда Прямоугольник по центру и вершине
+KOMPAS.chm::/Prjamougolqnik.htm#CENTER_VERTEX
+Интерфейс параметров прямоугольника.
+Аналог данных параметров при использовании API экспортных функций "
+RectangleParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksRectangleParam  свойства
+
+ang  Угол вектора направления от первой точки ко второй 
+(угол наклона стороны прямоугольника, выходящей из 
+базовой точки)
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+ang = iRectangleParam.ang Получить свойство (* )
+3808
+
+
+
+iRectangleParam.ang = ang Установить свойство (* )
+ang = iRectangleParam.GetAng() Получить свойство (**)
+iRectangleParam.SetAng(ang) Установить свойство (**)
+
+height  Высота прямоугольника
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+height = iRectangleParam.height Получить свойство (* )
+iRectangleParam.height = height Установить свойство (* )
+height = iRectangleParam.GetHeight() Получить свойство (**)
+iRectangleParam.SetHeight(height) Установить свойство (**)
+
+style  Стиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iRectangleParam.style Получить свойство (* )
+iRectangleParam.style = style Установить свойство (* )
+style = iRectangleParam.GetStyle() Получить свойство (**)
+iRectangleParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+width  Ширина прямоугольника (длина стороны, 
+характеризующейся углом наклона ang)
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+width = iRectangleParam.width Получить свойство (* )
+iRectangleParam.width = width Установить свойство (* )
+width = iRectangleParam.GetWidth() Получить свойство (**)
+iRectangleParam.SetWidth( width ) Установить свойство (**)
+
+x, y  Координаты базовой точки прямоугольника  одной из 
+его вершин
+Интерфейс...
+Тип данных:double.
+3809
+
+
+
+Синтаксис Automation:
+
+x = iRectangleParam.x Получить свойство (* )
+iRectangleParam.x = x Установить свойство (* )
+x = iRectangleParam.GetX() Получить свойство (**)
+iRectangleParam.SetX( x ) Установить свойство (**)
+
+ksRectangleParam  методы
+
+GetPCorner  Получить указатель на интерфейс 
+динамического массива параметров углов прямоугольника 
+ksDynamicArray типа CORNER_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPCorner();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа CORNER_ARR.
+
+Смотрите также: ksCornerParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE 
+
+Примечание:
+Метод обнуляет все параметры прямоугольника.
+
+SetPCorner  Установить указатель на интерфейс 
+динамического массива параметров углов прямоугольника 
+ksDynamicArray типа CORNER_ARR
+Интерфейс...
+Синтаксис Automation:
+3810
+
+
+
+BOOL SetPCorner (LPDISPATCH pCorner);
+Входной параметр:
+
+pCorner " указатель на интерфейс динамического массива 
+ksDynamicArray типа CORNER_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Смотрите также: ksCornerParam
+
+Правильный многоугольник (Интерфейс 
+ksRegularPolygonParam
+Справка системы КОМПАС...
+KOMPAS.chm::/Mnogougolqnik.htm
+Интерфейс параметров правильного многоугольника.
+Аналог данных параметров при использовании API экспортных функций "
+RegularPolygonParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+RegularPolygonParam  свойства
+
+ang  Угол радиусвектора, направленного от центра к 
+первой вершине
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+ang = iRegularPolygonParam.ang Получить свойство (* )
+iRegularPolygonParam.ang = ang Установить свойство (* )
+ang = iRegularPolygonParam.GetAng() Получить свойство (**)
+iRegularPolygonParam.SetAng( ang ) Установить свойство (**)
+
+count  Количество вершин многоугольника
+Интерфейс...
+3811
+
+
+
+Тип данных:long.
+Синтаксис Automation:
+
+count = iRegularPolygonParam.count Получить свойство (* )
+iRegularPolygonParam.count = count Установить свойство (* )
+count = iRegularPolygonParam.GetCount() Получить свойство (**)
+iRegularPolygonParam.SetCount( count ) Установить свойство (**)
+
+describe  Признак описанного или вписанного 
+многоугольника
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+FALSE " вписанный многоугольник,
+TRUE " описанный многоугольник.
+
+Синтаксис Automation:
+
+describe = iRegularPolygonParam.describe Получить свойство (* )
+iRegularPolygonParam.describe = describe Установить свойство (* )
+describe = iRegularPolygonParam.GetDescribe() Получить свойство (**)
+iRegularPolygonParam.SetDescribe( describe ) Установить свойство (**)
+
+radius  Радиус вписанной или описанной окружности
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+radius = iRegularPolygonParam.radius Получить свойство (* )
+iRegularPolygonParam.radius = radius Установить свойство (* )
+radius = iRegularPolygonParam.GetRadius() Получить свойство (**)
+iRegularPolygonParam.SetRadius( radius ) Установить свойство (**)
+
+style  Cтиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iRegularPolygonParam.style Получить свойство (* )
+iRegularPolygonParam.style = style Установить свойство (* )
+3812
+
+
+
+style = iRegularPolygonParam.GetStyle() Получить свойство (**)
+iRegularPolygonParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+xc, yc  Координаты центра вписанной или описанной 
+окружности
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+xc = iRegularPolygonParam.xc Получить свойство (* )
+iRegularPolygonParam.xc = xc Установить свойство (* )
+xc = iRegularPolygonParam.GetXc() Получить свойство (**)
+iRegularPolygonParam.SetXc( xc ) Установить свойство (**)
+
+RegularPolygonParam  методы
+
+GetPCorner  Получить указатель на интерфейс 
+динамического массива параметров углов прямоугольника 
+ksDynamicArray типа CORNER_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPCorner();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа CORNER_ARR.
+
+Смотрите также: ksCornerParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE 
+
+Примечания:
+3813
+
+
+
+1. Метод обнуляет все параметры правильного многоугольника.
+2. Динамические массивы не создаются.
+
+SetPCorner  Установить указатель на интерфейс 
+динамического массива параметров углов прямоугольника 
+ksDynamicArray типа CORNER_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPCorner (LPDISPATCH pCorner);
+Входной параметр:
+
+pCorner " указатель на интерфейс динамического массива 
+ksDynamicArray типа CORNER_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Смотрите также: ksCornerParam
+
+Скругление/усечение углов прямоугольников /
+многоугольников (Интерфейс ksCornerParam)
+Справка системы КОМПАС: фаска
+KOMPAS.chm::/172_22_1_Faska.htm
+
+Справка системы КОМПАС: скругление
+KOMPAS.chm::/173_22_3_Skruglenie.htm
+Интерфейс параметров скругленных (или усеченных) углов для прямоугольни
+ков и правильных многоугольников.
+Аналог данных параметров при использовании API экспортных функций " CornerParam.
+Примечание:
+Интерфейс используется для задания скруглений и фасок на определенных углах пра"
+вильного многоугольника ksRegularPolygonParam и прямоугольника ksRectangleParam.
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+3814
+
+
+
+ksCornerParam  свойства
+
+fillet  Признак фаски или скругления
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+TRUE  " скругление,
+FALSE " фаска.
+
+Синтаксис Automation:
+
+fillet = iCornerParam.fillet Получить свойство (* )
+iCornerParam.fillet = fillet Установить свойство (* )
+fillet = iCornerParam.GetFillet() Получить свойство (**)
+iCornerParam.SetFillet( fillet ) Установить oсвойство (**)
+
+index  Индекс угла (0, 1, 2,...)
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+index = iCornerParam.index Получить свойство (* )
+iCornerParam.index = index Установить свойство (* )
+index = iCornerParam.GetIndex() Получить свойство (**)
+iCornerParam.SetIndex( index ) Установить свойство (**)
+
+l1  Длина фаски первого сегмента или радиус скругления
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+l1 = iCornerParam.l1 Получить свойство (* )
+iCornerParam.l1 = l1 Установить свойство (* )
+l1 = iCornerParam.GetL1() Получить свойство (**)
+iCornerParam.SetL1( l1 ) Установить свойство (**)
+
+l2l  Длина фаски второго сегмента
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+3815
+
+
+
+l2 = iCornerParam.l2 Получить свойство (* )
+iCornerParam.l2 = l2 Установить свойство (* )
+l2 = iCornerParam.GetL2() Получить свойство (**)
+iCornerParam.SetL2( l2 ) Установить свойство (**)
+
+ksCornerParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры углов для прямоугольников и многоугольников.
+
+Ломаная линия (Интерфейс ksPolylineParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/spline_postroenie.htm#POLYLINE
+Интерфейс параметров ломаной линии.
+Аналог данных параметров при использовании API экспортных функций "
+PolylineParamEx.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksPolylineParam  свойства
+
+closed  Признак замкнутости ломаной
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+TRUE " ломаная замкнута,
+FALSE " ломаная разомкнута.
+
+Синтаксис Automation:
+3816
+
+
+
+closed = iPolylineParam.closed Получить свойство (* )
+iPolylineParam.closed = closed Установить свойство (* )
+closed = iPolylineParam.GetClosed() Получить свойство (**)
+iPolylineParam.SetClosed( closed ) Установить свойство (**)
+
+style  Стиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iPolylineParam.style Получить свойство (* )
+iPolylineParam.style = style Установить свойство (* )
+style = iPolylineParam.GetStyle() Получить свойство (**)
+iPolylineParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+ksPolylineParam  методы
+
+GetpMathPoint  Получить указатель на динамический 
+массив математических точек ksDynamicArray типа 
+POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpMathPoint();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа POINT_ARR.
+
+Смотрите также: ksMathPointParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+3817
+
+
+
+1. Метод обнуляет все параметры ломаной линии.
+2. Создается динамический массив pMathPoint типа POINT_ARR.
+
+SetpMathPoint Установить указатель на динамический 
+массив математических точек ksDynamicArray типа 
+POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpMathPoint (LPDISPATCH pMathPoint);
+Входной параметр:
+
+pMathPoint " указатель на интерфейс динамического массива 
+ksDynamicArray типа POINT_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также: ksMathPointParam
+
+NURBS 
+
+Точка NURBS (Интерфейс ksNurbsPointParam)
+Интерфейс параметров точки кривой NURBS.
+Аналог данных параметров при использовании API экспортных функций "
+NurbsPointParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksNurbsPointParam  свойства
+
+weight  Вес точки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+weight = iNurbsPointParam.weight Получить свойство (* )
+iNurbsPointParam.weight = weight Установить свойство (* )
+3818
+
+
+
+weight = iNurbsPointParam.GetWeight() Получить свойство (**)
+iNurbsPointParam.SetWeight( weight ) Установить свойство (**)
+
+Синтаксис Automation:
+Значение свойства должно быть больше нуля.
+
+x, y  Координаты базовой точки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+x = iNurbsPointParam.x Получить свойство (* )
+iNurbsPointParam.x = x Установить свойство (* )
+x = iNurbsPointParam.GetX() Получить свойство (**)
+iNurbsPointParam.SetX( x ) Установить свойство (**)
+
+ksNurbsPointParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры узла для кривой NURBS.
+
+Кривая NURBS (Интерфейс ksNurbsParam)
+Интерфейс параметров кривой NURBS.
+Аналог данных параметров при использовании API экспортных функций " NurbsParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksNurbsParam  свойства
+
+close  Признак замыкания сплайна
+Интерфейс...
+3819
+
+
+
+Тип данных:BOOL.
+Значения свойства:
+
+FALSE " незамкнутый,
+TRUE " замкнутый.
+
+Синтаксис Automation:
+
+close = iNurbsParam.close Получить свойство (* )
+iNurbsParam.close = close Установить свойство (* )
+close = iNurbsParam.GetClose() Получить свойство (**)
+iNurbsParam.SetClose( close ) Установить свойство (**)
+
+degree  Порядок NURBS (степень полинома + 1), от 3 до 10
+Интерфейс...
+Тип данных:short.
+Синтаксис Automation:
+
+degree = iNurbsParam.degree Получить свойство (* )
+iNurbsParam.degree = degree Установить свойство (* )
+degree = iNurbsParam.GetDegree() Получить свойство (**)
+iNurbsParam.SetDegree( degree ) Установить свойство (**)
+
+periodic  Признак периодичности сплайна
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+FALSE " непериодический сплайн,
+TRUE " периодический сплайн.
+
+Синтаксис Automation:
+
+periodic = iNurbsParam.periodic Получить свойство (* )
+periodic = iNurbsParam.GetPeriodic() Получить свойство (**)
+
+Примечания:
+
+1. Свойство используется только для функции ksGetObjParam.
+2. Свойство используется только для чтения.
+3820
+
+
+
+style  Стиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iNurbsParam.style Получить свойство (* )
+iNurbsParam.style = style Установить свойство (* )
+style = iNurbsParam.GetStyle() Получить свойство (**)
+iNurbsParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+ksNurbsParam  методы
+
+GetPKnot  Получить динамический массив узлов сплайна 
+ksDynamicArray типа DOUBLE_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPKnot();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray узлов сплайна типа
+DOUBLE_ARR.
+
+Примечания:
+Если для описания NURBS выбран вариант ALLPARAM или SHEET_ALLPARAM, то способ
+заполнения массива точек определяется значением параметра Close:
+
+▼ Если Close=0 (NURBS замкнут) " параметры с разжатым узловым вектором,
+▼ Если Close=1 (NURBS разомкнут) " параметры с зажатым узловым вектором.
+
+Если для описания NURBS выбран вариант NURBS_CLAMPED_PARAM или
+NURBS_CLAMPED_SHEETPARAM, то, вне зависимости от значения параметра Close, воз"
+вращаются параметры с зажатым узловым вектором.
+
+GetPPoint  Получить динамический массив точек сплайна 
+типа NURBS_POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPPoint();
+3821
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray точек сплайна типа
+NURBS_POINT_ARR.
+
+Примечания:
+Если для описания NURBS выбран вариант ALLPARAM или SHEET_ALLPARAM, то способ
+заполнения массива точек определяется значением параметра Close:
+
+▼ Если Close=0 (NURBS замкнут) " параметры с разжатым узловым вектором,
+▼ Если Close=1 (NURBS разомкнут) " параметры с зажатым узловым вектором.
+
+Если для описания NURBS выбран вариант NURBS_CLAMPED_PARAM или
+NURBS_CLAMPED_SHEETPARAM, то, вне зависимости от значения параметра Close, воз"
+вращаются параметры с зажатым узловым вектором.
+Смотрите также: ksNurbsPointParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Метод обнуляет все параметры NURBS.
+2. Динамические массивы не создаются.
+
+SetPKnot  Установить динамический массив узлов сплайна 
+ksDynamicArray типа DOUBLE_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPKnot (LPDISPATCH pKnot);
+Входной параметр:
+
+pKnot " указатель на интерфейс динамического масси"
+ва ksDynamicArray типа DOUBLE_ARR.
+
+Возвращаемое значение:
+3822
+
+
+
+TRUE " в случае удачного завершения.
+
+SetPPoint  Установить динамический массив точек сплайна 
+ksDynamicArray типа NURBS_POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPPoint (LPDISPATCH pPoint);
+Входной параметр:
+
+pPoint " указатель на интерфейс динамического массива 
+ksDynamicArray точек сплайна типа NURBS_POINT_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также: ksNurbsPointParam
+
+Кривая Безье
+
+Узел кривой Безье (Интерфейс ksBezierPointParam)
+Интерфейс параметров узла для кривой Безье.
+Аналог данных параметров при использовании API экспортных функций "
+BezierPointParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject 
+
+ksBezierPointParam  свойства
+
+ang  Угол наклона касательной к кривой в базовой точке
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+ang = iBezierPointParam.ang Получить свойство (* )
+iBezierPointParam.ang = ang Установить свойство (* )
+ang = iBezierPointParam.GetAng() Получить свойство (**)
+3823
+
+
+
+iBezierPointParam.SetAng( ang ) Установить свойство (**)
+
+left  Расстояние от базовой точки до левой точки узла
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+left = iBezierPointParam.left Получить свойство (* )
+iBezierPointParam.left = left Установить свойство (* )
+left = iBezierPointParam.GetLeft() Получить свойство (**)
+iBezierPointParam.SetLeft( left ) Установить свойство (**)
+
+right  Расстояние от базовой точки до правой точки узла
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+right = iBezierPointParam.right Получить свойство (* )
+iBezierPointParam.right = right Установить свойство (* )
+right = iBezierPointParam.GetRight() Получить свойство (**)
+iBezierPointParam.SetRight( right ) Установить свойство (**)
+
+x, y  Координаты базовой точки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+x = iBezierPointParam.x Получить свойство (* )
+iBezierPointParam.x = x Установить свойство (* )
+x = iBezierPointParam.GetX() Получить свойство (**)
+iBezierPointParam.SetX( x ) Установить свойство (**)
+
+ksBezierPointParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+3824
+
+
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры узла для кривой Безье.
+
+Кривая Безье (Интерфейс ksBezierParam)
+Интерфейс параметров кривой Безье.
+Аналог данных параметров при использовании API экспортных функций " BezierParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksBezierParam  свойства
+
+closed  Признак замыкания кривой
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " кривая не замкнута,
+1 " кривая замкнута.
+
+Синтаксис Automation:
+
+closed = iBezierParam.closed Получить свойство (* )
+iBezierParam.closed = closed Установить свойство (* )
+closed = iBezierParam.GetClosed() Получить свойство (**)
+iBezierParam.SetClosed( closed ) Установить свойство (**)
+
+style  Стиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iBezierParam.style Получить свойство (* )
+iBezierParam.style = style Установить свойство (* )
+style = iBezierParam.GetStyle() Получить свойство (**)
+iBezierParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+3825
+
+
+
+ksBezierParam  методы
+
+GetMathPointArr  Получить указатель на интерфейс 
+динамического массива параметров математических точек 
+сплайна ksDynamicArray типа POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetMathPointArr();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray параметров математических
+точек типа POINT_ARR.
+
+Смотрите также: ksMathPointParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод обнуляет все параметры кривой Безье.
+
+SetMathPointArr  Установить динамический массив 
+параметров математических точек сплайна ksDynamicArray 
+типа POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetMathPointArr (LPDISPATCH pMathPoint);
+Входной параметр:
+
+pMathPoint " указатель на интерфейс динамического массива 
+ksDynamicArray параметров математических точек типа 
+POINT_ARR.
+3826
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Смотрите также: ksMathPointParam
+
+Коническое сечение (Интерфейс ksConicArcParam)
+Интерфейс параметров конического сечения.
+Аналог данных параметров при использовании API экспортных функций " ConicArcParam 
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksConicArcParam  свойства
+
+A, B, C, D, E, F  Коэффициенты канонического уравнения
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+A = iConicArcParam.A Получить свойство (* )
+iConicArcParam.A = A Установить свойство (* )
+A = iConicArcParam.GetA() Получить свойство (**)
+iConicArcParam.SetA( A ) Установить свойство (**)
+
+style  Cтиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iConicArcParam.style Получить свойство (* )
+iConicArcParam.style = style Установить свойство (* )
+style = iConicArcParam.GetStyle() Получить свойство (**)
+iConicArcParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+x1, y1  Координаты начальной точки
+Интерфейс...
+Тип данных:double.
+3827
+
+
+
+Синтаксис Automation:
+
+x1 = iConicArcParam.x1 Получить свойство (* )
+iConicArcParam.x1 = x1 Установить свойство (* )
+x1 = iConicArcParam.GetX1() Получить свойство (**)
+iConicArcParam.SetX1( x1 ) Установить свойство (**)
+
+x2, y2  Координаты конечной точки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+x2 = iConicArcParam.x2 Получить свойство (* )
+iConicArcParam.x2 = x2 Установить свойство (* )
+x2 = iConicArcParam.GetX2() Получить свойство (**)
+iConicArcParam.SetX2( x2 ) Установить свойство (**)
+
+ksConicArcParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры для построения конического сечения.
+
+Контур (Интерфейс ksContourParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_ASSEMBLYCONTOUR.htm
+Интерфейс параметров контура.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+3828
+
+
+
+ksContourParam свойства
+
+style  Стиль линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iContourParam.style Получить свойство (* )
+iContourParam.style = style Установить свойство (* )
+style = iContourParam.GetStyle() Получить свойство (**)
+iContourParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+ksContourParam  методы
+
+Init  Инициализировать параметры
+Интерфейс..
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры контура.
+
+Эквидистанта (Интерфейс ksEquidistantParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_EQUID_TO_OBJ.htm
+Интерфейс параметров эквидистанты.
+Аналог данных параметров при использовании API экспортных функций "
+EquidistantParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+3829
+
+
+
+ksEquidistantParam  свойства
+
+cutMode  Тип обхода углов контура
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " обход срезом,
+1 " обход дугой.
+
+Синтаксис Automation:
+
+cutMode = iEquidistantParam.cutMode Получить свойство (* )
+iEquidistantParam.cutMode = cutMode Установить свойство (* )
+cutMode = iEquidistantParam.GetCutMode() Получить свойство (**)
+iEquidistantParam.SetCutMode( cutMode ) Установить свойство (**)
+
+degState  Признак построения вырожденных сегментов 
+эквидистанты
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+0 " вырожденные сегменты не отрисовываются,
+1 " вырожденные сегменты отрисовываются.
+
+Синтаксис Automation:
+
+degState = iEquidistantParam.degState Получить свойство (* )
+iEquidistantParam.degState = degState Установить свойство (* )
+degState = iEquidistantParam.GetDegState() Получить свойство (**)
+iEquidistantParam.SetDegState( degState ) Установить свойство (**)
+
+geoObj  Графический объект  базовая кривая эквидистанты
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+geoObj = iEquidistantParam.geoObj Получить свойство (* )
+iEquidistantParam.geoObj = geoObj Установить свойство (* )
+geoObj = iEquidistantParam.GetGeoObj() Получить свойство (**)
+iEquidistantParam.SetGeoObj( geoObj ) Установить свойство (**)
+3830
+
+
+
+radRight  Радиус эквидистанты справа по направлению 
+базовой кривой
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+radRight = iEquidistantParam.radRight Получить свойство (* )
+iEquidistantParam.radRight = radRight Установить свойство (* )
+radRight = iEquidistantParam.GetRadRight() Получить свойство (**)
+iEquidistantParam.SetRadRight( radRight ) Установить свойство (**)
+
+radLeft  Радиус эквидистанты слева по направлению 
+базовой кривой
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+radLeft = iEquidistantParam.radLeft Получить свойство (* )
+iEquidistantParam.radLeft = radLeft Установить свойство (* )
+radLeft = iEquidistantParam.GetRadLeft() Получить свойство (**)
+iEquidistantParam.SetRadLeft( radLeft ) Установить свойство (**)
+
+side  Признак, с какой стороны от базового объекта строить 
+эквидистанту
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " слева по направлению,
+1 " справа по направлению,
+2 " с двух сторон.
+
+Синтаксис Automation:
+
+side = iEquidistantParam.side Получить свойство (* )
+iEquidistantParam.side = side Установить свойство (* )
+side = iEquidistantParam.GetSide() Получить свойство (**)
+iEquidistantParam.SetSide( side ) Установить свойство (**)
+
+style  Стиль линии
+Интерфейс...
+3831
+
+
+
+Тип данных:long.
+Синтаксис Automation:
+
+style = iEquidistantParam.style Получить свойство (* )
+iEquidistantParam.style = style Установить свойство (* )
+style = iEquidistantParam.GetStyle() Получить свойство (**)
+iEquidistantParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили линий...
+
+ksEquidistantParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры эквидистанты.
+
+Растровая вставка (Интерфейс ksRasterParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTRASTER.htm
+Интерфейс параметров растрового объекта.
+Аналог данных параметров при использовании API экспортных функций " RasterParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksRasterParam  свойства
+
+embeded  Признак внедрения растра или ссылки на него
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+TRUE " внедрять данные в объект,
+3832
+
+
+
+FALSE " связывать объект с файлом"источником данных на диске.
+Синтаксис Automation:
+
+embeded = iRasterParam.embeded Получить свойство (* )
+iRasterParam.embeded = embeded Установить свойство (* )
+embeded = iRasterParam.GetEmbeded() Получить свойство (**)
+iRasterParam.SetEmbeded( embeded ) Установить свойство (**)
+
+Примечание:
+Значение FALSE в данный момент не используется (связь растрового объекта с файлом
+на диске в КОМПАС"ГРАФИК не реализована).
+
+fileName  Полный путь к файлу с растровым изображением
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+fileName = iRasterParam.fileName Получить свойство (* )
+iRasterParam.fileName = fileName Установить свойство (* )
+fileName = iRasterParam.GetFileName() Получить свойство (**)
+iRasterParam.SetFileName( fileName ) Установить свойство (**)
+
+ksRasterParam  методы
+
+GetPlace  Получить указатель на интерфейс параметров 
+местоположения
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPlace();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPlacementParam.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+3833
+
+
+
+Примечание:
+Метод обнуляет все параметры растрового объекта.
+
+SetPlace  Установить указатель на интерфейс параметров 
+местоположения
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlace (LPDISPATCH place);
+Входной параметр:
+
+place " указатель на интерфейс ksPlacementParam.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Вставка фрагмента (Интерфейс ksInsertFragmentParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Интерфейс параметров вставки фрагментов.
+Аналог данных параметров при использовании API экспортных функций "
+InsertFragmentParamEx.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksInsertFragmentParam  свойства
+
+comment  Имя вставки фрагмента
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+comment = iInsertFragmentParam.comment Получить свойство (* )
+iInsertFragmentParam.comment = comment Установить свойство (* )
+comment = iInsertFragmentParam.GetComment() Получить свойство (**)
+iInsertFragmentParam.SetComment( comment ) Установить свойство (**)
+3834
+
+
+
+fileName  Имя файла фрагмента
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+fileName = iInsertFragmentParam.fileName Получить свойство (* )
+iInsertFragmentParam.fileName = fileName Установить свойство (* )
+fileName = iInsertFragmentParam.GetFileName() Получить свойство (**)
+iInsertFragmentParam.SetFileName( fileName ) Установить свойство (**)
+
+Примечание:
+Для локального фрагмента свойство равно нулю.
+
+insertType  Способ вставки фрагмента
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " взять в документ,
+1 " вставить внешней ссылкой,
+3 " вставить локальный фрагмент.
+
+Синтаксис Automation:
+
+insertType = iInsertFragmentParam.insertType Получить свойство (* )
+iInsertFragmentParam.insertType = insertType Установить свойство (* )
+insertType = iInsertFragmentParam.GetInsertType() Получить свойство (**)
+iInsertFragmentParam.SetInsertType( insertType ) Установить свойство (**)
+
+multiLayer  Признак размещения объектов из вставленного 
+фрагмента по слоям
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+TRUE " объекты на тех же слоях, что и во фрагменте"источнике,
+FALSE " объекты на одном слое.
+
+Синтаксис Automation:
+
+multiLayer = iInsertFragmentParam.multiLayer Получить свойство (* )
+iInsertFragmentParam.multiLayer = multiLayer Установить свойство (* )
+multiLayer = iInsertFragmentParam.GetMultiLayer() Получить свойство (**)
+iInsertFragmentParam.SetMultiLayer( multiLayer ) Установить свойство (**)
+3835
+
+
+
+ksInsertFragmentParam  методы
+
+GetPlace  Получить указатель на интерфейс параметров 
+местоположения
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPlace();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров местопо"
+ложения ksPlacementParam.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры вставки фрагментов.
+
+SetPlace  Установить указатель на интерфейс параметров 
+местоположения
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlace(LPDISPATCH place);
+Входной параметр:
+
+place " указатель на интерфейс параметров местопо"
+ложения ksPlacementParam.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+3836
+
+
+
+Вставка фрагмента (Интерфейс 
+ksInsertFragmentParamEx)
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Интерфейс параметров вставки фрагментов (расширенный).
+Аналог данных параметров при использовании API экспортных функций "
+InsertFragmentParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksInsertFragmentParamEx  свойства
+
+comment  Имя вставки фрагмента
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+comment = iInsertFragmentParam.comment Получить свойство (* )
+iInsertFragmentParam.comment = comment Установить свойство (* )
+comment = iInsertFragmentParam.GetComment() Получить свойство (**)
+iInsertFragmentParam.SetComment( comment ) Установить свойство (**)
+
+fileName  Имя файла фрагмента
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+fileName = iInsertFragmentParam.fileName Получить свойство (* )
+iInsertFragmentParam.fileName = fileName Установить свойство (* )
+fileName = iInsertFragmentParam.GetFileName() Получить свойство (**)
+iInsertFragmentParam.SetFileName( fileName ) Установить свойство (**)
+
+Примечание:
+Для локального фрагмента свойство равно нулю.
+
+insiertType  Способ вставки фрагмента
+Интерфейс...
+Тип данных:short.
+3837
+
+
+
+Значения свойства:
+
+0 " взять в документ,
+1 " вставить внешней ссылкой,
+3 " вставить локальный фрагмент.
+
+Синтаксис Automation:
+
+insertType = iInsertFragmentParam.insertType Получить свойство (* )
+iInsertFragmentParam.insertType = insertType Установить свойство (* )
+insertType = iInsertFragmentParam.GetInsertType() Получить свойство (**)
+iInsertFragmentParam.SetInsertType( insertType ) Установить свойство (**)
+
+multiLayer  Признак размещения объектов из вставленного 
+фрагмента по слоям
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+TRUE " объекты на тех же слоях, что и во фрагменте"источнике,
+FALSE " объекты на одном слое.
+
+Синтаксис Automation:
+
+multiLayer = iInsertFragmentParam.multiLayer Получить свойство (* )
+iInsertFragmentParam.multiLayer = multiLayer Установить свойство (* )
+multiLayer = iInsertFragmentParam.GetMultiLayer() Получить свойство (**)
+iInsertFragmentParam.SetMultiLayer( multiLayer ) Установить свойство (**)
+
+scaleProjLinesSize  Признак масштабирования длины 
+выносных линий размеров
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " выносные линии не масштабируются,
+1 " выносные линии масштабируются.
+
+Синтаксис Automation:
+
+scaleProjLinesSize = iKompasObject.ScaleProjLinesSize Получить свойство (* )
+iKompasObject.ScaleProjLinesSize = scaleProjLinesSize Установить свойство (* )
+scaleProjLinesSize = Получить свойство (**)
+iKompasObject.GetScaleProjLinesSize()
+iKompasObject.SetScaleProjLinesSize (scaleProjLinesSize) Установить свойство (**)
+3838
+
+
+
+ksInsertFragmentParamEx  методы
+
+GetPlace  Получить указатель на интерфейс параметров 
+местоположения
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPlace();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров местопо"
+ложения ksPlacementParam.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры вставки фрагментов.
+
+SetPlace  Установить указатель на интерфейс параметров 
+местоположения
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlace(LPDISPATCH place);
+Входной параметр:
+
+Place " указатель на интерфейс параметров местопо"
+ложения ksPlacementParam.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+3839
+
+
+
+Интерфейс параметров осевой линии (Интерфейс 
+ksAxisLineParam)
+Интерфейс параметров осевой линии.
+Аналог данных параметров при использовании API экспортных функций " AxisLineParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+
+ksAxisLineParam  методы
+
+GetBegPoint  Получить указатель на интерфейс параметров 
+начальной точки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetBegPoint();
+Возвращаемое значение:
+
+" указатель на интерфейс ksMathPointParam.
+
+GetEndPoint  Получить указатель на интерфейс параметров 
+конечной точки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetEndPoint();
+Возвращаемое значение:
+
+" указатель на интерфейс ksMathPointParam.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+3840
+
+
+
+Параметры графического документа (Интерфейс 
+ksDocumentParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/DOCUMENT_INFO_DIALOG.htm
+Интерфейс параметров документа.
+Аналог интерфейса при использовании API экспортных функций структура параметров
+DocumentParam.
+
+ksDocumentParam " интерфейс Automation
+
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksDocumentParam  свойства
+
+author  Автор
+Интерфейс...
+Тип данных:BSTR.
+Синтаксис Automation:
+
+author = iDocumentParam.author Получить свойство (* )
+iDocumentParam.author = author Установить свойство (* )
+author = iDocumentParam.GetAuthor() Получить свойство (**)
+iDocumentParam.SetAuthor(author) Установить свойство (**)
+
+comment  Комментарий
+Интерфейс...
+Тип данных:BSTR.
+Синтаксис Automation:
+
+comment = iDocumentParam.comment Получить свойство (* )
+ iDocumentParam.comment = comment Установить свойство (* )
+comment = iDocumentParam.GetComment() Получить свойство (**)
+iDocumentParam.SetComment(comment) Установить свойство (**)
+
+filfeName  Имя файла
+Интерфейс...
+Тип данных:BSTR.
+Синтаксис Automation:
+3841
+
+
+
+regime = iDocumentParam.regime Получить свойство (* )
+iDocumentParam.regime = regime Установить свойство (* )
+regime = iDocumentParam.GetRegime() Получить свойство (**)
+iDocumentParam.SetRegime(regime) Установить свойство (**)
+
+regime  Режим редактирования 
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " видимый,
+1 " "слепой".
+
+Синтаксис Automation:
+
+fileName = iDocumentParam.fileName Получить свойство (* )
+iDocumentParam.fileName = fileName Установить свойство (* )
+fileName = iDocumentParam.GetFileName() Получить свойство (**)
+iDocumentParam.SetFileName( fileName ) Установить свойство (**)
+
+ksDocumentParam  методы
+
+GetLayoutParam  Получить указатель на интерфейс 
+параметров оформления документа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetLayoutParam();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров оформления документа ksSheetPar.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+3842
+
+
+
+Примечание:
+Метод обнуляет все параметры чертежа или фрагмента.
+
+type  Тип документа
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+Из перечисления DocType.
+
+Синтаксис Automation:
+
+type = iDocumentParam.type Получить свойство (* )
+iDocumentParam.type = type Установить свойство (* )
+type = iDocumentParam.GetType() Получить свойство (**)
+iDocumentParam.SetType(type) Установить свойство (**)
+
+Фрагмент (Интерфейс ksFragment)
+Справка системы КОМПАС...
+KOMPAS.chm::/454_Glava52_Obshchie_svedenija_.htm
+Интерфейс фрагмента.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+ksDocument2D::GetFragment.
+Смотрите также: KompasObject
+
+ksFragment  методы
+
+ksCloseLocalFragmentDefinition  Закончить определение 
+локального фрагмента
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Аналог данного метода при использовании API экспортных функций "
+CloseLocalFragmentDefinition.
+Синтаксис Automation:
+long ksCloseLocalFragmentDefinition();
+Возвращаемое значение:
+3843
+
+
+
+указатель на определение фрагмента " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Все объекты вида, вводимые между операторами ksLocalFragmentDefinition и
+ksCloseLocalFragmentDefinition, принадлежат локальному фрагменту.
+Возвращаемый указатель используется в функциях ksInsertFragment, ksDeleteObj.
+
+ksFragmentDefinition  Определить фрагмент для 
+вставки
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Аналог данного метода при использовании API экспортных функций " FragmentDefinition.
+Синтаксис Automation:
+long ksFragmentDefinition (LPCTSTR fileName, 
+LPCTSTR comment, 
+short insertType);
+Входные параметры:
+
+fileName " имя файла фрагмента,
+comment " имя вставки,
+insertType " тип вставки (действителен для внешнего фрагмента): 
+
+0 " взять в документ, 
+1 " внешней ссылкой.
+
+Возвращаемое значение:
+
+указатель на определе" " в случае успешного завершения,
+ние фрагмента
+0 " в случае неудачи.
+
+Примечание:
+
+1. Функция определяет данные для вставки фрагмента (внешнего или находящегося непо"
+средственно в документе) с указанным именем по ссылке. 
+
+2. Непосредственно вставка фрагмента (вставка ссылки) производится
+с помощью метода ksFragment::ksInsertFragment. 
+
+3. Допускается задание имени фрагмента следующего вида: "c:\gr\lib1.lfr|детали|ли"
+тье|фланец", где
+c:\gr\lib1.lfr " имя файла библиотеки фрагментов,
+|детали|литье| " разделы, подразделы внутри библиотеки фрагментов,
+3844
+
+
+
+фланец " имя фрагмента.
+В этом случае определение создается для фрагмента из библиотеки фрагментов.
+
+4. Определение для данного фрагмента одно " вставок может быть сколько угодно.
+
+ksInsertFragment  Вставить фрагмент в документ
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " InsertFragment.
+Замечание:
+Данный метод устарел. Рекомендуется использовать вместо него метод
+ksInsertFragmentEx.
+Синтаксис Automation:
+long ksInsertFragment (long p, 
+BOOL curentLayer, 
+LPDISPATCH par);
+Входные параметры:
+
+p " указатель на фрагмент,
+curentLayer " тип размещения объектов фрагмента по слоям:
+
+0 " на "свои" слои, 
+1" на текущий слой,
+
+par " указатель на интерфейс ksPlacementParam.
+
+Возвращаемое значение:
+
+указатель на вставку фрагмента " в случае успешного завершения,
+0 " в случае неудачи.
+
+ksInsertFragmentEx  Вставить фрагмент в документ
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Аналог данного метода при использовании API экспортных функций "
+ksInsertFragmentEx.
+Синтаксис Automation:
+long ksInsertFragmentEx (long p, 
+BOOL curentLayer, 
+LPDISPATCH par, 
+BOOL scaleProjLinesSize);
+3845
+
+
+
+ения,
+Входные параметры:
+
+p " указатель на фрагмент,
+curentLayer " тип размещения объектов фрагмента по слоям:
+
+0 " на "свои" слои, 
+1" на текущий слой,
+
+par " указатель на интерфейс ksPlacementParam,
+scaleProjLinesSize " признак масштабирования длины выносных линий 
+
+размеров:
+TRUE " выносные линии масштабируются,
+FALSE " выносные линии не масштабируются.
+
+Возвращаемое значение:
+
+указатель на вставку фрагмента " в случае успешного заверш
+0 " в случае неудачи.
+
+ksLocalFragmentDefinition  Определить данные для 
+последующей вставки локального фрагмента по ссылке
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Аналог данного метода при использовании API экспортных функций "
+LocalFragmentDefinition.
+Синтаксис Automation:
+long ksLocalFragmentDefinition (LPCTSTR comment);
+Входной параметр:
+
+comment " имя вставки.
+
+Возвращаемое значение:
+
+указатель на определение фрагмента " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Вставка ссылки на фрагмент производится с помощью функции ksInsertFragment. Ука"
+затель на определение фрагмента возвращается при окончании описания " функцией
+ksCloseLocalFragmentDefinition.
+Отдельного файла фрагмента нет; "тело" фрагмента хранится в документе.
+3846
+
+
+
+ksReadFragment  Вставить фрагмент россыпью в 
+документ
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Аналог данного метода при использовании API экспортных функций " ReadFragment.
+Синтаксис Automation:
+long ksReadFragment (LPCTSTR fileName, 
+BOOL curentLayer, 
+LPDISPATCH par);
+Входные параметры:
+
+fileName " имя фрагмента,
+curentLayer " тип размещения объектов фрагмента по слоям:
+
+0 " на "свои" слои, 
+1" на текущий слой,
+
+par " указатель на интерфейс ksPlacementParam.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Допускается задание имени файла следующего вида: "c:\gr\lib1.lfr|детали|литье|фланец", 
+где
+c:\gr\lib1.lfr " имя файла библиотеки фрагментов,
+|детали|литье| " разделы, подразделы внутри библиотеки фрагментов,
+фланец " имя фрагмента.
+В этом случае фрагмент берется из библиотеки фрагментов.
+
+ksReadFragmentToGroup  Вставить фрагмент россыпью 
+во временную группу
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksReadFragmentToGroup.
+Замечание:
+Данный метод устарел. Рекомендуется использовать вместо него метод
+ksReadFragmentToGroupEx.
+3847
+
+
+
+Синтаксис Automation:
+long ksReadFragmentToGroup (LPCTSTR fileName, 
+BOOL curentLayer, 
+LPDISPATCH par);
+Входные параметры:
+
+fileName " имя фрагмента,
+curentLayer " тип размещения объектов фрагмента по слоям:
+
+0 " на "свои" слои, 
+1" на текущий слой,
+
+par " указатель на интерфейс ksPlacementParam.
+
+Возвращаемое значение:
+
+указатель на временную группу " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Допускается задание имени файла следующего вида: "c:\gr\lib1.lfr|детали|литье|фланец", 
+где
+c:\gr\lib1.lfr " имя файла библиотеки фрагментов,
+|детали|литье| " разделы, подразделы внутри библиотеки фрагментов,
+фланец " имя фрагмента.
+В этом случае фрагмент берется из библиотеки фрагментов.
+
+ksReadFragmentToGroupEx  Вставить фрагмент 
+россыпью во временную группу
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_INSERTFRAGMENT.htm
+Аналог данного метода при использовании API экспортных функций "
+ksReadFragmentToGroupEx.
+Синтаксис Automation:
+long ksReadFragmentToGroup (LPCTSTR fileName, 
+BOOL curentLayer, 
+LPDISPATCH par
+BOOL scaleProjLinesSize);

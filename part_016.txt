@@ -1,0 +1,2533 @@
+Object.get_Item( Index, Получить свойство
+&Item )
+
+Входные параметры:
+
+Index " Индекс элемента.
+
+Примечание:
+
+1.  Свойство позволяет получать аннотационные объекты.
+2.  Свойство доступно только для чтения.
+
+IAnnotativeContainer  методы
+
+Add  Добавить объект
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( long type );
+Синтаксис COM:
+HRESULT Add( DrawingObjectTypeEnum type,
+IAnnotativeObject ** Result );
+Входные параметры:
+
+type " тип добавляемого объекта из перечисления DrawingObjectTypeEnum.
+
+Возвращаемое значение:
+
+" указатель на интерфейс аннотационного объекта IAnnotativeObject.
+
+Примечание:
+Метод позволяет добавить объект в контейнер.
+
+AddObjects  Добавить объекты в группу
+Интерфейс...
+Синтаксис Automation:
+BOOL AddObjects( VARIANT Objects );
+Синтаксис COM:
+HRESULT AddObjects( VARIANT Objects,
+BOOL * Result );
+808
+
+
+
+Входные параметры:
+
+Objects " объект или массив объектов для добавления в 
+группу ( VARIANT типа VT_DISPATCH или 
+VT_ARRAY | VT_DISPATCH ).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет добавить объекты в группу.
+
+CreateByGeomObject  Преобразовать геометрический 
+объект в аннотационный
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH CreateByGeomObject( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT CreateByGeomObject( IDrawingObject * obj,
+IAnnotativeObject ** Result );
+Входные параметры:
+
+obj " указатель на интерфейс геометрического объекта IDrawingObject.
+
+Возвращаемое значение:
+
+" указатель на интерфейс аннотационного объекта IAnnotativeObject.
+
+Примечание:
+Метод позволяет преобразовать геометрический объект в аннотационный и добавить его
+в контейнер.
+
+Интерфейс IAnnotativeObject
+Интерфейс аннотационных объектов.
+Иерархия:
+IDispatch
+
+IAnnotativeObject
+Описание:
+Интерфейс позволяет задать параметры аннотационного объекта.
+809
+
+
+
+Примечание:
+Интерфейс можно получить у контейнера аннотационных объектов с помощью свойства
+IAnnotativeContainer::Item и методов IAnnotativeContainer::Add и
+IAnnotativeContainer::CreateByGeomObject.
+
+IAnnotativeObject  свойства
+
+Sign1  Тип значка
+Интерфейс...
+Тип данных: из перечисления ksAnnotativeTerminatorSignEnum
+Синтаксис Automation:
+
+Sign1 = Object.Sign1 Получить свойство(* )
+Object.Sign1 = Sign1 Установить свойство (* )
+Sign1 = Object.GetSign1() Получить свойство (**)
+Object.SetSign1( Sign1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sign1( &Sign1 ) Получить свойство
+Object.put_Sign1(  Sign1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать тип значка 1.
+
+Sign2  Тип значка
+Интерфейс...
+Тип данных: из перечисления ksAnnotativeTerminatorSignEnum.
+Синтаксис Automation:
+
+Sign2 = Object.Sign2 Получить свойство(* )
+Object.Sign2 = Sign2 Установить свойство (* )
+Sign2 = Object.GetSign2() Получить свойство (**)
+Object.SetSign2( Sign2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sign2( &Sign2 ) Получить свойство
+Object.put_Sign2(  Sign2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать тип значка 2.
+810
+
+
+
+Обозначения и размеры
+Контейнер
+Интерфейс ISymbols2DContainer
+Интерфейс контейнера условных обозначений.
+Иерархия:
+IDispatch
+
+ISymbols2DContainer
+Описание:
+Позволяет получить коллекции 2D размеров и обозначений.
+Примечание:
+Дополнительный интерфейс вида. Данный интерфейс можно получить у интерфейса ви"
+да IView посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void**
+pif).
+
+ISymbols2DContainer  свойства
+
+AngleDimensions  Угловые размеры
+Интерфейс...
+Тип данных: IAngleDimensions.
+Синтаксис Automation:
+
+AngleDimensions = Получить свойство(* )
+Object.AngleDimensions
+AngleDimensions = Получить свойство (**)
+Object.GetAngleDimensions()
+
+Синтаксис COM:
+
+Object.get_AngleDime Получить свойство
+nsions(
+&AngleDimensions )
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать угловые и угловые с обрывом размеры.
+2.  Свойство доступно только для чтения.
+
+ArcDimensions Размеры дуг окружностей
+Интерфейс...
+Тип данных: IArcDimensions
+811
+
+
+
+Синтаксис Automation:
+
+ArcDimensions = Получить свойство(* )
+Object.ArcDimensions
+ArcDimensions = Получить свойство (**)
+Object.GetArcDimensions()
+
+Синтаксис COM:
+
+Object.get_ArcDimensions( Получить свойство
+&ArcDimensions )
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать размеры дуг окружностей.
+2.  Свойство доступно только для чтения.
+
+AssociationTables  Ассоциативные таблицы отчетов
+Интерфейс...
+Тип данных: IAssociationTables
+Синтаксис Automation:
+
+AssociationTables = Получить свойство(* )
+Object.AssociationTables
+AssociationTables = Получить свойство (**)
+Object.GetAssociationTables()
+
+Синтаксис COM:
+
+ Object.get_AssociationTables( Получить свойство
+&AssociationTables )
+
+Примечание:
+Свойство доступно только для чтения.
+
+AxisLines  Коллекция осевых линий
+Интерфейс...
+Тип данных: указатель на интерфейс IAxisLines
+Синтаксис Automation:
+
+AxisLines = Object.AxisLines Получить свойство(* )
+AxisLines = Object.GetAxisLines() Получить свойство (**)
+
+Синтаксис COM:
+812
+
+
+
+Object.get_AxisLines( Получить свойство
+&AxisLines )
+
+Свойство позволяет получать интерфейс коллекции осевых линий.
+Примечание:
+Свойство доступно только для чтения.
+
+Bases  Обозначения базы
+Интерфейс...
+Тип данных: IBases
+Синтаксис Automation:
+
+Bases = Object.Bases Получить свойство(* )
+Bases = Object.GetBases() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Bases( Получить свойство
+&Bases )
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать обозначения базы.
+2.  Свойство доступно только для чтения.
+
+BreakLineDimensions  Линейные размеры с обрывом
+Интерфейс...
+Тип данных: IBreakLineDimensions
+Синтаксис Automation:
+
+BreakLineDimensions = Получить свойство(* )
+Object.BreakLineDimensions
+BreakLineDimensions = Получить свойство (**)
+Object.GetBreakLineDimensions()
+
+Синтаксис COM:
+
+Object.get_BreakLineDimensions( Получить свойство
+&BreakLineDimensions )
+
+Примечание:
+813
+
+
+
+1.  Свойство позволяет получать и создавать линейные размеры с обрывом.
+2.  Свойство доступно только для чтения.
+
+BreakRadialDimensions  Радиальные размеры с изломом
+Интерфейс...
+Тип данных: IBreakRadialDimensions
+Синтаксис Automation:
+
+BreakRadialDimensions = Получить свойство(* )
+Object.BreakRadialDimensions
+BreakRadialDimensions = Получить свойство (**)
+Object.GetBreakRadialDimensions
+()
+
+Синтаксис COM:
+
+Object.get_BreakRadialDimension Получить свойство
+s( &BreakRadialDimensions )
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать радиальные размеры с изломом.
+2.  Свойство доступно только для чтения.
+
+BrokenLines  Коллекция линий обрыва с изломами
+Интерфейс...
+Тип данных: указатель на интерфейс IBrokenLines
+Синтаксис Automation:
+
+BrokenLines = Получить свойство(* )
+Object.BrokenLiness
+BrokenLines = Получить свойство (**)
+Object.GetBrokenLines()
+
+Синтаксис COM:
+
+Object.get_BrokenLines( Получить свойство
+&BrokenLines )
+
+Свойство позволяет получать интерфейс коллекции линий обрыва с изломами.
+Примечание:
+Свойство доступно только для чтения.
+814
+
+
+
+CentreMarkers  Коллекция обозначений центра
+Интерфейс...
+Тип данных: указатель на интерфейс ICentreMarkers
+Синтаксис Automation:
+
+CentreMarkers = Получить свойство(* )
+Object.CentreMarkers
+CentreMarkers = Получить свойство (**)
+Object.GetCentreMarkers()
+
+Синтаксис COM:
+
+Object.get_CentreMarkers( Получить свойство
+&CentreMarkers )
+
+Свойство позволяет получать интерфейс коллекции обозначений центра.
+Примечание:
+Свойство доступно только для чтения.
+
+CircularsCentries  Коллекция круговых сеток центров
+Интерфейс...
+Тип данных: Указатель на интерфейс ICircularsCentries.
+Синтаксис Automation:
+
+CircularsCentries = Получить свойство(* )
+Object.CircularsCentries
+CircularsCentries = Получить свойство (**)
+Object.GetCircularsCentries()
+
+Синтаксис COM:
+
+Object.get_CircularsCentries( Получить свойство
+&CircularsCentries )
+
+Примечание:
+Свойство доступно только для чтения.
+Версия Компас v18.1
+
+ConditionIntersects  Коллекция условных пересечений
+Интерфейс...
+Тип данных: Указатель на интерфейс IConditionIntersects 
+Синтаксис Automation:
+815
+
+
+
+ConditionIntersects = Получить свойство(* )
+Object.ConditionIntersects
+ConditionIntersects = Получить свойство (**)
+Object.GetConditionIntersects()
+
+Синтаксис COM:
+
+Object.get_ConditionIntersects( Получить свойство
+&ConditionIntersects )
+
+Примечание:
+Свойство доступно только для чтения.
+
+CutLines  Линии разреза/сечения
+Интерфейс...
+Тип данных: ICutLines
+Синтаксис Automation:
+
+CutLines = Object.CutLines Получить свойство(* )
+CutLines = Object.GetCutLines() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CutLines( &CutLines ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать линии разреза/сечения.
+2.  Свойство доступно только для чтения.
+
+DiametralDimensions  Диаметральные размеры
+Интерфейс...
+Тип данных: IDiametralDimensions
+Синтаксис Automation:
+
+DiametralDimensions = Получить свойство(* )
+Object.DiametralDimensions
+DiametralDimensions = Получить свойство (**)
+Object.GetDiametralDimensions()
+
+Синтаксис COM:
+816
+
+
+
+Object.get_DiametralDimensions( Получить свойство
+&DiametralDimensions )
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать диаметральные размеры. 
+2.  Свойство доступно только для чтения.
+
+DrawingTables  Таблицы
+Интерфейс...
+Тип данных: IDrawingTables
+Синтаксис Automation:
+
+DrawingTables = Получить свойство(* )
+Object.DrawingTables
+DrawingTables = Получить свойство (**)
+Object.GetDrawingTables()
+
+Синтаксис COM:
+
+Object.get_DrawingTables( Получить свойство
+&DrawingTables )
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать таблицы.
+2.  Свойство доступно только для чтения.
+
+HeightDimensions  Размеры высоты
+Интерфейс...
+Тип данных: IHeightDimensions
+Синтаксис Automation:
+
+HeightDimensions = Object.HeightDimensions Получить свойство(* )
+HeightDimensions = Object.GetHeightDimensions() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HeightDimensions( Получить свойство
+&HeightDimensions )
+
+Примечание:
+817
+
+
+
+1.  Свойство позволяет получать и создавать размеры высоты.
+2.  Свойство доступно только для чтения.
+
+Leaders  Линиявыноска
+Интерфейс...
+Тип данных: ILeaders
+Синтаксис Automation:
+
+Leaders = Object.Leaders Получить свойство(* )
+Object.get_Leaders( &Leaders ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Leaders( &Leaders ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать линии"выноски.
+2.  Свойство доступно только для чтения.
+
+LineDimensions  Линейные размеры
+Интерфейс...
+Тип данных: ILineDimensions
+Синтаксис Automation:
+
+LineDimensions = Получить свойство(* )
+Object.LineDimensions
+LineDimensions = Получить свойство (**)
+Object.GetLineDimensions()
+
+Синтаксис COM:
+
+Object.get_LineDimensions( Получить свойство
+&LineDimensions )
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать линейные размеры. 
+2.  Свойство доступно только для чтения.
+
+LinearsCentries  Коллекция линейных сеток центров
+Интерфейс...
+Тип данных: Указатель на интерфейс ILinearsCentries. 
+Синтаксис Automation:
+818
+
+
+
+LinearsCentries = Получить свойство(* )
+Object.LinearsCentries
+LinearsCentries = Получить свойство (**)
+Object.GetLinearsCentries()
+
+Синтаксис COM:
+
+Object.get_LinearsCentries( Получить свойство
+&LinearsCentries )
+
+Примечание:
+Свойство доступно только для чтения.
+Версия Компас v18.1
+
+RadialDimensions  Радиальные размеры
+Интерфейс...
+Тип данных: IRadialDimensions
+Синтаксис Automation:
+
+RadialDimensions = Получить свойство(* )
+Object.RadialDimensions
+RadialDimensions = Получить свойство (**)
+Object.GetRadialDimensions()
+
+Синтаксис COM:
+
+Object.get_RadialDimensions( Получить свойство
+&RadialDimensions )
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать радиальные размеры. 
+2.  Свойство доступно только для чтения.
+
+RemoteElements  Коллекция выносных элементов
+Интерфейс...
+Тип данных: указатель на интерфейс IRemoteElements
+Синтаксис Automation:
+
+RemoteElements = Получить свойство(* )
+Object.RemoteElements
+RemoteElements = Получить свойство (**)
+Object.GetRemoteElements()
+819
+
+
+
+Синтаксис COM:
+
+Object.get_RemoteElements( Получить свойство
+&RemoteElements )
+
+Свойство позволяет получать интерфейс коллекции выносных элементов.
+Примечание:
+Свойство доступно только для чтения.
+
+Roughs  Обозначения шероховатости
+Интерфейс...
+Тип данных: IRoughs
+Синтаксис Automation:
+
+Roughs = Object.Roughs Получить свойство(* )
+Roughs = Object.GetRoughs() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Roughs( &Roughs ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать обозначения шероховатости.
+2.  Свойство доступно только для чтения.
+
+Tolerances  Допуск формы
+Интерфейс...
+Тип данных: ITolerances
+Синтаксис Automation:
+
+Tolerances = Object.Tolerances Получить свойство(* )
+Tolerances = Получить свойство (**)
+Object.GetTolerances()
+
+Синтаксис COM:
+
+Object.get_Tolerances( Получить свойство
+&Tolerances )
+
+Примечание:
+820
+
+
+
+1.  Свойство позволяет получать и создавать допуски формы.
+2.  Свойство доступно только для чтения.
+
+ViewPointers  Стрелки взгляда
+Интерфейс...
+Тип данных: IViewPointers
+Синтаксис Automation:
+
+ViewPointers = Получить свойство(* )
+Object.ViewPointers
+ViewPointers = Получить свойство (**)
+Object.GetViewPointers()
+
+Синтаксис COM:
+
+Object.get_ViewPointers( Получить свойство
+&ViewPointers )
+
+Примечание:
+
+1.  Свойство позволяет получать и создавать линии стрелки взгляда.
+2.  Свойство доступно только для чтения.
+
+WaveLines  Коллекция волнистых линий
+Интерфейс...
+Тип данных: указатель на интерфейс IWaveLines
+Синтаксис Automation:
+
+WaveLines = Object.WaveLines Получить свойство(* )
+WaveLines = Получить свойство (**)
+Object.GetWaveLines()
+
+Синтаксис COM:
+
+Object.get_WaveLines( Получить свойство
+&WaveLines )
+
+Примечание:
+
+1.  Свойство позволяет получать интерфейс коллекции волнистых линий.
+2.  Свойство доступно только для чтения.
+821
+
+
+
+Элементы обозначений
+Интерфейс IBranchs
+Справка системы КОМПАС...
+kompas.chm::/1024_113_2_2_Dobavlenie_i_udalenie_otv.htm
+Интерфейс для работы с ответвлениями.
+Иерархия:
+IDispatch
+
+IBranchs
+Примечание:
+Интерфейс можно получить с помощью метода IUnknown::QueryInterface у интерфейсов
+IBaseLeader, ITolerance, IMarkLeader, IPositionLeader, IChangeLeader, IBrandLeader, IRough.
+
+IBranchs  свойства
+
+BranchCount  Число ответвлений
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+BranchCount = Получить свойство(* )
+Object.BranchCount
+BranchCount = Получить свойство (**)
+Object.GetBranchCount()
+
+Синтаксис COM:
+
+Object.get_BranchCount( Получить свойство
+&BranchCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+BranchPoints  Массив SAFEARRAY координат точек 
+ответвления
+Интерфейс...
+Тип данных: VARIANT  типа VT_ARRAY | VT_R8
+Синтаксис Automation:
+
+BranchPoints = Получить свойство(* )
+Object.BranchPoints( Index )
+822
+
+
+
+Object.BranchPoints( Index ) Установить свойство (* )
+= BranchPoints
+BranchPoints = Получить свойство (**)
+Object.GetBranchPoints( 
+Index )
+Object.SetBranchPoints( Установить свойство (**)
+Index, BranchPoints )
+
+Синтаксис COM:
+
+Object.get_BranchPoints( Получить свойство
+Index, &BranchPoints )
+Object.put_BranchPoints( Установить свойство
+Index,  BranchPoints )
+
+Примечание:
+
+1.  Координаты точек в массиве лежат в следующей последовательности: x0, y0, x1, y1, ...xi,
+yi.
+
+2.  Значения координат зависят от текущей системы координат для объекта, задаваемой
+параметром IDrawingObject::DrawingObjectParamType.
+
+BranchPointsCount  Число ответвлений
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+BranchPointsCount = Получить свойство(* )
+Object.BranchPointsCount()
+BranchPointsCount = Получить свойство (**)
+Object.GetBranchPointsCount
+()
+
+Синтаксис COM:
+
+Object.get_BranchPointsCoun Получить свойство
+t( &BranchPointsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+BranchX0  Координата конечной точки ответвления по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+823
+
+
+
+BranchX0 = Object.BranchX0 Получить свойство(* )
+Object.BranchX0 = BranchX0 Установить свойство (* )
+BranchX0 = Получить свойство (**)
+Object.GetBranchX0()
+Object.SetBranchX0( Установить свойство (**)
+BranchX0 )
+
+Синтаксис COM:
+
+Object.get_BranchX0( Получить свойство
+&BranchX0 )
+Object.put_BranchX0(  Установить свойство
+BranchX0 )
+
+Примечание:
+Значения координат зависят от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+BranchY0  Координата конечной точки ответвления по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BranchY0 = Object.BranchY0 Получить свойство(* )
+Object.BranchY0 = BranchY0 Установить свойство (* )
+BranchY0 = Получить свойство (**)
+Object.GetBranchY0()
+Object.SetBranchY0( BranchY Установить свойство (**)
+0)
+
+Синтаксис COM:
+
+Object.get_Branch Получить свойство
+Y0( &BranchY 0)
+Object.put_Branch Установить свойство
+Y0(  BranchY0 )
+
+Примечание:
+Значения координат зависят от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+X0  Координата начала полки или точка привязки по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+824
+
+
+
+X0 = Object.X0 Получить свойство(* )
+Object.X0 = X0 Установить свойство (* )
+X0 = Object.GetX0() Получить свойство (**)
+Object.SetX0( X0 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X0( &X0 ) Получить свойство
+Object.put_X0(  X0 ) Установить свойство
+
+Примечание:
+Значения координат зависят от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+Y0  Координата начала полки или точка привязки по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y0 = Object.Y0 Получить свойство(* )
+Object.Y0 = Y0 Установить свойство (* )
+Y0 = Object.GetY0() Получить свойство (**)
+Object.SetY0( Y0 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y0( &Y0 ) Получить свойство
+Object.put_Y0(  Y0 ) Установить свойство
+
+Примечание:
+Значения координат зависят от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+IBranchs  методы
+
+AddBranch  Добавить ответвление
+Интерфейс...
+Синтаксис Automation:
+BOOL AddBranch( long Index,
+VARIANT Points );
+Синтаксис COM:
+825
+
+
+
+HRESULT AddBranch( long Index,
+VARIANT Points,
+BOOL * Result );
+Входные параметры:
+
+Index " индекс, с которым добавляется ответвление,
+Points " массив SafeArray координат точек.
+
+Возвращаемое значение:
+
+TRUE " ответвление добавлено.
+
+Примечание:
+
+1.  Координаты точек в массиве лежат в следующей последовательности: x0, y0, x1, y1, ...xi,
+yi.
+
+2.  Значения координат зависят от текущей системы координат для объекта, задаваемой
+параметром IDrawingObject::DrawingObjectParamType.
+
+AddBranchByPoint  Добавить прямолинейное 
+ответвление
+Интерфейс...
+Синтаксис Automation:
+BOOL AddBranchByPoint( long Index,
+double X,
+double Y );
+Синтаксис COM:
+HRESULT AddBranchByPoint( long Index,
+double X,
+double Y,
+BOOL * Result );
+Входные параметры:
+
+Index " индекс, с которым добавляется ответвление,
+x, y " координаты точки целеуказания.
+
+Возвращаемое значение:
+
+TRUE " ответвление добавлено.
+
+Примечание:
+Значения координат зависят от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+826
+
+
+
+DeleteBranch  Удалить ответвление
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteBranch( long Index );
+Синтаксис COM:
+HRESULT DeleteBranch( long Index,
+BOOL * Result );
+Входные параметры:
+
+Index " индекс, с которым добавляется ответвление.
+
+Возвращаемое значение:
+
+TRUE " ответвление удалено.
+
+Интерфейс IBrandLeader
+Справка системы КОМПАС: Обозначение клеймения 2D
+kompas.chm::/CM_BRANDLEADER.htm
+
+Обозначение клеймения 3D
+kompas.chm::/CM_BRANDLEADER_3D.htm
+Интерфейс параметров обозначения клеймения.
+Иерархия:
+IDispatch
+
+IBrandLeader
+IBranchs
+IBranchs3D
+Описание:
+
+1.  Интерфейс можно получить с помощью метода IUnknown::QueryInterface у интерфейсов
+IBaseLeader или IBaseLeader3D.
+
+2.  С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+ответвлений IBranchs или IBranchs3D.
+
+IBrandLeader  свойства
+
+Designation  Обозначение
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+827
+
+
+
+Designation = Получить свойство(* )
+Object.Designation
+Designation = Получить свойство (**)
+Object.GetDesignation()
+
+Синтаксис COM:
+
+Object.get_Designation( Получить свойство
+&Designation )
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс текста обозначения.
+2.  Свойство доступно только для чтения.
+
+Direction  Направление
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+FALS " знак вле"
+E во,
+TRUE " знак
+
+вправо.
+
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство(* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection( ) Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство(* )
+Object.put_Direction( Direction ) Установить свойство (* )
+
+Примечание:
+Свойство позволяет устанавливать и получать направление знака.
+
+TextOnBranch  Текст над ножкой
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+828
+
+
+
+Синтаксис Automation:
+
+TextOnBranch = Получить свойство(* )
+Object.TextOnBranch
+TextOnBranch = Получить свойство (**)
+Object.GetTextOnBranch()
+
+Синтаксис COM:
+
+Object.get_TextOnBranch( Получить свойство
+&TextOnBranch )
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс текста над ножкой.
+2.  Свойство доступно только для чтения.
+
+TextUnderBranch  Текст под ножкой
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextUnderBranch = Получить свойство(* )
+Object.TextUnderBranch
+TextUnderBranch = Получить свойство (**)
+Object.GetTextUnderBranch()
+
+Синтаксис COM:
+
+Object.get_TextUnderBranch( Получить свойство
+&TextUnderBranch )
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс текста под ножкой.
+2.  Свойство доступно только для чтения.
+
+Интерфейс IChangeLeader
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_CHANGELEADER.htm
+
+Справка системы КОМПАС: команда Знак изменения
+kompas.chm::/CM_CHANGELEADER.htm
+Интерфейс параметров знака изменения.
+829
+
+
+
+Иерархия:
+IDispatch
+
+IChangeLeader
+IBranchs
+IBranchs3D
+Примечание:
+
+1.  Дополнительный интерфейс для IBaseLeader.
+2.  Интерфейс можно получить посредством вызова метода IUnknown::QueryInterface (const
+
+GUID far& iid, void** pif).
+3.  С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+
+ответвлений IBranchs или IBranchs3D.
+
+IChangeLeader  свойства
+
+Designation  Обозначение
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+Designation = Object.Designation Получить свойство(* )
+Designation = Object.GetDesignation() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Designation( &Designation ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс текста обозначения.
+2.  Свойство доступно только для чтения.
+
+FullLeaderLength  На всю длину
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " выноска полной длины,
+FALSE " ограниченный отрезок.
+
+Синтаксис Automation:
+830
+
+
+
+FullLeaderLength = Object.FullLeaderLength Получить свойство(* )
+Object.FullLeaderLength = FullLeaderLength Установить свойство (* )
+FullLeaderLength = Получить свойство (**)
+Object.GetFullLeaderLength( )
+Object.SetFullLeaderLength( Установить свойство (**)
+FullLeaderLength )
+
+Синтаксис COM:
+
+Object.get_FullLeaderLength( Получить свойство
+&FullLeaderLength )
+Object.put_FullLeaderLength( Установить свойство
+FullLeaderLength )
+
+Примечание:
+Свойство позволяет устанавливать и получать тип выноски: выноска полной длины или
+ограниченный отрезок.
+
+LeaderLength  Длина выноски
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+LeaderLength = Object.LeaderLength Получить свойство(* )
+Object.LeaderLength = LeaderLength Установить свойство (* )
+LeaderLength = Object.GetLeaderLength( ) Получить свойство (**)
+Object.SetLeaderLength( LeaderLength ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LeaderLength( Получить свойство
+&LeaderLength )
+Object.put_LeaderLength( Установить свойство
+LeaderLength )
+
+Примечание:
+Свойство позволяет устанавливать и получать длину выноски.
+
+SignHeight  Высота знака
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+831
+
+
+
+SignHeight = Object.SignHeight Получить свойство(* )
+Object.SignHeight = SignHeight Установить свойство (* )
+SignHeight = Object.GetSignHeight( ) Получить свойство (**)
+Object.SetSignHeight( SignHeight ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SignHeight( Получить свойство
+&SignHeight )
+Object.put_SignHeight( Установить свойство
+SignHeight )
+
+Примечание:
+Свойство позволяет устанавливать и получать высоту знака.
+
+SignType  Тип значка
+Интерфейс...
+Тип данных: из перечисления ksChangeLeaderSignEnum
+Синтаксис Automation:
+
+SignType = Object.SignType Получить свойство(* )
+Object.SignType = SignType Установить свойство (* )
+SignType = Object.GetSignType( ) Получить свойство (**)
+Object.SetSignType( SignType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SignType( Получить свойство
+&SignType )
+Object.put_SignType( SignType ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать тип значка.
+
+Интерфейс ILeader
+Справка системы КОМПАС...
+KOMPAS.chm::/225_28_4_2_Nastrojka_otrisovki_.htm
+Интерфейс параметров линиивыноски.
+Иерархия:
+IDispatch
+
+ILeader
+832
+
+
+
+Примечание:
+
+1.  Дополнительный интерфейс для IBaseLeader и IBaseLeader3D.
+2.  Интерфейс можно получить посредством вызова метода IUnknown::QueryInterface (const
+
+GUID far& iid, void** pif).
+
+ILeader  свойства
+
+Arround  Признак обработки по контуру
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Arround = Object.Arround Получить свойство(* )
+Object.Arround = Arround Установить свойство (* )
+Arround = Object.GetArround() Получить свойство (**)
+Object.SetArround( Arround ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Arround( &Arround ) Получить свойство
+Object.put_Arround(  Arround ) Установить свойство
+
+AutoSorted  Автосортировка
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoSorted = Object.AutoSorted Получить свойство(* )
+Object.AutoSorted = AutoSorted Установить свойство (* )
+AutoSorted = Object.GetAutoSorted() Получить свойство (**)
+Object.SetAutoSorted( AutoSorted ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AutoSorted( Получить свойство
+&AutoSorted)
+Object.put_AutoSorted( Установить свойство
+AutoSorted )
+
+BranchBegin  Начало ответвления
+Интерфейс...
+Тип данных: BOOL
+833
+
+
+
+Значение свойства:
+
+TRUE " от начала полки,
+FALSE " от конца полки.
+
+Синтаксис Automation:
+
+BranchBegin = Object.BranchBegin( Index ) Получить свойство(* )
+Object.BranchBegin( Index ) = BranchBegin Установить свойство (* )
+BranchBegin = Object.GetBranchBegin( Получить свойство (**)
+Index )
+Object.SetBranchBegin( Index, BranchBegin Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_BranchBegin( Index, Получить свойство
+&BranchBegin )
+Object.put_BranchBegin( Index, Установить свойство
+BranchBegin )
+
+Входные параметры:
+
+Index " индекс ответвления.
+
+ParallelBranch  Параллельные ответвления
+Интерфейс...
+Тип данных: BOOL
+Значение свойства:
+
+TRUE " от начала полки,
+FALSE " от конца полки.
+
+Синтаксис Automation:
+
+ParallelBranch = Object.ParallelBranch Получить свойство(* )
+Object.ParallelBranch = ParallelBranch Установить свойство (* )
+ParallelBranch = Object.GetParallelBranch() Получить свойство (**)
+Object.SetParallelBranch( ParallelBranch ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ParallelBranch( Получить свойство
+&ParallelBranch )
+Object.put_ParallelBranch( Установить свойство
+ParallelBranch )
+834
+
+
+
+Входные параметры:
+
+Index " индекс ответвления.
+
+ShelfDirection  Направление полки
+Интерфейс...
+Тип данных: из перечисления ksShelfDirectionEnum
+Синтаксис Automation:
+
+ShelfDirection = Object.ShelfDirection Получить свойство(* )
+Object.ShelfDirection = ShelfDirection Установить свойство (* )
+ShelfDirection = Object.GetShelfDirection() Получить свойство (**)
+Object.SetShelfDirection( ShelfDirection ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfDirection( Получить свойство
+&ShelfDirection )
+Object.put_ShelfDirection( Установить свойство
+ShelfDirection )
+
+SignType  Тип значка
+Интерфейс...
+Тип данных: из перечисления ksLeaderSignEnum
+Синтаксис Automation:
+
+SignType = Object.SignType Получить свойство(* )
+Object.SignType = SignType Установить свойство (* )
+SignType = Object.GetSignType() Получить свойство (**)
+Object.SetSignType( SignType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SignType( &SignType ) Получить свойство
+Object.put_SignType(  SignType ) Установить свойство
+
+Примечание:
+Свойство позволяет выбрать значок для обозначения соединения.
+
+TextAfterShelf  Текст за полкой
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+835
+
+
+
+TextAfterShelf = Object.TextAfterShelf Получить свойство(* )
+TextAfterShelf = Object.GetTextAfterShelf() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TextAfterShelf( &TextAfterShelf ) Получить свойство
+
+Входные параметры:
+
+Index " индекс ответвления.
+
+Примечание:
+Свойство доступно только для чтения.
+
+TextOnBranch  Текст над ножкой
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextOnBranch = Object.TextOnBranch Получить свойство(* )
+TextOnBranch = Object.GetTextOnBranch() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TextOnBranch( Получить свойство
+&TextOnBranch )
+
+Входные параметры:
+
+Index " индекс ответвления.
+
+Примечание:
+Свойство доступно только для чтения.
+
+TextOnShelf  Текст над полкой
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextOnShelf = Object.TextOnShelf Получить свойство(* )
+TextOnShelf = Object.GetTextOnShelf() Получить свойство (**)
+836
+
+
+
+Синтаксис COM:
+
+Object.get_TextOnShelf( Получить свойство
+&TextOnShelf )
+
+Входные параметры:
+
+Index " индекс ответвления.
+
+Примечание:
+Свойство доступно только для чтения.
+
+TextUnderBranch  Текст под ножкой 
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextUnderBranch = Object.TextUnderBranch Получить свойство(* )
+TextUnderBranch = Получить свойство (**)
+Object.GetTextUnderBranch()
+
+Синтаксис COM:
+
+Object.get_TextUnderBranch( Получить свойство
+&TextUnderBranch )
+
+Входные параметры:
+
+Index " индекс ответвления.
+
+Примечание:
+Свойство доступно только для чтения.
+
+TextUnderShelf  Текст под полкой
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextUnderShelf = Object.TextUnderShelf Получить свойство(* )
+TextUnderShelf = Получить свойство (**)
+Object.GetTextUnderShelf()
+
+Синтаксис COM:
+837
+
+
+
+Object.get_TextUnderShelf( Получить свойство
+&TextUnderShelf )
+
+Входные параметры:
+
+Index " индекс ответвления.
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IPositionLeader
+Справка системы КОМПАС: Команда Обозначение позиции (документ"модель)
+kompas.chm::/CM_POSITIONLEADER.htm
+
+Основные сведения...
+kompas.chm::/
+233_28_7_2_Nastrojka_otrisovki_.htm#otrisovka_obozn_poziciy
+Интерфейс параметров линиивыноски для обозначения позиции.
+Иерархия:
+IDispatch
+
+IPositionLeader
+IBranchs
+IBranchs3D
+Примечание:
+
+1.  Дополнительный интерфейс для IBaseLeader и IBaseLeader3D.
+2.  Интерфейс можно получить посредством вызова метода IUnknown::QueryInterface (const
+
+GUID far& iid, void** pif).
+3.  С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+
+ответвлений IBranchs или IBranchs3D.
+
+IPositionLeader  свойства
+
+Form  Тип формы
+Интерфейс...
+Тип данных: из перечисления ksPositionLederFormEnum
+Синтаксис Automation:
+
+Form = Object.Form Получить свойство(* )
+Object.Form = Form Установить свойство (* )
+838
+
+
+
+Form = Object.GetForm( ) Получить свойство (**)
+Object.SetForm( Form ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Form( &Form ) Получить свойство
+Object.put_Form( Form ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать тип формы.
+
+Horizontally  Горизонтальное расположение позиций
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Horizontally = Object.Horizontally Получить свойство(* )
+Object.Horizontally = Horizontally Установить свойство (* )
+Horizontally = Object.GetHorizontally( ) Получить свойство (**)
+Object.SetHorizontally( Horizontally ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Horizontally( Получить свойство
+&Horizontally )
+Object.put_Horizontally( Установить свойство
+Horizontally )
+
+Positions  Позиции
+Интерфейс...
+Тип данных: указатель на интерфейс IText.
+Синтаксис Automation:
+
+Positions = Object.Positions Получить свойство(* )
+Positions = Object.GetPositions() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Positions( Получить свойство
+&Positions )
+
+Примечание:
+839
+
+
+
+1.  Свойство позволяет получить интерфейс текста позиций.
+2.  Свойство доступно только для чтения.
+
+ShelfDirection  Направление полки
+Интерфейс...
+Тип данных: из перечисления ksShelfDirectionEnum
+Синтаксис Automation:
+
+ShelfDirection = Object.ShelfDirection Получить свойство(* )
+Object.ShelfDirection = ShelfDirection Установить свойство (* )
+ShelfDirection = Object.GetShelfDirection() Получить свойство (**)
+Object.SetShelfDirection( ShelfDirection ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfDirection( Получить свойство
+&ShelfDirection )
+Object.put_ShelfDirection( Установить свойство
+ShelfDirection )
+
+Примечание:
+Свойство позволяет устанавливать и получать направление полки.
+
+ShelfVisible  Отрисовка полки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShelfVisible = Object.ShelfVisible Получить свойство(* )
+Object.ShelfVisible = ShelfVisible Установить свойство (* )
+ShelfVisible = Object.GetShelfVisible( ) Получить свойство (**)
+Object.SetShelfVisible( ShelfVisible ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfVisible( Получить свойство
+&ShelfVisible )
+Object.put_ShelfVisible( Установить свойство
+ShelfVisible )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак отрисовки полки.
+
+TextDirection  Направление текста
+Интерфейс...
+840
+
+
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " вверх,
+FALSE " вниз.
+
+Синтаксис Automation:
+
+TextDirection = Object.TextDirection Получить свойство(* )
+Object.TextDirection = TextDirection Установить свойство (* )
+TextDirection = Object.GetTextDirection( ) Получить свойство (**)
+Object.SetTextDirection( TextDirection ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TextDirection( Получить свойство
+&TextDirection )
+Object.put_TextDirection( Установить свойство
+TextDirection )
+
+Примечание:
+Свойство позволяет устанавливать и получать направление текста.
+
+UnderPositionText  Текст под позицией
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+UnderPositionText = Получить свойство(* )
+Object.UnderPositionText
+UnderPositionText = Получить свойство (**)
+Object.GetUnderPositionText()
+
+Синтаксис COM:
+
+Object.get_UnderPositionText( Получить свойство
+&UnderPositionText )
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс текста под позицией.
+2.  Свойство доступно только для чтения.
+841
+
+
+
+Интерфейс IDimensionText
+Справка системы КОМПАС: управление размерной надписью
+kompas.chm::/176_Glava23_Obshchie_svedenija_.htm
+Интерфейс параметров текста размерной надписи.
+Иерархия:
+IDispatch
+
+IDimensionText
+Примечание:
+Является дополнительным интерфейсом для 2D и 3D размеров (интерфейсы
+IAngleDimension3D, IAngleDimension, IArcDimension, IBaseLineDimension3D,
+IBreakAngleDimension, IBreakLineDimension, IBreakRadialDimension,
+IDiametralDimension3D, IDiametralDimension, IHeightDimension, ILineDimension3D,
+ILineDimension, IRadialDimension3D, IRadialDimension). Позволяет сформировать нуж"
+ный текст размерной надписи.
+
+IDimensionText  свойства
+
+Accuracy  Количество знаков после запятой
+Интерфейс...
+Тип данных: из перечисления ksAccuracyEnum
+Синтаксис Automation:
+
+Accuracy = Object.Accuracy Получить свойство(* )
+Object.Accuracy = Accuracy Установить свойство (* )
+Accuracy = Object.GetAccuracy() Получить свойство (**)
+Object.SetAccuracy( Accuracy ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Accuracy( Получить свойство(*
+&Accuracy ) )
+Object.put_Accuracy( Установить свойство
+Accuracy ) (* )
+
+AccuracyDecimalsCount  Количество знаков после 
+запятой, используемое при округлении размера
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+842
+
+
+
+ AccuracyDecimalsCount = Object. Получить свойство(* )
+AccuracyDecimalsCount
+ AccuracyDecimalsCount = Object.Get Получить свойство (**)
+AccuracyDecimalsCount()
+
+Синтаксис COM:
+
+Object.get_ Получить свойство
+AccuracyDecimalsCount( &
+AccuracyDecimalsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+AutoNominalValue  Автоматическое определение 
+номинального значения размера
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoNominalValue = Получить свойство(* )
+Object.AutoNominalValue
+Object.AutoNominalValue = Установить свойство (* )
+AutoNominalValue
+AutoNominalValue = Получить свойство (**)
+Object.GetAutoNominalValue()
+Object.SetAutoNominalValue( Установить свойство (**)
+AutoNominalValue )
+
+Синтаксис COM:
+
+Object.get_AutoNominalValue( Получить свойство(* )
+&AutoNominalValue )
+Object.put_AutoNominalValue( Установить свойство (* )
+AutoNominalValue )
+
+Примечание:
+По умолчанию признак включен и задает автоматическое вычисление значения размера.
+Если признак снят, то значение вводили вручную. При необходимости можно вернуть ав"
+томатическое вычисление значения размера. Для этого нужно установить флаг в TRUE.
+При этом отображаемое значение изменится. Точность отображения автоматически вы"
+численного значения можно задать:
+843
+
+
+
+в диалоге настройки точности размерных надписей
+kompas.chm::/186_23_5_Nastrojka_razmerov_v_t.htm
+Если значение размера введено вручную, то настройка точности на него не влияет.
+
+Brackets  Размер в скобках
+Интерфейс...
+Тип данных: из перечисления ksDimensionTextBracketsEnum
+Синтаксис Automation:
+
+Brackets = Object.Brackets Получить свойство(* )
+Object.Brackets = Brackets Установить свойство (* )
+Brackets = Object.GetBrackets() Получить свойство (**)
+Object.SetBrackets( Brackets ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Brackets( &Brackets ) Получить свойство(* )
+Object.put_Brackets(  Brackets ) Установить свойство (* )
+
+Примечание:
+Позволяет управлять отображением значений полей Символ, Значение и Отклонение
+в размерной надписи, обрамленных квадратными или круглыми скобками.
+Если для элементов размерной надписи включено отображение рамки и/или подчерки"
+вания, то они также заключаются в скобки.
+
+DeviationOn  Включить отклонения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DeviationOn = Object.DeviationOn Получить свойство(* )
+Object.DeviationOn = DeviationOn Установить свойство (* )
+DeviationOn = Object.GetDeviationOn() Получить свойство (**)
+Object.SetDeviationOn( DeviationOn ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DeviationOn( Получить свойство(* )
+&DeviationOn )
+Object.put_DeviationOn(  Установить свойство (* )
+DeviationOn )
+
+Примечание:
+844
+
+
+
+Установите свойство в TRUE, чтобы отклонения или пределы были отрисованы в размер"
+ной надписи. Если пределы включены в размерную надпись, а квалитет нет, то номи"
+нальное значение в размерной надписи не отображается.
+Если отображение предельных значений размера включено, а квалитет не задан, то из"
+менение геометрии размера (например, при перестроении ассоциативного размера) не
+приводит к пересчету предельных значений.
+
+DeviationType  Тип отклонений
+Интерфейс...
+Тип данных: Из перечисления ksDimensionDeviationEnum
+Синтаксис Automation:
+
+DeviationType = Object.DeviationType Получить свойство(* )
+Object.DeviationType = DeviationType Установить свойство (* )
+DeviationType = Получить свойство (**)
+Object.GetDeviationType()
+Object.SetDeviationType( Установить свойство (**)
+DeviationType )
+
+Синтаксис COM:
+
+Object.get_DeviationType( Получить свойство(* )
+&DeviationType )
+Object.put_DeviationType(  Установить свойство (* )
+DeviationType )
+
+Примечание:
+Установите значение свойства равным:
+
+▼ ksDimDeviation, если требуется внести в размерную надпись предельные отклонения
+размера,
+
+▼ ksDimLimits, если требуется внести предельные значения размера (предельные значения
+записываются одно над другим) или
+
+▼ ksDimLineLimits, если требуется внести предельные значения размера (предельные зна"
+чения записываются друг за другом через дефис). 
+Отклонения или предельные значения размера вычисляются автоматически в соответст"
+вии с выбранным квалитетом и номинальным значением размера. При необходимости
+вы можете ввести значения отклонений или пределов вручную.
+Если значения отклонений равны по модулю, но отличаются по знаку, то перед значени"
+ем отклонения отображается знак ±. 
+После ввода отклонений или пределов вручную поле Квалитет очищается.
+
+HasTolerance  Отключить допуск
+Интерфейс...
+Тип данных: BOOL
+845
+
+
+
+Синтаксис Automation:
+
+HasTolerance = Object.HasTolerance Получить свойство(* )
+Object.HasTolerance = HasTolerance Установить свойство (* )
+HasTolerance = Получить свойство (**)
+Object.GetHasTolerance()
+Object.SetHasTolerance( HasTolerance Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_HasTolerance( Получить свойство(* )
+&HasTolerance )
+Object.put_HasTolerance(  Установить свойство (* )
+HasTolerance )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак отключения допуска.
+
+HighDeviation  Верхнее отклонение
+Интерфейс...
+Тип данных: интерфейс строки текста ITextLine
+Синтаксис Automation:
+
+HighDeviation = Object.HighDeviation Получить свойство(* )
+HighDeviation = Получить свойство (**)
+Object.GetHighDeviation()
+
+Синтаксис COM:
+
+Object.get_HighDeviation( Получить свойство(* )
+&HighDeviation )
+
+Примечание:
+
+1.  Свойство позволяет получить и задать верхнее отклонение или предельное значение
+для размера.
+
+2.  Свойство доступно только для чтения.
+
+HighDeviationValue  Верхнее отклонение
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+846
+
+
+
+HighDeviationValue = Получить свойство(* )
+Object.HighDeviationValue
+HighDeviationValue = Получить свойство (**)
+Object.GetHighDeviationValue()
+
+Синтаксис COM:
+
+Object.get_HighDeviationValue( Получить свойство
+&HighDeviationValue )
+
+Примечание:
+Свойство доступно только для чтения.
+
+LowDeviation  Нижнее отклонение
+Интерфейс...
+Тип данных: интерфейс строки текста ITextLine
+Синтаксис Automation:
+
+LowDeviation = Object.LowDeviation Получить свойство(* )
+LowDeviation = Получить свойство (**)
+Object.GetLowDeviation()
+
+Синтаксис COM:
+
+Object.get_LowDeviation( Получить свойство(* )
+&LowDeviation )
+
+Примечание:
+
+1.  Свойство позволяет получить и задать нижнее отклонение или предельное значение для
+размера.
+
+2.  Свойство доступно только для чтения.
+
+LowDeviationValue  Нижнее отклонение
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+LowDeviationValue = Получить свойство(* )
+Object.LowDeviationValue
+LowDeviationValue = Получить свойство (**)
+Object.GetLowDeviationValue()
+847
+
+
+
+Синтаксис COM:
+
+Object.get_LowDeviationValue( Получить свойство
+&LowDeviationValue )
+
+Примечание:
+Свойство доступно только для чтения.
+
+NominalText  Текст номинального значения
+Интерфейс...
+Тип данных: интерфейс строки текста ITextLine
+Синтаксис Automation:
+
+NominalText = Object.NominalText Получить свойство(* )
+NominalText = Получить свойство (**)
+Object.GetNominalText()
+
+Синтаксис COM:
+
+Object.get_NominalText( Получить свойство(* )
+&NominalText )
+
+Примечание:
+
+1.  Свойство позволяет получить и задать текст значения размера, заданного пользовате"
+лем.
+
+2.  Для задания текста нужно снять признак IDimensionText::AutoNominalValue.
+3.  Свойство доступно только для чтения.
+
+NominalValue  Значение размера
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+NominalValue = Object.NominalValue Получить свойство(* )
+Object.NominalValue = NominalValue Установить свойство (* )
+NominalValue = Получить свойство (**)
+Object.GetNominalValue()
+Object.SetNominalValue( Установить свойство (**)
+NominalValue )
+
+Синтаксис COM:
+848
+
+
+
+Object.get_NominalValue( Получить свойство(* )
+&NominalValue )
+Object.put_NominalValue(  Установить свойство (* )
+NominalValue )
+
+Примечание:
+
+1.  Позволяет получить и установить значение размера. 
+2.  При изменении свойства выполняются следующие действия:
+
+▼ формируется текстовое значение номинала IDimensionText::NominalText;
+▼ у размера снимается признак автоматического определения номинального значения
+
+IDimensionText::AutoNominalValue;
+Значение размера при этом не изменяется. Значение размера изменяется при изменении
+параметров размера, например, при изменении расстояния между выносными линиями
+линейного размера.
+
+Prefix  Текст до (префикс)
+Интерфейс...
+Тип данных: интерфейс строки текста ITextLine
+Синтаксис Automation:
+
+Prefix = Object.Prefix Получить свойство(* )
+Prefix = Object.GetPrefix() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Prefix( &Prefix ) Получить свойство(* )
+
+Примечание:
+
+1.  Свойство позволяет получить и задать текст, предшествующий основному содержанию
+размерной надписи.
+
+2.  Свойство доступно только для чтения.
+
+Rectangle  Текст в рамке
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Rectangle = Object.Rectangle Получить свойство(* )
+Object.Rectangle = Rectangle Установить свойство (* )
+Rectangle = Object.GetRectangle() Получить свойство (**)
+Object.SetRectangle( Rectangle ) Установить свойство (**)
+849
+
+
+
+Синтаксис COM:
+
+Object.get_Rectangle( &Rectangle Получить свойство(* )
+)
+Object.put_Rectangle(  Rectangle ) Установить свойство (* )
+
+Примечание:
+Позволяет управлять отрисовкой рамки вокруг полей Символ, Значение и Отклоне
+ние в размерной надписи.
+
+Sign  Номер условного значка перед номиналом
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+0 " нет значка,
+1 " диаметр,
+2 " квадрат,
+3 " К " радиус,
+4 " М " метрическая резьба,
+>4 " символ из любого шрифта, задаваемого через свойство 
+
+IDimensionText::SignFont (по умолчанию 'Symbol type A').
+
+Синтаксис Automation:
+
+Sign = Object.Sign Получить свойство(* )
+Object.Sign = Sign Установить свойство (* )
+Sign = Object.GetSign() Получить свойство (**)
+Object.SetSign( Sign ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sign( &Sign ) Получить свойство(* )
+Object.put_Sign( Sign ) Установить свойство (* )
+
+Примечание:
+Позволяет получить установить номер условного значка перед номиналом.
+
+SignFont  Шрифт для условного значка перед 
+номиналом
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+850
+
+
+
+SignFont = Object.SignFont Получить свойство(* )
+Object.SignFont = SignFont Установить свойство (* )
+SignFont = Object.GetSignFont() Получить свойство (**)
+Object.SetSignFont( SignFont ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SignFont( &SignFont ) Получить свойство(* )
+Object.put_SignFont(  SignFont ) Установить свойство (* )
+
+Примечание:
+
+1.  Позволяет получить установить шрифт для условного значка перед номиналом.
+2.  Используется для символов с номером IDimensionText::Sign> 4.
+3.  По умолчанию используется шрифт Symbol type A. 
+
+Style  Стиль текста
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Style = Object.Style Получить свойство(* )
+Object.Style = Style Установить свойство (* )
+Style = Object.GetStyle() Получить свойство (**)
+Object.SetStyle( Style ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Style( &Style ) Получить свойство(* )
+Object.put_Style( Style ) Установить свойство (* )
+
+Примечание:
+Позволяет получить и установить стиль для текстов размера. 0 " умолчательный стиль
+для текстов размера.
+
+Suffix  Текст после (суффикс)
+Интерфейс...
+Тип данных: интерфейс строки текста ITextLine
+Синтаксис Automation:
+
+Suffix = Object.Suffix Получить свойство(* )
+Suffix = Object.GetSuffix() Получить свойство (**)
+851
+
+
+
+Синтаксис COM:
+
+Object.get_Suffix( &Suffix ) Получить свойство(* )
+
+Примечание:
+
+1.  Свойство позволяет получить и задать текст, следующий за основным содержанием
+размерной надписи.
+
+2.  Свойство доступно только для чтения.
+
+TextAlign  Выравнивание текста
+Интерфейс...
+Тип данных: из перечисления ksDimensionTextAlignEnum
+Синтаксис Automation:
+
+TextAlign = Object.TextAlign Получить свойство(* )
+Object.TextAlign = TextAlign Установить свойство (* )
+TextAlign = Object.GetTextAlign() Получить свойство (**)
+Object.SetTextAlign( TextAlign ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TextAlign( &TextAlign Получить свойство(* )
+)
+Object.put_TextAlign(  TextAlign ) Установить свойство (* )
+
+Примечание:
+Свойство позволяет выбрать способ расположения отклонений или предельных значе"
+ний относительно номинального значения.
+
+TextFormat  Формат текста
+Интерфейс...
+Тип данных: из перечисления ksDimTextFormatEnum
+Синтаксис Automation:
+
+TextFormat = Object.TextFormat Получить свойство(* )
+Object.TextFormat = TextFormat Установить свойство (* )
+TextFormat = Object.GetTextFormat() Получить свойство (**)
+Object.SetTextFormat( TextFormat ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TextFormat( Получить свойство(* )
+&TextFormat )
+852
+
+
+
+Object.put_TextFormat(  Установить свойство (* )
+TextFormat )
+
+Примечание:
+
+1.  Свойство позволяет получить и задать формат отображаемого значения размера.
+2.  Свойство используется для углового размера и углового размера с обрывом.
+
+TextUnder  Текст под размерной надписью
+Интерфейс...
+Тип данных: интерфейс текста для работы с аннотационными объектами IText
+Синтаксис Automation:
+
+TextUnder = Object.TextUnder Получить свойство(* )
+TextUnder = Object.GetTextUnder() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TextUnder( Получить свойство(* )
+&TextUnder )
+
+Примечание:
+
+1.  Свойство позволяет получить и задать текст, который располагается под размерной
+надписью.
+
+2.  Свойство доступно только для чтения.
+
+Tolerance  Текст номинального значения
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Tolerance = Object.Tolerance Получить свойство(* )
+Object.Tolerance = Tolerance Установить свойство (* )
+Tolerance = Object.GetTolerance() Получить свойство (**)
+Object.SetTolerance( Tolerance ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Tolerance( &Tolerance Получить свойство(* )
+)
+Object.put_Tolerance(  Tolerance ) Установить свойство (* )
+
+Примечание:
+Свойство позволяет получить и задать квалитет для размера.
+853
+
+
+
+ToleranceOn  Включить квалитет
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ToleranceOn = Object.ToleranceOn Получить свойство(* )
+Object.ToleranceOn = ToleranceOn Установить свойство (* )
+ToleranceOn = Получить свойство (**)
+Object.GetToleranceOn()
+Object.SetToleranceOn( ToleranceOn ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ToleranceOn( Получить свойство(* )
+&ToleranceOn )
+Object.put_ToleranceOn(  Установить свойство (* )
+ToleranceOn )
+
+Примечание:
+Установите свойство в TRUE, чтобы обозначение квалитета было отрисовано в размер"
+ной надписи. Значение квалитета может не отображаться, если выбран номер квалитета,
+для которого отключена вставка в размерную надпись.
+Номер, начиная с которого квалитет не вносится в надпись, задается 
+
+в диалоге настройки точности размерных надписей
+kompas.chm::/186_23_5_Nastrojka_razmerov_v_t.htm
+
+UnderLine  Подчеркнутый текст
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UnderLine = Object.UnderLine Получить свойство(* )
+Object.UnderLine = UnderLine Установить свойство (* )
+UnderLine = Object.GetUnderLine() Получить свойство (**)
+Object.SetUnderLine( UnderLine ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UnderLine( Получить свойство(* )
+&UnderLine )
+Object.put_UnderLine(  UnderLine Установить свойство (* )
+)
+
+854
+
+
+
+Примечание:
+Позволяет управлять подчеркиванием значений полей Символ, Значение и Отклоне
+ние в размерной надписи.
+
+Unit  Единица измерения
+Интерфейс...
+Тип данных: интерфейс строки текста ITextLine
+Синтаксис Automation:
+
+Unit = Object.Unit Получить свойство(* )
+Unit = Object.GetUnit() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Unit( &Unit ) Получить свойство(* )
+
+Примечание:
+
+1.  Свойство позволяет получить и задать текст для обозначения единиц измерения про"
+ставляемого размера. 
+
+2.  Текст будет отрисован в размерной надписи сразу после предельных отклонений.
+3.  Свойство доступно только для чтения.
+
+IDimensionText  методы
+
+InitDeviations  Установить отклонения
+Интерфейс...
+Синтаксис Automation:
+BOOL InitDeviations( double HighDeviationValue, double LowDeviationValue );
+Синтаксис COM:
+HRESULT InitDeviations( double HighDeviationValue, double LowDeviationValue, BOOL *
+Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+
+ HighDeviationValue " значение верхнего отклонения,
+LowDeviationValue " значение нижнего отклонения.
+855
+
+
+
+Интерфейс IMarkLeader
+Справка системы КОМПАС: Обозначение маркировки 2D
+kompas.chm::/CM_BRANDLEADER.htm
+
+Обозначение маркировки 3D
+kompas.chm::/CM_BRANDLEADER_3D.htm
+Интерфейс параметров обозначения маркировки.
+Иерархия:
+IDispatch
+
+IMarkLeader
+IBranchs
+IBranchs3D
+Описание:
+
+1.  Интерфейс можно получить с помощью метода IUnknown::QueryInterface у интерфейсов
+IBaseLeader или IBaseLeader3D.
+
+2.  С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+ответвлений IBranchs или IBranchs3D.
+
+IMarkLeader  свойства
+
+Designation  Обозначение
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+Designation = Получить свойство(* )
+Object.Designation
+Designation = Получить свойство (**)
+Object.GetDesignation()
+
+Синтаксис COM:
+
+Object.get_Designation( Получить свойство
+&Designation )
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс текста обозначения.
+2.  Свойство доступно только для чтения.
+856
+
+
+
+TextOnBranch  Текст над ножкой
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextOnBranch = Получить свойство(* )
+Object.TextOnBranch
+TextOnBranch = Получить свойство (**)
+Object.GetTextOnBranch()
+
+Синтаксис COM:
+
+Object.get_TextOn Получить свойство
+Branch(
+&TextOnBranch )
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс текста над ножкой.
+2.  Свойство доступно только для чтения.
+
+TextUnderBranch  Текст под ножкой
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextUnderBranch = Получить свойство(* )
+Object.TextUnderBranch
+TextUnderBranch = Получить свойство (**)
+Object.GetTextUnderBranch()
+
+Синтаксис COM:
+
+Object.get_TextUnderBranch( Получить свойство
+&TextUnderBranch )
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс текста под ножкой.
+2.  Свойство доступно только для чтения.
+857
+
+
+
+Обозначения
+Коллекции обозначений
+
+Интерфейс IAssociationTables
+Интерфейс коллекции ассоциативных таблиц.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IDrawingObjects
+IAssociationTables
+
+Данный интерфейс можно получить у контейнера условных обозначений
+2DISymbols2DContainer::AxisLines.
+
+IAssociationTables  свойства
+
+AssociationTable  Получить таблицу по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IAssociationTable
+Синтаксис Automation:
+
+AssociationTable = Object.AssociationTable( Получить свойство(* )
+Index )
+AssociationTable = Получить свойство (**)
+Object.GetAssociationTable( Index )
+
+Синтаксис COM:
+
+Object.get_AssociationTable( Получить свойство
+Index, &AssociationTable )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IAssociationTables  методы
+
+Add  Добавить таблицу в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( VARIANT Document, ksReportTypeEnum Type );
+858
+
+
+
+Синтаксис COM:
+HRESULT Add( VARIANT Document, ksReportTypeEnum Type, IAssociationTable ** Result );
+Возвращаемое значение:
+
+ " указатель на ассоциативную таблицу IAssociationTable.
+
+Входные параметры:
+
+Document " имя документа или указатель на документ,
+Type " тип отчета.
+
+Интерфейс IAxisLines
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_AXEDLINESEG.htm
+Интерфейс коллекции осевых линий.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+ IAxisLines
+Описание:
+Позволяет создавать и получать осевые линии.
+Примечание:
+Данный интерфейс можно получить у контейнера условных обозначений 2D
+ISymbols2DContainer::AxisLines.
+
+IAxisLines  свойства
+
+AxisLine  Осевая линия, заданная по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс осевой линии IAxisLine
+Синтаксис Automation:
+
+AxisLine = iObject.AxisLine ( Index ); Получить свойство(* )
+AxisLine = iObject.GetAxisLine( Index ); Получить свойство (**)
+
+Синтаксис COM:
+859
+
+
+
+iObject">get_AxisLine( Index, Получить свойство
+&AxisLine )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IAxisLines  методы
+
+Add  Создать новый элемент и добавить его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IAxisLine ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс осевой линии IAxisLine.
+
+Интерфейс IBases
+Справка системы КОМПАС: команда База
+KOMPAS.chm::/CM_BASE.htm
+Интерфейс коллекции обозначений баз.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IBases
+Описание:
+Интерфейс позволяет получать и создавать обозначение базы.
+Примечание:
+Получить интерфейс можно, используя свойство контейнера условных обозначений 2D
+ISymbols2DContainer::Bases.
+
+IBases  свойства
+
+Base  Обозначение базы, заданное по индексу
+Интерфейс...
+860
+
+
+
+Тип данных: указатель на интерфейс обозначения базы IBase
+Синтаксис Automation:
+
+Base = iObject.Base( Index ); Получить свойство(* )
+Base = iObject.GetBase( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Base( Index, &Base ) Получить свойство
+
+Входные параметры:
+
+Index (Variant) " Индекс узла в коллекции. Поддерживаются 
+следующие типы:
+" VT_I4 " индекс обозначения базы.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса может использоваться индекс в коллекции и reference объекта.
+
+IBases  методы
+
+Add  Создать обозначение базы (добавить в 
+коллекцию)
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IBase ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс обозначения базы IBase.
+
+Интерфейс IBrokenLines
+Справка системы КОМПАС...
+KOMPAS.chm::/IDD_BROKENLINE_PARAM_DIALOG.htm
+Интерфейс коллекции линий обрыва с изломами.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+861
+
+
+
+IDrawingObjects
+IBrokenLines
+
+Описание:
+Позволяет создавать и получать линии обрыва с изломами.
+Примечание:
+Данный интерфейс можно получить у контейнера условных обозначений
+ISymbols2DContainer::BrokenLines.
+
+IBrokenLines  свойства
+

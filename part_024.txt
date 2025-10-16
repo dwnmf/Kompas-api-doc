@@ -1,0 +1,2532 @@
+Тип данных: типы выравнивания ksAlignEnum
+Синтаксис Automation:
+
+Align = iObject.Align; Получить свойство(* )
+iObject.Align = Align; Установить свойство (* )
+Align = iObject.GetAlign (); Получить свойство (**)
+iObject.SetAlign (Align); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_Align
+(&Align);
+iObject" Установить свойство
+>put_Align
+(Align);
+
+Примечание:
+Свойство позволяет установить и получить выравнивание строк.
+Строка представляет собой абзац текста и может размещаться на нескольких строках,
+если включено выравнивание текста по горизонтали и вертикали.
+
+BlockIndex  Индекс листа в документе
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+BlockIndex = Object.BlockIndex Получить свойство(* )
+BlockIndex = Object.GetBlockIndex() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BlockIndex( Получить свойство
+&BlockIndex )
+
+Примечание:
+1238
+
+
+
+Свойство доступно только для чтения.
+
+Count  Количество компонентов строки текста
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Count = iObject.Count; Получить свойство(* )
+Count = iObject.GetCount (); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Count (&Count); Получить свойство
+
+Примечание:
+Свойство позволяет получить количество компонентов строки текста.
+
+IndentedLine  Смещение красной строки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+IndentedLine = Получить свойство(* )
+iObject.IndentedLine;
+iObject.IndentedLine = Установить свойство (* )
+IndentedLine;
+IndentedLine = Получить свойство (**)
+iObject.GetIndentedLine ();
+iObject.SetIndentedLine Установить свойство (**)
+(IndentedLine);
+
+Синтаксис COM:
+
+iObject">get_IndentedLine Получить свойство
+(&IndentedLine);
+iObject">put_IndentedLine Установить свойство
+(IndentedLine);
+
+Примечание:
+Свойство позволяет установить и получить смещение красной строки.
+
+LeftEdge  Отступ текста слева
+Интерфейс...
+1239
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+LeftEdge = Получить свойство(* )
+iObject.LeftEdge;
+iObject.LeftEdge = Установить свойство (* )
+LeftEdge;
+LeftEdge = Получить свойство (**)
+iObject.GetLeftEdge ();
+iObject.SetLeftEdge Установить свойство (**)
+(LeftEdge);
+
+Синтаксис COM:
+
+iObject">get_LeftEdge Получить свойство
+(&LeftEdge);
+iObject">put_LeftEdge Установить свойство
+(LeftEdge);
+
+Примечание:
+Свойство позволяет установить и получить отступ текста слева.
+
+Level  Уровень вложенности нумерации
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Level = iObject.Level; Получить свойство(* )
+iObject.Level = Level; Установить свойство (* )
+Level = iObject.GetLevel (); Получить свойство (**)
+iObject.SetLevel (Level); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_Level
+(&Level);
+iObject" Установить свойство
+>put_Level
+(Level);
+
+римечание:
+Свойство позволяет установить и получить уровень вложенности нумерации.
+1240
+
+
+
+NewPage  Признак начала абзаца с новой страницы 
+(Ctrl+Enter)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NewPage = Object.NewPage Получить свойство(* )
+Object.NewPage = NewPage Установить свойство (* )
+NewPage = Object.GetNewPage() Получить свойство (**)
+Object.SetNewPage( NewPage ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NewPage( &NewPage ) Получить свойство
+Object.put_NewPage(  NewPage ) Установить свойство
+
+NewSection  Признак начала раздела
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NewSection = Получить свойство(* )
+Object.NewSection
+Object.NewSection = Установить свойство (* )
+NewSection
+NewSection = Получить свойство (**)
+Object.GetNewSection()
+Object.SetNewSection( Установить свойство (**)
+NewSection )
+
+Синтаксис COM:
+
+Object.get_New Получить свойство
+Section(
+&NewSection )
+Object.put_Ne Установить свойство
+wSection(
+NewSection )
+
+Numbering  Тип нумерации абзаца
+Интерфейс...
+1241
+
+
+
+Тип данных: из перечисления ksTextNumberingEnum
+Синтаксис Automation:
+
+Numbering = Получить свойство(* )
+iObject.Numbering;
+iObject.Numbering = Установить свойство (* )
+Numbering;
+Numbering = Получить свойство (**)
+iObject.GetNumbering ();
+iObject.SetNumbering Установить свойство (**)
+(Numbering);
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_Numberin
+g
+(&Numbering);
+iObject" Установить свойство
+>put_Numberin
+g (Numbering);
+
+Примечание:
+Свойство позволяет установить и получить тип нумерации абзаца.
+
+RightEdge  Отступ текста справа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+RightEdge = Получить свойство(* )
+iObject.RightEdge;
+iObject.RightEdge = Установить свойство (* )
+RightEdge;
+RightEdge = Получить свойство (**)
+iObject.GetRightEdge ();
+iObject.SetRightEdge Установить свойство (**)
+(RightEdge);
+
+Синтаксис COM:
+
+iObject">get_RightEdge Получить свойство
+(&RightEdge);
+iObject">put_RightEdge Установить свойство
+(RightEdge);
+1242
+
+
+
+Примечание:
+Свойство позволяет установить и получить отступ текста справа.
+
+SectionBlockIndex  Индекс листа в разделе
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+SectionBlockIndex = Получить свойство(* )
+Object.SectionBlockIndex
+SectionBlockIndex = Получить свойство (**)
+Object.GetSectionBlockIndex()
+
+Синтаксис COM:
+
+Object.get_SectionBlockIndex( Получить свойство
+&SectionBlockIndex )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Step  Шаг строк
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Step = iObject.Step; Получить свойство(* )
+iObject.Step = Step; Установить свойство (* )
+Step = iObject.GetStep (); Получить свойство (**)
+iObject.SetStep (Step); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_Step
+(&Step);
+iObject" Установить свойство
+>put_Step
+(Step);
+
+Примечание:
+Свойство позволяет установить и получить шаг строк.
+1243
+
+
+
+Строка представляет собой абзац текста и может размещаться на нескольких строках,
+если включено выравнивание текста по горизонтали и вертикали.
+
+StepAfterParagraph  Дополнительный шаг после абзаца
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+StepAfterParagraph = Получить свойство(* )
+iObject.StepAfterParagrap
+h;
+iObject.StepAfterParagrap Установить свойство (* )
+h = StepAfterParagraph;
+StepAfterParagraph = Получить свойство (**)
+iObject.GetStepAfterParagr
+aph ();
+iObject.SetStepAfterParagr Установить свойство (**)
+aph (StepAfterParagraph);
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_StepAfter
+Paragraph
+(&StepAfterPar
+agraph);
+iObject" Установить свойство
+>put_StepAfter
+Paragraph
+(StepAfterPara
+graph);
+
+Примечание:
+Свойство позволяет установить и получить дополнительный шаг после абзаца.
+
+StepBeforeParagraph  Дополнительный шаг перед 
+абзацем
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+1244
+
+
+
+StepBeforeParagraph = Получить свойство(* )
+iObject.StepBeforeParagra
+ph;
+iObject.StepBeforeParagra Установить свойство (* )
+ph = StepBeforeParagraph;
+iObject.GetStepBeforePara Получить свойство (**)
+graph ();
+iObject.SetStepBeforePara Установить свойство (**)
+graph 
+(StepBeforeParagraph);
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_StepBeforeParagraph 
+(&StepBeforeParagraph);
+iObject" Установить свойство
+>put_StepBeforeParagrap
+h (StepBeforeParagraph);
+
+Примечание:
+Свойство позволяет установить и получить дополнительный шаг перед абзацем.
+
+Str  Текст в виде строки
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+Str = iObject.Str; Получить свойство(* )
+iObject.Str = Str; Установить свойство (* )
+Str = iObject.GetStr (); Получить свойство (**)
+iObject.SetStr (Str); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Str (&Str); Получить свойство
+iObject">put_Str (Str); Установить свойство
+
+Примечание:
+Свойство позволяет установить и получить текст в виде массива символов.
+Дроби представляются в формате $d числитель $ знаменатель $.
+Выражение типа суммы в формате $ верхний индекс $ нижний индекс $.
+Спецзнак в формате &N или @N.
+1245
+
+
+
+При замене строки очищаются и создаются новые компоненты.
+
+Style  Cтиль текста
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Style = iObject.Style; Получить свойство(* )
+iObject.Style = Style; Установить свойство (* )
+Style = iObject.GetStyle (); Получить свойство (**)
+iObject.SetStyle (Style); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Style (&Style); Получить свойство
+iObject">put_Style (Style); Установить свойство
+
+Примечание:
+
+1.  Свойство позволяет получить и установить стиль текста.
+2.  Стиль может быть системным из перечисления ksTextStyleEnum или пользовательским.
+
+Tabulators  Коллекция позиции табуляторов
+Интерфейс...
+Тип данных: Указатель на интерфейс ITabulators
+Синтаксис Automation:
+
+Tabulators = Object.Tabulators; Получить свойство(* )
+Tabulators = Object.GetTabulators(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Tabulators( Получить свойство
+&Tabulators );
+
+Примечание:
+Свойство доступно только для чтения.
+
+TextItem  Компонент строки текста с заданным 
+индексом
+Интерфейс...
+Тип данных: указатель на интерфейс компонента строки текста ITextItem
+1246
+
+
+
+Синтаксис Automation:
+
+TextItem = iObject.TextItem (Index); Получить свойство(* )
+TextItem = iObject.GetTextItem (Index); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_TextItem (Index, Получить свойство
+&TextItem);
+
+Входные параметры:
+
+Index ( long ) " индекс компонента строки.
+
+Примечание:
+Свойство позволяет получить интерфейс компонента строки текста ITextItem.
+
+TextItems  Массив SAFEARRAY компонентов строки 
+текста
+Интерфейс...
+Тип данных: VARIANT ( VT_ARRAY|VT_DISPATCH )
+Синтаксис Automation:
+
+TextItems = iObject.TextItems; Получить свойство(* )
+TextItems = iObject.GetTextItems (); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_TextItems Получить свойство
+(&TextItems);
+
+Примечание:
+Свойство позволяет получить массив SAFEARRAY компонентов строки текста. Это мас"
+сив интерфейсов ITextItem. Если возвращается один объект, то тип VARIANT"а будет
+VT_DISPATCH, если возвращается несколько объектов, то тип VARIANT"а будет
+VT_ARRAY | VT_DISPATCH.
+
+TextLineData  Интерфейс дополнительных данных 
+строки
+Интерфейс...
+Тип данных: IKompasAPIObject
+Синтаксис Automation:
+1247
+
+
+
+TextLineData = Получить свойство(* )
+Object.TextLineData
+TextLineData = Получить свойство (**)
+Object.GetTextLineData ()
+
+Синтаксис COM:
+
+Object.get_TextLineData ( Получить свойство
+&TextLineData )
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В зависимости от типа строки TextLineType возвращаются следующие значения свойст"
+
+ва:
+▼ ksTLText         " NULL,
+▼ ksTLVerticalText " указатель на интерфейс IText,
+▼ ksTLFragment " указатель на интерфейс IInsertionParameters,
+▼ ksTLRaster " указатель на интерфейс IInsertionParameters,
+▼ ksTLTable " указатель на интерфейс ITextTable.
+
+TextLineType  Тип строки
+Интерфейс...
+Тип данных: ksTextLineType
+Синтаксис Automation:
+
+TextLineType = Получить свойство(* )
+Object.TextLineType
+TextLineType = Получить свойство (**)
+Object.GetTextLineType ()
+
+Синтаксис COM:
+
+Object.get_TextLineType ( Получить свойство
+&TextLineType )
+
+Примечание:
+Свойство доступно только для чтения.
+1248
+
+
+
+ITextLine  методы
+
+Add  Добавить компонент строки в конец строки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add ();
+Синтаксис COM:
+HRESULT Add ( [out, retval] ITextItem ** Value );
+Возвращаемое значение:
+
+TRUE " указатель на интерфейс ITextItem компонента строки 
+текста.
+
+Примечание:
+Позволяет добавить компонент строки в конец строки.
+
+AddBefore  Добавить компонент строки перед 
+компонентом с заданным индексом
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddBefore ( long Index );
+Синтаксис COM:
+HRESULT AddBefore ([in] long Index, [out, retval] ITextItem ** Value );
+Выходные параметры:
+
+Index (long) " индекс компонента строки, перед которым нужно 
+вставить новый компонент.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ITextItem строка текста.
+
+Примечание:
+Позволяет добавить компонент строки перед компонентом с заданным индексом.
+
+Assign  Скопировать текст
+Интерфейс...
+Синтаксис Automation:
+BOOL Assign( LPDISPATCH Other );
+Синтаксис COM:
+HRESULT Assign( ITextLine * Other, BOOL * Result );
+1249
+
+
+
+Входной параметр:
+
+Other  " копируемый текст " указатель на интерфейс 
+ITextLine.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Clear  Очистить строку текста
+Интерфейс...
+ Синтаксис Automation:
+BOOL Clear ();
+Синтаксис COM:
+HRESULT Clear ( [out, retval] VARIANT_BOOL* Value );
+Возвращаемое значение:
+
+TRUE " строка очищена,
+FALSE " ошибка.
+
+Примечание:
+Позволяет очистить строку текста. После этого можно вводить новую строку.
+
+Delete  Удалить строку текста
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete ();
+Синтаксис COM:
+HRESULT Delete ( [out, retval] VARIANT_BOOL* Value );
+Возвращаемое значение:
+
+TRUE " строка текста удалена,
+FALSE " ошибка.
+
+Примечание:
+Позволяет удалить строку текста.
+
+Edit  Редактировать в окне
+Интерфейс...
+Синтаксис Automation:
+1250
+
+
+
+BOOL Edit( OLE_HANDLE HWnd );
+Синтаксис COM:
+HRESULT Edit( OLE_HANDLE HWnd, BOOL * Result );
+Возвращаемое значение:
+
+TRUE  " в случае изменения текста,
+FALSE " в случае отмены.
+
+InsertHypertextReference  Добавить ссылку в текст 
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH InsertHypertextReference( long TextItemIndex, 
+IKompasAPIObject * Object, 
+ksHypertextTypeEnum Type,
+BOOL Brackets,
+long TextLineIndex,
+long Precision,
+double PropertyId);
+Синтаксис COM:
+HRESULT InsertHypertextReference( long TextItemIndex, 
+IKompasAPIObject * Object,
+ksHypertextTypeEnum Type,
+BOOL Brackets,
+long TextLineIndex,
+long Precision,
+double PropertyId,
+ITextItem ** Result );
+Входные параметры:
+
+TextItemIndex " индекс компонента текста,
+Object " объект, на который сделана ссылка,
+Type " тип ссылки,
+Brackets " признак скобок,
+TextLineIndex " индекс строки в тексте,
+Precision " точность вывода числовых значений,
+PropertyId " идентификатор свойства.
+
+Возвращаемое значение:
+
+" указатель на интерфейс компонента текста, содержащего ссылку.
+1251
+
+
+
+Интерфейс ITextStyle
+Справка системы КОМПАС...
+kompas.chm::/527_65_5_Formatirovanie_teksta.htm
+Интерфейс параметров стиля текста.
+Иерархия:
+IKompasAPIObject
+
+ITextStyle
+Примечание:
+Данный интерфейс можно получить от интерфейса настроек спецификации
+ISpecificationTuning, используя:
+
+▼ ISpecificationTuning::SectionTextStyleFirst;
+▼ ISpecificationTuning::SectionTextStyleNext;
+▼ ISpecificationTuning::ObjectTextStyle;
+▼ ISpecificationTuning::PerformanceBlockTextStyleFirst;
+▼ ISpecificationTuning::PerformanceBlockTextStyleNext;
+▼ ISpecificationTuning::AdditionalBlockTextStyleFirst;
+▼ ISpecificationTuning::AdditionalBlockTextStyleNext;
+▼ ISpecificationTuning::NestingBlockTextStyleFirst;
+▼ ISpecificationTuning::NestingBlockTextStyleNext.
+
+ITextStyle  свойства
+
+Align  Выравнивание
+Интерфейс...
+Тип данных: из перечисления ksAlignEnum
+Синтаксис Automation:
+
+Align = iObject.Align Получить свойство(* )
+iObject.Align = Align Установить свойство (* )
+Align = iObject.GetAlign() Получить свойство (**)
+iObject.SetAlign (Align) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Align (&Align) Получить свойство
+iObject">put_Align (Align) Установить свойство
+
+Примечание:
+1252
+
+
+
+1.  Свойство позволяет получить/изменить выравнивание абзацев (по левой границе, по
+правой границе, центрирование, выравнивание по двум границам).
+
+2.  Свойство используется для стиля, полученного через методы интерфейса
+ISpecificationTuning.
+
+EnableLine1  Разрешена ли первая комбинация для 
+использования
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+EnableLine1 = Object.EnableLine1 Получить свойство(* )
+Object.EnableLine1 = EnableLine1 Установить свойство (* )
+EnableLine1 = Object.GetEnableLine1() Получить свойство (**)
+Object.SetEnableLine1 (EnableLine1) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EnableLine1 Получить свойство
+(&EnableLine1)
+Object.put_EnableLine1(EnableLi Установить свойство
+ne1)
+
+EnableLine2  Разрешена ли вторая комбинация для 
+использования
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+EnableLine2 = Object.EnableLine2 Получить свойство(* )
+Object.EnableLine2 = EnableLine2 Установить свойство (* )
+EnableLine2 = Object.GetEnableLine2() Получить свойство (**)
+Object.SetEnableLine2 (EnableLine2) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EnableLine2 Получить свойство
+(&EnableLine2)
+Object.put_EnableLine2(EnableLi Установить свойство
+ne2)
+1253
+
+
+
+EnableLine3  Разрешена ли третья комбинация для 
+использования
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+EnableLine3 = Object.EnableLine3 Получить свойство(* )
+Object.EnableLine3 = EnableLine3 Установить свойство (* )
+EnableLine3 = Object.GetEnableLine3() Получить свойство (**)
+Object.SetEnableLine3 (EnableLine3) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EnableLine3 Получить свойство
+(&EnableLine3)
+Object.put_EnableLine3(EnableLi Установить свойство
+ne3)
+
+Extended  Расширенный стиль текста
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Extended = Object.Extended Получить свойство(* )
+Object.Extended = Extended Установить свойство (* )
+Extended = Object.GetExtended() Получить свойство (**)
+Object.SetExtended (Extended) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Extended Получить свойство
+(&Extended)
+Object.put_Extended(Extended) Установить свойство
+
+Font  Параметры шрифта
+Интерфейс...
+Тип данных: указатель на интерфейс ITextFont параметров шрифта
+Синтаксис Automation:
+
+Font = iObject.Font Получить свойство(* )
+Font = iObject.GetFont() Получить свойство (**)
+1254
+
+
+
+Синтаксис COM:
+
+iObject">get_Font (&Font) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет параметры шрифта.
+2.  Свойство доступно только для чтения.
+3.  Свойство используется для стиля, полученного через методы интерфейса
+
+ISpecificationTuning.
+
+Height1  Высота первой строки текста
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Height1 = Object.Height1 Получить свойство(* )
+Object.Height1 = Height1 Установить свойство (* )
+Height1 = Object.GetHeight1() Получить свойство (**)
+Object.SetHeight1 (Height1) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Height1 (&Height1) Получить свойство
+Object.put_Height1(Height1) Установить свойство
+
+Height2  Высота второй строки текста
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Height2 = Object.Height2 Получить свойство(* )
+Object.Height2 = Height2 Установить свойство (* )
+Height2 = Object.GetHeight2() Получить свойство (**)
+Object.SetHeight2 (Height2) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Height2 (&Height2) Получить свойство
+Object.put_Height2(Height2) Установить свойство
+
+Height3  Высота третьей строки текста
+Интерфейс...
+1255
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Height3 = Object.Height3 Получить свойство(* )
+Object.Height3 = Height3 Установить свойство (* )
+Height3 = Object.GetHeight3() Получить свойство (**)
+Object.SetHeight3 (Height3) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Height3 (&Height3) Получить свойство
+Object.put_Height3(Height3) Установить свойство
+
+IndentedLine  Смещение красной строки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+IndentedLine = Object.IndentedLine Получить свойство(* )
+Object.IndentedLine = IndentedLine Установить свойство (* )
+IndentedLine = Object.GetIndentedLine() Получить свойство (**)
+Object.SetIndentedLine (IndentedLine) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_IndentedLine Получить свойство
+(&IndentedLine)
+Object.put_IndentedLine(Indente Установить свойство
+dLine)
+
+LeftEdge  Отступ текста слева
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+LeftEdge = Object.LeftEdge Получить свойство(* )
+Object.LeftEdge = LeftEdge Установить свойство (* )
+LeftEdge = Object.GetLeftEdge() Получить свойство (**)
+Object.SetLeftEdge (LeftEdge) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LeftEdge (&LeftEdge) Получить свойство
+1256
+
+
+
+Object.put_LeftEdge(LeftEdge) Установить свойство
+
+LinesCount  Количество строк
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+LinesCount = Object.LinesCount Получить свойство(* )
+Object.LinesCount = LinesCount Установить свойство (* )
+LinesCount = Object.GetLinesCount() Получить свойство (**)
+Object.SetLinesCount (LinesCount) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LinesCount (&LinesCount) Получить свойство
+Object.put_LinesCount(LinesCount) Установить свойство
+
+Name  Имя стиля
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = Object.Name Получить свойство(* )
+Object.Name = Name Установить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+Object.SetName (Name) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name (&Name) Получить свойство
+Object.put_Name(Name) Установить свойство
+
+Number  Номер стиля
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Number = Object.Number Получить свойство(* )
+Object.Number = Number Установить свойство (* )
+Number = Object.GetNumber() Получить свойство (**)
+Object.SetNumber (Number) Установить свойство (**)
+
+Синтаксис COM:
+1257
+
+
+
+Object.get_Number (&Number) Получить свойство
+Object.put_Number(Number) Установить свойство
+
+RightEdge  Отступ текста справа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+RightEdge = Object.RightEdge Получить свойство(* )
+Object.RightEdge = RightEdge Установить свойство (* )
+RightEdge = Object.GetRightEdge() Получить свойство (**)
+Object.SetRightEdge (RightEdge) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_RightEdge (&RightEdge) Получить свойство
+Object.put_RightEdge(RightEdge) Установить свойство
+
+Step  Шаг строк
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Step = iObject.Step Получить свойство(* )
+iObject.Step = Step Установить свойство (* )
+Step = iObject.GetStep() Получить свойство (**)
+iObject.SetStep (Step) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Step (&Step) Получить свойство
+iObject">put_Step(Step) Установить свойство
+
+Примечание:
+
+1.  Свойство позволяет получить/изменить шаг строк (расстояние между строками текста).
+2.  Значение шага задается в миллиметрах.
+3.  Свойство используется для стиля, полученного через методы интерфейса
+
+ISpecificationTuning.
+
+Step1  Шаг первой строки текста
+Интерфейс...
+Тип данных: double
+1258
+
+
+
+Синтаксис Automation:
+
+Step1 = Object.Step1 Получить свойство(* )
+Object.Step1 = Step1 Установить свойство (* )
+Step1 = Object.GetStep1() Получить свойство (**)
+Object.SetStep1 (Step1) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Step1 (&Step1) Получить свойство
+Object.put_Step1(Step1) Установить свойство
+
+Step2  Шаг второй строки текста
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Step2 = Object.Step2 Получить свойство(* )
+Object.Step2 = Step2 Установить свойство (* )
+Step2 = Object.GetStep2() Получить свойство (**)
+Object.SetStep2 (Step2) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Step2 (&Step2) Получить свойство
+Object.put_Step2(Step2) Установить свойство
+
+Step3  Шаг третьей строки текста
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Step3 = Object.Step3 Получить свойство(* )
+Object.Step3 = Step3 Установить свойство (* )
+Step3 = Object.GetStep3() Получить свойство (**)
+Object.SetStep3 (Step3) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Step3 (&Step3) Получить свойство
+Object.put_Step3(Step3) Установить свойство
+1259
+
+
+
+StepAfterParagraph  Дополнительный шаг после абзаца
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+StepAfterParagraph = Получить свойство(* )
+Object.StepAfterParagraph
+Object.StepAfterParagraph = Установить свойство (* )
+StepAfterParagraph
+StepAfterParagraph = Получить свойство (**)
+Object.GetStepAfterParagraph()
+Object.SetStepAfterParagraph Установить свойство (**)
+(StepAfterParagraph)
+
+Синтаксис COM:
+
+Object.get_StepAfterParagraph Получить свойство
+(&StepAfterParagraph)
+Object.put_StepAfterParagraph( Установить свойство
+StepAfterParagraph)
+
+StepBeforeParagraph  Дополнительный шаг перед 
+абзацем
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+StepBeforeParagraph = Получить свойство(* )
+Object.StepBeforeParagraph
+Object.StepBeforeParagraph = Установить свойство (* )
+StepBeforeParagraph
+StepBeforeParagraph = Получить свойство (**)
+Object.GetStepBeforeParagraph()
+Object.SetStepBeforeParagraph Установить свойство (**)
+(StepBeforeParagraph)
+
+Синтаксис COM:
+
+Object.get_StepBeforeParagraph Получить свойство
+(&StepBeforeParagraph)
+Object.put_StepBeforeParagraph Установить свойство
+(StepBeforeParagraph)
+1260
+
+
+
+Tabulators  Коллекция позиции табуляторов
+Интерфейс...
+Тип данных: указатель на интерфейс ITabulators
+Синтаксис Automation:
+
+Tabulators = Object.Tabulators Получить свойство(* )
+Tabulators = Object.GetTabulators() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Tabulators Получить свойство
+(&Tabulators)
+
+Примечание:
+Свойство доступно только для чтения.
+
+WidthFactor1  Коэффициент сужения первой строки 
+текста
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+WidthFactor1 = Object.WidthFactor1 Получить свойство(* )
+Object.WidthFactor1 = WidthFactor1 Установить свойство (* )
+WidthFactor1 = Object.GetWidthFactor1() Получить свойство (**)
+Object.SetWidthFactor1 (WidthFactor1) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_WidthFactor1 Получить свойство
+(&WidthFactor1)
+Object.put_WidthFactor1(WidthF Установить свойство
+actor1)
+
+WidthFactor2  Коэффициент сужения второй строки 
+текста
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+WidthFactor2 = Object.WidthFactor2 Получить свойство(* )
+1261
+
+
+
+Object.WidthFactor2 = WidthFactor2 Установить свойство (* )
+WidthFactor2 = Object.GetWidthFactor2() Получить свойство (**)
+Object.SetWidthFactor2 (WidthFactor2) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_WidthFactor2 Получить свойство
+(&WidthFactor2)
+Object.put_WidthFactor2(WidthF Установить свойство
+actor2)
+
+WidthFactor3  Коэффициент сужения третьей строки 
+текста
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+WidthFactor3 = Object.WidthFactor3 Получить свойство(* )
+Object.WidthFactor3 = WidthFactor3 Установить свойство (* )
+WidthFactor3 = Object.GetWidthFactor3() Получить свойство (**)
+Object.SetWidthFactor3 (WidthFactor3) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_WidthFactor3 Получить свойство
+(&WidthFactor3)
+Object.put_WidthFactor3(WidthF Установить свойство
+actor3)
+
+Интерфейс ITextTable
+Справка системы КОМПАС...
+kompas.chm::/597_70_2_Tablicy_v_tekstovom_do.htm
+Таблица в тексте текстового документа.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ITextTable
+
+Позволяет вставить таблицу в текстовый документ.
+Примечание:
+Интерфейс можно получить с помощью метода IText::AddTable и свойства
+ITextLine::TextLineData.
+1262
+
+
+
+ITextTable  свойства
+
+FixedCellsSize  Зафиксировать габариты ячеек
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+FixedCellsSize = Object.FixedCellsSize Получить свойство(* )
+Object.FixedCellsSize = FixedCellsSize Установить свойство (* )
+FixedCellsSize = Object.GetFixedCellsSize() Получить свойство (**)
+Object.SetFixedCellsSize( FixedCellsSize ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FixedCellsSize( &FixedCellsSize ) Получить свойство
+Object.put_FixedCellsSize(  FixedCellsSize ) Установить свойство
+
+FixedRowCount  Запретить изменять число строк
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+FixedRowCount = Object.FixedRowCount Получить свойство(* )
+Object.FixedRowCount = FixedRowCount Установить свойство (* )
+FixedRowCount = Object.GetFixedRowCount() Получить свойство (**)
+Object.SetFixedRowCount( FixedRowCount ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FixedRowCount( &FixedRowCount ) Получить свойство
+Object.put_FixedRowCount(  FixedRowCount ) Установить свойство
+
+FixedColumnCount  Запретить изменять число столбцов
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+FixedColumnCount = Object.FixedColumnCount Получить свойство(* )
+Object.FixedColumnCount = FixedColumnCount Установить свойство (* )
+FixedColumnCount = Object.GetFixedColumnCount() Получить свойство (**)
+ Object.SetFixedColumnCount( FixedColumnCount ) Установить свойство (**)
+
+Синтаксис COM:
+1263
+
+
+
+Object.get_FixedColumnCount( &FixedColumnCount ) Получить свойство
+Object.put_FixedColumnCount(  FixedColumnCount ) Установить свойство
+
+ITextTable  методы
+
+Save  Сохранить таблицу в файл
+Интерфейс...
+Синтаксис Automation:
+BOOL Save( BSTR FileName );
+Синтаксис COM:
+HRESULT Save( BSTR FileName, BOOL * Result );
+Возвращаемое значение: 
+
+TR " в случае успешного завершения,
+UE
+FAL " в случае неудачи.
+SE
+
+Входные параметры:
+
+File " имя сохраняемого файла.
+Na
+me
+
+Интерфейс ITabulators
+Интерфейс коллекции позиций табулятора.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ITabulators
+
+Описание:
+Позволяет получить доступ к коллекции позиций табулятора, считывать параметры по"
+зиций, добавлять и удалять позиции из коллекции.
+
+ITabulators  свойства
+
+Item  Возвращает позицию табулятора, заданную по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ITabulators.
+1264
+
+
+
+Синтаксис Automation:
+
+Item = Object.Item( Index ) Получить свойство(* )
+Item = Object.GetItem( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Item( Index, &Item ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ITabulators  методы
+
+Add  Создает новую позицию табулятора и добавляет 
+ее в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( long Position );
+Синтаксис COM:
+HRESULT Add( long Position, ITabulator ** Result );
+Возвращаемое значение: 
+
+" указатель на интерфейс ITabulator.
+
+Входные параметры:
+
+Position " позиция.
+
+Clear  Очищает коллекцию, удаляет из коллекции все 
+позиции табулятора
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+HRESULT Clear( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+1265
+
+
+
+Интерфейс IHypertextReferenceParam
+Справка системы КОМПАС...
+kompas.chm::/566_67_3_Ssylki.htm
+Интерфейс параметров вставки ссылки в текст
+Иерархия:
+IDispatch
+
+IHypertextReferenceParam
+Интерфейс является дополнительным для интерфейса ITextItem.
+
+IHypertextReferenceParam  свойства
+
+Brackets  Признак скобок
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Brackets = Object.Brackets Получить свойство(* )
+Object.Brackets = Brackets Установить свойство (* )
+Brackets = Object.GetBrackets() Получить свойство (**)
+Object.SetBrackets( Brackets ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Brackets( &Brackets ) Получить свойство
+Object.put_Brackets(  Brackets ) Установить свойство
+
+Свойство позволяет заключить содержимое ссылки в скобки. Доступность свойства за"
+висит от типа источника.
+
+HypertextType  Тип ссылки
+Интерфейс...
+Тип данных: из перечисления ksHypertextTypeEnum
+Синтаксис Automation:
+
+HypertextType = Object.HypertextType Получить свойство(* )
+Object.HypertextType = HypertextType Установить свойство (* )
+HypertextType = Получить свойство (**)
+Object.GetHypertextType()
+Object.SetHypertextType( HypertextType Установить свойство (**)
+)
+
+Синтаксис COM:
+1266
+
+
+
+Object.get_HypertextType( &HypertextType ) Получить свойство
+Object.put_HypertextType(  HypertextType ) Установить свойство
+
+Свойство позволяет указать, что будет являться содержимым ссылки. Набор вариантов
+зависит от типа источника.
+
+LinkObject  Объект, на который сделана ссылка
+Интерфейс...
+Тип данных: указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+
+LinkObject = Object.LinkObject Получить свойство(* )
+Object.LinkObject = LinkObject Установить свойство (* )
+LinkObject = Object.GetLinkObject() Получить свойство (**)
+Object.SetLinkObject( LinkObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LinkObject( &LinkObject ) Получить свойство
+Object.put_LinkObject(  LinkObject ) Установить свойство
+
+Свойство позволяет устанавливать и получать объект"источник ссылки.
+
+Precission  Точность вывода числовых значений
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Precission = Object.Precission Получить свойство(* )
+Object.Precission = Precission Установить свойство (* )
+Precission = Object.GetPrecission() Получить свойство (**)
+Object.SetPrecission( Precission ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Precission( &Precission ) Получить свойство
+Object.put_Precission(  Precission ) Установить свойство
+
+Свойство позволяет устанавливать и получать количество знаков после запятой, если
+источником ссылки является переменная.
+1267
+
+
+
+PropertyId  Идентификатор свойства
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+PropertyId = Object.PropertyId Получить свойство(* )
+Object.PropertyId = PropertyId Установить свойство (* )
+PropertyId = Object.GetPropertyId() Получить свойство (**)
+Object.SetPropertyId( PropertyId ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PropertyId( &PropertyId ) Получить свойство
+Object.put_PropertyId(  PropertyId ) Установить свойство
+
+TextLineIndex  Индекс строки в тексте
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+TextLineIndex = Object.TextLineIndex Получить свойство(* )
+Object.TextLineIndex = TextLineIndex Установить свойство (* )
+TextLineIndex = Получить свойство (**)
+Object.GetTextLineIndex()
+Object.SetTextLineIndex( TextLineIndex ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TextLineIndex( &TextLineIndex ) Получить свойство
+Object.put_TextLineIndex(  TextLineIndex ) Установить свойство
+
+Свойство позволяет выбрать номер строки, если источник ссылки содержит несколько
+строк текста.
+
+IHypertextReferenceParam  методы
+
+Destroy  Разрушить ссылку
+Интерфейс...
+Синтаксис Automation:
+BOOL Destroy();
+Синтаксис COM:
+HRESULT Destroy( BOOL * Result );
+Возвращаемое значение:
+1268
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+Метод позволяет удалить связь между ссылкой и ее источником. В результате разруше"
+ния содержимое ссылки становится обычным текстом. Обновление разрушенной ссыл"
+ки становится невозможным.
+1269
+
+
+
+1270
+
+
+
+Документ 3D
+Вспомогательные объекты, 3Dкривые и элементы 
+тела
+Контейнер
+Интерфейс IAuxiliaryGeomContainer
+Интерфейс контейнера объектов вспомогательной геометрии.
+Иерархия:
+IDispatch
+
+IAuxiliaryGeomContainer
+Описание:
+Позволяет получить коллекции объектов вспомогательной геометрии (ЛСК, сплайн и
+т.д).
+Примечание:
+Дополнительный интерфейс компонента. Данный интерфейс можно получить у компо"
+нента IPart7 посредством вызова метода IUnknown::QueryInterface (const GUID far& iid,
+void** pif).
+
+IAuxiliaryGeomContainer  свойства
+
+Arcs3D  Интерфейс коллекции дуг 3D
+Интерфейс...
+Тип данных: указатель на интерфейс IArcs3D
+Синтаксис Automation:
+
+Arcs3D = Object.Arcs3D Получить свойство (* )
+Arcs3D = Получить свойство (**)
+Object.GetArcs3D()
+
+Синтаксис COM:
+
+Object.get_Arcs3D( Получить свойство (* )
+&Arcs3D )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех дуг, входящих в состав данного объекта.
+2.  Свойство доступно только для чтения.
+1271
+
+
+
+Axes3D  Интерфейс коллекции вспомогательных осей 
+3D
+Интерфейс...
+Тип данных: указатель на интерфейс IAxes3D
+Синтаксис Automation:
+
+Axes3D = Object.Axes3D; Получить свойство (* )
+Axes3D = Object.GetAxes3D(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Axes3D( &Axes3D ); Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ConjunctivePoints  Интерфейс коллекции 
+присоединительных точек
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/Postroenye_kontr_tochek.htm#connecting_point
+Тип данных: указатель на интерфейс IConjunctivePoints
+Синтаксис Automation:
+
+ConjunctivePoints = Object.ConjunctivePoints; Получить свойство (* )
+ConjunctivePoints = Получить свойство (**)
+Object.GetConjunctivePoints();
+
+Синтаксис COM:
+
+Object">get_ConjunctivePoints( Получить свойство (* )
+&ConjunctivePoints )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ConnectCurves  Интерфейс коллекции операций 
+соединения кривых
+Интерфейс...
+Тип данных: указатель на интерфейс IConnectCurves
+Синтаксис Automation:
+1272
+
+
+
+ConnectCurves = Object.ConnectCurves Получить свойство (* )
+ConnectCurves = Object.GetConnectCurves() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ConnectCurves( &ConnectCurves ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех операций соединения кривых, входящих
+в состав данного объекта.
+
+2.  Свойство доступно только для чтения.
+
+Contours3D  Интерфейс коллекции контуров 3D
+Интерфейс...
+Тип данных: указатель на интерфейс IContours3D
+Синтаксис Automation:
+
+Contours3D = Object.Contours3D Получить свойство (* )
+Contours3D = Object.GetContours3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Contours3D( &Contours3D ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех контуров 3D, входящих в состав данного
+объекта.
+
+2.  Свойство доступно только для чтения.
+
+ControlPoints  Интерфейс коллекции контрольных точек
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/Postroenye_kontr_tochek.htm
+Тип данных: указатель на интерфейс IControlPoints
+Синтаксис Automation:
+
+ControlPoints = Object.ControlPoints; Получить свойство (* )
+ControlPoints = Object.GetControlPoints(); Получить свойство (**)
+
+Синтаксис COM:
+1273
+
+
+
+Object">get_ControlPoints( &ControlPoints Получить свойство (* )
+)
+
+Примечание:
+Свойство доступно только для чтения.
+
+CurveByLaws  Интерфейс коллекции кривых по закону
+Интерфейс...
+Тип данных: указатель на интерфейс ICurveByLaws
+Синтаксис Automation:
+
+CurveByLaws = Object.CurveByLaws Получить свойство (* )
+CurveByLaws = Object.GetCurveByLaws() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CurveByLaws( &CurveByLaws ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех кривых по закону, входящих в состав дан"
+ного объекта.
+
+2.  Свойство доступно только для чтения.
+
+CurveOutLines  Интерфейс коллекции линий очерка
+Интерфейс...
+Тип данных: указатель на интерфейс ICurveOutLines
+Синтаксис Automation:
+
+CurveOutLines = Object.CurveOutLines Получить свойство (* )
+CurveOutLines = Object.GetCurveOutLines() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CurveOutLines( &CurveOutLines ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех линий очерка, входящих в состав данного
+объекта.
+
+2.  Свойство доступно только для чтения.
+1274
+
+
+
+CurvesBy2Projectionses  Интерфейс коллекции кривых 
+по двум проекциям
+Интерфейс...
+Тип данных: указатель на интерфейс ICurvesBy2Projectionses
+Синтаксис Automation:
+
+CurvesBy2Projectionses = Получить свойство (* )
+Object.CurvesBy2Projectionses;
+CurvesBy2Projectionses = Получить свойство (**)
+Object.GetCurvesBy2Projectionses();
+
+Синтаксис COM:
+
+Object.get_CurvesBy2Projectionses( Получить свойство (* )
+&CurvesBy2Projectionses );
+
+Примечание:
+Свойство доступно только для чтения.
+
+Equidistants3D  Интерфейс коллекции 3Dэквидистант
+Интерфейс...
+Тип данных: указатель на интерфейс IEquidistants3D
+Синтаксис Automation:
+
+Equidistants3D = Object.Equidistants3D Получить свойство (* )
+Equidistants3D = Object.GetEquidistants3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Equidistants3D( &Equidistants3D ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию 3D"эквидистант.
+2.  Свойство доступно только для чтения.
+
+FilletCurves  Интерфейс коллекции операций 
+скругления кривых
+Интерфейс...
+Тип данных: указатель на интерфейс IFilletCurves
+Синтаксис Automation:
+1275
+
+
+
+FilletCurves = Object.FilletCurves Получить свойство (* )
+FilletCurves = Object.GetFilletCurves() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FilletCurves( &FilletCurves ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех операций скругления кривых, входящих
+в состав данного объекта.
+
+2.  Свойство доступно только для чтения.
+
+IsoparametricCurves  Интерфейс коллекции 
+изопараметрических кривых
+Интерфейс...
+Тип данных: указатель на интерфейс IIsoparametricCurves
+Синтаксис Automation:
+
+IsoparametricCurves = Object.IsoparametricCurves Получить свойство (* )
+IsoparametricCurves = Object.GetIsoparametricCurves() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_IsoparametricCurves( &IsoparametricCurves ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех изопараметрических кривых, входящих в
+состав данного объекта.
+
+2.  Свойство доступно только для чтения.
+
+IsoparametricCurvesSets  Интерфейс коллекции групп 
+изопараметрических кривых
+Интерфейс...
+Тип данных: указатель на интерфейс IIsoparametricCurvesSets
+Синтаксис Automation:
+
+IsoparametricCurvesSets = Object.IsoparametricCurvesSets Получить свойство (* )
+IsoparametricCurvesSets = Object.GetIsoparametricCurvesSets() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_IsoparametricCurvesSets( &IsoparametricCurvesSets ) Получить свойство (* )
+1276
+
+
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех групп изопараметрических кривых, вхо"
+дящих в состав данного объекта.
+
+2.  Свойство доступно только для чтения.
+
+LineSegments3D  Интерфейс коллекции отрезков 3D
+Интерфейс...
+Тип данных: указатель на интерфейс ILineSegments3D
+Синтаксис Automation:
+
+LineSegments3D = Object.LineSegments3D Получить свойство (* )
+LineSegments3D = Object.GetLineSegments3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LineSegments3D( &LineSegments3D ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех отрезков 3D, входящих в состав данного
+объекта.
+
+2.  Свойство доступно только для чтения.
+
+LocalCoordinateSystems  Интерфейс коллекции 
+локальных систем координат
+Интерфейс...
+
+Справка системы КОМПАС...
+kompas.chm::/108_8_7_Ispolqzovanie_LSK.htm
+Тип данных: указатель на интерфейс ЛСК ILocalCoordinateSystems
+Синтаксис Automation:
+
+LocalCoordinateSystems = Получить свойство (* )
+Object.LocalCoordinateSystems;
+Object.LocalCoordinateSystems = Получить свойство (**)
+LocalCoordinateSystems;
+
+Синтаксис COM:
+
+Object">get_LocalCoordinateSystems(); Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+1277
+
+
+
+Planes3D  Интерфейс коллекции плоскостей
+Интерфейс...
+Тип данных: указатель на интерфейс IPlanes3D
+Синтаксис Automation:
+
+Planes3D = Object.Planes3D Получить свойство (* )
+Planes3D = Object.GetPlanes3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Planes3D( &Planes3D ) Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+PointsArrsFromFiles  Интерфейс коллекции групп точек 
+из файлов
+Интерфейс...
+Тип данных: указатель на интерфейс IPointsArrsFromFiles
+Синтаксис Automation:
+
+PointsArrsFromFiles = Object.PointsArrsFromFiles Получить свойство (* )
+PointsArrsFromFiles = Object.GetPointsArrsFromFiles() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointsArrsFromFiles( &PointsArrsFromFiles ) Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+PointsArrsOnCurves  Интерфейс коллекции групп точек 
+по кривым
+Интерфейс...
+Тип данных: указатель на интерфейс IPointsArrsOnCurves
+Синтаксис Automation:
+
+PointsArrsOnCurves = Object.PointsArrsOnCurves Получить свойство (* )
+PointsArrsOnCurves = Object.GetPointsArrsOnCurves() Получить свойство (**)
+
+Синтаксис COM:
+1278
+
+
+
+Object.get_PointsArrsOnCurves( &PointsArrsOnCurves ) Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+PointsArrsOnSurfaces  Интерфейс коллекции групп 
+точек по поверхности
+Интерфейс...
+Тип данных: указатель на интерфейс IPointsArrsOnSurfaces
+Синтаксис Automation:
+
+PointsArrsOnSurfaces = Object.PointsArrsOnSurfaces Получить свойство (* )
+PointsArrsOnSurfaces = Object.GetPointsArrsOnSurfaces() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointsArrsOnSurfaces( &PointsArrsOnSurfaces) Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+PolyLines  Интерфейс коллекции пространственных 
+ломаных
+Интерфейс...
+
+Справка системы КОМПАС...
+kompas.chm::/CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Тип данных: указатель на интерфейс IPolyLines
+Синтаксис Automation:
+
+PolyLines   = Object.PolyLines; Получить свойство (* )
+Object.PolyLines = PolyLines; Получить свойство (**)
+
+Синтаксис COM:
+
+Object">get_PolyLines(); Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+1279
+
+
+
+ProjectionCurves  Интерфейс коллекции проекционных 
+кривых
+Интерфейс...
+Тип данных: указатель на интерфейс IProjectionCurves
+Синтаксис Automation:
+
+ProjectionCurves = Получить свойство (*
+Object.ProjectionCurves; )
+ProjectionCurves = Получить свойство
+Object.GetProjectionCurves(); (**)
+
+Синтаксис COM:
+
+Object.get_ProjectionC Получить свойство (* )
+urves(
+&ProjectionCurves );
+
+Примечание:
+Свойство доступно только для чтения.
+
+Spirals3D  Интерфейс коллекции спиралей 3D
+Интерфейс...
+Тип данных: указатель на интерфейс ISpirals3D
+Синтаксис Automation:
+
+Spirals3D = Object.Spirals3D Получить свойство (* )
+Spirals3D = Object.GetSpirals3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Spirals3D( &Spirals3D ) Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Splines3D  Интерфейс коллекции пространственных 
+сплайнов
+Интерфейс...
+
+Справка системы КОМПАС...
+kompas.chm::/1091_116_6_Splajn.htm
+Тип данных: указатель на интерфейс ISplines3D
+1280
+
+
+
+Синтаксис Automation:
+
+Splines3D = Object.Splines3D; Получить свойство (* )
+Object.Splines3D = Splines3D; Получить свойство (**)
+
+Синтаксис COM:
+
+Object" Получить свойство
+>get_Splines3D(); (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+SplinesOnSurfaces  Интерфейс коллекции сплайнов на 
+поверхностях
+Интерфейс...
+Тип данных: указатель на интерфейс ISplinesOnSurfaces
+Синтаксис Automation:
+
+SplinesOnSurfaces = Object.SplinesOnSurfaces Получить свойство (* )
+SplinesOnSurfaces = Object.GetSplinesOnSurfaces() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SplinesOnSurfaces( &SplinesOnSurfaces ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех сплайнов на поверхностях, входящих в
+состав данного объекта.
+
+2.  Свойство доступно только для чтения.
+
+SplitLines  Интерфейс коллекции линий разъема
+Интерфейс...
+Тип данных: указатель на интерфейс ISplitLines
+Синтаксис Automation:
+
+SplitLines = Object.SplitLines(); Получить свойство (* )
+SplitLines = Object.GetSplitLines(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object">get_SplitLines( &SplitLines ) Получить свойство (* )
+1281
+
+
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию линий разъема.
+2.  Свойство доступно только для чтения.
+
+SurfacesIntersectionCurves  Интерфейс коллекции 
+кривых пересечений поверхностей
+Интерфейс...
+Тип данных: указатель на интерфейс ISurfacesIntersectionCurves
+Синтаксис Automation:
+
+SurfacesIntersectionCurves = Получить свойство (* )
+Object.SurfacesIntersectionCurves
+SurfacesIntersectionCurves = Получить свойство (**)
+Object.GetSurfacesIntersectionCurves()
+
+Синтаксис COM:
+
+Object.get_SurfacesIntersectionCurves( Получить свойство (* )
+&SurfacesIntersectionCurves )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию кривых пересечений поверхностей.
+2.  Свойство доступно только для чтения.
+
+TrimmedCurves  Интерфейс коллекции операций 
+усечения кривой
+Интерфейс...
+Тип данных: указатель на интерфейс ITrimmedCurves
+Синтаксис Automation:
+
+TrimmedCurves = Object.TrimmedCurves Получить свойство (* )
+TrimmedCurves = Object.GetTrimmedCurves() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TrimmedCurves( &TrimmedCurves ) Получить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет получить коллекцию всех операций усечения кривой, входящих в
+состав данного объекта.
+
+2.  Свойство доступно только для чтения.
+1282
+
+
+
+UnhistoredCurves3D  Интерфейс коллекции кривых без 
+истории
+Интерфейс...
+Тип данных: указатель на интерфейс IUnhistoredCurves3D
+Синтаксис Automation:
+
+UnhistoredCurves3D = Object.UnhistoredCurves3D Получить свойство (* )
+UnhistoredCurves3D = Object.GetUnhistoredCurves3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UnhistoredCurves3D( &UnhistoredCurves3D ) Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Вспомогательные объекты
+Интерфейс IConjunctivePoints
+Справка системы КОМПАС: Команда Присоединительная точка
+kompas.chm::/Postroenye_kontr_tochek.htm#connecting_point
+Интерфейс коллекции присоединительных точек.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IConjunctivePoints
+
+Примечание:
+Получить интерфейс коллекции можно, используя свойство контейнера объектов вспо"
+могательной геометрии IAuxiliaryGeomContainer::ConjunctivePoints.
+
+IConjunctivePoints  свойства
+
+ConjunctivePoint  Указатель на элемент, заданный по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IConjunctivePoint
+Синтаксис Automation:
+1283
+
+
+
+ConjunctivePoint = Получить свойство (* )
+Object.ConjunctivePoint( Index )
+ConjunctivePoint = Получить свойство (**)
+Object.GetConjunctivePoint(
+Index )
+
+Синтаксис COM:
+
+Object.get_ConjunctivePoint( Получить свойство
+Index, &ConjunctivePoint )
+
+Входные параметры:
+
+Index " индекс объекта.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса может использоваться индекс в коллекции и reference объекта.
+
+IConjunctivePoints  методы
+
+Add  Создать новый элемент и добавить его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IConjunctivePoint ** Result );
+Возвращаемое значение:
+
+" Указатель на интерфейс присоединительной
+точки IConjunctivePoint.
+
+Примечание:
+
+1.  Метод позволяет создать новый интерфейс присоединительной точки.
+2.  После получения нового интерфейса нужно задать параметры и вызвать метод
+
+IModelObject::Update.
+1284
+
+
+
+Интерфейс IControlPoints
+Справка системы КОМПАС: Команда Контрольная точка
+kompas.chm::/Postroenye_kontr_tochek.htm#kontrol_point
+Интерфейс коллекции контрольных точек.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IControlPoints
+
+Примечание:
+Получить интерфейс коллекции можно, используя свойство контейнера объектов вспо"
+могательной геометрии IAuxiliaryGeomContainer::ControlPoints.
+
+IControlPoints  свойства
+
+ControlPoint  Указатель на элемент, заданный по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IControlPoint
+Синтаксис Automation:
+
+ControlPoint = Получить свойство (* )
+Object.ControlPoint( Index )
+ControlPoint = Получить свойство (**)
+Object.GetControlPoint( Index )
+
+Синтаксис COM:
+
+Object.get_ControlPoint( Index, Получить свойство
+&ControlPoint )
+
+Входные параметры:
+
+Index VT_I4 " индекс объекта.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса может использоваться индекс в коллекции и reference объекта.
+1285
+
+
+
+IControlPoints  методы
+
+Add  Создать новый элемент и добавить его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IControlPoint ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс контрольной точки
+IControlPoint.
+
+Примечание:
+
+1.  Метод позволяет создать новый интерфейс локальной системы координат.
+2.  После получения нового интерфейса нужно задать параметры и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс ILocalCoordinateSystems
+Интерфейс коллекции локальных систем координат.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ILocalCoordinateSystems
+
+Примечание:
+Получить интерфейс коллекции можно, используя свойство контейнера объектов вспо"
+могательной геометрии IAuxiliaryGeomContainer::LocalCoordinateSystems.
+
+ILocalCoordinateSystems  свойства
+
+Current  Указатель на текущую СК
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+LocalCoordinateSystem = iObject.Current() Получить свойство (* )
+LocalCoordinateSystems = iObject.GetCurrent() Получить свойство (**)
+1286
+
+
+
+Синтаксис COM:
+
+iObject">get_Current( &LocalCoordinateSystem ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+Если на момент получения свойства текущей является ЛСК, то можно привести интер"
+фейс IModelObject, возвращаемый свойством к ILocalCoordinateSystem, с помощью
+IUnknown::QueryInterface (const GUID far& iid, void** pif). Если же текущей является ми"
+ровая СК, то привести возвращаемый интерфейс к ILocalCoordinateSystem не удастся.
+
+LocalCoordinateSystem  Указатель на элемент, заданный 
+по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ILocalCoordinateSystem
+Синтаксис Automation:
+
+LocalCoordinateSystem = Получить свойство (* )
+iObject.LocalCoordinateSystem( index )
+LocalCoordinateSystem = Получить свойство (**)
+iObject.GetLocalCoordinateSystem( index )
+
+Синтаксис COM:
+
+iObject">get_LocalCoordinateSystem( Получить свойство
+index, &LocalCoordinateSystem )
+
+Входные параметры:
+
+Index " VT_I4 " индекс объекта.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ILocalCoordinateSystems  методы
+
+Add  Создать новый элемент и добавить его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+1287
+
+
+
+HRESULT Add( ILocalCoordinateSystem** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс ЛСК ILocalCoordinateSystem.
+
+Примечание:
+
+1.  Метод позволяет создать новый интерфейс локальной системы координат.
+2.  После получения нового интерфейса нужно задать параметры и вызвать метод
+
+IModelObject::Update.
+
+SetCurrent  Установить ЛСК в качестве текущей СК
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCurrent( ILocalCoordinateSystem * object );
+Синтаксис COM:
+HRESULT SetCurrent( ILocalCoordinateSystem * object,
+BOOL * Result );
+Входные параметры:
+
+" Указатель на интерфейс ЛСК ILocalCoordinateSystem.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Метод позволяет установить ЛСК, передаваемую входным параметром, в качестве теку"
+щей СК.
+
+2.  Если входным параметром передать NULL, текущей станет мировая СК. См. также
+ILocalCoordinateSystem::Current.
+
+Интерфейс ILocalCSAxesDirectionParam
+Интерфейс параметров ЛСК для типа ориентации "Направление осей".
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ILocalCSAxesDirectionParam
+
+Примечание:
+Указатель на интерфейс можно получить, используя свойство ЛСК
+ILocalCoordinateSystem::LocalCSParameters.
+1288
+
+
+
+ILocalCSAxesDirectionParam свойства
+
+AngleByOwnAxis  Угол поворота вокруг собственной оси
+Интерфейс...
+Синтаксис Automation:
+
+iObject.AngleByOwnAxis = AngleByOwnAxis( axis ); Установить свойство (* )
+iObject.SetAngleByOwnAxis( axis, angle ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">put_AngleByOwnAxis( axis, angle ); Установить свойство
+
+Входные параметры:
+
+axis " тип оси из перечисления ksObj3dTypeEnum,
+допустимые значения:
+" o3d_axisOX
+" o3d_axisOY
+" o3d_axisOZ,
+
+angl " угол поворота.
+e
+
+Примечание:
+Свойство доступно только для записи.
+
+DirectingObject  Направляющий объект для оси
+Интерфейс...
+Тип данных: указатель на интерфейс модельного объекта IModelObject
+Синтаксис Automation:
+
+DirectingObject = iObject.DirectingObject( axis ); Получить свойство (* )
+DirectingObject = iObject.GetDirectingObject( axis ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_DirectingObject( axis, &DirectingObject ); Получить свойство
+
+Входные параметры:
+1289
+
+
+
+axis " тип оси из перечисления ksObj3dTypeEnum,
+допустимые значения:
+" o3d_axisOX
+" o3d_axisOY
+" o3d_axisOZ.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ILocalCSAxesDirectionParam  методы
+
+RotateAxis  Сменить направление оси на 
+противоположное
+Интерфейс...
+Синтаксис Automation:
+BOOL RotateAxis( ksObj3dTypeEnum axis );
+Синтаксис Automation:
+HRESULT RotateAxis( ksObj3dTypeEnum axis,
+BOOL * Result);
+Входные параметры:
+
+axis " тип оси из перечисления ksObj3dTypeEnum,
+допустимые значения:
+" o3d_axisOX
+" o3d_axisOY
+" o3d_axisOZ.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Метод позволяет менять направления осей на противоположные.
+2. Для осей можно выбирать направляющие объекты (см. метод
+
+ILocalCSAxesDirectionParam::SetDirectingObject).
+3.  Можно выбрать направление для двух осей, третья ось ориентируется, исходя из поло"
+
+жения двух выбранных. Менять направление на противоположное можно только у вы"
+бранных осей. 
+
+4.  У оси с автоориентацией смена направления на противоположное недоступна.
+1290
+
+
+
+SetDirectingObject  Установить направляющий объект 
+для оси
+Интерфейс...
+Синтаксис Automation:
+BOOL SetDirectingObject( ksObj3dTypeEnum axis,
+LPDISPATCH obj );
+Синтаксис Automation:
+HRESULT SetDirectingObject( ksObj3dTypeEnum axis,
+IModelObject * obj,
+VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " направляющий объект,
+axis " тип оси из перечисления ksObj3dTypeEnum,
+
+допустимые значения:
+" o3d_axisOX
+" o3d_axisOY
+" o3d_axisOZ.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Объекты, которые могут определять направление оси: прямолинейные объекты, пло"
+ские объекты, цилиндрические и конические поверхности. Также могут быть выбраны
+произвольные кривые или ребра при условии, что позиция начала ЛСК лежит на этой
+кривой (ребре). 
+
+2.  Можно выбрать направление для двух осей. Третья ось ориентируется, исходя из поло"
+жения двух выбранных. Менять направление на противоположное можно только у вы"
+бранных осей. У оси с автоориентацией смена направления на противоположное недо"
+ступна.
+
+Интерфейс ILocalCSEulerParam
+Интерфейс параметров ЛСК для типа ориентации "Система углов Эйлера".
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ILocalCSEulerParam
+
+Примечание:
+1291
+
+
+
+Указатель на интерфейс можно получить, используя свойство ЛСК
+ILocalCoordinateSystem::LocalCSParameters.
+
+ILocalCSEulerParam  свойства
+
+NutationAngle  Угол нутации
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+NutationAngle = iObject.NutationAngle; Получить свойство (* )
+iObject.NutationAngle = NutationAngle; Установить свойство (* )
+NutationAngle = iObject.GetNutationAngle(); Получить свойство (**)
+iObject.SetNutationAngle( NutationAngle ); Установить свойство (* )
+
+Синтаксис COM:
+
+iObject">get_NutationAngle( &NutationAngle ); Получить свойство
+iObject">put_NutationAngle( NutationAngle ); Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать угол нутации.
+
+PrecessionAngle  Угол прецессии 
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+PrecessionAngle = iObject.PrecessionAngle; Получить свойство (* )
+iObject.PrecessionAngle = PrecessionAngle; Установить свойство (* )
+PrecessionAngle = iObject.GetPrecessionAngle(); Получить свойство (**)
+iObject.SetPrecessionAngle( PrecessionAngle ); Установить свойство (* )
+
+Синтаксис COM:
+
+iObject">get_PrecessionAngle( &PrecessionAngle ); Получить свойство
+iObject">put_PrecessionAngle( PrecessionAngle ); Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать угол прецессии.
+
+RotationAngle  Угол вращения
+Интерфейс...
+Тип данных: double
+1292
+
+
+
+Синтаксис Automation:
+
+RotationAngle = iObject.RotationAngle; Получить свойство (* )
+iObject.RotationAngle = RotationAngle; Установить свойство (* )
+RotationAngle = iObject.GetRotationAngle(); Получить свойство (**)
+iObject.SetRotationAngle( RotationAngle ); Установить свойство (* )
+
+Синтаксис COM:
+
+iObject">get_RotationAngle( &RotationAngle ); Получить свойство
+iObject">put_RotationAngle( RotationAngle ); Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать угол вращения.
+Cм.Рисунок... 
+
+Интерфейс ILocalCSOrientByObjectParam
+Интерфейс параметров ЛСК для типа ориентации "По объекту".
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ILocalCSOrientByObjectParam
+
+Примечание:
+Указатель на интерфейс можно получить, используя свойство ЛСК
+ILocalCoordinateSystem::LocalCSParameters.
+
+ILocalCSOrientByObjectParam  свойства
+
+OrientationObject  Получить объект, обладающий 
+ориентацией
+Интерфейс...
+Синтаксис Automation:
+
+OrientationObject = iObject.OrientationObject(); Получить свойство (* )
+OrientationObject = iObject.GetOrientationObject(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_OrientationObject( &OrientationObject ); Получить свойство
+
+Возвращаемое значение:
+
+" Указатель на интерфейс IModelObject
+1293
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+ILocalCSOrientByObjectParam  методы
+
+SetOrientationObject  Установить объект, обладающий 
+ориентацией
+Интерфейс...
+Синтаксис Automation:
+HRESULT SetOrientationObject( IModelObject * obj, VARIANT_BOOL * Result );
+Синтаксис Automation:
+HRESULT SetDirectingObject( ksObj3dTypeEnum axis,
+IModelObject * obj,
+VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " объект, обладающий ориентацией.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.

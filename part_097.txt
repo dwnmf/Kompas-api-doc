@@ -1,0 +1,2532 @@
+5251
+
+
+
+п
+D
+
+п
+D
+
+араметр 3 OpenConverterPa 1 " Признак наличия диалога 
+WORD rameters редактирования 
+
+параметров конвертации 
+для заданной команды 
+открытия файла.
+Если параметр задан, в 
+диалоге выбора файла 
+для открытия появится 
+кнопка Параметры, 
+которая позволяет 
+открыть диалог 
+параметров конвертора.
+Вызов диалога 
+осуществляется 
+функцией 
+IKompasConverter::Visual
+EditConvertParam.
+
+араметр 3 SaveConverterPar 1 " Признак наличия диалога 
+WORD ameters редактирования 
+
+параметров конвертации 
+для заданной команды 
+сохранения файла.
+Если параметр задан, в 
+диалоге выбора файла 
+для открытия появится 
+кнопка Параметры, 
+которая позволяет 
+открыть диалог 
+параметров конвертора.
+Вызов диалога 
+осуществляется 
+функцией 
+IKompasConverter::Visual
+EditConvertParam.
+
+Значения параметра Обязательный:
++ " обязательный параметр;
+" " необязательный параметр;
+~1 " обязательно нужен один из параметров или ProgID или Path. Одновременно оба клю"
+ча задавать не нужно, первым проверяется наличие ключа ProgID.
+~2 " OpenCommandID и SaveCommandID не являются обязательными, но нужен хотя бы
+один ключ. Можно задать оба ключа.
+
+Пример файла реестра Windows для регистрации библиотеки (*.reg).
+Windows Registry Editor Version 5.00
+5252
+
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter]
+@=dword:00000000
+"Path"="S:\\C++\\Visualc\\MyConverter.rtw"
+"Name"="Пример конвертора"
+"Connect"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\m3d]
+@=dword:00000000
+"Filter"="Файлы моделей(*.mym3d)|*.mym3d|"
+"OpenCommandID"=dword:00000007
+"SaveCommandID"=dword:00000001
+"OpenConverterParameters"=dword:00000001
+"SaveConverterParameters"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\a3d]
+@=dword:00000000
+"Filter"="Файлы сборок(*.mya3d)|*.mya3d|"
+"OpenCommandID"=dword:00000008
+"SaveCommandID"=dword:00000002
+"OpenConverterParameters"=dword:00000001
+"SaveConverterParameters"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\frw]
+@=dword:00000000
+"Filter"="Файлы фрагментов(*.myfrw)|*.myfrw|"
+"OpenCommandID"=dword:00000009
+"SaveCommandID"=dword:00000003
+"OpenConverterParameters"=dword:00000001
+"SaveConverterParameters"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\cdw]
+@=dword:00000000
+"Filter"="Файлы чертежей(*.mycdw)|*.mycdw|"
+"OpenCommandID"=dword:0000000a
+"SaveCommandID"=dword:00000004
+"OpenConverterParameters"=dword:00000001
+"SaveConverterParameters"=dword:00000001
+5253
+
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\spw]
+@=dword:00000000
+"Filter"="Файлы спецификаций(*.myspw)|*.myspw|"
+"OpenCommandID"=dword:0000000b
+"SaveCommandID"=dword:00000005
+"OpenConverterParameters"=dword:00000001
+"SaveConverterParameters"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\kdw]
+@=dword:00000000
+"Filter"="Файлы текстовых документов(*.mykdw)|*.mykdw|"
+"OpenCommandID"=dword:0000000c
+"SaveCommandID"=dword:00000006
+"OpenConverterParameters"=dword:00000001
+"SaveConverterParameters"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter]
+@=dword:00000000
+"Path"="S:\\C++\\Visualc\\MyConverter.rtw"
+"Name"="Пример конвертора"
+"Connect"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\m3d]
+@=dword:00000000
+"Filter"="Файлы моделей(*.mym3d)|*.mym3d|"
+"OpenCommandID"=dword:00000007
+"SaveCommandID"=dword:00000001
+"OpenConverterParameters"=dword:00000001
+"SaveConverterParameters"=dword:00000001
+
+Пример регистрации библиотеки-добавления
+Приведен фрагмент файла экспорта реестра (reg " файла). В данном примере testAddins
+" название папки библиотеки"добавления. Регистрационная информация добавляется в
+предопределенный раздел реестра AddIns 
+Windows Registry Editor Version 5.00 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\AddIns\testAddins] 
+5254
+
+
+
+"AutoConnect"=dword:00000000 
+"Path"="с:\\КОМПСАС\\libs\\newApiRtw\\teststep2.rtw" 
+"FriendlyName"="Test"Addins" 
+Значения флага AutoConnect = 0 не подключать 1 "подключать библиотеку на старте. 
+
+ Пример регистрации библиотекиконвертора
+Приведен фрагмент файла экспорта реестра (reg " файла). В данном примере
+LibConverter " название папки конвертора. Регистрационная информация добавляется в
+предопределенный раздел реестра Converters. 
+Windows Registry Editor Version 5.00 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter] 
+@=dword:00000000 
+"Path"="S:\\C++\\Visualc\\MyConverter.rtw" 
+"Name"="Пример конвертора" 
+"Connect"=dword:00000001 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\m3d] 
+@=dword:00000000 
+"Filter"="Файлы моделей(*.mym3d)|*.mym3d|" 
+"OpenCommandID"=dword:00000007 
+"SaveCommandID"=dword:00000001 
+"OpenConverterParameters"=dword:00000001 
+"SaveConverterParameters"=dword:00000001 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\a3d] 
+@=dword:00000000 
+"Filter"="Файлы сборок(*.mya3d)|*.mya3d|" 
+"OpenCommandID"=dword:00000008 
+"SaveCommandID"=dword:00000002 
+"OpenConverterParameters"=dword:00000001 
+"SaveConverterParameters"=dword:00000001 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\frw] 
+@=dword:00000000 
+"Filter"="Файлы фрагментов(*.myfrw)|*.myfrw|" 
+"OpenCommandID"=dword:00000009 
+5255
+
+
+
+"SaveCommandID"=dword:00000003 
+"OpenConverterParameters"=dword:00000001 
+"SaveConverterParameters"=dword:00000001 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\cdw] 
+@=dword:00000000 
+"Filter"="Файлы чертежей(*.mycdw)|*.mycdw|" 
+"OpenCommandID"=dword:0000000a 
+"SaveCommandID"=dword:00000004 
+"OpenConverterParameters"=dword:00000001 
+"SaveConverterParameters"=dword:00000001 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\spw] 
+@=dword:00000000 
+"Filter"="Файлы спецификаций(*.myspw)|*.myspw|" 
+"OpenCommandID"=dword:0000000b 
+"SaveCommandID"=dword:00000005 
+"OpenConverterParameters"=dword:00000001 
+"SaveConverterParameters"=dword:00000001 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ASCON\KOMPAS"3D\Converters\LibConverter\kdw] 
+@=dword:00000000 
+"Filter"="Файлы текстовых документов(*.mykdw)|*.mykdw|" 
+"OpenCommandID"=dword:0000000c 
+"SaveCommandID"=dword:00000006 
+"OpenConverterParameters"=dword:00000001 
+"SaveConverterParameters"=dword:00000001 
+
+Пример использования функции LibCommandState
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// Состояние команды
+// """
+int WINAPI LibCommandState( unsigned int comm, int * enable, int * checked )
+{
+  if ( enable )
+  {
+    int type = ksGetDocumentType( 0 ); 
+5256
+
+
+
+    *enable = type == lt_DocSheetStandart || type == lt_DocFragment || type ==
+lt_DocSheetUser; // Команда доступна в 2D документе
+  }
+  return 0;
+}
+
+ Пример использования функции GetImageHeight
+Public Function GetImageHeight() As Long
+GetImageHeight = 100
+End Function
+
+ Пример использования функции GetImageWidth
+Public Function GetImageWidth() As Long
+GetImageWidth = 100
+End Function
+
+Пример использования функции GetLibraryName
+Public Function GetLibraryName() As String
+GetLibraryName = "Самая простая библиотека"
+End Function
+
+Пример использования функции ExternalMenuItem
+Public Function ExternalMenuItem(ByVal number As Integer, itemType As Integer, command
+As Integer) As String
+itemType = 3 '"ENDMENU"'
+ExternalMenuItem = ""
+command = "1
+Select Case number
+Case 1
+itemType = 1 'MENUITEM'
+ExternalMenuItem = "Создать деталь"
+command = 1
+Case 2
+itemType = 2 'POPUP'
+ExternalMenuItem = "Выпадающее меню_1"
+command = "1
+Case 3
+itemType = 1 'MENUITEM'
+5257
+
+
+
+ExternalMenuItem = "Деталь с фасками"
+command = 2
+Case 4
+itemType = 0 'SEPARATOR'
+ExternalMenuItem = ""
+command = "1
+Case 5
+itemType = 1 'MENUITEM'
+ExternalMenuItem = "Команда_3"
+command = 3
+Case 6
+itemType = 3 'ENDMENU'
+ExternalMenuItem = ""
+command = "1
+Case 7
+itemType = 2 '"POPUP"'
+ExternalMenuItem = "Выпадающее меню_2"
+command = "1
+Case 8
+itemType = 1 '"MENUITEM"'
+ExternalMenuItem = "Команда_4"
+command = 4
+Case 9
+itemType = 3 '"ENDMENU"'
+ExternalMenuItem = ""
+command = "1
+End Select
+End Function
+
+Пример использования функции ExternalGetImage
+Public Function ExternalGetImage(ByVal command As Integer, enableDelete As Integer) As
+OLE_HANDLE
+Select Case command
+Case 1
+ExternalGetImage = Image1.Picture.Handle
+Case 2
+ExternalGetImage = Image2.Picture.Handle
+Case 3
+5258
+
+
+
+ExternalGetImage = Image3.Picture.Handle
+Case 4
+ExternalGetImage = Image4.Picture.Handle
+Case Else
+ExternalGetImage = Image5.Picture.Handle
+End Select
+enableDelete = FALSE
+End Function
+
+Пример использования функции ExternalRunCommand
+Public Sub ExternalRunCommand(ByVal command As Integer, ByVal mode As Integer, ByVal
+Kompas As Object)
+Select Case command
+Case 1
+Dim document As Object'КОМПАС"документ
+Set document = Kompas.Document3D'3D"документ
+If Not document is Nothing Then
+Kompas.ksMessage "Получен 3D"документ"
+End If
+Set document = Nothing'освободить документ
+Case Else
+MsgBox "Команда " + Str(command) + " не выполнена"
+End Select
+End Sub
+
+Ошибка!
+Отсутствует приложение, сопоставленное типу файла данного примера.
+
+Ошибка!
+Чтобы открыть список исправлений, необходимо установить Microsoft Excel.
+
+Типы настроек для документов. Соответствие входных и выходных 
+параметров
+
+Типы настроек Интерфейсы и структуры параметров
+Интерфейсы Структуры параметров
+
+DIMENTION_OPTIONS " настройки размера, ksDimensionsOptions DimensionsOptions
+5259
+
+
+
+Т
+
+S
+S
+
+S
+
+V
+
+T
+P
+
+ARROWFILLING_OPTION " признак зачернения ksLtVariant int
+S стрелок, Может принимать Может принимать 
+
+значение, 0 " не значение, 0 " не зачернять 
+зачернять или 1 " или 1 " зачернять
+зачернять
+
+SHEET_OPTIONS " параметры листа; ksSheetOptions SheetPar
+осталась для 
+совместимости со 
+старыми 
+библиотеками.
+
+SHEET_OPTIONS_EX " параметры листа ksSheetOptions SheetOptions
+активного 
+документа, от 
+текущего листа.
+
+LENGTHUNITS_OPTIONS " настройки единиц ksLtVariant Может short
+измерений принимать значение Может принимать 
+
+размерности длины, значение размерности 
+ST_MIX_SM, ST_MIX_M. длины, ST_MIX_SM, 
+
+ST_MIX_M.
+SNAP_OPTIONS_EX " настройки привязок ksSnapOptions SnapOptions
+
+для активного 
+документа
+
+OVERLAP_OBJECT_OPTI " настройки ksOverlapObjectOptions OverlapObjectOptions
+ONS перекрывающихся 
+
+объектов
+
+Типы системных настроек.Соответствие входных и выходных 
+параметров
+
+ипы настроек Интерфейсы и структуры параметров
+Интерфейсы Структуры параметров
+
+NAP_OPTIONS " настройки привязок ksSnapOptions SnapOptions
+NAP_OPTIONS_EX " настройки привязок ksSnapOptions SnapOptions
+
+для активного 
+документа
+
+HEET_OPTIONS_EX " параметры листа ksSheetOptions SheetPar
+активного документа, 
+от текущего листа.
+
+IEWCOLOR_OPTIONS " настройки цвета ksViewColorParam ViewColorParam
+фона рабочего поля 
+графических 
+документов
+
+EXTEDIT_VIEWCOLOR_O " настройки цвета ksViewColorParam ViewColorParam
+TIONS фона текстовых 
+
+документов
+5260
+
+
+
+M
+I
+
+L
+
+O
+N
+
+D
+A
+
+ODEL_VIEWCOLOR_OPT " настройки цвета ksViewColorParam ViewColorParam
+ONS фона документов 
+
+моделей
+ENGTHUNITS_OPTIONS " настройки единиц ksLtVariant Может short
+
+измерений принимать значение Может принимать 
+размерности длины, значение размерности 
+ST_MIX_SM, длины, ST_MIX_SM, 
+ST_MIX_M. ST_MIX_M.
+
+VERLAP_OBJECT_OPTIO " настройки ksOverlapObjectOptions OverlapObjectOptions
+S перекрывающихся 
+
+объектов
+IMENTION_OPTIONS_EX " настройки размера, ksDimensionsOptions DimensionsOptions
+RROWFILLING_OPTIONS " признак зачернения ksLtVariant int
+
+стрелок Может принимать Может принимать 
+значение, 0 " не значение, 0 " не 
+зачернять или 1 " зачернять или 1 " 
+зачернять зачернять
+
+Справочный файл плотностей
+При расчетах вы можете не вводить значение плотности материала вручную, а выбрать
+его из справочного файла.
+Этот файл называется graphic.dns и хранится в подпапке \sys главной папки КОМПАС"3D.
+Файл graphic.dns записан в текстовом формате Windows (кодировка ANSI) и имеет про"
+стой синтаксис, что позволяет легко вносить в него исправления и дополнения.
+Разделы в файле открываются и закрываются символами { и } соответственно. Название
+раздела должно находиться на той же строке, что и открывающая скобка. Разделы могут
+быть вложенными (то есть вы можете формировать древовидную структуру). Пробелы
+не являются значащими символами и не влияют на последующие действия отображение
+строк в справочном диалоге на экране.
+Ниже приводится фрагмент файла graphic.dns, в котором описывается раздел Металлы,
+содержащий два подраздела " Алюминиевые сплавы и Бронзы.
+{Металлы
+
+{ Алюминиевые сплавы
+  АД, АД1                             = 2.71
+  Д1                                      = 2.80
+}
+{ Бронзы
+  Бр.АЖ9"4                           = 7.50
+  Бр.АЖМц10"3"1.5              = 7.50
+  Бр.КМц3"1                          = 8.40
+}
+
+5261
+
+
+
+ Источник событий для подписки API 7
+Для API интерфейсов версии 7 в Automation источником событий для подписки являются
+объекты:" IKompasDocument 
+В СOM источником для подписки является указатель на документ.
+
+Источник событий для подписки API 5
+В Automation источником событий для подписки являются объекты:
+
+▼  ksDoсument2D (чертеж, фрагмент),
+▼ ksSpcDocument (спецификация),
+▼  ksDocumentTxt (текстовый документ),
+▼  ksDocument3D (документ"модель).
+
+В СOM источником для подписки является указатель на документ.
+
+ Интерфейсы возвращаемые функцией ksDocument3D::GetInterface
+
+Идентификатор объекта Название объекта Интерфейс
+o3d_coordinate3dCollection Интерфейс коллекции ksCoordinate3dCollection
+
+координат
+o3d_faceCollection Интерфейс коллекции ksFaceCollection
+
+граней
+
+WM_KEYDOWN
+Событие WM_KEYDOWN посылается в окно с клавиатурным фокусом, если была нажата
+несистемная клавиша.
+Синтаксис:
+WM_KEYDOWN nVirtKey = (int) wParam; KeyData = lParam;
+Параметры:
+
+wParam " код виртуальной клавиши,
+lParamLo " количество повторений кода клавиши за время удержания ее в 
+
+нажатом состоянии,
+LParamHi биты 0"7: scan"код клавиши, зависящий от OEM;
+
+бит 8:       1, если клавиша относится к расширенным,
+бит 13:     1, если при нажатии клавиши была нажата <Alt>,
+бит 14:     1, если клавиша была нажата до возникновения события,
+бит 15:     1, если после события клавиша отпущена,
+                 0, если после события клавиша остается нажатой.
+
+Возвращаемое значение:
+Не используется.
+Умолчательное действие:
+5262
+
+
+
+Если нажата клавиша <F10>, функция DEFWINDOWPROC устанавливает внутренний
+флаг. Когда DEFWINDOWPROC принимает событие WM_KEYUP, она проверяет, установ"
+лен ли внутренний флаг, и если это так, посылает событие WM_SYSCOMMAND в окно
+верхнего уровня. Значение параметра wParam становится равным SC_KEYMENU.
+Примечание:
+
+1. Приложение должно вернуть 0, если оно обрабатывает это событие.
+2. Для этого события биты 13 и 15 в lParamHi будут нулевыми. 
+3. Если ни одно из окон не имеет клавиатурного фокуса, то вместо событий
+
+WM_KEYDOWN, WM_CHAR и WM_KEYUP посылаются события WM_SYSKEYDOWN,
+WM_SYSCHAR и WM_SYSKEYUP.
+
+4.  Благодаря автоматическому повторению кода клавиши при удержанию ее нажатой, до
+появления события WM_KEYUP может выдаваться несколько событий WM_KEYDOWN.
+Значение разряда 30 параметра flags позволяет определить, было ли событие
+WM_KEYDOWN первым или или является повторным во время удержания клавиши на"
+жатой.
+
+5.  Для расширенных 101 и 102 клавишных клавиатур расширенными клавишами являются
+следующие:
+
+▼  правый <ALT> and <CTRL> на основной клавиатуре,
+▼ <INS>, <DEL>, <HOME>, <END>, <PAGE UP>, <PAGE DOWN> и клавиши со cтрелками в
+
+группах слева от дополнительной цифровой клавиатуры,
+▼ </> и <ENTER> на дополнительной цифровой клавиатуре.
+
+Другие клавиатуры могут поддерживать бит расширенной клавиатуры при помощи па"
+раметра lParam.
+См. также:
+WM_DEADCHAR, WM_SYSCHAR и WM_SYSDEADCHAR.
+
+WM_KEYUP
+Событие WM_KEYDOWN посылается в окно с клавиатурным фокусом, если была отпу"
+щена несистемная клавиша.
+Синтаксис:
+WM_KEYUP nVirtKey = (int) wParam; lKeyData = lParam;
+Параметры:
+
+wParam " код виртуальной клавиши,
+lParamLo " количество повторений кода клавиши за время удержания ее в 
+
+нажатом состоянии,
+LParamHi биты 0"7: scan"код клавиши, зависящий от OEM;
+
+бит 8:       1, если клавиша относится к расширенным,
+бит 13:     1, если при нажатии клавиши была нажата <Alt>,
+бит 14:     1, если клавиша была нажата до возникновения события,
+бит 15:     1, если после события клавиша отпущена,
+                 0, если после события клавиша остается нажатой.
+5263
+
+
+
+Возвращаемое значение:
+Не используется.
+Умолчательное действие:
+Функция DEFWINDOWPROC посылает событие WM_SYSCOMMAND в окно верхнего уров"
+ня, если <F10> или <ALT> была отпущена. Значение параметра wParam становится рав"
+ным SC_KEYMENU.
+Примечание:
+
+1. Приложение должно вернуть 0, если оно обрабатывает это событие.
+2. Для этого события биты 13 и 15 в lParamHi будут нулевыми. 
+3. Если ни одно из окон не имеет клавиатурного фокуса, то вместо события WM_KEYUP по"
+
+сылается событие WM_SYSKEYUP.
+4. Благодаря автоматическому повторению кода клавиши при удержанию ее нажатой, до
+
+появления события WM_KEYUP может выдаваться несколько событий WM_KEYDOWN.
+Значение разряда 30 параметра flags позволяет определить, было ли событие
+WM_KEYDOWN первым или или является повторным во время удержания клавиши на"
+жатой.
+
+5. Для расширенных 101 и 102 клавишных клавиатур расширенными клавишами являются
+следующие:
+
+▼  правый <ALT> and <CTRL> на основной клавиатуре,
+▼ <INS>, <DEL>, <HOME>, <END>, <PAGE UP>, <PAGE DOWN> и клавиши со cтрелками в
+
+группах слева от дополнительной цифровой клавиатуры,
+▼ </> и <ENTER> на дополнительной цифровой клавиатуре.
+
+Другие клавиатуры могут поддерживать бит расширенной клавиатуры при помощи па"
+раметра lParam.
+
+ WM_SYSKEYDOWN
+Это событие посылается в окно с клавиатурным фокусом, когда клавиша нажимается
+при одновременно нажатой <Alt>. Также оно посылается, когда ни одно из окон не имеет
+клавиатурного фокуса; в этом случае WM_SYSKEYDOWN посылается в активное окно.
+Окно, которое принимает событие, может различить эти варианты проверкой разряда 29
+(context code) параметра lKeyData.
+Синтаксис:
+WM_SYSKEYDOWN nVirtKey = (int) wParam; KeyData = lParam;
+Параметры:
+
+wParam " код виртуальной клавиши,
+lParamLo " количество повторений кода клавиши за время удержания ее в 
+
+нажатом состоянии,
+5264
+
+
+
+IParamHi биты 0"7: scan"код клавиши, зависящий от OEM;
+бит 8:       1, если клавиша относится к расширенным,
+бит 13:     1, если при нажатии клавиши была нажата <Alt>,
+бит 14:     1, если клавиша была нажата до возникновения события,
+бит 15:     1, если после события клавиша отпущена,
+                 0, если после события клавиша остается нажатой.
+
+Возвращаемое значение:
+Не используется.
+Умолчательное действие:
+Функция DEFWINDOWPROC посылает событие WM_SYSCOMMAND в окно верхнего уров"
+ня, если F10 или <Alt> была отпущена. Значение параметра wParam становится равным
+SC_KEYMENU.
+Примечание:
+
+1. Приложение должно вернуть 0, если оно обрабатывает это событие.
+2. Для этого события бит 15 в lParamHi будет нулевым.
+3. Если бит 13 IParamHi (context code) параметра flags =0, это событие может проследовать
+
+для обработки функцией TRANSLATEACCELERATOR, которая обработает его как событие
+нажатия стандартной клавиши, вместо системной. Это позволяет использовать горячие
+клавиши в активном окне, даже если это окно не имеет клавиатурного фокуса.
+
+4. Благодаря автоматическому повторению кода клавиши при удержанию ее нажатой, до
+появления события WM_KEYUP может выдаваться несколько событий WM_KEYDOWN.
+Значение разряда 30 параметра flags позволяет определить, было ли событие
+WM_KEYDOWN первым или или является повторным во время удержания клавиши на"
+жатой.
+
+5.  Для расширенных 101 и 102 клавишных клавиатур расширенными клавишами являются
+следующие:
+
+▼  правый <ALT> и <CTRL> на основной клавиатуре,
+▼ <INS>, <DEL>, <HOME>, <END>, <PAGE UP>, <PAGE DOWN> и клавиши со cтрелками в
+
+группах слева от дополнительной цифровой клавиатуры,
+▼ </> и <ENTER> на дополнительной цифровой клавиатуре.
+
+Другие клавиатуры могут поддерживать бит расширенной клавиатуры при помощи па"
+раметра lParam.
+
+6. Это событие также генерируется, если нажимается <F10> без нажатой <Alt>.
+
+ WM_SYSKEYUP
+Это событие посылается в окно с клавиатурным фокусом, когда отпускается клавиша,
+которая была нажата при одновременно нажатой <Alt>. Также оно посылается, когда ни
+одно из окон не имеет клавиатурного фокуса; в этом случае WM_SYSKEYDOWN посыла"
+ется в активное окно. Окно, которое принимает событие, может различить эти варианты
+проверкой разряда 29 (context code) параметра lKeyData.
+Синтаксис::
+WM_SYSKEYUP nVirtKey = (int) wParam; lKeyData = lParam;
+5265
+
+
+
+Параметры:
+
+wParam " код виртуальной клавиши,
+lParamLo " количество повторений кода клавиши за время удержания ее в 
+
+нажатом состоянии,
+IParamHi биты 0"7: scan"код клавиши, зависящий от OEM;
+
+бит 8:       1, если клавиша относится к расширенным,
+бит 13:     1, если при нажатии клавиши была нажата <Alt>,
+бит 14:     1, если клавиша была нажата до возникновения события,
+бит 15:     1, если после события клавиша отпущена,
+                 0, если после события клавиша остается нажатой.
+
+Возвращаемое значение:
+Не используется.
+Умолчательное действие:
+Функция DEFWINDOWPROC посылает событие WM_SYSCOMMAND в окно верхнего уров"
+ня, если <F10>или <Alt> была отпущена. Значение параметра wParam становится равным
+SC_KEYMENU.
+Примечание:
+
+1. Приложение должно вернуть 0, если оно обрабатывает это событие.
+2. Для этого события бит 15 в lParamHi будет нулевым.
+3. Если бит 13 IParamHi (context code) параметра flags =0, это событие может проследовать
+
+для обработки функцией TranslateAccelerator, которая обработает его как событие нажа"
+тия стандартной клавиши, вместо системной. Это позволяет использовать горячие кла"
+виши в активном окне, даже если это окно не имеет клавиатурного фокуса.
+
+4. Благодаря автоматическому повторению кода клавиши при удержанию ее нажатой, до
+появления события WM_KEYUP может выдаваться несколько событий WM_KEYDOWN.
+Значение разряда 30 параметра flags позволяет определить, было ли событие
+WM_KEYDOWN первым или или является повторным во время удержания клавиши на"
+жатой.
+
+5.  Для расширенных 101 и 102 клавишных клавиатур расширенными клавишами являются
+следующие:
+
+▼  правый <ALT> и <CTRL> на основной клавиатуре,
+▼ <INS>, <DEL>, <HOME>, <END>, <PAGE UP>, <PAGE DOWN> и клавиши со cтрелками в
+
+группах слева от дополнительной цифровой клавиатуры,
+▼ </> и <ENTER> на дополнительной цифровой клавиатуре.
+
+Другие клавиатуры могут поддерживать бит расширенной клавиатуры при помощи па"
+раметра lParam.
+
+6. Это событие также генерируется, если нажимается <F10> без нажатой <Alt>.
+
+ WM_SYSCHAR
+Это событие посылается в окно с клавиатурным фокусом, когда событие
+WM_SYSKEYDOWN обрабатывается функцией TRANSLATEMESSAGE. Оно позволяет по"
+5266
+
+
+
+лучить код символа нажатой системной клавиши, то есть клавиши, которая была нажата
+при нажатой <ALT>.
+Синтаксис::
+WM_SYSCHAR chCharCode = (TCHAR) wParam;KeyData = lParam;
+Параметры:
+
+wParam " код клавиши вызова меню окна,
+lParamLo " количество повторений кода клавиши за время удержания ее в 
+
+нажатом состоянии,
+IParamHi биты 0"7: scan"код клавиши, зависящий от OEM;
+
+бит 8:       1, если клавиша относится к расширенным,
+бит 13:     1, если при нажатии клавиши была нажата <Alt>,
+бит 14:     1, если клавиша была нажата до возникновения события,
+бит 15:     1, если после события клавиша отпущена,
+                 0, если после события клавиша остается нажатой.
+
+Возвращаемое значение:
+Не используется.
+Умолчательное действие:
+Функция DEFWINDOWPROC посылает событие WM_SYSCOMMAND в окно верхнего уров"
+ня если <F10> или <Alt> была отпущена. Значение параметра wParam становится равным
+SC_KEYMENU.
+Примечание:
+
+1. Приложение должно вернуть 0, если оно обрабатывает это событие.
+2. Для этого события бит 15 в lParamHi будет нулевым.
+3. Если бит 13 IParamHi (context code) параметра flags =0, это событие может проследовать
+
+для обработки функцией TRANSLATEACCELERATOR, которая обработает его как событие
+нажатия стандартной клавиши, вместо системной. Это позволяет использовать горячие
+клавиши в активном окне, даже если это окно не имеет клавиатурного фокуса.
+
+4. Благодаря автоматическому повторению кода клавиши при удержанию ее нажатой, до
+появления события WM_KEYUP может выдаваться несколько событий WM_KEYDOWN.
+Значение разряда 30 параметра flags позволяет определить, было ли событие
+WM_KEYDOWN первым или или является повторным во время удержания клавиши на"
+жатой.
+
+5. Для расширенных 101 и 102 клавишных клавиатур расширенными клавишами являются
+следующие:
+
+▼  правый <ALT> и <CTRL> на основной клавиатуре,
+▼ <INS>, <DEL>, <HOME>, <END>, <PAGE UP>, <PAGE DOWN> и клавиши со cтрелками в
+
+группах слева от дополнительной цифровой клавиатуры,
+▼ </> и <ENTER> на дополнительной цифровой клавиатуре.
+
+Другие клавиатуры могут поддерживать бит расширенной клавиатуры при помощи па"
+раметра lParam.
+
+6. Это событие также генерируется, если нажимается <F10> без нажатой <Alt>.
+5267
+
+
+
+7. Событие генерируется вместо WM_KEYUP, если нет окна с клавиатурным фокусом.
+См. также:
+WM_DEADCHAR, WM_CHAR и WM_SYSDEADCHAR.
+
+ WM_SYSDEADCHAR
+Это событие посылается в окно с клавиатурным фокусом, когда событие
+WM_SYSKEYDOWN обрабатывается функцией TRANSLATEMESSAGE. Оно позволяет по"
+лучить код символа нажатой пассивной системной клавиши, то есть пассивной клавиши,
+которая была нажата при нажатой <ALT>.
+Синтаксис:
+WM_SYSDEADCHAR chCharCode = (TCHAR) wParam; lKeyData = lParam;
+Параметры:
+
+wParam " код клавиши,
+lParamLo " количество повторений кода клавиши за время удержания ее в 
+
+нажатом состоянии,
+IParamHi биты 0"7: scan"код клавиши, зависящий от OEM;
+
+бит 8:       1, если клавиша относится к расширенным,
+бит 13:     1, если при нажатии клавиши была нажата <Alt>,
+бит 14:     1, если клавиша была нажата до возникновения события,
+бит 15:     1, если после события клавиша отпущена,
+                 0, если после события клавиша остается нажатой.
+
+Возвращаемое значение:
+Не используется.
+Примечание:
+
+1. К пассивным клавишам относятся, например, умляуты и ударения.
+2. Событие может использоваться для получения обратной связи для клавиш, нажатие ко"
+
+торых необязательно формирует символ как таковой.
+См. также:
+WM_DEADCHAR, WM_CHAR и WM_SYSDEADCHAR.
+
+ Несистемная клавиша
+Несистемной клавишей называется любая клавиша, нажимаемая без одновременного
+нажатия клавиши <Alt>.
+
+Расширенные клавиши
+Для расширенных 101 и 102 клавишных клавиатур расширенными клавишами являются
+следующие:
+
+▼  правый <ALT> и <CTRL> на основной клавиатуре,
+▼ <INS>, <DEL>, <HOME>, <END>, <PAGE UP>, <PAGE DOWN> и клавиши со cтрелками в
+
+группах слева от дополнительной цифровой клавиатуры,
+5268
+
+
+
+▼ </> и <ENTER> на дополнительной цифровой клавиатуре.
+Другие клавиатуры могут поддерживать бит расширенной клавиатуры при помощи па"
+раметра lParam.
+
+ sysKey
+Параметр sysKey позволяет получить состояние клавиши <Alt> при нажатии клавиши.
+Значения параметра:
+
+TRUE " была нажата клавиша <Alt>, что соответствует событию 
+WM_SYSKEYDOWN,
+
+FALSE " не была нажата клавиша <Alt>, что соответствует событию 
+WM_KEYDOWN.
+
+ Флаг клавиатуры
+Параметр соответствует lParam в событии WM_KEYDOWN или WM_SYSKEYDOWN.
+Значения разрядов параметра:
+
+0 –15 " количество повторений выдаваемого кода клавиши за время 
+ее удержания в нажатом состоянии.
+
+29 " признак нажатия клавиши <Alt>.
+1 " клавиша нажата,
+0 " клавиша не нажата.
+
+30 " предыдущее состояние клавиши;
+1 " клавиша была нажата,
+0 " клавиша не была нажата.
+
+31 " состояние перехода;
+1 " клавиша отпускается,
+0  "клавиша остается нажатой.
+
+Интерфейсы элементов модели
+▼ Интерфейсы формообразующих операций 
+▼ Интерфейсы пространственных кривых
+▼ Интерфейсы поверхностей Интерфейсы копирования компонентов сборкиИнтерфейсы
+
+копирования
+▼ Интерфейсы вспомогательной геометрии
+
+Интерфейсы дополнительных элементовИнтерфейсы поверхностей
+▼ Интерфейс параметров кинематической поверхности ksEvolutionSurfaceDefinition или
+
+IEvolutionSurfaceDefinition.
+▼ Интерфейс параметров поверхности выдавливания ksExtrusionSurfaceDefinition или
+
+IExtrusionSurfaceDefinition.
+▼ Интерфейс параметров поверхности вращения ksRotatedSurfaceDefinition или
+
+IRotatedSurfaceDefinition.
+5269
+
+
+
+▼ Интерфейс параметров поверхности по сечениям ksLoftSurfaceDefinition или
+ILoftSurfaceDefinition.
+
+▼ Интерфейс параметров макроэлемента документа"модели ksMacro3DDefinition или
+IMacro3DDefinition.
+
+▼ Интерфейс операции объединения компонентов ksUnionComponentsDefinition или
+IUnionComponentsDefinition.
+
+▼ Интерфейс операции вычитания компонентов ksMoldCavityDefinition или
+IMoldCavityDefinition.
+
+Интерфейсы пространственных кривых
+▼ Интерфейс параметров цилиндрической спирали ksCylindricSpiralDefinition или
+
+ICylindricSpiralDefinition.
+▼ Интерфейс параметров конической спирали ksConicSpiralDefinition или
+
+IConicSpiralDefinition.
+▼ Интерфейс параметров сплайна ksSplineDefinition или ISplineDefinition.
+▼ Интерфейс параметров ломаной ksPolyLineDefinition или IPolygonalLineDefinition.
+
+Интерфейсы копирования
+▼ Интерфейс массива удаленных индексов для операций копирования и массивов компо"
+
+нентов ksDeletedCopyCollection или IDeletedCopyCollection.
+▼ Интерфейс операции копирования по сетке ksMeshCopyDefinition или
+
+IMeshCopyDefinition.
+▼ Интерфейс операции копирования по кривой ksCurveCopyDefinition или
+
+ICurveCopyDefinition.
+▼ Интерфейс операции копирования по окружности ksCircularCopyDefinition или
+
+ICircularCopyDefinition.
+▼ Интерфейс зеркальной копии ksMirrorCopyDefinition или IMirrorDefinition.
+▼ Интерфейс зеркального отражения всех элементов ksMirrorCopyAllDefinition или
+
+IMirrorAllDefinition.
+
+Интерфейсы вспомогательной геометрии
+▼ Интерфейс параметров объекта "Контрольная точка" ksControlPointDefinition или
+
+IControlPointDefinition.
+▼ Интерфейс параметров объекта "Присоединительная точка" ksConjunctivePointDefinition
+
+или IConjunctivePointDefinition.
+Вспомогательные плоскости:
+
+▼ Интерфейс параметров плоскости, проходящей через ребро и вершину
+ksPlaneEdgePointDefinition или IPlaneEdgePointDefinition.
+
+▼ Интерфейс параметров смещенной плоскости ksPlaneOffsetDefinition или
+IPlaneOffsetDefinition.
+
+▼ " Интерфейс параметров плоскости, проходящей через ребро параллельно или перпен"
+дикулярно грани ksPlaneLineToPlaneDefinition или IPlaneLineToPlaneDefinition.
+5270
+
+
+
+▼ Интерфейс параметров вспомогательной плоскости, проходящей через три точки
+ksPlane3PointsDefinition или IPlane3PointsDefinition.
+
+▼ Интерфейс параметров нормальной плоскости ksPlaneNormalToSurfaceDefinition или
+IPlaneNormalToSurfaceDefinition.
+
+▼ Интерфейс параметров плоскости, проходящей через вершину перпендикулярно ребру
+ksPlanePerpendicularDefinition или IPlanePerpendicularDefinition.
+
+▼ Интерфейс параметров плоскости, проходящей через ребро параллельно или перпенди"
+кулярно другому ребру ksPlaneLineToEdgeDefinition или IPlaneLineToEdgeDefinition.
+
+▼ Интерфейс параметров вспомогательной плоскости, построенной под углом к другой
+плоскости и проходящей через заданную ось или ребро ksPlaneAngleDefinition или
+IPlaneAngleDefinition.
+
+▼ Интерфейс параметров плоскости, проходящей через вершину параллельно другой пло"
+скости ksPlaneParallelDefinition или IPlaneParallelDefinition.
+
+▼ Интерфейс параметров касательной плоскости ksPlaneTangentToSurfaceDefinition или
+IPlaneTangentToSurfaceDefinition.
+
+▼ Интерфейс параметров конструктивной плоскости "Средняя плоскость"
+ksPlaneMiddleDefinition или  IPlaneMiddleDefinition.
+Вспомогательные оси:
+
+▼ Интерфейс параметров вспомогательной оси, проходящей через прямолинейное ребро
+ksAxisEdgeDefinition или IAxisEdgeDefinition.
+
+▼ Интерфейс параметров вспомогательной оси, проходящей через две точки
+ksAxis2PointsDefinition или IAxis2PointsDefinition.
+
+▼ Интерфейс параметров вспомогательной оси на пересечении двух плоскостей
+ksAxis2PlanesDefinition или IAxis2PlanesDefinition.
+
+▼ Интерфейс параметров оси формообразующего элемента ksAxisOperationsDefinition или
+IAxisOperationsDefinition.
+
+▼ Интерфейс параметров конструктивной оси конической грани ksAxisConefaceDefinition
+или IAxisConefaceDefinition.
+
+Интерфейсы копирования компонентов сборки
+▼ Интерфейс операции копирования компонентов сборки по параллелограммной сетке
+
+ksMeshPartArrayDefinition или IMeshPartArrayDefinition.
+▼ Интерфейс копирования компонентов сборки по концентрической сетке
+
+ksCircularPartArrayDefinition или ICircularPartArrayDefinition.
+▼ Интерфейс операции копирования компонентов сборки по кривой
+
+ksCurvePartArrayDefinition или ICurvePartArrayDefinition.
+▼ Интерфейс копирования компонентов сборки по образцу ksDerivativePartArrayDefinition
+
+или IDerivativePartArrayDefinition.
+
+Интерфейсы формообразующих операций
+▼ Интерфейс параметров основания " элемента выдавливания ksBaseExtrusionDefinition
+
+или IBaseExtrusionDefinition.
+5271
+
+
+
+▼ Интерфейс параметров основания " элемента выдавливания ksBossExtrusionDefinition
+или IBossExtrusionDefinition.
+
+▼ Интерфейс параметров вырезанного элемента выдавливания ksCutExtrusionDefinition
+или ICutExtrusionDefinition.
+
+▼ Интерфейс параметров основания " элемента вращения ksBaseRotatedDefinition или
+IBaseRotatedDefinition.
+
+▼ Интерфейс приклеенного элемента вращения ksBossRotatedDefinition или
+IBossRotatedDefinition.
+
+▼ Интерфейс вырезанного элемента вращения ksCutRotatedDefinition или
+ICutRotatedDefinition.
+
+▼ Интерфейс параметров основания " элемента по сечениям ksBaseLoftDefinition или
+IBaseLoftDefinition.
+
+▼ Интерфейс приклеенного элемента по сечениям ksBossLoftDefinition или
+IBossLoftDefinition.
+
+▼ Интерфейс параметров вырезанного элемента по сечениям ksCutLoftDefinition или
+ICutLoftDefinition.
+
+▼ Интерфейс параметров основания " кинематического элемента ksBaseEvolutionDefinition
+или IBaseEvolutionDefinition.
+
+▼ Интерфейс приклеенного кинематического элемента ksBossEvolutionDefinition или
+IBossEvolutionDefinition.
+
+▼ Интерфейс вырезанного кинематического элемента ksCutEvolutionDefinition или
+ICutEvolutionDefinition.
+
+▼ Интерфейс тонкостенной оболочки ksShellDefinition или IShellDefinition.
+▼ Интерфейс ребра жесткости ksRibDefinition или IRibDefinition.
+▼ Интерфейс уклона ksInclineDefinition или IInclineDefinition.
+▼ Интерфейс параметров фаски ksChamferDefinition или IChamferDefinition.
+▼ Интерфейс параметров элемента "скругление" ksFilletDefinition или IFilletDefinition.
+▼ Интерфейс операции сечения эскизом ksCutBySketchDefinition или
+
+ICutBySketchDefinition.
+▼ Интерфейс операции сечения плоскостью ksCutByPlaneDefinition или
+
+ICutByPlaneDefinition.
+
+Интерфейсы дополнительных элементов
+▼ Интерфейс описания вершины ksVertexDefinition илиIVertexDefinition.
+▼ Интерфейс свойств ребра ksEdgeDefinition или IEdgeDefinition.
+▼ Интерфейс свойств грани ksFaceDefinition или IFaceDefinition.
+▼ Интерфейс параметров импортированной поверхности ksImportedSurfaceDefinition или
+
+IImportedSurfaceDefinition.
+▼ Интерфейс условного изображения резьбы ksThreadDefinition или IThreadDefinition.
+▼ Интерфейс параметров эскиза ksSketchDefinition или ISketchDefinition
+5272
+
+
+
+Элементы, существующие в модели по умолчанию
+
+o3d_planeXOY = 1  плоскость XOY
+o3d_planeXOZ = 2  плоскость XOZ
+o3d_planeYOZ = 3  плоскость YOZ
+o3d_pointCS = 4  точка начала системы координат
+
+ Пример использования функций работы с документами 
+void Document_Example (void) {
+
+reference pDoc;
+DocumentParam   doc, doc1;
+char buf[ 128 ];
+
+lstrcpy(doc.fileName,"c:\\gr\\2.cad");
+lstrcpy(doc.comment , "Чертеж" );
+lstrcpy(doc.author ,"Иванов");
+doc.regim=0;  //видимый режим
+doc.type=1; doc.stPar.Toleranceat=3; doc.stPar.multiply=1;
+doc.stPar.direct=0; doc.stPar.shtType=1;
+
+pDoc = CreateDocument (&doc);
+
+// создадим вид  с номером 2
+
+ViewParam par;
+int number = 2;
+par.x = 10; par.y = 20; par.scale = 2; par.ang = 45;
+par.color = RGB(10,20,10);
+par.state = stACTIVE;  // вид будет активным
+strcpy(par.name, "пользовательский вид");
+CreateSheetView(&par, &number);
+
+//создать и перейти в слой 5
+
+Layer(5);
+
+LineSeg(20, 10, 40, 10, 1);
+LineSeg(40, 10, 40, 30, 1);
+5273
+
+
+
+LineSeg(40, 30,  20, 30, 1);
+LineSeg(20, 30,  20, 10, 1);
+
+SaveDocument (pDoc, );  //сохранить документ
+CloseDocument(pDoc);      //закрыть документ
+
+//откроем созданный документ «с:\gr\2.cad» в видимом режиме отображения
+
+OpenDocument( "с:\gr\2.cad", 0);
+
+}; /* Document_Example */
+
+Пример использования функций работы с документами, Unicode
+void Document_Example (void) {
+
+reference pDoc;
+DocumentParamW doc, doc1;
+char buf[ 128 ];
+
+wcscpy( doc.fileName, _T("c:\\gr\\2.cad"));
+wcscpy( doc.comment, _T("Чертеж"));
+wcscpy( doc.author, _T("Иванов"));
+doc.regim=0;  //видимый режим
+doc.type=1; doc.stPar.Toleranceat=3; doc.stPar.multiply=1;
+doc.stPar.direct=0; doc.stPar.shtType=1;
+
+pDoc = CreateDocumentW (&doc);
+
+// создадим вид  с номером 2
+
+ViewParamW par;
+int number = 2;
+par.x = 10; par.y = 20; par.scale = 2; par.ang = 45;
+par.color = RGB(10,20,10);
+par.state = stACTIVE;  // вид будет активным
+wcscpy(par.name,_T(" пользовательский вид"));
+CreateSheetViewW(&par, &number);
+5274
+
+
+
+//создать и перейти в слой 5
+
+Layer(5);
+
+LineSeg(20, 10, 40, 10, 1);
+LineSeg(40, 10, 40, 30, 1);
+LineSeg(40, 30,  20, 30, 1);
+LineSeg(20, 30,  20, 10, 1);
+
+SaveDocument( pDoc, 0 );  //сохранить документ
+CloseDocument( pDoc );      //закрыть документ
+
+//откроем созданный документ «с:\gr\2.cad» в видимом режиме отображения
+
+OpenDocument( "с:\gr\2.cad", 0);
+
+}; /* Document_Example */
+
+Пример инсталляции шрифта хотточек в Компас
+class FontInstaller
+{
+  HANDLE    m_hFont  = {};
+  public:
+  FontInstaller( HINSTANCE module, LPWSTR lpName );
+  ~FontInstaller();
+};
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+///
+// """
+FontInstaller::FontInstaller( HINSTANCE module, LPWSTR lpName )
+{
+  PRECONDITION( module );
+  HRSRC hrc = ::FindResource( module, lpName, RT_RCDATA );
+  PRECONDITION( hrc );
+
+  DWORD dwrclen = ::SizeofResource( module, hrc );
+  PRECONDITION( dwrclen );
+5275
+
+
+
+  HGLOBAL hrcglobal = ::LoadResource( module, hrc );
+  PRECONDITION( hrcglobal );
+
+  void * pvrc = ::LockResource( hrcglobal );
+  PRECONDITION( pvrc );
+
+  DWORD fontsCount = 0;
+  m_hFont = ::AddFontMemResourceEx( pvrc, dwrclen, 0, &fontsCount );
+
+  PRECONDITION( m_hFont && fontsCount == 1 );
+}
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+///
+// """
+FontInstaller::~FontInstaller()
+{
+  ::RemoveFontMemResourceEx( m_hFont );
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Класс устанавливает хот"точечный шрифт.
+//
+////////////////////////////////////////////////////////////////////////////////
+class HotPointsFontInstaller : public FontInstaller
+{
+public:
+  HotPointsFontInstaller()
+      : FontInstaller( module, MAKEINTRESOURCE( HOT_POINTS_FONT ) ){};
+};
+Библиотека по первому требованию должна зарегистрировать шрифт и разрегистриро"
+вать его при отключении библиотеки.
+5276
+
+
+
+GetDocOptions  пример использования 
+DimensionsOptrions par;
+memset (&par, 0, sizeof (DimensionsOptrions));
+if (GetDocOptions (DIMENTION_OPTIONS, &par, sizeof(DimensionsOptrions)))
+{
+char buf[128];
+Message("Настройки размеров текущего документа");
+sprintf (buf, "Выход выносных линий за размерную=%0.1f;
+Расстояние от разм.линии до текста=%0.1f;",
+par.proLineExtension, par.textDistanceFromDimLine);
+Message(buf);
+sprintf (buf, "Расстояние от выносных линий до текста=%0.1f;
+Выход размерной линии за текст=%0.1f;",
+par.textDistanceFromProLine, par.dimLineExtension);
+Message(buf);
+sprintf (buf, "Длина стрелки для размера=%0.1f; Кол"во знаков после запятой=%d;",
+par.arrowLength, par.decimalsCount);
+Message(buf);
+sprintf (buf, "Стиль текста=%d; точность углового размера=%s", par.style,
+!par.anglePrecisionLevel ? "градусы" : par.anglePrecisionLevel ==1 ? "минуты" :
+"секунды");
+Message(buf);
+}
+
+ ksPrintPreviewWindow  пример использования 
+char buf[128];
+
+   //создать динамический массив строк
+   reference docsArr = CreateArray(CHAR_STR_ARR,0);
+
+   //наполним массив
+   strcpy(buf,"d:\\0\\_222.cdw");
+   AddArrayItem(docsArr, "1, buf, sizeof(buf));
+   strcpy(buf,"d:\\0\\_2.cdw");
+   AddArrayItem(docsArr, "1, buf, sizeof(buf));
+
+   //в просмотровом окне должно появиться два документа, которые нужно распечатать
+5277
+
+
+
+   if (! ksPrintPreviewWindow(docsArr,   // динамический массив указателей
+CHAR_STR_ARR
+                                         1)) {   // 1 " если docsArr = 0 или массив пуст,
+// запросить документы у пользователя
+                                                      // 0 " без запроса
+
+   // если неудачное завершение " выдадим результат работы нашей функции
+   MessageBoxResult();  
+
+ ksSheetSetupDlg  пример использования 
+DocumentParam par;
+      par.type = lt_DocSheetStandart;
+      par.sheet.stPar.format   = 4;
+      par.sheet.stPar.multiply = 1;
+      par.sheet.stPar.direct   = 0;
+      if ( ::ksSheetSetupDlg(&par, ::GetHWindow()) ) {
+       char buf[256];
+        if ( par.type == lt_DocSheetStandart ) {
+         ::sprintf( buf, "Стандартный лист : формат A%d, кратность %d, расположение %s",
+par.sheet.stPar.format,
+           par.sheet.stPar.multiply, par.sheet.stPar.direct ? "горизонтально" : "вертикально" );
+        }
+        else {
+         ::sprintf( buf, "Пользовательский формат : Длина %g, Высота %g",
+par.sheet.usPar.width,
+           par.sheet.usPar.height );
+        }
+       ::Message( buf );
+      }
+
+ ksReDrawDocPart  пример использования 
+reference pView = OpenView ( 0 );    // Системный вид текущего документа
+ RectParam rect;                      // Структура параметров прямоугольника
+ rect.pBot.x = 100;                   // Инициализация структуры pBot низ " лево
+ rect.pBot.y = 100;                   //                         pTop верх " право
+ rect.pTop.x = 200;
+ rect.pTop.y = 200;
+ ksReDrawDocPart( &rect, pView );     // Будет перерисована область во всех граф. окнах
+документа
+5278
+
+
+
+ SystemControlStart  Пример использования 
+void SystemControlStart_Example (void) 
+{
+//построить заштрихованный квадрат
+LineSeg (20, 30, 70, 30, 1);
+LineSeg (70, 30, 70, 80, 1);
+LineSeg (70, 80, 20, 80, 1);
+LineSeg (20, 80, 20, 30, 1);
+
+//штриховка появится только после возвращения управления библиотеке
+SystemControlStart (0);
+
+reference p = Hatch(0, 45, 2, 0, 0, 0);
+LineSeg (20, 30, 70, 30, 1);
+LineSeg (70, 30, 70, 80, 1);
+LineSeg (70, 80, 20, 80, 1);
+LineSeg (20, 80, 20, 30, 1);
+EndObj();
+};
+
+ SystemControlStop  Пример использования 
+class TEskWin : public TDialog 
+{
+public:
+TEskWin(TWindow *parent);
+protected:
+void EvDialogCommand1();
+void EvClose();
+DECLARE_RESPONSE_TABLE(TEskWin);
+void TEskWin::EvClose() {
+TDialog::EvClose();
+SystemControlStop();
+}
+
+//точка входа в библиотеку
+extern "C" void far __export pascal LibraryEntry (unsigned int)
+{
+TWindow *parent = GetWindowPtr((HWND)GetHWindow());
+5279
+
+
+
+if (parent) 
+{
+TEskWin *eskw = new TEskWin(parent);
+eskw">Create(); //немодальный диалог
+SystemControlStart("Остановить ESK");
+//в это место библиотеки вернемся только после выполнения SystemControlStop();
+delete eskw;
+}
+};
+
+ ksOpenHelpFile  Пример использования 
+//вызываем раздел помощи, идентификатор которого равен номеру команды
+  ::ksOpenHelpFile ("profile.hlp", HELP_CONTEXT, 1);
+
+ksExecuteLibraryCommand  Пример использования 
+char fileName[255];
+   ::strcpy(fileName, "C:\\libtest\\libtest.rtw");    // имя файла библиотеки
+   ksExecuteLibraryCommand(fileName, 3/*номер команды*/); 
+// выполнение команды 3 из библиотеки
+
+ ksSetCurrentLibrary  Пример использования 
+if (!::ksSetCurrentLibrary( ::LibraryName(), 0 ) ) { //Имя библиотеки
+ Error("Нужно завершить текущую операцию");
+ return;
+}
+
+SetMacroParam  пример использования
+// пример построения прямоугольника с последующим его редактированием
+
+void DrawRect () 
+{
+struct 
+{
+double a;
+double b;
+} 
+r;
+5280
+
+
+
+if (EditMacroMode())
+//режим редактирования
+GetMacroParam (m, &r, sizeof (r));
+else 
+//cоздание нового макроэлемента
+{
+r.a = 20;
+r.b = 10;
+}
+ReadDouble ("задайте ширину",r.a,0,100, &r.a);
+ReadDouble ("задайте высоту",r.b,0,100, &r.b);
+Macro(); /* определение макроэлемента */
+// Прямоугольник
+LineSeg(0, 0, r.a, 0, 0);
+LineSeg(r.a, 0, r.a, r.b, 0);
+LineSeg(r.a, r.b, 0, r.b, 0);
+LineSeg(0, r.b, 0, 0, 0);
+reference m = EndObj();
+
+//записать параметры в макроэлемент
+SetMacroParam (m, &r, sizeof(r), NULL, NULL, "1);
+}; 
+
+ksGetMacroEditParam  пример использования 
+Macro (0);
+    Point (10, 10, 1);
+  reference ref = EndObj ();
+
+  SetMacroParam (ref, NULL, 0, "FileName.rtw", "LibName", 111);
+
+  char         fileName[128];                   // буфер имени файла библиотеки
+  unsigned int fileNameSize = sizeof (fileName); // размер буферa имени файла библиотеки
+  char         libName[128];                    // буфер имени библиотеки
+  unsigned int libNameSize = sizeof (libName); // размер буферa имени библиотеки
+  int          number;                          // буфер номерa функции редактирования
+
+  int res = ksGetMacroEditParam (ref, fileName, fileNameSize, libName,
+                                 libNameSize, &number);
+5281
+
+
+
+  if (res) {
+    char buf[128];
+    sprintf (buf, " Имя файла: %s\n Имя библиотеки: %s\n Номер функции: %i",
+             fileName, libName, number);
+
+    Message (buf);
+  }
+  else
+    Error ("Ошибка");
+
+GetMacroParamSize  пример использования 
+reference p;
+  RequestInfo  info;
+  //обнулить структуру  info;
+  memset (&info, 0, sizeof (info));
+  double x, y;
+  info.prompt = "Укажите макроэлемент";
+  int j = Cursor (&info, &x ,&y, 0);
+  if (j) {
+if (ExistObj (p = FindObj (x, y, 1e6)) && GetObjParam (p, 0, 0, 0) == MACRO_OBJ) {
+int size = GetMacroParamSize (p);
+char buf [128];
+sprintf (buf, "Размер параметров макроэлемента = %d", size);
+Message (buf);
+  }
+  }
+
+ksOpenMacro  пример использования
+Macro (0);
+LineSeg(50,100, 100, 150, 1);
+reference p = EndObj();
+
+Message("Создан макроэлемент");
+
+ksOpenMacro (p);
+Macro (0);
+reference cir = Circle(50, 50, 20, 1);
+5282
+
+
+
+reference p1 = EndObj();
+EndObj();
+
+Message("Макроэлемент отредактирован");
+
+ksOpenMacro  пример использования 
+  //самостоятельный объект вида
+  reference  l = LineSeg(10, 10, 20, 20, 1);
+  
+  Macro(0);
+    //внутренний объект макроэлемента
+    reference l1 = LineSeg(50,100, 100, 150, 1);
+  reference p = EndObj();
+
+  ksOpenMacro (p);
+    //внутренний объет макроэлемента
+    Macro(0);
+      reference cir = Circle(50, 50, 20, 1);
+    reference p1 = EndObj();
+  EndObj();
+
+ksOpenMacro  пример использования 
+  Macro(0);
+  reference p = EndObj();
+  ksOpenMacro (p);
+    //внутренний объет макроэлемента
+    Macro(0);
+      reference cir = Circle(50, 50, 20, 1);
+    reference p1 = EndObj();
+  EndObj();
+
+ksAddObjectToMacro  пример использования 
+//создать постоянную группу 
+//(окружности принадлежат текущему виду)
+reference  gr = NewGroup (0);
+Circle(0, 0, 100, 1);
+Circle(0, 0, 50, 1);
+EndGroup();
+5283
+
+
+
+//создать макроэлемент
+Macro(1);
+LineSeg (120, 100, 120, 150, 1);
+reference m = EndObj();
+
+//добавить в макро новый объект
+ksOpenMacro(m);
+LineSeg (100, 100, 150, 100, 1);
+::EndObj();
+
+//добавить в макроэлемент группу самостоятельных объектов.
+//(объекты становятся внутренними)
+
+ksDuplicateBoundaries  пример использования 
+reference pObj;
+  RequestInfo  info;
+  double x, y;
+  memset (&info, 0, sizeof (info));
+  info.prompt = "Укажите штриховку или заливку";
+  int j = Cursor(&info, &x ,&y, 0);
+  if (j) {
+    if(ExistObj(pObj = FindObj(x, y, 1e6))) {
+      int objType =  GetObjParam(pObj, 0, 0, 0);
+      if (objType == HATCH_OBJ || objType == COLORFILL_OBJ) {
+        Phantom phantom;     // ltdefine.h
+        memset(&phantom, 0, sizeof(phantom));
+        //в фантом положим копию границы
+        phantom.type1.gr = ksDuplicateBoundaries( pObj);
+        phantom.phType = 1; //сдвиг группы
+        phantom.type1.scale = 1; //сдвиг группы
+
+        info.prompt = "Укажите точку привязки границы";
+        j = Cursor(&info, &x ,&y, &phantom);
+        if (j) {
+          MoveObj(phantom.type1.gr, x, y); //смещаем группу в новый   центр
+          StoreTmpGroup(phantom.type1.gr); //временную группу делаем постоянной
+          ClearGroup(phantom.type1.gr);
+5284
+
+
+
+          DeleteObj(phantom.type1.gr);
+        }
+      }
+      else
+        Error("Объект должен быть штриховкой или заливкой");
+    }
+  }
+
+Macro, EndObj  пример использования 
+void Macro_Example (void) {
+
+Macro(); /* определение макроэлемента */
+
+LineSeg (10,  10,  10,  20,  1);
+LineSeg (10,  20,   40, 20,  1); 
+LineSeg (40,  20,   40, 30,  1);
+LineSeg (40,  30,   70, 30,  1);
+LineSeg (70,  30,   70, 10,  1);
+LineSeg (70,  10,   10, 10,  1);
+
+Macro (); /* вложенный макроэлемент */
+LineSeg (40,  15,   50, 25,  1);
+LineSeg (50,  25,   60, 15,  1);
+LineSeg (60,  15,   40, 15,  1);
+EndObj();
+
+EndObj();   /* закончить формирование макроэлемента */
+
+}; /* Macro_Example */
+
+Contour  пример использования 
+void Contour_Example (void) {
+
+reference p;
+
+Contour(1); /* определение контура */
+
+LineSeg (10,  10,  10,  20,  1);
+5285
+
+
+
+LineSeg (10,  20,   40, 20,  1); 
+LineSeg (40,  20,   40, 30,  1);
+LineSeg (40,  30,   70, 30,  1);
+LineSeg (70,  30,   70, 10,  1);
+LineSeg (70,  10,   10, 10,  1);
+
+p = EndObj();   /* закончить формирование контура */
+
+}; /* Contour_Example */
+
+CommandWindow  пример использования 
+void CommandWindow_Example (void) {
+RequestInfo  info;
+  memset(&info, 0, sizeof(info));
+info.commands = "!Окружность !Отрезок ";
+info.commands = Объекты
+
+int j=CommandWindow(&info);
+  switch (j) {
+     case 1:
+       Circle(10,10,10,1);
+       break;
+     case 2:
+       LineSeg(10,10, 20, 10, 1);
+       break;
+  }
+
+}; /* CommandWindow_Example */
+
+ksCalculate, ksCalculateReset  пример использования 
+//очистить массив переменных
+  ksCalculateReset ();
+  char buf [128];
+  double resD;
+
+  //добавить переменную A1 = 100
+5286
+
+
+
+  int  rezI =  ksCalculate ("A1 = 100", &resD);
+  sprintf (buf,"resD = %f rezI = %d", resD, rezI);
+  Message (buf);
+
+  //добавить переменную A2 = 200
+  rezI = ksCalculate ("A2 = 200", &resD);
+  sprintf (buf,"resD = %f rezI = %d", resD, rezI);
+  Message (buf);
+
+  //подсчитать результат выражения
+  rezI = ksCalculate ("(A1 A2) * sqrt(4)", &resD);
+  sprintf (buf,"resD = %f rezI = %d", resD, rezI);
+  Message (buf);
+
+Представление математических объектов, участвующих в сопряжении
+
+ksMatePoint Pc " координаты точки,
+Точка V, radius1, radius2 " не используются.
+ksMateLine Pc " координата точки на прямой,
+Линия V " координаты вектора направления прямой,
+
+radius1, radius2 " не используются.
+ksMatePlane Pc " координата точки на плоскости,
+Плоскость V " координаты вектора нормали плоскости,
+
+radius1, radius2 " не используются.
+ksMateCylinder Pc " координата точки на оси цилиндра,
+Цилиндр V " направление оси цилиндра,
+
+radius1 " радиус цилиндра,
+radius2 = radius1.
+
+ksMateCone Pc " координата точки на оси конуса, лежащей в основании конуса,
+Конус V " направление оси конуса (от основания к сечению),
+
+radius1 " радиус основания конуса,
+radius2 " радиус сечения конуса;
+формально " radius2 = radius1tang(alpha), alpha " угол между осью и 
+образующей (угол полураствора). Подразумевается, что расстояние между 
+основанием и сечением конуса равно 1.
+
+ksMateSphere Pc"координата центра сферы,
+Сфера radius1 " радиус сферы,
+
+V, radius2 " не используются.
+ksMateTorus Pc"координата центра тора,
+Тор V"направление оси вращения тора,
+
+radius1 " радиус вращения (большой),
+radius2 " радиус образующей окружности (малый).
+5287
+
+
+
+ksMateCircle Pc"координата центра окружности,
+Окружность V – направление вектора нормали плоскости, в которой лежит окружность,
+
+radius1 " радиус окружности,
+radius2 " radius1.
+
+Общий свет
+Этот параметр характеризует свет, отраженный и рассеиваемый другими объектами.
+Например, в комнате с белыми стенами и рассеянным освещением значение общего све"
+та больше, чем в области, освещенной направленным источником света.
+
+Диффузия
+Этот параметр характеризует степень рассеивания света поверхностью (при этом счита"
+ется, что свет рассеивается равномерно во всех направлениях).
+
+Зеркальность
+Этот параметр характеризует способность поверхности воспроизводить отражение яр"
+кого света.
+Чем меньше значение параметра зеркальности, тем более тусклая поверхность.
+Чем больше значение параметра, тем более зеркальная поверхность.
+
+Блеск
+Этот параметр характеризует блеск поверхности, остроту бликов на ней.
+Чем меньше значение параметра зеркальности, тем более матовая поверхность.
+Чем больше значение параметра, тем более блестящая, глянцевая поверхность.
+
+Прозрачность
+Этот параметр характеризует способность поверхности пропускать падающий на нее
+свет.
+Если значение этого параметра равно 1 (или 100%), то поверхность совершенно не"
+прозрачная.
+При моделировании деталей из стекла, органического стекла, слюды, бесцветного поли"
+этилена и подобных материалов значение прозрачности выбирают из диапазона между
+0 и 1. Если значение этого параметра равно 0,5 (или 50%), то поверхность полупрозрач"
+ная.
+Если значение этого параметра равно 0, то поверхность полностью прозрачная. Такая
+поверхность невидима.
+
+Излучение
+Этот параметр характеризует способность поверхности излучать свет.
+5288
+
+
+
+(*)
+В системах, поддерживающих работу со свойствами, например, Visual Basic, Delphi,
+Builder.
+
+(**)
+В системах, не поддерживающих работу со свойствами, например, C.
+
+Синтаксис доступен при использовании Ptrоболочки интерфейсов 
+(smartpointer).
+
+A...B
+Типы динамических массивов
+ADimParam " структура параметров углового размера
+ADimSource " структура параметров привязки углового размера
+ArcParam " структура параметров дуги
+ArcParam1 " структура параметров дуги по точкам
+AStyles " Типы отрисовки стрелок в размерах
+Attribute " структура параметров табличного атрибута
+AttributeType " структура параметров типа табличного атрибута
+ATTypes " Типы данных в столбце табличного атрибута
+AxisLineParam " структура параметров осевой линии
+BaseParam " структура параметров обозначения базы
+BezierParam " структура параметров кривой Безье
+BezierPointParam " структура параметров узла кривой Безье
+BrandLeaderParam " структура параметров линии"выноски для обозначения клеймения
+BreakDimDrawing " структура параметров отрисовки размера с обрывом
+
+C
+CentreParam " структура параметров обозначения центра
+CircleParam " структура параметров окружности
+ColumnInfo " структура параметров столбца табличного атрибута
+CON " структура параметров сопрягающей окружности
+ConicArcParam " структура параметров конического сечения
+ConstraintParam " структура параметрических связей и ограничений
+CopyObjectParam " Структура параметров копирования объекта графического документа
+CornerParam " структура параметров скругленных углов многоугольников
+CTypes " Типы колонок спецификации
+CurvePattern "структура параметров участка прерывистой кривой
+5289
+
+
+
+CurvePatternEx " расширенная структура параметров картинки в стиле линии
+CurvePicture " структура параметров картинки в стиле линии
+CurveStyleParam " структура параметров стиля кривой
+CutLineParam " структура параметров линии разреза/сечения
+
+DF
+DataTypes " Типы данных
+DimDrawing " структура параметров изображения линейного и углового размеров
+DimensionPartsParam " структура параметров объектов, составляющих размер
+DimensionsOptions " структура параметров для определения настроек размеров
+DimText " структура параметров размерной надписи
+DModes " Признаки размерной надписи
+DocAttachedSpcParam " структура параметров документа, подключенного к специфика"
+ции
+DocType " Типы документов системы КОМПАС
+DocumentParam " структура параметров документа
+EllipseArcParam " структура параметров дуги эллипса
+EllipseArcParam1 " структура параметров дуги эллипса
+EllipseParam " структура параметров эллипса
+EndType " Типы действий с библиотеками моделей и фрагментов
+EquidistantParam " структура параметров эквидистанты
+ErrorCodes " Коды ошибок
+FolderTypes " Типы системных папок
+FStyles " Стандартные форматы листа
+
+GK
+HatchLineParam " структура параметров линии штриховки
+HatchParam " структура параметров штриховки
+HatchParamEx " расширенная структура параметров штриховки
+HatchStyleParam " структура параметров стиля штриховки
+HotPointDescription " структура параметров характерной точки
+HStyles " Системные стили штриховок
+InertiaParam " структура параметров для расчета МЦХ плоской фигуры
+InsertFragmentParam " структура параметров вставки фрагмента
+InsertFragmentParamEx " расширенная структура параметров вставки фрагмента
+ksAttribute " структура параметров табличного атрибута
+ksAttributeType " структура параметров типа табличного атрибута
+5290
+
+
+
+L
+L3DExportFormats " форматы сохранения модели
+LayerParam " структура параметров слоя
+LayerTypes " состояния слоев и видов
+LBreakDimParam " структура параметров линейного размера с обрывом
+LBreakDimSource " структура параметров привязки линейного размера с обрывом
+LDimParam " структура параметров линейного размера
+LDimSource " структура параметров привязки линейного размера
+LeaderParam " структура параметров линии"выноски
+LenTypes " размерности длины
+LibPathTypes " типы пути в библиотеке моделей
+LibraryAttrTypeParam " структура параметров для типа атрибута в библиотеке типов атри"
+бутов
+LibraryStyleParam " структура параметров стиля в библиотеке стилей
+LibStyle " структура параметров для подключения стиля из библиотеки
+LineParam " структура параметров вспомогательной прямой
+LineSegParam " структура параметров отрезка
+LObjColors " цвета вывода объектов
+LPalettes " цветность растра
+LRasterFormats " форматы растра
+LStyles " системные стили линий
+LtRemoteElmSignType " типы значка объекта "Выносной элемент
+LtVariant " структура параметров для хранения данных некоторого типа
+LtViewType " типы видов
+LTypes " типы библиотек стилей
+
+MO
+MarkerLeaderParam " структура параметров линии"выноски для обозначения маркировки
+MarkTypes " Системные стили значков
+MassInertiaParam " структура параметров для расчета МЦХ тел вращения и выдавливания
+MathPointParam " структура параметров математической точки
+MTypes " Размерности и типы тел
+NumberTypeAttrParam " структура числового значения в колонке спецификации
+NurbsParam " структура параметров кривой NURBS
+NurbsPointParam " структура параметров узла NURBS
+ObjTypes " Типы объектов и интерфейсы
+OrdinatedDimParam " структура параметров размера высоты
+OrdinatedDimTypes " Типы размеров высоты
+5291
+
+
+
+OrdinatedDrawing " структура параметров изображения размера высоты
+OrdinatedSource " структура параметров привязки размера высоты
+OverlapObjectOptions " Параметры перекрывающихся объектов
+
+P
+ParagraphParam " структура параметров параграфа
+ParamRestrictionTypes " Типы параметрических ограничений
+ParamTypes " Типы параметров объектов
+Phantom " структура параметров фантома
+PhantomTypes " Типы фантомов
+PlacementParam " структура параметров привязки
+PointParam " структура параметров точки
+PolylineParam " структура параметров ломаной линии
+PolylineParamEx " расширенная структура параметров ломаной линии
+PosLeaderParam " структура параметров позиционной линии"выноски
+PropertyParam " cтруктура параметров свойства отображаемого в окне свойств
+ProjectionType " Типы проекций
+PStyles " Системные стили отрисовки точек
+PTypes " Типы фантомов
+
+QR
+QualityContensParam " структура параметров квалитета
+QualityItemParam " структура параметров интервала квалитета
+RasterFormatParam " структура параметров записи в растровый формат
+RasterParam " структура параметров растрового объекта
+RBreakDimParam " структура параметров радиального размера с изломом
+RBreakDrawing " структура параметров изображения радиального размера с изломом
+RDimDrawing " структура параметров изображения диаметрального и радиального раз"
+меров
+RDimParam " структура параметров диаметрального и обычного радиального размера
+RDimSource " структура параметров привязки диаметрального и радиального размеров
+RecordTypeAttrParam " структура записи в колонке спецификации
+RectangleParam " структура параметров прямоугольника
+RectParam " структура параметров прямоугольника
+RegularPolygonParam " структура параметров правильного многоугольника
+RemoteElementParam " Параметры объекта "Выносной элемент"
+RequestInfo " структура параметров запроса к системе
+RoughPar " структура параметров обозначения шероховатости
+5292
+
+
+
+RoughParam " структура параметров обозначения шероховатости с полкой
+
+S
+SetTypes " Типы настроек
+SheetObjTypes " Типы объектов оформления чертежа
+SheetOptions " Структура параметров оформления
+SheetPar " структура параметров оформления документов
+SheetSize " структура параметров нестандартного листа
+ShelfPar " структура параметров выносной полки
+SnapOptions " Структура параметров привязок в графическом документе
+SortamentTypes " Коды типов сортаментов
+SpcColumnParam " структура параметров колонки спецификации
+SpcDescrParam " структура параметров описания спецификации
+SpcObjParam " структура параметров объекта спецификации
+SpcSortTypes " Типы сортировки объектов в разделе спецификации
+SpcStrTypes " Типы строк спецификации
+SpcStyleColumnParam " структура параметров стиля колонки спецификации
+SpcStyleParam " структура параметров стиля спецификации
+SpcStyleSectionParam " структура параметров стиля раздела спецификации
+SpcSubSectionParam " структура параметров подраздела спецификации
+SpcTuningSectionP " структура параметров настройки раздела спецификации
+SpcTuningStyleParam " структура параметров настройки спецификации
+SpcVariants " Варианты оформления спецификации
+SpecRoughParam " структура параметров знака неуказанной шероховатости
+SSTypes " Общие настройки привязок
+StandartSheet " структура параметров стандартного листа
+StandartViewTypes " Типы стандартных видов
+StopTypes " Типы выхода из режима ksSystemControlStart
+StructAssociationViewParam " Структура параметров ассоциативного вида
+StructType2D " Типы интерфейсов
+StTypes " Типы стилей и интерфейсы
+STypes " Типы локальной привязки
+
+T
+TAN " структура параметров касательной кривой
+TechnicalDemandParam " структура параметров технических требований
+TextDocumentParam " Структура параметров текстового документа
+TextFlags " Признаки начертания текста
+5293
+
+
+
+TextItemFont " структура параметров шрифта компонента строки текста
+TextItemParam " структура параметров компоненты строки текста
+TextLineParam " структура параметров строки текста
+TextParam " структура параметров текста
+TextStyleParam " структура параметров стиля текста
+ThicknessTypes " Параметры пера пользовательского стиля линии
+ToleranceBranch " структура параметров опоры допуска формы
+ToleranceParam " структура параметров обозначения допуска формы
+TextAlign " Типы привязки текста
+TStyles " Системные стили текстов
+Type1 " структура параметров для сдвига группы
+Type2 " структура параметров фантома"отрезка или фантома"окружности
+Type3 " структура параметров фантома"отрезка с заданным углом и фантома"прямоу"
+гольника
+Type5 " структура параметров фантома"половины прямоугольника с заданным углом
+Type6 " структура параметров пользовательского фантома
+
+UZ
+VariableParam " структура параметров параметрической переменной
+ViewColorParam " Параметры цвета фона
+ViewParam " структура параметров вида
+ViewPointerParam " структура параметров стрелки направления взгляда
+
+Методы получения
+KompasObject::GetDynamicArray
+KompasObject::ksGetLibraryStylesArray
+ksAttributeObject::ksGetLibraryAttrTypesArray
+ksAttributeTypeParam::GetColumns
+ksBaseParam::GetPTextItem
+ksBezierParam::GetMathPointArr
+ksBrandLeaderParam::GetpPolyline
+ksBrandLeaderParam::GetpTextline
+ksColumnInfoParam::GetColumns
+ksColumnInfoParam::GetFieldEnum
+ksCurvePicture::GetFill
+ksCurvePicture::GetPolygon
+ksCurveStyleParam::GetPPattern
+ksCutLineParam::GetpMathPoint
+5294
+
+
+
+ksCutLineParam::GetpTextline
+ksDimTextParam::GetTextArr
+ksDocument2D::ksGetDocVariableArray
+ksDocument2D::ksGetObjConstraints
+ksLeaderParam::GetpPolyline
+ksLeaderParam::GetpTextline
+ksMarkerLeaderParam::GetpPolyline
+ksMarkerLeaderParam::GetpTextline
+ksMathematic2D::ksPointsOnCurve
+ksNurbsParam::GetPKnot
+ksNurbsParam::GetPPoint
+ksPolylineParam::GetPMathPoint
+ksPosLeaderParam::GetpPolyline
+ksPosLeaderParam::GetpTextline
+ksQualityContensParam::GetpQualityItems
+ksRectangleParam::GetPCorner
+ksRegularPolygonParam::GetPCorner
+ksRoughPar::GetpText
+ksSpcObjParam::GetDocArr
+ksSpcStyleParam::GetArrAdditionalColumn
+ksSpcStyleParam::GetArrColumn
+ksSpcStyleParam::GetArrSection
+ksSpcStyleSectionParam::GetArrAdditionalColumn
+ksSpcStyleSectionParam::GetArrColumn
+ksSpcTuningSectionParam::GetArrSubSection
+ksSpcTuningStyleParam::GetArrSection
+ksStamp::ksGetStampColumnText
+ksTechnicalDemandParam::GetPGab
+ksTextLineParam::GetTextItemArr
+ksTextParam::GetTextLineArr
+ksToleranceBranch::GetpMathPoint
+ksToleranceParam::GetBranchArr
+ksUserParam::GetUserArray
+ksViewPointerParam::GetpTextline
+
+См. также
+KompasObject,
+5295
+
+
+
+ksAttributeObject,
+ksAttributeTypeParam,
+ksBaseParam,
+ksBezierParam,
+ksBrandLeaderParam,
+ksColumnInfoParam,
+ksCurvePicture,
+ksCurveStyleParam,
+ksCutLineParam,
+ksDimTextParam,
+ksLeaderParam,
+ksMarkerLeaderParam,
+ksNurbsParam,
+ksPolylineParam,
+ksPosLeaderParam,
+ksRectangleParam,
+ksRegularPolygonParam,
+ksRoughPar,
+ksSpcObjParam,
+ksSpcStyleParam,
+ksSpcStyleSectionParam,
+ksSpcTuningSectionParam,
+ksSpcTuningStyleParam,
+ksStamp,
+ksTechnicalDemandParam,
+ksTextLineParam,
+ksTextParam,
+ksToleranceBranch,
+ksUserParam,
+ksViewPointerParam.
+
+Пример использования структуры параметров CornerParam
+и массива CORNER_ARR
+reference arr = ::CreateArray (CORNER_ARR, 0); // создать массив параметров углов
+ CornerParam par;// структура параметров угла
+ par.index = 5;// индекс угла
+ par.fillet = 0;// признак фаски
+ par.l1 = 345;// длина фаски 1 сегмента
+5296
+
+
+
+ par.l2 = 456.987;// длина фаски 2 сегмента
+ ::AddArrayItem (arr, "1, &par, sizeof (CornerParam)); // добавить угол в массив
+ par.index = 45;// индекс угла
+ par.fillet = 0;// признак фаски
+ par.l1 = 345;// длина фаски 1 сегмента
+ par.l2 = 456.987;// длина фаски 2 сегмента
+ ::AddArrayItem (arr, "1, &par, sizeof (CornerParam));// добавить угол в массив
+ par.index = 65;// индекс угла
+ par.fillet = 0;// признак фаски
+ par.l1 = 345;// длина фаски 1 сегмента
+ par.l2 = 456.987;// длина фаски 2 сегмента
+ ::AddArrayItem (arr, "1, &par, sizeof (CornerParam));// добавить угол в массив
+ par.index = 85;// индекс угла
+ par.fillet = 0;// признак фаски
+ par.l1 = 345;// длина фаски 1 сегмента
+ par.l2 = 456.987;// длина фаски 2 сегмента
+ ::AddArrayItem (arr, "1, &par, sizeof (CornerParam));// добавить угол в массив
+ int count = ::GetArrayCount (arr);// количество элементов в массиве
+ for ( int i = 0; i < count; i ) {
+// выводим параметры углов в окне сообщения
+char buf[128];
+if ( ::GetArrayItem (arr, i, &par, sizeof (CornerParam))) {
+::sprintf ( buf, "индекс элемента %i равен %i; %i, %f, %f", i,
+par.index, par.fillet, par.l1, par.l2);
+::Message (buf);
+}
+ }
+ ::ExcludeArrayItem (arr, 2);// удаляем второй элемент массива
+ count = ::GetArrayCount (arr);// количество элементов в массиве
+ for ( int i = 0; i < count; i ) {
+// выводим параметры углов в окне сообщения
+char buf [128];
+if ( ::GetArrayItem (arr, i, &par, sizeof (CornerParam))) {
+::sprintf (buf, "индекс элемента %i равен %i; %i, %f, %f", i, par.index,
+par.fillet, par.l1, par.l2 );
+::Message( buf );
+}
+ }
+5297
+
+
+
+ if ( ::GetArrayItem (arr, 1, &par, sizeof (CornerParam))) {
+// изменяем параметры элемента с индексом 1
+par.index = 0;
+par.fillet = 0;
+par.l1 = 0;
+par.l2 = 0;
+::SetArrayItem( arr, 1, &par, sizeof(CornerParam) );
+}
+ count = ::GetArrayCount (arr);// количество элементов в массиве
+ for ( int i = 0; i < count; i ) {
+// выводим параметры углов в окне сообщения
+char buf[128];
+if ( ::GetArrayItem (arr, i, &par, sizeof (CornerParam))) {
+::sprintf (buf, "индекс элемента %i равен %i; %i, %f, %f", i, par.index,
+par.fillet, par.l1, par.l2);
+::Message( buf );
+}
+ }
+ ::ClearArray (arr);// очищаем массив
+ char buf[128];
+ ::sprintf (buf, "кол"во элементов = %i", ::GetArrayCount (arr));
+ ::Message (buf);
+ ::DeleteArray (arr);// удаляем массив
+
+Пример использования структуры параметров CurveStyleParam
+CurveStyleParam par;  //структура параметров стиля кривой
+memset (&par, 0, sizeof (par));
+CurvePattern cPatt;  //структура параметров участка штриховой кривой
+
+par.pattern = CreateArray (CURVE_PATTERN_ARR, 0);
+cPatt.visibleSeg = 15;
+cPatt.invisibleSeg = 7;
+AddArrayItem (par.pattern, "1, &cPatt, sizeof (cPatt));
+cPatt.visibleSeg = 3;
+cPatt.invisibleSeg = 7;
+AddArrayItem (par.pattern, "1, &cPatt, sizeof (cPatt));
+strcpy (par.name, "style from library"); //имя стиля
+par.color = RGB (255, 0, 0);       //цвет линии
+5298
+
+
+
+par.paperWidth = 0.8;           //толщина пера на бумаге
+par.screenWidth = 3;            //толщина линии на экране
+par.curveType = 1|LIKE_BASIC_LINE;     //прерывистая линия с параметрами пера 
+//как у системной основной линии
+par.even = 1;               //кривая всегда оканчивается штрихом
+UINT tl = AddStyle (CURVE_STYLE, &par, sizeof (par), 0);
+LineSeg (20, 20, 70, 20, tl);
+
+int t = GetStyleParam (CURVE_STYLE, tl, &par, sizeof (par));
+if (t) {
+char buf[128];
+sprintf (buf, "curveType = %s",
+par.curveType & LIKE_BASIC_LINE ? "LIKE_BASIC_LINE" : "NO");
+Message (buf);
+}
+else
+Error("Ошибка");
+
+Типы специальных символов на концах аннотационного объекта
+(аннотационная линия и аннотационная дуга)
+
+ARROW_INSIDE_SYMBOL 1 стрелка (ласточкин хвост) изнутри
+ARROW_OUT_SIDE_SYMBOL 2 стрелка (ласточкин хвост) снаружи
+TICK_TAIL_SYMBOL 3 засечка с продолжением кривой (с 
+
+хвостиком)
+UP_HALF_ARROW_SYMBOL 4 верхняя половина стрелки изнутри
+DOWN_HALF_ARROW_SYMBOL 5 нижняя половина стрелки изнутри
+BIG_ARROW_INSIDE_SYMBOL 6 большая стрелка изнутри (7мм)
+ARROW_ORDINATE_DIM_SYMBOL 7 стрелка для размера высоты (штрихи 
+
+длиной 4 мм под углом 45 градусов
+TRIANGLE_SYMBOL 8 треугольник по направлению кривой
+CIRCLE_RAD2_SYMBOL 9 окружность радиусом 2 мм тонкой линией 
+
+" для шероховатости и линии"выноски
+CENTRE_MARKER_SYMBOL 10 обозначение фиктивного центра в виде 
+
+большого креста
+GLUE_SIGN_SYMBOL 11 знак склеивания
+SOLDER_SIGN_SYMBOL 12 знак пайки
+SEWING_SIGN_SYMBOL 13 знак сшивания
+CRAMP_SIGN_SYMBOL 14 знак соединения внахлестку 
+
+металлическими скобами
+CORNER_CRAMP_SIGN_SYMBOL 15 знак углового соединения металлическими 
+
+скобами
+MONTAGE_JOINT_SYMBOL 16 знак монтажного шва
+TICK_SYMBOL 17 засечка без продолжения кривой (без 
+
+хвостика)
+5299
+
+
+
+TRIANGLE_CURR_CS 18 треугольник по текущей СК " для базы
+ARROW_CLOSED_INSIDE 19 закрытая стрелка изнутри
+ARROW_CLOSED_OUTSIDE 20 закрытая стрелка снаружи
+ARROW_OPEN_INSIDE 21 открытая стрелка изнутри
+ARROW_OPEN_OUTSIDE 22 открытая стрелка снаружи
+ARROW_RIGHTANGLE_INSIDE 23 стрелка 90 градусов изнутри
+ARROW_RIGHTANGLE_OUTSIDE 24 стрелка 90 град снаружи
+SYMBOL_DOT 25 точка (диаметр равен длине стрелки 
+
+размера)
+SYMBOL_SMALLDOT 26 точка маленькая (диаметр равен 0.6 длины 
+
+стрелки размера)
+AUXILIARY_POINT 27 вспомогательная точка
+LEFT_TICK_SYMBOL 28 засечка с наклоном влево
+
+Структура не заполняется, создается только массив строк 
+
+Структура не заполняется, определяется только цвет штриховки
+
+Зависимость параметра от типа компиляции
+В зависимости от типа компиляции используется как ANSI или Unicode вариант.
+При использовании в проекте предопределенного определения _UNICODE, предназна"
+ченного для компиляции проекта под Unicode, константе присваивается значение, задан"
+ное с в объявлении с суффиксом W.
+Например:
+#ifdef _UNICODE
+#define ALLPARAM_T ALLPARAM_W
+#else
+#define ALLPARAM_T ALLPARAM
+#endif // !UNICODE 
+
+Пример использования
+_BRACKETS размер в круглых скобках
+_BRACKETS | _SQUARE_BRACKETS " размер в квадратных скобках
+
+IImportedSurfaceDefinition::AddCurve  пример использования 
+void WorkImportedSurfaceAddCurve( KompasObject &kompas ){
+
+  int pointCountAll = 6; //кратное трем (x, y, z)
+5300
+
+
+
+  int curveCount = 3;
+ 
+  double x = 50, dx = 30;
+  double y = 50, dy = 40;
+  double z = 0,  dz = 100;
+
+  int pointCount = pointCountAll / 3;
+
+  SAFEARRAYBOUND sabound[1];
+  SAFEARRAY FAR *psa; 
+  // Создание safe array double
+  sabound[0].cElements = pointCountAll;
+  sabound[0].lLbound = 0;        
+  psa = ::SafeArrayCreate(VT_R8, 1, sabound);
+
+  VARIANT v;       
+  VariantInit(&v);
+  V_VT(&v) = VT_ARRAY | VT_R8;
+  V_ARRAY(&v) = psa;    
+  long index;
+  double d;
+
+  if ( kompas.m_lpDispatch ) {
+    //получить активный 3d документ
+    ksDocument3D doc( kompas.ActiveDocument3D() );
+    if ( doc.m_lpDispatch ) {
+      //получить компонент документа
+      ksPart part( doc.GetPart( pTop_Part) );
+      if ( part ) {
+        //получить новый объект импортированной поверхности
+        ksEntity entity(part.NewEntity(o3d_importedSurface));
+        if (entity) {
+          //Определение импортированной поверхности
+          ksImportedSurfaceDefinition importedSurfaceDef( entity.GetDefinition());
+          
+          //добавляем в импортированную поверхность кривые по массиву точек
+5301
+
+
+
+          if (importedSurfaceDef){
+            for ( uint i = 0; i < curveCount; i ) {
+              for (uint j = 0; j < pointCount; j ) {
+                //наполняем safe array. Каждая точка представлена тремя координатами x, y, z
+                index = j*3; 
+                d = x  dx*i;
+                ::SafeArrayPutElement(psa, &index, &d);
+                index = j*3  1; 
+                d = y " dy*(i%2);
+                ::SafeArrayPutElement(psa, &index, &d);
+                index = j*3  2; 
+                d = z  dz*j;
+                ::SafeArrayPutElement(psa, &index, &d);
+              }
+              //добавить кривую по массиву точек
+              importedSurfaceDef.AddCurve ( v );
+            }
+            //создать импортированную поверхность
+            entity.Create();
+          }
+        }
+      }
+    }  
+    else
+      kompas.ksError( "3d документ не активизирован" );
+  }
+  //удалить safe array double
+  if ( psa ) 
+    ::SafeArrayDestroy(psa);
+
+}
+
+Пример задания Placement детали
+Последовательность установки направления осей задается абсолютными координатами
+направляющих векторов осей.
+Для их задания нужно передавать сумму координат точки привязки и смещения.
+
+// Получить указатель на интерфейс размещения детали
+5302
+
+
+
+IPlacement *iPlacement = m_pPart">GetPlacement();
+// Установить точку привязки: 
+iPlacement">SetOrigin(x, y, z);
+
+// Установить направления осей:
+iPlacement">SetAxis(
+x  1,
+y  0,
+z  0,
+0); // ось X
+iPlacement">SetAxis(
+x  0,
+y  1,
+z  0,
+1); // ось Y
+// Обновить Placement:
+m_pPart">UpdatePlacement();
+
+Варианты оформления спецификации
+Параметр variant может иметь следующие значения для выбора варианта оформления
+спецификации:
+
+0 " простая
+1 " групповая, вариант А
+2 " групповая, вариант Б
+3 " групповая, вариант В " временно недоступен
+4 " групповая, вариант Г " временно недоступен
+
+Типы колонок спецификации
+
+SPC_CLM_FORMAT 1 " формат
+SPC_CLM_ZONE 2 " зона
+SPC_CLM_POS 3 " позиция
+SPC_CLM_MARK 4 " обозначение
+SPC_CLM_NAME 5 " наименование
+SPC_CLM_COUNT 6 " количество
+SPC_CLM_NOTE 7 " примечание
+SPC_CLM_MASSA 8 " масса
+SPC_CLM_MATERIAL 9 " материал
+SPC_CLM_USER 10 " пользовательская
+SPC_CLM_KOD 11 " код
+SPC_CLM_FACTORY 12 " предприятие"изготовитель
+5303
+
+
+
+Типы объектов спецификации
+В API7 соответствует перечисление ksSpecificationObjectTypeEnum " Типы объектов спе"
+цификации.
+
+SPC_BASE_OBJECT 1 " базовый объект
+SPC_COMMENT 2 " вспомогательный объект
+SPC_SECTION_NAME 3 " заголовок раздела 
+SPC_BLOCK_NAME 4 " заголовок блока исполнений
+SPC_RESERVE_STR 5 " резервная строка
+SPC_EMPTY_STR 6 " пустая строка в конце страницы
+
+Типы сортировки объектов в разделе спецификации
+
+SPC_SORT_OFF 0 " нет сортировки
+SPC_SORT_COMPOS 1 " составная сортировка
+SPC_SORT_ALPHABET 2 " сортировка по алфавиту
+SPC_SORT_UP 3 " сортировка по возрастанию числового 
+
+значения
+SPC_SORT_DOCUMENT 4 " сортировка раздела документация
+SPC_SORT_DOWN 5 " сортировка по убыванию числового 
+
+значения
+
+ksUserParam::fileName  пример использования
+Получить имя файла пользовательской библиотеки, при помощи которой можно
+редактировать компонент.
+  //получить интерфейс ksUserParam у KompasObject
+ksUserParam userParam(kompasObject.GetParamStruct(ko_UserParam));
+userParam.Init();
+  //заполнить параметры интерфейса 
+ksPart.GetUserParam(userParam);
+  //Получить имя файла пользовательской библиотеки
+BSTR userLibraryFileName = userParam.fileName;
+
+ksUserParam::number  пример использования
+Получить номер команды пользовательской библиотеки, при помощи которой
+можно редактировать компонент.
+  //получить интерфейс ksUserParam у KompasObject
+ksUserParam userParam( kompasObject.GetParamStruct(ko_UserParam) );
+userParam.Init();
+  //заполнить параметры интерфейса 
+ksPart.GetUserParam( userParam );
+  //Получить номер команды
+5304
+
+
+
+long number = userParam.number;
+
+Пример изменения порядка NURBS
+Изменить порядок NURBS кривой на 4. 
+nurbs.Degree = 4 нужно устанавливать не раньше, чем в NURBS кривую добавятся 4 точ"
+ки.
+
+nurbs = nurbses.Add()
+nurbs.Style = kompas6_constants.ksCSNormal
+nurbs.Closed = False
+#nurbs.Degree = 4
+nurbs.AddPoint(0, 49.7220581829, 124.864112265, 1.0)
+nurbs.AddPoint(1, 79.97915965, 161.394027451, 1.0)
+nurbs.AddPoint(2, 110.974239202, 124.864112265, 1.0)
+nurbs.AddPoint(3, 173.702376389, 181.688424777, 1.0)
+nurbs.Degree = 4
+nurbs.Update()
+5305
+
+
+
+5306
+
+
+
+KOMPAS-Invisible (API КОМПАС-3D)  . . . . . . . . . . . . . . . .3
+Создание прикладных библиотек . . . . . . . . . . . . . . .5
+Общие сведения о прикладных библиотеках системы КОМПАС . . . . . . . . . . . . . . . 5
+Типы библиотек системы КОМПАС . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+Возможные состояния библиотеки системы КОМПАС. . . . . . . . . . . . . . . . . . . . . . . 6
+Описание значков на кнопках инструментальных панелей . . . . . . . . . . . . . . . . . . . 6
+Рекомендации по созданию прикладных библиотек . . . . . . . . . . . . . . . . . . . . 7
+Управление окнами, создаваемыми прикладной библиотекой . . . . . . . . . . . . . . . . 7
+Редактирование зеркально отраженных библиотечных макроэлементов . . . . . . . 7
+Вызов контекстно"зависимой справки по командам прикладных библиотек  . . . . 8
+Особенности работы с документом 2D в режиме редактирования 
+макроэлементов  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+Инструкция по работе через ODBC с базами данных ACCESS в 64"разрядных 
+приложениях . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+Оптимизация процесса перерисовки в чертежах и фрагментах . . . . . . . . . . . . . . 10
+Создание контекстной панели для библиотечных макроэлементов
+и работа с ней  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+Пример обработки динамического запроса при создании панели инструментов 11
+Использование Unicode  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+Рекомендации по использованию метода IUnknown::QueryInterface. . . . . . . . . . . 15
+Мастер создания библиотек  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+Мастер создания библиотек; общие сведения . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+Подключение мастера создания библиотек  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Создание заготовки библиотеки с использованием Мастера . . . . . . . . . . . . . . . . 17
+Создание прикладных библиотек в различных
+средах программирования  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+Сведения по настройке конфигурации проекта библиотеки
+в среде VС++ 2005 для платформы х64. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+Оформление прикладных библиотек типа DLL . . . . . . . . . . . . . . . . . . . . . . . . . 22
+Функции . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+Оформление прикладных библиотек типа ActiveX . . . . . . . . . . . . . . . . . . . . . 34
+Функции . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35

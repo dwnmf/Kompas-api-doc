@@ -1,0 +1,2532 @@
+MessageBoxResult();
+if (!CreateUserItem (userArr, 2, "февраль", 29.))
+MessageBoxResult();
+if (!CreateUserItem (userArr, 3, "март", 31.))
+MessageBoxResult();
+5190
+
+
+
+//просмотрим массив
+for (int i=0; i< GetArrayCount(userArr); i++)
+{
+// получим указатель на элемент массива
+GetUserArrayItem (userArr, i, &(void*)tmp);
+ShowUserItem (*tmp);
+}
+ClearArray (userArr);//очистить массив
+Message ("удаляем массив");
+DeleteArray (userArr);
+};
+
+Значения параметра pObj
+
+NULL или указатель на интерфейс документа " выполняется операция с атрибутом у 
+ksDocument3D или IDocument3D документа,
+Указатель на группу объектов дерева " выполняется операция с групповым 
+ksFeatureCollection или IFeatureCollection атрибутом,
+Указатель на объект дерева ksFeature или IFeature " выполняется операция с атрибутом 
+
+определенного объекта,
+Указатель на COM"интерфейс из диапазона: " выполняется операция с атрибутом у 
+o3d_planeXOY...o3d_planeYOZ,o3d_sketch, соответствующего ему элемента дерева.
+o3d_axis2Planes...o3d_lastEntityElement"1,o3d_entity
+
+CreateAttrType  Пример использования 
+
+void CreateAttrType_Example (void)
+{
+//создадим тип атрибута " строка
+AttributeType attrType;//структура типа атрибута
+char nameFile[128];
+
+reference pCol;//указатель на массив колонок 
+ColumnInfo parStruct;//структура для колонки
+
+//создадим массив колонок типа атрибута
+5191
+
+
+
+pCol = CreateArray (ATTR_COLUMN_ARR,0);
+
+//опишем единственную колонку типа STRING_ATTR_TYPE
+strcpy (parStruct.header, "строка");// заголовoк"комментарий столбца
+parStruct.type = STRING_ATTR_TYPE;// тип данных в столбце " см.ниже
+
+// дополнительный признак, который позволит отличить две переменные с одинаковым
+типом
+parStruct.key = 0; 
+strcpy(parStruct.def,"линия");// значение по умолчанию
+parStruct.flagEnum =0;// режим заполнения 
+parStruct.fieldEnum = 0;// массив неопределенной длины перечислений (строки)
+parStruct.columns = 0;// массив неопределенной длины информации 
+// о колонках для записи
+
+AddArrayItem(pCol, "1, &parStruct, sizeof(parStruct)); //добавили колонку 
+
+//заполним структуру типа атрибута
+strcpy(attrType.header,"тип строка");// заголовoк"комментарий типа
+attrType.rowsCount = 1;// кол"во строк в таблице
+attrType.flagVisible = 1;// видимый/невидимый 
+strcpy(attrType.password,"");// пароль
+attrType.columns = pCol;// массив неопределенной длины информации о колонках
+
+//запросить имя библиотеки
+if(!ChoiceFile("lta", NULL, nameFile, 128))
+nameFile[0]='\0'; //будем создавать в документе
+
+//создать тип атрибута
+double numbType = CreateAttrType (&attrType,// информация о типе атрибута
+nameFile);// имя библиотеки типов атрибутов
+if (numbType > 1)
+{
+char buf[128];
+sprintf(buf, "numbType=%f ",numbType);
+Message(buf);
+}
+else MessageBoxResult();// ошибка 
+5192
+
+
+
+//удалим массив колонок
+DeleteArray(pCol);
+};
+
+ksCreateAttrType  Пример использования 
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// создадим тип атрибута болта
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+void TypeAttrBolt()
+{
+//Инициализация данных для создания шаблона
+
+//заполним структуру типа атрибута
+ksAttributeType attrType;
+strcpy(attrType.header,"Болт");// заголовoк"комментарий типа
+attrType.rowsCount = 1;// кол"во строк в таблице
+attrType.flagVisible = 1;// видимый, невидимый  в таблице
+strcpy (attrType.password,"");// пароль, если не пустая строка 
+//" защищает от несанкционированного изменения типа
+attrType.columns = CreateArray (ATTR_COLUMN_ARR, 0);// динамический массив 
+//компонент записи
+attrType.key1 = ST_KEY1;
+attrType.key2 = ST_KEY2_GOST;
+attrType.key3 = ST_KEY3;
+attrType.key4 = 0;
+ColumnInfo parStruct1;
+
+//массив полей записи
+
+// колонка 1 "Имя элем."
+strcpy (parStruct1.header, "Имя элем.");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см.ниже
+parStruct1.key = 1;// дополнительный признак, очередность сортировки
+strcpy (parStruct1.def,"Болт");// значение по умолчанию
+parStruct1.flagEnum =0;// флаг, включающий режим, 
+// когда значение поля атрибута
+5193
+
+
+
+// будет заполнятся из массива
+// перечисленных значений 1 и 0 отключен
+parStruct1.fieldEnum = 0;// массив неопределенной длины 
+//перечислений (строки)
+parStruct1.columns = 0;// массив неопределенной длины 
+// информации о колонках для записи
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 2 "Исполнение"
+strcpy(parStruct1.header, "Исполнение");// заголовoк"комментарий столбца
+parStruct1.type = UINT_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 3;// дополнительный признак, очередность сортировки
+strcpy (parStruct1.def,"1");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 3 "Резьба"
+strcpy (parStruct1.header, "Резьба");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 0;//  очередность сортировки
+strcpy (parStruct1.def,"М");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 4 "Диаметр"
+strcpy (parStruct1.header, "Диаметр");// заголовoк"комментарий столбца
+parStruct1.type = UINT_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 3;//  очередность сортировки
+strcpy (parStruct1.def,"12");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 5 "разделитель"
+5194
+
+
+
+strcpy (parStruct1.header, ""); // заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 0;// очередность сортировки
+strcpy (parStruct1.def,"х");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 6 "Шаг"
+strcpy (parStruct1.header, "Шаг");// заголовoк"комментарий столбца
+parStruct1.type = FLOAT_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 3;// очередность сортировки
+strcpy(parStruct1.def,"1.25");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 7 "Поле допуска"
+strcpy (parStruct1.header, "Поле допуска");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 3;// очередность сортировки
+strcpy (parStruct1.def,""6g");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 8 "разделитель"
+strcpy (parStruct1.header, "");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 0;// очередность сортировки
+strcpy (parStruct1.def,"х");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 9 "Длина"
+strcpy (parStruct1.header, "Длина");// заголовoк"комментарий столбца
+parStruct1.type = UINT_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+5195
+
+
+
+parStruct1.key = 3;// очередность сортировки
+strcpy(parStruct1.def,"60");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 10 "Кл. прочности"
+strcpy (parStruct1.header, "Кл. прочности");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 0;// очередность сортировки
+strcpy (parStruct1.def,".58");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 11 "Материал"
+strcpy (parStruct1.header, "Материал");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце
+parStruct1.key = 0;// очередность сортировки
+strcpy (parStruct1.def,".35Х");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 12 "Покрытие"
+strcpy (parStruct1.header, "Покрытие");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 0;// очередность сортировки
+strcpy (parStruct1.def,".16");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 13 "ГОСТ"
+strcpy (parStruct1.header, "ГОСТ");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 0;// очередность сортировки
+strcpy(parStruct1.def,"ГОСТ");// значение по умолчанию
+5196
+
+
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 14 "Номер"
+strcpy (parStruct1.header, "Номер");// заголовoк"комментарий столбца
+parStruct1.type = UINT_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 2;// очередность сортировки
+strcpy (parStruct1.def,"7808");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 15 "разделитель"
+strcpy (parStruct1.header, "");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 0;// очередность сортировки
+strcpy (parStruct1.def,""");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof (parStruct1));
+
+// колонка 16 "Год"
+strcpy (parStruct1.header, "Год");// заголовoк"комментарий столбца
+parStruct1.type = STRING_ATTR_TYPE;// тип данных в столбце " см. "ltdefine.h"
+parStruct1.key = 0;// очередность сортировки
+strcpy (parStruct1.def,"70");// значение по умолчанию
+
+//добавим компоненту в массив компонент
+AddArrayItem (attrType.columns, "1, &parStruct1, sizeof(parStruct1));
+
+// создать шаблон обозначения
+
+ksCreateAttrType (&attrType,// информация о типе атрибута
+ATTR_TYPE_LIB_NAME_KEY3);// имя библиотеки типов атрибутов
+
+MessageBoxResult();// проверяем результат работы нашей функции
+5197
+
+
+
+//удалим массив колонок
+DeleteArray (attrType.columns);
+}
+
+DeleteAttrType  Пример использования 
+void DeleteAttrType_Example (void)
+{
+double numb;
+int j;
+char nameFile[128];
+char password[11];
+
+//запросить имя библиотеки
+if (!ChoiceFile("tip", NULL, nameFile, 128))
+nameFile[0]='\0'; //будем искать в документе
+do 
+{
+j = ReadDouble (" номер типа атрибута", 1000.,0, 1e12,&numb);
+if (j)
+{
+j = ReadString (" пароль типа атрибута", password, 10);
+if (j)
+{
+if (!DeleteAttrType (numb, nameFile, password))
+MessageBoxResult();// проверяем результат работы функции
+}
+}
+}
+while (j);
+};
+
+GetAttrType  Пример использования 
+{
+
+//создадим тип атрибута " строка
+5198
+
+
+
+ AttributeType attrType, NewAttrType;  //структура типа атрибута
+ char nameFile[128];
+
+ reference pCol;      //указатель на массив колонок 
+ ColumnInfo parStruct; //структура для колонки
+
+ //создали массив колонок типа атрибута
+ pCol = CreateArray(ATTR_COLUMN_ARR,0);
+
+  //опишем единственную колонку типа STRING_ATTR_TYPE
+  strcpy(parStruct.header, "строка");  // заголовoк"комментарий столбца
+  parStruct.type = STRING_ATTR_TYPE; // тип данных в столбце " см.ниже
+
+// дополнительный признак, который позволит отличить две переменные с одинаковым
+типом
+  parStruct.key = 0; 
+  strcpy(parStruct.def,"линия"); // значение по умолчанию
+  parStruct.flagEnum =0;   // режим заполнения 
+  parStruct.fieldEnum = 0;  // массив неопределенной длины перечислений (строки)
+  parStruct.columns = 0;   / массив неопределенной длины информации о колонках для
+записи
+
+  AddArrayItem(pCol, "1, &parStruct, sizeof(parStruct)); //добавили колонку 
+
+//заполним структуру типа атрибута
+ strcpy(attrType.header,"тип строка");  // заголовoк"комментарий типа
+ attrType.rowsCount    = 1;  // кол"во строк в таблице
+ attrType.flagVisible   = 1;   // видимый/невидимый 
+ strcpy(attrType.password,"");  // пароль 
+ attrType.columns     = pCol; // массив неопределенной длины информации о колонках
+
+//запросить имя библиотеки
+ if(!ChoiceFile("lta", NULL, nameFile, 128))
+  nameFile[0]='\0'; //будем создавать в документе
+
+ //создать тип атрибута
+ double numbType = CreateAttrType(&attrType,  // информация о типе атрибута
+                   nameFile); // имя библиотеки типов атрибутов
+5199
+
+
+
+ if (numbType > 1) {
+  char buf[128];
+  sprintf(buf, "numbType=%f ",numbType);
+  Message(buf);
+ }
+ else MessageBoxResult(); // ошибка 
+
+ GetAttrType(numbType, nameFile, &NewAttrType);
+
+ //удалим массив колонок
+ DeleteArray(pCol);
+}
+
+ksGetAttrType, ChoiceAttrTypes  Пример использования 
+static void ShowColumns (reference pCol, BOOL fl);
+void ShowCol (ColumnInfo &par,int iCol, BOOL fl);
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// показать колонку
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+void ShowCol (ColumnInfo &par,int iCol, BOOL fl)
+{
+char buf[128];
+char s[10];
+if (fl)
+strcpy(s, "структура");
+else
+s[0]='\0';
+
+//выдадим поля колонки не указатели
+sprintf (buf,"%s i=%d header=%s type=%d def=%s flagEnum=%d",
+s,iCol,par.header,
+par.type, par.def, par.flagEnum);
+Message(buf);
+if (par.type == RECORD_ATTR_TYPE)//структура
+ShowColumns(par.columns,TRUE);
+5200
+
+
+
+else
+{
+if (par.flagEnum)//выдадим массив перечислений
+{
+int n1 = GetArrayCount (par.fieldEnum);
+Message ("массив перечислений");
+for (int i1=0; i1<n1; i1)
+{
+if (!GetArrayItem (par.fieldEnum , i1, &buf, sizeof(buf)))
+MessageBoxResult();// проверяем результат работы
+// нашей функции
+else
+Message(buf);
+}
+}
+}
+}
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// показать колонки
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+static void ShowColumns (reference pCol, BOOL fl)
+{
+ColumnInfo par;
+par.columns = CreateArray (ATTR_COLUMN_ARR,0);
+par.fieldEnum = CreateArray (CHAR_STR_ARR,0);
+int n = GetArrayCount (pCol);
+
+for (int i = 0; i < n; i)
+{
+if (!GetArrayItem(pCol, i, &par, sizeof(par)))
+MessageBoxResult();// проверяем результат работы нашей функции
+else
+ShowCol(par,i, fl);
+}
+DeleteArray (par.columns);
+DeleteArray (par.fieldEnum);
+}
+
+5201
+
+
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// получить тип атрибута
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+void ShowTypeAttr ()
+{
+double numb;
+
+char buf[128], nameFile[128];
+ksAttributeType attrType;
+attrType.columns = CreateArray (ATTR_COLUMN_ARR,0);
+
+//запросить имя библиотеки
+if (!ChoiceFile ("*.lat",NULL, nameFile,128))
+nameFile[0]='\0';//будем искать в документе
+do
+{
+numb = ChoiceAttrTypes (nameFile);
+if (numb)
+{
+if (!ksGetAttrType (numb, nameFile, &attrType))
+MessageBoxResult();// проверяем результат работы 
+// нашей функции
+else
+{
+sprintf (buf,"key1 = %d key2 =%d key3 = %d key4 =&d",
+attrType.key1,attrType.key2,attrType.key3,attrType.key4);
+Message (buf);
+sprintf (buf,"header=%s rowsCount=%d flagVisible=%d password=%s",
+attrType.header,attrType.rowsCount,
+attrType.flagVisible,attrType.password);
+Message (buf);
+ShowColumns (attrType.columns, FALSE);//пользовательская 
+// функция
+}
+}
+}
+while(numb);
+5202
+
+
+
+//удалим массив колонок
+DeleteArray(attrType.columns);
+}
+
+SetAttrType  Пример использования 
+{
+
+//создадим тип атрибута " строка
+
+ AttributeType attrType, NewAttrType;  //структура типа атрибута
+ char nameFile[128];
+
+ reference pCol;      //указатель на массив колонок 
+ ColumnInfo parStruct; //структура для колонки
+
+ //создали массив колонок типа атрибута
+ pCol = CreateArray(ATTR_COLUMN_ARR,0);
+
+  //опишем единственную колонку типа STRING_ATTR_TYPE
+  strcpy(parStruct.header, "строка");  // заголовoк"комментарий столбца
+  parStruct.type = STRING_ATTR_TYPE; // тип данных в столбце " см.ниже
+
+// дополнительный признак, который позволит отличить две переменные с одинаковым
+типом
+  parStruct.key = 0; 
+  strcpy(parStruct.def,"линия"); // значение по умолчанию
+  parStruct.flagEnum =0;   // режим заполнения 
+  parStruct.fieldEnum = 0;  // массив неопределенной длины перечислений (строки)
+  parStruct.columns = 0;   / массив неопределенной длины информации о колонках для
+записи
+
+  AddArrayItem(pCol, "1, &parStruct, sizeof(parStruct)); //добавили колонку 
+
+//заполним структуру типа атрибута
+ strcpy(attrType.header,"тип строка");  // заголовoк"комментарий типа
+ attrType.rowsCount    = 1;  // кол"во строк в таблице
+5203
+
+
+
+ attrType.flagVisible   = 1;   // видимый/невидимый 
+ strcpy(attrType.password,"");  // пароль 
+ attrType.columns     = pCol; // массив неопределенной длины информации о колонках
+
+//запросить имя библиотеки
+ if(!ChoiceFile("lta", NULL, nameFile, 128))
+  nameFile[0]='\0'; //будем создавать в документе
+
+ //создать тип атрибута
+ double numbType = CreateAttrType(&attrType,  // информация о типе атрибута
+                   nameFile); // имя библиотеки типов атрибутов
+ if (numbType > 1) {
+  char buf[128];
+  sprintf(buf, "numbType=%f ",numbType);
+  Message(buf);
+ }
+ else MessageBoxResult(); // ошибка 
+
+//заполним структуру нового типа атрибута
+ strcpy(attrType.header,"тип строка");  // заголовoк"комментарий типа
+ attrType.rowsCount    = 1;  // кол"во строк в таблице
+ attrType.flagVisible   = 1;   // видимый/невидимый 
+ strcpy(attrType.password,"pass");  // пароль 
+ attrType.columns     = pCol; // массив неопределенной длины информации о колонках
+
+ SetAttrType (numbType, nameFile, &attrType, «pass»);
+
+ //удалим массив колонок
+ DeleteArray(pCol);
+}
+
+ksSetAttrType  Пример использования 
+double numb;
+int j;
+char nameFile[128];
+char password[11];
+5204
+
+
+
+ksAttributeType attrType;
+attrType.columns = CreateArray (ATTR_COLUMN_ARR, 0);
+
+//поменяем местами первую колонку и последнюю
+
+ColumnInfo par1;//структура для первой колонки
+par1.columns = CreateArray (ATTR_COLUMN_ARR,0);
+par1.fieldEnum = CreateArray (CHAR_STR_ARR,0);
+
+ColumnInfo parN;//структура для последней колонки
+parN.columns = CreateArray (ATTR_COLUMN_ARR,0);
+parN.fieldEnum = CreateArray (CHAR_STR_ARR,0);
+
+//запросить имя библиотеки
+if (!ChoiceFile("*.lat",NULL, nameFile,128))
+nameFile[0]='\0'; //будем искать в документе
+do
+{
+j = ReadDouble ("Ввести номер типа атрибута", 1000.,0, 1e12,&numb);
+if (j)
+{
+j = ReadString ("Ввести пароль типа атрибута", password, 10);
+if (j)
+{
+//считаем тип атрибута
+if (!ksGetAttrType(numb, nameFile, &attrType))
+MessageBoxResult();// проверяем результат работы
+//нашей функции
+else
+{
+strcpy (attrType.password,password);
+// число колонок
+int n = GetArrayCount (attrType.columns);
+//считаем первую колонку
+GetArrayItem (attrType.columns, 0, &par1, sizeof (par1));
+//считаем последнюю колонку
+GetArrayItem(attrType.columns, n"1, &parN, sizeof (parN));
+//заменим первую колонку
+5205
+
+
+
+SetArrayItem (attrType.columns, 0, &parN, sizeof (parN));
+//заменим последнюю колонку
+SetArrayItem (attrType.columns, n"1, &par1, sizeof (par1));
+
+//заменим тип атрибута на новый
+double numbType = ksSetAttrType (numb, nameFile,
+&attrType, password);
+if (numbType > 1)
+{
+char buf[128];
+sprintf (buf, "numbType=%f ",numbType);
+Message (buf);
+}
+else
+MessageBoxResult();// неудачное завершение " 
+// выдадим результат работы нашей функции
+}
+}
+}
+}
+while(j);
+//удалим все созданные массивы
+DeleteArray (par1.columns);
+DeleteArray (par1.fieldEnum);
+
+DeleteArray(parN.columns);
+DeleteArray(parN.fieldEnum);
+
+DeleteArray(attrType.columns);
+
+CreateAttr  Пример использования 
+void CreateAttr_Example (void) {
+
+//  создадим атрибут для типа атрибута с колонками
+//  DOUBLE_ATTR_TYPE, STRING_ATTR_TYPE, LINT_ATTR_TYPE
+//  Предполагается, что данный тип уже существует
+5206
+
+
+
+ksAttribute  attrPar;
+//структура данных для оформления атрибута
+struct {
+double a;
+char c[MAX_TEXT_LENGTH];
+long b;
+} bufS;
+// заполним поля атрибута
+bufS.a = 987654321.0;
+bufS.b = 99999l;
+strcpy(bufS.c,"Исполнение 1");
+
+//заполним параметры структуры атрибута
+strcpy(attrPar.comment,"элемент");     //комментарий атрибута
+attrPar.key1 = 1;   // рекоменд. как код разработчика
+attrPar.key2 = 10;  // рекоменд. как код атрибута
+attrPar.key3 = 100; // рекоменд. как код разработчика
+attrPar.key4 = 0;   // системный код атрибута
+                    // значения от 0 до 1000 зарезервированы АСКОН
+attrPar.flagVisible = 0;  //массив, определяющий для каждой колонки
+                      // атрибут видимость"невидимость
+                      // 0 "видимое поле 1" невидимое поле
+attrPar.values = &bufS;  // массив значений ячеек таблицы атрибутов
+                       // сначала все значения для 1"ой строки,
+                       // затем все значения для 2"ой строки и т.д.
+attrPar.valSize = sizeof(bufS);
+strcpy(attrPar.password,"111"); //пароль
+
+double x, y;
+reference pObj;
+
+RequestInfo info;
+memset(&info, 0, sizeof(info));
+info.prompt = " Укажите объект ";
+
+int j = Cursor(&info, &x ,&y, 0, 0);
+if (j) {
+ if(ExistObj(pObj = FindObj(x, y, MAXDOUBLE))){
+5207
+
+
+
+LightObj(pObj, 1);
+//запросить имя библиотеки
+char nameFile[128];
+if(!ChoiceFile("*.tip",NULL, nameFile, 128))
+nameFile[0]='\0'; //будем искать в документе
+double numb;
+j = ReadDouble("Ввести номер типа атрибута", 1000.,0, 1e12,&numb);
+if(j) {
+reference attr= ksCreateAttr(pObj, &attrPar, numb, nameFile);
+if (!attr) MessageBoxResult(); // неудачное завершение
+}
+LightObj(pObj, 0);
+ }
+}
+
+}; /* CreateAttr */
+
+ksCreateAttr  Пример использования 
+//Создадим атрибут типа "таблица неопределенной длины", 
+//тип содержит три колонки: DOUBLE_ATTR_TYPE(double),
+// STRING_ATTR_TYPE(строка),LINT_ATTR_TYPE(long int).
+//Атрибут создадим для внутреннего макроэлемента. 
+//Макроэлемент на момент создания атрибута временный, т.е. не в модели чертежа.
+//Отредактируем атрибут в диалоге редактирования атрибута " добавим строку, удалим.
+
+ksAttribute  attrPar;  
+memset(&attrPar, 0, sizeof(attrPar));
+struct TypeStr {
+double a;
+char c [MAX_TEXT_LENGTH];
+long b;
+} ;
+ static  TypeStr arrBuf [3] = { {187654321.0, "1 строка", 19999l},
+                 {287654321.0, "2 строка", 29999l},
+                 {387654321.0, "3 строка", 39999l} };
+5208
+
+
+
+//массив, определяющий для каждой колонки видимость"невидимость 
+//(вторая колонка выключена)
+ unsigned char fV[3]= {1,0,1};
+ attrPar.key1 = 1;             // рекоменд. как код разработчика
+ attrPar.key2 = 10;             // рекоменд. как код атрибута
+ attrPar.key3 = 100;            // рекоменд. как код разработчика
+ attrPar.key4 = 0;             // системный код атрибута
+                       // значения от 0 до 1000 зарезервированы
+                       // за АО "АСКОН"
+ attrPar.flagVisible = fV;         //массив, определяющий для каждой колонки
+                       // атрибута видимость"невидимость
+                       //0 "видимое поле 1" невидимое поле
+ attrPar.values = &arrBuf ;       // массив значений ячеек таблицы атрибутов
+                     // сначала все значения для 1"ой строки,
+        // затем все значения для 2"ой строки и т.д.
+ attrPar.valSize = sizeof(TypeStr)*3;
+ strcpy(attrPar.password,"111");//пароль
+ reference pObj;
+ char nameFile[128];
+ if(!ChoiceFile("*.lat",NULL, nameFile, 128))
+  nameFile[0]='\0'; //будем искать в документе
+//номер типа атрибута 
+//(тип создан ранее, 
+//если nameFile пустое " ищем тип атрибута в документе)
+ double numb;
+ int j = ReadDouble ("Ввести номер типа атрибута", 1000.,0, 1e12,&numb);
+ if(j) {
+  //временная группа
+  reference g = NewGroup(1);
+   //создадим пустой macro
+   Macro (0);
+   reference m = EndObj();
+
+   pObj = LineSeg(10, 10, 20, 20, 1);
+   //добавим отрезок в macro
+   ksAddObjectToMacro (m, //указатель на макроэлемент
+              pObj ); //указатель на добавляемый объект
+//создадим для отрезка, который принадлежит macro атрибут
+5209
+
+
+
+   reference attr= ksCreateAttr(pObj, &attrPar, numb, nameFile); 
+if (!attr)
+    MessageBoxResult(); // неудачное завершение " выдадим результат работы нашей фун"
+кции
+   else {
+    //вызываем диалог для редактирования атрибута
+    ViewEditAttr ( attr, 2, "111"); // пароль атрибута для просмотра 0
+
+    TypeStr arrBuf1 = { 222222222222.0, "новая строка", 4444444l} ;
+    //добавим в конец атрибута еще одну строку
+    ksAddAttrRow (attr,       // указатель атрибута
+            "1,        // номер строки, после которой вставлять, "1 "в конец
+            fV,  // указатель на массив флагов видимости ячеек строки
+            &arrBuf1,        // указатель на память пользователя, откуда копируются данные
+            sizeof(TypeStr),    // размер выделенной памяти под value
+            "111");      // пароль атрибута
+
+     //удалим первую строку
+     ksDeleteAttrRow (attr,     // указатель атрибута
+              0, "111");  // номер строки
+     //узнаем количество колонок и строк в атрибуте
+     unsigned int rowsCount, columnsCount;
+     GetAttrTabInfo (attr,       // указатель атрибута
+             &rowsCount,   // количество строк
+             &columnsCount);// количество столбцов
+
+     char buf[250];
+     sprintf(buf, "rowsCount = %d columnsCount = %d",rowsCount,columnsCount);
+     //выведем количество колонок и строк в атрибуте на экран
+     Message (buf);
+   }
+  //закроем временную группу
+  EndGroup();
+  //поставим все объекты временной группы в модель чертежа
+  StoreTmpGroup(g);
+ }
+5210
+
+
+
+DeleteAttr  Пример использования 
+{
+//  создадим атрибут для типа атрибута с колонками
+//  DOUBLE_ATTR_TYPE, STRING_ATTR_TYPE, LINT_ATTR_TYPE
+//  Предполагается, что данный тип уже существует
+
+Attribute  attrPar;
+//структура данных для оформления атрибута
+struct {
+ double a;
+ char c[MAX_TEXT_LENGTH];
+ long b;
+} bufS;
+
+// заполним поля атрибута
+bufS.a = 987654321.0;
+bufS.b = 99999l;
+strcpy(bufS.c,"Исполнение 1");
+
+//заполним параметры структуры атрибута
+strcpy(attrPar.comment,"элемент");     //комментарий атрибута
+attrPar.key1 = 1;   // рекоменд. как код разработчика
+attrPar.key2 = 10;  // рекоменд. как код атрибута
+attrPar.key3 = 100; // рекоменд. как код разработчика
+attrPar.key4 = 0;   // системный код атрибута
+                    // значения от 0 до 1000 зарезервированы АСКОН
+attrPar.flagVisible = 0;  //массив, определяющий для каждой колонки
+                      // атрибут видимость"невидимость
+                      // 0 "видимое поле 1" невидимое поле
+attrPar.values = &bufS;  // массив значений ячеек таблицы атрибутов
+                       // сначала все значения для 1"ой строки,
+                       // затем все значения для 2"ой строки и т.д.
+attrPar.valSize = sizeof(bufS);
+strcpy(attrPar.password,"111"); //пароль
+
+double x, y;
+reference pObj;
+5211
+
+
+
+RequestInfo info;
+memset(&info, 0, sizeof(info));
+info.promt = " Укажите объект ";
+
+int j = Cursor(&info, &x ,&y, 0, 0);
+if (j) {
+ if(ExistObj(pObj = FindObj(x, y, MAXDOUBLE))){
+
+LightObj(pObj, 1);
+//запросить имя библиотеки
+char nameFile[128];
+if(!ChoiceFile("*.tip",NULL, nameFile))
+nameFile[0]='\0'; //будем искать в документе
+double numb;
+j = ReadDouble("Ввести номер типа атрибута", 1000.,0, 1e12,&numb);
+if(j) {
+reference attr= CreateAttr(pObj, &attrPar, numb, nameFile);
+if (!attr) MessageBoxResult(); // неудачное завершение
+}
+LightObj(pObj, 0);
+ }
+}
+DeleteAttr (pObj, attr, «111»);
+
+};
+
+GetAttrValue, SetAttrValue, GetAttrRow, SetAttrRow  Пример 
+использования 
+void GetAttrvalue_Example (void) {
+
+// если у объекта есть атрибут с ключом key1 = 100 и паролем "str",
+// то заменим содержимое атрибута
+ double x, y;
+ reference pObj;
+ int j;
+ char buf[MAX_TEXT_LENGTH];
+5212
+
+
+
+  char s[MAX_TEXT_LENGTH];
+
+ RequestInfo info;
+ memset(&info, 0, sizeof(info));
+ info.prompt = "Укажите объект";
+
+ j = Cursor(&info, &x ,&y, 0, 0);
+ if (j) {
+  if (ExistObj(pObj = FindObj(x, y, MAXDOUBLE))){
+   LightObj(pObj, 1);
+   //создадим итератор для поиска по атрибутам объекта c ключами 1,10,100
+   reference iter = CreateAttrIterator(pObj, 0,0,0,0,0);
+   //встали на первый атрибут
+   reference attr = MoveAttrIterator(iter, 'F', 0);
+   if (attr) {
+    // получили данные для первой строки из таблицы атрибута
+    // если тип атрибута " STRING_ATTR_TYPE,то таблица атрибута будет состоять
+    // из 1 строки и 1 колонки, ячейка и строка в таблице атрибутов будет
+    // совпадать, поэтому в данном случае функции
+    // GetAttrRow и GetAttrValue будут работать одинаково
+
+    GetAttrRow (attr, 0, 0, &buf, sizeof(buf));
+    sprintf(s, "содержимое атрибута " %s",buf);
+    Message(s);
+
+    strcpy(buf, "дуга");
+    // изменили содержимое строки в таблице атрибута
+    // функции SetAttrRow и SetAttrValue в данном случае будут работать одинаково
+    SetAttrRow(attr, 0, 0, &buf, sizeof(buf), "str");
+   }
+   else Message("атрибут не найден");
+   LightObj(pObj, 0);
+  }
+ }
+
+}; /* GetAttrValue */
+5213
+
+
+
+ksDeleteAttrRow, ksAddAttrRow  Пример использования
+//создадим атрибут для табличного типа неопределенной длины, тип содержит три ко"
+лонки
+//DOUBLE_ATTR_TYPE(double),STRING_ATTR_TYPE(строка),LINT_ATTR_TYPE(long int).
+// Атрибут создадим для внутреннего объекта macro.
+// Macro на момент создания атрибута временный, т.е. не в модели чертежа.
+// Отредактируем атрибут " в диалоге редактирования атрибута, добавим строку, удалим
+
+Attribute attrPar;
+struct TypeStr
+{
+double a;
+char c[MAX_TEXT_LENGTH];
+long b;
+} ;
+static TypeStr arrBuf[3] =
+{
+{187654321.0, "1 строка", 19999l},
+{287654321.0, "2 строка", 29999l},
+{387654321.0, "3 строка", 39999l}
+};
+
+//массив, определяющий для каждой колонки видимость"невидимость 
+// (вторая колонка выключена)
+unsigned char fV[3]= {1,0,1};
+attrPar.key1 = 1;// рекоменд. как код разработчика
+attrPar.key2 = 10;// рекоменд. как код атрибута
+attrPar.key3 = 100;// рекоменд. как код разработчика
+attrPar.key4 = 0;// системный код атрибута
+// значения от 0 до 1000 зарезервированы
+// за АО "АСКОН"
+attrPar.flagVisible = fV;// массив, определяющий для каждой колонки атрибута 
+// видимость"невидимость
+// 0 "видимое поле 1" невидимое поле
+attrPar.values = &arrBuf ;// массив значений ячеек таблицы атрибутов
+// сначала все значения для 1"ой строки,
+// затем все значения для 2"ой строки и т.д.
+attrPar.valSize = sizeof(TypeStr)*3;
+5214
+
+
+
+strcpy (attrPar.password,"111");// пароль, если не пустая строка 
+// " защищает от несанкционированного
+// изменения информации в атрибуте
+
+reference pObj;
+char nameFile[128];
+if (!ChoiceFile ("*.lat",NULL, nameFile, 128))
+nameFile[0]='\0';//будем искать в документе
+//номер типа атрибута (тип создан ранее, если nameFile пустое " ищем тип атрибута в до"
+кументе)
+double numb;
+int j = ReadDouble ("Ввести номер типа атрибута", 1000.,0, 1e12,&numb);
+if (j)
+{
+//временная группа
+reference g = NewGroup (1);
+//создадим пустой macro
+Macro (0);
+reference m = EndObj ();
+
+pObj = LineSeg (10, 10, 20, 20, 1);
+//добавим отрезок в macro
+ksAddObjectToMacro (m,//указатель на макроэлемент
+pObj);//указатель на добавляемый объект
+//создадим для отрезка, который принадлежит macro, атрибут
+reference attr= CreateAttr (pObj, &attrPar, numb, nameFile);
+if (!attr)
+MessageBoxResult();// неудачное завершение " выдадим результат работы 
+// нашей функции
+else
+{
+//вызываем диалог для редактирования атрибута
+ViewEditAttr (attr, 2, "111");// пароль атрибута для просмотра 0
+
+TypeStr arrBuf1 = { 222222222222.0, "NEW строка", 4444444l} ;
+//добавим в конец атрибута еще одну строку
+ksAddAttrRow (attr,// указатель атрибута
+"1,// вставлять строку в конец
+5215
+
+
+
+fV,// указатель на массив флагов 
+// видимости ячеек строки
+&arrBuf1,// указатель на память пользователя,
+// откуда копируются данные
+sizeof (TypeStr),// размер выделенной памяти под value
+"111");// пароль атрибута
+
+//удалим первую строку
+ksDeleteAttrRow (attr,// указатель атрибута
+0, "111");  // номер строки и пароль
+
+//узнаем количество колонок и строк в атрибуте
+unsigned int rowsCount, columnsCount;
+GetAttrTabInfo (attr,// указатель атрибута
+&rowsCount,// количество строк
+&columnsCount);// количество столбцов
+
+char buf[250];
+sprintf (buf, "rowsCount = %d columnsCount = %d",rowsCount,columnsCount);
+
+//выведем количество колонок и строк в атрибуте на экран
+Message (buf);
+}
+//закроем временную группу
+EndGroup();
+//поставим все объекты временной группы в модель чертежа
+StoreTmpGroup(g);
+}
+
+GetSizeAttrValue  Пример использования 
+void GetAttrvalue_Example (void) {
+
+// если у объекта есть атрибут с ключом key1 = 100 и паролем "str",
+// то заменим содержимое атрибута
+ double x, y;
+ reference pObj;
+ int j;
+5216
+
+
+
+ char buf[MAX_TEXT_LENGTH];
+ char s[MAX_TEXT_LENGTH];
+
+ RequestInfo info;
+ memset(&info, 0, sizeof(info));
+ info.prompt = "Укажите объект";
+
+ j = Cursor(&info, &x ,&y, 0, 0);
+ if (j) {
+  if (ExistObj(pObj = FindObj(x, y, MAXDOUBLE))){
+   LightObj(pObj, 1);
+   //создадим итератор для поиска по атрибутам объекта c ключами 1,10,100
+   reference iter = CreateAttrIterator(pObj, 0,0,0,0,0);
+   //встали на первый атрибут
+   reference attr = MoveAttrIterator(iter, 'F', 0);
+   if (attr) {
+    // получили данные для первой строки из таблицы атрибута
+    // если тип атрибута " STRING_ATTR_TYPE,то таблица атрибута будет состоять
+    // из 1 строки и 1 колонки, ячейка и строка в таблице атрибутов будет
+    // совпадать, поэтому в данном случае функции
+    // GetAttrRow и GetAttrValue будут работать одинаково
+
+    GetAttrRow (attr, 0, 0, &buf, sizeof(buf));
+
+// GetSizeAttrRow и GetSizeAttrValue будут работать одинаково
+    int len1 = GetSizeAttrValue (attr, 0);
+int count = 1; // количество колонок
+ int len2 = ksGetSizeAttrValue (attr, 0, &count );
+ int len3 = ksGetSizeAttrRow (attr, &count );    sprintf(s, "содержимое атрибута " %s",buf);
+    Message(s);
+
+    strcpy(buf, "дуга");
+    // изменили содержимое строки в таблице атрибута
+    // функции SetAttrRow и SetAttrValue в данном случае будут работать одинаково
+    SetAttrRow(attr, 0, 0, &buf, sizeof(buf), "str");
+   }
+   else Message("атрибут не найден");
+   LightObj(pObj, 0);
+5217
+
+
+
+  }
+ }
+
+}; /* GetAttrValue */
+
+GetSizeAttrRow  Пример использования 
+void GetAttrvalue_Example (void) {
+
+// если у объекта есть атрибут с ключом key1 = 100 и паролем "str",
+// то заменим содержимое атрибута
+ double x, y;
+ reference pObj;
+ int j;
+ char buf[MAX_TEXT_LENGTH];
+ char s[MAX_TEXT_LENGTH];
+ RequestInfo info;
+ memset(&info, 0, sizeof(info));
+ info.prompt = "Укажите объект";
+
+ j = Cursor(&info, &x ,&y, 0, 0);
+ if (j) {
+  if (ExistObj(pObj = FindObj(x, y, MAXDOUBLE))){
+   LightObj(pObj, 1);
+   //создадим итератор для поиска по атрибутам объекта c ключами 1,10,100
+   reference iter = CreateAttrIterator(pObj, 0,0,0,0,0);
+   //встали на первый атрибут
+   reference attr = MoveAttrIterator(iter, 'F', 0);
+   if (attr) {
+    // получили данные для первой строки из таблицы атрибута
+    // если тип атрибута " STRING_ATTR_TYPE,то таблица атрибута будет состоять
+    // из 1 строки и 1 колонки, ячейка и строка в таблице атрибутов будет
+    // совпадать, поэтому в данном случае функции
+    // GetAttrRow и GetAttrValue будут работать одинаково
+
+    GetAttrRow (attr, 0, 0, &buf, sizeof(buf));
+
+// GetSizeAttrRow и GetSizeAttrValue будут работать одинаково
+5218
+
+
+
+    int len1 = GetSizeAttrValue (attr, 0);
+int count = 1; // количество колонок
+ int len2 = ksGetSizeAttrValue (attr, 0, &count );
+ int len3 = ksGetSizeAttrRow (attr, &count );
+int rowsCount, columnsCount;
+int GetAttrTabInfo ( pObj, &rowsCount, &columnsCount );
+sprintf( s, "Количество колонок " %i", columnsCount );
+Message( s );
+sprintf( s, "Количество строк " %i", rowsCount );
+Message( s );
+    sprintf(s, "содержимое атрибута " %s",buf);
+    Message(s);
+
+    strcpy(buf, "дуга");
+    // изменили содержимое строки в таблице атрибута
+    // функции SetAttrRow и SetAttrValue в данном случае будут работать одинаково
+    SetAttrRow(attr, 0, 0, &buf, sizeof(buf), "str");
+   }
+   else Message("атрибут не найден");
+   LightObj(pObj, 0);
+  }
+ }
+
+}; /* GetAttrValue */
+
+GetAttrKeysInfo  Пример использования 
+void ReadObjAttr ()
+{
+struct
+{
+double d;
+char s[MAX_TEXT_LENGTH];
+long l;
+}
+sBuf;
+double x, y;
+reference pObj;
+5219
+
+
+
+int j;
+char buf[127];
+RequestInfo info;
+memset(&info, 0, sizeof(info));
+info.prompt = "Укажите объект";
+do
+{
+j = Cursor (&info, &x ,&y, 0);
+if (j)
+{
+if (ExistObj(pObj = FindObj(x, y, MAXDOUBLE)))
+{
+LightObj(pObj, 1);
+//создадим итератор для хождения по атрибутам объекта
+
+reference iter = CreateAttrIterator (pObj, 0,0,0,0,0);
+//встали на первый атрибут
+reference attr = MoveAttrIterator (iter, 'F', 0);
+if (attr)
+{
+Message("тип и ключи атрибута");
+unsigned int k1,k2,k3,k4;
+double numb;
+GetAttrKeysInfo (attr,&k1,&k2,&k3,&k4,&numb);
+sprintf (buf, "k1=%d k2=%d k3=%d k4=%d
+numb=%f ", k1, k2, k3, k4, numb);
+Message (buf);
+
+Message ("количество колонок");
+unsigned int col;
+GetAttrTabInfo (attr, 0, &col);
+sprintf (buf, "column=%d",col);
+Message (buf);
+
+Message("информация о колонках");
+ColumnInfo par;//структура для первой колонки
+par.columns = CreateArray (ATTR_COLUMN_ARR);
+par.fieldEnum = CreateArray (CHAR_STR_ARR);
+5220
+
+
+
+for (int i=0; i < col; i)
+{
+GetAttrColumnInfo (attr, i, &par);
+ShowCol (par,i, FALSE);
+}
+DeleteArray (par.columns);
+DeleteArray (par.fieldEnum);
+
+Message("строка атрибута");
+GetAttrRow (attr, 0, 0, &sBuf, sizeof (sBuf));
+sprintf (buf, "d=%f s=%s l=%ld",sBuf.d, sBuf.s, sBuf.l);
+Message (buf);
+
+Message("заменим строку атрибута");
+sBuf.d = numb;
+strcpy (sBuf.s,"1234567\nasdfgh\nzxcvb");
+sBuf.l = 88888l;
+SetAttrRow (attr, 0, 0, &sBuf, sizeof (sBuf), "111");
+memset (&sBuf,0, sizeof(sBuf));
+GetAttrRow (attr, 0, 0, &sBuf, sizeof (sBuf));
+sprintf (buf, "d=%f s=%s l=%ld",sBuf.d, sBuf.s, sBuf.l);
+Message (buf);
+}
+else
+Message("атрибут не найден");
+LightObj(pObj, 0);
+}
+}
+}
+while (j);
+}
+
+GetAttrColumnInfo  Пример использования 
+void ReadObjAttr() {
+ struct {
+  double d;
+  char s[MAX_TEXT_LENGTH];
+5221
+
+
+
+  long l;
+ } sBuf;
+ double x, y;
+ reference pObj;
+ int j;
+ char buf[127];
+ RequestInfo info;
+ memset(&info, 0, sizeof(info));
+ info.prompt = "Укажите объект";
+
+ do {
+  j = Cursor(&info, &x ,&y, 0);
+  if (j) {
+   if(ExistObj(pObj = FindObj(x, y, MAXDOUBLE))){
+    LightObj(pObj, 1);
+    //создадим итератор для хождения по атрибутам объекта
+
+    reference iter = CreateAttrIterator(pObj, 0,0,0,0,0);
+    //встали на первый атрибут
+    reference attr = MoveAttrIterator(iter, 'F', 0);
+    if (attr) {
+
+     Message("тип и ключи атрибута");
+     unsigned int k1,k2,k3,k4;
+     double numb;
+     GetAttrKeysInfo(attr,&k1,&k2,&k3,&k4,&numb);
+     sprintf (buf, "k1=%d k2=%d k3=%d k4=%d numb=%f ",k1,k2,k3,k4,numb);
+     Message(buf);
+
+     Message("количество колонок");
+     unsigned int col;
+     GetAttrTabInfo(attr, 0, &col);
+     sprintf (buf, "column=%d",col);
+     Message(buf);
+
+     Message("информация о колонках");
+     ColumnInfo par; //структура для первой колонки
+     par.columns = CreateArray(ATTR_COLUMN_ARR);
+5222
+
+
+
+     par.fieldEnum = CreateArray(CHAR_STR_ARR);
+     for (int i=0; i < col; i) {
+      GetAttrColumnInfo (attr, i, &par);
+      ShowCol(par,i, FALSE);
+     }
+     DeleteArray(par.columns);
+     DeleteArray(par.fieldEnum);
+
+     Message("строка атрибута");
+     GetAttrRow (attr, 0, 0, &sBuf, sizeof(sBuf));
+     sprintf (buf, "d=%f s=%s l=%ld",sBuf.d, sBuf.s, sBuf.l);
+     Message(buf);
+
+     Message("заменим строку атрибута");
+     sBuf.d = numb;
+     strcpy(sBuf.s,"1234567\nasdfgh\nzxcvb");
+     sBuf.l = 88888l;
+     SetAttrRow(attr, 0, 0, &sBuf, sizeof(sBuf), "111");
+     memset(&sBuf,0, sizeof(sBuf));
+     GetAttrRow (attr, 0, 0, &sBuf, sizeof(sBuf));
+     sprintf (buf, "d=%f s=%s l=%ld",sBuf.d, sBuf.s, sBuf.l);
+     Message(buf);
+
+    }
+    else
+     Message("атрибут не найден");
+    LightObj(pObj, 0);
+   }
+  }
+ } while (j);
+}
+
+ViewEditAttr  Пример использования 
+void ViewEditAttr_Example (void) {
+
+ // поиск объектов по значению атрибута
+5223
+
+
+
+ double x, y;
+ //найдем объект
+ int j;
+ reference pObj;
+
+ RequestInfo info;
+ memset(&info, 0, sizeof(info));
+ info.prompt = "Укажите объект";
+
+ do {
+  j = Cursor(&info, &x ,&y, 0, 0);
+  if (j) {
+   if(ExistObj(pObj = FindObj(x, y, MAXDOUBLE))){
+   //создадим итератор для движения по атрибутам с ключом 10
+    reference iter = CreateAttrIterator(pObj, 10, 0,0,0,0);
+    LightObj(pObj, 1); //подсветили объект
+    // позиционировались на первый атрибут
+    reference pAttr = MoveAttrIterator( iter, 'F', 0);
+    if (pAttr) {
+     do {
+      // выдать параметры атрибута
+      ViewEditAttr (pAttr, 1, 0);
+      // на следующий атрибут
+      pAttr = MoveAttrIterator( iter, 'N', 0);
+     } while(pAttr);
+    }
+    LightObj(pObj, 0); //выключим подсветку
+    DeleteIterator(iter);
+   }
+  }
+ }while(j);
+
+}; /* ViewEditAttr */
+
+ViewEditAttrType  Пример использования 
+void ViewEditAttrType_Example (void) {
+5224
+
+
+
+//выбираем библиотеку типов , задаем номер, пароль типа и редактируем тип
+
+ char nameFile[128];
+ char password[10];
+ int j;
+ if(!ChoiceFile("*.tip", nameFile))
+  nameFile[0]='\0'; //будем искать в документе
+ double numb;
+ j = ReadDouble("номер типа атрибута", 1000.,0, 1e12,&numb);
+ if (j) {
+  j = ReadString("пароль типа атрибута", password, 10);
+  if (j) {
+   //отредактировать атрибут с уникальным номером numb
+   ViewEditAttrType (nameFile, 2, numb, password);
+  }
+ }
+
+}; /* ViewEditAttrType */
+
+CreateAttrIterator  Пример использования 
+double x, y;
+reference pObj;
+char password[11];
+int j;
+RequestInfo info;
+memset (&info, 0, sizeof(info));
+info.prompt = "Укажите объект";
+do
+{
+j = Cursor (&info, &x ,&y, 0);
+if (j)
+{
+if (ExistObj(pObj = FindObj (x, y, 1e6)))
+{
+LightObj (pObj, 1);
+//создадим итератор для хождения по атрибутам объекта
+5225
+
+
+
+reference iter = CreateAttrIterator (pObj, 0,0,0,0,0);
+//встали на первый атрибут
+reference attr = MoveAttrIterator (iter, 'F', 0);
+if (attr)
+{
+j = ReadString ("Ввести пароль типа атрибута", password, 10);
+if (j)
+{
+//удалить атрибут
+if (!DeleteAttr (pObj, attr, password))
+MessageBoxResult();// неудачное завершение " 
+// выдадим результат работы
+// нашей функции
+}
+}
+else
+Message("атрибут не найден");
+LightObj (pObj, 0);
+}
+}
+}
+while (j);
+
+ChoiceAttr  Пример использования 
+double x, y;
+reference pObj;
+int j;
+RequestInfo info;
+memset(&info, 0, sizeof(info));
+info.prompt = "Укажите объект";
+
+do
+{
+j = Cursor (&info, &x ,&y, 0);
+if (j)
+{
+if (ExistObj(pObj = FindObj (x, y, 1e6)))
+5226
+
+
+
+{
+LightObj (pObj, 1);
+ChoiceAttr (pObj);
+LightObj (pObj, 0);
+}
+}
+}
+while (j);
+
+ksGetLibraryAttrTypesArray  Пример использования 
+//получим массив типов атрибутов в spc.lat
+ reference typeArr = ksGetLibraryAttrTypesArray(("d:\\0\\Spc.lat"));  // полное имя библиотеки
+стилей
+
+ if (typeArr) {
+  char buf[128];
+  //определим количество типов и отобразим на экране
+  int count = GetArrayCount(typeArr);
+  sprintf(buf, "count = %d", count);
+  Message(buf);
+  //в цикле получим информацию о каждом типе и отобразим на экране
+  for (uint i = 0; i < count; i) {
+   LibraryAttrTypeParam par;
+   GetArrayItem(typeArr, // указатель на массив
+          i,    // индекс в массиве (нумерация начинается с 0)
+          &par,   // указатель на структуру элемента
+          sizeof(LibraryAttrTypeParam)); // размер структуры элемента
+
+   sprintf(buf, "ID = %f\nname=%s", par.typeId, par.name);
+   Message(buf);
+  }
+ }
+
+Caption  пример использования
+
+KGAX1.Caption = "Заголовок"; (* )
+Caption = KGAX1.Caption; (* )
+KGAX1.SetCaption("Заголовок"); (**)
+5227
+
+
+
+Caption = KGAX1.GetCaption(); (**)
+
+Text  пример использования
+
+KGAX1.Text = "Заголовок"; (* )
+Text = KGAX1.Text; (* )
+KGAX1.SetText ("Заголовок"); (**)
+Text = KGAX1.GetText(); (**)
+
+DocumentType  пример использования
+
+KGAX1.DocumentType =  vt_SheetStandart; (* )
+Type = KGAX1.DocumentType; (* )
+KGAX1.SetText (vt_SheetStandart); (**)
+Type = KGAX1.GetDocumentType(); (**)
+
+DocumentFileName  пример использования
+
+KGAX1.DocumenFileName = "С:\\1.frw"; (* )
+fileName = KGAX1.DocumenFileName; (* )
+KGAX1.SetDocumenFileName ("С:\\1.frw"); (**)
+fileName = KGAX1.GetDocumenFileName(); (**)
+
+Document3DDrawMode  пример использования
+
+KGAX1.DocumenFileName = "С:\\1.frw"; (* )
+fileName = KGAX1.DocumenFileName; (* )
+KGAX1.SetDocumenFileName ("С:\\1.frw"); (**)
+fileName = KGAX1.GetDocumenFileName(); (**)
+
+Document3DWireframeShadedMode  пример использования
+
+KGAX1.Document3DWireframeShadedMode = TRUE; (* )
+Mode = KGAX1.Document3DWireframeShadedMode; (* )
+KGAX1.SetDocument3DWireframeShadedMode (TRUE); (**)
+KGAX1.GetDocument3DWireframeShadedMode(); (**)
+
+Пример описания ресурсов
+#define END_OF_STRING_RESOURCE_TABLE 0
+5228
+
+
+
+#define END_OF_RESOURCE_TABLE        0xffff        
+
+#define ID_PROP_ELEMENT_PARAM   20000 // Группа параметры элемента
+#define PROP_DOUBLE_LIST        20001 // Cписок вещественных значений 
+#define PROP_INT_LIST           20002 // Cписок целых значений
+#define PROP_STRING_LIST        20003 // Cписок строк
+#define ID_PROP_VIEW            20004 // Вид
+  
+STRINGTABLE DISCARDABLE 
+BEGIN
+  ID_PROP_ELEMENT_PARAM   "Параметры элемента"
+  PROP_DOUBLE_LIST        "Cписок вещественных значений" 
+  PROP_INT_LIST           "Cписок целых значений"
+  PROP_STRING_LIST        "Cписок строк"
+END
+
+ 
+Для фиксированного списка вещественных значений:   
+PROP_DOUBLE_LIST RCDATA 
+{
+  L"1.0\0"
+  L"2.0\0"
+  L"3.0\0"
+  L"4.0\0"
+  L"5.0\0"
+  END_OF_STRING_RESOURCE_TABLE
+}
+
+Для фиксированного списка целых значений:   
+PROP_INT_LIST RCDATA 
+{
+  L"1\0"
+  L"2\0"
+  L"3\0"
+  L"4\0"
+  L"5\0"
+  END_OF_STRING_RESOURCE_TABLE
+}
+
+5229
+
+
+
+Для фиксированного списка строк:   
+PROP_STRING_LIST RCDATA 
+{
+  L"Первая строка\0"
+  L"Вторая строка\0"
+  L"Третья строка\0"
+  END_OF_STRING_RESOURCE_TABLE
+}
+
+Пример описания ресурсов для списка битмапов ksOPControlListBmp:
+
+#define IDB_ID_VIEW                     1101 // ID_VIEW    " Вид
+#define IDB_ID_VIDSEC                   1102 // ID_VIDSEC  " Вид разрез
+#define IDB_ID_TOPVID                   1103 // ID_TOP     " Вид сверху
+#define IDB_ID_SIDEVID                  1111 // ID_SIDE    " Вид сбоку
+
+IDB_ID_VIEW       ICON DISCARDABLE "res\\G_VIEW.ico"
+IDB_ID_TOPVID     ICON DISCARDABLE "res\\G_TOP.ico"
+IDB_ID_SIDEVID    ICON DISCARDABLE "res\\G_LEFT.ico"
+IDB_ID_VIDSEC     ICON DISCARDABLE "res\\G_SEC.ico"
+   
+STRINGTABLE DISCARDABLE 
+BEGIN
+  ID_PROP_VIEW            "Вид"
+  IDB_ID_VIEW             "Вид"
+  IDB_ID_TOPVID           "Вид сверху"
+  IDB_ID_SIDEVID          "Вид сбоку"
+  IDB_ID_VIDSEC           "Вид\\разрез"
+END
+ 
+// Список значений
+ID_PROP_VIEW RCDATA
+{
+  IDB_ID_VIEW
+  IDB_ID_TOPVID
+  IDB_ID_SIDEVID
+  IDB_ID_VIDSEC
+5230
+
+
+
+  END_OF_RESOURCE_TABLE
+}
+
+Пример передачи в список массива
+long varsCount = 100;
+
+// Массив для наполнения комбобокса
+SAFEARRAYBOUND sabNewArray;
+sabNewArray.cElements = varsCount;
+sabNewArray.lLbound = 0;
+SAFEARRAY * pSafe = ::SafeArrayCreate( VT_R8, 1, &sabNewArray );
+
+if( pSafe )
+{
+  for ( long j = 0; j < varsCount; j++ )
+  {
+    double  val = j * 0.5;
+    ::SafeArrayPutElement( pSafe, &j, &val);
+  }
+
+  _variant_t varArr;
+  varArr.vt = VT_ARRAY | VT_R8;
+  varArr.parray = pSafe;
+  // Передадим массив значений в контрол
+  dt">Add( varArr );
+""" 
+
+Пример использования утилиты
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// Интерфейс связи с вспомогательным контроллером
+// """
+_COM_SMARTPTR_TYPEDEF(IWow32Util, __uuidof(IWow32Util));
+IWow32UtilPtr wow32Util;
+
+//""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// Соединение в вспомогательному Win32 приложению (exe) для получения доступа
+5231
+
+
+
+// к 32 разрядным драйверам для которых не найдены 64 разрядные аналоги
+// """
+IWow32UtilPtr GetWow32Util()
+{
+if ( !(bool)wow32Util )
+{
+try
+{
+wow32Util.CreateInstance( _T("Wow32Util.Application") );
+}
+catch ( _com_error & )
+{
+
+}
+}
+return wow32Util;
+}
+
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// Создание интерфейса во внешнем 32 разрядном приложении
+//"""
+IDispatchPtr CreateWow32Interface( LPCTSTR ClassID )
+{
+IDispatchPtr res;
+IWow32UtilPtr util( GetWow32Util() );
+if ( util )
+{
+try
+{
+_bstr_t id( ClassID );
+util">CreateWow32Interface( id, &res );
+}
+catch (_com_error&)
+{
+//AR todo ComErrorMessage
+}
+}
+return res;
+5232
+
+
+
+}
+
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// Создание интерфейса во внешнем 32 разрядном приложении
+//"""
+#pragma comment( lib, "rpcrt4.lib" )
+_LIBFUNC(IDispatchPtr) CreateWow32Interface( const CLSID& rclsid )
+{
+_TUCHAR * str = NULL;
+if ( RPC_S_OK != UuidToString((UUID *)&rclsid, &str) || !str )
+return NULL;
+_bstr_t classId( "{" );
+classId += str;
+classId += _T("}");
+
+IDispatchPtr res( CreateWow32Interface(classId) );
+
+RpcStringFree( &str );
+return res;
+}
+
+#define JET_OLED_PROVIDER _T("Provider=Microsoft.Jet.OLEDB.4.0")
+#define ACE_OLED_PROVIDER _T("Provider=Microsoft.ACE.OLEDB.12.0")
+static bool usesJET_OLED_PROVIDER = false;
+static bool usesWOW32_PROVIDER = false;
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+/// Создать подключение к БД
+/**
+param fullFileName " Полный путь + имя файла
+param forWrite " Для записи
+*/
+// """
+ado::_ConnectionPtr ExcelDataBaseADO::OpenConnection( LPCTSTR fullFileName, bool
+forWrite )
+{
+ado::_ConnectionPtr pConnection;
+
+try
+5233
+
+
+
+{
+// Создадим соединение
+#ifdef _WIN64
+if ( usesWOW32_PROVIDER )
+pConnection = CreateWow32Interface( __uuidof( ado::Connection ) );
+else
+#endif
+pConnection.CreateInstance(__uuidof( ado::Connection ));
+
+// Открываем соединение с БД( если файл excel не существует то он создасться)
+if ( pConnection )
+{
+CString connName = usesJET_OLED_PROVIDER ? JET_OLED_PROVIDER :
+ACE_OLED_PROVIDER;
+connName += _T(";Data Source=");
+connName += fullFileName;
+connName += _T(";Extended Properties="Excel 8.0;HDR=NO;");
+
+if ( !forWrite )
+connName += _T("IMEX=1;");
+
+connName += _T(""");
+
+pConnection">Open( (LPCTSTR)connName, _T(""), _T(""), 0 );
+}
+}
+#ifdef _DEBUG
+catch ( _com_error & er )
+{
+if ( usesJET_OLED_PROVIDER && usesWOW32_PROVIDER )
+::ComErrorMessage( er );
+
+pConnection = NULL;
+}
+#else
+catch ( _com_error& )
+{
+pConnection = NULL;
+5234
+
+
+
+}
+#endif
+if ( !(bool)pConnection && !usesJET_OLED_PROVIDER )
+{
+usesJET_OLED_PROVIDER = true;
+pConnection = OpenConnection( fullFileName, forWrite );
+usesJET_OLED_PROVIDER = false;
+
+#ifdef _WIN64
+if ( !(bool)pConnection && !usesWOW32_PROVIDER )
+{
+usesWOW32_PROVIDER = true;
+pConnection = OpenConnection( fullFileName, forWrite );
+// usesWOW32_PROVIDER = false;
+}
+#endif
+
+}
+return pConnection;
+}
+
+Получение интерфейса Recordset также требуется делать через CreateWow32Interface
+
+#ifdef _WIN64
+if ( usesWOW32_PROVIDER )
+rset = CreateWow32Interface(_T("ADODB.Recordset"));
+else
+#endif
+rset.CreateInstance(_T("ADODB.Recordset"));
+5235
+
+
+
+5236
+
+
+
+STEPS 1
+
+ Step2, математика
+▼ Пересечение прямых.
+▼ Пересечение кривых.
+▼ Пересечение отрезка и дуги.
+▼ Касательная из точки.
+▼ Касательная под углом.
+▼ Поворот точки.
+▼ Симметрия точки.
+▼ Сопрягающие окружности к двум прямым.
+▼ Перпендикуляр.
+
+ Step2a  массив неопределенной длины
+▼ Массив строк 
+▼ Массив математических точек.
+▼ Массив строк объекта "текст".
+▼ Массив колонок типа атрибута.
+▼ Массив полилиний.
+▼ Массив габаритных прямоугольников.
+▼ Массив структур пользователя.
+▼ Массив экземпляров класса пользователя.
+▼ Массив параметров узла дерева библиотеки.
+
+Step3  объекты
+▼ Создание документа.
+▼ Виды.
+▼ Слои.
+▼ Группы.
+▼ Именованная группа.
+▼ Отрезки.
+▼ Дуги.
+▼ Линии.
+▼ Окружности.
+▼ Точки.
+▼ Bezier"сплайны.
+▼ Штриховка.
+▼ Текст.
+5237
+
+
+
+ Step3a
+▼ Контур.
+▼ Технические требования.
+▼ Стрелка вида.
+▼ Работа со штампом.
+▼ Таблица.
+▼ Эквидистанта.
+▼ Эллипс.
+▼ Полилиния.
+▼ Nurbs.
+▼ Допуск формы.
+▼ Одинаковая шероховатость.
+▼ Вставка фрагмента внешней ссылкой.
+▼ Вставка локального фрагмента.
+
+  Step4
+▼ Работа с БД.
+▼ Ввод длинного целого.
+▼ Выбор имени файла.
+▼ Пример с обработкой очереди сообщений.
+▼ Относительный путь к файлу.
+▼ Работа с системными папками.
+▼ Записать слайд.
+
+ Step4_1
+Процессы Cursor и Placement.
+
+ Step4_2
+Отрисовать слайд.
+
+ Step5
+▼ Трансформация объекта по матрице.
+▼ Копирование объекта.
+▼ Симметрия объекта.
+▼ Редактирование допуска формы.
+▼ Редактирование таблицы.
+▼ Взять тексты граф и редактировать штамп.
+▼ Получить текст технических требований.
+▼ Редактирование технических требований.
+5238
+
+
+
+▼ Вставка фрагмента.
+▼ Работа с библиотекой фрагментов.
+▼ Вставка фрагмента россыпью.
+▼ Редактирование таблиц.
+▼ Редактирование допуска формы.
+▼ Просмотр допуска формы.
+▼ Просмотр таблицы.
+
+ Step6
+Запомнить указатель.
+
+ Step7
+▼ Хождение по виду, макроэлементу, документам, видам, именованным и рабочим груп"
+
+пам, слоям, группе.
+▼ Хождение по элементам документа с определенным атрибутом, по атрибутам объекта.
+
+ S tep8
+▼ Создать тип атрибута.
+▼ Удалить тип атрибута.
+▼ Получить тип атрибута.
+▼ Заменить тип атрибута.
+▼ Создать атрибут определенного типа.
+▼ Удалить атрибут документа, удалить атрибут.
+▼ Считать атрибут.
+▼ Просмотреть атрибут.
+▼ Просмотреть библиотеку.
+▼ Просмотреть тип.
+▼ Просмотреть атрибут.
+▼ Создать атрибут документа, создать атрибут 3D документа.
+▼ Просмотреть атрибут документа.
+▼ Удалить атрибут 3D документа.
+▼ Просмотреть атрибут документа, просмотреть атрибут объектов 3D документа.
+
+ Step9
+▼ Для всех размеров.
+▼ Линейный размер.
+▼ Угловой размер.
+▼ Шероховатость.
+▼ Линия"выноска.
+5239
+
+
+
+▼ Позиционная линия"выноска.
+▼ Клеймение.
+▼ Маркирование.
+▼ Обозначение базы.
+▼ Линия разреза/cечения,
+▼ Диаметральный размер.
+▼ Радиальный размер.
+▼ Радиальный размер c изломом.
+▼ Стрелка вида.
+
+ Step10
+▼ Cоздание типа атрибута болта.
+▼ Cоздание объекта спецификации "деталь", объекта спецификации для раздела "Стандар"
+
+тные изделия".
+▼ Конвертировать спецификацию во фрагмент.
+▼ Просмотреть спецификацию.
+
+ Step11
+Пример запроса командного окна.
+
+SlideWrk
+Записать слайд.
+Разбить слайд.
+Отрисовать слайд.
+
+Step3d1
+Для операций: 
+
+▼ Базовая операция выдавливания.
+▼ Операции вращения.
+▼ Операции по сечениям.
+▼ Создание фаски и скругления.
+▼ Операции оболочка, уклон, сечение плоскостью, сечение эскизом.
+
+ Step3d2
+Для операций: 
+
+▼ Итератор по документам 
+▼ Использование массива элементов.
+▼ Взять/изменить имя компоненты.
+▼ Фиксирование и установка стандартного объекта.
+5240
+
+
+
+▼ Получить и заменить параметры цвета компоненты.
+▼ Взять и поменять внешние переменные компоненты.
+▼ Получить и изменить место расположения детали в сборке.
+▼ Получить интерфейс ksEntity объекта создаваемого системой по умолчанию и поменять
+
+параметры.
+▼ Создать эскиз.
+▼ Cформировать массив объектов (здесь эскизов) и вернуть его интерфейс.
+▼ Установить и получить параметры пользователя в компоненте.
+
+Step3d3
+▼ Конструктивная ось операции.
+▼ Конструктивная ось по двум точкам.
+▼ Конструктивная ось, проходящая через ребро.
+▼ Смещенная плоскость, ось по двум плоскостям, плоскость под углом к другой плоскости
+
+.
+▼ Плоскость через три вершины.
+
+ Step12
+Пример создания пользовательской панели свойств 
+
+ EventCOM
+▼ События, подписка и отписка.
+▼ События приложения.
+▼ События документа.
+▼ События графического документа.
+▼ События документа"модели.
+▼ События объектов графического документа.
+▼ События объектов документа"модели.
+▼ События документа"спецификации.
+▼ События объектов документа"спецификации.
+▼ События редактирования описаний спецификации.
+▼ События основной надписи.
+▼ События окна документа.
+▼ События менеджера выбора объектов.
+
+ EventAuto
+▼ События приложения.
+▼ События графического документа.
+▼ События документа"модели.
+5241
+
+
+
+▼ События документа.
+▼ События окна документа.
+▼ События объектов графического документа.
+▼ События объектов документа"модели.
+▼ События менеджера выбора объектов.
+▼ События документа"спецификации.
+▼ События объектов документа"спецификации.
+▼ События редактирования описаний спецификации.
+▼ События основной надписи.
+
+Cube
+ITessellation, ksFaceDefinition::GetTessellation, ITessellationks::GetFacetPoints,
+ITessellationks::GetFacetNormals, ksPart::TransformPoint,
+ksDocumentFrameNotify::BeginPaintGL, ksDocumentFrameNotify::ClosePaintGL, ksGLObject
+
+Gayka1
+COM
+HotPointDescription, ksColouring, IPropertyMultiButton, IPropertyMultiButton::AddButton,
+IPropertyList, IPropertySeparator, IPropertyControls::Add.
+IApplication::CreateProcessParam, IProcessParam::specToolbar, IProcessParam::Caption,
+IProcessParam::AutoReduce, IProcessParam::DefaultControlFix,
+IProcessParam::PropertyTabs, IPropertySlideBox, IPropertyGrid, IPropertyTab,
+IPropertyTabs::Add, IPropertyCheckBox, IPropertyUserControl, ksOpenHelpFile.
+ILibHPObject, ILibHPObject::LibHotPnt_GetMenu, ILibHPObject::LibHotPnt_Prepare,
+ILibHPObject::LibHotPnt_Complete, ILibHPObject::LibHotPnt_Get,
+ILibHPObject::LibHotPnt_Set, ILibHPObject::LibHotPnt_GetCursorText,
+ILibHPObject::LibHotPnt_ExecuteCommand. ILibPropertyObject.
+
+Step1_API7_2D  строительные обозначения
+▼ Марка/позиционное обозначение.
+▼ Марка/позиционное обозначение с линией"выноской.
+▼ Марка/позиционное обозначение на линии.
+▼ Выносная надпись к многослойным конструкциям.
+▼ Фигурная скобка.
+▼ Прямая координационная ось.
+▼ Круговая координационная ось.
+▼ Номер узла.
+▼ Обозначение узла.
+▼ Обозначение узла в сечении.
+5242
+
+
+
+Автоматизация (Automation)
+Технология Automation реализована в API системы КОМПАС через интерфейсы IDispatch.
+С использованием интерфейсов такого типа можно получить доступ к системе как для
+работы с графическими документами, так и с трехмерными моделями. При этом может
+быть реализован весь функционал систем КОМПАС"ГРАФИК и КОМПАС"3D.
+Dispath"интерфейсы могут быть использованы при программировании в большинстве
+современных сред: Visual Basic, Visual C++, C+Builder, Delphi.
+
+Функции оформления библиотек 
+DisplayLibraryName " Получить имя библиотеки
+DisplayLibraryNameW " Получить имя библиотеки (Unicode)
+LibInterfaceNotifyEntry" Головная функция библиотеки, подписка на обработку событий
+LibIsOnApplication7 " Задать тип версии API, используемого библиотекой
+LibObjInterfaceEntry " Получить имя библиотеки (Unicode)
+LibraryBmpBeginID " Получить для указанного размера иконок начало диапазона иденти"
+фикаторов иконок команд библиотеки
+LIBRARYBMPSIZE " Задать размер окна вывода растрового слайда
+LIBRARYENTRYDEMOEX " Головная функция библиотеки (демо режим)
+LIBRARYENTRYDEMO " Головная функция библиотеки (демо режим)
+LIBRARYENTRY " Головная функция библиотеки
+LIBRARYHELPFILE " Определить имя файла справочной системы, подключаемого к би"
+блиотеке
+LIBRARYHELPFILEW " Определить имя файла справочной системы, подключаемого к би"
+блиотеке (Unicode)
+LibraryHintTipsBeginID " Задать идентификатор начала диапазона ресурсов для подска"
+зок к командам
+LIBRARYID " Задать идентификатор ресурсов
+LIBRARYNAME " Задать имя библиотеки
+LIBRARYNAMEW " Задать имя библиотеки (Unicode)
+LibToolBarId " Получить идентификаторы инструментальных и компактных панелей
+
+Пример использования функции LibToolBarId
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// Получить идентификаторы панелей
+// barType == 0 " компактная панель 1 " простая панель
+// index " индекс панели
+// """
+extern "C" int WINAPI __export LibToolBarId( int barType, int index ){
+5243
+
+
+
+  if ( !barType )
+  {
+    // Компактная панель "Крепежные элементы"
+    return !index ? COMPACT_BAR_CONSTR : "1;
+  }
+#ifndef __LIGHT_VERSION__
+  else
+  {
+   switch( index )
+    {
+      case 0: return BAR_CONSTRUCT; // Панель "Конструктивные элементы"
+      case 1: return BAR_PROFILE;   // Панель "Профили"
+    }
+  }
+#endif
+  return "1;
+}
+
+Кнопки типа FlyOut
+1. Для создания кнопки типа Fly"Out необходимо описать RCDATA состава выпадающей па"
+
+нели. Идентификатор команды, указанной в инструментальной панели, должен быть
+увеличен на 1000 (COMMAND_ID 1000).
+
+2. В RCDATA должна быть та же команда, иначе она станет недоступной после загрузки па"
+нели.
+
+3. После загрузки основной панели на Fly"Out кнопке активной будет первая кнопка из вы"
+падающей панели.
+
+ Пример использования функций оформления библиотеки 
+Пример:
+#define LIB_ID 1000
+// Определить имя библиотеки /* LIBRARYNAME */
+char*?WINAPI LIBRARYNAME()
+ return "Простая библиотека";
+}
+// Задать идентификатор ресурсов
+/* LibraryID */
+int?WINAPI LIBRARYID()
+{
+ return LIB_ID; /*Идентификатор библиотеки равен 1000*/
+}
+
+5244
+
+
+
+// Задать размер окна вывода BITMAP"слайда?
+/* LibraryBmpSize */
+long WINAPI LIBRARYBMPSIZE()
+{
+ return MAKELONG( 170, 160 );
+} 
+
+// Определить имя файла справочной системы
+/* LibraryHelpFile */
+char WINAPI LIBRARYHELPFILE() 
+{
+ return "Konstr.hlp";
+} 
+// Головная функция библиотеки
+void WINAPI LIBRARYENTRY( UINT Comm )
+{
+switch ( Comm )
+{
+case 1: 
+ DrawBolt7798;
+break;
+case 2:
+ DrawShayba18123;
+break;
+
+case 3:
+ DrawGayka6393;
+ break;
+
+case 4:
+ DrawGayka5915;
+ break;
+case 5:
+ DrawGayka15521;?
+ break;
+case 6:
+ DrawShtift10774;?
+ break;
+}
+}; 
+
+/* LibraryEntry*/
+// Получить идентификаторы панелей
+int WINAPI LibToolBarId (int barType, int index)
+5245
+
+
+
+{
+  // Компактные панели
+  if(!barType) 
+  { 
+    return !index ? COMPACT_BAR1 : "1;
+  }
+  // Инструментальные панели
+  else 
+  { 
+    switch (index) 
+    {
+      case 0  : return BAR_1;
+      case 1  : return BAR_2;
+      case 2  : return BAR_3;
+    }
+  }
+  return "1;
+}
+/*LibToolBarId*/
+/*
+
+// Пример файла ресурсов (rc):
+// С каждой строкой меню будет выводиться соответствующий по номеру команды
+BITMAP " слайд, иллюстрирующий выбранную операцию.
+//Размер слайда может быть произвольным. Он определяется функцией
+LIBRARYBMPSIZE.
+//битмапы для отображения в менеджере библиотек (идентификатор равен номеру ко"
+манды)
+// Определение BITMAP"слайдов для библиотечных функций:
+1 BITMAP "B7798.bmp"
+2 BITMAP "Sh18123.bmp"
+3 BITMAP "G6393.bmp"
+4 BITMAP "G5915.bmp"
+5 BITMAP "G15521.bmp"
+6 BITMAP "Sh10774.bmp"
+// Определение в файле ресурсов меню операций.
+5246
+
+
+
+// Примечание: Идентификаторы команд меню должны быть в интервале от 1 до 900.
+// Команда выбранной строчки меню будет передана в функцию LibraryEntry.
+KONSTR_1 MENU
+{
+ MENUITEM "Болт ГОСТ 7798"70", 1
+  MENUITEM "Шайба ГОСТ 18123"72", 2
+  POPUP "ГАЙКИ"
+  {
+    MENUITEM "Гайка ГОСТ 6393"73", 3
+    POPUP "ГАЙКИ ШЕСТИГРАННЫЕ"
+    {
+      MENUITEM "Гайка ГОСТ 5915"70", 4
+      MENUITEM "Гайка ГОСТ 15521"50", 5
+    }
+  }
+  MENUITEM "Штифт ГОСТ 10774"80", 6
+}
+// Определение размеров окна вывода BITMAP"слайда.
+// Примечание: Идентично вызову ф"ии LIBRARYBMPSIZE, но приоритет вызова функции
+выше.
+KONSTR_1 RCDATA 
+{
+  170   // Размер по горизонтали
+  160   // Размер по вертикали
+}
+// Определение имени библиотеки:
+// Примечание: Идентично вызову ф"ии LIBRARYNAME, но приоритет вызова функции
+выше.
+STRINGTABLE
+{
+  KONSTR_1 "Конструкторская библиотека"
+}
+// Определение имени иконки для минимизированного окна библиотеки:
+KONSTR_1 ICON "konstr.ico"
+// При подключении библиотеки будет создана компактная панель "Конструкторская би"
+блиотека", в которую входят
+// инструментальные панели "Болты" и "Шайбы". Также отдельно будет создана инстру"
+ментальная панель "Гайки".
+5247
+
+
+
+// Команда "Штифт ГОСТ 10774"80" не входит ни в одну из панелей.
+// Определение имени панелей:
+STRINGTABLE {
+  BAR_1 "Болты"
+  BAR_2 "Шайбы"
+  BAR_3 "Гайки"
+  COMPACT_BAR1 "Конструкторская библиотека"
+}
+#define END_OF_RESOURCE_TABLE               0xffff
+// Определение состава панелей:
+COMPACT_BAR1 RCDATA
+{
+  BAR_1      
+  BAR_2      
+  END_OF_RESOURCE_TABLE     
+}
+BAR_1 RCDATA
+{
+  1 // Болт ГОСТ 7798"70
+  END_OF_RESOURCE_TABLE
+}
+BAR_2 RCDATA
+{
+  2 // Шайба ГОСТ 18123"72
+  END_OF_RESOURCE_TABLE
+}
+BAR_3 RCDATA
+{
+  3 // Гайка ГОСТ 6393"73
+  4 // Гайка ГОСТ 5915"70
+  5 // Гайка ГОСТ 15521"50
+  END_OF_RESOURCE_TABLE
+}
+// Определение иконок инструментальных панелей:
+BAR_1 ICON DISCARDABLE "bar1.ico"
+BAR_2 ICON DISCARDABLE "bar2.ico"
+BAR_3 ICON DISCARDABLE "bar3.ico"
+*/
+5248
+
+
+
+//битмапы для отображения в панелях и в настройках интерфейса ( идентификатор ра"
+вен номеру команды + 1000 ) размер битмапа должен быть 22х22 пиксела
+1001 BITMAP "B7798.bmp"
+1002 BITMAP "Sh18123.bmp"
+1003 BITMAP "G6393.bmp"
+1004 BITMAP "G5915.bmp"
+1005 BITMAP "G15521.bmp"
+1006 BITMAP "Sh10774.bmp"
+
+ Пример использования функции LibraryBmpBeginID
+""""""""""""""""""""""""""""""""""""""
+// Получить начало диапазона иконок для команд библиотеки
+// """
+unsigned int WINAPI LibraryBmpBeginID( unsigned int bmpSizeType )
+{
+  int res = 0;
+  switch ( bmpSizeType )
+  {
+    case ksBmp1616: res = 1000; break;
+    case ksBmp2424: res = 2000; break;
+  }
+  return res;
+}
+
+Функции
+DisplayLibraryName " Получить имя библиотеки, отображаемое на экране
+ExternalGetImage " Получить слайд для команды библиотеки с указанным номером
+ExternalGetMenu " Получить меню библиотеки
+ExternalGetResourceModule " Задать модуль с ресурсами библиотеки.
+ExternalGetToolBarId " Задать идентификаторы панелей управления библиотеки
+ExternalMenuItem " Получить строку меню для создания меню в виде строк
+ExternalRunCommand " Головная функция библиотеки
+GetHelpFile " Получить имя файла справочной системы, подключаемого к библиотеке
+GetImageHeight " Задать высоту окна вывода слайда
+GetImageWidth " Задать ширину окна вывода слайда
+GetLibraryName " Получить имя библиотеки
+IsOnApplication7 " Получить тип версии API используемого библиотекой.
+5249
+
+
+
+LibInterfaceNotifyEntry " Головная функция библиотеки. Подписка на обработку событий
+
+Пример описания ресурсов панелей и кнопки типа FlyOut
+// Определение имени:
+STRINGTABLE {
+  COMPACT_BAR1 "Компактная панель"
+}
+#define END_OF_RESOURCE_TABLE               0xffff
+// Определение состава:
+COMPACT_BAR1 RCDATA
+{
+  BAR_1 // Инструментальная панель, входящая в компактную     
+  END_OF_RESOURCE_TABLE     
+}
+Необходимые ресурсы для инструментальной панели:
+// Определение имени панелей:
+STRINGTABLE {
+  BAR_1 "Инструментальная панель"
+}
+// Определение состава панели:
+BAR_1 RCDATA
+{
+  1 // Идентификатор команды библиотеки
+  END_OF_RESOURCE_TABLE
+}
+// Определение иконок инструментальной панели при включении ее в компактную па"
+нель:
+BAR_1 ICON DISCARDABLE "bar1.ico" 
+// Определение состава панели:
+BAR_1 RCDATA
+{
+  COMMAND_1               // Идентификатор команды библиотеки (Кнопка типа Fly"Out)
+  ...                     // Остальные команды
+  END_OF_RESOURCE_TABLE
+}
+// Определение кнопки типа Fly"Out
+COMMAND_1 1000  RCDATA  // Кнопка с идентификатором COMMAND_1 на панели BAR_1
+будет Fly"Out кнопкой
+5250
+
+
+
+Т
+
+р
+р
+п
+с
+п
+с
+
+п
+с
+п
+D
+
+р
+
+п
+с
+
+п
+D
+п
+D
+
+{
+  COMMAND_1               // Тот же идентификатор желательно ставить первым, чтобы после
+загрузки
+                          // эта команда становилась текущей
+  ...                     // Остальные команды
+  END_OF_RESOURCE_TABLE
+
+Параметры библиотек типа Converter
+
+ип Уровень Имя параметра Пример значения Обязатель" Описание
+параметра ный
+
+аздел 0 Convertors + Список конверторов.
+аздел 1 ConverType LibConverter + Тип конвертора.
+араметр 2 ProgID "ProjectEDrawings. ~1 ProgID (Для ActiveX 
+трока EDrawings" библиотек).
+араметр 2 Path "S:\C++\Visualc\My ~1 Путь к файлу конвертора 
+трока Converter.rtw" (Для обычных dll или 
+
+rtw).
+араметр 2 Name "Пример + Имя конвертора.
+трока конвертора"
+араметр 2 Connect 1 " Признак подключения 
+WORD библиотеки:
+
+1 " библиотека 
+подключается (по 
+необходимости),
+0 " библиотека в openfile 
+и savefile не 
+используется.
+
+аздел 2 FileType m3d + Тип документа системы 
+КОМПАС (расширение 
+имени файла).
+
+араметр 3 Filter "Файлы моделей + Фильтр для выбора 
+трока (*.mym3d)|*.mym файла.
+
+3d|"
+араметр 3 OpenCommandID 1 ~2 Номер команды для 
+WORD открытия файла.
+араметр 3 SaveCommandID 2 ~2 Номер команды для 
+WORD сохранения файла.

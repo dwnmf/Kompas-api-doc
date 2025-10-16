@@ -1,0 +1,2532 @@
+Синтаксис Automation:
+
+buildDir = iConicSpiral.buildDir Получить свойство (* )
+iConicSpiral.buildDir = buildDir Установить свойство (* )
+buildDir = Получить свойство (**)
+iConicSpiral.GetBuildDir()
+iConicSpiral.SetBuildDir(buildDir) Установить свойство (**)
+3046
+
+
+
+buildMode  Способ построения спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: short
+Значения свойства:
+
+0 " по шагу и количеству витков,
+1 " по шагу и высоте,
+2 " по количеству витков и высоте.
+
+Синтаксис Automation:
+
+buildMode = iConicSpiral.buildMode Получить свойство (* )
+iConicSpiral.buildMode = buildMode Установить свойство (* )
+buildMode = Получить свойство (**)
+iConicSpiral.GetBuildMode()
+iConicSpiral.SetBuildMode(buildMode) Установить свойство (**)
+
+firstAngle  Начальный угол (или угол поворота спирали вокруг 
+своей оси)
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных:double.
+Синтаксис Automation:
+
+firstAngle = iConicSpiral.firstAngle Получить свойство (* )
+iConicSpiral.firstAngle = firstAngle Установить свойство (* )
+firstAngle = Получить свойство (**)
+iConicSpiral.GetFirstAngle()
+iConicSpiral.SetFirstAngle(firstAngle) Установить свойство (**)
+
+height  Высота спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: double
+Синтаксис Automation:
+
+height = iConicSpiral.height Получить свойство (* )
+iConicSpiral.height = height Установить свойство (* )
+3047
+
+
+
+height = Получить свойство (**)
+iConicSpiral.GetHeight()
+iConicSpiral.SetHeight(height) Установить свойство (**)
+
+heightAdd  Дополнительная высота
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: double
+Синтаксис Automation:
+
+heightAdd = iConicSpiral.heightAdd Получить свойство (* )
+iConicSpiral.heightAdd = heightAdd Установить свойство (* )
+heightAdd = Получить свойство (**)
+iConicSpiral.GetHeightAdd()
+iConicSpiral.SetHeightAdd(heightAdd) Установить свойство (**)
+
+heightAddHow  Признак дополнительной высоты
+Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " продолжить за объект,
+FALSE " не доходя до объекта.
+
+Синтаксис Automation:
+
+heightAddHow = iConicSpiral.heightAddHow Получить свойство (* )
+iConicSpiral.heightAddHow = heightAddHow Установить свойство (* )
+heightAddHow = iConicSpiral.GetHeightAddHow() Получить свойство (**)
+iConicSpiral.SetHeightAddHow(heightAddHow) Установить свойство (**)
+
+Примечание:
+Данное свойство используется только при способе задания высоты "по объекту"
+(heightType = 1).
+
+heightType  Способ задания высоты
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: short
+Значения свойства:
+3048
+
+
+
+0 " по размеру,
+1 " по объекту.
+
+Синтаксис Automation:
+
+heightType = iConicSpiral.heightType Получить свойство (* )
+iConicSpiral.heightType = heightType Установить свойство (* )
+heightType = Получить свойство (**)
+iConicSpiral.GetHeightType()
+iConicSpiral.SetHeightType(heightType) Установить свойство (**)
+
+initialDiam  Начальный диаметр спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: double
+Синтаксис Automation:
+
+initialDiam = iConicSpiral.initialDiam Получить свойство (* )
+iConicSpiral.initialDiam = initialDiam Установить свойство (* )
+initialDiam = Получить свойство (**)
+iConicSpiral.GetInitialDiam()
+iConicSpiral.SetInitialDiam(initialDiam) Установить свойство (**)
+
+initialDiamType  Способ задания начального диаметра
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: short
+Значения свойства:
+
+0 " по размеру,
+1 " по объекту.
+
+Синтаксис Automation:
+
+initialDiamType = iConicSpiral.initialDiamType Получить свойство (* )
+iConicSpiral.initialDiamType = initialDiamType Установить свойство (* )
+initialDiamType = iConicSpiral.GetInitialDiamType() Получить свойство (**)
+iConicSpiral.SetInitialDiamType(initialDiamType) Установить свойство (**)
+3049
+
+
+
+step  Шаг витков спирали 
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: double
+Синтаксис Automation:
+
+step = iConicSpiral.step Получить свойство (* )
+iConicSpiral.step = step Установить свойство (* )
+step = Получить свойство (**)
+iConicSpiral.GetStep()
+iConicSpiral.SetStep(step) Установить свойство (**)
+
+terminalDiam  Конечный диаметр спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: double
+Синтаксис Automation:
+
+terminalDiam = iConicSpiral.terminalDiam Получить свойство (* )
+iConicSpiral.terminalDiam = terminalDiam Установить свойство (* )
+terminalDiam = iConicSpiral.GetTerminalDiam() Получить свойство (**)
+iConicSpiral.SetTerminalDiam(terminalDiam) Установить свойство (**)
+
+terminalDiamType  Способ задания конечного диаметра
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: short
+Значения свойства:
+
+0 " по размеру,
+1 " по объекту,
+2 " по углу наклона образующей.
+
+Синтаксис Automation:
+
+terminalDiamType = iConicSpiral.terminalDiamType Получить свойство (* )
+iConicSpiral.terminalDiamType = terminalDiamType Установить свойство (* )
+terminalDiamType = iConicSpiral.GetTerminalDiamType() Получить свойство (**)
+iConicSpiral.SetTerminalDiamType(terminalDiamType) Установить свойство (**)
+3050
+
+
+
+tiltAngle  Угол наклона образующей спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: double
+Синтаксис Automation:
+
+tiltAngle = iConicSpiral.tiltAngle Получить свойство (* )
+iConicSpiral.tiltAngle = tiltAngle Установить свойство (* )
+tiltAngle = Получить свойство (**)
+iConicSpiral.GetTiltAngle()
+iConicSpiral.SetTiltAngle(tiltAngle) Установить свойство (**)
+
+tiltAngleHow  Направление отсчета угла наклона образующей
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " наружу,
+FALSE " внутрь (к оси спирали).
+
+Синтаксис Automation:
+
+tiltAngleHow = iConicSpiral.tiltAngleHow Получить свойство (* )
+iConicSpiral.tiltAngleHow = tiltAngleHow Установить свойство (* )
+tiltAngleHow = Получить свойство (**)
+iConicSpiral.GetTiltAngleHow()
+iConicSpiral.SetTiltAngleHow(tiltAngleHow) Установить свойство (**)
+
+turn  Количество витков спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: double
+Синтаксис Automation:
+
+turn = iConicSpiral.turn Получить свойство (* )
+iConicSpiral.turn = turn Установить свойство (* )
+turn = Получить свойство (**)
+iConicSpiral.GetTurn()
+iConicSpiral.SetTurn(turn) Установить свойство (**)
+3051
+
+
+
+turnDir  Направление навивки спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " по часовой стрелке,
+FALSE " против часовой стрелки.
+
+Синтаксис Automation:
+
+turnDir = iConicSpiral.turnDir() Получить свойство (* )
+iConicSpiral.turnDir = turnDir Установить свойство (* )
+turnDir = Получить свойство (**)
+iConicSpiral.GetTurnDir()
+iConicSpiral.SetTurnDir(turnDir) Установить свойство (**)
+
+IConicSpiralDefinition  методы
+
+GetCurve3D  Получить указатель на интерфейс математической 
+кривой
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetCurve3D();
+Синтаксис COM:
+LPCURVE3D GetCurve3D();
+Возвращаемое значение:
+
+" интерфейс математической кривой ksCurve3D или 
+ICurve3D.
+
+GetHeightObject  Получить объект, задающий высоту
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automation:
+LPDISPATCH GetHeightObject();
+Синтаксис COM:
+LPENTITY GetHeightObject();
+Возвращаемое значение:
+3052
+
+
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+
+GetInitialDiamObject  Получить объект, задающий начальный 
+диаметр
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automation:
+LPDISPATCH GetInitialDiamObject();
+Синтаксис COM:
+LPENTITY GetInitialDiamObject();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+
+GetLocation  Получить координаты точки привязки спирали на 
+базовой плоскости (точку пересечения оси спирали с базовой 
+плоскостью)
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automation:
+BOOL GetLocation (double* x, 
+double* y);
+Синтаксис COM:
+BOOL GetLocation (double* x, 
+double* y);
+Выходные параметры:
+
+x, y " координаты точки привязки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3053
+
+
+
+GetPlane  Получить указатель на базовую плоскость спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс спирали ksEntity или
+IEntity.
+
+GetSketch  Получить указатель на интерфейс эскиза элемента
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+GetTerminalDiamObject  Получить объект, задающий конечный 
+диаметр
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automation:
+LPDISPATCH GetTerminalDiamObject();
+Синтаксис COM:
+LPENTITY GetTerminalDiamObject();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+3054
+
+
+
+SetHeightObject  Установить объект, задающий высоту
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automation:
+BOOL SetHeightObject (LPDISPATCH heightObject);
+Синтаксис COM:
+BOOL SetHeightObject (LPENTITY heightObject);
+Входной параметр:
+
+height " указатель на интерфейс объекта ksEntity
+Object или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetInitialDiamObject  Установить объект, задающий начальный 
+диаметр
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automation:
+BOOL SetInitialDiamObject (LPDISPATCH initialDiamObject);
+Синтаксис COM:
+BOOL SetInitialDiamObject (LPENTITY initialDiamObject);
+Входной параметр:
+
+initialDiam " указатель на интерфейс объекта ksEntity или
+Object IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetLocation  Установить точку привязки спирали на базовой 
+плоскости (точку пересечения оси спирали с базовой плоскостью)
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automatiхon:
+3055
+
+
+
+BOOL SetLocation (double x, 
+double y);
+Синтаксис COM:
+BOOL SetLocation (double x, 
+double y);
+Входные параметры:
+
+x, y " координаты точки привязки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPlane  Установить указатель на базовую плоскость спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane  " указатель на интерфейс спирали ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetTerminalDiamObject  Установить объект, задающий конечный 
+диаметр
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Conicheskay_spiral
+Синтаксис Automation:
+BOOL SetTerminalDiamObject (LPDISPATCH TerminalDiamObject);
+Синтаксис COM:
+BOOL SetTerminalDiamObject (LPENTITY terminalDiamObject);
+Входной параметр:
+3056
+
+
+
+terminalDiamObject " указатель на интерфейс объекта ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Цилиндрическая спираль (Интерфейсы 
+ksCylindricSpiralDefinition и CylindricSpiralDefinition
+Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Интерфейс параметров цилиндрической спирали.
+
+ksCylindricSpiralDefini " интерфейс Automation
+tion
+ICylindricSpiralDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ICylindricSpiralDefinition  свойства
+
+buildDir  Направление построения спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " нормальное (совпадающее с положительным 
+направлением нормали к базовой плоскости спирали),
+
+FALSE " обратное.
+
+Синтаксис Automation:
+
+buildDir = iCylindricSpiral.buildDir Получить свойство (* )
+iCylindricSpiral.buildDir = buildDir Установить свойство (* )
+buildDir = Получить свойство (**)
+iCylindricSpiral.GetBuildDir()
+iCylindricSpiral.SetBuildDir(build Установить свойство (**)
+Dir)
+3057
+
+
+
+buildMode  Способ построения спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: short
+Значения свойства:
+
+0 " по шагу и количеству витков,
+1 " по шагу и высоте,
+2 " по количеству витков и высоте.
+
+Синтаксис Automation:
+
+buildMode = iCylindricSpiral.buildMode Получить свойство (* )
+iCylindricSpiral.buildMode = buildMode Установить свойство (* )
+buildMode = Получить свойство (**)
+iCylindricSpiral.GetBuildMode()
+iCylindricSpiral.SetBuildMode(buildMod Установить свойство (**)
+e)
+
+diam  Диаметр спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: double
+Синтаксис Automation:
+
+diam = iCylindricSpiral.diam Получить свойство (* )
+iCylindricSpiral.diam = diam Установить свойство (* )
+diam = Получить свойство (**)
+iCylindricSpiral.GetDiam()
+iCylindricSpiral.SetDiam(di Установить свойство (**)
+am)
+
+diamType  Способ задания диаметра
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: short
+Значения свойства:
+
+0 " по размеру,
+1 " по объекту.
+
+Синтаксис Automation:
+3058
+
+
+
+diamType = iCylindricSpiral.diamType Получить свойство (* )
+iCylindricSpiral.diamType = diamType Установить свойство (* )
+diamType = Получить свойство (**)
+iCylindricSpiral.GetDiamType()
+iCylindricSpiral.SetDiamType(diamTyp Установить свойство (**)
+e)
+
+firstAngle  Начальный угол (или угол поворота спирали вокруг 
+своей оси)
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: double
+Синтаксис Automation:
+
+firstAngle = iCylindricSpiral.firstAngle Получить свойство (* )
+iCylindricSpiral.firstAngle = firstAngle Установить свойство (* )
+firstAngle = Получить свойство (**)
+iCylindricSpiral.GetFirstAngle()
+iCylindricSpiral.SetFirstAngle(firstAngl Установить свойство (**)
+e)
+
+height  Высота спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: double
+Синтаксис Automation:
+
+height = Получить свойство (* )
+iCylindricSpiral.height
+iCylindricSpiral.height = Установить свойство (* )
+height
+height = Получить свойство (**)
+iCylindricSpiral.GetHeight()
+iCylindricSpiral.SetHeight(hei Установить свойство (**)
+ght)
+
+heightAdd  Дополнительная высота
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: double
+3059
+
+
+
+Синтаксис Automation:
+
+heightAdd = iCylindricSpiral.heightAdd Получить свойство (* )
+iCylindricSpiral.heightAdd = heightAdd Установить свойство (* )
+heightAdd = Получить свойство (**)
+iCylindricSpiral.GetHeightAdd()
+iCylindricSpiral.SetHeightAdd(heightAd Установить свойство (**)
+d)
+
+heightAddHow  Признак дополнительной высоты
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " продолжить за объект,
+FALSE " не доходя до объекта.
+
+Синтаксис Automation:
+
+heightAddHow = iCylindricSpiral.heightAddHow Получить свойство (* )
+iCylindricSpiral.heightAddHow = heightAddHow Установить свойство (* )
+heightAddHow = Получить свойство (**)
+iCylindricSpiral.GetHeightAddHow()
+iCylindricSpiral.SetHeightAddHow(heightAddHow Установить свойство (**)
+)
+
+Примечание
+Данное свойство используется только при способе задания высоты "по объекту"
+(heightType = 1).
+
+heightType  Способ задания высоты
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: short
+Значения свойства:
+
+0 " по размеру,
+1 " по объекту.
+
+Синтаксис Automation:
+3060
+
+
+
+heightType = iCylindricSpiral.heightType Получить свойство (* )
+iCylindricSpiral.heightType = heightType Установить свойство (* )
+heightType = Получить свойство (**)
+iCylindricSpiral.GetHeightType()
+iCylindricSpiral.SetHeightType(heightTyp Установить свойство (**)
+e)
+
+step  Шаг витков спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: double
+Синтаксис Automation:
+
+step = iCylindricSpiral.step Получить свойство (* )
+iCylindricSpiral.step = step Установить свойство (* )
+step = Получить свойство (**)
+iCylindricSpiral.GetStep()
+iCylindricSpiral.SetStep(ste Установить свойство (**)
+p)
+
+turn  Количество витков спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: double
+Синтаксис Automation:
+
+turn = Получить свойство (* )
+iCylindricSpiral.turn
+iCylindricSpiral.turn = Установить свойство (* )
+turn
+turn = Получить свойство (**)
+iCylindricSpiral.GetTurn()
+iCylindricSpiral.SetTurn(t Установить свойство (**)
+urn)
+3061
+
+
+
+turnDir Направление навивки спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " по часовой стрелке,
+FALSE " против часовой стрелки.
+
+Синтаксис Automation:
+
+turnDir = iCylindricSpiral.turnDir Получить свойство (* )
+iCylindricSpiral.turnDir = turnDir Установить свойство (* )
+turnDir = Получить свойство (**)
+iCylindricSpiral.GetTurnDir()
+iCylindricSpiral.SetTurnDir(turn Установить свойство (**)
+Dir)
+
+ICylindricSpiralDefinition  методы
+
+GetCurve3D  Получить указатель на интерфейс математической 
+кривой
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetCurve3D();
+Синтаксис COM:
+LPCURVE3D GetCurve3D();
+Возвращаемое значение:
+
+" интерфейс математической кривой ksCurve3D
+или ICurve3D.
+
+   
+
+GetDiamObject  Получить объект, задающий диаметр
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Синтаксис Automation:
+LPDISPATCH GetDiamObject();
+Синтаксис COM:
+LPENTITY GetDiamObject();
+Возвращаемое значение:
+3062
+
+
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+
+GetLocation Получить координаты точки привязки спирали на 
+базовой плоскости (точку пересечения оси спирали с базовой 
+плоскостью)
+Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Синтаксис Automation:
+BOOL GetLocation (double* x, 
+double* y);
+Синтаксис COM:
+BOOL GetLocation (double* x, 
+double* y);
+Выходные параметры:
+
+x, y " координаты точки привязки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetHeightObject  Получить объект, задающий высоту
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Синтаксис Automation:
+LPDISPATCH GetHeightObject();
+Синтаксис COM:
+LPENTITY GetHeightObject();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+3063
+
+
+
+GetPlane  Получить базовую плоскость спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+
+GetSketch  Получить указатель на интерфейс эскиза элемента
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity
+эскиза.
+
+SetDiamObject  Установить объект, задающий диаметр
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Синтаксис Automation:
+BOOL SetDiamObject (LPDISPATCH diamObject);
+Синтаксис COM:
+BOOL SetDiamObject (LPENTITY diamObject);
+Входной параметр:
+
+diamObject " указатель на интерфейс объекта ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3064
+
+
+
+SetHeightObject  Установить объект, задающий высоту
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Синтаксис Automation:
+BOOL SetHeightObject (LPDISPATCH heightObject);
+Синтаксис COM:
+BOOL SetHeightObject (LPENTITY heightObject);
+Входной параметр:
+
+height " указатель на интерфейс объекта ksEntity или
+Object IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetLocation  Установить точку привязки спирали на базовой 
+плоскости (точку пересечения оси спирали с базовой плоскостью)
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Синтаксис Automation:
+BOOL SetLocation (double x, 
+double y);
+Синтаксис COM:
+BOOL SetLocation (double x, 
+double y);
+Входные параметры:
+
+x, y " координаты точки привязки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3065
+
+
+
+SetPlane  Установить базовую плоскость спирали
+Интерфейс...Справка системы КОМПАС...
+501_Postroenie_spirali.htm#Cilindricheskaja_spir
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс объекта ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Сплайн (Интерфейсы ksSplineDefinition и ISplineDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров сплайна.
+
+ksSplineDefinition " интерфейс Automation
+ISplineDefinition " интерфейс COM
+
+Примечание:
+Интерфейс может быть получен от интерфейса ksEntity или IEntity с помощью метода
+ksEntity::GetDefinition или IEntity::GetDefinition и последующим приведением объекта типа
+IDispatch или IUnknown к интерфейсу типа ksSplineDefinition или ISplineDefinition соот"
+ветственно.
+
+ISplineDefinition свойства
+
+cls  Признак замкнутости сплайна
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " замкнутый сплайн,
+3066
+
+
+
+FALSE " разомкнутый сплайн.
+Синтаксис Automation:
+
+cls = iSpline.cls Получить свойство (* )
+iSpline.cls = cls Установить свойство (* )
+cls = iSpline.GetClosed() Получить свойство (**)
+iSpline.SetClosed(cls) Установить свойство (**)
+
+degree  Порядок сплайна
+Интерфейс...Справка системы КОМПАС...
+1091_116_6_Splajn.htm#SPLINE_NURBS_3D
+Тип данных: long
+Синтаксис Automation:
+
+degree = iSpline.degree Получить свойство (* )
+iSpline.degree = degree Установить свойство (* )
+degree = iSpline.GetDegree() Получить свойство (**)
+iSpline.SetDegree(degree) Установить свойство (**)
+
+splineOnPoles  Признак способа построения сплайна
+Интерфейс...Справка системы КОМПАС...
+1091_116_6_Splajn.htm
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " по полюсам,
+FALSE " по вершинам.
+
+Синтаксис Automation:
+
+splineOnPoles = iSpline.splineOnPoles Получить свойство (* )
+iSpline.splineOnPoles = splineOnPoles Установить свойство (* )
+splineOnPoles = iSpline.GetSplineOnPoles() Получить свойство (**)
+splineOnPoles = iSpline.GetSplineOnPoles() Установить свойство (**)
+3067
+
+
+
+ISplineDefinition  методы
+
+AddVertex  Добавить вершину
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL AddVertex (double x, 
+double y, 
+double z, 
+double weight);
+Синтаксис COM:
+BOOL AddVertex (double x, 
+double y, 
+double z, 
+double weight);
+Входные параметры:
+
+x " x координата вершины,
+y " y координата вершины,
+z " z координата вершины,
+wei " вес вершины.
+ght
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+AddVertexAndAssociation  Добавить вершину по опорному 
+объекту
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL AddVertexAndAssociation (long index, LPDISPATCH obj, double weight);
+Синтаксис COM:
+BOOL AddVertexAndAssociation (long index, LPENTITY obj, double weight);
+Входные параметры:
+
+index " индекс, с которым добавляется вершина,
+obj " указатель на интерфейс точки ksEntity или IEntity,
+weight " вес вершины.
+3068
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Метод позволяет добавить в пространственную кривую новую вершину. Координаты но"
+вой вершины будут равны координатам опорного объекта obj. Вес вершины равен weight.
+
+2. Объект (точка) obj становится опорным.
+3. Если index = "1 или значение index превышает количество вершин, то новая вершина до"
+
+бавляется после последней.
+
+AttachAssociation  Задать опорную точку по индексу
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL AttachAssociation (long index, LPDISPATCH obj);
+Синтаксис COM:
+BOOL AttachAssociation (long index, LPENTITY obj);
+Входные параметры:
+
+index " индекс вершины в массиве,
+obj " указатель на интерфейс точки ksEntity или IEntity,
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет задать опорный объект для существующей вершины с номером index
+пространственной кривой. Если объект уже был задан, он будет заменен новым.
+
+DeleteVertex  Удалить вершину с указанным индексом
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL DeleteVertex (long index);
+Синтаксис COM:
+BOOL DeleteVertex (long index);
+3069
+
+
+
+Входной параметр:
+
+index " индекс вершины в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Flush  Очистить массив вершин
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL Flush();
+Синтаксис COM:
+BOOL Flush();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetAssociation  Получить указатель на опорную точку по индексу
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetAssociation(long index);
+Синтаксис COM:
+LPENTITY GetAssociation(long index);
+Входные параметры:
+
+index " индекс вершины в массиве.
+
+Возвращаемое значение:
+
+" указатель на ин" " в случае успешного заверше"
+терфейс точки ния,
+ksEntity или IEntity,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить опорный объект для существующей вершины с номером
+index пространственной кривой, если он был задан.
+3070
+
+
+
+GetCountVertex  Получить количество вершин
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+long GetCountVertex();
+Синтаксис COM:
+long GetCountVertex();
+Возвращаемое значение:
+
+" количество вершин.
+
+GetParamVertex  Получить параметры вершины с указанным 
+индексом
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetParamVertex (long index, 
+double* x, 
+double* y, 
+double* z, 
+double* weight);
+Синтаксис COM:
+BOOL GetParamVertex (long index, 
+double* x, 
+double* y, 
+double* z, 
+double* weight);
+Входной параметр:
+
+inde " индекс вершины в массиве.
+x
+
+Выходные параметры:
+
+x " x координата вершины,
+y " y координата вершины,
+z " z координата вершины,
+3071
+
+
+
+wei " вес вершины.
+ght
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+InsertVertex  Вставить вершину перед указанной
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL InsertVertex (long index, 
+double x, 
+double y, 
+double z, 
+double weight);
+Синтаксис COM:
+BOOL InsertVertex (long index, 
+double x, 
+double y, 
+double z, 
+double weight);
+Входные параметры:
+
+inde " индекс вершины в массиве,
+x
+x " x координата вершины,
+y " y координата вершины,
+z " z координата вершины,
+wei " вес вершины.
+ght
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ReadFromFile  Прочитать параметры вершин из текстового файла
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+3072
+
+
+
+BOOL ReadFromFile (BSTR fileName);
+Синтаксис COM:
+BOOL ReadFromFile (LPOLESTR fileName);
+Входной параметр:
+
+fileName " имя файла.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание. См. также WriteToFile.
+
+SetAssociation  Задать опорную точку по индексу
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetAssociation(long index,
+LPDISPATCH obj);
+Синтаксис COM:
+BOOL SetAssociation(long index,
+LPENTITY obj);
+Входные параметры:
+
+index " индекс вершины,
+obj " указатель на интерфейс IEntity или ksEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+WriteToFile  Записать параметры вершин в текстовый файл
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL WriteToFile (LPCTSTR fileName);
+Синтаксис COM:
+BOOL WriteToFile (LPOLESTR fileName);
+Входные параметр:
+3073
+
+
+
+fileName " имя файла.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание. См. также ReadFromFile.
+
+Ломаная ( Интерфейсы ksPolyLineDefinition и 
+IPolygonalLineDefinition)
+Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Интерфейс параметров ломаной.
+
+ksPolyLineDefiniti " интерфейс Automation
+on
+IPolygonalLineDefi " интерфейс COM
+nition
+
+Примечание:
+Интерфейс может быть получен от интерфейса ksEntity или IEntity с помощью метода
+ksEntity::GetDefinition или IEntity::GetDefinition и последующим приведением объекта типа
+IDispatch или IUnknown к интерфейсу типа ksPolyLineDefinition или
+IPolygonalLineDefinition соответственно.
+
+IPolygonalLineDefinition  свойства
+
+Closed  Признак замкнутости ломаной
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " замкнутая ломаная,
+FALSE " разомкнутая ломаная.
+
+Синтаксис Automation:
+
+Closed = iPolyLine.Closed Получить свойство (* )
+iPolyLine.Closed = Closed Установить свойство(* )
+Closed = iPolyLine.GetClosed() Получить oсвойство (**)
+iPolyLine.SetClosed(Closed) Установить свойство (**)
+3074
+
+
+
+Синтаксис COM:
+
+iPolyLine">get_Closed(&closed) Получить свойство
+iPolyLine">put_Closed(closed) Установить свойство
+
+VertexVisible  Признак отображения свободных вершин
+Интерфейс...Тип данных: BOOL
+Синтаксис:
+
+vertexVisible = Object.vertexVisible Получить свойство (* )
+Object.vertexVisible = vertexVisible Установить свойство(* )
+vertexVisible = Object.GetVertexVisible() Получить свойство (**)
+Object.SetVertexVisible( vertexVisible ) Установить свойство (**)
+
+IPolygonalLineDefinition  методы
+
+AddPointWithParams  Создать новую вершину
+Интерфейс...Синтаксис Automation:
+LPDISPATCH AddPointWithParams( int index );
+Синтаксис COM:
+LPPOLYGONALLINEVERTEXPARAM AddPointWithParams( int index );
+Входные параметры:
+
+index " индекс новой вершины.
+
+Возвращаемое значение:
+
+" указатель на интерфейс параметров вершины ломаной 
+IPolygonalLineVertexParam или ksPolyLineVertexParam,
+
+Примечание:
+Если индекс равен"1, вершина добавляется в конец.
+
+AddVertex  Добавить вершину
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Синтаксис Automation:
+BOOL AddVertex (double x, 
+double y, 
+double z, 
+3075
+
+
+
+double radius);
+Синтаксис COM:
+BOOL AddVertex (double x, 
+double y, 
+double z, 
+double radius);
+Входные параметры:
+
+X " x координата вершины,
+Y " y координата вершины,
+Z " z координата вершины,
+Radius " радиус скругления в вершине.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+DeleteVertex  Удалить вершину с указанным индексом
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Синтаксис Automation:
+BOOL DeleteVertex (long index);
+Синтаксис COM:
+BOOL DeleteVertex (long index);
+Входной параметр:
+
+Index " индекс вершины в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+EdgeCollection  Получить массив ребер
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Синтаксис Automation:
+LPDISPATCH EdgeCollection();
+Синтаксис COM:
+LPEDGECOLLECTION EdgeCollection();
+Возвращаемое значение:
+3076
+
+
+
+Указатель на интерфейс " в случае успешного завершения,
+ksEdgeCollection или IEdgeCollection,
+FALSE " в случае неудачи.
+
+Примечание:
+Ребра в коллекции лежат по порядку следования в ломаной.
+
+Flush  Очистить массив вершин ломаной
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Синтаксис Automation:
+BOOL Flush();
+Синтаксис COM:
+BOOL Flush();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetCurve3D  Получить указатель на интерфейс математической 
+кривой
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetCurve3D();
+Синтаксис COM:
+LPCURVE3D GetCurve3D();
+Возвращаемое значение:
+
+" интерфейс математической кривой ksCurve3D
+или ICurve3D.
+
+GetCountVertex  Получить количество вершин ломаной
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Синтаксис Automation:
+long GetCountVertex();
+Синтаксис COM:
+long GetCountVertex();
+3077
+
+
+
+Возвращаемое значение:
+
+" Количество вершин.
+
+GetParamVertex  Получить параметры вершины с указанным 
+индексом
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Синтаксис Automation:
+BOOL GetParamVertex (long index, 
+double* x, 
+double* y, 
+double* z, 
+double* radius);
+Синтаксис COM:
+BOOL GetParamVertex (long index, 
+double* x, 
+double* y, 
+double* z, 
+double* radius);
+Входной параметр:
+
+Index " индекс вершины в массиве.
+
+Выходные параметры:
+
+X " x координата вершины,
+Y " y координата вершины,
+Z " z координата вершины,
+Radius " радиус скругления в вершине.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetPointParams  Получить параметры вершины ломаной
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetPointParams( int index );
+Синтаксис COM:
+LPPOLYGONALLINEVERTEXPARAM GetPointParams( int index );
+3078
+
+
+
+Входные параметры:
+
+index " индекс вершины.
+
+Возвращаемое значение:
+
+" указатель на интерфейс параметров вершины ломаной 
+IPolygonalLineVertexParam или ksPolyLineVertexParam,
+
+InsertVertex  Вставить вершину перед указанной
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Синтаксис Automation:
+BOOL InsertVertex (long index, 
+double x, 
+double y, 
+double z, 
+double radius);
+Синтаксис COM:
+BOOL InsertVertex (long index, 
+double x, 
+double y, 
+double z, 
+double radius);
+Входные параметры:
+
+Index " индекс вершины в массиве,
+X " x координата вершины,
+Y " y координата вершины,
+Z " z координата вершины,
+Radius " радиус скругления в вершине.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3079
+
+
+
+ReadFromFile  Прочитать параметры вершин из текстового файла
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Синтаксис Automation:
+BOOL ReadFromFile (BSTR fileName);
+Синтаксис COM:
+BOOL ReadFromFile (LPOLESTR fileName);
+Входной параметр:
+
+fileName " имя файла.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+См. также WriteToFile
+
+WriteToFile  Записать параметры вершин в текстовый файл
+Интерфейс...Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Синтаксис Automation:
+BOOL WriteToFile (LPCTSTR fileName);
+Синтаксис COM:
+BOOL WriteToFile (LPOLESTR fileName);
+Входной параметр:
+
+fileName " имя файла.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+См. также ReadFromFile
+3080
+
+
+
+Интерфейсы поверхностей
+
+Поверхность выдавливания (Интерфейсы 
+ksExtrusionSurfaceDefinition и IExtrusionSurfaceDefinition)
+Интерфейс параметров поверхности выдавливания.
+
+ksExtrusionSurfaceDefini " интерфейс Automation
+tion
+IExtrusionSurfaceDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ ksExtrusionSurfaceDefinition  свойства
+
+closedShell  Признак замкнутости поверхности
+Интерфейс...
+Тип данных: VARIANT_BOOL
+Значения свойства:
+
+TRUE " поверхность замкнута,
+FALSE " поверхность не замкнута.
+
+Синтаксис Automation:
+
+closedShell = iExtrusion.closedShell Получить свойство (* )
+iExtrusion.closedShell = closedShell Установить свойство(* )
+closedShell = Получить свойство (**)
+iExtrusion.GetClosedShell()
+iExtrusion.SetClosedShell(closedSh Установить свойство (**)
+ell)
+
+Синтаксис COM:
+
+closedShell = Получить свойство.
+iExtrusion.GetClosedShell()
+iExtrusion.SetClosedShell(closedSh Установить свойство.
+ell)
+
+directionType  Направление выдавливания
+Интерфейс...
+Тип данных: short
+3081
+
+
+
+Синтаксис Automation:
+
+directionType = Получить свойство (* )
+iExtrusionSurface.directionType
+iExtrusionSurface.directionType= Установить свойство(* )
+directionType
+directionType = Получить свойство (**)
+iExtrusionSurface.GetDirectionType()
+iExtrusionSurface.SetDirectionType(direc Установить свойство (**)
+tionType)
+
+Значения свойства:
+
+Типы направлений...
+
+Примечание:
+
+1. Нормаль, проведенная к грани, всегда направлена наружу ("из тела детали").
+2. Прямое направление совпадает с нормалью, проведенной к плоскости эскиза.
+3. Для вырезаемого элемента выдавливания направление противоположно нормали.
+
+ksExtrusionSurfaceDefinition  методы
+
+ExtrusionParam  Получить указатель на интерфейс параметров 
+элемента выдавливания
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH ExtrusionParam();
+Синтаксис COM:
+LPEXTRUSIONPARAM ExtrusionParam();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта
+ksExtrusionParam или IExtrusionParam.
+
+GetDepthObject  Получить объект, задающий глубину 
+выдавливания
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetDepthObject (VARIANT_BOOL normal);
+Синтаксис COM:
+3082
+
+
+
+LPENTITY GetDepthObject (BOOL normal);
+Входные параметры:
+
+normal " направление выдавливания:
+TRUE " совпадает с направлением нормали к плоскости 
+эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза.
+
+Возвращаемое значение:
+
+" указатель на интерфейс объекта глубины вы"
+давливания ksEntity или IEntity.
+
+GetSideParam  Получить параметры выдавливания в одном 
+направлении
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL GetSideParam (VARIANT_BOOL forward,
+short *type,
+double *depth,
+double *draftValue,
+VARIANT_BOOL *draftOutward);
+Синтаксис COM:
+BOOL GetSideParam (BOOL forward,
+short *type,
+double *depth,
+double *draftValue,
+BOOL *draftOutward);
+Входные параметры:
+
+forward " направление выдавливания:
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Выходные параметры:
+
+type " тип выдавливания,
+depth " глубина выдавливания,
+draftValue " угол уклона,
+3083
+
+
+
+draftOutward " направление уклона:
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetSketch  Получить указатель на интерфейс эскиза поверхности 
+выдавливания
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+ResetDepthObject  Отказаться от установленного методом 
+SetDepthObject объекта, задающего глубину выдавливания
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL ResetDepthObject (VARIANT_BOOL normal);
+Синтаксис COM:
+BOOL ResetDepthObject (BOOL normal);
+Входные параметры:
+
+normal " направление выдавливания:
+TRUE " совпадает с направлением нормали к плоскости 
+эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3084
+
+
+
+SetDepthObject  Установить объект, задающий глубину 
+выдавливания
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL SetDepthObject (VARIANT_BOOL normal, LPDISPATCH obj);
+Синтаксис COM:
+BOOL SetDepthObject (BOOL normal, LPENTITY obj);
+Входные параметры:
+
+normal " направление выдавливания:
+TRUE " совпадает с направлением нормали к плоскости 
+эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза.
+
+obj " указатель на интерфейс объекта глубины выдавливания 
+ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetSideParam  Изменить параметры выдавливания в одном 
+направлении
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL SetSideParam (VARIANT_BOOL forward,
+short type,
+double depth,
+double draftValue,
+BOOL draftOutward);
+Синтаксис COM:
+BOOL SetSideParam (BOOL forward,
+short type,
+double depth,
+double draftValue,
+BOOL draftOutward);
+Входные параметры:
+3085
+
+
+
+forward " направление выдавливания:
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+type " тип выдавливания,
+depth " глубина выдавливания,
+draftValue " угол уклона,
+draftOutward " направление уклона:
+
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetSketch  Установить эскиз поверхности выдавливания
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Кинематическая поверхность (Интерфейсы 
+ksEvolutionSurfaceDefinition и IEvolutionSurfaceDefinition)
+Интерфейс параметров кинематической поверхности.
+
+ksEvolutionSurfaceDefi " интерфейс
+nition Automation
+IEvolutionSurfaceDefini " интерфейс COM
+tion
+
+Примечание:
+3086
+
+
+
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksEvolutionSurfaceDefinition  свойства
+
+closedShel  Признак замкнутости поверхности
+Интерфейс...
+Тип данных: VARIANT_BOOL
+Синтаксис Automation:
+
+closedShell = iEvolution.closedShell Получить свойство (* )
+iEvolution.closedShell = closedShell Установить свойство(* )
+closedShell = Получить свойство (**)
+iEvolution.GetClosedShell()
+iEvolution.SetClosedShell(closedShell) Установить свойство (**)
+
+Синтаксис COM:
+
+closedShell = Получить свойство
+iEvolution.GetClosedShell()
+iEvolution.SetClosedShell(closedShell) Установить свойство
+
+Значения свойства:
+
+TRUE " поверхность замкнута,
+FALSE " поверхность не замкнута.
+
+sketchShiftType  Тип движения сечения по траектории
+Интерфейс..
+Тип данных: short
+Синтаксис Automation:
+
+sketchShiftType = Получить свойство (* )
+iEvolution.sketchShiftType
+iEvolution.sketchShiftType = Установить свойство(* )
+sketchShiftType
+sketchShiftType = Получить свойство (**)
+iEvolution.GetSketchShiftType()
+iEvolution.SetSketchShiftType(sketchS Установить свойство (**)
+hiftType)
+
+Синтаксис COM:
+
+sketchShiftType = Получить свойство
+iEvolution.GetSketchShiftType()
+3087
+
+
+
+iEvolution.SetSketchShiftType(sketchS Установить свойство
+hiftType)
+
+Значения свойства:
+
+0 " образующая переносится параллельно самой себе,
+1 " образующая при переносе сохраняет исходный угол
+
+с направляющей,
+2  " плоскость образующей выставляется и сохраняется
+
+ортогональной направляющей.
+
+ksEvolutionSurfaceDefinition  методы
+
+GetPathLength  Получить длину результирующей кривой 
+траектории
+Интерфейс..Синтаксис Automation:
+double GetPathLength (unsigned long bitVector);
+Синтаксис COM:
+double GetPathLength(unsigned long bitVector);
+Входные параметры:
+
+bitVector " единицы измерения в интервале 
+[ST_MIX_MM..ST_MIX_M].
+
+Возвращаемое значение:
+
+длина результирующей кривой " в случае успешного завершения,
+траектории
+0 " в случае неудачи.
+
+Примечания:
+Метод работает только на уже построенной операции.
+
+GetSketch  Получить указатель на интерфейс эскиза 
+кинематической поверхности
+Интерфейс..
+Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+3088
+
+
+
+" указатель на интерфейс ksEntity или IEntity.
+
+PathPartArray  Получить указатель на интерфейс массива 
+кривых, задающих траекторию движения сечения 
+кинематического элемента
+Интерфейс..
+Синтаксис Automation:
+IDispatch * PathPartArray();
+Синтаксис COM:
+LPENTITYCOLLECTION PathPartArray();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntityCollection или
+IEntityCollection.
+
+SetSketch  Установить эскиз кинематической поверхности
+Интерфейс..
+Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входные параметры:
+
+sketch " указатель на интерфейс ksEntity или IEntity
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Поверхность вращения (Интерфейсы 
+ksRotatedSurfaceDefinition и IRotatedSurfaceDefinition)
+Интерфейс параметров поверхности вращения.
+
+ksRotatedSurfaceDefinition " интерфейс Automation
+IRotatedSurfaceDefinition " интерфейс COM
+
+Примечание:
+3089
+
+
+
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksRotatedSurfaceDefinition  свойства
+
+closedShell  Признак замкнутости поверхности
+Интерфейс...
+Тип данных: VARIANT_BOOL
+Значения свойства:
+
+TRUE " поверхность замкнута,
+FALSE " поверхность не замкнута.
+
+Синтаксис Automation:
+
+closedShell = iRotated.closedShell Получить свойство (* )
+iRotated.closedShell = closedShell Установить свойство(* )
+closedShell = Получить свойство (**)
+iRotated.GetClosedShell()
+iRotated.SetClosedShell(closedShell Установить свойство (**)
+)
+
+Синтаксис COM:
+
+closedShell = Получить свойство.
+iRotated.GetClosedShell()
+iRotated.SetClosedShell(closedShell Установить свойство.
+)
+
+directionType  Направление вращения
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+Типы направлений...
+
+Синтаксис Automation:
+
+directionType = Получить свойство (* )
+iRotatedSurface.directionType
+iRotatedSurface.directionType = Установить свойство(* )
+directionType
+3090
+
+
+
+directionType = Получить свойство (**)
+iRotatedSurface.GetDirectionType()
+iRotatedSurface.SetDirectionType Установить свойство (**)
+(directionType)
+
+Примечание:
+
+1. Прямое направление " вдоль нормали к плоскости эскиза и всегда против часовой стрел"
+ки.
+
+2. Нормаль, проведенная к поверхности тела, всегда выходит из тела.
+
+toroidShapeType  Признак тороида
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " тороид,
+FALSE " сфероид.
+
+Синтаксис Automation:
+
+toroidShapeType = Получить
+iRotatedSurface.toroidShapeType свойство (* )
+iRotatedSurface.toroidShapeType = Установить
+toroidShapeType свойство(* )
+toroidShapeType = Получить
+iRotatedSurface.GetToroidShapeType() свойство (**)
+iRotatedSurface.SetToroidShapeType Установить
+(toroidShapeType) свойство (**)
+
+ksRotatedSurfaceDefinition  методы
+
+GetSideParam  Получить параметры вращения в одном 
+направлении
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL GetSideParam (VARIANT_BOOL forward,
+double *angle);
+Синтаксис COM:
+BOOL GetSideParam (BOOL forward,
+double * angle);
+Входные параметры:
+3091
+
+
+
+forward " направление вращения:
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Выходные параметры:
+
+angle " угол вращения.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetSketch  Получить указатель на интерфейс эскиза поверхности 
+вращения
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+RotatedParam  Получить указатель на интерфейс параметров 
+элемента вращения
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH RotatedParam();
+Синтаксис COM:
+LPROTATEDPARAM RotatedParam();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта
+ksRotatedParam или IrotatedParam.
+3092
+
+
+
+SetSideParam  Изменить параметры вращения в одном 
+направлении
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL SetSideParam (short forward,
+double angle);
+Синтаксис COM:
+BOOL SetSideParam (BOOL forward,
+double angle);
+Входные параметры:
+
+forward " направление вращения:
+TRUE " прямое направление,
+FALSE " обратное направление,
+
+angle " угол вращения.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetSketch  Установить эскиз поверхности вращения
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Поверхность по сечениям(Интерфейсы 
+ksLoftSurfaceDefinition и ILoftSurfaceDefinition)
+Интерфейс параметров поверхности по сечениям.
+3093
+
+
+
+ksLoftSurfaceDefinition " интерфейс Automation
+ILoftSurfaceDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksLoftSurfaceDefinition  свойства
+
+closedShell  Признак замкнутости поверхности
+Интерфейс...
+Тип данных: VARIANT_BOOL
+Значения свойства:
+
+TRUE " поверхность замкнута,
+FALSE " поверхность не замкнута.
+
+Синтаксис Automation:
+
+closedShell = iLoft.closedShell Получить свойство (* )
+iLoft.closedShell = closedShell Установить свойство(* )
+closedShell = iLoft.GetClosedShell() Получить свойство (**)
+iLoft.SetClosedShell(closedShell) Установить свойство (**)
+
+Синтаксис COM:
+
+closedShell = iLoft.GetClosedShell() Получить свойство.
+iLoft.SetClosedShell(closedShell) Установить свойство.
+
+ksLoftSurfaceDefinition  методы
+
+GetLoftParam  Получить параметры элемента по сечениям
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL GetLoftParam (VARIANT_BOOL *closed,
+VARIANT_BOOL *flipVertex,
+VARIANT_BOOL *autoPath);
+Синтаксис COM:
+BOOL GetLoftParam (BOOL *closed,
+BOOL *flipVertex,
+BOOL *autoPath);
+Выходные параметры:
+3094
+
+
+
+closed " признак замкнутости траектории:
+TRUE " траектория замкнута,
+FALSE " траектория разомкнута,
+
+flipVertex " параметр зарезервирован для даль"
+нейшего использования,
+
+autoPath " признак автоматического формирова"
+ния траектории:
+TRUE " формировать траекторию авто"
+матически,
+FALSE " для формирования траектории
+использовать точки, заданные методом
+SetLoftPoint,
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetDirectionalLine  Получить направляющую линию. Эскиз в 
+котором лежит кривая
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetDirectionalLine();
+Синтаксис COM:
+LPENTITY GetDirectionalLine();
+Возвращаемое значение:
+
+TRUE " указатель на интерфейс ksEntity или Ientity.
+
+Примечание:
+Если задана направляющая, то признак замкнутости траектории устанавливается авто"
+матически, исходя из замкнутости направляющей.
+
+SetDirectionalLine  Задать направляющую линию. Эскиз в котором 
+лежит кривая
+Интерфейс...
+Синтаксис Automation:
+BOOL SetDirectionalLine (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetDirectionalLine (LPENTITY sketch);
+Входные параметры:
+3095
+
+
+
+sketch " указатель на интерфейс ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Если задана направляющая, то признак замкнутости траектории устанавливается авто"
+матически, исходя из замкнутости направляющей.
+
+SetLoftParam  Изменить параметры операции по сечениям
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL SetLoftParam (VARIANT_BOOL closed,
+VARIANT_BOOL flipVertex,
+VARIANT_BOOL autoPath);
+Синтаксис COM:
+BOOL SetLoftParam (BOOL closed,
+BOOL flipVertex,
+BOOL autoPath);
+Выходные параметры:
+
+Closed " признак замкнутости траектории:
+TRUE " траектория замкнута,
+FALSE " траектория разомкнута,
+
+flipVertex " параметр зарезервирован для даль"
+нейшего использования,
+
+autoPath " признак автоматического формирова"
+ния траектории:
+TRUE " формировать траекторию авто"
+матически,
+FALSE " для формирования траектории
+использовать точки, заданные методом
+SetLoftPoint,
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3096
+
+
+
+Sketches  Получить указатель на интерфейс массива эскизов 
+элемента по сечениям
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Sketches();
+Синтаксис COM:
+LPENTITYCOLLECTION Sketches();
+Возвращаемое значение:
+
+TRUE " указатель на интерфейс массива эскизов 
+ksEntityCollection или IEntityCollection.
+
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. В массиве включен контроль, не позволяющий добавить в него нулевой указатель на
+эскиз.
+
+2. Эскизы из данного массива используются для построения элемента по сечениям.
+
+Интерфейс операции вычитания компонентов 
+(ksMoldCavityDefinition, IMoldCavityDefinition)
+Интерфейс операции вычитания компонентов.
+
+ksMoldCavityDefinition " интерфейс Automation
+IMoldCavityDefinition " интерфейс COM
+
+Примечания.
+
+1. Позволяет создать полость, имеющую форму другой детали.
+2. Операция доступна в режиме редактирования детали в контексте сборки.
+3. Для входа в режим редактирования детали в контексте сборки используется функция
+
+ksPart::BeginEdit.
+4. В операции вычитания могут участвовать только детали. Вычесть из детали подсборку
+
+невозможно.
+5. Если необходимо, чтобы размеры создаваемой полости отличались от размеров вычи"
+
+таемой детали, нужно задать коэффициент масштабирования в процентах scale.
+6. Данный интерфейс можно получить, используя метод интерфейса элемента модели
+
+ksEntity::GetDefinition или IEntity::GetDefinition.
+3097
+
+
+
+ksMoldCavityDefinition  свойства
+
+scale  Коэффициент маcштабирования, %.
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+scale = iObject.scale Получить свойство (* )
+iObject.scale = scale Установить свойство(* )
+scale = iObject.GetScale() Получить свойство (**)
+iObject.SetScale (scale) Установить свойство (**)
+
+ksMoldCavityDefinition  методы
+
+GetScaleCentre  Получить вершину, относительно которой 
+выполняется масштабирование
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetScaleCentre();
+Синтаксис COM:
+LPENTITY GetScaleCentre();
+Возвращаемое значение:
+
+" указатель на интерфейс 
+коллекции компонентов ksEntity 
+или IEntity,
+
+NULL " если вершина не задана.
+
+Примечания.
+В качестве вершины могут использоваться характерные точки графических объектов в
+эскизах, (например, конец отрезка, центр окружности и т.п.) или начала координат. Если
+вершина не указана, то используется точка, являющаяся центром масс деталей.
+
+PartArray  Получить массив вычитаемых компонентов
+Интерфейс...Синтаксис Automation:
+LPDISPATCH PartArray();
+Синтаксис COM:
+LPPARTCOLLECTION PartArray();
+Возвращаемое значение:
+
+" Указатель на интерфейс коллекции компо"
+нентов ksPartCollection или IPartCollection.
+3098
+
+
+
+SetScaleCentre  Установить вершину, относительно которой 
+выполняется масштабирование
+Интерфейс...Синтаксис Automation:
+VARIANT_BOOL SetScaleCentre( LPDISPATCH vert );
+Синтаксис COM:
+BOOL SetScaleCentre( LPENTITY vert );
+Входные параметры:
+
+vert " Указатель на интерфейс коллекции
+компонентов ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи
+
+Примечания.
+В качестве вершины могут использоваться характерные точки графических объектов в
+эскизах (например, конец отрезка, центр окружности и т.п.) или начала координат. Если
+вершина не указана, то используется точка, являющаяся центром масс деталей.
+
+Интерфейс макроэлемента (ksMacro3DDefinition, 
+IMacro3DDefinition)
+Справка системы КОМПАС...
+
+Интерфейс макроэлемента документамодели.
+
+ksMacro3DDefi " интерфейс Automation
+nition
+IMacro3DDefini " интерфейс COM
+tion
+
+Описание:
+Является 3D объектом, объединяющим в себе другие 3D объекты, в том числе и другие
+макроэлементы 3D, с возможностью скрывать свой состав, сохранять дополнительные
+пользовательские параметры и редактировать данный объект через библиотеку (если
+задано имя файла, имя библиотеки и команда редактирования).
+Последовательность создания макроэлементов через API.
+Создание макроэлемента с последующим добавлением объектов в его состав.
+
+1. Создание пустого макроэлемента:
+▼ Создание у компонента макроэлемента (ksPart::NewEntity соответствующего типа).
+3099
+
+
+
+▼ Установка свойств макроэлемента (Видимость состава StaffVisible).
+▼ Создание макро в модели ksEntity::Create.
+▼ Установка пользовательских параметров SetUserParam.
+2. Добавление существующих объектов в создаваемый макроэлемент:
+
+▼  Добавление объектов в коллекцию объектов, входящих в макро ksFeatureCollection; при
+этом в модели ничего не происходит.
+
+▼ Обновление макроэлемента ksEntity::Update; все новые объекты будут перенесены в ма"
+кро в модели, у самих объектов тоже будут вызваны методы Update,
+
+3. Создание новых объектов и добавление в макро:
+▼ Создание нового объекта (NewEntity).
+▼ Задание свойств нового объекта.
+▼ Добавление объекта в коллекцию объектов, входящих в макро, при этом в модели ничего
+
+не происходит.
+▼ Обновление макро ksEntity::Update " все новые, не созданные объекты, создадутся; у них
+
+вызовется ksEntity::Create.
+Создание макроэлемента с одновременным наполнением его объектами.
+
+▼ Создание у компонента макроэлемента (NewEntity соответствующего типа).
+▼ Задание свойств макроэлемента.
+▼ Создание при необходимости новых объектов (NewEntity) и задание их свой"
+
+ства (Create не вызывать), иначе переход к следующему пункту,
+▼ Добавление объектов в коллекцию объектов, входящих в макро, в модели ни"
+
+чего не происходит,
+▼ Создание макро в модели (ksEntity::Create) " все новые объекты создадутся, у них вызо"
+
+вется метод ksEntity::Create. Существующие объекты будут обновлены, у них вызовется
+метод ksEntity::Update.
+
+4. Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IMacro3DDefinition  свойства
+
+DoubleClickEditOff  Получить признак внешнего редактирования 
+детали
+Интерфейс...Тип данных: BOOL
+Синтаксис Automation:
+
+off = iObj.DoubleClickEditOff Получить свойство (* )
+iObj.DoubleClickEditOff = off Установить свойство(* )
+off = iObj.GetDoubleClickEditOff() Получить свойство (**)
+iObj.SetDoubleClickEditOff (off) Установить свойство (**)
+
+Примечание:
+3100
+
+
+
+Свойство позволяет для библиотечных элементов, имеющих макропараметры, оставить
+стандартное поведение компонента и объектов, входящих в состав компонента. Для это"
+го нужно установить значение свойства равным TRUE.
+
+PropertyObjectEditable  Поддерживается интерфейс внешних 
+свойств объекта
+Интерфейс...Тип данных: BOOL
+Синтаксис Automation:
+
+PropertyObjectEditable = Получить свойство (* )
+Object.PropertyObjectEditable
+Object.PropertyObjectEditable = Установить свойство(* )
+PropertyObjectEditable
+PropertyObjectEditable = Получить свойство (**)
+Object.GetPropertyObjectEditable()
+Object.SetPropertyObjectEditable( Установить свойство (**)
+PropertyObjectEditable )
+
+StaffVisible  Управление видимостью состава
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+staffVisible = iObject.StaffVisible Получить свойство (* )
+iObject.StaffVisible = staffVisible Установить свойство(* )
+staffVisible = Получить свойство (**)
+iObject.GetStaffVisible()
+iObject.SetStaffVisible (staffVisible) Установить свойство (**)
+
+Синтаксис COM:
+
+staffVisible = iObject" Получить свойство
+>GetStaffVisible()
+iObject">SetStaffVisible Установить свойство
+(&StaffVisible)
+
+Значение свойства:
+
+TRUE " состав объекта можно посмотреть в Дереве построения,
+FALSE " состав недоступен для просмотра.
+
+Примечание:
+Свойство позволяет управлять видимостью состава макроэлемента.
+3101
+
+
+
+IMacro3DDefinition  методы
+
+Add  Добавить объект в состав макроэлемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL Add (LPDISPATCH obj);
+Синтаксис COM:
+BOOL Add (LPUNKNOWN obj);
+Входные параметры:
+
+obj " указатель на интерфейс объекта, добавляемого в 
+макроэлемент.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. В качестве входного параметра могут быть переданы следующие интерфейсы:
+▼  ksFeature,
+▼ ksEntity,
+▼ ksPart,
+▼ ksMateConstraint.
+2. Если объект еще не создан в модели, то он создастся после вызова методов
+
+ksEntity::Create или ksEntity::Update макроэлемента. Для существовавших объектов в
+этом случае будет вызван метод ksEntity::Update .
+
+3. Добавляемый объект должен принадлежать тому же компоненту, что и сам макроэле"
+мент. Он не должен принадлежать другому макроэлементу.
+
+4.  При добавлении тела в макроэлемент в макроэлемент добавляются все операции дан"
+ного тела на момент создания макроэлемента. Само тело в макроэлемент не добавляет"
+ся.
+
+ClearAllObj  Удалить все вспомогательные объекты, сохраненные 
+в макро
+Интерфейс...Синтаксис Automation:
+BOOL ClearAllObj();
+Синтаксис COM:
+3102
+
+
+
+BOOL ClearAllObj();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечания:
+Объект " это вспомогательная информация, и визуально никак не отображается. Напри"
+мер, если создать болт как макро относительно какого"нибудь объекта (например отвер"
+стие " цилиндрическая поверхность), и запомнить это отверстие в макро болта, то при
+следующем редактирование можно получить сохранённый указатель на отверстие.
+
+Destroy  Разрушить макроэлемент
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL Destroy();
+Синтаксис COM:
+BOOL Destroy();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+После вызова этого метода макроэлемент будет разрушен, а все объекты, входившие в
+его состав, станут самостоятельными.
+
+FeatureCollection  Получить массив объектов, входящих в 
+макроэлемент
+Интерфейс...Синтаксис Automation:
+LPDISPATCH FeatureCollection();
+Синтаксис COM:
+LPFEATURECOLLECTION FeatureCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksFeatureCollection или
+IFeatureCollection
+
+Примечание:
+3103
+
+
+
+1. Через данную коллекцию можно добавлять только уже созданные объекты. Добавление
+новых (несозданных) объектов осуществляется при помощи метода
+ksMacro3DDefinition::Add.
+
+2. Метод ksFeatureCollection::Refresh наполняет содержимое коллекции объектами, входя"
+щими в макроэлемент. Все изменения, сделанные в коллекции, после вызова этого ме"
+тода будут потеряны.
+
+3. При добавлении объектов в коллекцию добавляемый объект должен принадлежать тому
+же компоненту, что и сам макроэлемент; он не должен принадлежать другому макроэ"
+лементу.
+
+GetCountObj  Получить количество вспомогательных объектов, 
+сохраненных в макро
+Интерфейс...Синтаксис Automation:
+long GetCountObj();
+Синтаксис COM:
+long GetCountObj();
+Возвращаемое значение:
+
+" Количество вспомогательных объектов, со"
+хранённых в макро.
+
+Примечания:
+Объект " это вспомогательная информация и визуально никак не отображается. Напри"
+мер, если создать болт как макро относительно какого"нибудь объекта (например отвер"
+стие " цилиндрическая поверхность), и запомнить это отверстие в макро болта, то при
+следующем редактирование можно получить сохранённый указатель на отверстие.
+
+GetObject  Получить указатель на вспомогательный объект, 
+сохраненный в макро по индексу
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetObject (long index);

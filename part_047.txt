@@ -1,0 +1,2532 @@
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DisableAdditionalBlockEmptyString Получить свойство
+s = (* )
+iObject.DisableAdditionalBlockEmpt
+yStrings
+iObject.DisableAdditionalBlockEmpt Установить свойство
+yStrings = (* )
+DisableAdditionalBlockEmptyString
+s
+
+2501
+
+
+
+DisableAdditionalBlockEmptyString Получить свойство
+s = (**)
+iObject.GetDisableAdditionalBlockE
+mptyStrings()
+iObject.SetDisableAdditionalBlockE Установить свойство
+mptyStrings (**)
+(DisableAdditionalBlockEmptyStrin
+gs)
+
+Синтаксис COM:
+
+iObject" Получить свойст"
+>get_DisableAdditionalBlockEmpty во
+Strings
+(&DisableAdditionalBlockEmptyStri
+ngs)
+iObject" Установить свой"
+>put_DisableAdditionalBlockEmpty ство
+Strings
+(DisableAdditionalBlockEmptyStrin
+gs)
+
+Значения свойства:
+
+TRUE " не показывать пустые строки, обрамляющие название 
+начала дополнительных блоков спецификации,
+
+FALSE " показывать пустые строки, обрамляющие название начала 
+дополнительных блоков спецификации.
+
+Примечание:
+Позволяет включать и отключать показ пустых строк, обрамляющих название начала до"
+полнительных блоков спецификации.
+
+DisableNestingBlockEmptyStrings  Запретить вывод 
+пустых строк вокруг начала вложенного блока
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DisableNestingBlockEmptyStrings = Получить свойство
+iObject.DisableNestingBlockEmptyS (* )
+trings
+iObject.DisableNestingBlockEmptyS Установить свойство
+trings = (* )
+DisableNestingBlockEmptyStrings
+2502
+
+
+
+DisableNestingBlockEmptyStrings = Получить свойство
+iObject.GetDisableNestingBlockEmp (**)
+tyStrings()
+iObject.SetDisableNestingBlockEmp Установить свойство
+tyStrings (**)
+(DisableNestingBlockEmptyStrings)
+
+Синтаксис COM:
+
+iObject" Получить свойст"
+>get_DisableNestingBlockEmptyStr во
+ings
+(&DisableNestingBlockEmptyString
+s)
+iObject" Установить свой"
+>put_DisableNestingBlockEmptyStr ство
+ings
+(DisableNestingBlockEmptyStrings)
+
+Значения свойства:
+
+TRUE " не показывать пустые строки, обрамляющие на"
+звание начала вложенных блоков спецификации,
+
+FALSE " показывать пустые строки, обрамляющие назва"
+ние начала вложенных блоков спецификации.
+
+Примечание:
+Позволяет включать и отключать показ пустых строк, обрамляющих название начала
+вложенных блоков спецификации.
+
+DrawBottomUp  Строить снизу вверх
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DrawBottomUp = Получить свойство
+iObject.DrawBottomUp (* )
+iObject.DrawBottomUp = Установить свойство
+DrawBottomUp (* )
+DrawBottomUp = Получить свойство
+iObject.GetDrawBottomUp() (**)
+iObject.SetDrawBottomUp Установить свойство
+(DrawBottomUp) (**)
+
+Синтаксис COM:
+2503
+
+
+
+iObject">get_DrawBottomUp Получить свойство
+(&DrawBottomUp)
+iObject">put_DrawBottomUp Установить свойство
+(DrawBottomUp)
+
+Значения свойства:
+
+TRUE " строить снизу вверх,
+FALSE " строить сверху вниз.
+
+Примечание:
+Позволяет управлять порядком следования разделов и объектов в них. Если значение
+свойства " TRUE, разделы располагаются в порядке, обратном указанному в стиле спе"
+цификации, и порядок сортировки объектов также становится «обратным». Такой поря"
+док расположения предписывается некоторыми СТП при заполнении спецификации,
+размещаемой на чертеже.
+
+InitialPosition  Начальная позиция
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+InitialPosition = Получить свойство
+iObject.InitialPosition (* )
+iObject.InitialPosition = Установить свойство
+InitialPosition (* )
+InitialPosition = Получить свойство
+iObject.GetInitialPosition() (**)
+iObject.SetInitialPosition Установить свойство
+(InitialPosition) (**)
+
+Синтаксис COM:
+
+iObject">get_InitialPosition Получить свойство
+(&InitialPosition)
+iObject">put_InitialPosition Установить свойство
+(InitialPosition)
+
+Примечание:
+Позволяет получить или указать номер позиции, который должен иметь первый объект
+спецификации.
+
+InsertDash  Настройка начала блока: вставлять тире
+Интерфейс...
+2504
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+InsertDash = iObject.InsertDash Получить свойство
+(* )
+
+iObject.InsertDash = InsertDash Установить свойство
+(* )
+
+InsertDash = Получить свойство
+iObject.GetInsertDash() (**)
+iObject.SetInsertDash( Установить свойство
+InsertDash ) (**)
+
+Синтаксис COM:
+
+iObject">get_InsertDash( Получить свойство
+&InsertDash )
+iObject">put_InsertDash( Установить свойство
+InsertDash )
+
+Значения свойства:
+
+TRUE " вставлять тире перед числом,
+FALSE " не вставлять тире перед числом.
+
+Примечание:
+Позволяет настроить формат номеров исполнений специфицируемого изделия (номе"
+ров исполнений, располагающихся в «шапке» спецификации).
+Настройка номеров исполнений имеет смысл только для групповых спецификаций.
+
+InsertNull  Настройка начала блока: вставлять нули 
+перед числом
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+InsertNull = iObject.InsertNull Получить свойство
+(* )
+
+iObject.InsertNull = InsertNull Установить свойство
+(* )
+
+InsertNull = Получить свойство
+iObject.GetInsertNull() (**)
+iObject.SetInsertNull (InsertNull) Установить свойство
+
+(**)
+
+Синтаксис COM:
+2505
+
+
+
+iObject">get_InsertNull Получить свойство
+(&InsertNull)
+iObject">put_InsertNull Установить свойство
+(InsertNull )
+
+Значения свойства:
+
+TRUE " вставлять нули перед числом,
+FALSE " не вставлять нули перед числом.
+
+Примечание:
+Позволяет настроить формат номеров исполнений специфицируемого изделия (номе"
+ров исполнений, располагающихся в «шапке» спецификации).
+Настройка номеров исполнений имеет смысл только для групповых спецификаций.
+
+LinkType  Режим связки сборки или чертежа со 
+спецификацией
+Интерфейс...
+Тип данных: из перечисления ksSpecificationLinkTypeEnum
+Синтаксис Automation:
+
+LinkType = iObject.LinkType Получить свойство
+(* )
+
+iObject.LinkType = LinkType Установить свойство
+(* )
+
+LinkType = iObject.GetLinkType() Получить свойство
+(**)
+
+iObject.SetLinkType (LinkType) Установить свойство
+(**)
+
+Синтаксис COM:
+
+iObject">get_LinkType Получить свойство
+(&LinkType)
+iObject">put_LinkType Установить свойство
+(LinkType)
+
+Значения свойства:
+
+slNone " информация из подключенного сборочного черте"
+жа не будет передаваться в спецификацию, однако
+чертеж будет по"прежнему подключен, и связь
+можно будет включить в любой момент,
+2506
+
+
+
+slOnlyObjects " при сохранении подключенного чертежа, в кото"
+рый внесены изменения, касающиеся специфика"
+ции (созданы или отредактированы объекты специ"
+фикации), эти изменения будут переданы в
+спецификацию.
+
+slWithPosition " после передачи изменений из чертежа в специфи"
+Calculate кацию в ней будет автоматически произведен рас"
+
+чет номеров позиций (в соответствии с последова"
+тельностью сортировки объектов), и новые номера
+позиций будут переданы в чертеж.
+
+Примечание:
+Позволяет включать и блокировать связь, подключенных друг к другу документов " спе"
+цификации и модели (сборочного чертежа), и устанавливать тип этой связи.
+
+NestingBlockTextStyleFirst  Стиль текста заголовка 
+вложенных блоков  первая строка
+Интерфейс...
+Тип данных: указатель на интерфейс ITextStyle параметров стиля текста
+Синтаксис Automation:
+
+NestingBlockTextStyleFirst = Получить свойство
+iObject.NestingBlockTextStyleFirs (* )
+t
+NestingBlockTextStyleFirst = Получить свойство
+iObject.GetNestingBlockTextStyle (**)
+First()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_NestingBlockTextStyleFirst
+(&NestingBlockTextStyleFirst)
+
+Примечание:
+
+1.  Позволяет получить параметры шрифта для отображения первой строки в названиях
+вложенных блоков разделов спецификации.
+
+2.  Свойство доступно только для чтения.
+
+NestingBlockTextStyleNext  Стиль текста заголовка 
+вложенных блоков  последующие строки
+Интерфейс...
+Тип данных: указатель на интерфейс ITextStyle параметров стиля текста
+Синтаксис Automation:
+2507
+
+
+
+NestingBlockTextStyleNext = Получить свойство
+iObject.NestingBlockTextStyleNex (* )
+t
+NestingBlockTextStyleNext = Получить свойство
+iObject.GetNestingBlockTextStyle (**)
+Next()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_NestingBlockTextStyleNext
+(&NestingBlockTextStyleNext)
+
+Примечание:
+
+1.  Позволяет получить параметры шрифта для отображения второй и последующих строк
+в многострочных названиях вложенных блоков разделов спецификации.
+
+2.  Свойство доступно только для чтения.
+
+ObjectTextStyle  Стиль текста объекта спецификации
+Интерфейс...
+Тип данных: указатель на интерфейс ITextStyle параметров стиля текста
+Синтаксис Automation:
+
+ObjectTextStyle = Получить свойство
+iObject.ObjectTextStyle (* )
+ObjectTextStyle = Получить свойство
+iObject.GetObjectTextStyle() (**)
+
+Синтаксис COM:
+
+iObject">get_ObjectTextStyle Получить свойство
+(&ObjectTextStyle)
+
+Примечание:
+
+1.  Позволяет получить параметры шрифта текстовой части объектов спецификации, отли"
+чающиеся от параметров шрифта в оформлении. Имеет смысл, если свойство
+UserTextStyle имеет значение TRUE.
+
+2.  Свойство доступно только для чтения.
+
+PerformanceBlockTextStyleFirst  Стиль текста заголовка 
+блока исполнений  первая строка
+Интерфейс...
+2508
+
+
+
+Тип данных: указатель на интерфейс ITextStyle параметров стиля текста
+Синтаксис Automation:
+
+PerformanceBlockTextStyleFirst Получить свойство
+= (* )
+iObject.PerformanceBlockTextSt
+yleFirst
+PerformanceBlockTextStyleFirst Получить свойство
+= (**)
+iObject.GetPerformanceBlockTex
+tStyleFirst()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_PerformanceBlockTextStyl
+eFirst
+(&PerformanceBlockTextStyleFir
+st)
+
+Примечание:
+
+1.  Позволяет получить параметры шрифта для отображения первой строки в названиях
+блоков исполнений спецификации.
+
+2.  Свойство доступно только для чтения.
+
+PerformanceBlockTextStyleNext  Стиль текста заголовка 
+блока исполнений  последующие строки
+Интерфейс...
+Тип данных: указатель на интерфейс ITextStyle параметров стиля текста
+Синтаксис Automation:
+
+PerformanceBlockTextStyleNext Получить свойство
+= (* )
+iObject.PerformanceBlockTextSt
+yleNext
+PerformanceBlockTextStyleNext Получить свойство
+= (**)
+iObject.GetPerformanceBlockTex
+tStyleNext()
+
+Синтаксис COM:
+2509
+
+
+
+iObject" Получить свойство
+>get_PerformanceBlockTextStyl
+eNext
+(&PerformanceBlockTextStyleNe
+xt)
+
+Примечание:
+
+1.  Позволяет получить параметры шрифта для отображения второй и последующих строк
+в многострочных названиях блоков исполнений спецификации.
+
+2.  Свойство доступно только для чтения.
+
+PerformanceCount  Количество исполнений
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+PerformanceCount = Получить свойство
+iObject.PerformanceCount (* )
+iObject.PerformanceCount = Установить свойство
+PerformanceCount (* )
+PerformanceCount = Получить свойство
+iObject.GetPerformanceCount() (**)
+iObject.SetPerformanceCount Установить свойство
+(PerformanceCount) (**)
+
+Синтаксис COM:
+
+iObject">get_PerformanceCount Получить свойство
+(&PerformanceCount)
+iObject">put_PerformanceCount Установить свойство
+(PerformanceCount)
+
+Примечание:
+Позволяет указать количество исполнений специфицируемого изделия. Введенное чи"
+сло будет влиять на доступность ячеек "Количество", на исполнение и количество самих
+этих ячеек.Имеет смысл только при настройке групповых спецификаций.
+
+PerformanceCountInBlock  Количество исполнений в 
+блоке
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+2510
+
+
+
+ PerformanceCountInBlock = Получить свойство
+Object.PerformanceCountInBlock( PVal ) (* )
+PerformanceCountInBlock = Получить свойство
+Object.GetPerformanceCountInBlock( PVal ) (**)
+
+Синтаксис COM:
+
+Object.get_PerformanceCountInBlock( PVal, Получить свойство
+&PerformanceCountInBlock )
+
+Примечание:
+Свойство доступно только для чтения.
+
+PositionUp  Настройка исполнений объектов: позиции 
+возрастают
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+PositionUp = iObject.PositionUp Получить свойство
+(* )
+
+iObject.PositionUp = PositionUp Установить свойство
+(* )
+
+PositionUp = Получить свойство
+iObject.GetPositionUp() (**)
+iObject.SetPositionUp Установить свойство
+(PositionUp) (**)
+
+Синтаксис COM:
+
+iObject">get_PositionUp Получить свойство
+(&PositionUp)
+iObject">put_PositionUp Установить свойство
+(PositionUp)
+
+Значения свойства:
+
+TRUE " позиции объектов"исполнений возрастают,
+FALSE " позиции объектов"исполнений не возрастают.
+
+Примечание:
+Позволяет указать, требуется ли в спецификации отображать возрастающие номера
+объектов, являющихся исполнениями.
+2511
+
+
+
+PredefinedTextFileName  Имя файла для вставки 
+текстовых шаблонов
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+PredefinedTextFileName = Получить свойство
+iObject.PredefinedTextFileName (* )
+iObject.PredefinedTextFileName Установить свойство
+= PredefinedTextFileName (* )
+PredefinedTextFileName = Получить свойство
+iObject.GetPredefinedTextFileNa (**)
+me()
+iObject.SetPredefinedTextFileNa Установить свойство
+me (PredefinedTextFileName) (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_PredefinedTextFileName
+(&PredefinedTextFileName)
+iObject" Установить свойство
+>put_PredefinedTextFileName
+(PredefinedTextFileName)
+
+Примечание:
+Позволяет получить\изменить полное имя файла текстовых шаблонов (*.tdp), тексты из
+которого требуется вставлять при вводе и редактировании текстовой части объектов
+спецификации.
+
+Sections  Настройки разделов
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationTuningSections коллекции настроек
+разделов спецификации
+Синтаксис Automation:
+
+Sections = iObject.Sections Получить свойство
+(* )
+
+Sections = iObject.GetSections() Получить свойство
+(**)
+
+Синтаксис COM:
+2512
+
+
+
+iObject">get_Sections Получить свойство
+(&Sections)
+
+Примечание:
+
+1.  Позволяет получить параметры настроек разделов спецификации.
+2.  Свойство доступно только для чтения.
+
+SectionTextStyleFirst  Стиль текста заголовка раздела  
+первая строка
+Интерфейс...
+Тип данных: указатель на интерфейс ITextStyle параметров стиля текста
+Синтаксис Automation:
+
+SectionTextStyleFirst = Получить свойство
+iObject.SectionTextStyleFirst (* )
+SectionTextStyleFirst = Получить свойство
+iObject.GetSectionTextStyleFirst( (**)
+)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_SectionTextStyleFirst
+(&SectionTextStyleFirst)
+
+Примечание:
+
+1.  Позволяет получить параметры шрифта для отображения первой строки в названиях
+разделов спецификации.
+
+2.  Свойство доступно только для чтения.
+
+SectionTextStyleNext  Стиль текста заголовка раздела  
+последующие строки
+Интерфейс...
+Тип данных: указатель на интерфейс ITextStyle параметров стиля текста
+Синтаксис Automation:
+
+SectionTextStyleNext = Получить свойство
+iObject.SectionTextStyleNext (* )
+2513
+
+
+
+SectionTextStyleNext = Получить свойство
+iObject.GetSectionTextStyleNext( (**)
+)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_SectionTextStyleNext
+(&SectionTextStyleNext)
+
+Примечание:
+
+1.  Позволяет получить параметры шрифта для отображения второй и последующих строк
+в многострочных названиях разделов спецификации.
+
+2.  Свойство доступно только для чтения.
+
+ShowAdditionalBlockName  Показывать имя 
+дополнительного блока
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowAdditionalBlockName = Получить свойство
+iObject.ShowAdditionalBlockNa (* )
+me
+iObject.ShowAdditionalBlockNa Установить свойство
+me = ShowAdditionalBlockName (* )
+ShowAdditionalBlockName = Получить свойство
+iObject.GetShowAdditionalBlock (**)
+Name()
+iObject.SetShowAdditionalBlock Установить свойство
+Name (**)
+(ShowAdditionalBlockName)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ShowAdditionalBlockName
+(&ShowAdditionalBlockName)
+iObject" Установить свойство
+>put_ShowAdditionalBlockName
+(ShowAdditionalBlockName)
+
+Значения свойства:
+2514
+
+
+
+TRUE " имена дополнительных блоков показываются в
+таблице спецификации,
+
+FALSE " имена дополнительных блоков не показываются
+в таблице спецификации.
+
+Примечание:
+Позволяет включать и отключать показ в таблице спецификации заголовков блоков до"
+полнительных разделов и пустых строк вокруг них.
+
+ShowEmbodimentWithoutVariables  Показывать 
+исполнения, не содержащие переменных данных
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowEmbodimentWithoutVariables = Получить свойство
+Object.ShowEmbodimentWithoutVariables (* )
+Object.ShowEmbodimentWithoutVariables = Установить свойство
+ShowEmbodimentWithoutVariables (* )
+ShowEmbodimentWithoutVariables = Получить свойство
+Object.GetShowEmbodimentWithoutVariables() (**)
+Object.SetShowEmbodimentWithoutVariables( Установить свойство
+ShowEmbodimentWithoutVariables ) (**)
+
+Синтаксис COM:
+
+Object.get_ShowEmbodimentWithoutVariables( Получить свойство
+&ShowEmbodimentWithoutVariables )
+Object.put_ShowEmbodimentWithoutVariables( Установить свойство
+ShowEmbodimentWithoutVariables )
+
+ShowInfoByObjects  Выдавать информацию по 
+объектам (для исполнений более 10)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowInfoByObjects = Получить свойство
+iObject.ShowInfoByObjects (* )
+iObject.ShowInfoByObjects = Установить свойство
+ShowInfoByObjects (* )
+2515
+
+
+
+ShowInfoByObjects = Получить свойство
+iObject.GetShowInfoByObjects() (**)
+iObject.SetShowInfoByObjects Установить свойство
+(ShowInfoByObjects) (**)
+
+Синтаксис COM:
+
+iObject">get_ShowInfoByObjects Получить свойство
+(&ShowInfoByObjects )
+iObject" Установить свойство
+>put_ShowInfoByObjects
+(ShowInfoByObjects)
+
+Значения свойства:
+
+TRUE " выдавать информацию по объектам,
+FALSE " выдавать информацию блоками.
+
+Примечание:
+Позволяет выбрать способ отображения информации.
+Свойство имеет смысл, если число исполнений, введенное в общих настройках специ"
+фикации, больше, чем количество колонок бланка спецификации, предназначенное для
+ввода количества на исполнение, становятся доступны выбора способа отображения ин"
+формации.
+
+ShowListCountIsSameFormat  Отображать количество 
+листов одинакового формата
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowListCountIsSameFormat = Получить свойство
+Object.ShowListCountIsSameFor (* )
+mat
+Object.ShowListCountIsSameFor Установить свойство
+mat = (* )
+ShowListCountIsSameFormat
+ShowListCountIsSameFormat = Получить свойство
+Object.GetShowListCountIsSame (**)
+Format()
+Object.SetShowListCountIsSame Установить свойство
+Format( (**)
+ShowListCountIsSameFormat )
+
+Синтаксис COM:
+2516
+
+
+
+Object.get_ShowListCountIsSam Получить свойство
+eFormat(
+&ShowListCountIsSameFormat )
+Object.put_ShowListCountIsSam Установить свойство
+eFormat(
+ShowListCountIsSameFormat )
+
+ShowNestingBlockName  Показывать имя вложенного 
+блока
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowNestingBlockName = Получить свойство
+iObject.ShowNestingBlockName (* )
+iObject.ShowNestingBlockName Установить свойство
+= ShowNestingBlockName (* )
+ShowNestingBlockName = Получить свойство
+iObject.GetShowNestingBlockNa (**)
+me()
+iObject.SetShowNestingBlockNa Установить свойство
+me (ShowNestingBlockName) (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ShowNestingBlockName
+(&ShowNestingBlockName)
+iObject" Установить свойство
+>put_ShowNestingBlockName
+(ShowNestingBlockName)
+
+Значения свойства:
+
+TRUE " имена вложенных блоков показываются в табли"
+це спецификации,
+
+FALSE " имена вложенных блоков не показываются в та"
+блице спецификации.
+
+Примечание:
+Позволяет включать и отключать показ в таблице спецификации заголовков блоков вло"
+женных разделов и пустых строк вокруг них.
+2517
+
+
+
+ShowPerformanceBlockName  Показывать имя блока 
+исполнений
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowPerformanceBlockName = Получить свойство
+iObject.ShowPerformanceBlock (* )
+Name
+iObject.ShowPerformanceBlock Установить свойство
+Name = (* )
+ShowPerformanceBlockName
+ShowPerformanceBlockName = Получить свойство
+iObject.GetShowPerformanceBlo (**)
+ckName()
+iObject.SetShowPerformanceBlo Установить свойство
+ckName (**)
+(ShowPerformanceBlockName)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ShowPerformanceBlockNa
+me
+(&ShowPerformanceBlockName
+)
+iObject" Установить свойство
+>put_ShowPerformanceBlockNa
+me
+(ShowPerformanceBlockName)
+
+Значения свойства:
+
+TRUE " имена блоков исполнений показываются в та"
+блице спецификации,
+
+FALSE " имена блоков исполнений не показываются в та"
+блице спецификации.
+
+Примечание:
+Позволяет включать и отключать показ в таблице спецификации заголовков блоков ис"
+полнений и пустых строк вокруг них.
+2518
+
+
+
+ShowPerformanceFull  Обозначение исполнения 
+показывать полностью
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowPerformanceFull = Получить свойство
+iObject.ShowPerformanceFull (* )
+iObject.ShowPerformanceFull = Установить свойство
+ShowPerformanceFull (* )
+ShowPerformanceFull = Получить свойство
+iObject.GetShowPerformanceFull (**)
+()
+iObject.SetShowPerformanceFull Установить свойство
+(ShowPerformanceFull) (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ShowPerformanceFull
+(&ShowPerformanceFull)
+iObject" Установить свойство
+>put_ShowPerformanceFull
+(ShowPerformanceFull)
+
+Значения свойства:
+
+TRUE " обозначение исполнения показывать полностью,
+FALSE " показывать только номер.
+
+Примечание:
+Позволяет определить вариант отображения обозначений объектов"исполнений.
+
+ShowSectionName  Режим отображения заголовков 
+разделов
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowSectionName = Получить свойство
+iObject.ShowSectionName (* )
+iObject.ShowSectionName = Установить свойство
+ShowSectionName (* )
+2519
+
+
+
+ShowSectionName = Получить свойство
+iObject.GetShowSectionName() (**)
+iObject.SetShowSectionName Установить свойство
+(ShowSectionName) (**)
+
+Синтаксис COM:
+
+iObject">get_ShowSectionName Получить свойство
+(&ShowSectionName)
+iObject">put_ShowSectionName Установить свойство
+(ShowSectionName)
+
+Значения свойства:
+
+TRUE " заголовки разделов показываются в таблице спе"
+цификации,
+
+FALSE " заголовки разделов не показываются в таблице
+спецификации.
+
+Примечание:
+Позволяет включить или отключить показ в таблице спецификации заголовков разделов
+и пустых строк. Если значение свойства " FALSE, объекты показываются в таблице спе"
+цификации непрерывным списком. При этом порядок их сортировки сохраняется (в том
+числе учитывается принадлежность объектов к разным разделам). На отображение ре"
+зервных строк значение этого свойства не влияет.
+
+SupportPerformance  Поддержка исполнений в 
+спецификации
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SupportPerformance = Получить свойство
+iObject.SupportPerformance (* )
+iObject.SupportPerformance = Установить свойство
+SupportPerformance (* )
+SupportPerformance = Получить свойство
+iObject.GetSupportPerformance( (**)
+)
+iObject.SetSupportPerformance Установить свойство
+(SupportPerformance) (**)
+
+Синтаксис COM:
+2520
+
+
+
+iObject" Получить свойство
+>get_SupportPerformance
+(&SupportPerformance)
+iObject" Установить свойство
+>put_SupportPerformance
+(SupportPerformance)
+
+Значения свойства:
+
+TRUE " исполнения поддерживаются в спецификации,
+FALSE " исполнения не поддерживаются в спецификации.
+
+Примечание:
+Позволяет определить требуется ли в спецификации создавать объекты"исполнения.
+
+UseAdditionalBlocks  Использовать блоки 
+дополнительных разделов
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseAdditionalBlocks = Получить свойство
+iObject.UseAdditionalBlocks (* )
+iObject.UseAdditionalBlocks = Установить свойство
+UseAdditionalBlocks (* )
+UseAdditionalBlocks = Получить свойство
+iObject.GetUseAdditionalBlocks( (**)
+)
+iObject.SetUseAdditionalBlocks Установить свойство
+(UseAdditionalBlocks) (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_UseAdditionalBlocks
+(&UseAdditionalBlocks)
+iObject" Установить свойство
+>put_UseAdditionalBlocks
+(UseAdditionalBlocks)
+
+Значения свойства:
+2521
+
+
+
+TRUE " использовать блоки дополнительных разделов,
+FALSE " блоки дополнительных разделов использовать"
+
+ся не будут.
+
+Примечание:
+Позволяет получить\изменить возможность использования блоков дополнительных
+разделов. Если значение свойства " TRUE, при создании объектов в спецификации до"
+ступны блоки дополнительных разделов.
+
+UserTextStyle  Стиль текста объектов спецификации 
+пользовательский
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UserTextStyle = Получить свойство
+iObject.UserTextStyle (* )
+iObject.UserTextStyle = Установить свойство
+UserTextStyle (* )
+UserTextStyle = Получить свойство
+iObject.GetUserTextStyle() (**)
+iObject.SetUserTextStyle Установить свойство
+(UserTextStyle) (**)
+
+Синтаксис COM:
+
+iObject">get_UserTextStyle Получить свойство
+(&UserTextStyle)
+iObject">put_UserTextStyle Установить свойство
+(UserTextStyle)
+
+Значения свойства:
+
+TRUE " шрифт текстовой части объектов спецификации
+задается свойством ObjectTextStyle,
+
+FALSE " шрифт текстовой части объектов спецификации
+будет таким, каким он был установлен по умолча"
+нию в таблице спецификации.
+
+Примечание:
+Позволяет определить, какой шрифт будет использоваться для отображения текстовой
+части объектов спецификации.
+2522
+
+
+
+ISpecificationTuning  методы
+
+Update  Обновить описание спецификации в 
+соответствии с внесенными в настройки изменениями
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update ([out, retval] VARIANT_BOOL* pVal);
+Возвращаемое значение:
+
+TRUE " обновление прошло успешно,
+FALSE " обновить настройки не удалось.
+
+Примечание:
+Все изменения, сделанные в интерфейсах настроек спецификации, вступят в силу толь"
+ко после вызова этого метода.
+
+Интерфейс ISpecificationTuningSection
+Настройка раздела спецификации.
+Иерархия:
+IKompasAPIObject
+
+ISpecificationTuningSection
+Описание:
+Данный интерфейс позволяет получить доступ к настройкам раздела спецификации.
+Если настройки взяты у стиля спецификации, то они являются умолчательными для дан"
+ного стиля и изменять их нельзя. В этом случае данный интерфейс отражает содержи"
+мое настроек стиля в библиотеке стилей на момент получения и в дальнейшем не отсле"
+живает изменений в библиотеке стилей.
+Если настройки взяты у описания спецификации, то они отображают и отслеживают те"
+кущее состояние описания спецификации. Эти настройки можно изменять и они могут
+отличаться от умолчательных настроек стиля спецификации, по которому создано дан"
+ное описание спецификации.
+После изменения настроек для того, чтобы эти изменения реально отобразились в доку"
+менте, необходимо вызвать метод ISpecificationTuning::Update.
+Примечание:
+Данный интерфейс можно получить у коллекции ISpecificationTuningSections.
+2523
+
+
+
+ISpecificationTuningSection  свойства
+
+AdditionalBlocks  Блоки вложенных разделов
+Интерфейс...
+Тип данных: указатель на интерфейс IAdditionalBlockTunings коллекции настроек блоков
+вложенных разделов спецификации
+Синтаксис Automation:
+
+AdditionalBlocks = Получить свойство
+iObject.AdditionalBlocks (* )
+AdditionalBlocks = Получить свойство
+iObject.GetAdditionalBlocks() (**)
+
+Синтаксис COM:
+
+iObject">get_AdditionalBlocks Получить свойство
+(&AdditionalBlocks)
+
+Примечание:
+
+1.  Позволяет получить параметры настроек блоков вложенных разделов спецификации.
+2.  Свойство доступно только для чтения.
+
+AttachGeometry  Подключать геометрию
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AttachGeometry = Получить свойство
+iObject.AttachGeometry (* )
+iObject.AttachGeometry = Установить свойство
+AttachGeometry (* )
+AttachGeometry = Получить свойство
+iObject.GetAttachGeometry() (**)
+iObject.SetAttachGeometry Установить свойство
+(AttachGeometry) (**)
+
+Синтаксис COM:
+
+iObject">get_AttachGeometry Получить свойство
+(&AttachGeometry)
+iObject">put_AttachGeometry Установить свойство
+(AttachGeometry)
+2524
+
+
+
+Значения свойства:
+
+TRUE " объектам раздела можно поставить в соответствие
+геометрические объекты графического документа,
+
+FALSE " объектам раздела нельзя поставить в соответст"
+вие геометрические объекты графического доку"
+мента.
+
+Примечание:
+Позволяет включать и отключать подключение геометрии к объектам раздела.
+
+FirstOnSheet  Размещать на новом листе
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+FirstOnSheet = Получить свойство
+iObject.FirstOnSheet (* )
+FirstOnSheet = Установить свойство
+iObject.FirstOnSheet (* )
+FirstOnSheet = Получить свойство
+iObject.GetFirstOnSheet() (**)
+iObject.SetFirstOnSheet Установить свойство
+(FirstOnSheet) (**)
+
+Синтаксис COM:
+
+iObject">get_FirstOnSheet Получить свойство
+(&FirstOnSheet)
+iObject">put_FirstOnSheet Установить свойство
+(FirstOnSheet)
+
+Значения свойства:
+
+TRUE " располагать раздел на новой странице,
+FALSE " располагать раздел сразу за предыдущим.
+
+Примечание:
+Позволяет включать и отключать размещение раздела на новом листе спецификации.
+
+IndependentPosition  Независимая нумерация позиций
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+2525
+
+
+
+IndependentPosition = Получить свойство
+Object.IndependentPosition (* )
+Object.IndependentPosition = Установить свойство
+IndependentPosition (* )
+IndependentPosition = Получить свойство
+Object.GetIndependentPosition() (**)
+Object.SetIndependentPosition( Установить свойство
+IndependentPosition ) (**)
+
+Синтаксис COM:
+
+Object.get_IndependentPosition( Получить свойство
+&IndependentPosition )
+Object.put_IndependentPosition( Установить свойство
+IndependentPosition )
+
+MarkOn  Марка. Включена простановка позиций c 
+префиксом
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+MarkOn = Object.MarkOn Получить свойство (* )
+Object.MarkOn = MarkOn Установить свойство (* )
+MarkOn = Object.GetMarkOn() Получить свойство (**)
+Object.SetMarkOn( MarkOn ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_MarkOn( &MarkOn ) Получить свойство
+Object.put_MarkOn(  MarkOn ) Установить свойство
+
+Mark  Марка. Текст префикса
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Mark = Object.Mark Получить свойство (* )
+Object.Mark = Mark Установить свойство (* )
+Mark = Object.GetMark() Получить свойство (**)
+Object.SetMark( Mark ) Установить свойство (**)
+
+ Синтаксис COM:
+2526
+
+
+
+Object.get_Mark( &Mark ) Получить свойство
+Object.put_Mark(  Mark ) Установить свойство
+
+Number  Номер раздела
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Number = iObject.Number Получить свойство (* )
+Number = iObject.GetNumber() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Number Получить свойство
+(&Number)
+
+Примечание:
+
+1.  Данное свойство определяет уникальный номер раздела в данном стиле спецификации.
+2.  Свойство доступно только для чтения.
+
+PutPosition  Проставлять позиции
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+PutPosition = iObject.PutPosition Получить свойство
+(* )
+
+iObject.PutPosition = PutPosition Установить свойство
+(* )
+
+PutPosition = Получить свойство
+iObject.GetPutPosition() (**)
+iObject.SetPutPosition Установить свойство
+(PutPosition) (**)
+
+Синтаксис COM:
+
+iObject">get_PutPosition Получить свойство
+(&PutPosition)
+iObject">put_PutPosition Установить свойство
+(PutPosition)
+
+Значения свойства:
+2527
+
+
+
+TRUE " в разделе возможен автоматический расчет номе"
+ров позиций,
+
+FALSE " в разделе невозможен автоматический расчет но"
+меров позиций.
+
+Примечание:
+Позволяет включать и отключать простановку позиций в разделе. Следует понимать, что
+отключение простановки позиций отличается от запрета ввода данных в колонку "Пози"
+ция". Если в разделе включена простановка позиций, но запрещен ввод данных в колонку
+"Позиция", то объектам этого раздела при автоматической простановке позиций будут
+присвоены номера позиций. И хотя эти номера не будут видны в таблице (из"за запрета
+на ввод данных в колонку "Позиция"), нумерация объектов в следующем разделе будет
+производиться с их учетом.
+Если в разделе отключена простановка позиций и разрешен ввод данных в колонку "По"
+зиция", то после автоматической простановки позиций номера позиций в этом разделе
+не изменятся, а номера позиций в следующем разделе не будут учитывать введенные
+вручную номера позиций в данном разделе. Обычно запрет ввода данных в колонку "По"
+зиция" какого"либо раздела сочетают с отключением простановки позиций в этом раз"
+деле (пример такого раздела — Документация). И наоборот, если данные в колонку "По"
+зиция" раздела вводить можно, то в этом разделе включают автоматическую
+простановку позиций.
+
+ReserveStringCount  Число резервных строк и позиций
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ReserveStringCount = Получить свойство
+iObject.ReserveStringCount (* )
+iObject.ReserveStringCount = Установить свойство
+ReserveStringCount (* )
+ReserveStringCount = Получить свойство
+iObject.GetReserveStringCount() (**)
+iObject.SetReserveStringCount Установить свойство
+(ReserveStringCount) (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ReserveStringCount
+(&ReserveStringCount)
+iObject" Установить свойство
+>put_ReserveStringCount
+(ReserveStringCount)
+2528
+
+
+
+Примечание:
+Позволяет получить или указать количество резервных строк в разделе.
+
+ShowDocumentCode  Показывать код документа
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowDocumentCode = Получить свойство
+Object.ShowDocumentCode (* )
+Object.ShowDocumentCode = Установить свойство
+ShowDocumentCode (* )
+ShowShowDocumentCode = Получить свойство
+Object.GetShowDocumentCode( (**)
+)
+Object.SetShowDocumentCode( Установить свойство
+ShowDocumentCode ) (**)
+
+ Синтаксис COM:
+
+Object.get_ShowDocumentCode Получить свойство
+( &ShowDocumentCode )
+Object.put_ShowDocumentCode Установить свойство
+(  ShowDocumentCode )
+
+SortObjects  Сортировать объекты
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SortObjects = Получить свойство
+iObject.SortObjects (* )
+iObject.SortObjects = Установить свойство
+SortObjects (* )
+SortObjects = Получить свойство
+iObject.GetSortObjects() (**)
+iObject.SetSortObjects Установить свойство
+(SortObjects) (**)
+
+Синтаксис COM:
+
+iObject">get_SortObjects Получить свойство
+(&SortObjects)
+2529
+
+
+
+iObject">put_SortObjects Установить свойство
+(SortObjects)
+
+Значения свойства:
+
+TRUE " сортировка объектов внутри раздела производит"
+ся по предусмотренным стандартом правилам,
+
+FALSE " в разделе сортировка объектов не производится.
+
+Примечание:
+Позволяет включать и отключать автоматическую сортировку объектов в разделе. Если
+сортировка выключена, объекты будут добавляться в конец раздела и их можно будет
+перемещать вверх или вниз.
+
+SubsectionOn  Деление на подразделы включено
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SubsectionOn = Получить свойство
+iObject.SubsectionOn (* )
+iObject.SubsectionOn = Установить свойство
+SubsectionOn (* )
+SubsectionOn = Получить свойство
+iObject.GetSubsectionOn() (**)
+iObject.SetSubsectionOn Установить свойство
+(SubsectionOn) (**)
+
+Синтаксис COM:
+
+iObject">get_SubsectionOn Получить свойство
+(&SubsectionOn)
+iObject">put_SubsectionOn Установить свойство
+(SubsectionOn)
+
+Значения свойства:
+
+TRUE " деление на подразделы включено,
+FALSE " деление на подразделы выключено.
+
+Примечание:
+Позволяет включать и отключать деление раздела на подразделы. Если деление на по"
+дразделы включено, объекты внутри раздела будут располагаться с учетом порядка по"
+драздела. Подразделы располагаются в разделе в порядке возрастания номеров.
+2530
+
+
+
+Subsections  Подразделы
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationSubsections подразделов специфика"
+ции
+Синтаксис Automation:
+
+Subsections = Получить свойство
+iObject.Subsections (* )
+Subsections = Получить свойство
+iObject.GetSubsections() (**)
+
+Синтаксис COM:
+
+iObject">get_Subsections Получить свойство
+(&Subsections)
+
+Примечание:
+
+1.  Позволяет получить коллекцию подразделов данного раздела спецификации.
+2.  Свойство доступно только для чтения.
+
+UseAdditionalBlocks  Использовать блоки вложенных 
+разделов
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseAdditionalBlocks = Получить свойство
+iObject.UseAdditionalBlocks (* )
+iObject.UseAdditionalBlocks = Установить свойство
+UseAdditionalBlocks (* )
+UseAdditionalBlocks = Получить свойство
+iObject.GetUseAdditionalBlocks( (**)
+)
+iObject.SetUseAdditionalBlocks Установить свойство
+(UseAdditionalBlocks) (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_UseAdditionalBlocks
+(&UseAdditionalBlocks)
+iObject" Установить свойство
+>put_UseAdditionalBlocks
+(UseAdditionalBlocks)
+2531
+
+
+
+Значения свойства:
+
+TRUE " использовать блоки вложенных разделов,
+FALSE " блоки вложенных разделов использоваться не бу"
+
+дут.
+
+Примечание:
+Позволяет получить или указать количество резервных строк в разделе.
+
+Интерфейс IAdditionalBlockSectionTunings
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_ADDITION_TUNING_BLOCK.htm
+Интерфейс коллекции настроек разделов блока дополнительных (вложенных)
+разделов.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IAdditionalBlockSectionTunings
+
+Описание:
+Управляет массивом интерфейсов IAdditionalBlockSectionTuning. В коллекции разделов
+доступны все разделы, определенные в стиле спецификации. Настройки разделов, ис"
+пользующихся в блоках, полностью совпадают с настройками соответствующих обыч"
+ных разделов.
+Примечание:
+Данный интерфейс может быть получен от интерфейса настройки блока дополнитель"
+ных (вложенных) разделов IAdditionalBlockTuning с помощью свойства
+IAdditionalBlockTuning::Sections
+
+IAdditionalBlockSectionTunings  свойства
+
+Item  Настройки раздела блока дополнительных 
+(вложенных) разделов, заданные по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IAdditionalBlockSectionTuning настроек раздела
+блока дополнительных (вложенных) разделов
+Синтаксис Automation:
+
+BlockTuning = iObject.Item Получить свойство
+(Index) (* )
+BlockTuning = iObject.GetItem Получить свойство
+(Index) (**)
+2532
+
+
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&BlockTuning )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IAdditionalBlockStyles
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_ADDITION_TUNING_BLOCK.htm
+Интерфейс коллекции стилей блоков дополнительных (вложенных) разделов.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IAdditionalBlockStyles
+
+Описание:
+Управляет массивом интерфейсов IAdditionalBlockStyle.
+Блоки разделов бывают вложенными и дополнительными. Вложенные блоки разделов
+располагаются внутри раздела, после всех объектов этого раздела.
+Дополнительные блоки разделов располагаются в конце спецификации, после всех ее
+разделов.
+Примечание:
+Данный интерфейс может быть получен от интерфейса стиля спецификации
+ISpecificationStyle с помощью свойства ISpecificationStyle::AdditionalBlocks.
+
+IAdditionalBlockStyles  свойства
+
+Item  Стиль блока дополнительных (вложенных) 
+разделов спецификации, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IAdditionalBlockStyle стиля блока дополнительных
+(вложенных) разделов спецификации
+Синтаксис Automation:
+
+Block = iObject.Item (Index) Получить свойство
+(* )
+
+Block = iObject.GetItem (Index) Получить свойство
+(**)
+
+Синтаксис COM:
+2533
+
+
+
+iObject">get_Item (Index, Получить свойство
+&Block)
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IAdditionalBlockTunings
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_ADDITION_BLOCK.htm
+Интерфейс коллекции настроек блоков дополнительных (вложенных) разде
+лов.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IAdditionalBlockTunings
+
+Описание:
+Управляет массивом интерфейсов IAdditionalBlockTuning.
+Примечание:
+
+1.  Интерфейс настроек блоков дополнительных разделов можно получить от интерфейса
+настроек спецификации ISpecificationTuning с помощью свойства
+ISpecificationTuning::AdditionalBlocks.
+
+2.  Интерфейс коллекции настроек блоков вложенных разделов можно получить от интер"
+фейса настроек раздела спецификации ISpecificationTuningSection  с помощью свойства
+ISpecificationTuningSection::AdditionalBlocks.
+
+IAdditionalBlockTunings  свойства
+
+Item  Настройки блока дополнительных (вложенных) 
+разделов, заданные по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IAdditionalBlockTuning настроек блока дополнитель"
+ных (вложенных) разделов
+Синтаксис Automation:
+
+BlockTuning = iObject.Item Получить свойство
+(Index) (* )
+BlockTuning = iObject.GetItem( Получить свойство
+Index ) (**)
+
+Синтаксис COM:
+2534
+
+
+
+iObject">get_Item( Index, Получить свойство
+&BlockTuning )
+
+Примечание:
+Свойство доступно только для чтения
+
+Интерфейс IAttachedDocuments
+Интерфейс коллекции документов, присоединенных к объекту спецификации.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IAttachedDocuments
+
+Описание:
+Объект спецификации можно связать с документами КОМПАС"3D. Эта связь является
+двусторонней и ассоциативной и позволяет передавать данные об объекте специфика"
+ции в подключенный документ или наоборот, данные из документа в соответствующий
+ему объект спецификации. Если к объекту спецификации подключено несколько доку"
+ментов, то в объект передаются данные из первого подключенного документа. Если от"
+редактировать подключенную к объекту модель или данные в основной надписи под"
+ключенного документа, а также изменить его формат, то при сохранении этого
+документа будет выдан запрос на подтверждение передачи данных в спецификацию. По"
+сле изменения наименования или обозначения объекта в документе"спецификации но"
+вые данные могут быть переданы в основную надпись подключенного документа.
+Примечание:
+
+1.  Управляет массивом интерфейсов IAttachedDocument.
+2.  Данный интерфейс можно получить у интерфейса объекта спецификации
+
+ISpecificationObject с помощью свойства ISpecificationObject::AttachedDocuments.
+
+IAttachedDocuments  свойства
+
+Item  Присоединенный документ, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IAttachedDocument присоединенного документа
+Синтаксис Automation:
+
+ColumnItem = iObject.Item( Получить свойство
+Index ) (* )
+ColumnItem = iObject.GetItem( Получить свойство
+Index ) (**)
+
+Синтаксис COM:
+2535
+
+
+
+iObject">get_Item( Index, Получить свойство
+&ColumnItem )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IAttachedDocuments  методы
+
+Add  Добавить новый документ к объекту 
+спецификации и в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( BSTR Name, BOOL transmit );
+Синтаксис COM:
+HRESULT Add ( [in] BSTR Name,
+[in] BOOL transmit,
+[out, retval] IAttachedDocument** Result );
+Входные параметры:
+
+Name     " полное имя файла присоединяемого до"
+кумента,
+
+transmit " передавать изменения в документ.
+
+Возвращаемое значение:
+
+" указатель на интерфейс IAttachedDocument присоеди"
+ненного документа.
+
+Примечание:
+
+1.  После вызова метода Add документ будет добавлен в коллекцию.
+2.  Для удаления документа из коллекции используется метод IAttachedDocument::Delete 
+3.  После добавления нужных документов вызвать метод ISpecificationObject::Update.
+4.  В результате подключения документа в соответствующие колонки объекта специфика"
+
+ции автоматически будут переданы наименование и обозначение из модели или основ"
+ной надписи чертежа, а также обозначение формата, на котором выполнен подключен"
+ный чертеж.
+
+5.  Информация из подключенного документа может передаваться не только в колонки
+бланка спецификации, но и в дополнительные колонки. Например, в дополнительную
+колонку объекта может быть автоматически передана масса детали из модели или из
+соответствующей графы основной надписи.
+2536
+
+
+
+AddDocument  Добавляет новый документ к объекту 
+спецификации и в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddDocument( BSTR Name, BOOL Transmit, BOOL FillText, BSTR 
+Синтаксис COM:
+HRESULT AddDocument( BSTR Name, BOOL Transmit, BOOL FillText, BSTR 
+** Result);
+Возвращаемое значение:
+
+" указатель на интерфейс IAttachedDocument
+присоединенного документа.
+
+Входные параметры:
+
+Name  " полное имя присоединяемого документа,
+Transmit " передавать изменения в документ,
+FillText " взять данные из документа в объект 
+
+спецификации,
+EmbodimentMarking " имя подключаемого исполнения.
+
+Интерфейс ISpecificationBaseObjects
+Интерфейс коллекции базовых объектов спецификации.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ISpecificationBaseObjects
+
+Описание:
+Позволяет получить список базовых объектов спецификации.
+Примечание:
+
+1.  Управляет массивом интерфейсов ISpecificationBaseObject.
+2.  Коллекция позволяет создать новые базовые объекты спецификации. Для создания но"
+
+вого базового объекта спецификации используется метод Add. После вызова метода Add
+объект будет добавлен в коллекцию, но в документе не появится.
+
+3.  Для отображения объекта в документе нужно задать его параметры и вызвать метод
+ISpecificationObject::Update.
+
+4.  Данный интерфейс можно получить от интерфейса описания спецификации
+ISpecificationDescription с помощью свойства ISpecificationDescription::BaseObjects.
+2537
+
+
+
+ISpecificationBaseObjects  свойства
+
+Item  Базовый объект спецификации, заданный по 
+индексу, по уникальному идентификатору или по 
+уникальному номеру
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecificationBaseObject объекта спецификации
+Синтаксис Automation:
+
+spcObj = iObject.Item (Index) Получить свойство (* )
+spcObj = iObject.GetItem (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&spcObj)
+
+Примечание:
+
+1.  С помощью данного свойства можно получить базовый объект спецификации, задан"
+ный по индексу, по уникальному идентификатору IKompasAPIObject::Reference или уни"
+кальному номеру ISpecificationObject::UniqueNumber. 
+
+2.  Свойство доступно только для чтения.
+
+ISpecificationBaseObjects  методы
+
+Add  Добавить новый базовый объект спецификации в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add (long Section, double AttrNumb);
+Синтаксис COM:
+HRESULT Add ([in] long Section,
+[in] double AttrNumb,
+[out, retval] ISpecificationBaseObject** Result);
+Входные параметры:
+
+Section " номер раздела,
+AttrNumb " номер атрибута.
+
+Возвращаемое значение:
+2538
+
+
+
+" Указатель на интерфейс
+ISpecificationBaseObject базового объекта спе"
+цификации.
+
+Примечание:
+
+1. После вызова метода Add объект будет добавлен в коллекцию, но в документе не поя"
+вится. Для отображения объекта в документе нужно задать его параметры и вызвать ме"
+тод ISpecificationObject::Update.
+
+2. Объект c номером раздела 0.0. добавить нельзя. Нужно добавлять объект спецификации
+в существующий раздел. Затем с помощью ISpecificationObject::AdditionalSection перено"
+сить в дополнительный раздел.
+
+CopySpecificationObject  Копирование объекта 
+спецификации
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH CopySpecificationObject( ISpecificationBaseObject * SpcObj, VARIANT
+Geometry );
+Синтаксис COM:
+HRESULT CopySpecificationObject( ISpecificationBaseObject * SpcObj, VARIANT Geometry,
+ISpecificationBaseObject ** Result );
+Возвращаемое значение:
+
+" Указатель на интерфейс скопированного объекта.
+
+Входные параметры:
+
+SpcObj " копируемый объект,
+Geometry " геометрия объекта спецификации (Объект
+
+VT_DISPATCH или список объектов VT_ARRAY
+| VT_DISPATCH).
+
+GetSpecificationObjectsForGeom  По геометрии получить 
+массив объектов спецификации в виде SAFEARRAY'я 
+DISPATCH  VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetSpecificationObjectsForGeom( VARIANT PGeom,
+VARIANT_BOOL Equal,
+2539
+
+
+
+long SectionNumb,
+double AttrNumb );
+Синтаксис COM:
+HRESULT GetSpecificationObjectsForGeom( [in]VARIANT PGeom,
+[in]VARIANT_BOOL Equal,
+[in] long SectionNumb,
+[in] double AttrNumb,
+[out, retval] VARIANT* PVal );
+Входные параметры:
+
+PGeom " Массив SafeArray типа VT_ARRAY | VT_DISPATCH объектов 
+геометрии,
+
+Equal " флаг типа BOOL
+ TRUE " полное совпадение геометрии,
+ FALSE " частичное совпадение геометрии,
+
+SectionNumb " номер раздела объектов СП,
+AttrNumb " номер типа атрибута объектов СП или 0.
+
+Возвращаемое значение:
+
+" Массив SafeArray типа VT_ARRAY | VT_DISPATCH 
+объектов спецификации.
+
+Примечание:
+
+1.  По присланной геометрии получить массив базовых объектов спецификации, содержа"
+щих эту геометрию. У базового объекта СП может быть установлена геометрия, которая
+ассоциируется с данным объектом.
+Для 2D документа это массив IDrawingObject.
+Для 3D документа это массив объектов:
+
+▼ IPart7( может быть один компонент),
+▼ IBody7 ( тела верхнего уровня сборки),
+▼ IPositionLeader (обозначения позиций верхнего уровня сборки).
+
+Получить массив объектов можно всегда.
+2.  Если геометрия должна совпадать полностью, нужно передать параметр Equal=TRUE.
+3.  Поиск можно ограничить объектами определенного раздела, если указать номер разде"
+
+ла объектов.
+4.  Поиск можно ограничить объектами определенного типа атрибута.
+
+Интерфейс ISpecificationColumnItems
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_COLUMN_DIALOG.htm
+Интерфейс коллекции элементов колонки объекта спецификации.
+2540
+
+
+
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ISpecificationColumnItems
+
+Описание:
+Количество элементов колонки зависит от типа колонки.
+Колонки типа Целое, Вещественное или Строка имеют только один элемент соответству"
+ющего типа.
+Колонка типа запись (ksValueTypeRecord см. ISpecificationColumn::ValueType) может
+иметь более одного элемента.
+Если базовый объект спецификации создан на основе атрибута, то количество элемен"
+тов в колонке будет равно количеству колонок атрибута. Если объекту не указан тип
+атрибута, то в колонке типа запись будет один элемент с типом значения " строка.
+Примечание:
+
+1.  Управляет массивом интерфейсов ISpecificationColumnItem.
+2.  Данный интерфейс можно получить от интерфейса колонки объекта спецификации
+
+ISpecificationColumn с помощью свойства ISpecificationColumn::ColumnItems.
+
+ISpecificationColumnItems  свойства
+
+Item  Элемент колонки объекта спецификации, 
+заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationColumnItem элемента колонки объекта
+спецификации
+Синтаксис Automation:
+
+ColumnItem = iObject.Item( Получить свойство
+Index ) (* )
+ColumnItem = iObject.GetItem( Получить свойство
+Index ) (**)
+
+Синтаксис COM:
+
+iObject">get_Item( Index, Получить свойство
+&ColumnItem )
+
+Примечание:
+Свойство доступно только для чтения.
+2541
+
+
+
+Интерфейс ISpecificationColumns
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_COLUMN_DIALOG.htm
+Интерфейс коллекции колонок объекта спецификации.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ISpecificationColumns
+
+Описание:
+Различаются основные и дополнительные колонки объектов спецификации. Основные
+колонки отображаются в таблице спецификации и выводятся на печать. Дополнитель"
+ные колонки содержат сведения, дополняющие информацию, включаемую в стандар"
+тный бланк. В таблице спецификации такие колонки не видны и на печать не выводятся.
+Количество основных колонок может не соответствовать количеству колонок в таблице
+спецификации. Это вызвано наличием исполнений для групповых спецификаций.
+Примечание:
+
+1.  Управляет массивом интерфейсов ISpecificationColumn.
+2.  Интерфейс коллекции основных колонок объекта спецификации может быть получен от
+
+интерфейса ISpecificationObject с помощью свойства ISpecificationObject::Columns.
+3.  Интерфейс коллекции дополнительных колонок может быть получен от интерфейса
+
+ISpecificationObject с помощью свойства ISpecificationObject::AdditionalColumns.
+
+ISpecificationColumns  свойства
+
+Item  Колонка объекта спецификации, заданная по 
+индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecificationColumn колонки объекта специфика"
+ции
+Синтаксис Automation:
+
+Column = iObject.Item( Index ) Получить свойство (* )
+Column = iObject.GetItem( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item( Index, Получить свойство
+&Column )
+
+Примечание:
+Свойство доступно только для чтения.
+2542
+
+
+
+Column  Колонка объекта спецификации, заданная по 
+типу, номеру и блоку
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationColumn колонки объекта специфика"
+ции
+Синтаксис Automation:
+
+Column = iObject.Column( type, Получить свойство
+ColumnNumber, BlockNumber ) (* )
+Column = iObject.GetColumn( Получить свойство
+type, ColumnNumber, (**)
+BlockNumber )
+
+Синтаксис COM:
+
+iObject">get_Column( type, Получить свойство
+ColumnNumber, BlockNumber,
+&Column )
+
+Входные параметры:
+
+type " тип колонки объекта спецификации из 
+ksSpecificationColumnTypeEnum,
+
+ColumnNumber " номер колонки данного типа,
+BlockNumber  " номер блока.
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс ISpecificationColumnStyles
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_COLUMN_DIALOG.htm
+Интерфейс коллекции стилей колонок спецификации.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ISpecificationColumnStyles
+
+Описание:
+Управляет массивом интерфейсов ISpecificationColumnStyle. Различаются основные и
+дополнительные колонки объектов спецификации.
+Примечание:
+2543
+
+
+
+1.  Чтобы получить коллекцию стилей основных колонок спецификации, используется
+свойство интерфейса стиля спецификации ISpecificationStyle ISpecificationStyle::Columns
+или свойство интерфейса стиля раздела спецификации ISpecificationSectionStyle.
+ISpecificationSectionStyle::Columns.
+
+2.  Чтобы получить коллекцию стилей дополнительных колонок спецификации, использу"
+ется свойство интерфейса стиля спецификации ISpecificationStyle
+ISpecificationStyle::AdditionalColumns или свойство интерфейса стиля раздела специфи"
+кации ISpecificationSectionStyle. ISpecificationSectionStyle::AdditionalColumns.
+
+ISpecificationColumnStyles  свойства
+
+Item  Стиль колонки спецификации, заданный по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationColumnStyle стиля колонки специфи"
+кации
+Синтаксис Automation:
+
+Column = iObject.Item (Index) Получить свойство (* )
+Column = iObject.GetItem (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&Column)
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс ISpecificationCommentObjects
+Справка системы КОМПАС...
+KOMPAS.chm::/Z_OBJECT_OF_SPEC.htm
+Интерфейс коллекции вспомогательных объектов спецификации.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ISpecificationCommentObjects
+
+Описание:
+Позволяет получить список вспомогательных объектов спецификации.
+Примечание:
+2544
+
+
+
+1.  Управляет массивом интерфейсов ISpecificationCommentObject.
+2.  Коллекция позволяет создать новые вспомогательные объекты спецификации. Для со"
+
+здания нового вспомогательного объекта спецификации используется метод Add. После
+вызова метода Add объект будет добавлен в коллекцию, но в документе не появится.
+
+3.  Для отображения объекта в документе нужно задать его параметры и вызвать метод
+ISpecificationObject::Update.
+
+4.  Методы Attach и Detach работают только для коллекции, взятой у базового объекта СП.
+5.  Данный интерфейс можно получить от интерфейса описания спецификации
+
+ISpecificationDescription с помощью свойства ISpecificationDescription::CommentObjects и
+от интерфейса базового объекта спецификации ISpecificationBaseObject с помощью
+свойства ISpecificationBaseObject_CommentObjects.
+
+ISpecificationCommentObjects  свойства
+
+Item  Вспомогательный объект спецификации, 
+заданный по индексу, по уникальному идентификатору 
+или по уникальному номеру
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecificationCommentObject объекта специфика"
+ции.
+Синтаксис Automation:
+
+spcObj = iObject.Item (Index) Получить свойство (* )
+spcObj = iObject.GetItem (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&spcObj)
+
+Примечание:
+
+1.  С помощью данного свойства можно получить вспомогательный объект спецификации,
+заданный по индексу, по уникальному идентификатору IKompasAPIObject::Reference или
+уникальному номеру ISpecificationObject::UniqueNumber. 
+
+2.  Свойство доступно только для чтения.
+
+ISpecificationCommentObjects  методы
+
+Add  Добавить новый вспомогательный объект 
+спецификации в коллекцию
+Интерфейс...
+Синтаксис Automation:
+2545
+
+
+
+LPDISPATCH Add (long Section);
+Синтаксис COM:
+HRESULT Add ([in] long Section,
+[out, retval] ISpecificationCommentObject** Result );
+Входные параметры:
+
+Section " номер раздела.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс
+ISpecificationCommentObject вспомогательного
+объекта спецификации.
+
+Примечание:
+После вызова метода Add объект будет добавлен в коллекцию, но в документе не поя"
+вится. Для отображения объекта в документе нужно задать его параметры и вызвать ме"
+тод ISpecificationObject::Update.
+
+Attach  Добавить вспомогательный объект 
+спецификации в коллекцию прикрепленных объектов 
+(Для базового объекта) 
+Интерфейс...
+Синтаксис Automation:
+BOOL Attach( LPDISPATCH spcObj );
+Синтаксис COM:
+HRESULT Attach ([in]ISpecificationCommentObject* spcObj,
+[out, retval] BOOL* PRes);
+Входные параметры:
+
+spcObj " указатель на интерфейс прикрепляемого вспомо"
+гательного объекта спецификации.
+
+Возвращаемое значение:
+
+TRUE  " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод работает только для коллекции взятой у базового объекта СП.
+2546
+
+
+
+CopySpecificationObject  Копирование объекта 
+спецификации
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH CopySpecificationObject( ISpecificationCommentObject * SpcObj );
+Синтаксис COM:
+HRESULT CopySpecificationObject( ISpecificationCommentObject * SpcObj,
+ISpecificationCommentObject * * Result );
+Возвращаемое значение:
+
+" Указатель на интерфейс скопированного
+объекта.
+
+Входные параметры:
+
+spcObj " копируемый объект.
+
+Detach  Удалить вспомогательный объект 
+спецификации из коллекции прикрепленных объектов 
+(Для базового объекта)
+Интерфейс...
+Синтаксис Automation:
+BOOL Detach (LPDISPATCH spcObj);
+Синтаксис COM:
+HRESULT Detach ([in]ISpecificationCommentObject* spcObj,
+[out, retval] BOOL* PRes);
+Входные параметры:
+
+spcObj " указатель на интерфейс прикрепляемого вспомога"
+тельного объекта спецификации.
+
+Возвращаемое значение:
+
+TRUE  " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод работает только для коллекции взятой у базового объекта СП.
+2547
+
+
+
+Интерфейс ISpecificationDescriptions
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_DESCRIBE_FRG.htm
+Интерфейс коллекции описаний спецификации у документа.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ISpecificationDescriptions
+
+Примечание:
+
+1.  Для документа"спецификации возможно только одно описание, и оно есть всегда (т.е.
+добавлять и удалять нельзя).
+
+2.  В текстовом документе описаний нет.
+3. Для остальных документов (чертеж, фрагмент, деталь и сборка) описаний может быть
+
+сколько угодно, в том числе и ни одного.
+4.  При добавлении нового описания оно становится текущим.
+5.  Данный интерфейс может быть получен следующими способами:
+
+▼ от интерфейса документа IKompasDocument с помощью свойства
+IKompasDocument::SpecificationDescriptions,
+
+▼ от интерфейса чертежа IDrawingDocument с помощью свойства
+IDrawingDocument::ChangeListDescriptions.
+
+ISpecificationDescriptions  свойства
+
+Active  Текущее описание
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecificationDescription описания спецификации
+Синтаксис Automation:
+
+Description = iObject.Active Получить свойство (* )
+Description = iObject.GetActive() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Active Получить свойство
+(&Description)
+
+Примечание:
+
+1.  Если в документе нет описаний спецификаций, возвращается NULL.
+2.  Свойство доступно только для чтения.
+2548
+
+
+
+ActiveFromLibStyle  Текущее описание, 
+соответствующее библиотечному стилю
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecificationDescription
+Синтаксис Automation:
+
+ActiveFromLibStyle = Получить свойство
+Object.ActiveFromLibStyle (* )
+ActiveFromLibStyle = Получить свойство
+Object.GetActiveFromLibStyle() (**)
+
+Синтаксис COM:
+
+Object.get_ActiveFromLibStyle( Получить свойство
+&ActiveFromLibStyle ))
+
+Возвращаемое значение:
+
+" если текущее описание соответствует
+своему описанию"источнику в библиоте"
+ке, то просто возвращается оно же,
+" если текущее описание не соответству"
+ет своему описанию"источнику в библио"
+теке, то возвращается новое описание,
+созданное по описанию"источнику и сде"
+ланное текущим,
+" если текущего описания нет или для те"
+кущего описания не найдено описание"
+источник (не найдена библиотека"источ"
+ник), то возвращается NULL.
+
+Примечание:
+Свойство доступно только для чтения.
+
+Description  Описание спецификации по имени файла 
+библиотеки оформлений и номеру стиля в библиотеке
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecificationDescription описания спецификации
+Синтаксис Automation:
+
+Description = iObject.Description Получить свойство
+(LayoutName, StyleID) (* )
+2549
+
+
+
+Description = Получить свойство
+iObject.GetDescription (**)
+(LayoutName, StyleID)
+
+Синтаксис COM:
+
+iObject">get_Description Получить свойство
+(LayoutName, StyleID,
+&Description)
+
+Входные параметры:
+
+LayoutName " имя файла библиотеки оформлений,
+StyleID " номер стиля в библиотеке оформлений.
+
+Примечание:
+Свойство доступно только для чтения.
+
+Item  Описание спецификации, заданное по индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecificationDescription описания спецификации
+Синтаксис Automation:
+
+Description = iObject.Item Получить свойство
+(Index) (* )
+Description = iObject.GetItem Получить свойство
+(Index) (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&Description)
+
+Примечание:
+Свойство доступно только для чтения.
+
+ISpecificationDescriptions  методы
+
+Add  Добавить новое описание спецификации в 
+документ и в коллекцию
+Интерфейс...
+Синтаксис Automation:
+2550
+
+
+
+LPDISPATCH Add (BSTR LayoutName,
+long StyleID,
+BSTR SpcName,
+ISpecificationDescription);
+Синтаксис COM:
+HRESULT Add ([in] BSTR LayoutName,
+[in] long StyleID,
+[in] BSTR SpcName,
+[out, retval] ISpecificationDescription** Result);
+Входные параметры:
+
+LayoutName " имя библиотеки стилей,
+StyleID " номер стиля в библиотеке стилей,
+SpcName " имя документа спецификации, связанного с описанием 
+
+спецификации в документе.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс ISpecificationDescription 
+описания спецификации.
+
+Примечание:
+К одному документу могут быть добавлены описания спецификации только разных сти"
+лей. Если LayoutName и StyleID не заданы, то добавляется описание спецификации по
+умолчанию, если оно не было создано ранее.
+
+Интерфейс ISpecificationSectionStyles
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SET_SECTION_STYLE_DIALOG.htm
+Интерфейс коллекции стилей разделов спецификации.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ISpecificationSectionStyles
+
+Описание:
+Управляет массивом интерфейсов ISpecificationSectionStyle.
+Примечание:
+Данный интерфейс может быть получен от интерфейса ISpecificationStyle с помощью
+свойства ISpecificationStyle::Sections.
+2551
+
+
+
+ISpecificationSectionStyles  свойства
+
+Item  Стиль раздела спецификации, заданный по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationSectionStyle стиля раздела специфика"
+ции
+Синтаксис Automation:
+
+Section = iObject.Item (Index) Получить свойство (* )
+Section = iObject.GetItem (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&Section)
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс ISpecificationSubsections
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SECTION_STYLE_DIALOG.htm
+Интерфейс коллекции подразделов спецификации.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ISpecificationSubsections
+
+Описание:
+Управляет массивом интерфейсов ISpecificationSubsection. Группы объектов внутри раз"
+делов называются подразделами. Подразделы, как и разделы, являются компонентом
+стиля спецификации. Их количество, названия и порядок внутри каждого раздела фор"
+мируются при настройке стиля. Если деление на подразделы не запрещено в стиле теку"
+щей спецификации, то можно изменить список подразделов в каждом ее разделе. По"
+дразделы располагаются в разделе в порядке возрастания номеров.
+Примечание:
+Данный интерфейс можно получить от интерфейса настройки раздела спецификации
+ISpecificationTuningSection с помощью свойства ISpecificationTuningSection::Subsections.
+2552
+
+
+
+ISpecificationSubsections  свойства
+
+Item  Настройки раздела спецификации, заданные по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationSubsection подраздела спецификации
+Синтаксис Automation:
+
+Subsection = iObject.Item (Index) Получить свойство
+(* )
+
+Subsection = iObject.GetItem Получить свойство
+(Index) (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&Subsection)
+
+Примечание:
+Свойство доступно только для чтения.
+
+ISpecificationSubsections  методы
+
+Add  Добавить новый подраздел
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add (BSTR Name, short Number);
+Синтаксис COM:
+HRESULT Add ([in] BSTR Name,
+[in] short Number,
+[out, retval] ISpecificationSubsections** Result);
+Входные параметры:
+
+Name " имя подраздела,
+Number " номер подраздела.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс подраздела специфика"
+ции ISpecificationSubsection.
+2553
+
+
+
+Интерфейс ISpecificationTuningSections
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SECTION_STYLE_DIALOG.htm
+Интерфейс коллекции настроек разделов спецификации.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ISpecificationTuningSections
+
+Описание:
+Управляет массивом интерфейсов ISpecificationTuningSection .
+Примечание:
+Данный интерфейс может быть получен от интерфейса настроек спецификации
+ISpecificationTuning с помощью свойства ISpecificationTuning::Sections
+
+ISpecificationTuningSections  свойства
+
+Item  Настройки раздела спецификации, заданные по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationTuningSection настроек раздела специ"
+фикации
+Синтаксис Automation:
+
+Section = iObject.Item (Index) Получить свойство (* )
+Section = iObject.GetItem (Index) Получить свойство (**)
+
+Синтаксис COM:
+

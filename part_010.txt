@@ -1,0 +1,2533 @@
+BOOL DeleteFile( BSTR ApplicationIID, BSTR StorageFileName );
+Синтаксис COM:
+HRESULT DeleteFile( BSTR ApplicationIID, BSTR StorageFileName, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ApplicationIID " GUID приложения,
+StorageFileName " имя удаляемого файла.
+
+DeleteStorage  Удалить хранилище файлов приложения
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteStorage( BSTR ApplicationIID );
+Синтаксис COM:
+HRESULT DeleteStorage( BSTR ApplicationIID, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ApplicationIID " GUID приложения.
+
+ExistStorage  Проверить наличие хранилища данных 
+приложения
+Интерфейс...
+Синтаксис Automation:
+BOOL ExistStorage( BSTR ApplicationIID );
+Синтаксис COM:
+HRESULT ExistStorage( BSTR ApplicationIID, BOOL * Result );
+Возвращаемое значение:
+
+TRUE "хранилище существует,
+FALSE " хранилище не существует.
+483
+
+
+
+Входные параметры:
+
+ApplicationIID " GUID приложения.
+
+ExtractFile  Извлечь файл из хранилища
+Интерфейс...
+Синтаксис Automation:
+BOOL ExtractFile( BSTR ApplicationIID, BSTR SrcFileName, BSTR DestFileName, BOOL
+AllowReplacement );
+Синтаксис COM:
+HRESULT ExtractFile( BSTR ApplicationIID, BSTR SrcFileName, BSTR DestFileName, BOOL
+AllowReplacement, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ApplicationIID " GUID приложения,
+SrcFileName " имя файла в хранилище,
+DestFileName " имя файла на диске,
+AllowReplacement " перезаписывать.
+
+GetAllFilenames  Получить список файлов приложения
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetAllFilenames( BSTR ApplicationIID );
+Синтаксис COM:
+HRESULT GetAllFilenames( BSTR ApplicationIID, VARIANT * Result );
+Возвращаемое значение:
+
+"массив VT_ARRAY | VT_BSTR имен файлов в хранилище.
+
+Входные параметры:
+
+ApplicationIID " GUID приложения.
+
+IsExistFile  Проверить наличие файла в хранилище
+Интерфейс...
+Синтаксис Automation:
+484
+
+
+
+BOOL IsExistFile( BSTR ApplicationIID, BSTR StorageFileName );
+Синтаксис COM:
+HRESULT IsExistFile( BSTR ApplicationIID, BSTR StorageFileName, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " файл существует,
+FALSE " файл не существует.
+
+Входные параметры:
+
+ApplicationIID " GUID приложения,
+StorageFileName " имя удаляемого файла.
+485
+
+
+
+486
+
+
+
+Документ 2D
+Виды и слои
+Интерфейс IViewsAndLayersManager
+События...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/395_Glava46_Sloi.htm
+Менеджер слоев и видов графического документа.
+Иерархия:
+IKompasAPIObject
+
+IViewsAndLayersManager
+Примечание:
+
+1.  Данный интерфейс предназначен для работы с видами, слоями, группами слоев.
+2.  Интерфейс можно получить при помощи свойства
+
+IKompasDocument2D::ViewsAndLayersManager от интерфейса 2D"документа
+IKompasDocument2D.
+
+IViewsAndLayersManager  свойства
+
+LayerGroups  Возвращает коллекцию групп слоев
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/396_46_2_Menedzher_dokumenta.htm
+Тип данных: ILayerGroups
+Синтаксис Automation:
+
+LayerGroups = iObject.LayerGroups Получить свойство (* )
+LayerGroups = iObject.GetLayerGroups() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_LayerGroups Получить свойство
+(LayerGroups)
+
+Примечание:
+Свойство доступно только для чтения.
+487
+
+
+
+Views  Возвращает коллекцию видов
+Интерфейс...
+Тип данных: IViews
+Синтаксис Automation:
+
+Views = iObject.Views Получить свойство (* )
+Views = iObject.GetViews() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Views (Views) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс ILayerGroup
+Справка системы КОМПАС...
+kompas.chm::/405_46_9_1_Nabory_sloev.htm
+Интерфейс группы слоев.
+Иерархия:
+IKompasAPIObject
+
+ILayerGroup
+Примечание:
+Данный интерфейс можно получить у коллекции групп слоев ILayerGroups с помощью
+свойства ILayerGroups::Item, метода ILayerGroups::Add либо от интерфейса другой груп"
+пы слоев с помощью свойства ILayerGroup::OwnerGroup.
+Группы являются именованными объектами.
+По умолчанию при создании группы ей присваивается имя, состоящее из слова "Группа"
+(для статической группы и группы свойств) или "Фильтр" (для динамической группы) и
+порядкового номера. Это имя может быть изменено.
+Группы слоев сохраняются в документе.
+Группа слоев может принадлежать:
+
+1.  Виду " в группе объединяются слои, принадлежащие виду.
+2.  Документу " в группе объединяются слои с разных видов.
+
+Группа может быть:
+▼ статической " Группа слоев или Группа свойств слоев;
+▼ динамической " Фильтр.
+
+Группа слоев группа объединяет слои. Для создания статической группы используется
+метод ILayerGroups::Add, в который передается параметр dynamic равный FALSE. Работа
+488
+
+
+
+с группой слоев доступна, если в документе установлен режим Группировать слои, т.е.
+свойство IDocument2DSettings::LayersGroupWay имеет значение wgLayers.
+Фильтр включает в себя слои, отфильтрованные согласно заданным условиям. См.
+ILayerFilterConditions и ILayerFilterCondition.
+Признаком того, что группа является динамической, является возможность получения у
+нее коллекции условий ILayerFilterConditions.
+Для создания динамической группы используется метод ILayerGroups::Add, в который
+передается параметр dynamic равный TRUE. Работа с группой слоев доступна, если в до"
+кументе установлен режим Группировать слои, т. е. свойство
+IDocument2DSettings::LayersGroupWay имеет значение wgLayers.
+Группа свойств слоев, кроме списка слоев, содержит массив свойств, устанавливаемых
+данным слоям. Для создания группы используется метод ILayerGroups::Add, в котором
+параметр dynamic не учитывается. Для передачи параметров слоям нужно установить
+свойство ILayerGroup::Current равным TRUE
+Работа с Группой свойств слоев доступна, если в документе установлен режим Груп
+пировать свойства слоев, т. е. свойство IDocument2DSettings::LayersGroupWay имеет
+значение wgLayersCharacteristics.
+Добавление слоя в документ не приводит к автоматическому добавлению этого слоя в
+статическую группу или в группу свойств.
+При удалении слоя из группы он не удаляется из документа.
+При удалении слоя из документа он автоматически удаляется из группы.
+Изменение способа группировки в документе приводит к необратимым изменениям со"
+зданных групп.
+Если устанавливается режим группировки слоев, то Группы свойств слоев превращают"
+ся в Группы слоев.
+Если устанавливается режим группировки свойств слоев, то Группы слоев и Фильтры
+превращаются в Группы свойств. 
+
+ILayerGroup  свойства
+
+Current  Группа является текущей (состояния слоев 
+переданы в модель)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Current = iObject.Current Получить свойство (* )
+iObject.Current = Current Установить свойство (* )
+Current = iObject.GetCurrent() Получить свойство (**)
+iObject.SetCurrent (Current) Установить свойство (**)
+
+Синтаксис COM:
+489
+
+
+
+iObject">get_Current (&Current) Получить свойство
+iObject">put_Current (Current) Установить свойство
+
+Примечание:
+Свойство используется, если в документе установлен режим Группировать свойства
+слоев, т. е. свойство IDocument2DSettings::LayersGroupWay имеет значение
+wgLayersCharacteristics.
+
+Layers  Коллекция слоев группы
+Интерфейс...
+Тип данных: указатель на интерфейс ILayers
+Синтаксис Automation:
+
+Layers = iObject.Layers Получить свойство (* )
+Layers = iObject.GetLayers() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Layers (&Layers) Получить свойство
+
+LayerFilterConditions  Коллекция условий фильтрации 
+слоев
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции условий фильтрации
+ILayerFilterConditions
+Синтаксис Automation:
+
+LayerFilterConditions = Получить свойство (* )
+iObject.LayerFilterConditions
+LayerFilterConditions = Получить свойство (**)
+iObject.GetLayerFilterConditions()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_LayerFilterConditions
+(&LayerFilterConditions)
+
+Примечание:
+Коллекцию условий можно получить только для динамической группы слоев.
+490
+
+
+
+LayerGroups  Коллекция групп слоев
+Интерфейс...
+Тип данных: указатель на интерфейс ILayerGroups
+Синтаксис Automation:
+
+LayerGroups = iObject.LayerGroups Получить свойство (* )
+LayerGroups = iObject.GetLayerGroups() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_LayerGroups Получить свойство
+(&LayerGroups)
+
+Name  Имя группы
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+iObject.Name = Name Установить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+iObject.SetName (Name) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Name (&Name) Получить свойство
+iObject">put_Name (Name) Установить свойство
+
+OwnerGroup  Владелец группы  другая группа
+Интерфейс...
+Тип данных: указатель на интерфейс группы ILayerGroup
+Синтаксис Automation:
+
+OwnerGroup = iObject.OwnerGroup Получить свойство (* )
+OwnerGroup = iObject.GetOwnerGroup() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_OwnerGroup Получить свойство,
+(&OwnerGroup)
+
+Примечание:
+491
+
+
+
+1.  Позволяет получить владельца группы.
+2.  Свойство доступно только для чтения.
+
+OwnerView  Владелец группы  вид
+Интерфейс...
+Тип данных: указатель на интерфейс вида IView
+Синтаксис Automation:
+
+OwnerView = iObject.OwnerView Получить свойство (* )
+iObject.OwnerView = OwnerView Установить свойство (* )
+OwnerView = iObject.GetOwnerView() Получить свойство (**)
+iObject.SetOwnerView (OwnerView) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_OwnerView Получить свойство
+(&OwnerView)
+iObject">put_OwnerView Установить свойство
+(OwnerView)
+
+Примечание:
+
+1.  Свойство позволяет отсоединить группу от вида.
+2.  Чтобы установить свойство отсоединения группы от вида, необходимо передать пара"
+
+метр с нулевым значением.
+
+UniqueId  Уникальный идентификатор группы слоев
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+UniqueId = iObject.UniqueId Получить свойство (* )
+UniqueId = iObject.GetUniqueId() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_UniqueId Получить свойство
+(&UniqueId)
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  После создания группы свойство не изменяется и хранится в чертеже.
+492
+
+
+
+ILayerGroup  методы
+
+Delete  Удалить группу слоев
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete ([out, retval] VARIANT_BOOL * pVal);
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+При удалении группы слоев слои, входящие в нее, из документа не удаляются. Для уда"
+ления слоя используется метод IDrawingObject::Delete.
+
+GetLayerStates  Получить состояния слоя группы по 
+индексу, имени или ссылке
+Интерфейс...
+Синтаксис Automation:
+BOOL GetLayerStates ([in] VARIANT LayerIndex,
+[out] BOOL* visible,
+[out] BOOL* background,
+[out] BOOL* curent,
+[out] long* color);
+Синтаксис COM:
+HRESULT GetLayerStates ([in] VARIANT LayerIndex,
+[out] VARIANT_BOOL* visible,
+[out] VARIANT_BOOL* background,
+[out] VARIANT_BOOL* curent,
+[out] long* color,
+[out, retval] VARIANT_BOOL* pRes );
+Входные параметры:
+
+LayerIndex " индекс слоя.
+
+Выходные параметры:
+
+visible " свойство " видимый слой,
+background " свойство " фоновый слой,
+493
+
+
+
+current " свойство " текущий слой,
+color " цвет слоя.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Если в документе установлен режим Группировать свойства слоев, т. е. свойство
+IDocument2DSettings::LayersGroupWay имеет значение wgLayersCharacteristics, то метод
+позволяет получить свойства слоя в группе. При этом значения свойств могут отличаться
+от установленных в текущий момент у слоя в документе. Для передачи свойств слою из
+группы нужно сделать группу текущей, то есть установить значение ILayerGroup::Current
+равным TRUE.
+
+2.  Если в документе установлен режим Группировать слои, т. е. свойство
+IDocument2DSettings::LayersGroupWay имеет значение wgLayers, то метод используется
+для получения свойств конкретного слоя (LayerIndex " индекс слоя).
+
+SetLayerStates  Изменить состояния слоя группы по 
+индексу или имени
+Интерфейс...
+Синтаксис Automation:
+BOOL SetLayerStates ([in] VARIANT LayerIndex,
+[in] BOOL visible,
+[in]BOOL background,
+[in] BOOL* curent,
+[in] long color);
+Синтаксис COM:
+HRESULT SetLayerStates ([in] VARIANT LayerIndex,
+[in] VARIANT_BOOL visible,
+[in] VARIANT_BOOL background,
+[in] VARIANT_BOOL curent,
+[in] long color,
+[out, retval] VARIANT_BOOL* pRes);
+Входные параметры:
+
+LayerIndex " индекс слоя,
+visible " свойство " видимый слой,
+background " свойство " фоновый слой,
+current " свойство " текущий слой,
+color " цвет слоя.
+
+Возвращаемое значение:
+494
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Если в документе установлен режим Группировать свойства слоев, т. е. свойство
+IDocument2DSettings::LayersGroupWay имеет значение wgLayersCharacteristics, то метод
+позволяет установить свойства слоя в группе. При этом параметры слоя в документе не
+меняются. При этом значения свойств могут отличаться от установленных в текущий мо"
+мент у слоя в документе. Для передачи свойств слою из группы нужно сделать группу
+текущей, то есть установить значение ILayerGroup::Current равным TRUE.
+
+2.  Если в документе установлен режим Группировать слои, т. е. свойство
+IDocument2DSettings::LayersGroupWay имеет значение wgLayers, то метод используется
+для установки свойств конкретного слоя (LayerIndex " индекс слоя). Для установки оди"
+наковых состояний и цвета всем слоям, входящим в группу, нужно передать LayerIndex
+= "1.
+
+Интерфейс ILayerFilterCondition
+Справка системы КОМПАС...
+kompas.chm::/405_46_9_1_Nabory_sloev.htm
+Интерфейс условия фильтрации слоев.
+Иерархия:
+IKompasAPIObject
+
+ILayerFilterCondition
+Описание:
+Условия фильтрации используются для формирования состава динамической группы
+слоев.
+Примечание:
+Данный интерфейс можно получить через коллекцию условий фильтрации слоев
+ILayerFilterConditions с помощью свойства ILayerFilterConditions::Item.
+
+ILayerFilterCondition  свойства
+
+Background  Состояние слоя для фильтрации  фоновый
+Интерфейс...
+Тип данных: из перечисления FilterConditionStateEnum.
+Синтаксис Automation:
+
+Background = iObject.Background Получить свойство (* )
+iObject.Background = Background Установить свойство (* )
+Background = iObject.GetBackground() Получить свойство (**)
+iObject.SetBackground (Background) Установить свойство (**)
+495
+
+
+
+Синтаксис COM:
+
+iObject">get_Background Получить свойство
+(&Background)
+iObject">put_Background Установить свойство
+(Background)
+
+Примечание:
+После установки нового значения данного свойства состав группы будет автоматически
+изменен.
+
+Color  Цвет слоя для фильтрации
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Color = iObject.Color Получить свойство (* )
+iObject.Color = Color Установить свойство (* )
+Color = iObject.GetColor() Получить свойство (**)
+iObject.SetColor (Color) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Color (&Color) Получить свойство
+iObject">put_Color (Color) Установить свойство
+
+Примечание:
+После установки нового значения данного свойства состав группы будет автоматически
+изменен.
+
+Comment  Содержание комментария для фильтрации
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Comment = iObject.Comment Получить свойство (* )
+iObject.Comment = Comment Установить свойство (* )
+Comment = iObject.GetComment() Получить свойство (**)
+iObject.SetComment (Comment) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Comment Получить свойство
+(&Comment)
+496
+
+
+
+iObject">put_Comment Установить свойство
+(Comment)
+
+Примечание:
+
+1.  При задании условия фильтрации по номеру можно использовать маски. В масках знак
+«*» заменяет любое количество любых символов. Знак «?» заменяет один любой сим"
+вол.
+
+2.  После установки нового значения данного свойства состав группы будет автоматически
+изменен.
+
+HaveObjects  Состояние слоя для фильтрации  с 
+объектами или пустой
+Интерфейс...
+Тип данных: из перечисления FilterConditionStateEnum
+Синтаксис Automation:
+
+HaveObjects = iObject.HaveObjects Получить свойство (* )
+iObject.HaveObjects = HaveObjects Установить свойство (* )
+HaveObjects = iObject.GetHaveObjects() Получить свойство (**)
+iObject.SetHaveObjects (HaveObjects) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_HaveObjects Получить свойство
+(&HaveObjects)
+iObject">put_HaveObjects Установить свойство
+(HaveObjects)
+
+Примечание:
+После установки нового значения данного свойства состав группы будет автоматически
+изменен.
+
+Name  Имя слоя для фильтрации
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+iObject.Name = Name Установить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+iObject.SetName (Name) Установить свойство (**)
+
+Синтаксис COM:
+497
+
+
+
+iObject">get_Name (&Name) Получить свойство
+iObject">put_Name (Name) Установить свойство
+
+Примечание:
+
+1.  При задании условия фильтрации по номеру можно использовать маски. В масках знак
+«*» заменяет любое количество любых символов. Знак «?» заменяет один любой сим"
+вол.
+
+2.  После установки нового значения данного свойства состав группы будет автоматически
+изменен.
+
+Number  Номер слоя для фильтрации
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+Number = iObject.Number Получить свойство (* )
+iObject.Number = Number Установить свойство (* )
+Number = iObject.GetNumber() Получить свойство (**)
+iObject.SetNumber (Number) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Number Получить свойство
+(&Number)
+iObject">put_Number (Number) Установить свойство
+
+Примечание:
+
+1.  При задании условия фильтрации по номеру можно использовать маски. В масках знак
+«*» заменяет любое количество любых символов. Знак «?» заменяет один любой сим"
+вол.
+
+2.  После установки нового значения данного свойства состав группы будет автоматически
+изменен.
+
+Projected  Признак проецирования для слоя 3D
+Интерфейс...
+Тип данных: из перечисления FilterConditionStateEnum
+Синтаксис Automation:
+
+Projected = Object.Projected Получить свойство (* )
+Object.Projected = Projected Установить свойство (* )
+Projected = Object.GetProjected() Получить свойство (**)
+Object.SetProjected( Projected ) Установить свойство (**)
+
+Синтаксис COM:
+498
+
+
+
+Object.get_Projected( &Projected ) Получить свойство
+Object.put_Projected(  Projected ) Установить свойство
+
+Visible  Состояние слоя для фильтрации  видимый или 
+погашенный
+Интерфейс...
+Тип данных: из перечисления FilterConditionStateEnum
+Синтаксис Automation:
+
+Visible = iObject.Visible Получить свойство (* )
+iObject.Visible = Visible Установить свойство (* )
+Visible = iObject.GetVisible() Получить свойство (**)
+iObject.SetVisible (Visible) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Visible (&Visible) Получить свойство
+iObject">put_Visible (Visible) Установить свойство
+
+Примечание:
+После установки нового значения данного свойства состав группы будет автоматически
+изменен.
+
+Интерфейс ILayerGroups
+Справка системы КОМПАС...
+KOMPAS.chm::/405_46_9_1_Nabory_sloev.htm
+Интерфейс коллекции групп слоев.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ILayerGroups
+
+Описание:
+Коллекция объединяет группы слоев ILayerGroup.
+Примечание:
+Данный интерфейс может быть получен следующими способами:
+
+▼ от интерфейса менеджера видов и слоёв IViewsAndLayersManager с помощью свойства
+IViewsAndLayersManager::LayerGroups,
+
+▼ от интерфейса группы слоев ILayerGroup с помощью свойства ILayerGroup::LayerGroups.
+499
+
+
+
+ILayerGroups  свойства
+
+Item  Группа, заданная по индексу, имени или 
+уникальному идентификатору
+Интерфейс...
+Тип данных: указатель на интерфейс ILayerGroup
+Синтаксис Automation:
+
+Item = iObject.Item Получить свойство (* )
+Item = iObject.GetItem() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item (&Item) Получить свойство
+
+Входные параметры:
+
+index " индекс объекта в коллекции (тип VARIANT).
+
+Примечание:
+Свойство доступно только для чтения.
+В качестве индекса может использоваться индекс элемента в массиве, имя или уникаль"
+ный идентификатор ILayerGroup::UniqueId. Для получения группы по идентификатору
+нужно передать вещественное число, установив тип значения VT_R8. 
+
+ILayerGroups  методы
+
+Add  Создать группу
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( [in] LPDISPATCH owner, [in] VARIANT_BOOL dinamic );
+Синтаксис Automation:
+HRESULT Add( [in] IView* owner, [in] VARIANT_BOOL dinamic, [out, retval] ILayerGroup**
+Result );
+Входные параметры:
+
+owner " вид " владелец группы,
+dinamic " признак динамической группы.
+
+Возвращаемое значение:
+
+Указатель на интерфейс группы слоев ILayerGroup
+500
+
+
+
+Примечание:
+Группа добавляется в коллекцию.
+
+Attach  Добавить существующую группу
+Интерфейс...
+Синтаксис Automation:
+BOOL Attach (LPDISPATCH pVal);
+Синтаксис Automation:
+HRESULT Attach ([in] ILayerGroup * pVal, [out, retval] VARIANT_BOOL * Result);
+Входные параметры:
+
+pVal " Указатель на интерфейс группы слоев ILayerGroup.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Интерфейс группы добавляется в коллекцию.
+
+Detach  Отсоединить группу слоев
+Интерфейс...
+Синтаксис Automation:
+BOOL Detach (LPDISPATCH pVal);
+Синтаксис COM:
+HRESULT Detach ([in] ILayerGroup * pVal, [out, retval] VARIANT_BOOL * Result);
+Входные параметры:
+
+pVal " Указатель на интерфейс группы слоев ILayerGroup.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Интерфейс группы слоев отсоединяется от коллекции, группа при этом из документа не
+удаляется.
+501
+
+
+
+ Интерфейс ILayerFilterConditions
+Справка системы КОМПАС...
+KOMPAS.chm::/408_46_9_3_Operacii_s_naborami_.htm
+Интерфейс коллекции условий фильтрации слоев.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ILayerFilterConditions
+
+Описание:
+
+1.  Условия фильтрации используются для формирования состава динамической группы
+слоев.
+
+2.  Слой автоматически будет включен в состав группы если его свойства удовлетворяют
+хотя бы одному из условий.
+Примечание:
+Данный интерфейс можно получить через группу слоев ILayerGroup с помощью свойства
+ILayerGroup::LayerFilterConditions.
+
+ILayerFilterConditions  свойства
+
+Item  Условие фильтрации слоев, заданное по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ILayerFilterCondition
+Синтаксис Automation:
+
+LayerFilterCondition = iObject.Item (Index) Получить свойство (* )
+LayerFilterCondition = iObject.GetItem Получить свойство (**)
+(Index)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&LayerFilterCondition)
+
+Входные параметры:
+
+index " индекс в коллекции; тип VARIANT.
+
+Примечание:
+Свойство доступно только для чтения.
+502
+
+
+
+ILayerFilterConditions  методы
+
+Add  Создать условие фильтрации слоев
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add ([out, retval] ILayerFilterCondition** Result);
+Возвращаемое значение:
+
+Указатель на интерфейс ILayerFilterCondition
+
+Примечание:
+После вызова этого метода условие фильтрации слоев будет добавлено в коллекцию.
+Состав группы изменится в соответствии с новыми условиями.
+
+IDrawingObjects
+Базовый интерфейс для коллекций графических объектов.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+Примечание:
+
+1.  Данный интерфейс является базовым для коллекций графических объектов.
+2.  Интерфейс может быть получен с помощью метода IUnknown:: QueryInterface от интер"
+
+фейса коллекции конкретных объектов, например, от интерфейса видов IViews, слоев
+ILayers.
+
+IDrawingObjects  свойства
+
+Item  Объект, заданный по ссылке или по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IDrawingObject
+Синтаксис Automation:
+
+Item = iObject.Item Получить свойство (* )
+Item = iObject.GetItem() Получить свойство (**)
+
+Синтаксис COM:
+503
+
+
+
+iObject">get_Item (&Item) Получить свойство
+
+Входные параметры:
+
+Index " индекс объекта в коллекции, тип VARIANT.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса может использоваться индекс элемента в массиве, reference объек"
+
+та.
+
+Интерфейс ILayers
+Справка системы КОМПАС...
+KOMPAS.chm::/395_Glava46_Sloi.htm
+Интерфейс коллекции слоев графического документа.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+ILayers
+Примечание:
+Интерфейс коллекции слоев можно получить от интерфейса вида с помощью свойства
+IView::Layers или у группы слоев с помощью свойства ILayerGroup::Layers.
+
+ILayers  свойства
+
+Layer  Слой, заданный по индексу
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/395_Glava46_Sloi.htm
+Тип данных: указатель на интерфейс слоя ILayer
+Синтаксис Automation:
+
+Layer = iObject.Layer (Index) Получить свойство (* )
+Layer = iObject.GetLayer (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Layer (Index, &Layer) Получить свойство
+504
+
+
+
+Входные параметры:
+
+index " индекс слоя в коллекции; тип VARIANT.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса может использоваться индекс элемента в массиве, ссылка на слой,
+
+имя слоя.
+
+LayerByNumber  Слой, заданный по номеру
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/395_Glava46_Sloi.htm
+Тип данных: указатель на интерфейс слоя ILayer
+Синтаксис Automation:
+
+Layer = iObject.LayerByNumber (Number) Получить свойство (* )
+Layer = iObject.GetLayerByNumber Получить свойство (**)
+(Number)
+
+Синтаксис COM:
+
+iObject">get_LayerByNumber (Number, Получить свойство
+&Layer)
+
+Входные параметры:
+
+number " номер слоя; тип long.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ILayers  методы
+
+Add  Создать слой (добавляет слой в коллекцию)
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/395_Glava46_Sloi.htm
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+505
+
+
+
+HRESULT Add ([out, retval] ILayer** Layer);
+Возвращаемое значение:
+
+" Указатель на интерфейс слоя ILayer.
+
+Примечание:
+
+1.  Интерфейс слоя добавляется в коллекцию.
+2.  Слой в документе будет создан после вызова метода IDrawingObject::Update.
+
+Attach  Добавить существующий слой
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/395_Glava46_Sloi.htm
+Синтаксис Automation:
+BOOL Attach (LPDISPATCH pVal);
+Синтаксис COM:
+HRESULT Attach ([in] ILayer * pVal, [out, retval] VARIANT_BOOL * Result);
+Входные параметры:
+
+pVal " Указатель на интерфейс слоя ILayer.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Интерфейс слоя добавляется в коллекцию.
+2.  Метод работает только для коллекции слоев группы ILayerGroup, если она не является
+
+динамической.
+
+Detach  Отсоединить слой
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/395_Glava46_Sloi.htm
+Тип данных : указатель на интерфейс слоя ILayer.
+Синтаксис Automation:
+BOOL Detach (LPDISPATCH pVal);
+Синтаксис COM:
+HRESULT Detach ([in] ILayer * pVal, [out, retval] VARIANT_BOOL * Result);
+506
+
+
+
+Входные параметры:
+
+pVal " Указатель на интерфейс слоя ILayer.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Интерфейс слоя отсоединяется от коллекции, слой при этом из документа не удаляется.
+2.  Метод работает только для коллекции слоев группы ILayerGroup, если она не является
+
+динамической.
+
+Интерфейс IViews
+Справка системы КОМПАС...
+KOMPAS.chm::/378_Glava44_Obshchie_svedenija_.htm
+Интерфейс коллекции видов графического документа.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IViews
+Описание:
+Типы видов описаны в перечислении LtViewType.
+В документе типа Фрагмент есть только один системный вид.
+В документе типа Чертеж обязательно есть системный вид (только один) и могут быть
+до 254 видов любого типа из перечисления LtViewType, кроме системного.
+Примечание:
+Данный интерфейс можно получить от интерфейса менеджера видов и слоев
+IViewsAndLayersManager с помощью свойства IViewsAndLayersManager::Views.
+
+IViews  свойства
+
+ActiveView  Активный вид
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/378_Glava44_Obshchie_svedenija_.htm
+Тип данных: указатель на интерфейс вида IView
+Синтаксис Automation:
+507
+
+
+
+ActiveView = iObject.ActiveView Получить свойство (* )
+ActiveView = iObject.GetActiveView Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ActiveView Получить свойство
+(&ActiveView)
+
+Примечание:
+Свойство доступно только для чтения.
+
+View  Вид, заданный по имени, ссылке или по индексу
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/378_Glava44_Obshchie_svedenija_.htm
+Тип данных: указатель на интерфейс вида IView
+Синтаксис Automation:
+
+View = iObject.View (Index) Получить свойство (* )
+View = iObject.GetView (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_View (Index, Получить свойство
+&View)
+
+Входные параметры:
+
+index " индекс вида в коллекции, ссылка на вид или имя 
+вида; тип VARIANT.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ViewByNumber  Вид, заданный по номеру
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/378_Glava44_Obshchie_svedenija_.htm
+Тип данных: указатель на интерфейс вида IView
+Синтаксис Automation:
+508
+
+
+
+View = iObject.ViewByNumber (number) Получить свойство (* )
+View = iObject.GetViewByNumber (number) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ViewByNumber Получить свойство
+(number, &View)
+
+Входные параметры:
+
+number " номер вида; тип long.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IViews  методы
+
+Add  Создать вид (добавляет вид в коллекцию)
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/378_Glava44_Obshchie_svedenija_.htm
+Синтаксис Automation:
+LPDISPATCH Add (long ViewType);
+Синтаксис COM:
+HRESULT Add ([in] LtViewType ViewType, [out, retval] IView** Result);
+Входные параметры:
+
+ViewType " тип создаваемого вида из перечисления LtViewType.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс вида IView.
+
+Примечание:
+
+1.  Системный вид создается автоматически при создании документа. Создавать второй си"
+стемный вид (тип vt_System) нельзя.
+
+2.  После вызова этого метода вид будет добавлен в коллекцию, но в документе не появит"
+ся.
+
+3.  Для отображения вида в документе нужно задать его параметры и вызвать метод
+IDrawingObject::Update.
+509
+
+
+
+AddStandartViews  Создать группу стандартных 
+ассоциативных видов (добавить виды в коллекцию)
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/378_Glava44_Obshchie_svedenija_.htm
+Синтаксис Automation:
+BOOL AddStandartViews (BSTR FileName,
+BSTR    ProjectionName,
+VARIANT ProjectionsTypes,
+double  X,
+double  Y,
+double  Scale,
+double  DX,
+double  DY );
+Синтаксис COM:
+HRESULT AddStandartViews (BSTR FileName,
+BSTR ProjectionName,
+VARIANT ProjectionsTypes,
+double X,
+double Y,
+double Scale,
+double DX,
+double DY,
+BOOL * Result);
+Входные параметры:
+
+FileName  " имя файла модели"источника для проек"
+ции,
+
+ProjectionN  " ориентация модели,
+ame
+Projections  " массив SAFEARRAY VT | VT_I4 типов проек"
+Types ций,
+X, Y  " точка привязки группы видов,
+Scale  " масштаб,
+DX, DY  " расстояние между видами.
+
+Возвращаемое значение:
+
+TRU  " в случае удачи.
+E
+
+Интерфейс IDrawingObject
+Базовый интерфейс для всех графических объектов.
+510
+
+
+
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IDrawingObject1
+
+Примечание:
+
+1.  Данный интерфейс является базовым для графических объектов.
+2.  Интерфейс можно получить из коллекции графических объектов IDrawingObjects с по"
+
+мощью свойства IDrawingObjects::Item.
+3.  Имея интерфейс IDrawingObject, можно подписаться на события ksDrawingObjectNotify.
+4.  Данный интерфейс может быть получен с помощью метода IUnknown QueryInterface от
+
+интерфейса конкретного объекта, например, от интерфейса вида IView, слоя ILayer.
+5.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& IID, void** pif) у
+
+данного интерфейса можно получить дополнительный интерфейс для графических объ"
+ектов IDrawingObject1.
+
+Интерфейс событий для объектов графического 
+документа...
+
+IDrawingObject  свойства
+
+DrawingObjectType  Тип графического объекта
+Интерфейс...
+Тип данных: DrawingObjectTypeEnum.
+Синтаксис Automation:
+
+DrawingObjectType = Получить
+iObject.DrawingObjectType свойство(* )
+DrawingObjectType = Получить
+iObject.GetDrawingObjectType() свойство (**)
+
+Синтаксис COM:
+
+iObject">get_DrawingObjectType Получить свойство,
+(&DrawingObjectType)
+
+Примечание:
+Свойство доступно только для чтения.
+
+DrawingObjectParamType  Тип для получения и 
+изменения параметов объекта
+Интерфейс...
+511
+
+
+
+Тип данных: ksDrawingObjectParamTypeEnum.
+Синтаксис Automation:
+
+type = Получить свойство(* )
+iObject.DrawingObjectParamTyp
+e
+iObject.DrawingObjectParamTyp Установить свойство (* )
+e = type
+type = Получить свойство (**)
+iObject.GetDrawingObjectParam
+Type()
+iObject.SetDrawingObjectParam Установить свойство (**)
+Type (type)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_DrawingObjectParamType
+(&type)
+iObject" Установить свойство
+>put_DrawingObjectParamType
+(type)
+
+Примечание:
+Свойство позволяет установить и получить тип используемой матрицы для пересчета па"
+раметров объектов. От матрицы зависят возвращаемые значения координат, углов и ска"
+лярных величин размеров, например, радиус, высота, длина.
+
+LayerNumber  Номер слоя, на котором расположен 
+объект. Для вида  номер активного слоя
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+LayerNumber = Получить свойство(* )
+iObject.LayerNumber
+iObject.LayerNumber = Установить свойство (* )
+LayerNumber
+LayerNumber = Получить свойство (**)
+iObject.GetLayerNumber()
+iObject.SetLayerNumber Установить свойство (**)
+(LayerNumber)
+
+Синтаксис COM:
+512
+
+
+
+iObject">get_LayerNumber Получить свойство
+(&LayerNumber)
+iObject">put_LayerNumber Установить свойство
+(LayerNumber)
+
+Примечание:
+Позволяет получить и установить номер слоя.
+
+Temp  Признак временности объекта
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Temp = iObject.Temp Получить
+свойство(* )
+
+Temp = iObject.GetTemp() Получить
+свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Temp (&Temp) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Valid  Признак невырожденности объекта
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Valid = iObject.Valid Получить
+свойство(* )
+
+Valid = iObject.GetValid() Получить
+свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Valid (&Valid) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+513
+
+
+
+IDrawingObject  методы
+
+Delete  Удалить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete ([out, retval] VARIANT_BOOL* pRes);
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+После успешного выполнения метода объект будет удален из модели. Свойство Valid для
+объекта будет возвращать FALSE. Все методы интерфейса возвращают ошибку (FALSE).
+
+Update  Обновить данные объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update ([out, retval] VARIANT_BOOL* pRes);
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Метод Update необходимо вызвать для объекта, свойства которого были изменены (по"
+сле вызова Set" cвойств или методов интерфейса), чтобы эти изменения вступили в си"
+лу.
+
+2.  Метод Update вернёт TRUE в случае успеха и FALSE в случае неудачи.
+3.  Вызов Update сработает как при изменении одного свойства, так и при изменении груп"
+
+пы свойств объекта.
+514
+
+
+
+Интерфейс ILayer
+Справка системы КОМПАС...
+KOMPAS.chm::/395_Glava46_Sloi.htm
+Интерфейс слоя графического документа.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+ILayer
+
+Описание:
+В графическом документе в каждом виде всегда присутствует хотя бы один слой, кото"
+рый создается автоматически при создании документа и нового вида.
+Примечание:
+Данный интерфейс можно получить через коллекцию слоев ILayers с помощью свойства
+ILayers::Layer, ILayers::LayerByNumber, метода ILayers::Add, либо с помощью свойства
+IDrawingObjects::Item с последующим приведением к данному интерфейсу с помощью
+метода IUnknown QueryInterface.
+
+ILayer  свойства
+
+Background  Состояние слоя  фоновый
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Background = Получить свойство
+iObject.Backgro (* )
+und
+iObject.Backgro Установить свойство
+und = (* )
+Background
+Background = Получить свойство
+iObject.GetBack (**)
+ground()
+iObject.SetBack Установить свойство
+ground (**)
+(Background)
+
+Синтаксис COM:
+515
+
+
+
+iObject" Получить свойство
+>get_Backgrou
+nd
+(&Background)
+iObject" Установить свойство
+>put_Backgrou
+nd
+(Background)
+
+Примечание:
+
+1.  Позволяет получить и установить свойство слоя " фоновый.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Color  Цвет слоя
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Color = iObject.Color Получить свойство (* )
+iObject.Color = Color Установить свойство (* )
+Color = iObject.GetColor() Получить свойство (**)
+iObject.SetColor (Color) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Color Получить свойство
+(&Color)
+iObject">put_Color (Color) Установить свойство
+
+Примечание:
+
+1.  Позволяет получить и установить цвет слоя.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Comment  Примечание
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Comment = Получить свойство (* )
+iObject.Comment
+iObject.Comment = Установить свойство (* )
+Comment
+516
+
+
+
+Comment = Получить свойство (**)
+iObject.GetComment()
+iObject.SetComment Установить свойство (**)
+(Comment)
+
+Синтаксис COM:
+
+iObject">get_Comment Получить свойство
+(&Comment)
+iObject">put_Comment Установить свойство
+(Comment)
+
+Примечание:
+
+1.  Позволяет получить и установить примечание для слоя.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Current  Состояние слоя  текущий
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Current = iObject.Current Получить свойство (* )
+iObject.Current = Current Установить свойство (* )
+Current = Получить свойство (**)
+iObject.GetCurrent()
+iObject.SetCurrent Установить свойство (**)
+(Current)
+
+Синтаксис COM:
+
+iObject">get_Current Получить свойство
+(&Current)
+iObject">put_Current Установить свойство
+(Current)
+
+Примечание:
+
+1.  Позволяет получить и установить состояние слоя " текущий.
+2.  Установить свойство текущий можно только равным TRUE. Новый слой всегда создает"
+
+ся текущим.
+3.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Name  Имя слоя
+Интерфейс...
+Тип данных: BSTR (строка)
+517
+
+
+
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+iObject.Name = Name Установить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+iObject.SetName (Name) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Name Получить свойство
+(&Name)
+iObject">put_Name Установить свойство
+(Name)
+
+Примечание:
+
+1.  Позволяет получить и установить имя слоя.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+ObjectCount  Количество объектов в слое
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ObjectCount = Получить свойство (* )
+iObject.ObjectCount
+ObjectCount = Получить свойство (**)
+iObject.GetObjectCount()
+
+Синтаксис COM:
+
+iObject">get_ObjectCount Получить свойство
+(&ObjectCount)
+
+Примечание:
+
+1.  Позволяет получить количество объектов в слое.
+2.  Свойство доступно только для чтения.
+
+Printable  Признак разрешения/запрещения печати слоя
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+518
+
+
+
+Printable = Получить свойство (* )
+Object.Printable
+Object.Printable = Установить свойство (* )
+Printable
+Printable = Получить свойство (**)
+Object.GetPrintable()
+Object.SetPrintable Установить свойство (**)
+(Printable)
+
+Синтаксис COM:
+
+Object.get_Printable Получить свойство
+(&Printable)
+Object.put_Printable Установить свойство
+(Printable)
+
+Visible  Состояние слоя  видимый или погашенный
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Visible = iObject.Visible Получить свойство (* )
+iObject.Visible = Visible Установить свойство (* )
+Visible = Получить свойство (**)
+iObject.GetVisible()
+iObject.SetVisible (Visible) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Visible Получить свойство
+(&Visible)
+iObject">put_Visible Установить свойство
+(Visible)
+
+Примечание:
+
+1.  Позволяет получить и установить свойство слоя " видимый или погашенный.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Интерфейс IView
+Справка системы КОМПАС...
+KOMPAS.chm::/378_Glava44_Obshchie_svedenija_.htm
+Интерфейс вида графического документа.
+519
+
+
+
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IView
+
+IViewDesignation
+IDrawingContainer
+IBuildingContainer
+ISymbols2DContainer
+IBreakViewParam
+ICutViewParam
+IView1
+Описание:
+Типы видов описаны в перечислении LtViewType.
+В графическом документе всегда присутствует системный вид, который формируется
+автоматически при создании документа, и может быть только один. В документе типа
+Фрагмент может быть только один вид " системный.
+Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) у
+данного интерфейса можно получить дополнительные интерфейсы вида:
+
+▼ Интерфейс обозначения вида IViewDesignation.
+▼ Интерфейс контейнера объектов вида графического документа IDrawingContainer.
+▼ Интерфейс контейнера объектов СПДС IBuildingContainer.
+▼ Интерфейс контейнера условных обозначений ISymbols2DContainer.
+▼ Интерфейс параметров разрыва вида IBreakViewParam. Этот интерфейс может быть по"
+
+лучен для видов всех типов, кроме системного.
+▼ Интерфейс параметров разреза вида ICutViewParam. Этот интерфейс может быть полу"
+
+чен для видов всех типов, кроме системного.
+▼ Интерфейс для получения коллекции ЛСК и признака редактирования макроэлемента
+
+IView1.
+Примечание:
+Данный интерфейс можно получить следующими способами:
+
+▼ через коллекцию видов IViews,
+▼ с помощью свойства IViews::View, IViews::ViewByNumber или метода IViews::Add, либо с
+
+помощью свойства IDrawingObjects::Item с последующим приведением к данному интер"
+фейсу с помощью метода IUnknown QueryInterface,
+
+▼ от интерфейса группы слоев ILayerGroup с помощью свойства ILayerGroup::OwnerView,
+
+IView  свойства
+
+Angle  Угол поворота вида
+Интерфейс...
+520
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Angle = iObject.Angle Получить свойство (* )
+iObject.Angle = Angle Установить свойство (* )
+iObject.Angle = Angle Получить свойство (**)
+iObject.SetAngle (Angle) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Angle (&Angle) Получить свойство
+iObject">put_Angle (Angle) Установить свойство
+
+Примечание:
+
+1.  Позволяет получить и установить угол поворота вида.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Background  Состояние вида  фоновый
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Background = iObject.Background Получить свойство (* )
+iObject.Background = Background Установить свойство (* )
+Background = iObject.GetBackground() Получить свойство (**)
+iObject.SetBackground (Background) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Background (&Background) Получить свойство
+iObject">put_Background (Background) Установить свойство
+
+Примечание:
+
+1.  Позволяет получить и установить свойство слоя " фоновый.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Color  Цвет вида
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Color = iObject.Color Получить свойство (* )
+521
+
+
+
+iObject.Color = Color Установить свойство (* )
+Color = iObject.GetColor() Получить свойство (**)
+iObject.SetColor( Color ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Color( &Color ) Получить свойство
+iObject">put_Color( Color ) Установить свойство
+
+Примечание:
+
+1.  Позволяет получить и установить цвет вида.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Comment  Примечание
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Comment = iObject.Comment Получить свойство (* )
+iObject.Comment = Comment Установить свойство (* )
+Comment = iObject.GetComment() Получить свойство (**)
+iObject.SetComment (Comment) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Comment (&Comment) Получить свойство
+iObject">put_Comment (Comment) Установить свойство
+
+Примечание:
+
+1.  Позволяет получить и установить примечание.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Current  Состояние вида  текущий
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Current = iObject.Current Получить свойство (* )
+iObject.Current = Current Установить свойство (* )
+Current = iObject.GetCurrent() Получить свойство (**)
+iObject.SetCurrent (Current) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Current (&Current) Получить свойство
+522
+
+
+
+iObject">put_Current (Current) Установить свойство
+Примечание:
+
+1.  Позволяет узнать, является ли вид текущим или сделать его текущим.
+2.  Установить свойство "текущий" можно только равным TRUE.
+3.  Новый вид всегда создается текущим.
+4.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Layers  Коллекция слоев
+Интерфейс...
+Тип данных: указатель на интерфейс ILayers коллекции слоев.
+Синтаксис Automation:
+
+Layers = iObject.Layers Получить свойство (* )
+Layers = iObject.GetLayers() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Layers( &Layers ) Получить свойство
+
+Примечание:
+
+1.  Позволяет получить коллекцию слоев вида.
+2.  Свойство доступно только для чтения.
+
+Name  Имя вида
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+iObject.Name = Name Установить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+iObject.SetName (Name) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Name (&Name) Получить свойство
+iObject">put_Name (Name) Установить свойство
+
+Примечание:
+
+1.  Для нового вида, полученного методом IViews::Add, имя должно быть обязательно уста"
+новлено до вызова метода IDrawingObject::Update.
+
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+523
+
+
+
+Number  Номер вида
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Number = iObject.Number Получить свойство (* )
+iObject.Number = Number Установить свойство (* )
+Number = iObject.GetNumber() Получить свойство (**)
+iObject.SetNumber (Number) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Number (&Number) Получить свойство
+iObject">put_Number (Number) Установить свойство
+
+Примечание:
+Номер вида "0" зарезервирован для системного вида. Номер должен быть уникальным в
+документе. Для нового вида, полученного методом IViews::Add, можно задать номер ""1"
+или не задавать номер. В этом случае при вызове метода IDrawingObject::Update для дан"
+ного вида номер будет задан автоматически.
+
+ObjectCount  Количество объектов в виде
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ObjectCount = iObject.ObjectCount Получить свойство (* )
+ObjectCount = iObject.GetObjectCount() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ObjectCount Получить свойство
+(&ObjectCount)
+
+Примечание:
+
+1.  Позволяет получить количество объектов в виде.
+2.  Свойство доступно только для чтения.
+
+Scale  Масштаб вида
+Интерфейс...
+524
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Scale = iObject.Scale Получить свойство (* )
+iObject.Scale = Scale Установить свойство (* )
+Scale = iObject.GetScale() Получить свойство (**)
+iObject.SetScale (Scale) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Scale (&Scale) Получить свойство
+iObject">put_Scale (Scale) Установить свойство
+
+Примечание:
+
+1.  Позволяет получить и установить масштаб вида.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Variable  Получить параметрическую переменную по имени, 
+индексу или указателю на размер
+Интерфейс...
+Тип данных: указатель на интерфейс параметрической переменной IVariable7
+Синтаксис Automation:
+
+Variable = Object.Variable (VARIANT Index) Получить свойство (* )
+Variable = Object.GetVariable (VARIANT Получить свойство (**)
+Index)
+
+Синтаксис COM:
+
+Object.get_Variable(VARIANT Index, Получить свойство
+&Variable)
+
+Входные параметры:
+
+Index  " индекс, имя или указатель на размер 
+параметрической переменной.
+
+Свойство позволяет получать интерфейс параметрической переменной.
+Примечание:
+Свойство доступно только для чтения.
+525
+
+
+
+Variables  Получить массив параметрических переменных
+Интерфейс...
+Тип данных: массив SAFEARRAY VT_DISPATCH
+Синтаксис Automation:
+
+Variables = Object.Variables Получить свойство (* )
+Variables = Object.GetVariables() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Variables (&Variables) Получить свойство
+
+Свойство позволяет получать массив параметрических переменных.
+Примечание:
+Свойство доступно только для чтения.
+
+VariablesCount  Получить количество параметрических 
+переменных
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+VariablesCount = Object.VariablesCount Получить свойство (* )
+VariablesCount = Получить свойство (**)
+Object.GetVariablesCount()
+
+Синтаксис COM:
+
+Object.get_VariablesCount Получить свойство
+(&VariablesCount)
+
+Свойство позволяет получать количество параметрических переменных.
+Примечание:
+Свойство доступно только для чтения.
+
+ViewType  Тип вида
+Интерфейс...
+Тип данных: Тип вида из перечисления LtViewType
+Синтаксис Automation:
+
+ViewType = iObject.ViewType Получить свойство (* )
+ViewType = iObject.GetViewType() Получить свойство (**)
+526
+
+
+
+Синтаксис COM:
+
+iObject">get_ViewType (&ViewType) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Visible  Состояние вида  видимый или погашенный
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Visible = iObject.Visible Получить свойство (* )
+iObject.Visible = Visible Установить свойство (* )
+Visible = iObject.GetVisible() Получить свойство (**)
+iObject.SetVisible (Visible) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Visible (&Visible) Получить свойство
+iObject">put_Visible (Visible) Установить свойство
+
+Примечание:
+
+1.  Позволяет получить и установить свойство вида " видимый или погашенный.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+X  Координата привязки по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = iObject.X Получить свойство (* )
+iObject.X = X Установить свойство (* )
+X = iObject.GetX() Получить свойство (**)
+iObject.SetX (X) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X (&X) Получить свойство
+iObject">put_X (X) Установить свойство
+
+Примечание:
+527
+
+
+
+1. Позволяет получить и установить координату привязки вида по оси X.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Y  Координата привязки по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = iObject.Y Получить свойство (* )
+iObject.Y = Y Установить свойство (* )
+Y = iObject.GetY() Получить свойство (**)
+iObject.SetY (Y) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Y (&Y) Получить свойство
+iObject">put_Y (Y) Установить свойство
+
+Примечание:
+
+1. Позволяет получить и установить координату привязки вида по оси Y.
+2.  Свойство вступает в силу после вызова метода IDrawingObject::Update.
+
+Интерфейс IAssociationView
+Справка системы КОМПАС...
+kompas.chm::/422_Glava49_Obshchie_svedenija_.htm
+Интерфейс ассоциативного вида графического документа.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IView
+
+IAssociationView
+IHatchParam
+IAssociationViewElements
+Описание:
+Типы видов описаны в перечислении LtViewType.
+Примечание:
+
+1.  Данный интерфейс можно получить следующими способами:
+▼ через коллекцию видов IViews,
+▼ с помощью метода IUnknown QueryInterface от интерфейса IView.
+528
+
+
+
+2.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) ин"
+терфейс позволяет получить дополнительные интерфейсы:
+
+▼ IHatchParam
+▼ IAssociationViewElements.
+
+IAssociationView  свойства
+
+BaseObject  Опорный объект
+Интерфейс...
+Тип данных:указатель на интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство (* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Object.GetBaseObject() Получить свойство (**)
+Object.SetBaseObject( BaseObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseObject( &BaseObject ) Получить свойство,
+Object.put_BaseObject( BaseObject ) Установить свойство.
+
+Примечание:
+В зависимости от типа ассоциативного вида нужно указать вспомогательный опорный
+объект.
+Опорный объект требуется при создании следующих видов:
+
+▼ Вид по стрелке" требуется объект Стрелка взгляда,
+▼ Выносной вид" требуется объект Обозначение выносного элемента,
+▼ Вид разрез/сечение" требуется объект Линия разреза.
+
+BaseView  Опорный вид
+Интерфейс...
+Тип данных: указатель на интерфейс вида IView
+Синтаксис Automation:
+
+BaseView = Object.BaseView Получить свойство (* )
+Object.BaseView = BaseView Установить свойство (* )
+BaseView = Object.GetBaseView() Получить свойство (**)
+Object.SetBaseView( BaseView ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseView( &BaseView ) Получить свойство,
+529
+
+
+
+Object.put_BaseView( BaseView ) Установить свойство.
+Примечание:
+Свойство используется при создании проекционного вида.
+Позволяет установить вид, относительно которого выполняется производная проекция.
+Базовый вид должен быть ассоциативным.
+
+BendLinesStyle  Cтиль линий сгиба
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BendLinesStyle = Object.BendLinesStyle Получить свойство (* )
+Object.BendLinesStyle = BendLinesStyle Установить свойство (* )
+BendLinesStyle = Object.GetBendLinesStyle() Получить свойство (**)
+Object.SetBendLinesStyle( BendLinesStyle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BendLinesStyle( &BendLinesStyle ) Получить свойство,
+Object.put_BendLinesStyle( BendLinesStyle ) Установить свойство.
+
+Примечание:
+Позволяет установить системный (ksCurveStyleEnum) или пользовательский стиль ли"
+ний для отображения линий сгиба.
+
+BendLinesVisible  Показывать линии сгиба
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BendLinesVisible = Получить свойство (* )
+Object.BendLinesVisible
+Object.BendLinesVisible = Установить свойство (* )
+BendLinesVisible
+BendLinesVisible = Получить свойство (**)
+Object.GetBendLinesVisible()
+Object.SetBendLinesVisible( Установить свойство (**)
+BendLinesVisible )
+
+Синтаксис COM:
+
+Object.get_BendLinesVisible( Получить свойство,
+&BendLinesVisible )
+530
+
+
+
+Object.put_BendLinesVisible( Установить свойство.
+BendLinesVisible )
+
+Свойство позволяет получить и установить признак отображения линий сгиба.
+
+BreakLinesStyle  Cтиль линий перехода
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+BreakLinesStyle = Получить свойство (* )
+Object.BreakLinesStyle
+Object.BreakLinesStyle = Установить свойство (* )
+BreakLinesStyle
+BreakLinesStyle = Получить свойство (**)
+Object.GetBreakLinesStyle()
+Object.SetBreakLinesStyle( Установить свойство (**)
+BreakLinesStyle )
+
+Синтаксис COM:
+
+Object.get_BreakLinesStyle( Получить свойство,
+&BreakLinesStyle )
+Object.put_BreakLinesStyle( Установить свойство.
+BreakLinesStyle )
+
+Примечание:
+Позволяет установить системный (ksCurveStyleEnum) или пользовательский стиль ли"
+ний для отображения линий перехода.
+
+BreakLinesVisible  Показывать линии перехода
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+BreakLinesVisible = Получить свойство (* )
+Object.BreakLinesVisible
+Object.BreakLinesVisible = Установить свойство (* )
+BreakLinesVisible
+BreakLinesVisible = Получить свойство (**)
+Object.GetHiddenLinesVisible()
+Object.SetBreakLinesVisible( Установить свойство (**)
+BreakLinesVisible )
+
+Синтаксис COM:
+531
+
+
+
+Object.get_BreakLinesVisible( Получить свойство,
+&BreakLinesVisible )
+Object.put_BreakLinesVisible( Установить свойство.
+BreakLinesVisible )
+
+CenterLinesVisible  Показывать осевые линии
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CenterLinesVisible = Получить свойство (* )
+Object.CenterLinesVisible
+Object.CenterLinesVisible = Установить свойство (* )
+CenterLinesVisible
+CenterLinesVisible = Получить свойство (**)
+Object.GetCenterLinesVisible()
+Object.SetCenterLinesVisible( Установить свойство (**)
+CenterLinesVisible )
+
+Синтаксис COM:
+
+Object.get_CenterLinesVisible( Получить свойство,
+&CenterLinesVisible )
+Object.put_CenterLinesVisible( Установить свойство.
+CenterLinesVisible )
+
+DimensionLayoutScaling  Масштабировать аннотационные 
+объекты вида
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Object.DimensionLayoutScaling = Установить свойство
+DimensionLayoutScaling (* )
+Object.SetDimensionLayoutScaling( Установить свойство
+DimensionLayoutScaling ) (**)
+
+Синтаксис COM:
+
+Object.put_DimensionLayoutScaling( Установить свойство.
+DimensionLayoutScaling )
+532
+
+
+
+Примечание:
+
+1.  Свойство доступно только для изменения.
+2.  Значение свойства не сохраняется и используется при создании и изменении параме"
+
+тров вида. 
+
+ExplodedView  Сборка в разнесенном виде
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ExplodedView = Object.ExplodedView Получить свойство (* )
+Object.ExplodedView = ExplodedView Установить свойство (* )
+ExplodedView = Object.GetExplodedView() Получить свойство (**)
+Object.SetExplodedView( ExplodedView ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ExplodedView( &ExplodedView ) Получить свойство,
+Object.put_ExplodedView(  ExplodedView ) Установить свойство.
+
+HiddenLines  Передавать невидимые линии в вид
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+HiddenLines = Object.HiddenLines Получить свойство (* )
+Object.HiddenLines = HiddenLines Установить свойство (* )
+HiddenLines = Object.GetHiddenLines() Получить свойство (**)
+Object.SetHiddenLines( HiddenLines ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HiddenLines( &HiddenLines ) Получить свойство,
+Object.put_HiddenLines( HiddenLines ) Установить свойство.
+
+Позволяет получить и установить признак отображения невидимых линий при проеци"
+ровании.
+Примечание:
+Невидимые линии хранятся в виде вне зависимости от того, включена их отрисовка или
+нет (IAssociationView::HiddenLinesVisible). 
+Если отрисовка этих линий не требуется, отключите опцию Невидимые линии — это
+уменьшит размер файла чертежа.
+533
+
+
+
+Рекомендуется отключать опцию Невидимые линии при построении ассоциативных ви"
+дов сборок, содержащих более 1000 компонентов.
+
+HiddenLinesStyle  Cтиль невидимых линий
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+HiddenLinesStyle = Object.HiddenLinesStyle Получить свойство (* )
+Object.HiddenLinesStyle = HiddenLinesStyle Установить свойство (* )
+HiddenLinesStyle = Object.GetHiddenLinesStyle() Получить свойство (**)
+Object.SetHiddenLinesStyle( HiddenLinesStyle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HiddenLinesStyle( &HiddenLinesStyle ) Получить свойство,
+Object.put_HiddenLinesStyle( HiddenLinesStyle ) Установить свойство.
+
+Примечание:
+Позволяет установить системный (ksCurveStyleEnum) или пользовательский стиль ли"
+ний для отображения невидимых линий
+Для использования данного свойства требуется включение передачи невидимых линий
+(IAssociationView::HiddenLines) и включение отображения невидимых линий
+(IAssociationView::HiddenLinesVisible).
+
+HiddenLinesVisible  Показывать невидимые линии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+HiddenLinesVisible = Object.HiddenLinesVisible Получить свойство (* )
+Object.HiddenLinesVisible = HiddenLinesVisible Установить свойство (* )
+HiddenLinesVisible = Object.GetHiddenLinesVisible() Получить свойство (**)
+Object.SetHiddenLinesVisible( HiddenLinesVisible ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HiddenLinesVisible( Получить свойство,
+&HiddenLinesVisible )
+Object.put_HiddenLinesVisible( Установить свойство.
+HiddenLinesVisible )
+
+Свойство позволяет получить и установить признак отображения невидимых линий.
+Примечание:
+534
+
+
+
+Для использования данного свойства требуется включение передачи невидимых линий
+(IAssociationView::HiddenLines).
+
+Local  Местный вид
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Local = Object.Local Получить свойство (* )
+Object.Local = Local Установить свойство (* )
+Local = Object.GetLocal() Получить свойство (**)
+Object.SetLocal( Local ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Local( &Local ) Получить свойство,
+Object.put_Local( Local ) Установить свойство.
+
+Примечание:
+Включает полное изображение вида или усеченное (местный вид).
+Требует предварительного создания местного вида с помощью команды
+IAssociationView::CreateLocalView
+
+ProjectionMatrix  Матрица ассоциативного вида
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ProjectionMatrix = Получить свойство (* )
+Object.ProjectionMatrix
+Object.ProjectionMatrix = Установить свойство (* )
+ProjectionMatrix
+ProjectionMatrix = Получить свойство (**)
+Object.GetProjectionMatrix()
+Object.SetProjectionMatrix( Установить свойство (**)
+ProjectionMatrix )
+
+Синтаксис COM:
+
+Object.get_ProjectionMatrix( Получить свойство,
+&ProjectionMatrix )
+535
+
+
+
+Object.put_ProjectionMatrix( Установить свойство.
+ProjectionMatrix )
+
+Примечание
+Матрица представляет собой массив SAFEARRAY double (VT_ARRAY | VT_R8)
+В массиве будут лежать 16 элементов, которые представляют собой матрицу размера
+4х4.
+
+ProjectionName  Имя проекции
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ProjectionName = Object.ProjectionName Получить свойство (* )
+Object.ProjectionName = ProjectionName Установить свойство (* )
+ProjectionName = Object.GetProjectionName() Получить свойство (**)
+Object.SetProjectionName (ProjectionName) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectionName (&ProjectionName) Получить свойство,
+Object.put_ProjectionName (ProjectionName) Установить свойство.
+
+Свойство позволяет получить и установить имя проекции (из списка проекций в доку"
+менте"источнике).
+
+ProjectionLink  Проекционная связь
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectionLink = Object.ProjectionLink Получить свойство (* )
+Object.ProjectionLink = ProjectionLink Установить свойство (* )
+ProjectionLink = Object.GetProjectionLink() Получить свойство (**)
+Object.SetProjectionLink( ProjectionLink ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectionLink( Получить свойство,
+&ProjectionLink )
+Object.put_ProjectionLink( Установить свойство.
+ProjectionLink )
+536
+
+
+
+Свойство позволяет получить и установить состояние проекционной связи между ассо"
+циативными видами.
+
+SameHatch  Признак одинаковой штриховки всех деталей 
+сборки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SameHatch = Object.SameHatch Получить свойство (* )
+Object.SameHatch = SameHatch Установить свойство (* )
+SameHatch = Object.GetSameHatch() Получить свойство (**)
+Object.SetSameHatch( SameHatch ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SameHatch( &SameHatch ) Получить свойство,
+Object.put_SameHatch( SameHatch ) Установить свойство.
+
+Примечание:
+Свойство используется только в виде разрез/сечение.
+
+Section  Признак «разрез/сечение»
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Section = Object.Section Получить свойство (* )
+Object.Section = Section Установить свойство (* )
+Section = Object.GetSection() Получить свойство (**)
+Object.SetSection( Section ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Section( &Section ) Получить свойство,
+Object.put_Section( Section ) Установить свойство.
+
+Свойство позволяет получить и установить признак «разрез/сечение».
+
+SourceFileName  Полное имя файлаисточника
+Интерфейс...
+Тип данных: BSTR
+537
+
+
+
+Синтаксис Automation:
+
+SourceFileName = Получить свойство (* )
+Object.SourceFileName
+Object.SourceFileName = Установить свойство (* )
+SourceFileName
+SourceFileName = Получить свойство (**)
+Object.GetSourceFileName()
+Object.SetSourceFileName Установить свойство (**)
+(SourceFileName)
+

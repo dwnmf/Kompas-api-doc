@@ -1,0 +1,2533 @@
+DisableModelRotation = Получить свойство (**)
+Object.GetDisableModelRotation()
+Object.SetDisableModelRotation( Установить свойство (**)
+DisableModelRotation )
+
+  Синтаксис COM:
+
+Object.get_DisableModelRotation( Получить свойство
+&DisableModelRotation )
+Object.put_DisableModelRotation( Установить свойство
+DisableModelRotation )
+
+GDIObject  Получить внешний GDI объект
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+373
+
+
+
+GDIObject = Object.GDIObject( Id ) Получить свойство (* )
+GDIObject = Object.GetGDIObject( Id ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_GDIObject( Ids, Получить свойство
+&GDIObject )
+
+Входные параметры:
+
+I " идентификатор объекта.
+d
+
+ObjectsVisible  Показать\скрыть объекты
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Object.ObjectsVisible( Ids, frame ) = Visible Установить свойство (* )
+Object.SetObjectsVisible( Ids, frame, Visible Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.put_ObjectsVisible( Ids, Установить свойство
+frame, Visible )
+
+Входные параметры:
+
+Ids " Идентификаторы объектов тип VARIANT. Можно передать один 
+идентификатор тип VARIANT"а VT_I4 или массив SafeArray 
+идентификаторов тип VARIANT"а VT_ARRAY | VT_I4
+
+frame " указатель на интерфейс окна документа IDocumentFrame.
+
+Примечание:
+
+1. Позволяет изменить видимость объектов в заданном окне. Если frame == NULL, то объект
+будет отображаться во всех окнах документа.
+
+2. Свойство доступно только для изменения.
+
+TessellationObject  Получить объект по идентификатору
+Интерфейс...
+Тип данных: BOOL
+374
+
+
+
+Синтаксис Automation:
+
+TessellationObject = Получить свойство
+Object.TessellationObject( Id ) (* )
+TessellationObject = Получить свойство
+Object.GetTessellationObject( Id (**)
+)
+
+Синтаксис COM:
+
+Object.get_TessellationObject( Получить свойство
+Ids, &TessellationObject )
+
+Входные параметры:
+
+I " идентификатор объекта.
+d
+
+IExternalTessellationManager  методы
+
+Add  Добавить объект с внешней триангуляцией
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IExternalTessellationObject ** PVal );
+Возвращаемое значение:
+
+" Указатель на интерфейс объекта с внешней триангуляцией 
+IExternalTessellationObject.
+
+AddGDIObject  Добавить внешний GDI объект
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddGDIObject();
+Синтаксис COM:
+HRESULT AddGDIObject( IExternalGDIObject ** PVal );
+Возвращаемое значение:
+
+" Указатель на интерфейс внешнего GDI" объекта 
+IExternalGDIObject.
+375
+
+
+
+Clear  Удалить все объекты
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+HRESULT Clear( BOOL  * res );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+CreateTextureImage  Создать изображение текстуры
+Интерфейс...
+Синтаксис Automation:
+long CreateTextureImage ( long   Width, long Heigh,
+                            BOOL           RGBA,
+                            BOOL           WrapMode,
+                            BOOL           FiltMode,
+                            VARIANT        ImageData );
+Синтаксис COM:
+HRESULT CreateTextureImage ( long   Width, long Heigh,
+                                 BOOL           RGBA,
+                                 BOOL           WrapMode,
+                                 BOOL           FiltMode,
+                                 VARIANT        ImageData,
+                                 long *  Result );
+Входные параметры:
+
+Width, Heigh " Размер изображения,
+RGBA " TRUE " RGBA, FALSE " RGB,
+WrapMode " Режим повторения TRUE " GL_CLAMP  FALSE " GL_REPEAT,
+FiltMode " Режим повторения TRUE " GL_LINEAR FALSE " GL_NEAREST,
+ImageData Массив байтов изображения текстуры VT_ARRAY|VT_UI1.
+
+Возвращаемое значение:
+
+" Идентификатор текстуры.
+
+Возвращаемое значение:
+376
+
+
+
+TRUE " в случае удачи,
+FALSE " в случае ошибки.
+
+Примечание:
+Созданная текстура используется в методе IExternalTessellationObj::SelectTextureImage.
+
+DisableModelDrawing  Запретить отрисовку модели для 
+указанных элементов
+Интерфейс...
+Синтаксис Automation
+BOOL DisableModelDrawing( long ForElements );
+Синтаксис COM:
+HRESULT DisableModelDrawing( long ForElements, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ForElements " типы объектов ksModelDrawingElementsEnum.
+
+IsModelDrawingEnabled  Проверить, разрешена ли 
+отрисовка для указанных элементов
+Интерфейс...
+Синтаксис Automation:
+BOOL IsModelDrawingEnabled( long ForElements );
+Синтаксис COM:
+HRESULT IsModelDrawingEnabled( long ForElements, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " если отрисовка разрешена.
+
+Входные параметры:
+
+ForElements " типы объектов ksModelDrawingElementsEnum.
+
+EnableModelDrawing  Отменить последний запрет на 
+отрисовку элементов модели
+Интерфейс...
+377
+
+
+
+Синтаксис Automation:
+BOOL EnableModelDrawing();
+Синтаксис COM:
+HRESULT EnableModelDrawing( BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+DeleteObjects  Удалить объекты
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteObjects();
+Синтаксис COM:
+HRESULT DeleteObjects( VARIANT Id, BOOL  * res );
+Входные параметры:
+
+I " Идентификаторы объектов тип VARIANT. Можно пе"
+d редать один идентификатор тип VARIANT"а VT_I4 или
+s массив SafeArray идентификаторов тип VARIANT"а
+
+VT_ARRAY | VT_I4.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+DeleteTextureImage  Удалить изображение текстуры
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteTextureImage( long TexImgId );
+Синтаксис COM:
+HRESULT DeleteTextureImage( long TexImgId, BOOL * Result );
+Входные параметры:
+
+TexImgId " идентификатор текстуры.
+378
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+PickObjects  Собрать объекты по лучу
+Интерфейс...
+Синтаксис Automation:
+BOOL  PickObjects( LPDISPATCH Frame, VARIANT PickRay, BOOL Visible, VARIANT *
+PickedObjs, VARIANT * PickedPars );
+Синтаксис COM:
+HRESULT PickObjects( IDocumentFrame * Frame, VARIANT PickRay, BOOL Visible, VARIANT
+* PickedObjs, VARIANT * PickedPars, BOOL * Result ;
+Входные параметры:
+
+Frame " Указатель на интерфейс окна документа IDocumentFrame,
+PickRay " Параметры луча ( VT_ARRAY | VT_R8 ), массив из шести элементов 
+
+(Точка начала луча и единичный вектор задающий направление луча),
+Visible " Признак учета видимых объектов:
+
+TRUE " пересекать только с видимыми объектами,
+FALSE " со всеми объектами.
+
+Выходные параметры:
+
+PickedObjs " Идентификаторы найденных внешних объектов 
+триангуляции (VT_ARRAY | VT_UI4),
+
+PickedPars " Параметры луча в точке пересечения с объектами (VT_ARRAY 
+| VT_R4).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Интерфейс IExternalTessellationObject
+Интерфейс объекта с внешней триангуляцией.
+
+IExternalTessellationObject " интерфейс Automation
+379
+
+
+
+Примечание:
+Интерфейс позволяет реализовать отрисовку внешних объектов с триангуляцией.
+
+IExternalTessellationObject  свойства
+
+AlwaysDrawInScreenPlane  Способ преобразования 
+координат внешней триангуляции
+Интерфейс...
+Тип данных: из перечисления ksDrawInScreenPlaneEnum
+Синтаксис Automation:
+
+AlwaysDrawInScreenPlane = Получить свойство (* )
+Object.AlwaysDrawInScreenPlane
+Object.AlwaysDrawInScreenPlane = Установить свойство (* )
+AlwaysDrawInScreenPlane
+AlwaysDrawInScreenPlane = Получить свойство (**)
+Object.GetAlwaysDrawInScreenPlane()
+Object.SetAlwaysDrawInScreenPlane( Установить свойство (**)
+AlwaysDrawInScreenPlane )
+
+Синтаксис COM:
+
+Object.get_AlwaysDrawInScreenPlane(&AlwaysDrawInScreen Получить свойство
+Plane )
+Object.put_AlwaysDrawInScreenPlane( Установить свойство
+AlwaysDrawInScreenPlane )
+
+DisableDepthTest  Запрет проверки глубины
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DisableDepthTest = Object.DisableDepthTest Получить свойство (* )
+Object.DisableDepthTest = DisableDepthTest Установить свойство (* )
+DisableDepthTest = Object.GetDisableDepthTest() Получить свойство (**)
+Object.SetDisableDepthTest( DisableDepthTest ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DisableDepthTest(&DisableDepthTest ) Получить свойство
+Object.put_DisableDepthTest( DisableDepthTest ) Установить свойство
+
+Свойство позволяет устанавливать и получать признак запрета глубины.
+380
+
+
+
+NonGeometry  Не геометрический
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NonGeometry = Object.NonGeometry Получить свойство (* )
+Object.NonGeometry = NonGeometry Установить свойство (* )
+NonGeometry = Object.GetNonGeometry() Получить свойство (**)
+Object.SetNonGeometry( NonGeometry ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AlwaysDrawInScreenPlane(&AlwaysDr Получить свойство
+awInScreenPlane )
+Object.put_AlwaysDrawInScreenPlane( Установить свойство
+AlwaysDrawInScreenPlane )
+
+NonPickable  Не выбираемый
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NonPickable = Object.NonPickable Получить свойство (* )
+Object.NonPickable = NonPickable Установить свойство (* )
+NonPickable = Object.GetNonPickable() Получить свойство (**)
+Object.SetNonPickable( NonPickable ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NonPickable(&NonPickable ) Получить свойство
+Object.put_NonPickable( NonPickable ) Установить свойство
+
+NonScalableX  Не масштабировать по X
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NonScalableX = Object.NonScalableX Получить свойство (* )
+Object.NonScalableX = NonScalableX Установить свойство (* )
+NonScalableX = Object.GetNonScalableX() Получить свойство (**)
+Object.SetNonScalableX( NonScalableX ) Установить свойство (**)
+381
+
+
+
+Синтаксис COM:
+
+Object.get_NonScalableX(&NonScalableX ) Получить свойство
+Object.put_NonScalableX( NonScalableX ) Установить свойство
+
+NonScalableY  Не масштабировать по Y
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NonScalableY = Object.NonScalableY Получить свойство (* )
+Object.NonScalableY = NonScalableY Установить свойство (* )
+NonScalableY = Object.GetNonScalableY() Получить свойство (**)
+Object.SetNonScalableY( NonScalableY ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NonScalableY(&NonScalableY ) Получить свойство
+Object.put_NonScalableY( NonScalableY ) Установить свойство
+
+NonScalableZ  Не масштабировать по Z
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NonScalableZ = Object.NonScalableZ Получить свойство (* )
+Object.NonScalableZ = NonScalableZ Установить свойство (* )
+NonScalableZ = Object.GetNonScalableZ() Получить свойство (**)
+Object.SetNonScalableZ( NonScalableZ ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NonScalableZ(&NonScalableZ ) Получить свойство
+Object.put_NonScalableZ( NonScalableZ ) Установить свойство
+
+ObjectID  Идентификатор объекта
+Интерфейс...
+Тип данных:long
+Синтаксис Automation:
+
+ObjectID = Object.ObjectID Получить свойство (* )
+ObjectID = Object.GetObjectID() Получить свойство (**)
+
+Синтаксис COM:
+382
+
+
+
+Object.get_ObjectID( Получить свойство
+&ObjectID )
+
+Примечание:
+
+1. Позволяет получить идентификатор объекта. По идентификатору объекта осуществляет"
+ся установка видимости и удаление объектов.
+
+2. Свойство доступно только для чтения.
+
+Visible  Идентификатор объекта
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Object.Visible( frame ) = Visible Установить свойство (* )
+Object.SetVisible( frame, Visible ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.put_Visible( frame, Установить свойство
+Visible )
+
+Входные параметры:
+
+frame " указатель на интерфейс окна документа IDocumentFrame.
+
+Примечание:
+
+1. Позволяет изменить видимость объекта в заданном окне. Если frame == NULL, то объект
+будет отображаться во всех окнах документа.
+
+2. Свойство доступно только для изменения.
+
+IExternalTessellationObject  методы
+
+Delete  Удалить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete( );
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение:
+383
+
+
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Перед удалением объекта нужно выключить видимость объекта в окнах документа.
+
+1. Для удаления группы объектов используется метод
+IExternalTessellationManager::DeleteObjects. Для удаления всех внешних объектов исполь"
+зуется метод IExternalTessellationManager::Clear.
+
+SelectTextureImage  Задать изображение текстуры по 
+идентификатору
+Интерфейс...
+Синтаксис Automation:
+BOOL SelectTextureImage( long TexImgId );
+Синтаксис COM:
+HRESULT SelectTextureImage( long TexImgId, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачи,
+FALSE  " в случае ошибки.
+
+Примечание:
+Метод позволяет установить для объекта текстуру, созданную функцией
+IExternalTessellationManager::CreateTextureImage.
+
+SetAdvancedColor  Установить параметры цвета 
+объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL SetAdvancedColor (long color,
+double ambient,
+double diffuse,
+double specularity,
+double shininess,
+double transparency,
+double emission);
+Синтаксис COM:
+HRESULT SetAdvancedColor (COLORREF color,
+double ambient,
+384
+
+
+
+double diffuse,
+double specularity,
+double shininess,
+double transparency,
+double emission,
+BOOL * result);
+Входные параметры:
+
+color " цвет,
+ambient " общий свет,
+diffuse " диффузия,
+specularity " зеркальность,
+shininess " блеск,
+transparency " прозрачность,
+emission " излучение.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetEdges  Установить ребра сетки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetEdges( VARIANT points,
+VARIANT edges,
+VARIANT colors );
+Синтаксис COM:
+HRESULT SetEdges( VARIANT points,
+VARIANT edges,
+VARIANT colors,
+BOOL * res );
+Входные параметры:
+
+points " массив SafeArray VT_ARRAY | VT_R8 координат вершин. Если 
+массив координат уже задан функцией SetTessellation, то 
+нужно передать пустой Variant VT_ARRAY | VT_R8,
+
+edges " массив SafeArray типа VT_ARRAY | VT_I4 индексов координат 
+вершин,
+385
+
+
+
+colors " массив цветов.
+Массив может быть не задан " тип VARIANT"а VT_EMPTY. В 
+этом случае используется цвет, заданный функцией 
+SetAdvancedColor.
+Может быть задан один цвет " тип VARIANT"а VT_I4.
+Может быть задан цвет для каждой точки " тип VARIANT"а 
+VT_ARRAY | VT_I4.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+
+1.  Массив ребер может содержать одно или несколько ребер. Каждое ребро может иметь
+две или более вершины. 
+
+2.  Для описания ребер используется последовательность:
+[[count0, i00, i01, ...] " первое ребро
+[count1, i10, i11, ...] " второе ребро
+...
+[counti, ii0, ii1, ...]] " i"тое ребро,
+где count0, count1, counti " количество вершин в ребре, i00, i01, i10, i11, ii0, ii1 " индексы
+координат точек из массива points.
+
+SetEdgeColors  Установить цвет ребрам сетки
+Интерфейс...
+Синтаксис Automation :
+BOOL SetEdgeColors( VARIANT Colors );
+Синтаксис COM :
+HRESULT SetEdgeColors( VARIANT Colors, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+
+ Colors " безопасный массив цветов.
+
+SetEdgeStyles  Установить стили рёбер сетки
+Интерфейс...
+Синтаксис Automation:
+386
+
+
+
+BOOL SetEdgeStyles( VARIANT Styles );
+Синтаксис COM:
+HRESULT SetEdgeStyles( VARIANT Styles, BOOL * Result );
+Входные параметры:
+
+Styles " массив VT_ARRAY | VT_I4 стилей ребер.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetEdgeWidths  Установить толщины ребер сетки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetEdgeWidths( VARIANT Widths );
+Синтаксис COM:
+HRESULT SetEdgeWidths( VARIANT Widths, BOOL * Result );
+Входные параметры:
+
+Widths " массив VT_ARRAY | VT_R8 значений толщины ребер.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetFacetMode  Установить режим отображения граней
+Интерфейс...
+Синтаксис Automation:
+BOOL SetFacetMode( BOOL SideMode,
+ksFacetCullingMode  CullingMode );
+Синтаксис COM:
+HRESULT SetFacetMode( BOOL SideMode,
+ksFacetCullingMode  CullingMode, BOOL * Res );
+Входные параметры:
+
+SideMode " TRUE " объект является двусторонним,
+" FALSE " объект является односторонним, 
+
+CullingMode  " режим отображения граней ksFacetCullingMode.
+
+Возвращаемое значение:
+387
+
+
+
+TRUE  " в случае удачи.
+
+SetPlaces  Установить матрицы для отрисовки объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlaces( VARIANT places );
+Синтаксис COM:
+HRESULT SetPlaces( VARIANT places, BOOL * res );
+Входные параметры:
+
+places " массив SafeArray типа VT_ARRAY | VT_R8. В массиве может быть передана 
+одна или несколько матриц размером 4*4. Если передано несколько матриц, 
+объект будет отрисован столько раз, сколько передано матриц.
+Используется для многократной отрисовки одинаковых объектов. Матрицы 
+передаются в виде одномерного массива.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetTessellation  Установить параметры триангуляции
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTessellation( VARIANT points,
+VARIANT indexes,
+VARIANT normals,
+VARIANT colors );
+Синтаксис COM:
+HRESULT SetTessellation( VARIANT points,
+VARIANT indexes,
+VARIANT normals,
+VARIANT colors,
+BOOL * Result );
+Входные параметры:
+
+points " массив SafeArray VT_ARRAY | VT_R8 координат точек 
+триангуляционной сетки; координаты в массиве лежат в 
+последовательности x0, y0, z0, x1, y1, z1, ... xi, yi, zi,
+388
+
+
+
+indexes " массив SafeArray VT_ARRAY | VT_I4 индексов вершин 
+треугольников; по индексу из массива indexes достаются 
+координаты вершин из массива points,
+
+normals " массив SafeArray VT_ARRAY | VT_R8 единичных векторов 
+нормалей для вершин. Если направление нормалей во всех 
+вершинах совпадают, можно добавить направление только 
+одной нормали. Иначе количество нормалей должно быть 
+равно количеству точек в массиве points,
+
+colors " массив цветов в точках.
+Массив может быть не задан " тип VARIANT"а VT_EMPTY. В 
+этом случае используется цвет, заданный функцией 
+SetAdvancedColor.
+Может быть задан один цвет " тип VARIANT"а VT_I4.
+Может быть задан цвет для каждой точки " тип VARIANT"а 
+VT_ARRAY | VT_I4.
+
+SetTextureImage  Установить изображение текстуры
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTextureImage( long    Width, 
+long    Heigh,
+BOOL    RGBA,
+BOOL    WrapMode,
+BOOL    FiltMode,
+VARIANT ImageData ); 
+Синтаксис COM:
+HRESULT SetTextureImage( long    Width,
+long    Heigh,
+BOOL    RGBA,
+BOOL    WrapMode, 
+BOOL    FiltMode,
+VARIANT ImageData,
+BOOL *  Res );
+Входные параметры:
+
+Width, Heigh " размер изображения, являющегося элементом текстуры;
+Рекомендуется использовать изображения, значения размеров 
+которых являются целой положительной степенью числа 2; в 
+противном случае, объекты будут неправильно выведены на печать и 
+конвертированы в растр,
+
+RGBA  " TRUE " RGBA,
+ " FALSE " RGB,
+
+WrapMode режим повторения:
+ " TRUE " GL_CLAMP,
+ " FALSE " GL_REPEAT,
+389
+
+
+
+FiltMode режим фильтрации:
+ " TRUE " GL_LINEAR,
+ " FALSE " GL_NEAREST,
+
+ImageData " массив байтов изображения текстуры VT_ARRAY|VT_UI1.
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+SetTexturePoints  Установить координаты вывода 
+текстуры
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTexturePoints( BOOL  Image2D, VARIANT ImagePoints );
+Синтаксис COM:
+HRESULT SetTexturePoints( BOOL Image2D, VARIANT ImagePoints, BOOL * Res );
+Входные параметры:
+
+Image2D  " TRUE " двумерные координаты,
+ " FALSE " одномерные координаты,
+
+ImagePoints  " Координаты в диапазоне 0...1.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+Интерфейс IGabaritObject
+Вспомогательные данные для изменения габарита документа.
+Иерархия:
+IDispatch
+
+IGabaritObject
+Примечание:
+Данный интерфейс может быть получен в событиях интерфейса событий окна докумен"
+та ksDocumentFrameNotify, ksDocumentFrameNotify::AddGabarit.
+
+IGabaritObject  методы
+
+AddGabarit  Добавить дополнительный габарит к 
+габариту документа
+Интерфейс...
+Синтаксис Automation:
+390
+
+
+
+void AddGabarit (double x1,
+double y1,
+double z1,
+double x2,
+double y2,
+double z2);
+Синтаксис COM:
+HRESULT AddGabarit ([in]double x1,
+[in]double y1,
+[in]double z1,
+[in]double x2,
+[in]double y2,
+[in]double z2);
+Выходные параметры:
+
+x1, y1, z1, x2, y2, z2 " координаты габаритной рамки 
+добавляемого дополнительного 
+габарита.
+
+GetCurrentGabarit  Получить текущий габарит 
+документа
+Интерфейс...
+Синтаксис Automation:
+void GetCurrentGabarit (long nPage,
+double* p1X,
+double* p1Y,
+double* p1Z,
+double* p2X,
+double* p2Y,
+double* p2Z);
+Синтаксис COM:
+HRESULT GetCurrentGabarit ([in]long nPage,
+[out]double *p1X,
+[out]double *p1Y,
+[out]double *p1Z,
+[out]double *p2X,
+[out]double *p2Y,
+[out]double *p2Z )
+Входные параметры:
+
+nPage " номер листа, начиная с единицы.
+
+Выходные параметры:
+391
+
+
+
+p1X, p1Y, p1Z, p2X, p2Y, p2Z " координаты габаритной рамки 
+документа.
+
+Примечание:
+Метод позволяет получить текущий габарит документа в миллиметрах. Для многолисто"
+вых документов можно получить габарит конкретного листа.
+
+GetGabaritModifying  Изменился ли габарит документа
+Интерфейс...
+Синтаксис Automation:
+BOOL GetGabaritModifying();
+Синтаксис COM:
+HRESULT GetGabaritModifying ([out, retval]VARIANT_BOOL * DocGabaritModify);
+Возвращаемое значение:
+
+TRUE " габарит документа изменен,
+FALSE " габарит документа не изменен.
+
+Примечание:
+В момент отработки события Определение габаритов документа метод позволяет
+узнать менялся ли габарит документа или нет.
+
+Интерфейс ksGLObject
+Вспомогательные данные для создания листа в контексте OpenGL.
+Примечание:
+
+1. Данный интерфейс нужно использовать при отрисовке с помощью OpenGL из внешнего
+приложения (контроллера). При работе из подключаемой библиотеки (dll) данный ин"
+терфейс использовать нельзя. Более подробное описание методов смотрите в описании
+библиотеки OpenGL.
+
+2. Данный интерфейс может быть получен в событиях интерфейса событий окна докумен"
+та ksDocumentFrameNotify:
+
+▼ ksDocumentFrameNotify::BeginPaintGL,
+▼ ksDocumentFrameNotify::ClosePaintGL.
+
+ksGLObject  методы
+Синтаксис Automation:
+BOOL glBegin( long mode );
+BOOL glEnd();
+BOOL glEnable( long cap );
+BOOL glDisable( long cap );
+392
+
+
+
+BOOL glColor3d( double r, double g, double b );
+BOOL glLineWidth(double w);
+BOOL glLineStipple( long factor, short pattern );
+BOOL glPointSize( double w );
+BOOL glPolygonMode( long face, long mode );
+BOOL glVertex2d( double x, double y );
+BOOL glVertex2dv( double* pData, long countDouble );
+BOOL glVertex3d( double x, double y, double z );
+BOOL glVertex3dv( double* pData, long countDouble );
+BOOL glVertex4d( double x, double y, double z, double w );
+BOOL glVertex4dv( double* pData, long countDouble );
+
+Интерфейс IPaintObject
+Интерфейс вспомогательных данные для отрисовки документа.
+Иерархия:
+IDispatch
+
+IPaintObject
+Примечание:
+Данный интерфейс может быть получен в событиях интерфейса событий окна докумен"
+та ksDocumentFrameNotify:
+
+▼ ksDocumentFrameNotify::BeginPaint,
+▼ ksDocumentFrameNotify::ClosePaint.
+
+IPaintObject  методы
+
+GetDIBForOutput  Создать растровое изображение 
+документа в объект «проекция файла» для дорисовки
+Интерфейс...
+Синтаксис Automation:
+BSTR GetDIBForOutput();
+Синтаксис COM:
+HRESULT GetDIBForOutput ([out, retval] BSTR* mapFileName);
+Возвращаемое значение:
+
+Имя созданного объекта " в случае успешного завершения.
+«проекция файла».
+
+Примечание:
+393
+
+
+
+Создает объект «проекция файла» (объект ядра в Windows, создаваемый для организа"
+ции совместного использования несколькими процессами одних и тех же блоков дан"
+ных) для возможности дорисовки своей геометрии к изображению документа.
+
+GetHWND  Получить дескриптор окна
+Интерфейс...
+Синтаксис Automation:
+long GetHWND();
+Синтаксис COM:
+HRESULT GetHWND ([out, retval] OLE_HANDLE* hwnd);
+Возвращаемое значение:
+
+Дескриптор окна в котором идет " в случае успешного завершения.
+отрисовка
+
+GetTransformMatrix  Получить коэффициенты для 
+матрицы преобразования координат
+Интерфейс...
+Синтаксис Automation:
+void GetTransformMatrix (double* a11,
+double* a12,
+double* a13,
+double* a14,
+double* a21,
+double* a22,
+double* a23,
+double* a24);
+Синтаксис COM:
+HRESULT GetTransformMatrix ([out]double* a11,
+[out]double* a12,
+[out]double* a13,
+[out]double* a14,
+[out]double* a21,
+[out]double* a22,
+[out]double* a23,
+[out]double* a24);
+Выходные параметры:
+
+a11, a12, a13, " коэффициенты для матрицы преобразования координат.
+a14, a21, a22, 
+a23, a24
+394
+
+
+
+Примечание:
+Матрица для преобразования координат mm "> LP:
+Xlp = Xmm * a11 + Ymm * a12 + Zmm * a13 + a14;
+Ylp = Xmm * a21 + Ymm * a22 + Zmm * a23 + a24;
+
+Отчет
+Интерфейс IReportProcess
+Справка системы КОМПАС...
+KOMPAS.chm::/1454_136_2_Sozdanie_otcheta.htm
+Интерфейс для управления процессом Создать отчет.
+Иерархия:
+IKompasAPIObject
+
+IReportProcess
+Описание:
+Интерфейс позволяет задавать параметры для процесса Создать отчет.
+Примечание:
+Данный интерфейс можно получить с помощью свойства
+IKompasDocument1::GetInterface c типом ksObjectReportProcess.
+
+IReportProcess  свойства
+
+ActiveStyleIndex  Активный стиль отчета
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ActiveStyleIndex = Object.ActiveStyleIndex Получить свойство (* )
+Object.ActiveStyleIndex = ActiveStyleIndex Установить свойство (* )
+ActiveStyleIndex = Получить свойство (**)
+Object.GetActiveStyleIndex()
+Object.SetActiveStyleIndex( Установить свойство (**)
+ActiveStyleIndex )
+
+Синтаксис COM:
+
+Object.get_ActiveStyleIndex( Получить свойство
+&ActiveStyleIndex )
+Object.put_ActiveStyleIndex( Установить свойство
+ActiveStyleIndex )
+395
+
+
+
+Свойство позволяет устанавливать и получать активный стиль отчета.
+Примечание:
+Тип VT_I4 " номер стиля в списке стилей. При установке стиля можно также использо"
+вать VT_R8 " уникальный номер стиля.
+
+ReportFilter  Интерфейс управления фильтрами
+Интерфейс...
+Тип данных: указатель на интерфейс свойства IReportFilter
+Синтаксис Automation:
+
+ReportFilter = Object.ReportFilter Получить свойство (* )
+ReportFilter = Object.GetReportFilter() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ReportFilter( Получить свойство
+&ReportFilter)
+
+Свойство позволяет получить интерфейс управления фильтрами.
+Примечание:
+Свойство только для чтения.
+
+ReportFilterUse  Использовать фильтр
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ReportFilterUse = Object.ReportFilterUse Получить свойство (* )
+Object.ReportFilterUse = ReportFilterUse Установить свойство (* )
+ReportFilterUse = Получить свойство (**)
+Object.GetReportFilterUse()
+Object.SetReportFilterUse( ReportFilterUse ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ReportFilterUse( Получить свойство
+&ReportFilterUse )
+Object.put_ReportFilterUse( Установить свойство
+ReportFilterUse )
+
+Свойство позволяет устанавливать и получать признак использования фильтра.
+
+StylesCount  Количество стилей отчета
+Интерфейс...
+396
+
+
+
+Тип данных: long
+Синтаксис Automation:
+
+StylesCount = Object.StylesCount Получить свойство (* )
+StylesCount = Object.GetStylesCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_StylesCount( Получить свойство
+&StylesCount )
+
+Свойство позволяет получить количество стилей отчета.
+Примечание:
+Свойство только для чтения.
+
+Интерфейс IReportFilter
+Интерфейс для управления фильтрами в процессе Создать отчет.
+Иерархия
+IDispatch
+
+IReportFilter
+Описание:
+Позволяет управлять фильтром в процессе Создать отчет.
+Примечание:
+Данный интерфейс можно получить с помощью свойства IReportProcess::ReportFilter.
+
+IReportFilter  свойства
+
+ConditionCount  Количество условий
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ConditionCount = Object.ConditionCount Получить свойство (* )
+ConditionCount = Получить свойство (**)
+Object.GetConditionCount()
+
+Синтаксис COM:
+
+Object.get_ConditionCount( Получить свойство
+&ConditionCount)
+397
+
+
+
+Свойство позволяет получить количество условий.
+Примечание:
+Свойство только для чтения.
+
+IReportFilter  методы
+
+Clear  Удалить все условия фильтра
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+HRESULT Clear( BOOL * Result );
+Возвращаемое значение:
+
+TRUE  " в случае успешного 
+завершения,
+
+FALSE  " в случае неудачи.
+
+GetCondition  Получить условия фильтра по индексу
+Интерфейс...
+Синтаксис Automation:
+BOOL GetCondition( long index, VARIANT * uniqId, ksReportFiltersTypeEnum * type, VARIANT
+* val );
+Синтаксис COM:
+HRESULT GetCondition( long Index, VARIANT * UniqId, ksReportFiltersTypeEnum * Type,
+VARIANT * Val, BOOL * Result );
+Входные параметры:
+
+index  " индекс в массиве.
+
+Выходные параметры:
+
+uniqId  " уникальный номер свойства 
+VT_R8,
+
+type  " условие фильтрации,
+val  " значение фильтра; тип 
+
+значения фильтра зависит от 
+типа свойства, для которого 
+задается фильтр.
+
+Возвращаемое значение:
+398
+
+
+
+TRUE  " в случае успешно"
+го завершения,
+
+FALSE  " в случае неудачи.
+
+Примечание:
+Свойство только для чтения.
+
+RemoveCondition  Удалить условия фильтра по индексу
+Интерфейс...
+Синтаксис Automation:
+BOOL RemoveCondition( long index )
+Синтаксис COM:
+HRESULT RemoveCondition( long Index, BOOL * Result );
+Входные параметры:
+
+index  " индекс в массиве.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешного 
+завершения,
+
+FALSE  " в случае неудачи.
+
+SetCondition  Установить условия фильтра по индексу
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCondition( long index, VARIANT uniqId, ksReportFiltersTypeEnum type, VARIANT Val
+);
+Синтаксис COM:
+HRESULT SetCondition( long Index, VARIANT UniqId, ksReportFiltersTypeEnum Type,
+VARIANT Val, BOOL * Result );
+Входные параметры:
+
+index  " индекс в массиве; "1 " добавить в конец,
+uniqId  " уникальный номер свойства VT_R8,
+type  " условие фильтрации,
+val  " значение фильтра; тип значения фильтра зависит от 
+
+типа свойства, для которого задается фильтр.
+
+Возвращаемое значение:
+399
+
+
+
+TRUE  " в случае успешного 
+завершения,
+
+FALSE  " в случае неудачи.
+
+Интерфейс IReportObjectsFilter
+Интерфейс фильтра объектов при создании отчета.
+Иерархия
+IDispatch
+
+IReportObjectsFilter
+Примечание:
+Дополнительный интерфейс для таблицы отчетов IReport.
+Интерфейс можно получить посредством вызова метода IUnknown::QueryInterface (const
+GUID far& iid, void** pif).
+
+IReportObjectsFilter  свойства
+
+Bodies  Собирать тела
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Bodies = Object.Bodies Получить свойство(* )
+Object.Bodies = Bodies Установить свойство (* )
+Bodies = Получить свойство (**)
+Object.GetBodies()
+Object.SetBodies( Bodies ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Bodies( Получить свойство
+&Bodies )
+  Object.put_Bodies(  Установить свойство
+Bodies )
+
+InsertionFragments  Собирать вставки фрагментов
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+400
+
+
+
+InsertionFragments = Получить свойство(* )
+Object.InsertionFragments
+Object.InsertionFragments Установить свойство (* )
+= InsertionFragments
+InsertionFragments = Получить свойство (**)
+Object.GetInsertionFragme
+nts()
+Object.SetInsertionFragme Установить свойство (**)
+nts( InsertionFragments )
+
+Синтаксис COM:
+
+Object.get_InsertionFragm Получить свойство
+ents( &InsertionFragments 
+)
+ Установить свойство
+Object.put_InsertionFragm
+ents(  InsertionFragments )
+
+InsertionViews  Собирать вставки видов
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+InsertionViews = Получить свойство(* )
+Object.InsertionViews
+Object.InsertionViews = Установить свойство (* )
+InsertionViews
+InsertionViews = Получить свойство (**)
+Object.GetInsertionViews()
+Object.SetInsertionViews( Установить свойство (**)
+InsertionViews )
+
+Синтаксис COM:
+
+Object.get_InsertionViews( Получить свойство
+&InsertionViews )
+ Установить свойство
+Object.put_InsertionViews
+(  InsertionViews )
+
+LocalParts  Собирать локальные вставки компонентов
+Интерфейс...
+Тип данных: BOOL
+401
+
+
+
+Синтаксис Automation:
+
+LocalParts = Получить свойство(* )
+Object.LocalParts
+Object.LocalParts = Установить свойство (* )
+LocalParts
+LocalParts = Получить свойство (**)
+Object.GetLocalParts()
+Object.SetLocalParts( Установить свойство (**)
+LocalParts )
+
+Синтаксис COM:
+
+Object.get_LocalParts( Получить свойство
+&LocalParts )
+  Object.put_LocalParts(  Установить свойство
+LocalParts )
+
+MacroObjects2D  Собирать макроэлементы
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+MacroObjects2D = Получить свойство(* )
+Object.MacroObjects2D
+Object.MacroObjects2D = Установить свойство (* )
+MacroObjects2D
+MacroObjects2D = Получить свойство (**)
+Object.GetMacroObjects2D()
+Object.SetMacroObjects2D( Установить свойство (**)
+MacroObjects2D )
+
+Синтаксис COM:
+
+Object.get_MacroObjects2 Получить свойство
+D( &MacroObjects2D )
+ Установить свойство
+Object.put_MacroObjects2
+D(  MacroObjects2D )
+
+ModelObjects  Собирать объекты моделей с 
+ассоциативных видов
+Интерфейс...
+402
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+ModelObjects = Получить свойство(* )
+Object.ModelObjects
+Object.ModelObjects = Установить свойство (* )
+ModelObjects
+ModelObjects = Получить свойство (**)
+Object.GetModelObjects()
+Object.SetModelObjects( Установить свойство (**)
+ModelObjects )
+
+Синтаксис COM:
+
+Object.get_ModelObjects( Получить свойство
+&ModelObjects )
+ Object.put_ModelObjects(  Установить свойство
+ModelObjects )
+
+Parts  Собирать компоненты
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Parts = Object.Parts Получить свойство(* )
+Object.Parts = Parts Установить свойство (* )
+Parts = Object.GetParts() Получить свойство (**)
+Object.SetParts( Parts ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Parts( &Parts ) Получить свойство
+ Object.put_Parts(  Parts ) Установить свойство
+
+Views  Собирать виды (Объекты группируются по 
+видам)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Views = Object.Views Получить свойство(* )
+Object.Views = Views Установить свойство (* )
+Views = Object.GetViews() Получить свойство (**)
+Object.SetViews( Views ) Установить свойство (**)
+403
+
+
+
+Синтаксис COM:
+
+Object.get_Views( &Views ) Получить свойство
+Object.put_Views(  Views ) Установить свойство
+
+Таблицы отчетов
+Интерфейс IReport 
+Интерфейс таблицы отчетов.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IReport
+
+Интерфейс можно получить у интерфейса ассоциативной таблицы при помощи свойства
+IAssociationTable::Report или у интерфейса Менеджера свойств при помощи метода
+IPropertyMng::GetReport.
+Посредством вызова метода Unknown::QueryInterface (const GUID far& iid, void** pif) у
+данного интерфейса можно получить дополнительные интерфейсы:
+IReportParam – Интерфейс параметров отчета,
+IReportTable – Интерфейс таблицы данных,
+IChooseManager – Интерфейс менеджера выбора (подсветки) объектов.
+
+IReport  свойства
+
+CurrentReportStyle  Cтиль отчета
+Интерфейс...
+Тип данных: Указатель на интерфейс IReportStyle
+Синтаксис Automation:
+
+CurrentReportStyle = Получить свойство (* )
+Object.CurrentReportStyle
+CurrentReportStyle = Получить свойство (**)
+Object.GetCurrentReportStyle()
+
+Синтаксис COM:
+
+Object.get_CurrentReportStyle( Получить свойство
+&CurrentReportStyle  )
+
+Примечание:
+404
+
+
+
+Свойство доступно только для чтения.
+
+CurrentStyleIndex  Индекс текущего стиля
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+CurrentStyleIndex = Получить свойство(* )
+Object.CurrentStyleIndex
+Object.CurrentStyleIndex = Установить свойство (* )
+CurrentStyleIndex
+CurrentStyleIndex = Получить свойство (**)
+Object.GetCurrentStyleInde
+x()
+Object.SetCurrentStyleInde Установить свойство (**)
+x( CurrentStyleIndex )
+
+Синтаксис COM:
+
+Object.get_CurrentStyleInd Получить свойство
+ex( &CurrentStyleIndex ))
+Object.put_CurrentStyleInd Установить свойство
+ex(  CurrentStyleIndex )
+
+ReportFilter  Интерфейс управления фильтрами
+Интерфейс...
+Тип данных: Указатель на интерфейс IReportFilter
+Синтаксис Automation:
+
+ReportFilter = Получить свойство (* )
+Object.ReportFilter
+ReportFilter = Получить свойство (**)
+Object.GetReportFilter()
+
+Синтаксис COM:
+
+Object.get_ReportFilter( Получить свойство
+&ReportFilter )
+
+Примечание:
+Свойство доступно только для чтения.
+405
+
+
+
+ReportStyle  Cтиль отчета по индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IReportStyle
+Синтаксис Automation:
+
+ReportStyle = Получить свойство (* )
+Object.ReportStyle( Index )
+ReportStyle = Получить свойство (**)
+Object.GetReportStyle( 
+Index )
+
+Синтаксис COM:
+
+Object.get_ReportStyle( Index, Получить свойство
+&ReportStyle )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ReportType  Тип отчета (по свойствам, по исполнениям, 
+по переменным)
+Интерфейс...
+Тип данных: из перечисления ksReportTypeEnum
+Синтаксис Automation:
+
+ReportType = Получить свойство (* )
+Object.ReportType
+ReportType = Получить свойство (**)
+Object.GetReportType()
+
+Синтаксис COM:
+
+Object.get_ReportType( Получить свойство
+&ReportType )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ShowAllObjects  Показывать все объекты
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+406
+
+
+
+ShowAllObjects = Получить свойство(* )
+Object.ShowAllObjects
+Object.ShowAllObjects = Установить свойство (* )
+ShowAllObjects
+ShowAllObjects = Получить свойство (**)
+Object.GetShowAllObjects(
+)
+Object.SetShowAllObjects( Установить свойство (**)
+ShowAllObjects )
+
+Синтаксис COM:
+
+Object.get_ShowAllObjects( Получить свойство
+&ShowAllObjects )
+Object.put_ShowAllObjects(  Установить свойство
+ShowAllObjects )
+
+SourceFileName  Имя файла
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+SourceFileName = Получить свойство (* )
+Object.SourceFileName
+SourceFileName = Получить свойство (**)
+Object.GetSourceFileName()
+
+Синтаксис COM:
+
+Object.get_SourceFileName( Получить свойство
+&SourceFileName )
+
+Примечание:
+Свойство доступно только для чтения.
+
+StylesCount  Количество стилей
+Тип данных: long
+Синтаксис Automation:
+
+StylesCount = Получить свойство (* )
+Object.StylesCount
+407
+
+
+
+StylesCount = Получить свойство (**)
+Object.GetStylesCount()
+
+Синтаксис COM:
+
+Object.get_StylesCount( Получить свойство
+&StylesCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+UseReportFilter  Использовать фильтр
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseReportFilter = Получить свойство(* )
+Object.UseReportFilter
+Object.UseReportFilter = Установить свойство (* )
+UseReportFilter
+UseReportFilter = Получить свойство (**)
+Object.GetUseReportFilter(
+)
+Object.SetUseReportFilter( Установить свойство (**)
+UseReportFilter )
+
+Синтаксис COM:
+
+Object.get_UseReportFilter Получить свойство
+( &UseReportFilter )
+Object.put_UseReportFilter Установить свойство
+(  UseReportFilter )
+
+IReport  методы
+
+AddStyle  Добавить новый стиль
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddStyle( BSTR FileName, double Id );
+Синтаксис COM:
+HRESULT AddStyle( BSTR FileName, double Id, IReportStyle ** Result );
+Возвращаемое значение:
+
+" Указатель на интерфейс стиля отчета IReportStyle.
+408
+
+
+
+Входные параметры:
+
+FileName  " имя файла библиотеки 
+стилей отчетов,
+
+Id " идентификатор стиля.
+
+LoadSourceDocument  Документ
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH LoadSourceDocument( BOOL Visible, BOOL ReadOnly );
+Синтаксис COM:
+HRESULT LoadSourceDocument( BOOL Visible, BOOL ReadOnly, IKompasDocument **
+Result );
+Возвращаемое значение:
+
+Указатель на документ IKompasDocument.
+
+Входные параметры:
+
+Visible  " видимый режим,
+ReadOnly " режим только для чтения.
+
+Rebuild  Перестроить отчет
+Интерфейс...
+Синтаксис Automation:
+BOOL Rebuild();
+Синтаксис COM:
+HRESULT Rebuild( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного 
+завершения,
+
+FALSE " в случае неудачи.
+
+SaveAs  Отчет сохранить как
+Интерфейс...
+Синтаксис Automation:
+BOOL SaveAs( VARIANT FileName );
+Синтаксис COM:
+409
+
+
+
+HRESULT SaveAs( VARIANT FileName, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+FileName  " имя сохраняемого файла или 
+указатель на открытый 
+документ.
+
+Интерфейс IReportStyle
+Интерфейс стиля отчета.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IReportStyle
+
+Интерфейс можно получить у интерфейса таблицы отчетов с помощью метода
+IReport::AddStyle или свойств IReport::ReportStyle и IReport::CurrentReportStyle. 
+
+IReportStyle  свойства
+
+Column  Колонка отчета
+Интерфейс...
+Тип данных:Указатель на интерфейс IReportStyleColumn.
+Синтаксис Automation:
+
+Column = Object.Column( Получить свойство (* )
+Index )
+Column = Получить свойство (**)
+Object.GetColumn( Index )
+
+Синтаксис COM:
+
+Object.get_Column( Index, Получить свойство
+&Column )
+
+Примечание:
+Свойство доступно только для чтения.
+410
+
+
+
+ColumnsCount  Количество колонок
+Интерфейс...
+Тип данных:long
+Синтаксис Automation:
+
+ColumnsCount = Получить свойство (* )
+Object.ColumnsCount
+ColumnsCount = Получить свойство (**)
+Object.GetColumnsCount()
+
+Синтаксис COM:
+
+Object.get_ColumnsCount( Получить свойство
+&ColumnsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ColumnNumberingType  Формат нумерации столбцов 
+отчета
+Интерфейс...
+Тип данных: из перечисления ksNumberingTypeEnum
+Синтаксис Automation:
+
+ColumnNumberingType = Получить свойство(* )
+Object.ColumnNumbering
+Type
+Object.ColumnNumbering Установить свойство (* )
+Type = 
+ColumnNumberingType
+ColumnNumberingType = Получить свойство (**)
+Object.GetColumnNumberi
+ngType()
+Object.SetColumnNumberi Установить свойство (**)
+ngType( 
+ColumnNumberingType )
+
+Синтаксис COM:
+
+Object.get_ColumnNumbe Получить свойство
+ringType( 
+&ColumnNumberingType )
+411
+
+
+
+Object.put_ColumnNumbe Установить свойство
+ringType(  
+ColumnNumberingType )
+
+ColumnNumberingInitVal  Нумеровать колонки, начиная 
+с
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ColumnNumberingInitVal = Получить свойство(* )
+Object.ColumnNumberingInitVal
+Object.ColumnNumberingInitVal = Установить свойство (* )
+ColumnNumberingInitVal
+ColumnNumberingInitVal = Получить свойство (**)
+Object.GetColumnNumberingInitVal()
+Object.SetColumnNumberingInitVal( Установить свойство (**)
+ColumnNumberingInitVal )
+
+Синтаксис COM:
+
+Object.get_ColumnNumbe Получить свойство
+ringInitVal( 
+&ColumnNumberingInitVal 
+)
+Object.put_ColumnNumbe Установить свойство
+ringInitVal(  
+ColumnNumberingInitVal )
+
+DivideIntoPage  Разбивать на страницы
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DivideIntoPage = Получить свойство(* )
+Object.DivideIntoPage
+Object.DivideIntoPage = Установить свойство (* )
+DivideIntoPage
+DivideIntoPage = Получить свойство (**)
+Object.GetDivideIntoPage(
+)
+Object.SetDivideIntoPage( Установить свойство (**)
+DivideIntoPage )
+
+Синтаксис COM:
+412
+
+
+
+Object.get_DivideIntoPage Получить свойство
+( &DivideIntoPage )
+Object.put_DivideIntoPage Установить свойство
+(  DivideIntoPage )
+
+DrawBottom  true  сверху вниз (как обычно), false  
+отрисовка снизу вверх
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DrawBottom = Получить свойство(* )
+Object.DrawBottom
+Object.DrawBottom = Установить свойство (* )
+DrawBottom
+DrawBottom = Получить свойство (**)
+Object.GetDrawBottom()
+Object.SetDrawBottom( Установить свойство (**)
+DrawBottom )
+
+Синтаксис COM:
+
+Object.get_DrawBottom( Получить свойство
+&DrawBottom )
+Object.put_DrawBottom(  Установить свойство
+DrawBottom )
+
+Id  Уникальный номер
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Id = Object.Id Получить свойство (* )
+Id = Object.GetId() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Id( &Id ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+413
+
+
+
+Name  Имя
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = Object.Name Получить свойство(* )
+Object.Name = Name Установить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+Object.SetName( Name ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name( &Name ) Получить свойство
+Object.put_Name(  Name ) Установить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+RowHeight  Высота строки ячейки таблицы, мм
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+RowHeight = Получить свойство(* )
+Object.RowHeight
+Object.RowHeight = Установить свойство (* )
+RowHeight
+RowHeight = Получить свойство (**)
+Object.GetRowHeight()
+Object.SetRowHeight( Установить свойство (**)
+RowHeight )
+
+Синтаксис COM:
+
+Object.get_RowHeight( Получить свойство
+&RowHeight )
+Object.put_RowHeight(  Установить свойство
+RowHeight )
+
+RowsCount  Количество строк таблицы
+Интерфейс...
+414
+
+
+
+Ro
+Ob
+Ro
+Ob
+Тип данных: long
+Синтаксис Automation:
+
+wsCount = Object.RowsCount Получить свойство(* )
+ject.RowsCount = RowsCount Установить свойство (* )
+wsCount = Object.GetRowsCount() Получить свойство (**)
+ject.SetRowsCount( RowsCount ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_RowsCount( Получить свойство
+&RowsCount )
+Object.put_RowsCount(  Установить свойство
+RowsCount )
+
+RowsNumberingType  Нумеровать строки
+Интерфейс...
+Тип данных: из перечисления ksRowsNumberingTypeEnum
+Синтаксис Automation:
+
+RowsNumberingType = Получить свойство(* )
+Object.RowsNumberingType
+Object.RowsNumberingType = Установить свойство (* )
+RowsNumberingType
+RowsNumberingType = Получить свойство (**)
+Object.GetRowsNumberingType()
+Object.SetRowsNumberingType( Установить свойство (**)
+RowsNumberingType )
+
+Синтаксис COM:
+
+Object.get_RowsNumberingType( Получить свойство
+&RowsNumberingType )
+Object.put_RowsNumberingType(  Установить свойство
+RowsNumberingType )
+
+ShowEmptyRows  Выводить пустые строки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowEmptyRows = Получить свойство(* )
+Object.ShowEmptyRows
+415
+
+
+
+Object.ShowEmptyRows = Установить свойство (* )
+ShowEmptyRows
+ShowEmptyRows = Получить свойство (**)
+Object.GetShowEmptyRows()
+Object.SetShowEmptyRows( Установить свойство (**)
+ShowEmptyRows )
+
+Синтаксис COM:
+
+Object.get_ShowEmptyRo Получить свойство
+ws( &ShowEmptyRows )
+Object.put_ShowEmptyRo Установить свойство
+ws(  ShowEmptyRows )
+
+ShowTitle  Отображать заголовок
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowTitle = Получить свойство(* )
+Object.ShowTitle
+Object.ShowTitle = Установить свойство (* )
+ShowTitle
+ShowTitle = Получить свойство (**)
+Object.GetShowTitle()
+Object.SetShowTitle( Установить свойство (**)
+ShowTitle )
+
+Синтаксис COM:
+
+Object.get_ShowTitle( Получить свойство
+&ShowTitle )
+Object.put_ShowTitle(  Установить свойство
+ShowTitle )
+
+TitleHeight  Высота заголовка, мм
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+TitleHeight = Получить свойство(* )
+Object.TitleHeight
+Object.TitleHeight = Установить свойство (* )
+TitleHeight
+416
+
+
+
+TitleHeight = Получить свойство (**)
+Object.GetTitleHeight()
+Object.SetTitleHeight( Установить свойство (**)
+TitleHeight )
+Синтаксис COM:
+
+Object.get_TitleHeight( Получить свойство
+&TitleHeight )
+Object.put_TitleHeight(  Установить свойство
+TitleHeight )
+
+IReportStyle  методы
+
+AddColumn  Добавить колонку
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddColumn( long IndexAt, BSTR Name, IProperty * Property );
+Синтаксис COM:
+HRESULT AddColumn( long IndexAt, BSTR Name, IProperty * Property, IReportStyleColumn
+** Result );
+Возвращаемое значение:
+
+" указатель на интерфейс колонки стиля.
+
+Входные параметры:
+
+IndexAt " индекс добавляемой колонки,
+Name " имя колонки,
+Property " указатель на интерфейс свойства, 
+
+которое будет отображаться в колонке. 
+Можно передать NULL.
+
+Clear  Очистить стиль
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+HRESULT Clear( BOOL * Result );
+Возвращаемое значение:
+417
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+ClearSortParameters  Очистить параметры сортировки
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearSortParameters();
+Синтаксис COM:
+HRESULT ClearSortParameters( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+DeleteColumn  Удалить колонку
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteColumn( VARIANT Index );
+Синтаксис COM:
+HRESULT DeleteColumn( VARIANT Index, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+Входные параметры:
+
+Index " индекс удаляемой 
+колонки.
+
+GetSortParameters  Параметры сортировки
+Интерфейс...
+Синтаксис Automation:
+BOOL GetSortParameters( long Level, long * ColumnNumber, ksSortTypeEnum * SortType );
+Синтаксис COM:
+HRESULT GetSortParameters( long Level, long * ColumnNumber, ksSortTypeEnum *
+SortType, BOOL * Result );
+Возвращаемое значение:
+418
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+Входные параметры:
+
+Level " уровень сортировки.
+
+Выходные параметры:
+
+ColumnNumber " номер колонки,
+SortType " тип сортировки.
+
+Init  Инициализация стиля параметрами по умолчанию
+Интерфейс...
+Синтаксис Automation:
+BOOL Init( ksReportStyleInitEnum Type );
+Синтаксис COM:
+HRESULT Init( ksReportStyleInitEnum Type, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+Входные параметры:
+
+Type " тип инициализации стиля.
+
+SetSortParameters  Параметры сортировки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetSortParameters( long Level, long ColumnNumber, ksSortTypeEnum SortType );
+Синтаксис COM:
+HRESULT SetSortParameters( long Level, long ColumnNumber, ksSortTypeEnum SortType,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+Входные параметры:
+419
+
+
+
+Level " уровень сортировки,
+ColumnNumber " номер колонки,
+SortType " тип сортировки.
+
+SwapColumn  Поменять колонки местами
+Интерфейс...
+Синтаксис Automation:
+BOOL SwapColumn( long Index1, long Index2 );
+Синтаксис COM:
+HRESULT SwapColumn( long Index1, long Index2, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+Входные параметры:
+
+Index1 " индекс 1"й колонки,
+Index2 " индекс 2"й колонки.
+
+Интерфейс IReportStyleColumn 
+Интерфейс колонки стиля отчета.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IReportStyleColumn
+
+Интерфейс можно получить у интерфейса таблицы данных с помощью свойства
+IReportTable::StyleColumn, у интерфейса стиля отчета с помощью свойства
+IReportStyle::Column или с помощью метода IReportStyle::AddColumn.
+
+IReportStyleColumn  свойства
+
+CombineCells  Объединять ячейки с одинаковыми 
+значениями в колонке
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+420
+
+
+
+CombineCells = Object.CombineCells Получить свойство (* )
+Object.CombineCells = CombineCells Установить свойство (* )
+CombineCells = Object.GetCombineCells() Получить свойство (**)
+Object.SetCombineCells( CombineCells ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CombineCells( &CombineCells ) Получить свойство
+Object.put_CombineCells(  CombineCells ) Установить свойство
+
+GroupeType  Тип группировки колонки отчета
+Интерфейс...
+Тип данных: из перечисления ksGroupeTypeEnum
+Синтаксис Automation:
+
+GroupeType = Object.GroupeType Получить свойство (* )
+Object.GroupeType = GroupeType Установить свойство (* )
+GroupeType = Object.GetGroupeType() Получить свойство (**)
+Object.SetGroupeType( GroupeType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_GroupeType( &GroupeType ) Получить свойство
+Object.put_GroupeType(  GroupeType ) Установить свойство
+
+Header  Имя колонки
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Header = Object.Header Получить свойство (* )
+Object.Header = Header Установить свойство (* )
+Header = Object.GetHeader() Получить свойство (**)
+Object.SetHeader( Header ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Header( &Header ) Получить свойство
+Object.put_Header(  Header ) Установить свойство
+
+Id  Уникальный номер
+Интерфейс...
+421
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Id = Object.Id Получить свойство(* )
+Id = Object.GetId() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Id( &Id ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Property  Описание типа свойства
+Интерфейс...
+Тип данных: Указатель на интерфейс IProperty
+Синтаксис Automation:
+
+Property = Object.Property Получить свойство (* )
+Object.Property = Property Установить свойство (* )
+Property = Object.GetProperty() Получить свойство (**)
+Object.SetProperty( Property ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Property( &Property ) Получить свойство
+Object.put_Property(  Property ) Установить свойство
+
+PropertyLevel  Уровень, с которого требуется получать 
+значение свойства
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+PropertyLevel = Object.PropertyLevel Получить свойство (* )
+Object.PropertyLevel = PropertyLevel Установить свойство (* )
+PropertyLevel = Object.GetPropertyLevel() Получить свойство (**)
+Object.SetPropertyLevel( PropertyLevel ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PropertyLevel( &PropertyLevel ) Получить свойство
+Object.put_PropertyLevel(  PropertyLevel ) Установить свойство
+422
+
+
+
+TextAlign  Выравнивание в колонке отчета
+Интерфейс...
+Тип данных: из перечисления ksAlignEnum
+Синтаксис Automation:
+
+TextAlign = Object.TextAlign Получить свойство (* )
+Object.TextAlign = TextAlign Установить свойство (* )
+TextAlign = Object.GetTextAlign() Получить свойство (**)
+Object.SetTextAlign( TextAlign ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TextAlign( &TextAlign ) Получить свойство
+Object.put_TextAlign(  TextAlign ) Установить свойство
+
+UserColumn  Пользовательская колонка без свойства
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UserColumn = Получить свойство(* )
+Object.UserColumn
+UserColumn = Получить свойство (**)
+Object.GetUserColumn()
+
+Синтаксис COM:
+
+Object.get_UserColumn( &UserColumn ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ValueFormat  Формат значения
+Интерфейс...
+Тип данных: из перечисления ksValueFormatEnum
+Синтаксис Automation:
+
+ValueFormat = Object.ValueFormat Получить свойство (* )
+Object.ValueFormat = ValueFormat Установить свойство (* )
+ValueFormat = Object.GetValueFormat() Получить свойство (**)
+Object.SetValueFormat( ValueFormat ) Установить свойство (**)
+
+Синтаксис COM:
+423
+
+
+
+Object.get_ValueFormat( &ValueFormat ) Получить свойство
+Object.put_ValueFormat(  ValueFormat ) Установить свойство
+
+Visible  Отображать в отчете
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Visible = Object.Visible Получить свойство (* )
+Object.Visible = Visible Установить свойство (* )
+Visible = Object.GetVisible() Получить свойство (**)
+Object.SetVisible( Visible ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Visible( &Visible ) Получить свойство
+Object.put_Visible(  Visible ) Установить свойство
+
+Width  Ширина колонки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Width = Object.Width Получить свойство (* )
+Object.Width = Width Установить свойство (* )
+Width = Object.GetWidth() Получить свойство (**)
+Object.SetWidth( Width ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Width( &Width ) Получить свойство
+Object.put_Width(  Width ) Установить свойство
+
+WordWrap  Переносить по словам
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+WordWrap = Object.WordWrap Получить свойство (* )
+Object.WordWrap = WordWrap Установить свойство (* )
+WordWrap = Object.GetWordWrap() Получить свойство (**)
+Object.SetWordWrap( WordWrap ) Установить свойство (**)
+424
+
+
+
+Синтаксис COM:
+
+Object.get_WordWrap( &WordWrap ) Получить свойство
+Object.put_WordWrap(  WordWrap ) Установить свойство
+
+Интерфейс IReportTable
+Интерфейс таблицы данных.
+Иерархия:
+IDispatch
+
+IReportTable
+IReportTable является дополнительным для интерфейса таблицы отчетов IReport. Дан"
+ный интерфейс можно получить посредством вызова метода IUnknown::QueryInterface
+(const GUID far& iid, void** pif).
+
+IReportTable  свойства
+
+CellValue  Значение в ячейке
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+CellValue = Object.CellValue( NRow, NCol ) Получить свойство (* )
+Object.CellValue( NRow, NCol ) = CellValue Установить свойство (* )
+CellValue = Object.GetCellValue( NRow, NCol ) Получить свойство (**)
+Object.SetCellValue( NRow, NCol, CellValue ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CellValue( NRow, NCol, &CellValue ) Получить свойство
+Object.put_CellValue(  NRow, NCol, CellValue ) Установить свойство
+
+Входные параметры:
+
+long NRow " номер строки,
+long NCol " номер колонки.
+
+ColumnsCount  Количество столбцов
+Интерфейс...
+Тип данных: long.
+Синтаксис Automation:
+425
+
+
+
+ColumnsCount = Получить свойство(* )
+Object.ColumnsCount
+ColumnsCount = Получить свойство (**)
+Object.GetColumnsCount()
+
+Синтаксис COM:
+
+Object.get_ColumnsCount( Получить свойство
+&ColumnsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+DisplayMode  TRUE  Работает с отображаемой 
+таблицей (скрытые колонки и строки не выдаются)
+Интерфейс...
+Тип данных: BOOL.
+Синтаксис Automation:
+
+DisplayMode = Object.DisplayMode Получить свойство (* )
+Object.DisplayMode = DisplayMode Установить свойство (* )
+DisplayMode = Object.GetDisplayMode() Получить свойство (**)
+Object.SetDisplayMode( DisplayMode ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DisplayMode( &DisplayMode ) Получить свойство
+Object.put_DisplayMode(  DisplayMode ) Установить свойство
+
+FormatCellValue  форматированное значение в ячейке
+Интерфейс...
+Тип данных: BSTR.
+Синтаксис Automation:
+
+FormatCellValue = Получить свойство(* )
+Object.FormatCellValue( 
+NRow, NCol )
+FormatCellValue = Получить свойство (**)
+Object.GetFormatCellValue
+( NRow, NCol )
+
+Синтаксис COM:
+426
+
+
+
+Object.get_FormatCellValu Получить свойство
+e( NRow, NCol, 
+&FormatCellValue )
+
+Входные параметры:
+
+long NRow " номер строки,
+long NCol " номер колонки.
+
+Примечание:
+Свойство доступно только для чтения.
+
+PropertyKeeper  Объект отчета
+Интерфейс...
+Тип данных: Указатель на интерфейс IPropertyKeeper
+Синтаксис Automation:
+
+PropertyKeeper = Получить свойство(* )
+Object.PropertyKeeper( 
+RowIndex )
+PropertyKeeper = Получить свойство (**)
+Object.GetPropertyKeeper( 
+RowIndex )
+
+Синтаксис COM:
+
+Object.get_PropertyKeeper Получить свойство
+( RowIndex, 
+&PropertyKeeper )
+
+Примечание:
+Свойство доступно только для чтения.
+
+RowsCount  Количество строк
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+RowsCount = Получить свойство(* )
+Object.RowsCount
+RowsCount = Получить свойство (**)
+Object.GetRowsCount()
+
+Синтаксис COM:
+427
+
+
+
+Object.get_RowsCount( Получить свойство
+&RowsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+StyleColumn  Параметры отображаемой в отчете 
+колонки
+Интерфейс...
+Тип данных: Указатель на интерфейс IReportStyleColumn
+Синтаксис Automation:
+
+StyleColumn = Получить свойство(* )
+Object.StyleColumn( NCol 
+)
+StyleColumn = Получить свойство (**)
+Object.GetStyleColumn( 
+NCol )
+
+Синтаксис COM:
+
+Object.get_StyleColumn( Получить свойство
+NCol, &StyleColumn )
+
+Примечание:
+Свойство доступно только для чтения.

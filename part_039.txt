@@ -1,0 +1,2532 @@
+2064
+
+
+
+Object.get_AllowDeleted( &AllowDeleted ) Получить свойство 
+Object.put_AllowDeleted(  AllowDeleted ) Установить свойство 
+
+AllowNesting  Учитывать вложенность
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AllowNesting = Object.AllowNesting Получить свойство (* )
+Object.AllowNesting = AllowNesting Установить свойство (* )
+AllowNesting = Получить свойство (**)
+Object.GetAllowNesting()
+Object.SetAllowNesting( AllowNesting ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AllowNesting( Получить свойство 
+&AllowNesting )
+Object.put_AllowNesting(  AllowNesting Установить свойство 
+)
+
+MasterPattern  Массив  образец
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+MasterPattern = Object.MasterPattern Получить свойство (* )
+Object.MasterPattern = MasterPattern Установить свойство (* )
+MasterPattern = Получить свойство (**)
+Object.GetMasterPattern()
+Object.SetMasterPattern( MasterPattern ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_MasterPattern( &MasterPattern ) Получить свойство
+Object.put_MasterPattern(  MasterPattern ) Установить свойство
+
+OrientBySample  Ориентировать по образцу
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+2065
+
+
+
+OrientBySample = Object.OrientBySample Получить свойство (* )
+Object.OrientBySample = OrientBySample Установить свойство (* )
+OrientBySample = Object.GetOrientBySample() Получить свойство (**)
+Object.SetOrientBySample( OrientBySample ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OrientBySample( &OrientBySample ) Получить свойство 
+Object.put_OrientBySample(  OrientBySample ) Установить свойство 
+
+SampleExemplar  Экземпляр массиваобразца, 
+относительно которого будет копироваться положение
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+SampleExemplar = Object.SampleExemplar Получить свойство (* )
+Object.SampleExemplar = SampleExemplar Установить свойство (* )
+OrientBySample = Object.GetSampleExemplar() Получить свойство (**)
+Object.SetSampleExemplar( SampleExemplar ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SampleExemplar( &SampleExemplar ) Получить свойство 
+Object.put_SampleExemplar(  SampleExemplar ) Установить свойство 
+
+Интерфейс IMirrorPattern
+Справка системы КОМПАС...
+kompas.chm::/Glava_55_Zerkalniy_massiv.htm
+Интерфейс параметров операции зеркального копирования.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IFeaturePattern
+IMirrorPattern
+
+Интерфейс используется для операций:
+
+o3d_mirrorOperati 48 Зеркальный массив операций
+on
+2066
+
+
+
+o3d_mirrorAllOper 49 Операция «зеркально отразить тело или поверхность»;
+ation дополнительно имеет интерфейс выбора тел 
+
+IChooseBodies7
+o3d_AuxMirrorOpe 509 Зеркальный массив вспомогательной геометрии
+ration
+
+Интерфейс можно получить в коллекции массивов IFeaturePatterns.
+
+IMirrorPattern  свойства
+
+Plane  Плоскость симметрии
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Plane = Object.Plane Получить свойство (* )
+Object.Plane = Plane Установить свойство (* )
+Plane = Object.GetPlane() Получить свойство (**)
+Object.SetPlane( Plane ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Plane( &Plane ) Получить свойство
+Object.put_Plane(  Plane ) Установить свойство
+
+SaveInitialObjects  Признак того, что исходные объекты 
+остаются (не удаляются)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SaveInitialObjects = Object.SaveInitialObjects Получить свойство (* )
+Object.SaveInitialObjects = SaveInitialObjects Установить свойство (* )
+SaveInitialObjects = Object.GetSaveInitialObjects() Получить свойство (**)
+Object.SetSaveInitialObjects( SaveInitialObjects ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SaveInitialObjects( &SaveInitialObjects ) Получить свойство 
+Object.put_SaveInitialObjects(  SaveInitialObjects ) Установить свойство 
+
+Значение свойства:
+2067
+
+
+
+T " оставлять исходные объекты.
+R
+U
+E
+
+Примечание:
+
+1.  Свойство работает только для o3d_mirrorAllOperation.
+2.  У других операций зеркального копирования возможность скрыть экземпляры отсутст"
+
+вует.
+
+Интерфейс IPointDrivenPattern
+Справка системы КОМПАС...
+kompas.chm::/Glava_52_Massiv_po_tockam.htm
+Интерфейс параметров операции копирования по точкам.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IFeaturePattern
+IPointDrivenPattern
+
+Позволяет управлять параметрами операций копирования по точкам.
+
+IPointDrivenPattern  свойства
+
+DrivenObjects Управляющие объекты для копирования
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+DrivenObjects = Object.DrivenObjects Получить свойство (* )
+Object.DrivenObjects = DrivenObjects Установить свойство (* )
+DrivenObjects = Получить свойство (**)
+Object.GetDrivenObjects()
+Object.SetDrivenObjects( DrivenObjects ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DrivenObjects( &DrivenObjects ) Получить управляющие объекты
+Object.put_DrivenObjects(  DrivenObjects ) Установить управляющие объекты
+2068
+
+
+
+Позволяет добавлять в список управляющих объектов эскизы, группы точек, массивы
+точек, точки, а также получать список добавленных объектов.
+
+OrientationObject  Ориентирующий объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+OrientationObject = Получить свойство (* )
+Object.OrientationObject
+Object.OrientationObject = Установить свойство (* )
+OrientationObject
+OrientationObject = Получить свойство (**)
+Object.GetOrientationObject()
+Object.SetOrientationObject( Установить свойство (**)
+OrientationObject )
+
+Синтаксис COM:
+
+Object.get_OrientationObject( Получить признак проецирования
+&OrientationObject )
+Object.put_OrientationObject(  OrientationObject Установить признак проецирования
+)
+
+OrientationType  Способ ориентации экземпляров 
+массива
+Интерфейс...
+Тип данных: из перечисления ksPatternExemplarsOrientationTypeEnum
+Синтаксис Automation:
+
+OrientationType = Object.OrientationType Получить свойство (* )
+Object.OrientationType = OrientationType Установить свойство (* )
+OrientationType = Получить свойство (**)
+Object.GetOrientationType()
+Object.SetOrientationType( Установить свойство (**)
+OrientationType )
+
+Синтаксис COM:
+
+Object.get_OrientationType( &OrientationType ) Получить признак проецирования
+Object.put_OrientationType(  OrientationType ) Установить признак проецирования
+2069
+
+
+
+ProjectionPoints  Признак проецирования управляющих 
+точек эскиза
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectionPoints = Получить свойство (* )
+Object.ProjectionPoints
+Object.ProjectionPoints = Установить свойство (* )
+ProjectionPoints
+ProjectionPoints = Получить свойство (**)
+Object.GetProjectionPoints()
+Object.SetProjectionPoints( Установить свойство (**)
+ProjectionPoints )
+
+Синтаксис COM:
+
+Object.get_ProjectionPoints( &ProjectionPoints ) Получить признак проецирования
+Object.put_ProjectionPoints( ProjectionPoints ) Установить признак проецирования
+
+Значения свойства:
+
+TRUE " проецировать точки,
+FALSE " не проецировать точки.
+
+Позволяет получать признак проецирования управляющих точек эскиза на плоскость,
+параллельную плоскости эскиза и проходящую через базовую точку.
+
+SaveInitialOrientation  Ориентация экземпляров 
+массива (TRUE  Сохранять исходную ориентацию, 
+иначе  доворачивать до нормали кривой или 
+поверхности)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SaveInitialOrientation = Получить свойство (* )
+Object.SaveInitialOrientation
+Object.SaveInitialOrientation = Установить свойство (* )
+SaveInitialOrientation
+SaveInitialOrientation = Получить свойство (**)
+Object.GetSaveInitialOrientation()
+Object.SetSaveInitialOrientation( Установить свойство (**)
+SaveInitialOrientation )
+2070
+
+
+
+Синтаксис COM:
+
+Object.get_SaveInitialOrientation( Получить свойство
+&SaveInitialOrientation )
+Object.put_SaveInitialOrientation( Установить свойство
+SaveInitialOrientation )
+
+Свойство позволяет устанавливать и получать ориентацию экземпляров массива:
+
+ IPointDrivenPattern  методы
+
+ClearDrivenObjects  Очистить список управляющих 
+объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearDrivenObjects();
+Синтаксис COM:
+HRESULT ClearDrivenObjects( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод очищает список управляющих объектов.
+
+IsSuitableDrivenObject  Проверка пригодности 
+управляющего объекта для операции
+Интерфейс...
+Синтаксис Automation:
+BOOL IsSuitableDrivenObject( IModelObject * Object );
+Синтаксис COM:
+HRESULT IsSuitableDrivenObject( IModelObject * Object, BOOL * Result );
+Входные параметры:
+
+Object " управляющий объект для операции.
+
+Возвращаемое значение:
+
+TRUE " можно добавлять объект Object,
+FALSE " нельзя добавлять обЪект Object.
+2071
+
+
+
+Примечание:
+Метод проверяет объект Object на возможность использования в качестве управляюще"
+го объекта операции.
+
+Интерфейс ITablePattern
+Справка системы КОМПАС...
+kompas.chm::/Glava_53_Massiv_po_tablice.htm
+Интерфейс параметров массива по таблице.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IFeaturePattern
+ITablePattern
+
+ILocalCSObject
+Интерфейс используется для операций:
+
+o3d_TablePattern 522 Массив операций по таблице из файла
+o3d_PartsTablePat 523 Массив компонентов по таблице из файла
+tern
+o3d_AuxTablePatte 524 Массив вспомогательной геометрии по таблице из 
+rn файла
+o3d_BodiesTableP 525 Массив тел по таблице из файла
+attern
+
+Интерфейс можно получить в коллекции массивов IFeaturePatterns.
+С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+подчиненного объекта ЛСК ILocalCSObject.
+
+ITablePattern  свойства
+
+FileName  Файлисточник координат точек
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+FileName = Object.FileName Получить свойство (* )
+Object.FileName = FileName Установить свойство (* )
+FileName = Object.GetFileName() Получить свойство (**)
+Object.SetFileName( FileName ) Установить свойство (**)
+
+Синтаксис COM:
+2072
+
+
+
+Object.get_FileName( &FileName Получить свойство
+)
+Object.put_FileName(  FileName ) Установить свойство
+
+Свойство позволяет устанавливать и получать имя файла с таблицей координат.
+
+OrientationObject  Ориентирующий объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+OrientationObject = Object.OrientationObject Получить свойство (* )
+Object.OrientationObject = OrientationObject Установить свойство (* )
+OrientationObject = Object.GetOrientationObject() Получить свойство (**)
+Object.SetOrientationObject( OrientationObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OrientationObject( Получить свойство 
+&OrientationObject )
+Object.put_OrientationObject(  OrientationObject Установить свойство 
+)
+
+OrientationType  Способ ориентации экземпляров 
+массива
+Интерфейс...
+Тип данных: из перечисления ksPatternExemplarsOrientationTypeEnum
+Синтаксис Automation:
+
+OrientationType = Object.OrientationType Получить свойство (* )
+Object.OrientationType = OrientationType Установить свойство (* )
+OrientationType = Object.GetOrientationType() Получить свойство (**)
+Object.SetOrientationType( OrientationType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OrientationType( &OrientationType ) Получить свойство 
+Object.put_OrientationType(  OrientationType ) Установить свойство 
+
+PointsType  Тип координат в файлеисточнике
+Интерфейс...
+Тип данных: из перечисления ksPoint3DTypeEnum
+2073
+
+
+
+Синтаксис Automation:
+
+PointsType = Object.PointsType Получить свойство (* )
+Object.PointsType = PointsType Установить свойство (* )
+PointsType = Object.GetPointsType() Получить свойство (**)
+Object.SetPointsType( PointsType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointsType( &PointsType ) Получить свойство 
+Object.put_PointsType(  PointsType ) Установить свойство 
+
+SaveInitialOrientation  Ориентация экземпляров 
+массива
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SaveInitialOrientation = Object.SaveInitialOrientation Получить свойство (* )
+Object.SaveInitialOrientation = SaveInitialOrientation Установить свойство (* )
+SaveInitialOrientation = Object.GetSaveInitialOrientation() Получить свойство (**)
+Object.SetSaveInitialOrientation( SaveInitialOrientation ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SaveInitialOrientation( &SaveInitialOrientation ) Получить свойство 
+Object.put_SaveInitialOrientation(  SaveInitialOrientation ) Установить свойство 
+
+Значения свойства:
+
+TR " cохранять исходную ориентацию, 
+UE
+FAL " доворачивать до нормали.
+SE
+
+Точки
+Интерфейс IPoints3D
+Справка системы КОМПАС...
+kompas.chm::/866_Glava102_Prostranstvennye_k.htm
+Интерфейс коллекции элементов Пространственная точка.
+Иерархия:
+IDispatch
+2074
+
+
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IPoints3D
+
+Описание:
+Интерфейс позволяет получить коллекции элементов Пространственная точка.
+Примечание:
+Получить интерфейс коллекции можно используя свойство контейнера трехмерных объ"
+ектов IModelContainer::Points3D.
+
+ IPoints3D  свойства
+
+Point3D  Элемент, заданный по индексу
+Интерфейс...
+
+Справка системы КОМПАС...
+kompas.chm::/866_Glava102_Prostranstvennye_k.htm
+Тип данных: указатель на интерфейс IPoint3D
+Синтаксис Automation:
+
+Point3D = iObject.Point3D( index ) Получить свойство (* )
+Point3D = iObject.GetPoint3D( index ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Point3D( index, &Point3D ) Получить свойство
+
+Входные параметры:
+
+Index VT_BSTR " имя объекта,
+VT_I4 " индекс объекта.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IPoints3D  методы
+
+Add  Создать новый элемент и добавить его в 
+коллекцию
+Интерфейс...
+2075
+
+
+
+Справка системы КОМПАС...
+kompas.chm::/866_Glava102_Prostranstvennye_k.htm
+Синтаксис Automation:
+LPDISPATCH Add;
+Синтаксис COM:
+HRESULT Add( IPoint3D** Result);
+Возвращаемое значение:
+
+Указатель на интерфейс пространственной точки IPoint3D.
+
+Примечание:
+Метод позволяет создать новый интерфейс пространственной точки. После получения
+нового интерфейса нужно задать параметры элемента и вызвать метод
+IModelObject::Update.
+
+ Интерфейс IPoint3D
+Справка системы КОМПАС...
+kompas.chm::/866_Glava102_Prostranstvennye_k.htm
+Интерфейс пространственной точки.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPoint3D
+ILocalCSObject
+Примечание:
+Интерфейс можно получить с помощью метода коллекции пространственных точек
+IPoints3D::Add или свойства IPoints3D::Point3D.
+С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+подчиненного объекта ЛСК ILocalCSObject.
+
+IPoint3D  свойства
+
+AssociationObject  Опорный объект
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+AssociationObject = Получить свойство (* )
+iObject.AssociationObject;
+2076
+
+
+
+AssociationObject = Получить свойство (**)
+iObject.GetAssociationObj
+ect();
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_AssociationObject( 
+&AssociationObject );
+
+Примечание.
+
+1.  Установить значение свойства можно только при типе параметров "по координатам"
+IPoint3D::ParameterType.
+
+2.  Для установки объекта необходимо вызвать функцию IPoint3D::SetAssociationObject.
+
+Parameters  Интерфейс параметров точки
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IKompasAPIObject
+Синтаксис Automation:
+
+Parameters = Получить свойство (* )
+iObject.Parameters;
+Parameters = Получить свойство (**)
+iObject.GetParameters();
+
+Синтаксис COM:
+
+iObject">get_Parameters( Получить свойство
+&Parameters );
+
+Примечание.
+В зависимости от типа IPoint3D::ParameterType, интерфейс параметров должен приво"
+диться к одному из следующих вариантов:
+
+▼ ksPDisplace " IPoint3DParamDisplace Интерфейс параметров пространственной точки, за"
+данной по смещению от опорного объекта,
+
+▼ ksPIntersect " IPoint3DParamIntersect Интерфейс параметров пространственной точки,
+заданной на пересечении опорных объектов,
+
+▼ ksPCenter " IPoint3DParamCenter Интерфейс параметров пространственной точки, задан"
+ной в центре опорного объекта,
+
+▼ ksPCurve " IPoint3DParamCurve Интерфейс параметров пространственной точки, задан"
+ной на кривой со смещением,
+
+▼ ksPSurface " IPoint3DparamSurface Интерфейс параметров пространственной точки, за"
+данной на поверхности,
+2077
+
+
+
+▼ ksPProjection " IPoint3DParamProjection Интерфейс параметров пространственной точки,
+заданной проецированием.
+
+ParameterType  Тип параметров построения точки
+Интерфейс...
+Тип данных: из перечисления ksPoint3DTypeEnum
+Синтаксис Automation:
+
+ParameterType = Получить свойство (* )
+iObject.ParameterType;
+iObject.ParameterType = Установить свойство (* )
+ParameterType;
+ParameterType = Получить свойство (**)
+iObject.GetParameterType(
+);
+iObject.SetParameterType( Установить свойство (**)
+ParameterType );
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ParameterType( 
+&ParameterType );
+iObject" Установить свойство
+>put_ParameterType( 
+ParameterType );
+
+Symbol  Стиль отображения
+Интерфейс...
+Тип данных: из перечисления ksAnnotationSymbolEnum
+Синтаксис Automation:
+
+Symbol = iObject.Symbol; Получить свойство (* )
+iObject.Symbol = Symbol; Установить свойство (* )
+Symbol = Получить свойство (**)
+iObject.GetSymbol();
+iObject.SetSymbol( Установить свойство (**)
+Symbol );
+
+Синтаксис COM:
+
+iObject">get_Symbol( Получить свойство
+&Symbol );
+2078
+
+
+
+iObject">put_Symbol( Установить свойство
+Symbol );
+
+X  Координата X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = iObject.X; Получить свойство (* )
+iObject.X = X; Установить свойство (* )
+X = iObject.GetX(); Получить свойство (**)
+iObject.SetX( X ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X( &X ); Получить свойство
+iObject">put_X( X ); Установить свойство
+
+Примечание.
+Установить значение свойства можно только при типе параметров "по координатам"
+IPoint3D::ParameterType.
+
+Y  Координата Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = iObject.Y; Получить свойство (* )
+iObject.Y = Y; Установить свойство (* )
+Y = iObject.GetY(); Получить свойство (**)
+iObject.SetY( Y ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Y( &Y ); Получить свойство
+iObject">put_Y( Y ); Установить свойство
+
+Примечание.
+Установить значение свойства можно только при типе параметров "по координатам"
+IPoint3D::ParameterType.
+
+Z  Координата Z
+Интерфейс...
+2079
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Z = iObject.Z; Получить свойство (* )
+iObject.Z = Z; Установить свойство (* )
+Z = iObject.GetZ(); Получить свойство (**)
+iObject.SetZ( Z ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Z( &Z ); Получить свойство
+iObject">put_Z( Z ); Установить свойство
+
+Примечание.
+Установить значение свойства можно только при типе параметров "по координатам"
+IPoint3D::ParameterType.
+
+IPoint3D  методы
+
+SetAssociationObject  Установить опорный объект
+Интерфейс...
+Синтаксис Automation:
+BOOL SetAssociationObject( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetAssociationObject([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result
+);
+Входные параметры:
+
+obj  " указатель на опорный объект.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить опорный объект только для типа точки по координатам
+(IPoint3D::ParameterType).
+2080
+
+
+
+Наследники  вспомогательные объекты
+
+Интерфейс IConjunctivePoint
+Справка системы КОМПАС: Команда Присоединительная точка
+kompas.chm::/Postroenye_kontr_tochek.htm#connecting_point
+Интерфейс присоединительной точки.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPoint3D
+IConjunctivePoint
+
+ILocalCSObject
+Примечание:
+
+1.  Интерфейс можно получить, используя свойство IConjunctivePoints::ConjunctivePoint
+или IModelObjects::Item или метод IConjunctivePoints::Add.
+
+2.  Интерфейс наследует у интерфейса IPoint3D пространственной точки все методы и
+свойства для позиционирования, за исключением следующих:
+Symbol() " невозможно установить значения свойства, поскольку стиль отображения
+точки постоянный; получаемое значение свойства во всех случаях будет одинаковым,
+равным ksCirclePoint из перечисления ksAnnotationSymbolEnum.
+
+3.  С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+подчиненного объекта ЛСК ILocalCSObject.
+
+IConjunctivePoint  свойства
+
+Axis  Получить ось присоединительной точки
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Axis = Object.Axis(type) Получить свойство (* )
+Axis = Object.GetAxis(type) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ObjectX( type, Получить свойство
+&ObjectX )
+
+Входные параметры:
+2081
+
+
+
+type " тип запрашиваемой оси из перечисления
+ksObj3dTypeEnum, допустимыми значениями яв"
+ляются следующие:
+" o3d_axisOX " ось со стрелкой,
+" o3d_axisOY " ось без стрелки.
+
+Возвращаемое значение:
+
+указатель на ось " в случае успеха,
+NULL " в случае неудачи.
+
+Примечание.
+
+1.  Свойство позволяет получить указатель на интерфейс оси присоединительной точки в
+соответствии с переданным типом.
+
+2.  Свойство доступно только для чтения.
+
+BuildingType  Способ построения присоединительной 
+точки
+Интерфейс...
+Тип данных: из перечисления ksConjunctivePointTypeEnum
+Синтаксис Automation:
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Object.GetBuildingType() Получить свойство (**)
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( &BuildingType ) Получить
+свойство
+
+Object.put_BuildingType(  BuildingType ) Установить
+свойство
+
+DirectionObject1  Получить направляющий объект 1
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+DirectionObject1 = Получить свойство (* )
+Object.DirectionObject1
+2082
+
+
+
+DirectionObject1 = Получить свойство (**)
+Object.GetDirectionObject1
+()
+
+Синтаксис COM:
+
+Object.get_DirectionObject Получить свойство
+1( &DirectionObject1 )
+
+Примечание.
+
+1.  Свойство позволяет получить указатель на интерфейс направляющего объекта 1.
+2.  Свойство доступно только для чтения.
+
+DirectionObject2  Получить направляющий объект 2
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+DirectionObject2 = Получить свойство (* )
+Object.DirectionObject2
+DirectionObject2 = Получить свойство (**)
+Object.GetDirectionObject2()
+
+Синтаксис COM:
+
+Object.get_DirectionObject Получить свойство
+2( &DirectionObject2 )
+
+Примечание.
+
+1.  Свойство позволяет получить указатель на интерфейс направляющего объекта 2.
+2.  Свойство доступно только для чтения.
+
+Direction1  Направление объекта 1
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " прямое,
+FALSE " обратное.
+
+Синтаксис Automation:
+
+Direction1 = Object.Direction1 Получить свойство (* )
+Object.Direction1 = Direction1 Установить свойство (* )
+2083
+
+
+
+Direction1 = Object.GetDirection1( ) Получить свойство (**)
+Object.SetDirection1( Direction1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Dire Получить
+ction1( свойство
+&Direction1 )
+Object.put_Dire Установить
+ction1( свойство
+Direction1 )
+
+Примечание.
+Свойство позволяет устанавливать и получать направление объекта 1.
+
+Direction2  Направление объекта 2
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " прямое,
+FALSE " обратное.
+
+Синтаксис Automation:
+
+Direction2 = Получить свойство (* )
+Object.Direction2
+Object.Direction2 = Установить свойство (* )
+Direction2
+Direction2 = Получить свойство (**)
+Object.GetDirection2( )
+Object.SetDirection2( Установить свойство (**)
+Direction2 )
+
+Синтаксис COM:
+
+Object.get_Direction2( Получить свойство
+&Direction2 )
+Object.put_Direction2( Установить свойство
+Direction2 )
+
+Примечание.
+Свойство позволяет устанавливать и получать направление объекта 2.
+
+UseDirection2  Использовать второе направление
+Интерфейс...
+2084
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseDirection2 = Получить свойство (* )
+Object.UseDirection2
+Object.UseDirection2 = Установить свойство (* )
+UseDirection2
+UseDirection2 = Получить свойство (**)
+Object.GetUseDirection2( )
+Object.SetUseDirection2( Установить свойство (**)
+UseDirection2 )
+
+Синтаксис COM:
+
+Object.get_UseDirection2( Получить свойство
+&UseDirection2 )
+Object.put_UseDirection2( Установить свойство
+UseDirection2 )
+
+Vector3D  Получить параметры вектора
+Интерфейс...
+Тип данных: указатель на интерфейс IVector3D
+Синтаксис Automation:
+
+Vector3D = Получить свойство (* )
+Object.Vector3D( First )
+Vector3D = Получить свойство (**)
+Object.GetVector3D( First )
+
+Синтаксис COM:
+
+Object.get_Vector3D( First, Получить свойство
+&Vector3D )
+
+Входные параметры:
+
+First TRUE " вектор, задающий направление оси X,
+FALSE " вектор, задающий направление оси Y.
+
+Примечание.
+
+1.  Свойство позволяет получить интерфейс вектора, задающего направление присоедини"
+тельной точки.
+
+2.  Свойство доступно только для чтения.
+2085
+
+
+
+IConjunctivePoint  методы
+
+DirectionObject2  Установить направляющий объект 2
+Интерфейс...
+Синтаксис Automation:
+BOOL SetDirectionObject2( LPDISPATCH NewVal );
+Синтаксис COM:
+HRESULT SetDirectionObject2( IModelObject * NewVal, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+GetVector  Получить вектора направлений главных осей
+Интерфейс...
+Синтаксис Automation:
+BOOL GetVector( ksObj3dTypeEnum Axis, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetVector( ksObj3dTypeEnum Axis, double * X, double * Y, double * Z, BOOL *
+Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Axis " ось.
+
+Выходные параметры:
+
+X " координата по X,
+Y " координата по Y,
+Z " координата по Z.
+2086
+
+
+
+e
+
+InitByMatrix3D  Установить систему координат по 
+матрице SAFEARRAY double (VT_ARRAY | VT_R8)
+Интерфейс...
+Синтаксис Automation:
+BOOL InitByMatrix3D( VARIANT mtr );
+Синтаксис COM:
+HRESULT InitByMatrix3D( VARIANT mtr, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+mtr " массив координат SAFEARRAY doubl
+(VT_ARRAY | VT_R8).
+
+SetDirectionObject1  Установить направляющий объект 1
+Интерфейс...
+Синтаксис Automation:
+BOOL SetDirectionObject1( LPDISPATCH NewVal );
+Синтаксис COM:
+HRESULT SetDirectionObject1( IModelObject * NewVal, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Интерфейс IControlPoint
+Справка системы КОМПАС: Команда Контрольная точка
+kompas.chm::/Postroenye_kontr_tochek.htm#kontrol_point
+Интерфейс контрольной точки.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPoint3D
+2087
+
+
+
+IControlPoint
+ILocalCSObject
+Примечание:
+
+1.  Интерфейс можно получить, используя свойство IControlPoints::ControlPoint или
+IModelObjects::Item или метод IControlPoints::Add.
+
+2.  Интерфейс наследует у интерфейса IPoint3D пространственной точки все методы и
+свойства для позиционирования, за исключением следующих:
+Symbol() " невозможно установить значения свойства, поскольку стиль отображения
+точки постоянный; получаемое значение свойства во всех случаях будет одинаковым,
+равным ksCirclePoint из перечисления ksAnnotationSymbolEnum.
+
+3.  С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+подчиненного объекта ЛСК ILocalCSObject.
+
+Интерфейс ILocalCoordinateSystem
+Интерфейс локальной системы координат.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPoint3D
+ILocalCoordinateSystem
+
+ILocalCSObject
+Примечание:
+
+1.  Интерфейс можно получить, используя свойство интерфейса коллекции ЛСК
+ILocalCoordinateSystems::LocalCoordinateSystem или метод
+ILocalCoordinateSystems::Add.
+
+2.  Интерфейс наследует от интерфейса 3D точки IPoint3D все методы и свойства для по"
+зиционирования ЛСК.
+
+3.  Интерфейс позволяет задавать смещение вдоль собственных осей ЛСК с помощью ме"
+тода ILocalCoordinateSystem::SetDisplacementByAxis.
+
+4.  С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+подчиненного объекта ЛСК ILocalCSObject.
+
+ILocalCoordinateSystem  свойства
+
+AssociationObject  Получить опорный объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+2088
+
+
+
+AssociationObject = Получить свойство (* )
+Object.AssociationObject
+AssociationObject = Получить свойство (**)
+Object.GetAssociationObject()
+
+Синтаксис COM:
+
+Object.get_AssociationObject( Получить
+&AssociationObject ) свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Current  Состояние ЛСК  текущая/не текущая
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Current = iObject.Current; Получить свойство (* )
+iObject.Current = Current; Установить свойство (* )
+Current = iObject.GetCurrent(); Получить свойство (**)
+iObject.SetCurrent( Current ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Current( &Current ); Получить свойство
+iObject">put_Current( Current ); Установить свойство
+
+Примечание:
+По умолчанию ЛСК создаётся текущей. Чтобы ЛСК создалась не текущей, нужно устано"
+вить свойство iObject.Current = FALSE.
+См. также ILocalCoordinateSystems::SetCurrent.
+
+DefaultObject  Получить примитив ЛСК (ось или 
+плоскость)
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+DefaultObject = iObject.DefaultObject( type ); Получить свойство (* )
+DefaultObject = iObject.GetDefaultObject( type ); Получить свойство (**)
+
+Синтаксис COM:
+2089
+
+
+
+iObject">get_DefaultObject( type, &DefaultObject ); Получить свойство
+
+Входные параметры:
+
+type " тип объекта из перечисления ksObj3dTypeEnum;
+допустимые типы:
+" o3d_axisOX,
+" o3d_axisOY
+" o3d_axisOZ,
+" o3d_planeXOY,
+" o3d_planeXOZ,
+" o3d_planeYOZ.
+
+Возвращаемое значение:
+
+Указатель на примитив ЛСК (ось или пло" " в случае успеха;
+скость).
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Позволяет получить указатель на примитив ЛСК (ось или плоскость) в виде указателя
+
+на интерфейс IModelObject.
+
+Hidden  Состояние видимости объекта
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Hidden = Object.Hidden; Получить свойство (* )
+Object.Hidden = Hidden; Установить свойство (* )
+Hidden = Object.GetHidden(); Получить свойство (**)
+Object.SetHidden( Hidden ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Hidden( &Hidden Получить свойство
+);
+Object.put_Hidden( Hidden ); Установить свойст"
+
+во
+
+LocalCSParameters  Интерфейс параметров ЛСК
+Интерфейс...
+2090
+
+
+
+Тип данных: указатель на интерфейс объекта IKompasAPIObject
+Синтаксис Automation:
+
+LocalCSParameters = iObject.LocalCSParameters; Получить свойство (* )
+LocalCSParameters = iObject.GetLocalCSParameters(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_LocalCSParameters( &LocalCSParameters ); Получить свойство
+
+Примечание:
+В зависимости от типа ILocalCoordinateSystem::OrientationType интерфейс параметров
+должен приводиться к следующим вариантам:
+
+▼ ksAxisOrientation " ILocalCSAxesDirectionParam – Интерфейс параметров ЛСК для типа
+ориентации "Направление осей",
+
+▼ ksEulerCorners " ILocalCSEulerParam – Интерфейс параметров ЛСК для типа ориентации
+"Система углов Эйлера",
+
+▼ ksOrientByObject " ILocalCSOrientByObjectParam – Интерфейс параметров ЛСК для типа
+ориентации "По объекту".
+
+ModelObjectType  Тип 3D объекта из ksObj3dTypeEnum
+Интерфейс...
+Тип данных: из перечисления ksObj3dTypeEnum
+Синтаксис Automation:
+
+ModelObjectType = Получить свойство (* )
+Object.ModelObjectType
+ModelObjectType = Получить свойство (**)
+Object.GetModelObjectType
+
+Синтаксис COM:
+
+Object.get_ModelObjectType( Получить
+&ModelObjectType ) свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Name  Имя элемента трехмерной модели
+Интерфейс...
+Тип данных: BSTR
+2091
+
+
+
+Синтаксис Automation:
+
+Name = Object.Name; Получить свойство (* )
+Object.Name = Name; Установить свойство (* )
+Name = Object.GetName(); Получить свойство (**)
+Object.SetName( Name ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name( &Name ); Получить свойство
+Object.put_Name( Name ); Установить свойство
+
+OrientationType  Тип ориентирования ЛСК
+Интерфейс...
+Тип данных: из перечисления ksOrientationTypeEnum
+Синтаксис Automation:
+
+OrientationType = iObject.OrientationType; Получить свойство (* )
+iObject.OrientationType = OrientationType; Установить свойство (* )
+OrientationType = iObject.GetOrientationType(); Получить свойство (**)
+iObject.SetOrientationType( OrientationType ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_OrientationType( &OrientationType ); Получить свойство
+iObject">put_OrientationType( OrientationType ); Установить свойство
+
+Owner  Объект породивший этот объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IFeature7
+Синтаксис Automation:
+
+Owner = Object.Owner Получить свойство (* )
+Owner = Object.GetOwner Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Owner( &Owner ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+2092
+
+
+
+Parameters  Получить интерфейс параметров точки
+Интерфейс...
+Тип данных: Указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+
+Parameters = Object.Parameters Получить свойство (* )
+Parameters = Object.GetParameters Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Parameters( &Parameters ) Пoолучить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ParameterType  Тип параметров построения точки
+Интерфейс...
+Тип данных: из перечисления ksPoint3DTypeEnum
+Синтаксис Automation:
+
+ParameterType = Object.ParameterType; Получить свойство (* )
+Object.ParameterType = ParameterType; Установить свойство (* )
+ParameterType = Object.GetParameterType(); Получить свойство (**)
+Object.SetParameterType( ParameterType ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ParameterType( &ParameterType ); Получить свойство
+Object.put_ParameterType( ParameterType ); Установить свойство
+
+Part  Компонент, владеющий элементом
+Интерфейс...
+Тип данных: Указатель на интерфейс IPart7
+Синтаксис Automation:
+
+Part = Object.Part Получить свойство (* )
+Part = Object.GetPart Получить свойство (**)
+
+Синтаксис COM:
+2093
+
+
+
+Object.get_Part( &Part ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Symbol  Стиль отображения
+Интерфейс...
+Тип данных: из перечисления ksAnnotationSymbolEnum
+Синтаксис Automation:
+
+Symbol = Object.Symbol; Получить свойство (* )
+Object.Symbol = Symbol; Установить свойство (* )
+Symbol = Object.GetSymbol(); Получить свойство (**)
+Object.SetSymbol( Symbol ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Symbol( &Symbol ); Получить свойство
+Object.put_Symbol( Symbol ); Установить свойство
+
+Valid  Возвращает признак невырожденности объекта
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Valid = Object.Valid Получить свойство (* )
+Valid = Object.GetValid Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Valid( &Valid ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Vector3D  Вектор, задающий направление оси
+Интерфейс...
+Тип данных: указатель на интерфейс IVector3D
+Синтаксис Automation:
+
+Vector3D = Object.Vector3D( Axis ) Получить свойство (* )
+2094
+
+
+
+Vector3D = Object.GetVector3D( Axis ) Получить свойство (**)
+Синтаксис COM:
+
+Object.get_Vector3D( Axis, &Vector3D ) Получить свойство
+
+Входные параметры:
+
+ksObj3dTypeEnum Axis – ось.
+
+Примечание:
+Свойство доступно только для чтения.
+
+X  Координата X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X; Получить свойство (* )
+Object.X = X; Установить свойство (* )
+X = Object.GetX(); Получить свойство (**)
+Object.SetX( X ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ); Получить свойство
+Object.put_X( X ); Установить свойство
+
+Y  Координата Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y; Получить свойство (* )
+Object.Y = Y; Установить свойство (* )
+Y = Object.GetY(); Получить свойство (**)
+Object.SetY( Y ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y( &Y ); Получить свойство
+Object.put_Y( Y ); Установить свойство
+
+Z  Координата Z
+Интерфейс...
+2095
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Z = Object.Z; Получить свойство (* )
+Object.Z = Z; Установить свойство (* )
+Z = Object.GetZ(); Получить свойство (**)
+Object.SetZ( Z ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Z( &Z ); Получить свойство
+Object.put_Z( Z ); Установить свойст"
+
+во
+
+ILocalCoordinateSystem  методы
+
+GetVector  Получить вектора направлений главных осей
+Интерфейс...
+Синтаксис Automation:
+BOOL GetVector( ksObj3dTypeEnum axis,
+double * x,
+double * y,
+double * z );
+Синтаксис COM:
+HRESULT GetVector( [in]  ksObj3dTypeEnum   axis,
+[out] double * x,
+[out] double * y,
+[out] double * z,
+[out, retval] * Result );
+Входные параметры:
+
+axis " тип оси из перечисления
+ksObj3dTypeEnum;
+
+допустимые типы:
+" o3d_axisOX,
+" o3d_axisOY
+" o3d_axisOZ.
+
+Выходные параметры:
+
+x " координата X вектора направления оси,
+y " координата Y вектора направления оси,
+z " координата Z вектора направления оси.
+
+Возвращаемое значение:
+2096
+
+
+
+TRUE " в случае успеха;
+FALSE " в случае неудачи.
+
+InitByMatrix3D  Установить систему координат по 
+матрице
+Интерфейс...
+Синтаксис Automation:
+BOOL InitByMatrix3D( VARIANT mtr );
+Синтаксис COM:
+HRESULT InitByMatrix3D( VARIANT mtr, BOOL * Result );
+Входные параметры:
+
+mtr " массив SafeAttray типа (VT_ARRAY |
+VT_R8).
+
+Примечание:
+
+1.  Элементы матрицы возвращаются в виде одномерного массива из 16 элементов.
+2.  Матрица имеет размер 4х4.
+
+ReadFromFile  Прочитать файл с данными
+Интерфейс...
+Синтаксис Automation:
+BOOL ReadFromFile( BSTR fileName );
+Синтаксис COM:
+HRESULT ReadFromFile( [in] BSTR fileName,
+[out, retval] VARIANT_BOOL* Result);
+Входные данные:
+
+fileName " полное имя файла.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха;
+FALSE " в случае неудачи.
+
+Примечание:
+Позволяет установить направление осей ЛСК в соответствии со значениями в текстовом
+файле. Файл должен быть записан с помощью метода
+ILocalCoordinateSystem::WriteToFile.
+2097
+
+
+
+SetAssociationObject  Установить опорный объект
+Интерфейс...
+Синтаксис Automation:
+BOOL SetAssociationObject( IModelObject * NewVal );
+Синтаксис COM:
+HRESULT SetAssociationObject( IModelObject * NewVal, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха;
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+NewVal " указатель на опорный 
+объект.
+
+SetDisplacementByAxis  Установить смещение по оси
+Интерфейс...
+Синтаксис Automation:
+BOOL SetDisplacementByAxis( ksObj3dTypeEnum axis,
+double NewVal );
+Синтаксис COM:
+HRESULT SetDisplacementByAxis( ksObj3dTypeEnum axis,
+double NewVal
+BOOL * Result);
+Входные параметры:
+
+axis " тип оси из перечисления ksObj3dTypeEnum
+допустимые типы:
+" o3d_axisOX,
+" o3d_axisOY
+" o3d_axisOZ.
+
+NewVal " величина смещения.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха;
+FALSE " в случае неудачи.
+
+Примечание:
+2098
+
+
+
+1.  Позволяет установить смещение точки начала координат ЛСК вдоль оси ЛСК.
+2. Чтобы изменения вступили в силу, нужно вызвать метод IModelObject::Update.
+
+SetStartingOrientation  Установить исходное положение 
+ЛСК
+Интерфейс...
+Синтаксис Automation:
+BOOL SetStartingOrientation();
+Синтаксис COM:
+HRESULT SetStartingOrientation([out, retval] VARIANT_BOOL* Result);
+Возвращаемое значение:
+
+TRUE " в случае успеха;
+FALSE " в случае неудачи.
+
+Примечание:
+Позволяет установить ЛСК в положение, соответствующее матрице векторов:
+
+Ось X Y Z
+Ось X 1 0 0
+Ось Y 0 1 0
+Ось Z 0 0 1
+
+Update  Изменить свойства объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха;
+FALSE " в случае неудачи.
+
+WriteToFile  Записать файл с данными
+Интерфейс...
+Синтаксис Automation:
+BOOL WriteToFile( BSTR fileName );
+Синтаксис COM:
+2099
+
+
+
+HRESULT WriteToFile( [in] BSTR fileName,
+[out, retval] VARIANT_BOOL* Result);
+Входные параметры:
+
+fileName " полное имя файла.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха;
+FALSE " в случае неудачи.
+
+Примечание:
+Позволяет записать значения векторов направлений осей ЛСК в текстовый файл.
+
+Интерфейс IPoint3DParamCenter
+Справка системы КОМПАС...
+kompas.chm::/CM_CPOINT3D_CENTER.htm
+Интерфейс параметров пространственной точки заданной в центре опорного
+объекта.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPoint3DParamCenter
+
+Примечание:
+Интерфейс можно получить с помощью свойства пространственной точки
+IPoint3D::Parameters.
+
+IPoint3DParamCenter  свойства
+
+Object  Получить объект
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+Object = iObject.Object; Получить свойство (* )
+Object = iObject.GetObject(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Object( &Object ); Получить свойство
+2100
+
+
+
+IPoint3DParamCenter  методы
+
+SetObject  Установить объект
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetObject([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " объект, имеющий центр.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Объект должен иметь центр.
+
+Интерфейс IPoint3DParamCurve
+Справка системы КОМПАС...
+kompas.chm::/CM_CPOINT3D_ONCURVE.htm
+Интерфейс параметров пространственной точки, заданной на кривой со сме
+щением.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPoint3DParamCurve
+
+Примечание:
+Интерфейс можно получить с помощью свойства пространственной точки
+IPoint3D::Parameters.
+
+IPoint3DParamCurve  свойства
+
+CurveObject  Получить кривую
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+2101
+
+
+
+CurveObject = Получить свойство (* )
+iObject.CurveObject;
+CurveObject = Получить свойство (**)
+iObject.GetCurveObject();
+
+Синтаксис COM:
+
+iObject">get_CurveObject( Получить свойство
+&CurveObject );
+
+Direction  Направление смещения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = iObject.Direction; Получить свойство (* )
+iObject.Direction = Direction; Установить свойство (* )
+Direction = Получить свойство (**)
+iObject.GetDirection();
+iObject.SetDirection( Direction ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Direction( Получить свойство
+&Direction );
+iObject">put_Direction( Direction Установить свойство
+);
+
+Значения свойства:
+
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Offset  Величина смещения
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Offset = iObject.Offset; Получить свойство (* )
+iObject.Offset = Offset; Установить свойство (* )
+Offset = iObject.GetOffset(); Получить свойство (**)
+iObject.SetOffset( Offset ); Установить свойство (**)
+2102
+
+
+
+Синтаксис COM:
+
+iObject">get_Offset( &Offset ); Получить свойство
+iObject">put_Offset( Offset ); Установить свойство
+
+Примечание:
+
+1.  Для типа смещения по параметру U (ksOffsetByU) " свойство 0..100 (величина U в %).
+2.  Для типа смещения по длине дуги (ksOffsetByLen) " свойство определяет длину дуги.
+3.  Для типа смещения по центральному углу дуги (ksOffsetByAngle) " свойство определяет
+
+угол.
+
+OffsetType  Тип задания смещения
+Интерфейс...
+Тип данных: из перечисления ksPoint3DCurveParamTypeEnum
+Синтаксис Automation:
+
+OffsetType = iObject.OffsetType; Получить свойство (* )
+iObject.OffsetType = OffsetType; Установить свойство (* )
+OffsetType = Получить свойство (**)
+iObject.GetOffsetType();
+iObject.SetOffsetType( Установить свойство (**)
+OffsetType );
+
+Синтаксис COM:
+
+iObject">get_OffsetType( Получить свойство
+&OffsetType );
+iObject">put_OffsetType( Установить свойство
+OffsetType );
+
+IPoint3DParamCurve  методы
+
+SetCurveObject  Установить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCurveObject( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetCurveObject([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " кривая.
+2103
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IPoint3DParamDisplace
+Справка системы КОМПАС...
+kompas.chm::/CM_CPOINT3D_DISPLACE.htm
+Интерфейс параметров пространственной точки, заданной по смещению от
+опорного объекта.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPoint3DParamDisplace
+
+Примечание:
+Интерфейс можно получить с помощью свойства пространственной точки
+IPoint3D::Parameters.
+
+IPoint3DParamDisplace  свойства
+
+AssociationVertex  Интерфейс опорной точки
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+AssociationVertex = Получить свойство (* )
+iObject.AssociationVertex;
+AssociationVertex = Получить свойство (**)
+iObject.GetAssociationVertex();
+
+Синтаксис COM:
+
+iObject">get_AssociationVertex( Получить свойство
+&AssociationVertex );
+
+Distance  Расстояние от опорного объекта
+Интерфейс...
+Тип данных: double
+
+Distance = iObject.Distance; Получить свойство (* )
+iObject.Distance = Distance; Установить свойство (* )
+2104
+
+
+
+Distance = iObject.GetDistance(); Получить свойство (**)
+iObject.SetDistance( Distance ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Distance( &Distance ); Получить свойство
+iObject">put_Distance( Distance ); Установить свойство
+
+DX  Смещение по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+DX = iObject.DX; Получить свойство (* )
+iObject.DX = DX; Установить свойство (* )
+DX = iObject.GetDX(); Получить свойство (**)
+iObject.SetDX( DX ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_DX( &DX ); Получить свойство
+iObject">put_DX( DX ); Установить свойство
+
+DY  Смещение по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+DY = iObject.DY; Получить свойство (* )
+iObject.DY = DY; Установить свойство (* )
+DY = iObject.GetDY(); Получить свойство (**)
+iObject.SetDY( DY ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_DY( &DY ); Получить свойство
+iObject">put_DY( DY ); Установить свойство
+
+DZ  Смещение по Z
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+2105
+
+
+
+DZ = iObject.DZ; Получить свойство (* )
+iObject.DZ = DZ; Установить свойство (* )
+DZ = iObject.GetDZ(); Получить свойство (**)
+iObject.SetDZ( DZ ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_DZ( &DZ ); Получить свойство
+iObject">put_DZ( DZ ); Установить свойство
+
+GuidingObject  Направляющий объект
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+GuidingObject = Получить свойство (* )
+iObject.GuidingObject;
+GuidingObject = Получить свойство (**)
+iObject.GetGuidingObject();
+
+Синтаксис COM:
+
+iObject">get_GuidingObject( Получить свойство
+&GuidingObject );
+
+Vector3D  Получить параметры вектора
+Интерфейс...
+Тип данных: указатель на интерфейс IVector3D
+Синтаксис Automation:
+
+Vector3D = Object.Vector3D Получить свойство (* )
+Vector3D = Object.GetVector3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Vector3D( &Vector3D Получить свойство
+)
+
+Свойство позволяет получить интерфейс вектора, задающего направление смещения
+точки.
+Примечание:
+Свойство доступно только для чтения.
+2106
+
+
+
+IPoint3DParamDisplace  методы
+
+SetAssociationVertex  Установить опорную точку
+Интерфейс...
+Синтаксис Automation:
+BOOL SetAssociationVertex( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetAssociationVertex([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result
+);
+Входные параметры:
+
+obj " опорная точка.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetGuidingObject  Установить направляющий объект
+Интерфейс...
+Синтаксис Automation:
+BOOL SetGuidingObject( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetGuidingObject([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " опорная точка.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IPoint3DParamIntersect
+Справка системы КОМПАС...
+kompas.chm::/CM_CPOINT3D_INTERSECT.htm
+Интерфейс параметров пространственной точки, заданной на пересечении
+опорных объектов.
+Иерархия:
+2107
+
+
+
+IDispatch
+IKompasAPIObject
+
+IPoint3DParamIntersect
+Примечание:
+Интерфейс можно получить с помощью свойства пространственной точки
+IPoint3D::Parameters.
+
+IPoint3DParamIntersect  свойства
+
+CartPointArray  Массив координат точек пересечения 
+кривой и поверхности в виде SAFEARRAY VT_R8  
+VT_ARRAY | VT_R8
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+CartPointArray = Получить свойство (* )
+iObject.CartPointArray;
+CartPointArray = Получить свойство (**)
+iObject.GetCartPointArray();
+
+Синтаксис COM:
+
+iObject">get_CartPointArray( Получить свойство
+&CartPointArray );
+
+Примечание.
+Массив SafeArray типа VT_ARRAY | VT_R8 координат точек для пересечения.
+
+CurveObject  Получить кривую
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+CurveObject = Получить свойство (* )
+iObject.CurveObject;
+CurveObject = Получить свойство (**)
+iObject.GetCurveObject();
+
+Синтаксис COM:
+2108
+
+
+
+iObject">get_CurveObject( Получить свойство
+&CurveObject );
+
+Index  Индекс точки пересечения
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Index = iObject.Index; Получить свойство (* )
+iObject.Index = Index; Установить свойство (* )
+Index = iObject.GetIndex(); Получить свойство (**)
+iObject.SetIndex( Index ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Index( &Index ); Получить свойство
+iObject">put_Index( Index ); Установить свойство
+
+Примечание:
+Индекс нужной точки можно вычислить из IPoint3DParamIntersect::CartPointArray.
+
+SurfaceObject  Получить поверхность
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+SurfaceObject = Получить свойство (* )
+iObject.SurfaceObject;
+SurfaceObject = Получить свойство (**)
+iObject.GetSurfaceObject();
+
+Синтаксис COM:
+
+iObject">get_SurfaceObject( Получить свойство
+&SurfaceObject );
+
+IPoint3DParamIntersect  методы
+
+SetCurveObject  Установить направляющий объект
+Интерфейс...
+2109
+
+
+
+Синтаксис Automation:
+BOOL SetCurveObject( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetCurveObject([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result);
+Входные параметры:
+
+obj " кривая.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetSurfaceObject  Установить поверхность
+Интерфейс...
+Синтаксис Automation:
+BOOL SetSurfaceObject( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetSurfaceObject([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " поверхность.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IPoint3DParamProjection
+Справка системы КОМПАС...
+kompas.chm::/CM_CPOINT3D_PROJECT.htm
+Интерфейс параметров пространственной точки, заданной проецированием.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPoint3DParamProjection
+
+Примечание:
+Интерфейс можно получить с помощью свойства пространственной точки
+IPoint3D::Parameters.
+2110
+
+
+
+IPoint3DParamProjection  свойства
+
+AssociationVertex  Получить опорную точку
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+AssociationVertex = Получить свойство (* )
+iObject.AssociationVertex
+AssociationVertex = Получить свойство (**)
+iObject.GetAssociationVertex()
+
+Синтаксис COM:
+
+iObject">get_AssociationVertex( Получить свойство
+&AssociationVertex )
+
+GuidingObject  Получить направляющий объект
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+GuidingObject = Получить свойство (* )
+iObject.GuidingObject;
+GuidingObject = Получить свойство (**)
+iObject.GetGuidingObject();
+
+Синтаксис COM:
+
+iObject">get_GuidingObject( Получить свойство
+&GuidingObject );
+
+SurfaceObject  Получить поверхность
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+SurfaceObject = Получить свойство (* )
+iObject.SurfaceObject;
+SurfaceObject = Получить свойство (**)
+iObject.GetSurfaceObject();
+2111
+
+
+
+Синтаксис COM:
+
+iObject">get_SurfaceObject( Получить свойство
+&SurfaceObject );
+
+Vector3D  Получить параметры вектора
+Интерфейс...
+Тип данных: указатель на интерфейс IVector3D
+Синтаксис Automation:
+
+Vector3D = Object.Vector3D Получить свойство (* )
+Vector3D = Object.GetVector3D() Получить свойство
+
+(**)
+
+Синтаксис COM:
+
+Object.get_Vector3D( &Vector3D ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс вектора, задающего направление проецирова"
+ния точки.
+
+2.  Свойство доступно только для чтения.
+
+IPoint3DParamProjection  методы
+
+SetAssociationVertex  Установить опорную точку
+Интерфейс...
+Синтаксис Automation:
+BOOL SetAssociationVertex( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetAssociationVertex([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result
+);
+Входные параметры:
+
+obj " опорная точка.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+2112
+
+
+
+SetGuidingObject  Установить направляющий объект
+Интерфейс...
+Синтаксис Automation:
+BOOL SetGuidingObject( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetGuidingObject([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " опорная точка.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetSurfaceObject  Установить объект1
+Интерфейс...
+Синтаксис Automation:
+BOOL SetSurfaceObject( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetSurfaceObject([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " поверхность.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IPoint3DParamSurface
+Справка системы КОМПАС...
+kompas.chm::/CM_CPOINT3D_ONFACE.htm
+Интерфейс параметров пространственной точки, заданной на поверхности.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPoint3DParamSurface
+2113
+
+
+
+Примечание:
+Интерфейс можно получить с помощью свойства пространственной точки
+IPoint3D::Parameters.
+
+ IPoint3DParamSurface  свойства
+
+AllowBoundaries  TRUE  Учитывать границы
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AllowBoundaries = Получить свойство (* )
+Object.AllowBoundaries
+Object.AllowBoundaries = Установить свойство (* )
+AllowBoundaries
+AllowBoundaries = Получить свойство (**)
+Object.GetAllowBoundaries()
+Object.SetAllowBoundaries( Установить свойство (**)
+AllowBoundaries )
+
+Синтаксис COM:
+
+Object.get_AllowBoundaries( Получить свойство
+&AllowBoundaries )
+Object.put_AllowBoundaries( Установить свойство
+AllowBoundaries )
+
+Object1 Получить объект1
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+Object1 = iObject.Object1; Получить свойство
+(* )
+
+Object1 = iObject.GetObject1(); Получить свойство
+(**)
+
+Синтаксис COM:
+
+iObject">get_Object1( &Object1 Получить свойство
+);
+2114
+
+
+
+Object2  Получить объект2
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+Object2 = iObject.Object2; Получить свойство (* )
+Object2 = iObject.GetObject2(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Object2( &Object2 Получить свойство
+);
+
+OffsetType  Тип задания смещения
+Интерфейс...
+Тип данных: из перечисления ksPoint3DCurveParamTypeEnum
+Синтаксис Automation:
+
+OffsetType = iObject.OffsetType; Получить свойство (* )
+iObject.OffsetType = OffsetType; Установить свойство (* )
+OffsetType = Получить свойство (**)
+iObject.GetOffsetType();
+iObject.SetOffsetType( Установить свойство (**)
+OffsetType );
+
+Синтаксис COM:
+
+iObject">get_OffsetType( Получить свойство
+&OffsetType );
+iObject">put_OffsetType( Установить свойство
+OffsetType );
+
+Offset1  Величина смещения1 
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Offset1 = iObject.Offset1; Получить свойство (* )
+iObject.Offset1 = Offset1; Установить свойство (* )
+Offset1 = iObject.GetOffset1(); Получить свойство (**)
+iObject.SetOffset1( Offset1 ); Установить свойство (**)
+2115
+
+
+
+Синтаксис COM:
+
+iObject">get_Offset1( &Offset1 ); Получить свойство
+iObject">put_Offset1( Offset1 ); Установить свойство
+
+Примечание:
+
+1.  Для типа смещения по параметру U и V (ksOffsetByUV) " свойство 0..100 (величина U в
+%).
+
+2.  Для типа смещения по расстояниям от плоских объектов (ksOffsetByLenFromObj) " свой"
+ство определяет расстояние от плоского объекта 1.
+
+Offset2  Величина смещения2
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Offset2 = iObject.Offset2; Получить свойство (* )
+iObject.Offset2 = Offset2; Установить свойство (* )
+Offset2 = iObject.GetOffset2(); Получить свойство (**)
+iObject.SetOffset2( Offset2 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Offset2( &Offset2 ); Получить свойство
+iObject">put_Offset2( Offset2 ); Установить свойство
+
+Примечание:
+
+1.  Для типа смещения по параметру U и V (ksOffsetByUV) " свойство 0..100 (величина V в
+%).
+
+2.  Для типа смещения по расстояниям от плоских объектов (ksOffsetByLenFromObj) " свой"
+ство определяет расстояние от плоского объекта 2.
+
+SurfaceObject  Получить поверхность
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+SurfaceObject = Получить свойство (* )
+iObject.SurfaceObject;
+SurfaceObject = Получить свойство (**)
+iObject.GetSurfaceObject();
+
+Синтаксис COM:
+2116
+
+
+
+iObject">get_SurfaceObject( Получить свойство
+&SurfaceObject );
+
+ IPoint3DParamSurface  методы
+
+SetObject1  Установить объект1
+Интерфейс...
+Синтаксис Automation:
+BOOL SetObject1( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetObject1([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " плоский объект.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetObject2  Установить объект2
+Интерфейс...
+Синтаксис Automation:
+BOOL SetObject2( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetObject2([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " плоский объект.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetSurfaceObject  Установить поверхность
+Интерфейс...
+Синтаксис Automation:
+2117
+
+
+
+BOOL SetSurfaceObject( LPDISPATCH obj );
+Синтаксис COM:
+HRESULT SetSurfaceObject([in] IModelObject* obj, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+obj " поверхность.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IPoint3DParamByCylinder
+Справка системы КОМПАС...
+kompas.chm::/CM_CPOINT3D_ONFACE.htm
+Интерфейс параметров пространственной точки, заданной по цилиндриче
+ским координатам
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPoint3DParamByCylinder
+
+Интерфейс можно получить с помощью свойства пространственной точки
+IPoint3D::Parameters.
+
+IPoint3DParamByCylinder  свойства
+
+A  Координата A (угол поворота точки)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+A = Object.A Получить свойство (* )
+Object.A = A Установить свойство (* )
+A = Object.GetA() Получить свойство (**)
+Object.SetA( A ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_A( &A ) Получить свойство
+Object.put_A(  A ) Установить свойство
+2118
+
+
+
+Свойство позволяет устанавливать и получать угол поворота точки.
+
+AssociationObject  Опорный объект
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+AssociationObject = Object.AssociationObject Получить свойство (* )
+Object.AssociationObject = AssociationObject Установить свойство (* )
+AssociationObject = Object.GetAssociationObject() Получить свойство (**)
+Object.SetAssociationObject( AssociationObject ) Установить свойство (**)
+
+Синтаксис COM:
+

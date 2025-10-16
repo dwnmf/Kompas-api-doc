@@ -1,0 +1,2532 @@
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Смотрите также ksLtVariant
+Примечание.
+
+1.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+
+ksIterator::ksMoveAttrIterator,
+▼ с помощью методов создания атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+
+бутов ksAttributeObject::ksChoiceAttr.
+2.  Перед использованием указатель flagVisible должен быть получен от интерфейса
+
+KompasObject с помощью метода KompasObject::GetParamStruct с параметром
+ko_LtVariant, методов интерфейса ksLtVariant, ksDynamicArray.
+
+3.  Перед использованием указатель value должен быть получен от интерфейса
+KompasObject с помощью метода KompasObject::GetParamStruct с параметром
+ko_UserParam с последующим наполнением массива с помощью методов интерфейса
+ksUserParam, ksLtVariant, ksDynamicArray.
+
+ksChoiceAttr  Вывести диалог для просмотра 
+атрибутов объекта и выбора нужного атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " ChoiceAttr.
+Синтаксис Automation:
+4193
+
+
+
+long ksChoiceAttr (reference pObj);
+Входной параметр:
+
+pObj " указатель на объект, к которому подключены атрибуты.
+
+Возвращаемое значение:
+
+указатель на атрибут " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Указатель на объект reference pObj может быть получен следующими способами:
+
+▼ с помощью свойства reference интерфейса соответствующего объекта,
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateIterator,
+
+ksIterator::ksMoveIterator.
+
+ksChoiceAttr3D  Просмотреть атрибуты объекта 
+документамодели
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " ksChoiceAttr3D.
+Синтаксис Automation:
+ksAttribute3D * ksChoiceAttr3D (LPDISPATCH pObj);
+Входные параметры:
+
+pObj " указатель на объект.
+
+Возвращаемое значение:
+
+Указатель на интерфейс атрибута ksAttribute3D " в случае удачного завершения,
+0 " в случае неудачи.
+
+ksChoiceAttrTypes  Выбрать указанный 
+пользователем в диалоге тип атрибута из 
+библиотеки или документа
+Интерфейс...
+4194
+
+
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " ChoiceAttrTypes.
+Синтаксис Automation:
+double ksChoiceAttrTypes (BSTR libName);
+Входной параметр:
+
+libName " имя библиотеки типов атрибутов, 
+если libname = NULL, то тип атрибута берется из текущего 
+документа.
+
+Возвращаемое значение:
+
+уникальный номер типа атрибута " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Диалог "привязан" к главному окну.
+
+ksCreateAttr  Создать атрибут по номеру типа 
+атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/512_63_1_1_Atribut_odnogo_grafi.htm
+Аналог данного метода при использовании API экспортных функций " ksCreateAttr.
+Синтаксис Automation:
+long ksCreateAttr (reference pObj, 
+LPDISPATCH attr, 
+double attrID, 
+BSTR libName);
+Входные параметры:
+
+pObj " указатель на объект (группа, вид, отдельный объект), 
+атрибут которого создается. 
+Если pObj = 0, то создается атрибут документа,
+
+attr " указатель на интерфейс параметров атрибута 
+ksAttributeParam,
+
+attrID " уникальный номер типа атрибута,
+libName " имя библиотеки типов атрибутов, 
+
+если libname = NULL, то тип атрибута берется из текущего 
+документа.
+4195
+
+
+
+Возвращаемое значение:
+
+указатель на атрибут " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание.
+
+1.  Указатель на объект reference pObj может быть получен следующими способами:
+▼ с помощью свойства reference интерфейса соответствующего объекта,
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+
+ksIterator::ksMoveAttrIterator,
+2.  Параметры атрибута должны быть заданы с помощью метода
+
+KompasObject::GetParamStruct с параметром ko_Attribute с последующим наполнением
+массива с помощью свойств и методов интерфейса ksAttributeParam.
+
+3.  Уникальный номер типа атрибута attrID может быть получен от интерфейса
+ksLibraryAttrTypeParam с помощью свойства ksLibraryAttrTypeParam::typeid. Тип атрибута
+должен быть предварительно создан, например, с помощью метода
+ksAttributeObject::ksCreateAttrType.
+
+ksCreateAttr3D  Cоздать атрибут по номеру типа 
+атрибута из библиотеки
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/512_63_1_1_Atribut_odnogo_grafi.htm
+Аналог данного метода при использовании API экспортных функций " ksCreateAttr3D.
+Синтаксис Automation:
+ksAttribute3D* ksCreateAttr3D (LPDISPATCH pObj, 
+LPDISPATCH attr, 
+double attrID, 
+BSTR libname);
+Входные параметры:
+
+pObj " указатель на объект для которого создается атрибут,
+attr " указатель на интерфейс параметров атрибута 
+
+ksAttributeParam,
+attrID " уникальный номер типа атрибута,
+libname " имя библиотеки атрибутов если libname = NULL" тип 
+
+атрибута берется в документе.
+
+Возвращаемое значение:
+
+Указатель на интерфейс атрибута ksAttribute3D " в случае удачного завершения,
+0 " в случае неудачи.
+4196
+
+
+
+Примечание:
+
+1.  Атрибут можно добавить ко всем объектам дерева построений, кроме компонентов, со"
+пряжений, группы сопряжений.
+
+2.  Параметры атрибута должны быть заданы с помощью метода
+KompasObject::GetParamStruct с параметром ko_Attribute с последующим наполнением
+массива с помощью свойств и методов интерфейса ksAttributeParam.
+
+3.  Уникальный номер типа атрибута attrID может быть получен от интерфейса
+ksLibraryAttrTypeParam с помощью свойства ksLibraryAttrTypeParam::typeid. Тип атрибута
+должен быть предварительно создан, например, с помощью метода
+ksAttributeObject::ksCreateAttrType.
+
+ksCreateAttr3DEx  Cоздать атрибут по номеру типа 
+атрибута из библиотеки libname
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/512_63_1_1_Atribut_odnogo_grafi.htm
+Аналог данного метода при использовании API экспортных функций " ksCreateAttr3DEx.
+Синтаксис Automation:
+ksAttribute3D * ksCreateAttr3DEx (LPDISPATCH pObj,
+LPDISPATCH pSourcePart,
+LPDISPATCH attr,
+double attrID,
+BSTR libname);
+Входные параметры:
+
+pObj " указатель на объект для которого создается атрибут,
+sourcePart " указатель на интерфейс вставки детали IPart,
+attr " указатель на структуру параметров атрибута ksAttribute,
+attrID " уникальный номер типа атрибута,
+libName " имя библиотеки типов атрибутов, 
+
+если libname = NULL, то тип атрибута берется в документе.
+
+Возвращаемое значение:
+
+Указатель на атрибут IAttribute3D " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Если libname = NULL " тип атрибута берется в документе.
+2.  pObj " может быть равен:
+
+▼ NULL или указателю на интерфейс 3d документа IDocument3D " создается атрибут у до"
+кумента,
+4197
+
+
+
+▼ указателю на интерфейс коллекции объектов дерева IFeatureCollection " атрибут группо"
+вой,
+
+▼ указателю на интерфейс объекта дерева IFeature " атрибут у определенного объекта.
+3.  Атрибут можно добавить ко всем объектам дерева построений, кроме верхнего компо"
+
+нентов, сопряжений, группы сопряжений.
+4.  sourcePart " может быть:
+
+▼ NULL " атрибут будет создан в текущем документе,
+▼ указателю на интерфейс детали или подсборки вставленной в сборку IPart " атрибут бу"
+
+дет создан в документе"источнике,
+▼ если sourcePart == pObj создается атрибут документа в источнике.
+
+ksCreateAttrType  Создать тип атрибута в 
+библиотеке
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/512_63_1_1_Atribut_odnogo_grafi.htm
+Аналог данного метода при использовании API экспортных функций " ksCreateAttrType.
+Синтаксис Automation:
+double ksCreateAttrType (LPDISPATCH attrType, 
+BSTR libName);
+Входные параметры:
+
+attrType " указатель на интерфейс параметров типа табличного атрибута 
+ksAttributeTypeParam,
+
+libName " имя библиотеки типов атрибутов, 
+если libname = NULL, то тип атрибута создается в текущем документе.
+
+Возвращаемое значение:
+
+уникальный номер типа " в случае удачного завершения,
+атрибута 
+0 " в случае неудачи.
+
+Примечание:
+Параметры атрибута должны быть заданы с помощью метода
+KompasObject::GetParamStruct с параметром ko_AttributeType с последующим наполне"
+нием массива с помощью свойств и методов интерфейса ksAttributeTypeParam.
+4198
+
+
+
+ksDeleteAttr  Удалить атрибут
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " DeleteAttr.
+Синтаксис Automation:
+long ksDeleteAttr (reference pObj, 
+reference pAttr, 
+BSTR password);
+Входные параметры:
+
+pObj " указатель на объект, к которому подключен атрибут. 
+Если pObj = 0 " атрибут текущего документа,
+
+pAttr " указатель на удаляемый атрибут,
+password " пароль атрибута.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Примечание:
+
+1.  Указатель на объект reference pObj может быть получен следующими способами:
+▼ с помощью свойства reference интерфейса соответствующего объекта,
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateIterator,
+
+ksIterator::ksMoveIterator.
+2.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+ksIterator::ksMoveAttrIterator,
+
+▼ с помощью методов создания атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+бутов ksAttributeObject::ksChoiceAttr.
+
+ksDeleteAttrRow Удалить строку табличного 
+атрибута неопределенной длины
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/510_62_3_Upravlenie_tipami_atri.htm
+Аналог данного метода при использовании API экспортных функций " ksDeleteAttrRow.
+Синтаксис Automation:
+long ksDeleteAttrRow (reference pAttr, 
+long rowNumb, 
+4199
+
+
+
+BSTR password);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+rowNumb " номер строки,
+password " пароль атрибута.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Примечание:
+Указатель на атрибут reference pAttr может быть получен следующими способами:
+
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+ksIterator::ksMoveAttrIterator,
+
+▼ с помощью методов создания  атрибутов ksAttributeObject::ksCreateAttr или выбора  атри"
+бутов ksAttributeObject::ksChoiceAttr.
+
+ksDeleteAttrType  Удалить тип атрибута из 
+библиотеки
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " DeleteAttrType.
+Синтаксис Automation:
+long ksDeleteAttrType (double attrID, 
+BSTR libName, 
+BSTR password);
+Входные параметры:
+
+attrID " уникальный номер типа,
+libName " имя библиотеки типов атрибутов, 
+
+если libname = NULL, то тип атрибута удаляется из текущего 
+документа,
+
+password " пароль типа атрибута.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+4200
+
+
+
+Уникальный номер типа атрибута attrID может быть получен от интерфейса
+ksLibraryAttrTypeParam с помощью свойства ksLibraryAttrTypeParam::typeid или с помо"
+щью метода ksAttributeObject::ksGetAttrKeysInfo.
+
+ksDeleteAttr3D  Удалить атрибут объекта 3D 
+документа
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/516_63_3_Operacii_s_atributami_.htm
+Аналог данного метода при использовании API экспортных функций " ksDeleteAttr3D.
+Синтаксис Automation:
+long ksDeleteAttr3D (LPDISPATCH pObj, ksAttribute3D *pAttr, BSTR password);
+Входные параметры:
+
+pObj " указатель на объект, у которого удаляется атрибут,
+pAttr " указатель на атрибут,
+password " пароль.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+ksGetAttrColumnInfo  Получить информацию о 
+столбце атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " GetAttrColumnInfo.
+Синтаксис Automation:
+long ksGetAttrColumnInfo (reference pAttr, 
+long columnNumb, 
+LPDISPATCH columnInfo);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+columnNumb " номер колонки.
+
+Выходной параметр:
+4201
+
+
+
+columnInfo " указатель на интерфейс параметров столбца табличного 
+атрибута ksColumnInfoParam.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Указатель на атрибут reference pAttr может быть получен следующими способами:
+
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+ksIterator::ksMoveAttrIterator,
+
+▼ с помощью методов создания  атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+бутов ksAttributeObject::ksChoiceAttr.
+
+ksGetAttrKeysInfo  Получить информацию о ключах 
+атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " GetAttrKeysInfo.
+Синтаксис Automation:
+long ksGetAttrKeysInfo (reference pAttr, 
+long* key1, 
+long* key2, 
+long* key3, 
+long* key4, 
+double* attrID);
+Входной параметр:
+
+pAttr " указатель на атрибут.
+
+Выходные параметры:
+
+key1, key2, key3, " ключи атрибута,
+key4
+attrID " уникальный номер типа атрибута.
+
+Возвращаемое значение:
+4202
+
+
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Указатель на атрибут reference pAttr может быть получен следующими способами:
+
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+ksIterator::ksMoveAttrIterator,
+
+▼ с помощью методов создания атрибутов ksAttributeObject::ksCreateAttr или выбора  атри"
+бутов ksAttributeObject::ksChoiceAttr.
+
+ksGetAttrRow  Получить строку атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/505_62_1_2_Opisanie_struktury.htm
+Аналог данного метода при использовании API экспортных функций " ksGetAttrRow.
+Синтаксис Automation:
+long ksGetAttrRow (reference pAttr, 
+long rowNumb, 
+LPDISPATCH flagVisible,
+LPDISPATCH columnKeys, 
+LPDISPATCH value);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+rowNumb " номер строки.
+
+Выходной параметр:
+
+value " указатель на интерфейс ksUserParam, куда копируются данные.
+flagVisible " указатель на интерфейс динамического массива типа 
+
+LTVARIANT_ARR ksDynamicArray, указывающего флаги видимости 
+ячеек строки,
+
+columnKeys " указатель на интерфейс динамического массива типа 
+LTVARIANT_ARR ksDynamicArray, указывающего ключи строки.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Смотрите также:ksLtVariant
+Примечание:
+4203
+
+
+
+1.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+
+ksIterator::ksMoveAttrIterator,
+▼ с помощью методов создания атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+
+бутов ksAttributeObject::ksChoiceAttr.
+2.  Перед использованием указатель flagVisible должен быть получен от интерфейса
+
+KompasObject с помощью метода KompasObject::GetParamStruct с параметром
+ko_LtVariant.
+
+3.  Перед использованием указатель value должен быть получен от интерфейса
+KompasObject с помощью метода KompasObject::GetParamStruct с параметром
+ko_UserParam.
+
+4.  Для получения размера данных строки атрибута может быть использован метод
+ksAttributeObject::ksGetSizeAttrRow.
+
+ksGetAttrTabInfo  Получить информацию о 
+количестве строк и столбцов атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " GetAttrTabInfo.
+Синтаксис Automation:
+long ksGetAttrTabInfo (long pAttr, 
+long* rowsCount, 
+long* columnsCount);
+Входной параметр:
+
+pAttr " указатель на атрибут.
+
+Выходные параметры:
+
+rowsCount " количество строк атрибута,
+columnsCount " количество столбцов атрибута.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Указатель на атрибут reference pAttr может быть получен следующими способами:
+
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+ksIterator::ksMoveAttrIterator,
+4204
+
+
+
+▼ с помощью методов создания  атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+бутов ksAttributeObject::ksChoiceAttr.
+
+ksGetAttrType  Получить описание типа табличного 
+атрибута из библиотеки или текущего документа
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/510_62_3_Upravlenie_tipami_atri.htm
+Аналог данного метода при использовании API экспортных функций " ksGetAttrType.
+Синтаксис Automation:
+long ksGetAttrType (double attrID, 
+BSTR libName, 
+LPDISPATCH attrType);
+Входной параметр:
+
+attrID " уникальный номер типа атрибута,
+libName " имя библиотеки типов атрибутов, 
+
+если libname = NULL, то тип атрибута из текущего 
+документа.
+
+Выходной параметр:
+
+attrType " указатель на интерфейс параметров типа табличного 
+атрибута ksAttributeTypeParam.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Уникальный номер типа атрибута attrID может быть получен от интерфейса
+ksLibraryAttrTypeParam с помощью свойства ksLibraryAttrTypeParam::typeid или с помо"
+щью метода ksAttributeObject::ksGetAttrKeysInfo. Тип атрибута должен быть предвари"
+тельно создан, например, с помощью метода ksAttributeObject::ksCreateAttrType.
+
+2.  Перед использованием указатель attrType должен быть получен с помощью метода
+KompasObject::GetParamStruct с параметром ko_AttributeType.
+
+ksGetAttrValue  Получить значение ячейки из 
+таблицы атрибута
+Интерфейс...
+4205
+
+
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " ksGetAttrValue.
+Синтаксис Automation:
+long ksGetAttrValue (reference pAttr, 
+long rowNumb, 
+long columnNumb, 
+LPDISPATCH flagVisible,
+LPDISPATCH columnKeys, 
+LPDISPATCH value);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+rowNumb " номер строки,
+columnNumb " номер колонки.
+
+Выходной параметр:
+
+value " указатель на интерфейс ksUserParam, куда копируется значение 
+ячейки,
+
+flagVisible " указатель на интерфейс динамического массива типа LTVARIANT_ARR 
+ksDynamicArray, указывающего флаги видимости ячеек,
+
+columnKeys " указатель на интерфейс динамического массива типа LTVARIANT_ARR 
+ksDynamicArray, указывающего ключи полей колонки.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Смотрите также:ksLtVariant
+Примечание
+
+1.  Для нетабличного атрибута номер колонки равен нулю.
+2.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+ksIterator::ksMoveAttrIterator,
+
+▼ с помощью методов создания  атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+бутов ksAttributeObject::ksChoiceAttr.
+
+3.  Перед использованием указатель flagVisible должен быть получен от интерфейса
+KompasObject с помощью метода KompasObject::GetParamStruct с параметром
+ko_LtVariant.
+4206
+
+
+
+4.  Перед использованием указатель value должен быть получен от интерфейса
+KompasObject с помощью метода KompasObject::GetParamStruct с параметром
+ko_UserParam.
+
+5.  Для получения размера данных ячейки атрибута может быть использован метод
+ksAttributeObject::ksGetSizeAttrValue.
+
+ksGetLibraryAttrTypesArray  Получить указатель на 
+динамический массив типов атрибутов типа 
+LIBRARY_ATTR_TYPE_ARR, находящихся в заданной 
+библиотеке типов  ksDynamicArray
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/510_62_3_Upravlenie_tipami_atri.htm
+Аналог данного метода при использовании API экспортных функций "
+ksGetLibraryAttrTypesArray.
+Синтаксис Automation:
+LPDISPATCH ksGetLibraryAttrTypesArray (BSTR libName);
+Входной параметр:
+
+libName " имя библиотеки типов атрибутов.
+Если libname = NULL, то типы атрибутов из текущего документа.
+
+Возвращаемое значение:
+
+указатель на интерфейс мас" " в случае удачного завершения,
+сива ksDynamicArray типа
+LIBRARY_ATTR_TYPE_ARR
+0 " в случае неудачи.
+
+ksGetSizeAttrRow  Получить размер данных строки 
+атрибутов
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/505_62_1_2_Opisanie_struktury.htm
+Аналог данного метода при использовании API экспортных функций " ksGetSizeAttrRow.
+Синтаксис Automation:
+long ksGetSizeAttrRow (reference pAttr, 
+long* count);
+Входной параметр:
+4207
+
+
+
+pAttr " указатель на атрибут.
+
+Выходной параметр:
+
+count " число ячеек с учетом записей.
+
+Возвращаемое значение:
+
+длина строки атрибута " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+
+ksIterator::ksMoveAttrIterator,
+▼ с помощью методов создания  атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+
+бутов ksAttributeObject::ksChoiceAttr.
+2.  При использовании данного метода, не использующего Unicode, размер данных строко"
+
+вого типа будет рассчитываться для unicode строк, как для ANSI строк.
+
+ksGetSizeAttrRowW  Получить размер данных 
+строки атрибутов (Unicode)
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/505_62_1_2_Opisanie_struktury.htm
+Аналог данного метода при использовании API экспортных функций "
+ksGetSizeAttrRowW.
+Синтаксис Automation:
+long ksGetSizeAttrRowW (reference pAttr, 
+long* count);
+Входной параметр:
+
+pAttr " указатель на атрибут.
+
+Выходной параметр:
+
+count " число ячеек с учетом записей.
+
+Возвращаемое значение:
+
+длина строки атрибута " в случае удачного завершения,
+4208
+
+
+
+0 " в случае неудачи.
+Примечание:
+
+1.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+
+ksIterator::ksMoveAttrIterator,
+▼ с помощью методов создания атрибутов ksAttributeObject::ksCreateAttr или выбора  атри"
+
+бутов ksAttributeObject::ksChoiceAttr.
+2.  При использовании метода ksAttributeObject::ksGetSizeAttrRow, не использующего
+
+Unicode, размер данных строкового типа будет расcчитываться для unicode строк, как
+для ANSI строк.
+
+ksGetSizeAttrValue  Получить размер данных 
+ячейки
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/505_62_1_2_Opisanie_struktury.htm
+Аналог данного метода при использовании API экспортных функций " ksGetSizeAttrValue
+Синтаксис Automation:
+long ksGetSizeAttrValue (reference pAttr, 
+long columnNumb, 
+long* count);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+columnNumb " номер колонки.
+
+Выходной параметр:
+
+count " число ячеек с учетом записей.
+
+Возвращаемое значение:
+
+длина строки ячейки атрибута " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+
+ksIterator::ksMoveAttrIterator,
+4209
+
+
+
+▼ с помощью методов создания  атрибутов ksAttributeObject::ksCreateAttr или выбора  атри"
+бутов ksAttributeObject::ksChoiceAttr.
+
+2.  При использовании данного метода, не использующего Unicode, размер данных строко"
+вого типа будет расcчитываться для unicode строк, как для ANSI строк.
+
+ksGetSizeAttrValueW  Получить размер данных 
+ячейки (Unicode)
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/505_62_1_2_Opisanie_struktury.htm
+Аналог данного метода при использовании API экспортных функций "
+ksGetSizeAttrValueW
+Синтаксис Automation:
+long ksGetSizeAttrValueW (reference pAttr, 
+long columnNumb, 
+long* count);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+columnNumb " номер колонки.
+
+Выходной параметр:
+
+Count " число ячеек с учетом записей.
+
+Возвращаемое значение:
+
+длина строки ячейки атрибута " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+
+ksIterator::ksMoveAttrIterator,
+▼ с помощью методов создания атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+
+бутов ksAttributeObject::ksChoiceAttr.
+2.  При использовании метода ksAttributeObject::ksGetSizeAttrValue, не использующего
+
+Unicode, размер данных строкового типа будет расcчитываться для unicode строк, как
+для ANSI строк.
+4210
+
+
+
+ksSetAttrRow  Установить данные строки в таблице 
+атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " ksSetAttrRow.
+Синтаксис Automation:
+long ksSetAttrRow (reference pAttr, 
+long rowNumb, 
+LPDISPATCH flagVisible,
+LPDISPATCH сolumnKeys, 
+LPDISPATCH value, 
+BSTR password);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+rowNumb " номер строки,
+flagVisible " указатель на интерфейс динамического массива типа 
+
+LTVARIANT_ARR ksDynamicArray, указывающего флаги 
+видимости ячеек строки,
+
+columnKeys " указатель на интерфейс динамического массива типа 
+LTVARIANT_ARR ksDynamicArray, указывающего ключи 
+строки,
+
+value " указатель на интерфейс ksUserParam, откуда 
+копируются данные,
+
+password " пароль атрибута.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Смотрите также:ksLtVariant
+Примечание:
+
+1.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+
+ksIterator::ksMoveAttrIterator,
+▼ с помощью методов создания атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+
+бутов ksAttributeObject::ksChoiceAttr.
+2.  Указатель flagVisible может быть получен от интерфейса KompasObject с помощью ме"
+
+тода KompasObject::GetParamStruct с параметром ko_LtVariant, методов интерфейса
+ksLtVariant, ksDynamicArray.
+4211
+
+
+
+3.  Указатель value может быть получен от интерфейса KompasObject с помощью метода
+ompasObject::GetParamStruct с параметром ko_UserParam с последующим наполнением
+массива с помощью методов интерфейса ksUserParam,  ksLtVariant, ksDynamicArray.
+
+ksSetAttrType  Изменить тип атрибута в библиотеке 
+или текущем документе
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/510_62_3_Upravlenie_tipami_atri.htm
+Аналог данного метода при использовании API экспортных функций " ksSetAttrType.
+Синтаксис Automation:
+double ksSetAttrType (double attrID, 
+BSTR libName, 
+LPDISPATCH attrType, 
+BSTR password);
+Входные параметры:
+
+attrID " уникальный номер типа атрибута,
+libName " имя библиотеки типов атрибутов, 
+
+если libname = NULL, то тип атрибута изменяется в текущем 
+документе,
+
+attrType " указатель на интерфейс параметров типа табличного 
+атрибута ksAttributeTypeParam,
+
+password " пароль типа атрибута.
+
+Возвращаемое значение:
+
+уникальный номер типа атрибута " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Уникальный номер типа атрибута attrID может быть получен от интерфейса
+ksLibraryAttrTypeParam с помощью свойства ksLibraryAttrTypeParam::typeid или с помо"
+щью метода ksAttributeObject::ksGetAttrKeysInfo. Тип атрибута типа должен быть предва"
+рительно создан, например, с помощью метода ksAttributeObject::ksCreateAttrType.
+
+2.  Перед использованием указатель attrType должен быть получен с помощью метода
+KompasObject::GetParamStruct с параметром ko_AttributeType с последующим наполне"
+нием параметрами с помощью свойств и методов интерфейса ksAttributeTypeParam.
+4212
+
+
+
+ksSetAttrValue  Установить значение ячейки в 
+таблице атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " ksSetAttrValue.
+Синтаксис Automation:
+long ksSetAttrValue (reference pAttr, 
+long rowNumb, 
+long columnNumb, 
+LPDISPATCH
+flagVisible, 
+LPDISPATCH columnKeys, 
+LPDISPATCH value,
+BSTR password);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+rowNumb " номер строки,
+columnNumb " номер колонки,
+flagVisible " указатель на интерфейс динамического массива типа 
+
+LTVARIANT_ARR ksDynamicArray, указывающего флаги 
+видимости ячеек,
+
+columnKeys " указатель на интерфейс динамического массива типа 
+LTVARIANT_ARR ksDynamicArray, указывающего ключи 
+полей колонки,
+
+value " указатель на интерфейс ksUserParam, откуда 
+копируется значение ячейки,
+
+password " пароль атрибута.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Смотрите также:ksLtVariant
+Примечание:
+
+1.  Для нетабличного атрибута номер колонки равен нулю.
+2.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+ksIterator::ksMoveAttrIterator,
+
+▼ с помощью методов создания атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+бутов ksAttributeObject::ksChoiceAttr.
+4213
+
+
+
+3.  Перед использованием указатель flagVisible должен быть получен от интерфейса
+KompasObject с помощью метода KompasObject::GetParamStruct с параметром
+ko_LtVariant, методов интерфейса ksLtVariant, интерфейса ksDynamicArray, метода
+ksDynamicArray::ksSetArrayItem, ksDynamicArray::ksAddArrayItem.
+
+4.  Перед использованием указатель value должен быть получен от интерфейса
+KompasObject с помощью метода KompasObject::GetParamStruct с параметром
+ko_UserParam с последующим наполнением массива с помощью методов интерфейса
+ksUserParam, ksLtVariant, ksDynamicArray.
+
+ksViewEditAttr  Вывести диалог для просмотра или 
+редактирования атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_ATR_LST_BODY_ATR.htm
+Аналог данного метода при использовании API экспортных функций " ViewEditAttr.
+Синтаксис Automation:
+long ksViewEditAttr (reference pAttr, 
+long type, 
+BSTR password);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+type " режим работы:
+
+ " 1 " режим просмотра,
+   2 " режим редактирования
+
+password " пароль типа атрибута.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Примечание:
+
+1.  Диалог "привязан" к главному окну.
+2.  Указатель на атрибут reference pAttr может быть получен следующими способами:
+
+▼ с помощью интерфейса итератора ksIterator и методов ksIterator::ksCreateAttrIterator,
+ksIterator::ksMoveAttrIterator,
+
+▼ с помощью методов создания атрибутов ksAttributeObject::ksCreateAttr или выбора атри"
+бутов ksAttributeObject::ksChoiceAttr.
+4214
+
+
+
+ksViewEditAttrType  Вывести диалог для просмотра 
+или редактирования типа атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_ATR_NEW_TYPE.htm
+Аналог данного метода при использовании API экспортных функций " ViewEditAttrType.
+Синтаксис Automation:
+long ksViewEditAttrType (BSTR libName, 
+long type, 
+double attrID, 
+BSTR password);
+Входные параметры:
+
+libName " имя библиотеки типов атрибутов. 
+Если libname = NULL, типы атрибутов берутся из текущего 
+документа,
+
+type " режим работы:
+    1 " режим просмотра,
+    2 " режим редактирования,
+
+attrId " уникальный номер типа атрибута,
+password " пароль типа атрибута.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Примечание:
+Уникальный номер типа атрибута attrID может быть получен от интерфейса
+ksLibraryAttrTypeParam с помощью свойства ksLibraryAttrTypeParam::typeid или от интер"
+фейса ksAttributeObject с помощью метода ksAttributeObject::ksGetAttrKeysInfo. Тип атри"
+бута должен быть предварительно создан, например, с помощью метода
+ksAttributeObject::ksCreateAttrType.
+
+Интерфейсы параметров атрибутов
+Колонка табличного атрибута (Интерфейс 
+ksColumnInfoParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/505_62_1_2_Opisanie_struktury.htm
+Интерфейс параметров столбца табличного атрибута.
+Аналог данных параметров при использовании API экспортных функций " ColumnInfo.
+4215
+
+
+
+Примечание:
+
+1.  Перед использованием указатель на интерфейс должен быть определен с помощью ме"
+тода KompasObject::GetParamStruct с параметром ko_ColumnInfoParam.
+
+2.  Параметры интерфейса могут быть получены с помощью методов
+ksAttributeObject::ksGetAttrColumnInfo, ksAttributeTypeParam::GetColumns.
+Смотрите также KompasObject
+
+ksColumnInfoParam  свойства
+def  Значение в колонке по умолчанию
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+def = iColumnInfoParam.def Получить свойство (* )
+iColumnInfoParam.def = def Установить свойство (* )
+def = iColumnInfoParam.GetDef() Получить свойство (**)
+iColumnInfoParam.SetDef( def ) Установить свойство (**)
+
+flagEnum  Признак режима, в котором значение поля 
+атрибута заполняется из массива предопределенных 
+значений
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+flagEnum = iColumnInfoParam.flagEnum Получить свойство (* )
+iColumnInfoParam.flagEnum = flagEnum Установить свойство (* )
+flagEnum = iColumnInfoParam.GetFlagEnum() Получить свойство (**)
+iColumnInfoParam.SetFlagEnum( flagEnum ) Установить свойство (**)
+
+Значения свойства:
+
+TRUE " режим включен,
+FALSE " режим выключен.
+
+header  Заголовoккомментарий типа атрибута
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+4216
+
+
+
+header = iColumnInfoParam.header Получить свойство (* )
+iColumnInfoParam.header = header Установить свойство (* )
+header = iColumnInfoParam.GetHeader() Получить свойство (**)
+iColumnInfoParam.SetHeader( header ) Установить свойство (**)
+
+key  Дополнительный признак ("ключ"), который 
+позволит отличить две переменные одинакового типа
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+key = iColumnInfoParam.key Получить свойство (* )
+iColumnInfoParam.key = key Установить свойство (* )
+key = iColumnInfoParam.GetKey() Получить свойство (**)
+iColumnInfoParam.SetKey( key ) Установить свойство (**)
+
+type Тип данных в столбце
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+type = iColumnInfoParam.type Получить свойство (* )
+iColumnInfoParam.type = type Установить свойство (* )
+type = iColumnInfoParam.GetType() Получить свойство (**)
+iColumnInfoParam.SetType( type ) Установить свойство (**)
+
+Типы данных в столбце табличного атрибута...
+
+ksColumnInfoParam  методы
+GetColumns  Получить указатель на динамический 
+массив информации о колонках типа 
+ATTR_COLUMN_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetColumns();
+Возвращаемое значение:
+
+" указатель на динамический массив типа
+ATTR_COLUMN_ARR ksDynamicArray.
+4217
+
+
+
+Смотрите также ksColumnInfoParam
+
+GetFieldEnum  Получить указатель на интерфейс 
+динамического массива перечислений (строки) типа 
+CHAR_STR_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetFieldEnum();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва перечислений (строки) типа CHAR_STR_ARR
+ksDynamicArray.
+
+Смотрите также ksChar255
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1.  Метод обнуляет все параметры.
+2.  Динамические массивы не создаются.
+
+SetColumns  Установить указатель на динамический 
+массив информации о колонках типа 
+ATTR_COLUMN_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+BOOL SetColumns (LPDISPATCH columns);
+Входной параметр:
+
+columns " указатель на динамический массив типа 
+ATTR_COLUMN_ARR ksDynamicArray.
+4218
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также ksColumnInfoParam
+
+SetFieldEnum  Установить указатель на интерфейс 
+динамического массива перечислений (строки) типа 
+CHAR_STR_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+BOOL SetFieldEnum(LPDISPATCH fieldEnum);
+Входной параметр:
+
+fieldEnum " указатель на интерфейс динамического массива 
+перечислений (строки) типа CHAR_STR_ARR 
+ksDynamicArray.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также ksChar255
+
+Тип атрибута в библиотеке (Интерфейс 
+ksLibraryAttrTypeParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/510_62_3_Upravlenie_tipami_atri.htm
+Интерфейс параметров типа атрибута в библиотеке типов атрибутов.
+Аналог данных параметров при использовании API экспортных функций "
+LibraryAttrTypeParam.
+Примечание:
+
+1.  Перед использованием указатель на интерфейс должен быть определен с помощью ме"
+тода ompasObject::GetParamStruct с параметром ko_LibraryAttrTypeParam.
+
+2.  Параметры интерфейса могут быть получены с помощью метода
+ksAttributeObject::ksGetLibraryAttrTypesArray.
+
+3.  Уникальный номер типа атрибута typeid может быть получен с помощью метода
+ksAttributeObject::ksGetAttrKeysInfo. Тип атрибута должен быть предварительно создан,
+например, с помощью функции ksAttributeObject::ksCreateAttrType.
+Смотрите также KompasObject
+4219
+
+
+
+ksLibraryAttrTypeParam  свойства
+Name  Имя типа атрибута
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+name = iLibraryAttrTypeParam.name Получить свойство (* )
+iLibraryAttrTypeParam.name = name Установить свойство (* )
+name = iLibraryAttrTypeParam.GetName() Получить свойство (**)
+iLibraryAttrTypeParam.SetName( name ) Установить свойство (**)
+
+typeId  Номер типа атрибута в библиотеке
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+typeId = iLibraryAttrTypeParam.typeId Получить свойство (* )
+iLibraryAttrTypeParam.typeId = typeId Установить свойство (* )
+typeId = iLibraryAttrTypeParam.GetTypeId() Получить свойство (**)
+iLibraryAttrTypeParam.SetTypeId( typeId ) Установить свойство (**)
+
+ksLibraryAttrTypeParam  методы
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры.
+
+Тип табличного атрибута (Интерфейс 
+ksAttributeTypeParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/505_62_1_2_Opisanie_struktury.htm
+Интерфейс параметров типа атрибута.
+4220
+
+
+
+Аналог данных параметров при использовании API экспортных функций "
+ksAttributeType.
+Примечание:
+
+1.  Перед использованием указатель на интерфейс должен быть определен с помощью ме"
+тода KompasObject::GetParamStruct с параметром ko_AttributeType.
+
+2.  Параметры интерфейса могут быть получены с помощью метода
+ksAttributeObject::ksGetAttrType.
+
+3. При создании типа атрибута ключам key1 " key4 могут быть присвоены нулевые значе"
+ния. Если заданы ненулевые значения ключей или одного из ключей, эти значения могут
+быть использованы в дальнейшем как дополнительные идентификаторы для поиска
+атрибута с помощью итератора по атрибутам ksIterator::ksCreateAttrIterator. При присво"
+ении значений ключам рекомендуется для ключей key1, key3 присваивать код, иденти"
+фицирующий разработчика, для ключа key2 " код атрибута, для ключа key4 " системный
+код. Значения параметра key4 от 0 до 1000 зарезервированы за ЗАО "АСКОН".
+
+4.  Значения ключей атрибута могут быть получены с помощью метода
+ksAttributeObject::ksGetAttrKeysInfo.
+Смотрите также KompasObject
+
+ksAttributeTypeParam  свойства
+flagVisible  Признак видимости колонки в таблице 
+атрибута
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+flagVisible = iAttributeTypeParam.flagVisible Получить свойство (* )
+iAttributeTypeParam.flagVisible = flagVisible Установить свойство (* )
+flagVisible = iAttributeTypeParam.GetFlagVisible() Получить свойство (**)
+iAttributeTypeParam.SetFlagVisible( flagVisible ) Установить свойство (**)
+
+Значения свойства:
+
+TRUE " невидимый атрибут,
+FALSE " видимый атрибут.
+
+header  Заголовoккомментарий типа атрибута
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+header = iAttributeTypeParam.header Получить свойство (* )
+4221
+
+
+
+iAttributeTypeParam.header = header Установить свойство (* )
+header = iAttributeTypeParam.GetHeader() Получить свойство (**)
+iAttributeTypeParam.SetHeader( header ) Установить свойство (**)
+
+key1, key3  Ключи атрибута
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+key1 = iAttributeTypeParam.key1 Получить свойство (* )
+iAttributeTypeParam.key1 = key1 Установить свойство (* )
+key1 = iAttributeTypeParam.GetKey1() Получить свойство (**)
+iAttributeTypeParam.SetKey1( key1 ) Установить свойство (**)
+
+Примечание:
+Данные ключи рекомендуются как код разработчика.
+
+key2  Код атрибута
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+key2 = iAttributeTypeParam.key2 Получить свойство (* )
+iAttributeTypeParam.key2 = key2 Установить свойство (* )
+key2 = iAttributeTypeParam.GetKey2() Получить свойство (**)
+iAttributeTypeParam.SetKey2( key2 ) Установить свойство (**)
+
+key4  Системный код атрибута
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+key4 = iAttributeTypeParam.key4 Получить свойство (* )
+iAttributeTypeParam.key4 = key4 Установить свойство (* )
+key4 = iAttributeTypeParam.GetKey4() Получить свойство (**)
+iAttributeTypeParam.SetKey4( key4 ) Установить свойство (**)
+
+Примечание:
+Значения параметра key4 от 0 до 1000 зарезервированы за ОАО "АСКОН".
+
+Password  Пароль типа атрибута
+Интерфейс...
+4222
+
+
+
+Тип данных: строка
+Синтаксис Automation:
+
+password = iAttributeTypeParam.password Получить свойство (* )
+iAttributeTypeParam.password = password Установить свойство (* )
+password = iAttributeTypeParam.GetPassword() Получить свойство (**)
+iAttributeTypeParam.SetPassword( password ) Установить свойство (**)
+
+Примечание:
+Если строка не пустая, то пароль защищает тип атрибута от несанкционированного из"
+менения.
+
+rowsCount  Количество строк в таблице атрибута
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+rowsCount = iAttributeTypeParam.rowsCount Получить свойство (* )
+iAttributeTypeParam.rowsCount = rowsCount Установить свойство (* )
+rowsCount = iAttributeTypeParam.GetRowsCount() Получить свойство (**)
+iAttributeTypeParam.SetRowsCount( rowsCount ) Установить свойство (**)
+
+ksAttributeTypeParam  методы
+GetColumns  Получить указатель на интерфейс 
+динамического массива колонок атрибутов типа 
+ATTR_COLUMN_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetColumns();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва колонок атрибутов типа ATTR_COLUMN_ARR
+ksDynamicArray.
+
+Смотрите также ksColumnInfoParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+4223
+
+
+
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1.  Метод обнуляет все параметры типа атрибута.
+2. Создается динамический массив колонок типа ATTR_COLUMN_ARR.
+
+SetColumns  Установить указатель на интерфейс 
+динамического массива колонок атрибутов типа 
+ATTR_COLUMN_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+BOOL SetColumns (LPDISPATCH сolumns);
+Входной параметр:
+
+сolumns " указатель на интерфейс динамического массива колонок 
+атрибутов типа ATTR_COLUMN_ARR ksDynamicArray.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также ksColumnInfoParam
+
+Табличный атрибут (Интерфейс ksAttributeParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/505_62_1_2_Opisanie_struktury.htm
+Интерфейс параметров атрибута.
+Аналог данных параметров при использовании API экспортных функций " ksAttribute.
+Примечание:
+
+1.  Перед использованием указатель на интерфейс должен быть определен с помощью ме"
+тода KompasObject::GetParamStruct с параметром ko_Attribute.
+
+2.  При создании типа атрибута ключам key1 " key4 могут быть присвоены нулевые значе"
+ния. Если заданы ненулевые значения ключей или одного из ключей, эти значения могут
+быть использованы в дальнейшем как дополнительные идентификаторы для поиска
+атрибута с помощью итератора по атрибутам ksIterator::ksCreateAttrIterator. При присво"
+ении значений ключам рекомендуется для ключей key1, key3 присваивать код, иденти"
+4224
+
+
+
+фицирующий разработчика, для ключа key2 " код атрибута, для ключа key4 " системный
+код. Значения параметра key4 от 0 до 1000 зарезервированы за ЗАО "АСКОН".
+
+3.  Значения ключей атрибута могут быть получены с помощью метода
+ksAttributeObject::ksGetAttrKeysInfo.
+Смотрите также KompasObject
+
+ksAttributeParam  свойства
+Key1, key3  Ключи атрибута
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+key1 = iAttributeTypeParam.key1 Получить свойство (* )
+iAttributeTypeParam.key1 = key1 Установить свойство (* )
+key1 = iAttributeTypeParam.GetKey1() Получить свойство (**)
+iAttributeTypeParam.SetKey1( key1 ) Установить свойство (**)
+
+Примечание:
+Данные ключи рекомендуются как код разработчика.
+
+Key2  код атрибута key2
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+key2 = iAttributeTypeParam.key2 Получить свойство (* )
+iAttributeTypeParam.key2 = key2 Установить свойство (* )
+key2 = iAttributeTypeParam.GetKey2() Получить свойство (**)
+iAttributeTypeParam.SetKey2( key2 ) Установить свойство (**)
+
+Key4  Системный код атрибута
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+key4 = iAttributeTypeParam.key4 Получить свойство (* )
+iAttributeTypeParam.key4 = key4 Установить свойство (* )
+key4 = iAttributeTypeParam.GetKey4() Получить свойство (**)
+iAttributeTypeParam.SetKey4( key4 ) Установить свойство (**)
+
+Примечание:
+Значения параметра key4 от 0 до 1000 зарезервированы за ЗАО "АСКОН".
+4225
+
+
+
+Password  Пароль типа атрибута
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+password = iAttributeTypeParam.password Получить свойство (* )
+iAttributeTypeParam.password = password Установить свойство (* )
+password = iAttributeTypeParam.GetPassword() Получить свойство (**)
+iAttributeTypeParam.SetPassword( password ) Установить свойство (**)
+
+Примечание:
+Если строка не пустая, то пароль защищает тип атрибута от несанкционированного из"
+менения.
+
+ksAttributeParam  методы
+GetColumnKeys  Получить указатель на интерфейс 
+динамического массива ключей колонок атрибута типа 
+LTVARIANT_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetColumnKeys();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического массива типа LTVARIANT_ARR 
+ksDynamicArray.
+
+Смотрите также ksLtVariant
+
+GetFlagVisible  Получить указатель на интерфейс 
+динамического массива типа LTVARIANT_ARR  
+ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetFlagVisible();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва типа LTVARIANT_ARR ksDynamicArray.
+
+Примечание:
+4226
+
+
+
+Интерфейс динамического массива ksDynamicArray определяет для каждой колонки
+атрибута видимость"невидимость.
+Смотрите также
+ksLtVariant
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1.  Метод обнуляет все параметры.
+2.  Динамические массивы не создаются.
+
+GetValues  Получить указатель на интерфейс массива 
+значений ячеек таблицы атрибутов ksUserParam
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetValues();
+Возвращаемое значение:
+
+" указатель на интерфейс ksUserParam.
+
+SetColumnKeys  Установить указатель на интерфейс 
+динамического массива ключей колонок атрибута типа 
+LTVARIANT_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+BOOL SetColumnKeys (LPDISPATCH value);
+Входной параметр:
+
+value " указатель на интерфейс динамического масси"
+ва типа LTVARIANT_ARR ksDynamicArray.
+
+Возвращаемое значение:
+4227
+
+
+
+TRUE " в случае удачного завершения.
+
+Смотрите также ksLtVariant
+
+SetFlagVisible  Установить указатель на интерфейс 
+динамического массива типа LTVARIANT_ARR  
+ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+BOOL SetFlagVisible (LPDISPATCH value);
+Входной параметр:
+
+value " указатель на интерфейс динамического масси"
+ва типа LTVARIANT_ARR ksDynamicArray.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Интерфейс динамического массива ksDynamicArray определяет для каждой колонки
+атрибута видимость"невидимость.
+Смотрите также ksLtVariant
+
+SetValues  Заполнить массив значений ячеек таблицы 
+атрибутов ksUserParam
+Интерфейс...
+Синтаксис Automation:
+BOOL SetValues (LPDISPATCH value);
+Входной параметр:
+
+value " указатель на интерфейс массива значений яче"
+ек таблицы атрибутов ksUserParam.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+4228
+
+
+
+Параметры цвета фона (Интерфейс 
+ksViewColorParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_WINDOW3DCOLOR_SETUP.htm
+Интерфейс параметров цвета фона.
+
+ksViewColorParam " интерфейс Automation
+
+Аналог данных параметров при использовании API экспортных функций "
+ViewColorParam.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+KompasObject::ksGetSysOptions. Значение параметра optionsType =
+VIEWCOLOR_OPTIONS.
+
+ViewColorParam  свойства
+BottomColor  Нижний цвет перехода
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+bottomColor = iViewColorParam.bottomColor Получить свойство (* )
+iViewColorParam.bottomColor = bottomColor Установить свойство (* )
+bottomColor = iViewColorParam.GetBottomColor() Получить свойство (**)
+iViewColorParam.SetBottomColor (bottomColor) Установить свойство (**)
+
+Примечание:
+Свойство доступно только для документов"моделей.
+
+Color  Цвет фона
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+color = iViewColorParam.color Получить свойство (* )
+iViewColorParam.color = color Установить свойство (* )
+color = iViewColorParam.GetСolor() Получить свойство (**)
+iViewColorParam.SetСolor(color) Установить свойство (**)
+
+Значения свойства:
+4229
+
+
+
+Цвет фона
+"1 " если используется цвет окна, установленный в Windows.
+
+TopColor  Верхний цвет перехода
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+topColor = iViewColorParam.topColor Получить свойство (* )
+iViewColorParam.topColor = topColor Установить свойство (* )
+topColor = iViewColorParam.GetTopColor() Получить свойство (**)
+iViewColorParam.SetTopColor (topColor) Установить свойство (**)
+
+Примечание:
+Свойство доступно только для документов"моделей.
+
+UseGradient  Использовать градиентный переход 
+при полутоновом отображении
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+useGradient = iViewColorParam.useGradient Получить свойство (* )
+iViewColorParam.useGradient = useGradient Установить свойство (* )
+useGradient = iViewColorParam.GetUseGradient() Получить свойство (**)
+iViewColorParam.SetUseGradient(useGradient) Установить свойство (**)
+
+Значения свойства:
+
+TRUE " использовать градиентный переход,
+FALSE " не использовать.
+
+Примечание:
+Свойство доступно только для документов"моделей.
+
+ksViewColorParam  методы
+Init  Инициализировать параметры
+Интерфейс...
+4230
+
+
+
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Параметры конвертации при сохранении в 
+предыдущую версию (Интерфейсы 
+ISaveToPreviusParam, ksSaveToPreviusParam )
+Интерфейс параметров конвертации.
+
+ksSaveToPreviusParam " интерфейс Automation
+ISaveToPreviusParam " интерфейс COM
+
+Интерфейс используется в событиях ksKompasObjectNotify/IKompasObjectNotify сохране"
+ния документа в предыдущую версию 
+КОМПАС версия v18
+
+ksSaveToPreviusParam  методы
+
+AddOption  Добавить настройку конвертации с 
+возможностью выбора варианта конвертации
+Интерфейс...
+Синтаксис:
+BOOL AddOption( BSTR uniqueID, BSTR optionName, VARIANT options, BSTR defaultValue );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+   
+
+uniqueID " уникальный идентификатор,
+optionName " отображаемое имя свойства,
+options . " список возможных значений (массив строк SafeArray 
+
+VT_ARRAY | VTBSTR).
+
+AddWarning  Добавить предупреждение
+Интерфейс...
+Синтаксис:
+4231
+
+
+
+BOOL AddWarning( BSTR uniqueID, BSTR optionName, BSTR text );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+   
+
+uniqueID " уникальный идентификатор,
+optionName " отображаемое имя свойства,.
+text " текст предупреждения.
+
+GetCurrentOptionValue  Получить текущее 
+значение, выбранное в диалоге параметров 
+конвертации
+Интерфейс...
+Синтаксис:
+BSTR GetCurrentOptionValue( BSTR uniqueID );
+Возвращаемое значение:
+
+" текущее значение свойства.
+
+Входные параметры:
+
+uniqueID " уникальный идентификатор.
+4232
+
+
+
+Интерфейсы событий API5
+События в КОМПАС 
+Общие сведения
+Генерация событий в КОМПАС осуществляется при помощи компактных интерфейсов
+событий, в которых события группируются по тематике. Подписка на события проводит"
+ся во время подключения библиотеки при помощи предопределенной функции
+LibInterfaceNotifyEntry().
+Для Automation реализация основана на стандартном механизме ConnectionPoint. Основ"
+ные объекты, такие как KompasObject, ksDocument2D и т.п., которые являются источни"
+ками событий, наследуют интерфейс IConnectionPointContainer, позволяют подписаться
+на один основной интерфейс и предоставляют дополнительные объекты"источники со"
+бытий. Подписаться на события или отменить подписку можно стандартным способом
+при помощи методов интерфейса IConnectionPoint: IConnectionPoint::Advise и
+IConnectionPoint::Unadvise.
+Для COM реализация основана на интерфейсах IUnknown, которые предоставляет би"
+блиотека. Подписаться на события или отменить подписку можно при помощи экспор"
+тных функций: ksConnectionAdvise и ksConnectionUnadvise.
+Библиотека сама должна позаботиться о своевременной отписке от неактуальных собы"
+тий. Например, в момент закрытия документа нужно обработать соответствующее собы"
+тие и отписаться от всех событий, связанных с данным документом (см. таблицу связей).
+При закрытии приложения следует отписаться от всех событий.
+Интерфейс событий приложения...
+Интерфейс событий документа, работа с файлом...
+Интерфейс событий документа"модели...
+Интерфейс событий графического документа...
+Интерфейс событий менеджера выделенных объектов...
+Интерфейс событий объектов графического документа...
+Интерфейс событий объектов документа"модели...
+Интерфейс событий основной надписи графического документа...
+Интерфейс событий объекта спецификации...
+Интерфейс событий спецификации...
+Интерфейс событий документа"спецификации...
+Связь объектов системы с интерфейсами событий...
+
+Интерфейс событий приложения ksKompasObjectNotify/
+IKompasObjectNotify
+
+ksKompasObjectNotify " интерфейс Automation
+IKompasObjectNotify " интерфейс COM
+
+Позволяют контролировать состояние приложения.
+4233
+
+
+
+В Automation источником событий для подписки являются:
+▼ для API интерфейсов версии 5 " объект KompasObject.
+▼ для API интерфейсов версии 7 " объект IApplication.
+
+В СOM источника нет.
+
+ksKompasObjectNotify, IKompasObjectNotify  события 
+
+ApplicationDestroy  Закрытие приложения
+Интерфейс...
+Синтаксис Automation:
+BOOL ApplicationDestroy();
+Возвращаемое значение:
+
+" Не используется.
+
+Синтаксис COM:
+BOOL ApplicationDestroy();
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+3. При обработке данного события необходимо отписаться от всех событий. Библиотека
+
+должна сама следить за отпиской событий.
+
+BeginCloseAllDocument  Начало закрытия всех 
+открытых документов
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginCloseAllDocument();
+Синтаксис COM:
+BOOL BeginCloseAllDocument();
+Возвращаемое значение:
+
+TRUE " закрытие всех открытых документов,
+FALSE " закрытие всех открытых документов запрещено.
+
+Примечание:
+Индекс события задан в перечислении событий приложения....
+4234
+
+
+
+BeginCreate  Начало создания документа (до диалога 
+выбора типа)
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginCreate (long docType);
+Синтаксис COM:
+BOOL BeginCreate (long docType);
+Входные параметры:
+
+docName " тип документа,
+0 " если пользователь запросил диалог создания документа.
+
+Возвращаемое значение:
+
+TRUE " создать документ,
+FALSE " создание документа запрещено.
+
+Примечание:
+Источником события является интерфейс KompasObject.
+
+BeginOpenDocument  Начало открытия документа
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginOpenDocument (BSTR docName);
+Входные параметры:
+
+docName " имя файла документа.
+
+Возвращаемое значение:
+
+TRUE " открыть документ,
+FALSE " не открывать документ.
+
+Синтаксис COM:
+BOOL BeginOpenDocument (char * docName);
+Входные параметры:
+
+docName " имя файла документа.
+
+Возвращаемое значение:
+4235
+
+
+
+TRUE " открыть документ,
+FALSE " не открывать документ.
+
+Примечание:
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+
+BeginOpenFile  Начало открытия документа (до диалога 
+выбора имени)
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginOpenFile();
+Синтаксис COM:
+BOOL BeginOpenFile();
+Возвращаемое значение:
+
+TRUE " вызвать диалог открытия документа,
+FALSE " вызов диалога открытия документа запрещен.
+
+Примечание:
+Индекс события задан в перечислении событий приложения....
+
+BeginRequestFiles  Запрос имен файлов
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginRequestFiles( long requestID, VARIANT * files );
+Синтаксис COM:
+BOOL BeginRequestFiles( long requestID, VARIANT * files );
+Входные параметры:
+
+requestID " тип запроса файлов из перечисления 
+ksRequestFilesTypeEnum.
+
+Выходные параметры:
+
+files " имя файла или список SafeArray файлов.
+
+Возвращаемое значение:
+
+TRUE " использовать стандартный диалог выбора файлов,
+4236
+
+
+
+FALSE " если список файлов задан " использовать файл или файлы из 
+списка, 
+если список файлов не задан " отмена выбора файлов.
+
+Примечание:
+
+1. Если выбран один файл, то в VARIANT его имя можно положить как строку, тип VARIANT"
+а " VT_BSTR. Если выбрано несколько файлов, то их имена в VARIANT нужно положить
+как массив строк тип VARIANT"а " VT_ARRAY | VT_BSTR.
+
+2. Возможность множественного выбора и допустимые расширения файлов зависят от ти"
+па запроса файлов.
+
+3. В данных событиях в отличие от других событий начала какого либо действия требуется
+обработка трех состояний:
+
+▼ отказ пользователя или обработка события выполнена полностью на стороне библиоте"
+ки " событие возвращает FALSE;
+
+▼ событие возвращает TRUE и имя файла для продолжения выполнения команды " про"
+цесс продолжается без запуска диалога выбора файла или файлов;
+
+▼ событие возвращает TRUE, но имя файла не возвращается " запускается стандартный
+диалог выбора файла из системы КОМПАС.
+
+ChangeActiveDocument  Переключение на другой 
+активный документ
+Интерфейс...
+Синтаксис Automation:
+BOOL ChangeActiveDocument (LPDISPATCH pDoc, long docType);
+Входные параметры:
+
+pDoc " указатель на интерфейс IDispatch открытого документа,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Синтаксис COM:
+BOOL ChangeActiveDocument(long pDoc, int docType);
+Входные параметры:
+
+pDoc " указатель на открытый документ,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+4237
+
+
+
+" Не используется.
+
+Примечание:
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+
+CreateDocument  Документ создан
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateDocument (LPDISPATCH pDoc, long docType);
+Входные параметры:
+
+pDoc " указатель на интерфейс IDispatch созданного документа,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Синтаксис COM:
+BOOL CreateDocument (long pDoc, int docType);
+Входные параметры:
+
+pDoc " указатель на созданный документ,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+
+KeyDown  Клавиша нажата и удерживается нажатой
+Интерфейс...
+Синтаксис Automation:
+BOOL KeyDown (long * key, long flags, BOOL sysKey);
+Синтаксис COM:
+4238
+
+
+
+BOOL KeyDown( long * key, long flags, BOOL sysKey);
+Входные параметры:
+
+key " код нажатой клавиши,
+flags " флаг клавиатуры,
+sysKey " признак нажатия системной клавиши.
+
+Выходные параметры:
+
+key " измененный код нажатой клавиши.
+
+Возвращаемое значение:
+
+TRUE " разрешить обработку нажатой клавиши,
+FALSE " запретить обработку нажатой клавиши.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий приложения...
+2. Благодаря автоматическому повторению кода клавиши при удержании ее нажатой, до
+
+появления события wm_keyup может выдаваться несколько событий wm_keydown. Зна"
+чение разряда 30 параметра flags позволяет определить, было ли событие wm_keydown
+первым или является повторным во время удержания клавиши нажатой.
+
+3. Если библиотека обработала событие нажатия клавиши и нужно запретить обработку со"
+бытия другими подписчиками, то нужно обнулить код клавиши т.е. *key = 0 и вернуть
+FALSE, если нужно запретить обработку события системой КОМПАС.
+
+KeyPress  Одиночное нажатие клавиши
+Интерфейс...
+Синтаксис Automation:
+BOOL KeyPress (long * key, BOOL sysKey);
+Синтаксис COM:
+BOOL KeyPress (long * key, BOOL sysKey);
+Входные параметры:
+
+key " код нажатой клавиши,
+flags " флаг клавиатуры,
+sysKey " признак нажатия системной клавиши.
+
+Выходные параметры:
+
+key " измененный код клавиши.
+
+Возвращаемое значение:
+4239
+
+
+
+TRUE " разрешить обработку нажатой клавиши,
+FALSE " запретить обработку нажатой клавиши.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий приложения....
+Если syskey = false, была нажата обычная клавиша, что соответствует событию
+wm_keyup, если syskey = true, была нажата системная клавиша, что соответствует собы"
+тию wm_syskeyup.
+
+2. Если библиотека обработала событие нажатия клавиши и нужно запретить обработку со"
+бытия другими подписчиками, то нужно обнулить код клавиши т.е. *key = 0 и вернуть
+FALSE, если нужно запретить обработку события системой КОМПАС.
+
+KeyUp  Клавиша отпущена
+Интерфейс...
+Синтаксис Automation:
+BOOL KeyUp (long * key, long flags, BOOL sysKey);
+Синтаксис COM:
+BOOL KeyUp (long * key, long flags, BOOL sysKey);
+Входные параметры:
+
+key " код нажатой клавиши,
+flags " флаг клавиатуры,
+sysKey " признак нажатия системной клавиши,
+
+Выходные параметры:
+
+key " измененный код нажатой клавиши.
+
+Возвращаемое значение:
+
+TRUE " разрешить обработку нажатой клавиши,
+FALSE " запретить обработку нажатой клавиши.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий приложения....
+2. Если syskey = false, была нажата обычная клавиша, что соответствует событию
+
+wm_keyup, если syskey = true, была нажата системная клавиша, что соответствует собы"
+тию wm_syskeyup.
+
+3. Если библиотека обработала событие нажатия клавиши и нужно запретить обработку со"
+бытия другими подписчиками, то нужно обнулить код клавиши т.е. *key = 0 и вернуть
+FALSE, если нужно запретить обработку события системой КОМПАС.
+4240
+
+
+
+OpenDocument  Документ открыт
+Интерфейс...
+Синтаксис Automation:
+BOOL OpenDocument (LPDISPATCH pDoc, long docType);
+Входные параметры:
+
+pDoc " указатель на интерфейс IDispatch открытого документа,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Синтаксис COM:
+BOOL OpenDocument(long pDoc, int docType);
+Входные параметры:
+
+pDoc " указатель на открытый документ,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+
+ksKompasObjectNotify/ IKompasObjectNotify  методы
+
+IsNotIifyProcess  Ограничение обрабатываемых 
+событий
+Интерфейс...
+Синтаксис Automation:
+Не используется.
+Синтаксис COM:
+BOOL IsNotifyProcess (int notifyType);
+Входной параметр:
+
+notifyType " номер события в перечислении событий.
+4241
+
+
+
+Возвращаемое значение:
+
+TRUE " событие будет обрабатываться,
+FALSE " событие обрабатываться не будет.
+
+Примечание:
+В COM перед любым вызовом события система сделает запрос о возможности его обра"
+ботки с использованием данного метода. Библиотека сама может ограничивать обраба"
+тываемые события.
+
+Интерфейс событий документа; работа с файлом 
+ksDocumentFileNotify/IDocumentFileNotify
+
+ksDocumentFileNotify " интерфейс Automation
+IDocumentFileNotify " интерфейс COM
+
+События интерфейса позволяют контролировать состояние документа.
+Источники событий для подписки:
+
+▼  API 7,
+▼  API 5.
+
+ksDocumentFileNotify/IDocumentFileNotify  события
+
+Activate  Документ активизирован
+Интерфейс...
+Синтаксис Automation:
+BOOL Activate();
+Синтаксис COM:
+BOOL Activate();
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+1. Индекс события задан в перечислении событий документа....
+2. В Automation источником событий для подписки на данный интерфейс являются объек"
+
+ты:
+▼ ksDoсument2D (чертеж, фрагмент),
+▼ ksSpcDocument (спецификация),
+▼ ksDocumentTxt (текстовый документ),
+▼ ksDocument3D (документ"модель).
+4242
+
+
+
+ В СOM источником для подписки на данный интерфейс является указатель на документ.
+
+AutoSaveDocument  Документ автосохранен
+Интерфейс...
+Синтаксис Automation:
+BOOL AutoSaveDocument();
+Синтаксис COM:
+BOOL AutoSaveDocument();
+Возвращаемое значение:
+Не используется
+
+BeginAutoSaveDocument  Начало автосохранения 
+документа
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginAutoSaveDocument();
+Синтаксис COM:
+BOOL BeginAutoSaveDocument();
+Возвращаемое значение:
+Не используется
+
+BeginCloseDocument  Начало закрытия документа
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginCloseDocument();
+Синтаксис COM:
+BOOL BeginCloseDocument();
+Возвращаемое значение:
+
+TRUE " закрыть документ,
+FALSE " документ закрывать нельзя.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий документа....
+2. В Automation источником событий для подписки на данный интерфейс являются объек"
+
+ты:
+▼ ksDoсument2D (чертеж, фрагмент),
+4243
+
+
+
+▼ ksSpcDocument (спецификация),
+▼ ksDocumentTxt (текстовый документ),
+▼ ksDocument3D (документ"модель).
+3. В СOM источником событий для подписки на данный интерфейс является указатель на
+
+документ.
+
+ BeginProcess  Начало процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginProcess( long Id );
+Синтаксис COM:
+BOOL BeginProcess( long Id );
+
+BeginSaveAsDocument  Начало сохранения документа c 
+другим именем (до диалога выбора имени)
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginSaveAsDocument();
+Синтаксис COM:
+BOOL BeginSaveAsDocument();
+Возвращаемое значение:
+
+TRUE " сохранить документ,
+FALSE " документ сохранить нельзя.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий ksDocumentFileNotifyEnum.
+2. В Automation источником событий для подписки на данный интерфейс являются объек"
+
+ты:
+▼ ksDoсument2D (чертеж, фрагмент),
+▼ ksSpcDocument (спецификация),
+▼ ksDocumentTxt  (текстовый документ),
+▼ ksDocument3D  (документ"модель).
+3. В СOM источником событий для подписки на данный интерфейс является указатель на
+
+документ.
+
+BeginSaveDocument  Начало сохранения документа
+Интерфейс...
+Синтаксис Automation:
+4244
+
+
+
+BOOL BeginSaveDocument (BSTR docName);
+Синтаксис COM:
+BOOL BeginSaveDocument (char * docName);
+Входные параметры:
+
+docName  " имя файла документа, с которым он будет сохранен.
+
+Возвращаемое значение:
+
+TRUE " сохранить документ,
+FALSE " не сохранять документ.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий документа....
+2. В Automation источником событий для подписки на данный интерфейс являются объек"
+
+ты:
+▼ ksDoсument2D (чертеж, фрагмент),
+▼ ksSpcDocument (спецификация),
+▼ ksDocumentTxt (текстовый документ),
+▼ ksDocument3D (документ"модель).
+3.  В СOM источником для подписки на данный интерфейс является указатель на документ.
+
+CloseDocument  Документ закрыт
+Интерфейс...
+Синтаксис Automation:
+BOOL CloseDocument();
+Синтаксис COM:
+BOOL CloseDocument();
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий документа....
+2.  В Automation источником событий для подписки на данный интерфейс являются объек"
+
+ты:
+▼ ksDoсument2D (чертеж, фрагмент),
+▼ ksSpcDocument (спецификация),
+▼ ksDocumentTxt (текстовый документ),
+4245
+
+
+
+▼ ksDocument3D (документ"модель).
+3.  В СOM источником для подписки на данный интерфейс является указатель на документ.
+4.  При обработке данного события необходимо отписаться от всех событий, связанных с
+
+закрываемым документом. Библиотека должна сама следить за отпиской событий.
+
+Deactivate  Документ деактивирован
+Интерфейс...
+Синтаксис Automation:
+BOOL Deactivate();
+Синтаксис COM:
+BOOL Deactivate();
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий документа....
+2. В Automation источником событий для подписки на данный интерфейс являются объек"
+
+ты:
+▼ ksDoсument2D (чертеж, фрагмент),
+▼ ksSpcDocument (спецификация),
+▼ ksDocumentTxt (текстовый документ),
+▼ ksDocument3D (документ"модель).
+
+ В СOM источником для подписки на данный интерфейс является указатель на документ.
+
+DocumentFrameOpen  Окно документа открылось
+Интерфейс..
+Синтаксис Automation:
+BOOL DocumentFrameOpen (LPDISPATCH v);
+Синтаксис COM:
+BOOL DocumentFrameOpen (LPUNKNOWN v);
+Входные параметры:
+
+v " указатель на интерфейс IDocumentFrame откры"
+того окна документа.
+
+Возвращаемое значение:
+
+" не используется.
+4246
+
+
+
+Примечание:
+Индекс события задан в перечислении событий ksDocumentFileNotifyEnum.
+
+EndProcess  Завершение процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL EndProcess(long Id, BOOL Success);
+Синтаксис COM:
+BOOL EndProcess(long Id, BOOL Success);
+
+ProcessActivate  Процесс активизирован
+Интерфейс...

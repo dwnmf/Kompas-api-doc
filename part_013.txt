@@ -1,0 +1,2533 @@
+HRESULT DeletePoint( long Index, BOOL * Result )
+Входные параметры:
+
+Index " индекс удаляемого узла.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить заданный узел кривой.
+
+GetPoint  Получить параметры узла
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPoint( long Index,
+double XBase,
+double YBase,
+double * XLeft,
+double * YLeft,
+double * XRight,
+double * YRight )
+Синтаксис COM:
+647
+
+
+
+HRESULT GetPoint( long Index,
+double XBase,
+double YBase,
+double * XLeft,
+double * YLeft,
+double * XRight,
+double * YRight,
+BOOL * Result )
+Входные параметры:
+
+Index " индекс узла,
+
+Выходные параметры:
+
+XBase, " координаты опорной точки узла,
+YBase
+XLeft, " координаты левой точки узла,
+YLeft
+XRight, " координаты правой точки узла.
+YRight
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить параметры узла кривой Безье.
+
+ReadFromFile  Прочитать файл с данными
+Интерфейс...
+Синтаксис Automation:
+BOOL ReadToFile( LPCTSTR FileName );
+Синтаксис COM:
+HRESULT ReadToFile( BSTR FileName, BOOL * Result );
+
+Входные параметры:
+
+FileName " полное имя файла с данными.
+
+Возвращаемое значение:
+
+TRUE " в случае удачи.
+648
+
+
+
+WriteToFile  Записать файл с данными
+Интерфейс...
+Синтаксис Automation:
+BOOL WriteToFile( LPCTSTR FileName );
+Синтаксис COM:
+HRESULT WriteToFile( BSTR FileName, BOOL * Result );
+Входные параметры:
+
+FileName " полное имя файла с данными.
+
+Возвращаемое значение:
+
+TRUE " в случае удачи.
+
+Интерфейс ICircle
+Справка системы КОМПАС...
+KOMPAS.chm::/1432_Okruznosti.htm#okr_po_centru_i_tochke
+Интерфейс окружности.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+ICircle
+Примечание:
+
+1.  Интерфейс можно получить, используя свойство коллекции окружностей ICircles::Circle
+или метод ICircles::Add.
+
+2.  После задания параметров окружности требуется вызвать метод IDrawingObject::Update.
+
+ICircle  свойства
+
+Radius  Радиус окружности
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = Object.Radius Получить свойство(* )
+Object.Radius = Radius Установить свойство (* )
+Radius = Object.GetRadius() Получить свойство (**)
+Object.SetRadius( Radius ) Установить свойство (**)
+649
+
+
+
+Синтаксис COM:
+
+Object.get_Radius( &Radius ) Получить свойство
+Object.put_Radius( Radius ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать радиус окружности.
+
+Style  Cтиль линии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Style = Object.Style Получить свойство(* )
+Object.Style = Style Установить свойство (* )
+Style = Object.GetStyle() Получить свойство (**)
+Object.SetStyle( Style ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Style( &Style ) Получить свойство
+Object.put_Style(  Style ) Установить свойство
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать стиль линии окружности.
+2.  Системные стили линий берутся из перечисления ksCurveStyleEnum.
+
+X  Координата точки на окружности по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X Получить свойство(* )
+Object.X = X Установить свойство (* )
+X = Object.GetX() Получить свойство (**)
+Object.SetXc( X ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ) Получить свойство
+Object.put_X( X ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату точки на окружности по оси X.
+650
+
+
+
+Xc  Координата центра окружности по оси Х
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = Object.Xc Получить свойство(* )
+Object.Xc = Xc Установить свойство (* )
+Xc = Object.GetXc() Получить свойство (**)
+Object.SetXc( Xc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Xc( &Xc ) Получить свойство
+Object.put_Xc( Xc ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату центра окружности по оси Х.
+
+Y  Координата точки на окружности по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y Получить свойство(* )
+Object.Y = Y Установить свойство (* )
+Y = Object.GetY() Получить свойство (**)
+Object.SetY( Y ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y( &Y ) Получить свойство
+Object.put_Y(  Y ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату точки на окружности по оси Y.
+
+Yc  Координата центра окружности по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = Object.Yc Получить свойство(* )
+Object.Yc = Yc Установить свойство (* )
+Yc = Object.GetYc() Получить свойство (**)
+651
+
+
+
+Object.SetYc( Yc ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_Yc( &Yc ) Получить свойство
+Object.put_Yc( Yc ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату центра окружности по оси Y.
+
+Интерфейс IColouring
+Справка системы КОМПАС...
+KOMPAS.chm::/220_Glava_26_Shtrihovka_i_zalivka.htm
+Интерфейс заливки.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IColouring
+IBoundariesObject
+Описание:
+Интерфейс позволяет задавать параметры заливки.
+Примечание:
+
+1.  Интерфейс можно получить у коллекции заливок, используя свойство
+IColourings::Colouring или метод IColourings::Add.
+
+2.  После задания параметров штриховки требуется вызвать метод IDrawingObject::Update.
+3.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) у
+
+данного интерфейса можно получить дополнительный интерфейс IBoundariesObject.
+
+IColouring  свойства
+
+ColouringType  Тип заливки
+Интерфейс...
+Тип данных: из перечисления ksColouringTypeEnum
+Синтаксис Automation:
+
+ColouringType = Object.ColouringType Получить свойство(* )
+Object.ColouringType = ColouringType Установить свойство (* )
+ColouringType = Object.GetColouringType() Получить свойство (**)
+Object.SetColouringType( ColouringType ) Установить свойство (**)
+652
+
+
+
+Синтаксис COM:
+
+Object.get_ColouringType( &ColouringType ) Получить свойство
+Object.put_ColouringType(  ColouringType ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать тип заливки.
+
+Color1  Цвет или начальный цвет
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Color1 = Object.Color1 Получить свойство(* )
+Object.Color1 = Color1 Установить свойство (* )
+Color1 = Object.GetColor1() Получить свойство (**)
+Object.SetColor1( Color1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Color1( &Color1 ) Получить свойство
+Object.put_Color1(  Color1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать начальный цвет заливки.
+
+Color2  Цвет или конечный цвет
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Color2 = Object.Color2 Получить свойство(* )
+Object.Color2 = Color2 Установить свойство (* )
+Color2 = Object.GetColor2() Получить свойство (**)
+Object.SetColor2( Color2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Color2( &Color2 ) Получить свойство
+Object.put_Color2(  Color2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать конечный цвет заливки.
+653
+
+
+
+GradientAngle  Угол поворота линий градиента
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+GradientAngle = Object.GradientAngle Получить свойство(* )
+Object.GradientAngle = GradientAngle Установить свойство (* )
+GradientAngle = Object.GetGradientAngle() Получить свойство (**)
+Object.SetGradientAngle( GradientAngle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_GradientAngle( &GradientAngle ) Получить свойство
+Object.put_GradientAngle(  GradientAngle ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать угол поворота линий градиента.
+
+GradientCount  Количество шагов
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " плавное изменение цвета,
+FALSE " заданное количество шагов.
+
+Синтаксис Automation:
+
+GradientCount = Получить свойство(* )
+Object.GradientCount
+Object.GradientCount = Установить свойство (* )
+GradientCount
+GradientCount = Получить свойство (**)
+Object.GetGradientCount()
+Object.SetGradientCount( Установить свойство (**)
+GradientCount )
+
+Синтаксис COM:
+
+Object.get_GradientCount( Получить свойство
+&GradientCount )
+Object.put_GradientCount( Установить свойство
+GradientCount )
+
+Примечание:
+654
+
+
+
+Свойство позволяет устанавливать и получать количество шагов градиентной заливки.
+
+GradientType  Тип градиента
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " плавное изменение цвета,
+FALS " заданное количество шагов.
+E
+
+Синтаксис Automation:
+
+GradientType = Получить свойство(* )
+Object.GradientType
+Object.GradientType = Установить свойство (* )
+GradientType
+GradientType = Получить свойство (**)
+Object.GetGradientType()
+Object.SetGradientType( Установить свойство (**)
+GradientType )
+
+Синтаксис COM:
+
+Object.get_GradientType( Получить свойство
+&GradientType )
+Object.put_GradientType( Установить свойство
+GradientType )
+
+Примечание:
+Свойство позволяет устанавливать и получать тип градиентной заливки.
+
+Transparency1  Начальная прозрачность
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Transparency1 = Получить свойство(* )
+Object.Transparency1
+Object.Transparency1 = Установить свойство (* )
+Transparency1
+Transparency1 = Получить свойство (**)
+Object.GetTransparency1()
+655
+
+
+
+Object.SetTransparency1( Установить свойство (**)
+Transparency1 )
+
+Синтаксис COM:
+
+Object.get_Transparency1( Получить свойство
+&Transparency1 )
+Object.put_Transparency1( Установить свойство
+Transparency1 )
+
+Примечание:
+Свойство позволяет устанавливать и получать начальную прозрачность в процентах.
+
+Transparency2  Конечная прозрачность
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Transparency2 = Получить свойство(* )
+Object.Transparency2
+Object.Transparency2 = Установить свойство (* )
+Transparency2
+Transparency2 = Получить свойство (**)
+Object.GetTransparency2()
+Object.SetTransparency2( Установить свойство (**)
+Transparency2 )
+
+Синтаксис COM:
+
+Object.get_Transparency2( Получить свойство
+&Transparency2 )
+Object.put_Transparency2( Установить свойство
+Transparency2 )
+
+Примечание:
+Свойство позволяет устанавливать и получать конечную прозрачность в процентах.
+
+Xc  Координата положения центра заливки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = Object.Xc Получить свойство(* )
+Object.Xc = Xc Установить свойство (* )
+Xc = Object.GetXc() Получить свойство (**)
+Object.SetXc( Xc ) Установить свойство (**)
+656
+
+
+
+Синтаксис COM:
+
+Object.get_Xc( &Xc ) Получить свойство
+Object.put_Xc(  Xc ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату положения центра заливки по
+оси Х в процентах относительно габарита области.
+
+Yc  Координата положения центра заливки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = Object.Yc Получить свойство(* )
+Object.Yc = Yc Установить свойство (* )
+Yc = Object.GetYc() Получить свойство (**)
+Object.SetYc( Yc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Yc( &Yc ) Получить свойство
+Object.put_Yc(  Yc ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату положения центра заливки по
+оси Y в процентах относительно габарита области.
+
+GradationsCount  Количество переходов цвета
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+GradationsCount = Получить свойство(* )
+Object.GradationsCount
+GradationsCount = Получить свойство (**)
+Object.GetGradationsCount()
+
+Синтаксис COM:
+
+Object.get_GradationsCount( Получить свойство
+&GradationsCount )
+
+Примечание:
+657
+
+
+
+1.  Свойство позволяет получать количество переходов цвета.
+2.  Свойство доступно только для чтения.
+
+IColouring  методы
+
+AddGradation  Добавить переход цвета
+Интерфейс...
+Синтаксис Automation:
+long AddGradation( long Position,
+long Color,
+long Transparency,
+BOOL Interpolation );
+Синтаксис COM:
+HRESULT AddGradation(long Position,
+long Color,
+long Transparency,
+BOOL Interpolation,
+long * Result );
+Входные параметры:
+
+Position " положение перехода относительно начальной 
+точки заливки в процентах,
+
+Color " цвет перехода,
+Transparency " прозрачность перехода,
+Interpolation " значений опции Интерполирование для 
+
+перехода.
+
+Возвращаемое значение:
+
+" индекс перехода.
+
+Примечание:
+Метод позволяет установить параметры переход цвета.
+
+ClearGradations  Удалить промежуточные переходы 
+цвета
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearGradations();
+Синтаксис COM:
+HRESULT ClearGradations( BOOL * Result);
+Возвращаемое значение:
+658
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить промежуточные переходы цвета.
+
+DeleteGradation  Удалить переход цвета по индексу
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteGradation( long Index );
+Синтаксис COM:
+HRESULT DeleteGradation( long Index,
+BOOL * Result );
+Входные параметры:
+
+Index " индекс перехода.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить переход цвета по индексу.
+
+FindPosition  Получить индекс позиции
+Интерфейс...
+Синтаксис Automation:
+long FindPosition( long Position );
+Синтаксис COM:
+HRESULT FindPosition( long Position,
+long * Result );
+Входные параметры:
+
+Positi " положение перехода относительно
+on начальной точки заливки в процентах.
+
+Возвращаемое значение:
+
+" индекс перехода.
+
+Примечание:
+659
+
+
+
+Метод позволяет получить индекс позиции перехода цвета.
+
+GetGradation  Получить параметры перехода цвета по 
+индексу
+Интерфейс...
+Синтаксис Automation:
+BOOL GetGradation( long Index,
+long * Position,
+long * Color,
+long * Transparency,
+BOOL * Interpolation );
+Синтаксис COM:
+HRESULT GetGradation( long Index,
+long * Position,
+long * Color,
+long * Transparency,
+BOOL * Interpolation,
+BOOL * Result );
+Входные параметры:
+
+Index " индекс перехода.
+
+Выходные параметры:
+
+Position " положение перехода относительно начальной 
+точки заливки в процентах,
+
+Color " цвет перехода,
+Transparency " прозрачность перехода,
+Interpolation " значений опции Интерполирование для 
+
+перехода.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить параметры перехода цвета по индексу.
+
+GetGradations  Получить параметры переходов цвета
+Интерфейс...
+Синтаксис Automation:
+660
+
+
+
+BOOL GetGradations( VARIANT * Positions,
+VARIANT * Colors,
+VARIANT * Transparences,
+VARIANT * Interpolations );
+Синтаксис COM:
+HRESULT GetGradations(VARIANT * Positions,
+VARIANT * Colors,
+VARIANT * Transparences,
+VARIANT * Interpolations,
+BOOL * Result );
+Выходные параметры:
+
+Positions " массив SAFEARRAY | VT_I4 положений 
+переходов относительно начальной точки 
+заливки в процентах,
+
+Colors " массив SAFEARRAY | VT_I4 цветов переходов,
+Transparences " массив SAFEARRAY | VT_I4 прозрачностей 
+
+переходов,
+Interpolations " массив SAFEARRAY | VT_BOOL значений опции 
+
+Интерполирование для переходов.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить параметры переходов цветов.
+
+SetGradation  Установить параметры перехода цвета 
+по индексу
+Интерфейс...
+Синтаксис Automation:
+BOOL SetGradation( long Index,
+long * Position,
+long * Color,
+long * Transparency,
+BOOL * Interpolation );
+Синтаксис COM:
+HRESULT SetGradation( long Index,
+long * Position,
+long * Color,
+long * Transparency,
+BOOL * Interpolation,
+BOOL * Result );
+661
+
+
+
+Входные параметры:
+
+Index " индекс перехода,
+Position " положение перехода относительно начальной 
+
+точки заливки в процентах,
+Color " цвет перехода,
+Transparency " прозрачность перехода,
+Interpolation " значений опции Интерполирование для 
+
+перехода.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить параметры перехода цвета по индексу.
+
+SetGradations  Установить параметры переходов цвета
+Интерфейс...
+Синтаксис Automation:
+BOOL SetGradations( VARIANT * Positions,
+VARIANT * Colors,
+VARIANT * Transparences,
+VARIANT * Interpolations );
+Синтаксис COM:
+HRESULT SetGradations(VARIANT * Positions,
+VARIANT * Colors,
+VARIANT * Transparences,
+VARIANT * Interpolations,
+BOOL* Result );
+Входные параметры:
+
+Positions " массив SAFEARRAY | VT_I4 положений 
+переходов относительно начальной точки 
+заливки в процентах,
+
+Colors " массив SAFEARRAY | VT_I4 цветов переходов,
+Transparences " массив SAFEARRAY | VT_I4 прозрачностей 
+
+переходов,
+Interpolations " массив SAFEARRAY | VT_BOOL значений опции 
+
+Интерполирование для переходов.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+662
+
+
+
+Примечание:
+Метод позволяет установить параметры переходов цветов.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Интерфейс IConicCurve
+Интерфейс параметров конической кривой.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IConicCurve
+Данный интерфейс можно получить с помощью метода коллекции конических кривых
+IConicCurves::Add или свойства IConicCurves::ConicCurve.
+Версия Компас v18.1
+
+IConicCurve  свойства
+
+Angle1  Угол наклона первой кривой
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle1 = Object.Angle1 Получить свойство(* )
+Object.Angle1 = Angle1 Установить свойство (* )
+Angle1 = Object.GetAngle1() Получить свойство (**)
+Object.SetAngle1( Angle1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle1( &Angle1 ) Получить свойство
+Object.put_Angle1(  Angle1 ) Установить свойство
+
+Angle2  Угол наклона второй кривой
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle2 = Object.Angle2 Получить свойство(* )
+Object.Angle2 = Angle2 Установить свойство (* )
+Angle2 = Object.GetAngle2() Получить свойство (**)
+Object.SetAngle2( Angle2 ) Установить свойство (**)
+663
+
+
+
+Синтаксис COM:
+
+Object.get_Angle2( &Angle2 ) Получить свойство
+Object.put_Angle2(  Angle2 ) Установить свойство
+
+Coefficient  Коэффициент
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Coefficient = Object.Coefficient Получить свойство(* )
+Object.Coefficient = Coefficient Установить свойство (* )
+Coefficient = Получить свойство (**)
+Object.GetCoefficient()
+Object.SetCoefficient( Coefficient Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_Coefficient( Получить свойство
+&Coefficient )
+Object.put_Coefficient( Установить свойство
+Coefficient )
+
+Height  Высота
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Height = Object.Height Получить свойство(* )
+Object.Height = Height Установить свойство (* )
+Height = Object.GetHeight() Получить свойство (**)
+Object.SetHeight( Height ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Height( &Height ) Получить свойство
+Object.put_Height(  Height ) Установить свойство
+664
+
+
+
+Style  Cтиль линии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Style = Object.Style Получить свойство(* )
+Object.Style = Style Установить свойство (* )
+Style = Object.GetStyle() Получить свойство (**)
+Object.SetStyle( Style ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Style( &Style ) Получить свойство
+Object.put_Style(  Style ) Установить свойство
+
+IConicCurve  методы
+
+GetPoint  Получить точку пересечения
+Интерфейс...
+Синтаксис Automation :
+BOOL GetPoint( ksConicCurvePontIndexEnum PointIndex, double * X, double * Y );
+Синтаксис COM:
+HRESULT GetPoint( ksConicCurvePontIndexEnum PointIndex, double * X, double * Y, BOOL *
+Result );
+Возвращаемое значение: 
+ 
+
+TRUE  " в случае успешного завершения.
+
+Входные параметры:
+ 
+
+PointIndex  " индекс точки из перечисления
+ksConicCurvePontIndexEnum.
+
+Выходные параметры:
+ 
+
+X, Y  " координаты точки.
+665
+
+
+
+SetPoint  Установить точку пересечения
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPoint( ksConicCurvePontIndexEnum PointIndex, double X, double Y );
+Синтаксис COM:
+HRESULT SetPoint( ksConicCurvePontIndexEnum PointIndex, double X, double Y, BOOL *
+Result );
+Возвращаемое значение: 
+ 
+
+TRUE  " в случае успешного завершения.
+
+Входные параметры:
+ 
+
+PointIndex  " индекс точки из перечисления
+ksConicCurvePontIndexEnum,
+
+X, Y " координаты точки.
+
+Интерфейс IDrawingContour
+Интерфейс контура.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IDrawingContour
+
+IContour
+Примечание:
+
+1.  Интерфейс позволяет получить и задать свойства объекта "контур".
+2.  Получить интерфейс можно, используя свойство IDrawingContours::DrawingContour или
+
+метод IDrawingContours::Add интерфейса коллекции контуров.
+3.  После задания параметров объекта требуется вызвать метод IDrawingObject::Update.
+4.  Интерфейс IContour являются дополнительным. Его можно получить с помощью метода
+
+IUnknown::QueryInterface.
+
+IDrawingContour  свойства
+
+Style  Стиль линии
+Интерфейс...
+Тип данных: long (соответствует перечислению ksCurveStyleEnum)
+Синтаксис Automation:
+666
+
+
+
+Style = iObject.Style( ); Получить свойство(* )
+iObject.Style( ) = Style; Установить свойство (* )
+Style = iObject.GetStyle( ); Получить свойство (**)
+iObject.SetStyle( Style ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Style( &Style ) Получить свойство
+iObject">put_Style( Style ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать стиль линии.
+
+Интерфейс IEllipse
+Справка системы КОМПАС...
+KOMPAS.chm::/139_Glava14_Ehllipsy.htm
+Интерфейс эллипса.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IEllipse
+Описание:
+Интерфейс позволяет получить и задать свойства эллипса.
+Примечание:
+
+1.  Интерфейс можно получить, используя свойство коллекции эллипсов IEllipses::Ellipse
+или метод IEllipses::Add.
+
+2.  После задания параметров эллипса требуется вызвать метод IDrawingObject::Update.
+
+IEllipse  свойства
+
+Angle  Угол наклона первой полуоси
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+667
+
+
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство
+Object.put_Angle(  Angle ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать угол наклона первой полуоси эллипса.
+
+SemiAxisA  Длина первой полуоси
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+SemiAxisA = Object.SemiAxisA Получить свойство(* )
+Object.SemiAxisA = SemiAxisA Установить свойство (* )
+SemiAxisA = Получить свойство (**)
+Object.GetSemiAxisA()
+Object.SetSemiAxisA( Установить свойство (**)
+SemiAxisA )
+
+Синтаксис COM:
+
+Object.get_SemiAxisA( Получить свойство
+&SemiAxisA )
+Object.put_SemiAxisA( Установить свойство
+SemiAxisA )
+
+Примечание:
+Свойство позволяет устанавливать и получать длину первой полуоси эллипса.
+
+SemiAxisB  Длина второй полуоси
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+SemiAxisB = Object.SemiAxisB Получить свойство(* )
+Object.SemiAxisB = SemiAxisB Установить свойство (* )
+SemiAxisB = Получить свойство (**)
+Object.GetSemiAxisB()
+Object.SetSemiAxisB( Установить свойство (**)
+SemiAxisB )
+
+Синтаксис COM:
+668
+
+
+
+Object.get_SemiAxisB( Получить свойство
+&SemiAxisB )
+Object.put_SemiAxisB( Установить свойство
+SemiAxisB )
+
+Примечание:
+Свойство позволяет устанавливать и получать длину второй полуоси эллипса.
+
+Style  Cтиль линии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Style = Object.Style Получить свойство(* )
+Object.Style = Style Установить свойство (* )
+Style = Object.GetStyle() Получить свойство (**)
+Object.SetStyle( Style ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Style( &Style ) Получить свойство
+Object.put_Style(  Style ) Установить свойство
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать стиль линии эллипса.
+2.  Системные стили линий берутся из перечисления ksCurveStyleEnum.
+
+Xc  Координата центра эллипса по оси X
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+Xc = Object.Xc Получить свойство(* )
+Object.Xc = Xc Установить свойство (* )
+Xc = Object.GetXc() Получить свойство (**)
+Object.SetXc( Xc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Xc( &Xc ) Получить свойство
+Object.put_Xc(  Xc ) Установить свойство
+
+Примечание:
+669
+
+
+
+Свойство позволяет устанавливать и получать координату центра эллипса по оси X.
+
+X1  Координата конечной точки первой полуоси по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X1 Получить свойство(* )
+Object.X1 = X1 Установить свойство (* )
+X1 = Object.GetX1() Получить свойство (**)
+Object.SetX1( X1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X1( &X1 ) Получить свойство
+Object.put_X1(  X1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату конечной точки первой полу"
+оси по оси X.
+
+X2  Координата конечной точки второй полуоси по оси 
+X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = Object.X2 Получить свойство(* )
+Object.X2 = X2 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX2( X2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X2( &X2 ) Получить свойство
+Object.put_X2(  X2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату конечной точки второй полу"
+оси по оси X.
+
+Yc  Координата центра эллипса по оси Y
+Интерфейс...
+670
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Yc = Object.Yc Получить свойство(* )
+Object.Yc = Yc Установить свойство (* )
+Yc = Object.GetYc() Получить свойство (**)
+Object.SetYc( Yc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Yc( &Yc ) Получить свойство
+Object.put_Yc(  Yc ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату центра эллипса по оси Y.
+
+Y1  Координата конечной точки первой полуоси по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = Object.Y1 Получить свойство(* )
+Object.Y1 = Y1 Установить свойство (* )
+Y1 = Object.GetY1() Получить свойство (**)
+Object.SetY1( Y1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y1( &Y1 ) Получить свойство
+Object.put_Y1(  Y1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату конечной точки первой полу"
+оси по оси Y.
+
+Y2  Координата конечной точки второй полуоси по оси Y
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+Y2 = Object.Y2 Получить свойство(* )
+Object.Y2 = Y2 Установить свойство (* )
+Y2 = Object.GetY2() Получить свойство (**)
+Object.SetY2( Y2 ) Установить свойство (**)
+
+Синтаксис COM:
+671
+
+
+
+Object.get_Y2( &Y2 ) Получить свойство
+Object.put_Y2(  Y2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату конечной точки второй полу"
+оси по оси Y.
+
+Интерфейс IEllipseArc
+Справка системы КОМПАС...
+KOMPAS.chm::/145_15_6_Dugi_ehllipsov.htm
+Интерфейс дуги эллипса.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IEllipseArc
+Описание:
+Интерфейс позволяет получить и задать свойства дуги эллипса.
+Примечание:
+
+1.  Интерфейс можно получить, используя свойство коллекции дуг эллипсов
+IEllipseArcs::EllipseArc или метод IEllipseArcs::Add.
+
+2.  После задания параметров дуги эллипса требуется вызвать метод
+IDrawingObject::Update.
+
+IEllipseArc  свойства
+
+Angle  Угол наклона первой полуоси
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство
+Object.put_Angle(  Angle ) Установить свойство
+672
+
+
+
+Примечание:
+Свойство позволяет устанавливать и получать угол наклона первой полуоси дуги эллип"
+са.
+
+Angle1  Начальный угол дуги к первой полуоси
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle1 = Object.Angle1 Получить свойство(* )
+Object.Angle1 = Angle1 Установить свойство (* )
+Angle1 = Object.GetAngle1() Получить свойство (**)
+Object.SetAngle1( Angle1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle1( &Angle1 ) Получить свойство
+Object.put_Angle1(  Angle1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать начальный угол дуги к первой полуоси эл"
+липса.
+
+Angle2  Конечный угол дуги к первой полуоси
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle2 = Object.Angle2 Получить свойство(* )
+Object.Angle2 = Angle2 Установить свойство (* )
+Angle2 = Object.GetAngle2() Получить свойство (**)
+Object.SetAngle2( Angle2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle2( &Angle2 ) Получить свойство
+Object.put_Angle2(  Angle2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать конечный угол дуги к первой полуоси эл"
+липса.
+
+Direction  Направление построения
+Интерфейс...
+673
+
+
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " по часовой стрелке,
+FALSE " против часовой стрелки.
+
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство(* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetAngle( Angle Установить свойство (**)
+)Object.SetDirection( Direction )
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction Получить свойство
+)
+Object.put_Direction(  Direction ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать направление построения дуги эллипса.
+
+SemiAxisA  Длина первой полуоси
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+SemiAxisA = Object.SemiAxisA Получить свойство(* )
+Object.SemiAxisA = SemiAxisA Установить свойство (* )
+SemiAxisA = Получить свойство (**)
+Object.GetSemiAxisA()
+Object.SetSemiAxisA( Установить свойство (**)
+SemiAxisA )
+
+Синтаксис COM:
+
+Object.get_SemiAxisA( Получить свойство
+&SemiAxisA )
+Object.put_SemiAxisA( Установить свойство
+SemiAxisA )
+
+Примечание:
+Свойство позволяет устанавливать и получать длину первой полуоси дуги эллипса.
+674
+
+
+
+SemiAxisB  Длина второй полуоси
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+SemiAxisB = Object.SemiAxisB Получить свойство(* )
+Object.SemiAxisB = SemiAxisB Установить свойство (* )
+SemiAxisB = Получить свойство (**)
+Object.GetSemiAxisB()
+Object.SetSemiAxisB( Установить свойство (**)
+SemiAxisB )
+
+Синтаксис COM:
+
+Object.get_SemiAxisB( Получить свойство
+&SemiAxisB )
+Object.put_SemiAxisB( Установить свойство
+SemiAxisB )
+
+Примечание:
+Свойство позволяет устанавливать и получать длину второй полуоси дуги эллипса.
+
+Style  Cтиль линии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Style = Object.Style Получить свойство(* )
+Object.Style = Style Установить свойство (* )
+Style = Object.GetStyle() Получить свойство (**)
+Object.SetStyle( Style ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Style( &Style ) Получить свойство
+Object.put_Style(  Style ) Установить свойство
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать стиль линии дуги эллипса.
+2.  Системные стили линий берутся из перечисления ksCurveStyleEnum.
+
+T1  Начальное значение параметра
+Интерфейс...
+675
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+T1 = Object.T1 Получить свойство(* )
+Object.T1 = T1 Установить свойство (* )
+T1 = Object.GetT1() Получить свойство (**)
+Object.SetT1( T1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_T1( &T1 ) Получить свойство
+Object.put_T1(  T1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать начальное значение параметра.
+
+T2  Конечное значение параметра
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+T2 = Object.T2 Получить свойство(* )
+Object.T2 = T2 Установить свойство (* )
+T2 = Object.GetT2() Получить свойство (**)
+Object.SetT2( T2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_T2( &T2 ) Получить свойство
+Object.put_T2(  T2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать конечное значение параметра.
+
+Xc  Координата центра дуги эллипса по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = Object.Xc Получить свойство(* )
+Object.Xc = Xc Установить свойство (* )
+Xc = Object.GetXc() Получить свойство (**)
+Object.SetXc( Xc ) Установить свойство (**)
+
+Синтаксис COM:
+676
+
+
+
+Object.get_Xc( &Xc ) Получить свойство
+Object.put_Xc(  Xc ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату центра дуги эллипса по оси X.
+
+Yc  Координата центра дуги эллипса по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = Object.Yc Получить свойство(* )
+Object.Yc = Yc Установить свойство (* )
+Yc = Object.GetYc() Получить свойство (**)
+Object.SetYc( Yc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Yc( &Yc ) Получить свойство
+Object.put_Yc(  Yc ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату центра дуги эллипса по оси Y.
+
+Интерфейс IEquidistant
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_EQUID_TO_OBJ.htm
+Интерфейс эквидистанты.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IEquidistant
+Описание:
+Интерфейс позволяет задавать параметры эквидистанты.
+Примечание:
+
+1.  Интерфейс можно получить у коллекции эквидистант, используя свойство
+IEquidistants::Equidistant или метод IEquidistants::Add.
+
+2.  После задания параметров эквидистанты требуется вызвать метод
+IDrawingObject::Update.
+677
+
+
+
+IEquidistant  свойства
+
+BaseObject  Базовая кривая
+Интерфейс...
+Тип данных: указатель на интерфейс графического объекта IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство(* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Получить свойство (**)
+Object.GetBaseObject()
+Object.SetBaseObject( Установить свойство (**)
+BaseObject )
+
+Синтаксис COM:
+
+Object.get_BaseObject( Получить свойство
+&BaseObject )
+Object.put_BaseObject( Установить свойство
+BaseObject )
+
+Примечание:
+Свойство позволяет устанавливать и получать базовую кривую эквидистанты.
+
+CutMode  Обход угла
+Интерфейс...
+Тип данных – BOOL.
+Значения свойства:
+
+TRUE " обход дугой,
+FALSE " обход срезом.
+
+Синтаксис Automation:
+
+CutMode = Object.CutMode Получить свойство(* )
+Object.CutMode = CutMode Установить свойство (* )
+CutMode = Object.GetCutMode() Получить свойство (**)
+Object.SetCutMode( CutMode ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CutMode( &CutMode ) Получить свойство
+Object.put_CutMode(  CutMode ) Установить свойство
+
+Примечание:
+678
+
+
+
+Свойство позволяет устанавливать и получать способ обхода угла кривой.
+
+DegenerateSegment  Режим отрисовки вырожденных 
+участков
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " вырожденные сегменты разрешены,
+FALSE " вырожденные сегменты запрещены.
+
+Синтаксис Automation:
+
+DegenerateSegment = Получить свойство(* )
+Object.DegenerateSegment
+Object.DegenerateSegment = Установить свойство (* )
+DegenerateSegment
+DegenerateSegment = Получить свойство (**)
+Object.GetDegenerateSegment()
+Object.SetDegenerateSegment( Установить свойство (**)
+DegenerateSegment )
+
+Синтаксис COM:
+
+Object.get_DegenerateSegment( Получить свойство
+&DegenerateSegment )
+Object.put_DegenerateSegment( Установить свойство
+DegenerateSegment )
+
+Примечание:
+Свойство позволяет устанавливать и получать режим отрисовки вырожденных участков.
+
+LeftRadius  Радиус эквидистанты слева
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+LeftRadius = Object.LeftRadius Получить свойство(* )
+Object.LeftRadius = LeftRadius Установить свойство (* )
+LeftRadius = Получить свойство (**)
+Object.GetLeftRadius()
+Object.SetLeftRadius( LeftRadius Установить свойство (**)
+)
+
+Синтаксис COM:
+679
+
+
+
+Object.get_LeftRadius( Получить свойство
+&LeftRadius )
+Object.put_LeftRadius( Установить свойство
+LeftRadius )DegenerateSegment
+)
+
+Примечание:
+Свойство позволяет устанавливать и получать радиус эквидистанты слева.
+
+RightRadius  Радиус эквидистанты справа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+RightRadius = Получить свойство(* )
+Object.RightRadius
+Object.RightRadius = Установить свойство (* )
+RightRadius
+RightRadius = Получить свойство (**)
+Object.GetRightRadius()
+Object.SetRightRadius( Установить свойство (**)
+RightRadius )
+
+Синтаксис COM:
+
+Object.get_RightRadius( Получить свойство
+&RightRadius )
+Object.put_RightRadius( Установить свойство
+RightRadius )
+
+Примечание:
+Свойство позволяет устанавливать и получать радиус эквидистанты справа.
+
+Side  Тип построения
+Интерфейс...
+Тип данных – из перечисления ksEquidistantTypeEnum.
+Синтаксис Automation:
+
+Side = Object.Side Получить свойство(* )
+Object.Side = Side Установить свойство (* )
+Side = Object.GetSide() Получить свойство (**)
+Object.SetSide( Side ) Установить свойство (**)
+
+Синтаксис COM:
+680
+
+
+
+Object.get_Side( &Side ) Получить свойство
+Object.put_Side(  Side ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать тип построения эквидистанты.
+
+Style  Cтиль линии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Style = Object.Style Получить свойство(* )
+Object.Style = Style Установить свойство (* )
+Style = Object.GetStyle() Получить свойство (**)
+Object.SetStyle( Style ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Style( &Style ) Получить свойство
+Object.put_Style(  Style ) Установить свойство
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать стиль линии окружности.
+2.  Системные стили линий берутся из перечисления ksCurveStyleEnum.
+
+IEquidistant  методы
+
+SetCorner  Установить параметры скругления/усечения 
+угла
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCorner( long Index,
+long * Type,
+double * L1,
+double * L2 );
+Синтаксис COM:
+HRESULT SetCorner( long Index,
+ksCornerTypeEnum * Type,
+double * L1,
+double * L2,
+BOOL* Result );
+681
+
+
+
+Входные параметры:
+
+Index " индекс угла.
+Type " тип угла из перечисления ksCornerTypeEnum,
+L1 " длина фаски первого сегмента или радиус 
+
+скругления,
+L2 " длина фаски второго сегмента.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить параметры скругления/усечения угла многоугольника.
+
+Интерфейс IHatch
+Справка системы КОМПАС...
+KOMPAS.chm::/220_Glava_26_Shtrihovka_i_zalivka.htm
+Интерфейс штриховки.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IHatch
+IHatchParam
+IBoundariesObject
+Описание:
+Интерфейс позволяет задавать параметры штриховки.
+Примечание:
+
+1.  Интерфейс можно получить у коллекции штриховок, используя свойство IHatches::Hatch
+или метод IHatches::Add.
+
+2.  После задания параметров штриховки требуется вызвать метод IDrawingObject::Update.
+3.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) у
+
+данного интерфейса можно получить дополнительные интерфейсы:
+▼ IHatchParam,
+▼ IBoundariesObject.
+682
+
+
+
+IHatch  свойства
+
+Side  Расположение штриховки
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " сторона 1.
+
+Синтаксис Automation:
+
+Side = Object.Side Получить свойство(* )
+Object.Side = Side Установить свойство (* )
+Side = Object.GetSide() Получить свойство (**)
+Object.SetSide( Side ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Side( &Side ) Получить свойство
+Object.put_Side(  Side ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать расположение штриховки.
+
+X  Координата базовой точки штриховки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X Получить свойство(* )
+Object.X = X Установить свойство (* )
+X = Object.GetX() Получить свойство (**)
+Object.SetX( X ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ) Получить свойство
+Object.put_X(  X ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату базовой точки штриховки по
+оси Х.
+683
+
+
+
+Y  Координата базовой точки штриховки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y Получить свойство(* )
+Object.Y = Y Установить свойство (* )
+Y = Object.GetY() Получить свойство (**)
+Object.SetY( Y ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y( &Y ) Получить свойство
+Object.put_Y(  Y ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату базовой точки штриховки по
+оси Y.
+
+Интерфейс ILine
+Справка системы КОМПАС...
+KOMPAS.chm::/1396_vspomogatelnye.htm#simple_line
+Интерфейс линии.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+ILine
+Описание:
+Интерфейс позволяет получить и задать свойства прямой линии.
+Примечание:
+
+1.  Интерфейс можно получить, используя свойство коллекции линий ILines::Line или ме"
+тод ILines::Add.
+
+2.  После задания параметров линии требуется вызвать метод IDrawingObject::Update.
+
+ILine  свойства
+
+Angle  Угол между линией и осью OX в текущей системе 
+координат
+Интерфейс...
+Тип данных: double
+684
+
+
+
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство
+Object.put_Angle(  Angle ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать угол между линией и осью OX в текущей
+системе координат.
+
+X1  Координата первой точки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X1 Получить свойство(* )
+Object.X1 = X1 Установить свойство (* )
+X1 = Object.GetX1() Получить свойство (**)
+Object.SetX1( X1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X1( &X1 ) Получить свойство
+Object.put_X1(  X1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату первой точки, через которую
+проходит линия, по оси Х.
+
+X2  Координата второй точки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = Object.X2 Получить свойство(* )
+Object.X2 = X2 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX2( X2 ) Установить свойство (**)
+685
+
+
+
+Синтаксис COM:
+
+Object.get_X2( &X2 ) Получить свойство
+Object.put_X2(  X2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату первой точки, через которую
+проходит линия, по оси Y.
+
+Y1  Координата первой точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = Object.Y1 Получить свойство(* )
+Object.Y1 = Y1 Установить свойство (* )
+Y1 = Object.GetY1() Получить свойство (**)
+Object.SetY1( Y1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y1( &Y1 ) Получить свойство
+Object.put_Y1(  Y1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату первой точки, через которую
+проходит линия, по оси Y.
+
+Y2  Координата второй точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = Object.Y2 Получить свойство(* )
+Object.Y2 = Y2 Установить свойство (* )
+Y2 = Object.GetY2() Получить свойство (**)
+Object.SetY2( Y2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y2( &Y2 ) Получить свойство
+Object.put_Y2(  Y2 ) Установить свойство
+
+Примечание:
+686
+
+
+
+Свойство позволяет устанавливать и получать координату второй точки, через которую
+проходит линия, по оси Y.
+
+Интерфейс ILineSegment
+Справка системы КОМПАС...
+KOMPAS.chm::/130_Glava12_Otrezki.htm
+Интерфейс отрезка.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+ILineSegment
+
+Описание:
+Примечание:
+
+1.  Интерфейс можно получить у коллекции отрезков, используя свойство
+ILineSegments::LineSegment или метод ILineSegments::Add.
+
+2.  При создании отрезка можно использовать несколько типов построения:
+2.1. по координатам (требуется задать координаты точек (X1; Y1), (X2; Y2).
+2.2. По точке 1 (X1; Y1), длине Length и углу Angle," 
+
+По точке 2 (X2; Y2), длине Length и углу Angle относительно точки 1.
+3.  После задания параметров отрезка требуется вызвать метод IDrawingObject::Update.
+4.  При изменении параметров зависимые параметры пересчитываются после вызова ме"
+
+тода IDrawingObject::Update.
+
+ILineSegment  свойства
+
+Angle  Угол наклона
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = iObject.Angle; Получить свойство(* )
+iObject.Angle = Angle; Установить свойство (* )
+Angle = iObject.GetAngle(); Получить свойство (**)
+iObject.SetAngle( Angle ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Angle(&Angle) Получить свойст"
+во
+
+iObject">put_Angle( Angle ); Установить свой"
+ство
+687
+
+
+
+Примечание:
+Свойство позволяет получить и установить угол наклона отрезка.
+
+Length  Длина отрезка
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Length = iObject.Length; Получить свойство(* )
+iObject.Length = Length; Установить свойство (* )
+Length = iObject.GetLength(); Получить свойство (**)
+iObject.SetLength( Length ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Length(&Length); Получить свойство
+iObject">put_Length( Length ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить длину отрезка.
+
+Style  Стиль линии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+style = iObject.style; Получить свойство(* )
+iObject.style = style; Установить свойство (* )
+style = iObject.GetStyle(); Получить свойство (**)
+iObject.SetStyle( style ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Style( &Style ); Получить свойство
+iObject">put_Style( style ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить стиль линии отрезка.
+
+X1  Координата первой точки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+688
+
+
+
+X1 = iObject.X1; Получить свойство(* )
+iObject.X1 = X1; Установить свойство (* )
+X1 = iObject.GetX1(); Получить свойство (**)
+iObject.SetX1( X1 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X1(&X1); Получить свойст"
+во
+
+iObject">put_X1( X1 ); Установить свой"
+ство
+
+Примечание:
+Свойство позволяет получить и установить координату первой точки отрезка по оси X.
+
+X2  Координата второй точки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = iObject.X2; Получить свойство(* )
+iObject.X2 = X2; Установить свойство (* )
+X2 = iObject.GetX2(); Получить свойство (**)
+iObject.SetX2( X2 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X2(&X2); Получить свойство
+iObject">put_X2( X2 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату второй точки отрезка по оси X.
+
+Y1  Координата первой точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = iObject.Y1; Получить свойство(* )
+iObject.Y1 = Y1; Установить свойство (* )
+Y1 = iObject.GetY1(); Получить свойство (**)
+iObject.SetY1( Y1 ); Установить свойство (**)
+
+Синтаксис COM:
+689
+
+
+
+iObject">get_Y1(&Y1); Получить свойство
+iObject">put_Y1( Y1 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату первой точки отрезка по оси Y.
+
+Y2  Координата второй точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = iObject.Y2; Получить свойство(* )
+iObject.Y2 = Y2; Установить свойство (* )
+Y2 = iObject.GetY2(); Получить свойство (**)
+iObject.SetY2( Y2 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Y2(&Y2); Получить свойство
+iObject">put_Y2( Y2 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату второй точки отрезка по оси Y.
+
+Интерфейс IMultiline
+Интерфейс мультилинии.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IMultiline
+Примечание:
+
+1.  Интерфейс позволяет получить и задать свойства объекта "мультилиния". Для создания
+объекта должен быть задан базовый контур и хотя бы одна линия.
+
+2.  Получить интерфейс можно, используя свойство IMultilines::MultiLine или метод
+IMultilines::Add интерфейса коллекции мультилиний.
+
+3.  После задания параметров объекта требуется вызвать метод IDrawingObject::Update.
+690
+
+
+
+IMultiline  свойства
+
+BaseContour  Базовый контур
+Интерфейс...
+Тип данных: указатель на интерфейс контура IContour.
+Синтаксис Automation:
+
+BaseContour = Получить свойство(* )
+iObject.BaseContour();
+BaseContour = Получить свойство (**)
+iObject.GetBaseContour();
+
+Синтаксис COM:
+
+iObject">get_BaseContour( Получить свойство
+&BaseContour )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Closed  Замкнутость
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " мультилиния замкнута,
+FALSE " мультилиния разомкнута.
+
+Синтаксис Automation:
+
+Closed = iObject.Closed; Получить свойство(* )
+iObject.Closed = Closed; Установить свойство (* )
+Closed = iObject.GetClosed(); Получить свойство (**)
+iObject.SetClosed(Closed); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Closed( &Closed ) Получить свойство
+iObject">put_Closed( Closed ) Установить свойство
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать замкнутость.
+2.  Если при создании замкнутой линии не совпадают точки начала и конца,будет создан
+
+дополнительный сегмент.
+691
+
+
+
+3.  Ограничители у замкнутой мультилинии не учитываются.
+
+EndLimiter  Типы ограничений на концах мультилинии
+Интерфейс...
+Тип данных: из перечисления ksMlEndLimiterEnum
+Синтаксис Automation:
+
+EndLimiter = iObject.EndLimiter( Получить свойство(* )
+First );
+iObject.EndLimiter( First ) = Установить свойство (* )
+EndLimiter;
+EndLimiter = Получить свойство (**)
+iObject.GetEndLimiter( First );
+iObject.SetEndLimiter( First, Установить свойство (**)
+EndLimiter );
+
+Синтаксис COM:
+
+iObject">get_EndLimiter( First, Получить свойство
+&EndLimiter )
+iObject">put_EndLimiter( First, Установить свойство
+EndLimiter )
+
+Входные параметры:
+
+First " номер ограничителя (TRUE " первая, FALSE " вторая).
+
+Примечание:
+Свойство позволяет устанавливать и получать типы ограничений на концах мультили"
+нии.
+
+EndParameter  Параметр ограничителя в %(0100)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+EndParameter = Получить свойство(* )
+iObject.EndParameter( First );
+iObject.EndParameter( First ) = Установить свойство (* )
+EndParameter;
+EndParameter = Получить свойство (**)
+iObject.EndParameter( First );
+iObject.EndParameter( First, Установить свойство (**)
+EndParameter );
+692
+
+
+
+Синтаксис COM:
+
+iObject">get_EndParameter( Получить свойство
+First, &EndParameter )
+iObject">put_EndParameter( Установить свойство
+First, EndParameter )
+
+Входные параметры:
+
+First " номер ограничителя (TRUE " первая, FALSE " вторая).
+
+Примечание:
+Свойство позволяет устанавливать и получать параметр ограничителя в процентах от
+ширины мультилинии.
+
+EndStyle  Стиль линии кривой в ограничителе
+Интерфейс...
+Тип данных: long (соответствует перечислению ksCurveStyleEnum)
+Синтаксис Automation:
+
+EndStyle = iObject.EndStyle( First Получить свойство(* )
+);
+iObject.EndStyle( First ) = Установить свойство (* )
+EndStyle;
+EndStyle = iObject.GetEndStyle( Получить свойство (**)
+First );
+iObject.SetEndStyle( First, Установить свойство (**)
+EndStyle );
+
+Синтаксис COM:
+
+iObject">get_EndStyle( First, Получить свойство
+&EndStyle )
+iObject">put_EndStyle( First, Установить свойство
+EndStyle )
+
+Входные параметры:
+
+First " номер ограничителя (TRUE " первая, FALSE " вторая).
+
+Примечание:
+Свойство позволяет устанавливать и получать стиль линии в ограничителе.
+
+LineCount  Количество линий
+Интерфейс...
+693
+
+
+
+Тип данных: long
+Синтаксис Automation:
+
+LineCount = iObject.LineCount(); Получить свойство(* )
+LineCount = Получить свойство (**)
+iObject.GetLineCount();
+
+Синтаксис COM:
+
+iObject">get_LineCount( Получить свойство
+&LineCount )
+
+Примечание:
+
+1.  Свойство позволяет получить количество линий в мультилинии.
+2.  Свойство доступно только для чтения.
+
+LineOffset  Смещение линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+LineOffset = iObject.LineOffset( LineIndex ); Получить свойство(* )
+iObject.LineOffset( LineIndex ) = LineOffset; Установить свойство (* )
+LineOffset = iObject.GetLineOffset( Получить свойство (**)
+LineIndex );
+iObject.SetLineOffset( LineIndex, LineOffset Установить свойство (**)
+););
+
+Синтаксис COM:
+
+iObject">get_LineOffset( LineIndex, Получить свойство
+&LineOffset )
+iObject">put_LineOffset( LineIndex, Установить свойство
+LineOffset )
+
+Входные параметры:
+
+long LineIndex " индекс линии.
+
+Примечание:
+Свойство позволяет устанавливать смещение линии относительно базового контура.
+694
+
+
+
+LineOffsets  Массив смещений в виде массива 
+SAFEARRAY double  VT_ARRAY | VT_R8
+Интерфейс...
+Тип данных: VARIANT
+Значения свойства:
+
+Массив SafeArray типа VT_ARRAY | VT_R8.
+
+Синтаксис Automation:
+
+LineOffsets = iObject.LineOffsets; Получить свойство(* )
+LineOffsets = Получить свойство (**)
+iObject.GetLineOffsets();
+
+Синтаксис COM:
+
+iObject">get_LineOffsets( Получить свойство
+&LineOffsets )
+
+Примечание:
+
+1.  Свойство позволяет получить массив SAFEARRAY смещения всех линий.
+2.  Свойство доступно только для чтения.
+
+LineStyle  Стиль линии
+Интерфейс...
+Тип данных: long (соответствует перечислению ksCurveStyleEnum)
+Синтаксис Automation:
+
+LineStyle = iObject.LineStyle( Получить свойство(* )
+LineIndex );
+iObject.LineStyle( LineIndex ) = Установить свойство (* )
+LineStyle;
+LineStyle = iObject.GetLineStyle( Получить свойство (**)
+LineIndex );
+iObject.SetLineStyle( LineIndex, Установить свойство (**)
+LineStyle );
+
+Синтаксис COM:
+
+iObject">get_LineStyle( Получить свойство
+LineIndex, &LineStyle )
+iObject">put_LineStyle( Установить свойство
+LineIndex, LineStyle )
+695
+
+
+
+Входные параметры:
+
+long LineIndex " индекс линии.
+
+Примечание:
+Свойство позволяет устанавливать и получать стиль линии.
+
+TrackingType  Тип обхода вершины
+Интерфейс...
+Тип данных: из перечисления ksMlVertexTrackingEnum
+Синтаксис Automation:
+
+TrackingType = iObject.TrackingType( Получить свойство(* )
+LineIndex );
+iObject.TrackingType( LineIndex ) = Установить свойство (* )
+TrackingType;
+TrackingType = iObject.GetTrackingType( Получить свойство (**)
+LineIndex );
+iObject.SetTrackingType( LineIndex, Установить свойство (**)
+TrackingType );
+
+Синтаксис COM:
+
+iObject">get_TrackingType( LineIndex, Получить свойство
+&TrackingType )
+iObject">put_TrackingType( LineIndex, Установить свойство
+TrackingType )
+
+Входные параметры:
+
+long LineIndex " индекс линии.
+
+Примечание:
+Свойство позволяет устанавливать и получать тип обхода вершины мультилинии.
+
+VertexCount  Количество вершин без учета концов
+Интерфейс...
+Тип данных: указатель на интерфейс контура IContour
+Синтаксис Automation:
+
+VertexCount = Получить свойство(* )
+iObject.VertexCount();
+VertexCount = Получить свойство (**)
+iObject.GetVertexCount();
+696
+
+
+
+Синтаксис COM:
+
+iObject">get_VertexCount( Получить свойство
+&VertexCount )
+
+Примечание:
+
+1.  Свойство позволяет получить количество вершин мультилинии.
+2.  Свойство доступно только для чтения.
+
+VertexDirection  Направление дуги в вершине
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " по часовой стрелке,
+FALSE " против часовой стрелки.
+
+Синтаксис Automation:
+
+VertexDirection = Получить свойство(* )
+iObject.VertexDirection(
+VertexIndex );
+iObject.VertexDirection( Установить свойство (* )
+VertexIndex ) = VertexDirection;
+VertexDirection = Получить свойство (**)
+iObject.GetVertexDirection(
+VertexIndex );
+iObject.SetVertexDirection( Установить свойство (**)
+VertexIndex, VertexDirection );
+
+Синтаксис COM:
+
+iObject">get_VertexDirection( Получить свойство
+VertexIndex, &VertexDirection )
+iObject">put_VertexDirection( Установить свойство
+VertexIndex, VertexDirection )
+
+Входные параметры:
+
+long VertexIndex " индекс вершины.
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать направление дуги в вершине мультили"
+нии.
+
+2.  Свойство доступно только при типе обхода вершины ksMTrShear (ksMlEndLimiterEnum).
+697
+
+
+
+VertexLimiter  Типы ограничений в вершинах 
+мультилинии
+Интерфейс...
+Тип данных: из перечисления ksMlVertexLimiterEnum
+Синтаксис Automation:
+
+VertexLimiter = Получить свойство(* )
+iObject.VertexLimiter(
+VertexIndex );
+iObject.VertexLimiter( Установить свойство (* )
+VertexIndex ) = VertexLimiter;
+VertexLimiter = Получить свойство (**)
+iObject.GetVertexLimiter(
+VertexIndex );
+iObject.SetVertexLimiter( Установить свойство (**)
+VertexIndex, VertexLimiter );
+
+Синтаксис COM:
+
+iObject">get_VertexLimiter( Получить свойство
+VertexIndex, &VertexLimiter )
+iObject">put_VertexLimiter( Установить свойство
+VertexIndex, VertexLimiter )
+
+Входные параметры:
+
+long VertexIndex " индекс вершины.
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать тип ограничения в вершине мультилинии.
+2.  Свойство доступно только при типе обхода вершины ksMTrShear (ksMlEndLimiterEnum).
+
+VertexRadius  Радиус дуги в вершине
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+VertexRadius = Получить свойство(* )
+iObject.VertexRadius(
+VertexIndex );
+iObject.VertexRadius( Установить свойство (* )
+VertexIndex ) = VertexRadius;
+698
+
+
+
+VertexRadius = Получить свойство (**)
+iObject.GetVertexRadius(
+VertexIndex );
+iObject.SetVertexRadius( Установить свойство (**)
+VertexIndex, VertexRadius );
+
+Синтаксис COM:
+
+iObject">get_VertexRadius( Получить свойство
+VertexIndex, &VertexRadius )
+iObject">put_VertexRadius( Установить свойство
+VertexIndex, VertexRadius )
+
+Входные параметры:
+
+long VertexIndex " индекс вершины.
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать радиус дуги в вершине мультилинии.
+2.  Свойство доступно только при типе обхода вершины ksMTrShear (ksMlEndLimiterEnum).
+
+VertexStyle  Стиль кривой в вершине
+Интерфейс...
+Тип данных: long (соответствует перечислению ksCurveStyleEnum)
+Синтаксис Automation:
+
+VertexStyle = Получить свойство(* )
+iObject.VertexStyle( VertexIndex
+);
+iObject.VertexStyle( VertexIndex Установить свойство (* )
+) = VertexStyle;
+VertexStyle = Получить свойство (**)
+iObject.GetVertexStyle(
+VertexIndex );
+iObject.SetVertexStyle( Установить свойство (**)
+VertexIndex, VertexStyle );
+
+Синтаксис COM:
+
+iObject">get_VertexStyle( Получить свойство
+VertexIndex, &VertexStyle )
+iObject">put_VertexStyle( Установить свойство
+VertexIndex, VertexStyle )
+
+Входные параметры:
+699
+
+
+
+long VertexIndex " индекс вершины.
+
+Примечание:

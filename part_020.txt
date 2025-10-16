@@ -1,0 +1,2533 @@
+ICutUnitMarkings  свойства
+
+CutUnitMarking  Обозначение узла в сечении, заданное 
+по индексу, ссылке или тексту
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_CUTNODE.htm
+Тип данных: указатель на интерфейс ICutUnitMarking
+Синтаксис Automation:
+
+CutUnitMarking = Получить свойство(* )
+iObject.CutUnitMarking(index)
+CutUnitMarking = Получить свойство (**)
+iObject.GetCutUnitMarking(index)
+
+Синтаксис COM:
+1024
+
+
+
+iObject" Получить свойство
+>get_CutUnitMarking(index,
+&CutUnitMarking)
+
+Входные параметры:
+
+Index (Variant) " Индекс обозначения узла в коллекции. 
+Поддерживаются следующие типы:
+" VT_I4   " индекс объекта,
+" reference объекта
+" строковое значение текста сверху 
+ICutUnitMarking::TextUp.
+
+Пример:
+mark = iMarks.Mark("A1"); 
+где "А1" " текст сверху 
+Примечание:
+Свойство доступно только для чтения.
+
+ICutUnitMarkings  методы
+
+Add  Создать обозначение узла в сечении и добавить 
+его в коллекцию
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_CUTNODE.htm
+Синтаксис Automation:
+LPDISPATCH Add;
+Синтаксис COM:
+HRESULT Add( ICutUnitMarking** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс обозначения узла в сечении
+ICutUnitMarking.
+
+Примечание:
+Метод позволяет создать новый интерфейс обозначения узла в сечении. После получе"
+ния нового интерфейса нужно задать параметры обозначения узла и вызвать метод
+IDrawingObject::Update.
+1025
+
+
+
+Интерфейс IMultiTextLeaders
+Интерфейс коллекции выносных надписей к многослойным конструкциям.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IMultiTextLeaders
+Описание:
+Интерфейс позволяет получить доступ к выносным надписям к многослойным конструк"
+циям для данного вида, а также позволяет создавать новые выносные надписи к много"
+слойным конструкциям.
+Примечание:
+Получить интерфейс можно, используя свойство IBuildingContainer::MultiTextLeaders.
+
+IMultiTextLeaders  свойства
+
+MultiTextLeader  Выносная надпись к многослойным 
+конструкциям, заданная по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IMultiTextLeader
+Синтаксис Automation:
+
+MultiTextLeader = Получить свойство(* )
+iObject.MultiTextLeader(Index)
+MultiTextLeader = Получить свойство (**)
+iObject.GetMultiTextLeader(Index)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_MultiTextLeader(Index,
+&MultiTextLeader)
+
+Входные параметры:
+
+Index (Variant) " Индекс узла в коллекции. Поддерживаются 
+следующие типы:
+" VT_I4   " индекс объекта, reference объекта.
+
+Значения свойства:
+1026
+
+
+
+указатель на " в случае успеха,
+интерфейс 
+IMultiTextLeader
+NULL " в случае неудачи.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IMultiTextLeaders  методы
+
+Add  Создать выносную надпись к многослойным 
+конструкциям (Добавить объект в коллекцию)
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add([out, retval] IMultiTextLeader** Result);
+Возвращаемое значение:
+
+" указатель на интерфейс IMultiTextLeader
+
+Примечание:
+После получения нового интерфейса нужно задать параметры объекта и вызвать метод
+IDrawingObject::Update. Объект в модели появится после вызова этого метода.
+
+Интерфейс IUnitMarkings
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_SIGNNODE.htm
+Интерфейс коллекции обозначений узла.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IUnitMarkings
+Описание:
+Интерфейс позволяет получить коллекции обозначений узла.
+Примечание:
+Данный интерфейс можно получить у интерфейса контейнера объектов СПДС, исполь"
+зуя метод IBuildingContainer::UnitMarkings.
+1027
+
+
+
+IUnitMarkings  свойства
+
+UnitMarking  Обозначение узла, заданное по индексу, 
+ссылке или тексту
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_SIGNNODE.htm
+Тип данных: указатель на интерфейс IUnitMarking
+Синтаксис Automation:
+
+UnitMarking = iObject.UnitMarking(index) Получить свойство(* )
+UnitMarking = Получить свойство (**)
+iObject.GetUnitMarking(index)
+
+Синтаксис COM:
+
+iObject">get_UnitMarking(index, Получить свойство
+&UnitMarking)
+
+Входные параметры:
+
+Index (Variant) " Индекс обозначения узла в коллекции. 
+Поддерживаются следующие типы:
+" VT_I4   " индекс объекта,
+" reference объекта
+" строковое значение текста сверху 
+IUnitMarking::TextUp.
+
+Пример:
+UnitMarking = iUnitMarkings.UnitMarking("A1"); 
+где "А1" " текст сверху 
+Примечание:
+Свойство доступно только для чтения.
+
+IUnitMarkings  методы
+
+Add  Создать обозначение узла и добавить его 
+в коллекцию
+Интерфейс...
+1028
+
+
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_SIGNNODE.htm
+Синтаксис Automation:
+LPDISPATCH Add;
+Синтаксис COM:
+HRESULT Add( IUnitMarking** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс обозначения узла IUnitMarking.
+
+Примечание:
+Метод позволяет создать новый интерфейс обозначения узла. После получения нового
+интерфейса нужно задать параметры обозначения узла и вызвать метод
+IDrawingObject::Update.
+
+Интерфейс IUnitNumbers
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_KNOTNUMBER.htm
+Интерфейс коллекции номеров узла.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IUnitNumbers
+Описание:
+Интерфейс позволяет получить доступ к номерам узла на чертеже.
+Примечание:
+Получить интерфейс коллекции номеров узла можно, используя метод контейнера объ"
+ектов СПДС IBuildingContainer::UnitNumbers.
+
+IUnitNumbers  свойства
+
+UnitNumber  Номер узла, заданный по индексу, или 
+ссылке
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_KNOTNUMBER.htm
+Тип данных: указатель на интерфейс марки IUnitNumber
+Синтаксис Automation:
+1029
+
+
+
+UnitNumber = iObject.UnitNumber( index ) Получить свойство(* )
+UnitNumber = iObject.GetUnitNumber( index Получить свойство (**)
+)
+
+Синтаксис COM:
+
+iObject">get_UnitNumber( index, Получить свойство
+&UnitNumber )
+
+Входные параметры:
+
+Index (Variant) " Индекс.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса могут использоваться следующие типы:
+
+▼ индекс объекта в коллекции,
+▼ сcылка на объект (reference),
+▼ строковое значение текста сверху IUnitNumber::TextUp.
+
+Пример:
+UnitNumber = iUnitNumbers.UnitNumber("TextUp");
+Где "TextUp" " верхний текст номера узла.
+
+IUnitNumbers  методы
+
+Add  Создать номер узла
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_KNOTNUMBER.htm
+Синтаксис Automation:
+LPDISPATH Add( );
+Синтаксис COM:
+HRESULT Add( IUnitNumber** Result);
+Возвращаемое значение:
+
+Result " Указатель на интерфейс номера узла
+IUnitNumber.
+
+Примечание:
+Метод позволяет создать новый интерфейс номера узла. После получения нового интер"
+фейса нужно задать параметры номера узла и вызвать метод IDrawingObject::Update.
+1030
+
+
+
+Интерфейс IMarkNodes
+Интерфейс коллекции узлов для вставки дополнительных марок.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IMarkNodes
+
+Описание:
+Интерфейс позволяет получать и создавать дополнительные узлы для вставки марок.
+Примечание:
+Получить интерфейс коллекции марок можно, используя методы
+IStraightAxis::MarkNodes, IArcAxis::MarkNodes, IMarkNode::MarkNodes.
+
+IMarkNodes  свойства
+
+Item  Узел, заданный по индексу или тексту марки
+Интерфейс...
+Тип данных: указатель на интерфейс узла IMarkNode
+Синтаксис Automation:
+
+Item = iObject.Item(Index) Получить свойство(* )
+Item = iObject.GetItem(Index) Получить свойство (**)
+
+Синтаксис COM:
+
+Item = iObject">get_Item(Index) Получить свойство
+
+Входные параметры:
+
+Index (Variant) " Индекс узла в коллекции. Поддерживаются 
+следующие типы:
+" VT_I4   " индекс узла,
+" VT_BSTR " имя узла.
+
+Описание:
+Индекс равный 0 позволяет получить указатель на узел, являющийся маркой оси.
+Примечание:
+Свойство доступно только для чтения.
+
+IMarkNodes  методы
+
+Add  Создать узел (добавить узел в коллекцию)
+Интерфейс...
+1031
+
+
+
+Синтаксис Automation:
+LPDISPATH Add( ksMarkNodeEnum Type,
+VARIANT Index );
+Синтаксис COM:
+HRESULT Add( ksMarkNodeEnum Type,
+VARIANT Index, IMarkNode** Result);
+Входные параметры:
+
+Type " тип марки из перечисления ksMarkNodeEnum,
+Index " индекс узла для вставки марки.
+
+Поддерживаются следующие типы:
+VT_I4 " добавление узла по индексу, "1 " добавление в конец списка,
+VT_BSTR " добавление узла перед элементом с заданным именем,
+VT_DISPATCH " добавление узла перед заданным.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс узла IMarkNode.
+
+Примечание:
+Метод позволяет создать дополнительные узлы для марок.
+
+Clear  Очистить коллекцию
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+HRESULT Clear( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить дополнительные узлы для марок, при этом узлы удаляются из
+коллекции. Из объекта узлы будут удалены после вызова метода IDrawingObject::Update.
+
+Интерфейс IBuildingAxis
+Cтроительная ось (базовый интерфейс для строительных осей).
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+1032
+
+
+
+IBuildingAxis
+Описание:
+Интерфейс позволяет получать и изменять общие свойства для строительных осей.
+Примечание:
+Получить интерфейс строительной оси можно, используя методы коллекции строитель"
+ных осей IBuildingAxes::BuildingAxis, IBuildingAxes::Add.
+
+IBuildingAxis  свойства
+
+AutoStroke  Автоопределение длины штриха
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoStroke = iObject.AutoStroke Получить свойство(* )
+iObject.AutoStroke = AutoStroke Установить свойство (* )
+AutoStroke = iObject.GetAutoStroke() Получить свойство (**)
+iObject.SetAutoStroke(AutoStroke) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_AutoStroke(&AutoStroke)
+iObject">put_AutoStroke( Установить свойство
+AutoStroke)
+
+DottedLength  Длина пунктира
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+DottedLength = iObject.DottedLength Получить свойство(* )
+iObject.DottedLength = DottedLength Установить свойство (* )
+iObject.GetDottedLength() Получить свойство (**)
+iObject.SetDottedLength(DottedLength) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_DottedLength(&DottedLen
+gth)
+1033
+
+
+
+iObject">put_DottedLength( Установить свойство
+DottedLength)
+
+DoubleMark  Тип марки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DoubleMark = iObject.DoubleMark Получить свойство(* )
+iObject.DoubleMark = DoubleMark Установить свойство (* )
+DoubleMark = iObject.GetDoubleMark() Получить свойство (**)
+iObject.SetDoubleMark(DoubleMark) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_DoubleMark(&DoubleMark
+)
+iObject">put_DoubleMark( Установить свойство
+DoubleMark)
+
+Значения свойства:
+
+TRUE " двойная,
+FALSE " одинарная.
+
+Примечание:
+Свойство позволяет получить и установить тип марки.
+
+Interval  Длина промежутка
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Interval = iObject.Interval Получить свойство(* )
+iObject.Interval = Interval Установить свойство (* )
+Interval = iObject.GetInterval() Получить свойство (**)
+iObject.SetInterval(Interval) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Interval(&Interval) Получить свойство
+iObject">put_Interval( Interval) Установить свойство
+1034
+
+
+
+MarkSize  Размер марки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+MarkSize = iObject.MarkSize Получить свойство(* )
+iObject.MarkSize = MarkSize Установить свойство (* )
+MarkSize = iObject.GetMarkSize() Получить свойство (**)
+iObject.SetMarkSize(MarkSize) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_MarkSize(&MarkSize)
+iObject">put_MarkSize( Установить свойство
+MarkSize)
+
+Примечание:
+Значения параметра пересчитываются в зависимости от текущей системы координат для
+объекта, задаваемой параметром IDrawingObject::DrawingObjectParamType.
+
+Stroke  Длина штриха
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Stroke = iObject.Stroke Получить свойство(* )
+iObject.Stroke = Stroke Установить свойство (* )
+Stroke = iObject.GetStroke() Получить свойство (**)
+iObject.SetStroke(Stroke) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Stroke(&Stroke) Получить свойство
+iObject">put_Stroke( Stroke) Установить свойство
+
+Text  Текст
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+Text = iObject.Text Получить свойство(* )
+1035
+
+
+
+Text = iObject.GetText() Получить свойство (**)
+Синтаксис COM:
+
+iObject">get_Text(&Text) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Значение свойства можно использовать для поиска марки в коллекции строительных
+
+осей IBuildingAxes, а также для поиска в функции IDrawingObjects::Item или
+IBuildingAxes::BuildingAxis строкового значения текста.
+Пример:
+axis = iBuildingAxes.Axis("A1");
+
+ТextAfter  Текст после
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+Text = iObject.TextAfter Получить свойство(* )
+Text = iObject.GetTextAfter() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_TextAfter(&Text) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+TextBefore  Текст до
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+Text = iObject.TextBefore Получить свойство(* )
+Text = iObject.GetTextBefore() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_TextBefore(&Text) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+1036
+
+
+
+IBuildingAxis  методы
+
+AddNodeByPoint  Добавить узел марки по координатам
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddNodeByPoint( ksMarkNodeEnum Type,
+double X,
+double Y );
+Синтаксис COM:
+HRESULT AddNodeByPoint( ksMarkNodeEnum Type,
+double X,
+double Y,
+IMarkNode ** PVal );
+Входные параметры:
+
+Type " тип узла для марки из ksMarkNodeEnum,
+X, Y " координаты для подключения узла.
+
+Возвращаемое значение:
+
+Указатель на интерфейс " если узел подключен,
+IMarkNode
+NULL " в случае неудачи.
+
+Примечание:
+Значения координат и направлений пересчитываются в зависимости от текущей систе"
+мы координат для объекта, задаваемой параметром
+IDrawingObject::DrawingObjectParamType.
+
+GetInsertionPoints  Получить координаты точек для 
+вставки дополнительных элементов
+Интерфейс...
+Синтаксис Automation:
+BOOL GetInsertionPoints( BOOL First,
+VARIANT * Points,
+VARIANT * Directions,
+VARIANT * Nodes,
+BOOL * RetVal );
+Синтаксис COM:
+HRESULT GetInsertionPoints( BOOL First,
+VARIANT * Points,
+VARIANT * Directions,
+1037
+
+
+
+VARIANT * Nodes,
+BOOL * RetVal );
+Входные параметры:
+
+First " вернуть координаты точек
+TRUE " для первого ответвления,
+FALSE " для второго ответвления.
+
+Выходные параметры:
+
+Points " массив SafeArray типа VT_ARRAY | VT_R8 координат 
+точек для подключения дополнительных узлов марок,
+
+Directions " массив SafeArray типа VT_ARRAY | VT_R8 
+направлений (углы относительно центра 
+родительского узла),
+
+Nodes " массив SafeArray типа VT_ARRAY | VT_DISPATCH 
+родительские узлы для точек подключения.
+
+Возвращаемое значение:
+
+TRUE " координаты получены,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Параметры Points, Directions и Nodes не являются обязательными. В функцию достаточ"
+но передать один из указателей на VARIANT.
+
+2.  Массивы являются согласованными.
+Координаты точек в массиве Points лежат в следующей последовательности:
+
+▼ x0, y0, x1, y1, ...xi, yi
+Направления в масиве Directions лежат в последовательности:
+
+▼ angle0, angle1, ...anglei      
+В массиве Nodes лежат указатели на интерфейсы узлов для вставок марок IMarkNode.
+
+3.  У узла может быть от 1 до 3 точек для подключения дополнительных узлов в зависимо"
+сти от типа узла и его расположения. Так как массивы координат и узлов должны быть
+согласованы, то один и тот же указатель на интерфейс может встречаться в массиве бо"
+лее одного раза.
+
+4.  Значения координат и направлений пересчитываются в зависимости от текущей систе"
+мы координат для объекта, задаваемой параметром
+IDrawingObject::DrawingObjectParamType.
+
+5.  Если возвращается один объект, то тип VARIANT"а будет VT_DISPATCH, если возвраща"
+ется несколько объектов, то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+GetNodeByPoint  Получить узел марки по координатам
+Интерфейс...
+1038
+
+
+
+Синтаксис Automation:
+LPDISPATCH GetNodeByPoint( double X, double Y, double Limit );
+Синтаксис COM:
+HRESULT GetNodeByPoint( double X, double Y, double Limit, IMarkNode ** PVal );
+Входные параметры:
+
+X, Y " координаты точки,
+Limit " максимальное расстояние от точки до узла при 
+
+поиске.
+
+Возвращаемое значение:
+
+Указатель на интерфейс " если узел найден,
+IMarkNode
+NULL " в случае неудачи.
+
+Примечание:
+
+1.  Значения координат и направлений пересчитываются в зависимости от текущей систе"
+мы координат для объекта, задаваемой параметром
+IDrawingObject::DrawingObjectParamType
+
+2.  Подключить узел можно только к точкам подключения, координаты которых возвраща"
+ются функциями IBuildingAxis::GetInsertionPoints и IMarkNode::GetInsertionPoints.
+
+3.  После добавления узла координаты и список доступных точек для подключения новых
+узлов может измениться.
+
+Интерфейс IArcAxis
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_ARC_AXIS.htm
+Интерфейс дуговой координационной оси.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IBuildingAxis
+
+ IArcAxis
+Описание:
+Интерфейс позволяет получать и изменять свойства дуговой строительной оси.
+Примечание:
+
+1.  Получить интерфейс строительной оси можно, используя методы коллекции строитель"
+ных осей IBuildingAxes::BuildingAxis, IBuildingAxes::Add.
+
+2.  При создании дуговой оси можно использовать несколько способов построения.
+▼ По координатам,
+1039
+
+
+
+▼ По трем точкам,
+▼ По углам, 
+▼ По точке и углу,
+▼ По углу, точке и радиусу,
+▼ По конечным точкам и углу,
+▼ Плавающий центр, вариант 1,
+▼ Плавающий центр, вариант 2.
+3.  После задания параметров оси требуется вызвать метод IDrawingObject::Update.
+4.  При изменении параметров зависимые параметры пересчитываются после вызова ме"
+
+тода IDrawingObject::Update.
+
+IArcAxis  свойства
+
+Angle1  Угол между осью 0X и отрезком, соединяющим 
+первую точку дуги с началом координат
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle1 = iObject.Angle1; Получить свойство(* )
+iObject.Angle1 = Angle1; Установить свойство (* )
+Angle1 = iObject.GetAngle1(); Получить свойство (**)
+iObject.SetAngle1( Angle1 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Angle1( &Angle1 ) Получить свойство
+iObject">put_Angle1( Angle1 ) Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить угол между осью 0X и отрезком, соединяю"
+щим первую точку дуги с началом координат.
+
+Angle2  Угол между осью 0X и отрезком, соединяющим 
+вторую точку дуги с началом координат
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle2 = iObject.Angle2; Получить свойство(* )
+iObject.Angle2 = Angle2; Установить свойство (* )
+Angle2 = iObject.GetAngle2(); Получить свойство (**)
+1040
+
+
+
+iObject.SetAngle2( Angle2 ); Установить свойство (**)
+Синтаксис COM:
+
+iObject">get_Angle2( &Angle2 ) Получить свойство
+iObject">put_Angle2( Angle2 ) Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить угол между осью 0X и отрезком, соединяю"
+щим вторую точку дуги с началом координат.
+
+Direction  Направление построения дуги
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = iObject.Direction; Получить свойство(* )
+iObject.Direction = Direction; Установить свойство (* )
+Direction = iObject.GetDirection(); Получить свойство (**)
+iObject.SetDirection( Direction ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Direction( &Direction ); Получить свойство
+iObject">put_Direction( Direction ); Установить свойство
+
+Значения свойства:
+
+TRUE " по часовой стрелке,
+FALSE " против часовой стрелки.
+
+Примечание:
+Свойство позволяет получить и установить направление построения дуги.
+
+Jut  Получить выступ
+Интерфейс...
+Тип данных: указатель на интерфейс выступа IAxisJut
+Синтаксис Automation:
+
+Jut = iObject.Jut( First ); Получить свойство(* )
+Jut = iObject.GetJut( First ); Получить свойство (**)
+
+Синтаксис COM:
+1041
+
+
+
+iObject">get_Jut(First, &Jut); Получить свойство
+
+Входные параметры:
+
+First " признак порядка выступа на оси, BOOL, 
+TRUE" первый выступ,
+FALSE " второй.
+
+Примечание:
+Свойство доступно только для чтения.
+
+MarkNodes  Коллекция узлов марок
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции IMarkNodes
+Синтаксис Automation:
+
+MarkNodes = iObject.MarkNodes; Получить свойство(* )
+MarkNodes = iObject.GetMarkNodes(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_MarkNodes( Получить свойство
+&MarkNodes );
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Узлы правого и левого выступа имеют одинаковые параметры, поэтому редактирование
+
+осуществляется через одну коллекцию. 
+
+Radius  Радиус дуги
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = iObject.Radius; Получить свойство(* )
+iObject.Radius = Radius; Установить свойство (* )
+Radius = iObject.GetRadius(); Получить свойство (**)
+iObject.SetRadius( Radius ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Radius( &Radius ); Получить свойство
+iObject">put_Radius( Radius ); Установить свойство
+1042
+
+
+
+Примечание:
+Свойство позволяет получить и установить радиус дуги.
+
+Xc  Координата X центра дуги
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = iObject.Xc; Получить свойство(* )
+iObject.Xc = Xc; Установить свойство (* )
+Xc = iObject.GetXс(); Получить свойство (**)
+iObject.SetXс( Xc ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Xc( &Xc ); Получить свойство
+iObject">put_Xc( Xc ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату центра дуги Xc.
+
+X1  Координата первой точки по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = iObject.X1; Получить свойство(* )
+iObject.X1 = X1; Установить свойство (* )
+X1 = iObject.GetX1(); Получить свойство (**)
+iObject.SetX1( X1 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X1( &X1 ); Получить свойство
+iObject">put_X1( X1 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату первой точки дуги X1.
+
+X2  Координата второй точки по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+1043
+
+
+
+X2 = iObject.X2; Получить свойство(* )
+iObject.X2 = X2; Установить свойство (* )
+X2 = iObject.GetX2(); Получить свойство (**)
+iObject.SetX2( X2 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X2( &X2 ); Получить свойство
+iObject">put_X2( X2 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату первой точки дуги X2.
+
+X3  Координата средней точки, лежащей на дуге по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X3 = iObject.X3; Получить свойство(* )
+iObject.X3 = X3; Установить свойство (* )
+X3 = iObject.GetX3(); Получить свойство (**)
+iObject.SetX3( X3 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X3( &X3 ); Получить свойство
+iObject">put_X3( X3 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату средней точки, лежащей на дуге
+по X.
+
+Yc  Координата Y центра дуги
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = iObject.Yc; Получить свойство(* )
+iObject.Yc = Yc; Установить свойство (* )
+Yc = iObject.GetYc(); Получить свойство (**)
+iObject.SetYc( Yc ); Установить свойство (**)
+
+Синтаксис COM:
+1044
+
+
+
+iObject">get_Yc( &Yc ); Получить свойство
+iObject">put_Yc( Yc ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату центра дуги Yc.
+
+Y1  Координата первой точки по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = iObject.Y1; Получить свойство(* )
+iObject.Y1 = Y1; Установить свойство (* )
+Y1 = iObject.GetY1(); Получить свойство (**)
+iObject.SetY1( Y1 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Y1( &Y1 ); Получить свойство
+iObject">put_Y1( Y1 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату первой точки дуги Y1.
+
+Y2  Координата второй точки по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = iObject.Y2; Получить свойство(* )
+iObject.Y2 = Y2; Установить свойство (* )
+Y2 = iObject.GetY2(); Получить свойство (**)
+iObject.SetY2( Y2 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Y2( &Y2 ); Получить свойство
+iObject">put_Y2( Y2 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату второй точки дуги Y2.
+
+Y3  Координата средней точки, лежащей на дуге по Y
+Интерфейс...
+1045
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Y3 = iObject.Y3; Получить свойство(* )
+iObject.Y3 = Y3; Установить свойство (* )
+Y3 = iObject.GetY3(); Получить свойство (**)
+iObject.SetY3( Y3 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Y3( &Y3 ); Получить свойство
+iObject">put_Y3( Y3 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату средней точки, лежащей на дуге
+по Y.
+
+Интерфейс ICircleAxis
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_CIRCLE_AXIS.htm
+Интерфейс круговой координационной оси.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IBuildingAxis
+
+ICircleAxis
+Описание:
+Интерфейс позволяет получать и изменять свойства круговой строительной оси.
+Примечание:
+
+1.  Получить интерфейс строительной оси можно, используя методы коллекции строитель"
+ных осей IBuildingAxes::BuildingAxis, IBuildingAxes::Add.
+
+2.  При создании дуговой оси необходимо задать следующие параметры:
+▼ координаты центра XC; YC,
+▼ радиус Radius.
+3.  После задания параметров оси требуется вызвать метод IDrawingObject::Update. 
+4.  При изменении параметров зависимые параметры пересчитываются после вызова ме"
+
+тода IDrawingObject::Update.
+1046
+
+
+
+ICircleAxis  свойства
+
+BaseMarkNode  Базовый узел для марки
+Интерфейс...
+Тип данных: указатель на интерфейс IMarkNode
+Синтаксис Automation:
+
+MarkNode = iObject.BaseMarkNode; Получить свойство(* )
+MarkNode = iObject.GetBaseMarkNode(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_BaseMarkNode(&MarkNode); Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Интерфейс IMarkNode позволяет задать параметры основного узла марки оси. Позволя"
+
+ет добавлять и удалять дополнительные узлы.
+
+MarkAngle  Угол привязки марки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+MarkAngle = iObject.MarkAngle Получить свойство(* )
+iObject.MarkAngle = MarkAngle Установить свойство (* )
+MarkAngle = iObject.GetMarkAngle() Получить свойство (**)
+iObject.SetMarkAngle( MarkAngle ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_MarkAngle(&MarkAngle)
+iObject">put_MarkAngle( Установить свойство
+MarkAngle)
+
+Примечание:
+Свойство позволяет получить и установить угол между осью 0X и отрезком, соединяю"
+щим центр оси с маркой.
+
+MarkOn  Марка вкючена\выключена
+Интерфейс...
+Тип данных: BOOL
+1047
+
+
+
+Синтаксис Automation:
+
+MarkOn = iObject.MarkOn Получить свойство(* )
+iObject.MarkOn = MarkOn Установить свойство (* )
+MarkOn = iObject.GetMarkOn() Получить свойство (**)
+iObject.SetMarkOn( MarkOn ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_MarkOn(&MarkOn) Получить свойство
+iObject">put_MarkOn( MarkOn) Установить свойство
+
+Примечание:
+Свойство позволяет управлять отображением марки на координационной оси.
+
+Radius  Радиус
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = iObject.Radius; Получить свойство(* )
+iObject.Radius = Radius; Установить свойство (* )
+Radius = iObject.GetRadius(); Получить свойство (**)
+iObject.SetRadius( Radius ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Radius( &Radius ); Получить свойство
+iObject">put_Radius( Radius ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить радиус дуги.
+
+Xc  Координата центра по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = iObject.Xc; Получить свойство(* )
+iObject.Xc = Xc; Установить свойство (* )
+Xc = iObject.GetXс(); Получить свойство (**)
+iObject.SetXс( Xc ); Установить свойство (**)
+
+Синтаксис COM:
+1048
+
+
+
+iObject">get_Xc( &Xc ); Получить свойство
+iObject">put_Xc( Xc ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату центра дуги Xc.
+
+Yc  Координата центра по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = iObject.Yc; Получить свойство(* )
+iObject.Yc = Yc; Установить свойство (* )
+Yc = iObject.GetYc(); Получить свойство (**)
+iObject.SetYc( Yc ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Yc( &Yc ); Получить свойство
+iObject">put_Yc( Yc ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату центра дуги Yc.
+
+Интерфейс IStraightAxis
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_DIRECT_AXIS.htm
+Интерфейс прямой координационной оси.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IBuildingAxis
+
+IStraightAxis
+Описание:
+Интерфейс позволяет получать и изменять свойства прямой строительной оси.
+Примечание:
+
+1.  Получить интерфейс строительной оси можно, используя методы коллекции строитель"
+ных осей IBuildingAxes::BuildingAxis, IBuildingAxes::Add.
+
+2.  При создании прямой оси можно использовать несколько типов построения:
+2.1. по координатам (требуется задать координаты точек X1; Y1, X2; Y2).
+1049
+
+
+
+2.2. По точке 1 (X1; Y1), длине Length и углу Angle,
+2.3.  По точке 2 (X2; Y2), длине Length и углу Angle относительно точки 1.
+
+3.  После задания параметров оси требуется вызвать метод IDrawingObject::Update.
+4.  При изменении параметров зависимые параметры пересчитываются после вызова ме"
+
+тода IDrawingObject::Update.
+
+IStraightAxis  свойства
+
+Angle  Угол наклона
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = iObject.Angle; Получить свойство(* )
+iObject.Angle = Angle; Установить свойство (* )
+Angle = iObject.GetAngle(); Получить свойство (**)
+iObject.SetAngle( Angle ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Angle(&Angle) Получить свойство
+iObject">put_Angle( Angle ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить угол наклона отрезка.
+
+Jut  Выступ
+Интерфейс...
+Тип данных: указатель на интерфейс IAxisJut
+Синтаксис Automation:
+
+Jut = iObject.Jut( First ); Получить свойство(* )
+Jut = iObject.GetJut( First ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Jut(First, &Jut); Получить свойство
+
+Входные параметры:
+
+First "тип данных BOOL
+(TRUE " первый выступ,
+FALSE " второй).
+1050
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+Length  Длина отрезка
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Length = iObject.Length; Получить свойство(* )
+iObject.Length = Length; Установить свойство (* )
+Length = iObject.GetLength(); Получить свойство (**)
+iObject.SetLength( Length ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Length(&Length); Получить свойство
+iObject">put_Length( Length ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить длину отрезка.
+
+MarkNodes  Коллекция узлов марок
+Интерфейс...
+Тип данных: указатель на интерфейс IMarkNodes
+Синтаксис Automation:
+
+MarkNodes = iObject.MarkNodes; Получить свойство(* )
+MarkNodes = iObject.GetMarkNodes(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_MarkNodes( Получить свойство
+&MarkNodes );
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Узлы правого и левого выступа имеют одинаковые параметры, поэтому редактирование
+
+осуществляется через одну коллекцию.
+
+X1  Координата первой точки по оси X
+Интерфейс...
+Тип данных: double
+1051
+
+
+
+Синтаксис Automation:
+
+X1 = iObject.X1; Получить свойство(* )
+iObject.X1 = X1; Установить свойство (* )
+X1 = iObject.GetX1(); Получить свойство (**)
+iObject.SetX1( X1 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X1(&X1); Получить свойство
+iObject">put_X1( X1 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату первой точки отрезка по оси X.
+
+X2  Координата второй точки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = iObject.X2; Получить свойство(* )
+iObject.X2 = X2; Установить свойство (* )
+X2 = iObject.GetX2(); Получить свойство (**)
+iObject.SetX2( X2 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X2(&X2); Получить свойство
+iObject">put_X2( X2 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату второй точки отрезка по оси X.
+
+Y1  Координата первой точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = iObject.Y1; Получить свойство(* )
+iObject.Y1 = Y1; Установить свойство (* )
+Y1 = iObject.GetY1(); Получить свойство (**)
+iObject.SetY1( Y1 ); Установить свойство (**)
+
+Синтаксис COM:
+1052
+
+
+
+iObject">get_Y1(&Y1); Получить свойство
+iObject">put_Y1( Y1 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату первой точки отрезка по оси Y.
+
+Y2  Координата второй точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = iObject.Y2; Получить свойство(* )
+iObject.Y2 = Y2; Установить свойство (* )
+Y2 = iObject.GetY2(); Получить свойство (**)
+iObject.SetY2( Y2 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Y2(&Y2); Получить свойство
+iObject">put_Y2( Y2 ); Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить координату второй точки отрезка по оси Y.
+
+Интерфейс IBrace
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_BRACE.htm
+Интерфейс фигурной скобки.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IBrace
+
+Описание:
+Интерфейс позволяет получать и изменять свойства фигурных скобок.
+Примечание:
+Получить интерфейс марки можно, используя свойство интерфейса коллекции фигур"
+ных скобок IBraces::Brace или метод IBraces::Add.
+1053
+
+
+
+IBrace  свойства
+
+Alignment  Ориентация фигурной скобки
+Интерфейс...
+Тип данных: тип ориентации из перечисления ksAlignmentTypeEnum
+Синтаксис Automation:
+
+Alignment = iObject.Alignment Получить свойство(* )
+iObject.Alignment = Alignment Установить свойство (* )
+Alignment = iObject.GetAlignment() Получить свойство (**)
+iObject.SetAlignment( Alignment ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Alignment( Получить свойство
+&Alignment )
+iObject">put_Alignment( Установить свойство
+Alignment )
+
+Angle  Угол наклона фигурной скобки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = iObject.Angle Получить свойство(* )
+iObject.Angle = Angle Установить свойство (* )
+Angle = iObject.GetAngle() Получить свойство (**)
+iObject.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Angle( &Angle ) Получить свойство
+iObject">put_Angle( Angle ) Установить свойство
+
+Direction  Ориентация горлышка скобки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = iObject.Direction Получить свойство(* )
+iObject.Direction = Direction Установить свойство (* )
+Direction = iObject.GetDirection() Получить свойство (**)
+1054
+
+
+
+iObject.SetDirection( Direction ) Установить свойство (**)
+Синтаксис COM:
+
+iObject">get_Direction( Получить свойство
+&Direction )
+iObject">put_Direction( Установить свойство
+Direction)
+
+Значения свойства:
+
+TRUE " нормальная ориентация,
+FALSE " перевернутая.
+
+Length  Длина фигурной скобки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Length = iObject.Length Получить свойство(* )
+iObject.Length = Length Установить свойство (* )
+Length = iObject.GetLength() Получить свойство (**)
+iObject.SetLength( Length ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Length( &Length ) Получить свойство
+iObject">put_Length( Length ) Установить свойство
+
+Radius  Радиус скругления скобки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = iObject.Radius Получить свойство(* )
+iObject.Radius = Radius Установить свойство (* )
+Radius = iObject.GetRadius() Получить свойство (**)
+iObject.SetRadius( Radius ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Radius( &Radius ) Получить свойство
+iObject">get_Radius( &Radius ) Установить свойство
+1055
+
+
+
+ShelfDirection  Положение полки
+Интерфейс...
+Тип данных: Тип положения полки из перечисления ksShelfDirectionEnum
+Синтаксис Automation:
+
+ShelfDirection = iObject.ShelfDirection Получить свойство(* )
+iObject.ShelfDirection = ShelfDirection Установить свойство (* 
+
+)
+ShelfDirection = iObject.GetShelfDirection() Получить свойство (**)
+iObject.SetShelfDirection( ShelfDirection ) Установить свойство 
+
+(**)
+
+Синтаксис COM:
+
+iObject">get_ShelfDirection( &ShelfDirection ) Получить свойство
+iObject">put_ShelfDirection( ShelfDirection) Установить свойство
+
+ShelfPoints  Массив SAFEARRAY координат точек полки
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_R8
+Синтаксис Automation:
+
+ShelfPoints = Object.ShelfPoints Получить свойство(* )
+Object.ShelfPoints = ShelfPoints Установить свойство (* )
+ShelfPoints = Object.GetShelfPoints() Получить свойство (**)
+Object.SetShelfPoints( ShelfPoints ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfPoints( Получить свойство
+&ShelfPoints )
+Object.put_ShelfPoints( Установить свойство
+ShelfPoints )
+
+ShelfX  Координата X начала полки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfX = iObject.ShelfX Получить свойство(* )
+iObject.ShelfX = ShelfX Установить свойство (* )
+ShelfX = iObject.GetShelfX() Получить свойство (**)
+iObject.SetShelfX( ShelfX ) Установить свойство (**)
+1056
+
+
+
+Синтаксис COM:
+
+iObject">get_ShelfX( &ShelfX ) Получить свойство
+iObject">put_ShelfX( ShelfX ) Установить свойство
+
+Примечание:
+При попытке получить координату полки, которой нет, свойство вернёт 0.0.
+
+ShelfY  Координата Y начала полки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfY = iObject.ShelfY Получить свойство(* )
+iObject.ShelfY = ShelfY Установить свойство (* )
+ShelfY = iObject.GetShelfY() Получить свойство (**)
+iObject.SetShelfY( ShelfY ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ShelfY( &ShelfY ) Получить свойство
+iObject">put_ShelfY( ShelfY ) Установить свойство
+
+Примечание:
+При попытке получить координату полки, которой нет, свойство вернёт 0.0.
+
+Style  Стиль линии фигурной скобки
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Style = iObject.Style Получить свойство(* )
+iObject.Style = Style Установить свойство (* )
+Style = iObject.GetStyle() Получить свойство (**)
+iObject.SetStyle( Style ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Style( &Style ) Получить свойство
+iObject">put_Style( Style ) Установить свойство
+1057
+
+
+
+Text  Текст фигурной скобки
+Интерфейс...
+Тип данных: указатель на интерфейс текста IText
+Синтаксис Automation:
+
+Text = iObject.Text Получить свойство(* )
+Text = iObject.GetText() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Text( &Text ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Текст можно использовать для поиска фигурной скобки в коллекции IBraces. Для пои"
+
+ска в функции IDrawingObjects::Item или IBraces::Brace нужно передать строковое значе"
+ние текста.
+Пример:
+Brace = iBraces.Brace("Text");
+где "Text" " текст на фигурной скобке; 
+
+X1  Координата первой точки по Х
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = iObject.X1; Получить свойство(* )
+iObject.X1 = X1; Установить свойство (* )
+X1 = iObject.GetX1(); Получить свойство (**)
+iObject.SetX1( X1 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X1(&X1); Получить свойство
+iObject">put_X1( X1 ); Установить свойство
+
+Примечание:
+Значение параметра зависит от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+X2  Координата второй точки по Х
+Интерфейс...
+1058
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+X2 = iObject.X2; Получить свойство(* )
+iObject.X2 = X2; Установить свойство (* )
+X2 = iObject.GetX2(); Получить свойство (**)
+iObject.SetX2( X2 ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_X2(&X2); Получить свойство
+iObject">put_X2( X2 ); Установить свойство
+
+Примечание:
+Значение параметра зависит от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+Y1  Координата первой точки по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = iObject.Y1; Получить свойство(* )
+iObject.Y1 = Y1; Установить свойство (* )
+Y1 = iObject.GetY1(); Получить свойство (**)
+iObject.SetY1(Y1); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Y1(&Y1); Получить свойство
+iObject">put_Y1(Y1); Установить свойство
+
+Примечание:
+Значение параметра зависит от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+Y2  Координата второй точки по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = iObject.Y2; Получить свойство(* )
+iObject.Y2 = Y2; Установить свойство (* )
+Y2 = iObject.GetY2(); Получить свойство (**)
+iObject.SetY2(Y2); Установить свойство (**)
+1059
+
+
+
+Синтаксис COM:
+
+iObject">get_Y2(&Y2); Получить свойство
+iObject">put_Y2(Y2); Установить свойство
+
+Примечание:
+Значение параметра зависит от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+Интерфейс ICutUnitMarking
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_cutnode.htm
+Интерфейс обозначения узла в сечении.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+ICutUnitMarking
+
+Примечание:
+Получить интерфейс можно, используя свойство интерфейса коллекции
+ICutUnitMarkings::CutUnitMarking или метод ICutUnitMarkings::Add.
+
+ICutUnitMarking  свойства
+
+Angle  Угол наклона
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = iObject.Angle Получить свойство(* )
+iObject.Angle = Angle Установить свойство (* )
+Angle = iObject.GetAngle() Получить свойство (**)
+iObject.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Angle(&Angle) Получить свойство
+iObject">put_Angle( Angle) Установить свойство
+
+ShelfDirection  Направление полки
+Интерфейс...
+Тип данных: из перечисления ksShelfDirectionEnum
+1060
+
+
+
+Синтаксис Automation:
+
+ShelfDirection = iObject.ShelfDirection Получить свойство(* )
+iObject.ShelfDirection = ShelfDirection Установить свойство (* )
+ShelfDirection = iObject.GetShelfDirection() Получить свойство (**)
+iObject.SetShelfDirection( ShelfDirection ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ShelfDirection(&ShelfDirec
+tion)
+iObject">put_ShelfDirection( Установить свойство
+ShelfDirection)
+
+ShelfX  Координата начала полки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfX = iObject.ShelfX Получить свойство(* )
+iObject.ShelfX = ShelfX Установить свойство (* )
+ShelfX = iObject.GetShelfX() Получить свойство (**)
+iObject.SetShelfX( ShelfX ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ShelfX(&ShelfX) Получить свойство
+iObject">put_ShelfX( ShelfX) Установить свойство
+
+ShelfY  Координата начала полки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfY = iObject.StrokeY Получить свойство(* )
+iObject.ShelfY = StrokeY Установить свойство (* )
+ShelfY = iObject.GetShelfY() Получить свойство (**)
+iObject.SetShelfY( ShelfY ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ShelfY(&ShelfY) Получить свойство
+iObject">put_ShelfY( ShelfY) Установить свойство
+1061
+
+
+
+Stroke  Длина штриха
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Stroke = iObject.Stroke( Index ) Получить свойство(* )
+iObject.Stroke( Index ) = Stroke Установить свойство (* )
+Stroke = iObject.GetStroke( Index ) Получить свойство (**)
+iObject.SetStroke( Index, Stroke ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Stroke( Index, Получить свойство
+&Stroke )
+iObject">put_Stroke( Index, Установить свойство
+Stroke )
+
+Входные параметры:
+
+Index (long) " индекс штриха.
+
+StrokeCount  Число штрихов
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Count = iObject.StrokeCount Получить свойство(* )
+iObject.StrokeCount = Count Установить свойство (* )
+Count = iObject.GetStrokeCount() Получить свойство (**)
+iObject.SetStrokeCount( Count ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_StrokeCount(&Count)
+iObject">put_StrokeCount( Установить свойство
+Count)
+
+StrokeX  Координата точки привязки штриха по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+1062
+
+
+
+StrokeX = iObject.StrokeX( Index ) Получить свойство(* )
+iObject.StrokeX( Index ) = StrokeX Установить свойство (* )
+StrokeX = iObject.GetStrokeX( Index ) Получить свойство (**)
+iObject.SetStrokeX( Index, StrokeX ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_StrokeX( Index, Получить свойство
+&StrokeX )
+iObject">put_StrokeX( Index, Установить свойство
+StrokeX )
+
+Входные параметры:
+
+Index (long) " индекс штриха.
+
+StrokeY  Координата точки привязки штриха по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+StrokeY = iObject.StrokeY( Index ) Получить свойство(* )
+iObject.StrokeY( Index ) = StrokeY Установить свойство (* )
+StrokeY = iObject.GetStrokeY( Index ) Получить свойство (**)
+iObject.SetStrokeY( Index, StrokeY ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_StrokeY( Index, Получить свойство
+&StrokeY )
+iObject">put_StrokeY( Index, Установить свойство
+StrokeY )
+
+Входные параметры:
+
+Index (long) " индекс штриха.
+
+TextDown  Текст внизу
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextDown = iObject.TextDown Получить свойство(* )
+TextDown = iObject.GetTextDown() Получить свойство (**)
+1063
+
+
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_TextDown(&TextDown)
+
+Примечание.
+Свойство доступно только для чтения.
+
+TextUp  Текст вверху
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextUp = iObject.TextUp Получить свойство(* )
+TextUp = iObject.GetTextUp() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_TextUp(&TextUp) Получить свойство
+
+Описание.
+Свойство Текст вверху можно использовать для поиска обозначения узла в сечении в
+коллекции ICutUnitMarkings. Для поиска в функции IDrawingObjects::Item или
+ICutUnitMarkings::CutUnitMarking нужно передать строковое значение текста.
+Пример:
+сutUnitMarking = iCutUnitMarkings.CutUnitMarking("A1"); 
+  где "A1" " Текст вверху 
+Примечание.
+Свойство доступно только для чтения.
+
+ICutUnitMarking  методы
+
+AddStroke  Добавить штрих
+Интерфейс...
+Синтаксис Automation:
+BOOL AddStoke( double X,
+double Y,
+double Length );
+Синтаксис COM:
+HRESULT AddStoke( double X,
+double Y,
+1064
+
+
+
+double Length,
+BOOL * Result );
+Входные параметры:
+
+X, Y " координаты точки привязки штриха,
+Length " длина.
+
+Возвращаемое значение:
+
+TRUE " штрих добавлен,
+FALSE " в случае неудачи.
+
+Примечание:
+Значения координат зависят от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType
+
+DeleteStroke  Удалить штрих
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteStroke( long Index );
+Синтаксис COM:
+HRESULT AddStroke( long Index, BOOL * Result );
+Входные параметры:
+
+index " номер удаляемого штриха.
+
+Возвращаемое значение:
+
+TRUE " штрих добавлено,
+FALSE " в случае неудачи.
+
+Интерфейс IMark
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_MARK_WOLDR_POSNUM.htm
+Марка  базовый интерфейс для марок.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IMark
+
+Описание:
+Интерфейс позволяет получать и изменять общие свойства для марок.
+1065
+
+
+
+Примечание:
+Получить интерфейс марки можно, используя методы интерфейса коллекции марок
+IMarks::Mark и IMarks::Add.
+
+IMark  свойства
+
+AutoNumber  Автонумерация марок и позиционных 
+обозначений
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoNumber = iObject.AutoNumber Получить свойство(* )
+iObject.AutoNumber = AutoNumber Установить свойство (* )
+AutoNumber = iObject.GetAutoNumber() Получить свойство (**)
+iObject.SetAutoNumber(AutoNumber) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_AutoNumber(&AutoNumber) Получить свойство
+iObject">put_AutoNumber( AutoNumber) Установить свойство
+
+Comment  Текст комментария
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Comment = iObject.Comment Получить свойство(* )
+iObject.Comment = Comment Установить свойство (* )
+Comment = iObject.GetComment() Получить свойство (**)
+iObject.SetComment(Comment) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Comment(&Comment) Получить свойство
+iObject">put_Comment( Comment) Установить свойство
+
+Примечание:
+Свойство позволяет получить и установить текст комментария.
+
+Name  Имя марки
+Интерфейс...
+1066
+
+
+
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство(* )
+Name = iObject.GetName() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Name(&Name) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Имя марки и номер марки IMark::Number можно использовать для поиска марки в кол"
+
+лекции марок IMarks.
+3.  Для поиска в функции IDrawingObjects::Item или IMarks::Mark нужно передать суммар"
+
+ную строку, включающую в себя имя марки + номер марки без дополнительных разде"
+лителей.
+Пример:
+ mark = iMarks.Mark("A1"); 
+где "А" " имя марки 
+"1" " номер марки
+
+Number  Номер марки
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+Number = iObject.Number Получить свойство(* )
+Number = iObject.GetNumber() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Number(&Number) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Имя марки IMark::Name и номер марки можно использовать для поиска марки в коллек"
+
+ции марок IMarks.
+3.  Для поиска в функции IDrawingObjects::Item или IMarks::Mark нужно передать суммар"
+
+ную строку, включающую в себя имя марки + номер марки без дополнительных разде"
+лителей.
+Пример:
+1067
+
+
+
+ mark = iMarks.Mark("A1"); 
+где "А" " имя марки 
+"1" " номер марки
+
+TextAfter  Текст после
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextAfter = iObject.TextAfter Получить свойство(* )
+TextAfter = iObject.GetTextAfter() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_TextAfter(&TextAfter)
+
+Примечание:
+Свойство доступно только для чтения.
+
+TextBefore  Текст до
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+TextBefore = iObject.TextBefore Получить свойство(* )
+TextBefore = iObject.GetTextBefore() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_TextBefore(&TextBefore)
+
+Примечание:
+Своство доступно только для чтения.
+
+TextUnder  Текст под
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+1068
+
+
+
+TextUnder = iObject.TextUnder Получить свойство(*
+)
+
+TextUnder = iObject.GetTextUnder() Получить свойство
+(**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_TextUnder(&TextUnder)
+
+Примечание:
+Свойство доступно только для чтения.
+
+X  Координата точки привязки по Х
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = iObject.X; Получить свойство(* )
+iObject.X = X; Установить свойство (* )
+X = iObject.GetX(); Получить свойство (**)
+iObject.SetX( X ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_X(&X);
+iObject">put_X( Установить свойство
+X );
+
+Примечание:
+Значение параметра зависит от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+Y  Координата точки привязки марки по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = iObject.Y; Получить свойство(* )
+iObject.Y = Y; Установить свойство (* )
+Y = iObject.GetY(); Получить свойство (**)
+iObject.SetY(Y); Установить свойство (**)
+
+Синтаксис COM:
+1069
+
+
+
+iObject" Получить свойство
+>get_Y(&Y);
+iObject" Установить свойство
+>put_Y(Y);
+
+Примечание:
+Значение параметра зависит от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+Интерфейс IMarkOnLeader
+Справка системы КОМПАС...
+KOMPAS.chm::/280_29_4_Marka_pozicionnoe_oboz.htm
+Интерфейс марки и позиционного обозначения (с линиейвыноской).
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IMark
+
+IMarkOnLeader
+Примечание:
+Получить интерфейс марки можно, используя методы интерфейса коллекции марок
+IMarks::Mark и IMarks::Add.
+
+IMarkOnLeader  свойства
+
+ArrowType  Тип стрелки линиивыноски
+Интерфейс...
+Тип данных: из перечисления ksArrowEnum
+Синтаксис Automation:
+
+ArrowType = iObject.ArrowType Получить свойство(* )
+iObject.ArrowType = ArrowType Установить свойство (* )
+ArrowType = iObject.GetArrowType() Получить свойство (**)
+iObject.SetArrowType(ArrowType) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ArrowType(&ArrowType) Получить свойство
+iObject">put_ArrowType( ArrowType) Установить свойство
+1070
+
+
+
+BranchBegin  Начало ответвления
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BranchBegin = iObject.BranchBegin Получить свойство(* )
+iObject.BranchBegin = BranchBegin Установить свойство (* )
+BranchBegin = iObject.GetBranchBegin() Получить свойство (**)
+iObject.SetBranchBegin(BranchBegin) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_BranchBegin(&BranchBegin)
+iObject">put_BranchBegin( BranchBegin) Установить свойство
+
+Значения свойства:
+
+TRUE " от начала полки,
+FALSE " от конца полки.
+
+Примечание.
+Свойство задает признак начала ответвления.
+
+BranchCount  Число ответвлений
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+BranchCount = iObject.BranchCount Получить свойство(* )
+BranchCount = iObject.GetBranchCount() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_BranchCount(&BranchCount) Получить свойство
+
+Примечание.
+Свойство доступно только для чтения.
+
+BranchPoints  Массив SAFEARRAY координат точек 
+ответвления
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_R8
+1071
+
+
+
+Синтаксис Automation:
+
+BranchPoints = iObject.BranchPoints(index) Получить свойство(* )
+iObject.BranchPoints(index) = BranchPoints Установить свойство (* )
+BranchPoints = iObject.GetBranchPoints(index) Получить свойство (**)
+iObject.SetBranchPoints(index, BranchPoints) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_BranchPoints(index, &BranchPoints) Получить свойство
+iObject">put_BranchPoints(index,  BranchPoints) Установить свойство
+
+Примечание.
+
+1.  Координаты точек в массиве лежат в следующей последовательности: x0, y0, x1, y1, ...xi,
+yi.
+
+2.  Значения координат зависят от текущей системы координат для объекта, задаваемой
+параметром IDrawingObject::DrawingObjectParamType.
+
+BranchPointsCount  Число точек в ответвлении
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Count = iObject.BranchPointsCount Получить свойство(* )
+Count = iObject.GetBranchPointsCount() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_BranchPointsCount(&Count)
+
+Примечание.
+Свойство доступно только для чтения.
+
+BranchX  Координата конечной точки ответвления по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BranchX = iObject.BranchX Получить свойство(* )
+iObject.BranchX = BranchX Установить свойство (* )
+BranchX = iObject.GetBranchX() Получить свойство (**)
+iObject.SetBranchX(BranchX) Установить свойство (**)
+1072
+
+
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_BranchX(&BranchX)
+iObject">put_BranchX( BranchX) Установить свойство
+
+Примечание.
+Значения координат зависят от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+BranchY  Координата конечной точки ответвления по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BranchY = iObject.BranchY Получить свойство(* )
+iObject.BranchY = BranchY Установить свойство (* )
+BranchY = iObject.GetBranchY() Получить свойство (**)
+iObject.SetBranchY(BranchY) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_BranchY(&BranchY)
+iObject">put_BranchY( BranchY) Установить свойство
+
+Примечание.
+Значения координат зависят от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+ParallelBranch  Параллельное ответвление
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ParallelBranch = iObject.ParallelBranch Получить свойство(* )
+iObject.ParallelBranch = ParallelBranch Установить свойство (* )
+ParallelBranch = iObject.GetParallelBranch() Получить свойство (**)
+iObject.SetParallelBranch(ParallelBranch) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ParallelBranch(&ParallelBranch) Получить свойство
+iObject">put_ParallelBranch(ParallelBranch) Установить свойство
+1073
+
+
+
+Значения свойства:
+
+TRUE " строятся параллельные ответвления,
+FALSE " строятся непараллельные ответвления.
+
+ShelfDirection  Направление полки
+Интерфейс...
+Тип данных: из перечисления ksShelfDirectionEnum
+Синтаксис Automation:
+
+ShelfDirection = iObject.ShelfDirection Получить свойство(* )
+iObject.ShelfDirection = ShelfDirection Установить свойство
+
+(* )
+ShelfDirection = iObject.GetShelfDirection() Получить свойство
+
+(**)
+iObject.SetShelfDirection(ShelfDirection) Установить свойство
+
+(**)
+
+Синтаксис COM:
+
+iObject">get_ShelfDirection(&ShelfDirection) Получить свойство
+iObject">put_ShelfDirection( ShelfDirection) Установить свойство
+
+IMarkOnLeader  методы
+
+AddBranch  Добавить ответвление
+Интерфейс...
+Синтаксис Automation:
+BOOL AddBranch( long Index,
+BOOL Begin,
+VARIANT Points );
+Синтаксис COM:
+HRESULT AddBranch( long Index,
+BOOL Begin,
+VARIANT Points,
+BOOL * Result ); 
+Входные параметры:
+
+index " индекс, с которым добавляется ответвление,
+Begin " признак начала ответвления TRUE " от начала полки, 
+
+FALSE " от конца полки,
+Points " массив SafeArray координат точек.
+1074
+
+
+
+Возвращаемое значение:
+
+TRUE " ответвление добавлено,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Координаты точек в массиве лежат в следующей последовательности: x0, y0, x1, y1, ...xi,
+yi.
+
+2.  Значения координат зависят от текущей системы координат для объекта, задаваемой
+параметром IDrawingObject::DrawingObjectParamType
+
+AddBranchByPoint  Добавить прямолинейное ответвление
+Интерфейс...
+Синтаксис Automation:
+BOOL AddBranchByPoint( long Index,
+BOOL Begin,
+double x, double y );
+Синтаксис COM:
+HRESULT AddBranchByPoint( long Index,
+BOOL Begin,
+double x,
+double y,
+BOOL * Result );
+Входные параметры:
+
+index " индекс, с которым добавляется ответвление,
+Begin " признак начала ответвления TRUE " от начала полки, 
+
+FALSE " от конца полки,
+ x, y " координаты конца ответвления.
+
+Возвращаемое значение:
+
+TRUE " ответвление добавлено,
+FALSE " в случае неудачи.
+
+Примечание:
+Значения координат пересчитываются в зависимости от текущей системы координат для
+объекта, задаваемой параметром IDrawingObject::DrawingObjectParamType
+
+DeleteBranch  Удалить ответвление
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteBranch( long Index )
+1075
+
+
+
+Синтаксис COM:
+HRESULT DeleteBranch( [in]long Index, [out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+
+index " индекс удаляемого ответвление.
+
+Возвращаемое значение:
+
+TRUE " ответвление удалено,
+FALSE " в случае неудачи.
+
+Интерфейс IMarkInsideForm
+Справка системы КОМПАС...
+KOMPAS.chm::/273_29_3_Marka_pozicionnoe_oboz.htm
+Интерфейс марки и позиционного обозначения (без линиивыноски).
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IMark
+
+IMarkInsideForm
+Примечание:
+Получить интерфейс марки можно, используя методы интерфейса коллекции марок
+IMarks::Mark и IMarks::Add.
+
+IMarkInsideForm  свойства
+
+Angle  Угол
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = iObject.Angle Получить свойство(* )
+iObject.Angle = Angle Установить свойство (* )
+Angle = iObject.GetAngle() Получить свойство (**)
+iObject.SetAngle(Angle) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Angle(&Angle) Получить свойство
+iObject">put_Angle( Angle) Установить свойство
+
+Примечание:
+1076
+
+
+
+Значение параметра зависит от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+Form  Форма
+Интерфейс...
+Тип данных: из перечисления ksMarkInsideFormEnum
+Синтаксис Automation:
+
+Form = iObject.Form Получить свойство(* )
+iObject.Form = Form Установить свойство (* )
+Form = iObject.GetForm() Получить свойство (**)
+iObject.SetForm(Form) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Form(&Form) Получить свойство
+iObject">put_Form( Form) Установить свойство
+
+FormGabarit  Габарит формы (радиус, ширина)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+FormGabarit = iObject.FormGabarit Получить свойство(* )
+iObject.FormGabarit = FormGabarit Установить свойство (* )
+FormGabarit = iObject.GetFormGabarit() Получить свойство (**)
+iObject.SetFormGabarit(FormGabarit) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_FormGabarit(&FormGabarit) Получить свойство
+iObject">put_FormGabarit( FormGabarit) Установить свойство
+
+Примечание:
+Значение параметра зависит от текущей системы координат для объекта, задаваемой па"
+раметром IDrawingObject::DrawingObjectParamType.
+
+FormHeight  Высота формы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+FormHeight = iObject.FormHeight Получить свойство(* )
+1077
+
+

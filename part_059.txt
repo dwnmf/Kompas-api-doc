@@ -1,0 +1,2532 @@
+FALSE " противоположно направлению
+нормали к плоскости эскиза).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetDepthObject  Установить объект, задающий глубину 
+выдавливания
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetDepthObject (BOOL normal, LPDISPATCH obj);
+Синтаксис COM:
+BOOL SetDepthObject (BOOL normal, LPENTITY obj);
+Входные параметры:
+238_gl_25_oper_vydavl.htm
+
+normal " направление выдавливания:
+(TRUE " совпадает с направлением нормали к плоскости 
+эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза),
+
+obj " указатель на интерфейс объекта глубины выдавливания 
+ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3163
+
+
+
+SetSideParam  Установить параметры выдавливания в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetSideParam (BOOL forward, 
+short type, 
+double depth, 
+double draftValue, 
+BOOL draftOutward);
+Синтаксис COM:
+BOOL SetSideParam (BOOL forward, 
+short type, 
+double depth, 
+double draftValue, 
+BOOL draftOutward);
+Входные параметры:
+
+forward " направление выдавливания:
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+type " тип выдавливания,
+depth " глубина выдавливания,
+draftValue " угол уклона,
+draftOutward " направление уклона:
+
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetSketch  Задать указатель на интерфейс эскиза элемента
+Интерфейс...Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+3164
+
+
+
+sketch " указатель на интерфейс эскиза ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetThinParam  Изменить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+ThinParam  Получить указатель на интерфейс параметров тонкой 
+стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+3165
+
+
+
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPARAM ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksThinParam или
+IThinParam.
+
+Приклеенный элемент выдавливания (Интерфейсы 
+ksBossExtrusionDefinition, IBossExtrusionDefinition)
+Интерфейс параметров приклеенного элемента выдавливания.
+
+ksBossExtrusionDefinit " интерфейс
+ion Automation
+IBossExtrusionDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksBossExtrusionDefinition  свойства
+
+chooseType  Тип области применения
+Интерфейс...Тип данных: из перечисления ksChooseType
+Синтаксис Automation:
+
+chooseType = Получить свойство(* )
+iBossExtrusion.chooseType
+iBossExtrusion.chooseType = Установить свойство (* )
+chooseType
+chooseType = Получить свойство (**)
+iBossExtrusion.GetchooseType()
+iBossExtrusion.SetchooseType(chooseTy Установить свойство (**)
+pe)
+
+directionType  Направление выдавливания
+Интерфейс...Тип данных: short
+Синтаксис Automation:
+
+directionType = Получить свойство(* )
+iBossExtrusion.directionType
+3166
+
+
+
+iBossExtrusion.directionType= Установить свойство (* )
+directionType
+directionType = Получить свойство (**)
+iBossExtrusion.GetDirectionType()
+iBossExtrusion.SetDirectionType(directio Установить свойство (**)
+nType)
+
+Значения свойства:
+
+Типы направлений...
+
+Примечание:
+
+1. Нормаль, проведенная к грани, всегда направлена наружу ("из тела детали").
+2. Прямое направление совпадает с нормалью, проведенной к плоскости эскиза.
+3. Для вырезаемого элемента выдавливания направление противоположно нормали.
+
+ksBossExtrusionDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+
+ChooseParts  Получить указатель на интерфейс области 
+применения для компонентов сборки в сборочной операции
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseParts();
+Синтаксис COM:
+LPCHOOSEPARTS ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для компонентов сборки ksChooseParts или
+IChooseParts.
+3167
+
+
+
+ExtrusionParam  Получить указатель на интерфейс параметров 
+элемента выдавливания
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ExtrusionParam();
+Синтаксис COM:
+LPEXTRUSIONPARAM ExtrusionParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksExtrusionParam или
+IExtrusionParam.
+
+GetDepthObject  Получить объект, задающий глубину 
+выдавливания
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetDepthObject (BOOL normal);
+Синтаксис COM:
+LPENTITY GetDepthObject (BOOL normal);
+Входные параметры:
+
+normal " направление выдавливания:
+(TRUE " совпадает с направлением нор"
+мали к плоскости эскиза,
+FALSE " противоположно направлению
+нормали к плоскости эскиза).
+
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+
+GetSideParam  Получить параметры выдавливания в одном 
+направлении
+Интерфейс...Синтаксис Automation:
+BOOL GetSideParam (BOOL forward, 
+short *type, 
+3168
+
+
+
+double *depth, 
+double *draftValue, 
+BOOL *draftOutward);
+Синтаксис COM:
+BOOL GetSideParam (BOOL forward, 
+short *type, 
+double *depth, 
+double *draftValue, 
+BOOL *draftOutward);
+Входной параметр:
+
+forward " направление выдавливания:
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Выходные параметры:
+
+type " тип выдавливания,
+depth " глубина выдавливания,
+draftValue " угол уклона,
+draftOutward " направление уклона:
+
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Типы выдавливания...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetSketch  Получить указатель на интерфейс эскиза элемента
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза ksEntity или
+IEntity.
+3169
+
+
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ResetDepthObject  Отказаться от установленного методом 
+SetDepthObject объекта, задающего глубину выдавливания
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL ResetDepthObject (BOOL normal);
+Синтаксис COM:
+BOOL ResetDepthObject (BOOL normal);
+Входные параметры:
+3170
+
+
+
+normal " направление выдавливания:
+(TRUE " совпадает с направлением нормали к 
+плоскости эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза).
+
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+
+SetDepthObject  Установить объект, задающий глубину 
+выдавливания
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetDepthObject (BOOL normal, LPDISPATCH obj);
+Синтаксис COM:
+BOOL SetDepthObject (BOOL normal, LPENTITY obj);
+Входные параметры:
+
+normal " направление выдавливания:
+(TRUE " совпадает с направлением нормали к плоскости 
+эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза).
+
+obj " указатель на интерфейс объекта ksEntity
+
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+
+SetSideParam  Изменить параметры выдавливания в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetSideParam (BOOL forward, 
+3171
+
+
+
+short type, 
+double depth, 
+double draftValue, 
+BOOL draftOutward);
+Синтаксис COM:
+BOOL SetSideParam (BOOL forward, 
+short type, 
+double depth, 
+double draftValue, 
+BOOL draftOutward);
+Входные параметры:
+
+forward " направление выдавливания:
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+type " тип выдавливания,
+depth " глубина выдавливания,
+draftValue " угол уклона,
+draftOutward " направление уклона:
+
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetSketch  Изменить указатель на интерфейс эскиза элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс эскиза ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3172
+
+
+
+SetThinParam  Изменить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ThinParam  Получить указатель на интерфейс параметров тонкой 
+стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPARAM ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksThinParam или
+IThinParam.
+3173
+
+
+
+Основание — элемент вращения (Интерфейсы 
+ksBaseRotatedDefinition, IBaseRotatedDefinition)
+Справка системы КОМПАС...
+252_gl_26_oper_vr.htm
+Интерфейс параметров основания  элемента вращения.
+
+ksBaseRotatedDefin " интерфейс Automation
+ition
+IBaseRotatedDefinit " интерфейс COM
+ion
+
+Примечание:
+
+1. Данный интерфейс устарел. Рекомендуется использовать вместо него интерфейс
+ksBossRotatedDefinition,
+
+2. Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IBaseRotatedDefinition  свойства
+
+directionType  Направление вращения
+Интерфейс...Справка системы КОМПАС...
+252_gl_26_oper_vr.htm
+Тип данных: short
+Синтаксис Automation:
+
+directionType = Получить свойство(* )
+iBaseRotated.directionType
+iBaseRotated.directionType= Установить свойство (* )
+directionType
+directionType = Получить свойство (**)
+iBaseRotated.GetDirectionType()
+iBaseRotated.SetDirectionType Установить свойство (**)
+(directionType)
+
+Значения свойства:
+
+Типы направлений...
+
+Примечание:
+
+1. Прямое направление " вдоль нормали к плоскости эскиза и всегда против часовой стрел"
+ки.
+
+2. Нормаль, проведенная к поверхности тела, всегда выходит из тела.
+3174
+
+
+
+toroidShapeType  Признак тороида
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " тороид,
+FALSE " сфероид.
+
+Синтаксис Automation:
+
+toroidShapeType = Получить свойство(* )
+iBaseRotated.toroidShapeType
+iBaseRotated.toroidShapeType = Установить свойство (* )
+toroidShapeType
+toroidShapeType = Получить свойство (**)
+iBaseRotated.GetToroidShapeType()
+iBaseRotated.SetToroidShapeType Установить свойство (**)
+(toroidShapeType)
+
+IBaseRotatedDefinition  методы
+
+GetSideParam  Получить параметры вращения в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+252_gl_26_oper_vr.htm
+Синтаксис Automation:
+BOOL GetSideParam (BOOL forward, 
+double *angle);
+Синтаксис COM:
+BOOL GetSideParam (BOOL forward, 
+double * angle);
+Входной параметр:
+
+forward " направление вращения:
+TRUE " прямое,
+FALSE " обратное.
+
+Выходной параметр:
+
+angle " угол вращения.
+3175
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetSketch  Получить указатель на интерфейс эскиза элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза ksEntity или
+IEntity.
+
+GetThinParam  Получить параметры тонкой стенки элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений... 
+Возвращаемое значение:
+3176
+
+
+
+TRUE " в случае успешного завершения.
+
+RotatedParam  Получить указатель на интерфейс параметров 
+элемента вращения
+Интерфейс...Справка системы КОМПАС...
+252_gl_26_oper_vr.htm
+Синтаксис Automation:
+LPDISPATCH RotatedParam();
+Синтаксис COM:
+LPROTATEDPARAM RotatedParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksRotatedParam или
+IRotatedParam.
+
+SetSideParam  Изменить параметры вращения в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+252_gl_26_oper_vr.htm
+Синтаксис Automation:
+BOOL SetSideParam (short forward, double angle);
+Синтаксис COM:
+BOOL SetSideParam (BOOL forward, double angle);
+Входные параметры:
+
+forward " направление вращения:
+TRUE " прямое,
+FALSE " обратное.
+
+angle " угол вращения.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3177
+
+
+
+SetSketch  Изменить указатель на интерфейс эскиза элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс эскиза ksEntity или IEntity
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetThinParam  Изменить параметры тонкой стенки элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+3178
+
+
+
+TRUE " в случае успешного завершения.
+
+ThinParam  Получить указатель на интерфейс параметров тонкой 
+стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPARAM ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksThinParamили
+IThinParam.
+
+Приклеееный элемент вращения (Интерфейс 
+ksBossRotatedDefinition, IBossRotatedDefinition)
+Справка системы КОМПАС...
+252_gl_26_oper_vr.htm
+Интерфейс приклеенного элемента вращения.
+
+ksBossRotatedDefini " интерфейс
+tion Automation
+IBossRotatedDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IBossRotatedDefinition  свойства
+
+chooseType  Тип области применения
+Интерфейс...Тип данных: из перечисления ksChooseType
+Синтаксис Automation:
+
+chooseType = iBossRotated.chooseType Получить свойство(* )
+iBossRotated.chooseType= chooseType Установить свойство (* )
+3179
+
+
+
+chooseType = Получить свойство (**)
+iBossRotated.GetchooseType()
+iBossRotated.SetchooseType Установить свойство (**)
+(chooseType)
+
+directionType  Направление вращения
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: short
+Значения свойства:
+
+Типы направлений...
+
+Синтаксис Automation:
+
+directionType = Получить свойство(* )
+iBossRotated.directionType
+iBossRotated.directionType= Установить свойство (* )
+directionType
+directionType = Получить свойство (**)
+iBossRotated.GetDirectionType()
+iBossRotated.SetDirectionType Установить свойство (**)
+(directionType)
+
+Примечание:
+Прямое направление " вдоль нормали к плоскости эскиза и всегда против часовой стрел"
+ки. 
+Нормаль, проведенная к поверхности тела, всегда выходит из тела.
+
+toroidShapeType  Признак тороида
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " тороид,
+FALSE " сфероид.
+
+Синтаксис Automation:
+
+toroidShapeType = Получить свойство(* )
+iBossRotated.toroidShapeType
+3180
+
+
+
+iBossRotated.toroidShapeType = Установить свойство (* )
+toroidShapeType
+toroidShapeType = Получить свойство (**)
+iBossRotated.GetToroidShapeType()
+iBossRotated.SetToroidShapeType(toroid Установить свойство (**)
+ShapeType)
+
+IBossRotatedDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+
+ChooseParts  Получить указатель на интерфейс области 
+применения для компонентов сборки в сборочной операции
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseParts();
+Синтаксис COM:
+LPCHOOSEPARTS ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для компонентов сборки ksChooseParts или
+IChooseParts.
+
+GetSketch  Получить указатель на интерфейс эскиза элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+3181
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза ksEntity или
+IEntity.
+
+GetSideParam  Получить параметры вращения в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+252_gl_26_oper_vr.htm
+Синтаксис Automation:
+BOOL GetSideParam (BOOL forward, 
+double *angle);
+Синтаксис COM:
+BOOL GetSideParam (BOOL forward, 
+double * angle);
+Входной параметр:
+
+forward " направление вращения:
+TRUE " прямое,
+FALSE " обратное.
+
+Выходной параметр:
+
+angle " угол вращения.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetThinParam  Получить параметры тонкой стенки элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+3182
+
+
+
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+RotatedParam  Получить указатель на интерфейс параметров 
+элемента вращения
+Интерфейс...Справка системы КОМПАС...
+252_gl_26_oper_vr.htm
+Синтаксис Automation:
+LPDISPATCH RotatedParam();
+Синтаксис COM:
+LPROTATEDPARAM RotatedParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksRotatedParam или
+IRotatedParam.
+
+SetSideParam  Изменить параметры вращения в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+252_gl_26_oper_vr.htm
+Синтаксис Automation:
+BOOL SetSideParam (short forward, 
+double angle);
+Синтаксис COM:
+BOOL SetSideParam (BOOL forward,
+double angle);
+3183
+
+
+
+Входные параметры:
+
+forward " направление вращения:
+TRUE " прямое,
+FALSE " обратное,
+
+angle " угол вращения.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetSketch  Изменить указатель на интерфейс эскиза элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс эскиза ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetThinParam  Изменить параметры тонкой стенки элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+3184
+
+
+
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ThinParam  Получить указатель на интерфейс параметров тонкой 
+стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPARAM ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksThinParam или
+IThinParamn.
+
+Вырезанный кинематический элемент (Интерфейс 
+ksCutEvolutionDefinition, ICutEvolutionDefinition)
+Справка системы КОМПАС...
+261_gl_27_oper_kin.htm
+Интерфейс вырезанного кинематического элемента.
+
+ksCutEvolutionDefin " интерфейс
+ition Automation
+ICutEvolutionDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+3185
+
+
+
+ICutEvolutionDefinition  свойства
+
+chooseType  Тип области применения
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: из перечисления ksChooseType
+Синтаксис Automation:
+
+chooseType =iEvolution.chooseType Получить свойство(* )
+iEvolution.chooseType = chooseType Установить свойство (* )
+chooseType = Получить свойство (**)
+iEvolution.GetchooseType()
+iEvolution.SetchooseType(chooseType) Установить свойство (**)
+
+cut  Признак результата операции
+Интерфейс...Тип данных: BOOL
+Значения свойства:
+
+TRUE " результат операции " вычитание элемента,
+FALSE " результат операции " пересечение элементов.
+
+Синтаксис Automation:
+
+cut = iEvolution.cut Получить свойство(* )
+iEvolution.cut = cut Установить свойство (* )
+cut = iEvolution.GetCut() Получить свойство (**)
+iEvolution.SetCut(cut) Установить свойство (**)
+
+sketchShiftType  Тип движения сечения по траектории
+Интерфейс...Тип данных: short
+Значения свойства:
+
+0 " образующая переносится параллельно самой себе,
+1 " образующая при переносе сохраняет исходный угол с 
+
+направляющей,
+2 " плоскость образующей выставляется и сохраняется 
+
+ортогональной направляющей.
+
+Синтаксис Automation:
+
+sketchShiftType = iEvolution.sketchShiftType Получить свойство(* )
+iEvolution.sketchShiftType = sketchShiftType Установить свойство (* )
+3186
+
+
+
+sketchShiftType = iEvolution.GetSketchShiftType() Получить свойство (**)
+iEvolution.SetSketchShiftType(sketchShiftType) Установить свойство (**)
+
+ICutEvolutionDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс...Справка системы КОМПАС...
+906_107_2_Oblastq_primenenija_o.htm
+Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+
+ChooseParts  Получить указатель на интерфейс для работы с 
+областью применения для компонентов
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseParts();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс для работы с областью
+применения для компонентов ksChooseParts или
+IChooseParts.
+
+Примечание.
+Интерфейс можно получить только для операции в сборке.
+
+GetPathLength  Получить длину результирующей кривой 
+траектории
+Интерфейс...Синтаксис Automation:
+double GetPathLength (unsigned long bitVector);
+Синтаксис COM:
+double GetPathLength(unsigned long bitVector);
+3187
+
+
+
+Входные параметры:
+
+bitVector " единицы измерения в интервале 
+[ST_MIX_MM..ST_MIX_M].
+
+Возвращаемое значение:
+
+длина результирующей " в случае успешного завершения,
+кривой траектории
+0 " в случае неудачи.
+
+Примечания:
+Метод работает только на уже построенной операции.
+
+GetSketch  Получить указатель на интерфейс эскиза сечения 
+кинематического элемента
+Интерфейс...Справка системы КОМПАС...
+261_gl_27_oper_kin.htm
+Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза ksEntity или
+IEntity.
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+BYTE *thinType, 
+double *normalThickness, 
+3188
+
+
+
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения стенки,
+normalThick " толщина стенки в прямом направлении,
+ness
+reverseThic " толщина стенки в обратном направлении.
+kness
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+PathPartArray  Получить указатель на интерфейс массива 
+кривых, задающих траекторию движения сечения 
+кинематического элемента
+Интерфейс...Синтаксис Automation:
+IDispatch * PathPartArray();
+Синтаксис COM:
+LPENTITYCOLLECTION PathPartArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва кривых ksEntityCollection или IEntityCollection.
+
+SetSketch  Установить эскиз сечения кинематического элемента
+Интерфейс...Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс эскиза ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3189
+
+
+
+SetThinParam  Установить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+BYTE thinType, 
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ThinParam  Получить указатель на интерфейс тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPROPERTY ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс тонкой стенки
+ksThinParam или IThinParam.
+3190
+
+
+
+Приклеенный кинематический элемент (Интерфейсы 
+ksBossEvolutionDefinition, IBossEvolutionDefinition)
+Интерфейс приклеенного кинематического элемента.
+
+ksBossEvolutionDefini " интерфейс
+tion Automation
+IBossEvolutionDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IBossEvolutionDefinition  свойства
+
+chooseType  Тип области применения
+Интерфейс...Тип данных: из перечисления ksChooseType
+Синтаксис Automation:
+
+chooseType = Получить свойство(* )
+iBossEvolution.chooseType
+iBossEvolution.chooseType= chooseType Установить свойство (* )
+chooseType = Получить свойство (**)
+iBossEvolution.GetchooseType()
+iBossEvolution.SetchooseType Установить свойство (**)
+(chooseType)
+
+sketchShiftType  Тип движения сечения по траектории
+Интерфейс...Тип данных: short
+Значения свойства:
+
+0 " образующая переносится параллельно самой себе,
+1 " образующая при переносе сохраняет исходный угол с 
+
+направляющей,
+2 " плоскость образующей выставляется и сохраняется 
+
+ортогональной направляющей.
+
+Синтаксис Automation:
+
+sketchShiftType = iEvolution.sketchShiftType Получить свойство(* )
+iEvolution.sketchShiftType = sketchShiftType Установить свойство (* )
+sketchShiftType = iEvolution.GetSketchShiftType() Получить свойство (**)
+iEvolution.SetSketchShiftType(sketchShiftType) Установить свойство (**)
+3191
+
+
+
+IBossEvolutionDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+
+ChooseParts  Получить указатель на интерфейс области 
+применения для компонентов сборки в сборочной операции
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseParts();
+Синтаксис COM:
+LPCHOOSEPARTS ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для компонентов сборки ksChooseParts или
+IChooseParts.
+
+GetPathLength  Получить длину результирующей кривой 
+траектории
+Интерфейс...Синтаксис Automation:
+double GetPathLength (unsigned long bitVector);
+Синтаксис COM:
+double GetPathLength(unsigned long bitVector);
+Входные параметры:
+
+bitVector " единицы измерения в интервале
+[ST_MIX_MM..ST_MIX_M].
+
+Возвращаемое значение:
+3192
+
+
+
+длина результирующей " в случае успешного за"
+кривой траектории вершения,
+0 " в случае неудачи.
+
+Примечания:
+Метод работает только на уже построенной операции.
+
+GetSketch  Получить указатель на интерфейс эскиза сечения 
+кинематического элемента
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза элемента
+ksEntity или IEntity.
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+BYTE *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+3193
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+PathPartArray  Получить указатель на интерфейс массива 
+кривых, задающих траекторию движения сечения 
+кинематического элемента
+Интерфейс...Синтаксис Automation:
+IDispatch * PathPartArray();
+Синтаксис COM:
+LPENTITYCOLLECTION PathPartArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва кривых ksEntityCollection или IEntityCollection.
+
+SetSketch  Установить эскиз сечения кинематического элемента
+Интерфейс...Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс эскиза элемента ksEntity или 
+IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetThinParam  Установить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+3194
+
+
+
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+BYTE thinType, 
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений..
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ThinParam  Получить указатель на интерфейс тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPROPERTY ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс тонкой стенки
+ksThinParam или IThinParam.
+
+Вырезанный элемент по сечениям (Интерфейсы 
+ksCutLoftDefinition, ICutLoftDefinition)
+Справка системы КОМПАС...
+CM_BASE_LOFT_SOLID.htm
+Интерфейс параметров вырезанного элемента по сечениям.
+
+ksCutLoftDefi " интерфейс Automation
+nition
+ICutLoftDefini " интерфейс COM
+tion
+
+Примечание:
+3195
+
+
+
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ICutLoftDefinition  свойства
+
+chooseType  Тип области применения
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: из перечисления...
+Синтаксис Automation:
+
+chooseType = iCutLoft.chooseType Получить свойство(* )
+iCutLoft.chooseType = chooseType Установить свойство (* )
+chooseType = iCutLoft.GetchooseType() Получить свойство (**)
+iCutLoft.SetchooseType(chooseType) Установить свойство (**)
+
+cut  Признак результата операции
+Интерфейс...Справка системы КОМПАС...
+249_25_8_Rez_oper.htm
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " результат операции " вычитание элемента,
+FALSE " результат операции " пересечение элементов.
+
+Синтаксис Automation:
+
+cut = iCutLoft.cut Получить свойство(* )
+iCutLoft.cut = cut Установить свойство (* )
+cut = iCutLoft.GetCut() Получить свойство (**)
+iCutLoft.SetCut (cut) Установить свойство (**)
+
+ICutLoftDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс...906_107_2_Oblastq_primenenija_o.htm
+Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+3196
+
+
+
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+
+ChooseParts  Получить указатель на интерфейс для работы с 
+областью применения для компонентов
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseParts();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс для работы с областью
+применения для компонентов ksChooseParts или
+IChooseParts.
+
+Примечание.
+Интерфейс можно получить только для операции в сборке.
+
+GetDirectionalLine  Получить направляющую линию. Эскиз в 
+котором лежит кривая
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetDirectionalLine();
+Синтаксис COM:
+LPENTITY GetDirectionalLine();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+Примечание:
+Если задана направляющая, то признак замкнутости траектории устанавливается авто"
+матически, исходя из замкнутости направляющей.
+3197
+
+
+
+GetLoftParam  Получить параметры вырезанного элемента по 
+сечениям
+Интерфейс...Синтаксис Automation:
+BOOL GetLoftParam (BOOL *closed, 
+BOOL *flipVertex, 
+BOOL *autoPath);
+Синтаксис COM:
+BOOL GetLoftParam (BOOL *closed, 
+BOOL *flipVertex, 
+BOOL *autoPath);
+Выходные параметры:
+
+closed " признак замкнутости траектории:
+TRUE " траектория замкнута,
+FALSE " траектория разомкнута,
+
+flipVertex " параметр зарезервирован для дальнейшего 
+использования,
+
+autoPath " признак автоматического формирования 
+траектории:
+TRUE " формировать траекторию автоматически,
+FALSE " для формирования траектории 
+использовать точки, заданные методом 
+SetLoftPoint.
+
+Возвращаемое значение:
+
+TRU " в случае успешного завершения.
+E 
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+3198
+
+
+
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThic " толщина стенки в прямом направлении,
+kness
+reverseThic " толщина стенки в обратном направле"
+kness нии.
+
+Типы направлений...Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetDirectionalLine  Установить направляющую линию. Эскиз в 
+котором лежит кривая
+Интерфейс...Синтаксис Automation:
+BOOL SetDirectionalLine (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetDirectionalLine (LPENTITY sketch);
+Входные параметры:
+
+sketch " указатель на интерфейс ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Если задана направляющая, то признак замкнутости траектории устанавливается авто"
+матически, исходя из замкнутости направляющей.
+
+SetLoftParam  Изменить параметры вырезанного элемента по 
+сечениям
+Интерфейс...Синтаксис Automation:
+BOOL SetLoftParam (BOOL closed, 
+BOOL flipVertex, 
+BOOL autoPath);
+Синтаксис COM:
+3199
+
+
+
+BOOL SetLoftParam (BOOL closed, 
+BOOL flipVertex, 
+BOOL autoPath);
+Входные параметры:
+
+closed " признак замкнутости траектории:
+TRUE " траектория замкнута,
+FALSE " траектория разомкнута,
+
+flipVertex " параметр зарезервирован для дальней"
+шего использования,
+
+autoPath " признак автоматического формирова"
+ния траектории:
+TRUE " формировать траекторию автома"
+тически,
+FALSE " для формирования траектории
+использовать точки, заданные методом
+SetLoftPoint.
+
+Возвращаемое значение:
+
+TRU " в случае успешного завершения.
+E 
+
+SetThinParam  Изменить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+3200
+
+
+
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+Типы направлений...Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Sketches  Получить указатель на интерфейс массива эскизов 
+элемента по сечениям
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_LOFT_SOLID.htm
+Синтаксис Automation:
+LPDISPATCH Sketches();
+Синтаксис COM:
+LPENTITYCOLLECTION Sketches();
+Возвращаемое значение:
+
+" указатель на интерфейс массива эскизов
+ksEntityCollection или IEntityCollection.
+
+Примечания:
+
+1. В массиве включен контроль, не позволяющий добавить в него нулевой указатель на
+эскиз.
+
+2. Эскизы из данного массива используются для построения элемента по сечениям.
+
+Приклеенный элемент по сечениям (Интерфейсы 
+ksBossLoftDefinition, IBossLoftDefinition)
+Справка системы КОМПАС...
+CM_BASE_LOFT_SOLID.htm
+Интерфейс приклеенного элемента по сечениям.
+
+ksBossLoftDefinition " интерфейс Automation
+IBossLoftDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+3201
+
+
+
+BossLoftDefinition  свойства
+
+chooseType  Тип области применения
+Интерфейс...Тип данных: из перечисления ksChooseType.
+Синтаксис Automation:
+
+chooseType = BossLoft.chooseType Получить свойство(* )
+BossLoft.chooseType = chooseType Установить свойство (* )
+chooseType = BossLoft.GetchooseType() Получить свойство (**)
+BossLoft.SetchooseType(chooseType) Установить свойство (**)
+
+IBossLoftDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс...Справка системы КОМПАС...
+906_107_2_Oblastq_primenenija_o.htm
+Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения для тел 
+ksChooseBodies или IChooseBodies.
+
+ChooseParts  Получить указатель на интерфейс области 
+применения для компонентов сборки в сборочной операции
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseParts();
+Синтаксис COM:
+LPCHOOSEPARTS ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения для 
+компонентов сборки ksChooseParts или IChooseParts.
+3202
+
+
+
+GetDirectionalLine  Получить направляющую линию. Эскиз, в 
+котором лежит кривая
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetDirectionalLine();
+Синтаксис COM:
+LPENTITY GetDirectionalLine();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+Примечание:
+Если задана направляющая, то признак замкнутости траектории устанавливается авто"
+матически, исходя из замкнутости направляющей.
+
+GetLoftParam  Получить параметры приклеенного элемента по 
+сечениям
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetLoftParam (BOOL *closed, 
+BOOL *flipVertex, 
+BOOL *autoPath);
+Синтаксис COM:
+BOOL GetLoftParam (BOOL *closed, 
+BOOL *flipVertex, 
+BOOL *autoPath);
+Выходные параметры:
+
+closed " признак замкнутости траектории:
+TRUE " траектория замкнута,
+FALSE " траектория разомкнута,
+
+flipVertex " параметр зарезервирован для дальнейшего 
+использования,
+3203
+
+
+
+autoPath " признак автоматического формирова"
+ния траектории:
+TRUE " формировать траекторию автома"
+тически,
+FALSE " для формирования траектории
+использовать точки, заданные методом
+SetLoftPoint.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений... 
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3204
+
+
+
+SetDirectionalLine  Установить направляющую линию. Эскиз в 
+котором лежит кривая
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetDirectionalLine (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetDirectionalLine (LPENTITY sketch);
+Входные параметры:
+
+sketch " указатель на интерфейс ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Если задана направляющая, то признак замкнутости траектории устанавливается авто"
+матически, исходя из замкнутости направляющей.
+
+SetLoftParam  Изменить параметры приклеенного элемента по 
+сечениям
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetLoftParam (BOOL closed, 
+BOOL flipVertex, 
+BOOL autoPath);
+Синтаксис COM:
+BOOL SetLoftParam (BOOL closed, 
+BOOL flipVertex, 
+BOOL autoPath);
+Входные параметры:
+
+closed " признак замкнутости траектории:
+TRUE " траектория замкнута,
+FALSE " траектория разомкнута,
+3205
+
+
+
+flipVertex " параметр зарезервирован для дальней"
+шего использования,
+
+autoPath " признак автоматического формирова"
+ния траектории:
+TRUE " формировать траекторию автома"
+тически,
+FALSE " для формирования траектории
+использовать точки, заданные методом
+SetLoftPoint.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetThinParam  Изменить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3206
+
+
+
+Sketches  Получить указатель на интерфейс массива эскизов 
+элемента по сечениям
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH Sketches();
+Синтаксис COM:
+LPENTITYCOLLECTION Sketches();
+Возвращаемое значение:
+
+" указатель на интерфейс массива эскизов
+ksEntityCollection или IEntityCollection.
+
+Примечание:
+В массиве включен контроль, не позволяющий добавить в него нулевой указатель на
+эскиз.
+Эскизы из данного массива используются для построения элемента по сечениям.
+
+ThinParam  Получить указатель на интерфейс параметров тонкой 
+стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPARAM ThinParam();
+Возвращаемое значение:
+ 
+
+" указатель на интерфейс ksThinParam или
+IThinParam.
+
+Основание — элемент по сечениям (Интерфейсы 
+ksBaseLoftDefinition, IBaseLoftDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров основания  элемента по сечениям.
+3207
+
+
+
+ksBaseLoftDefin " интерфейс
+ition Automation
+IBaseLoftDefinit " интерфейс COM
+ion
+
+Примечания:
+
+1. Данный интерфейс устарел. Рекомендуется использовать вместо него интерфейс
+ksBossLoftDefinition.
+
+2.  Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IBaseLoftDefinition  методы
+
+GetLoftParam  Получить параметры элемента по сечениям
+Интерфейс...Синтаксис Automation:
+BOOL GetLoftParam (BOOL *closed, 
+BOOL *flipVertex, 
+BOOL *autoPath);
+Синтаксис COM:
+BOOL GetLoftParam (BOOL *closed, 
+BOOL *flipVertex, 
+BOOL *autoPath);
+Выходные параметры:
+
+closed " признак замкнутости траектории:
+TRUE " траектория замкнута,
+FALSE " траектория разомкнута,
+
+flipVertex " параметр зарезервирован для дальней"
+шего использования,
+
+autoPath " признак автоматического формирова"
+ния траектории:
+TRUE " формировать траекторию автома"
+тически,
+FALSE " для формирования траектории
+использовать точки, заданные методом
+SetLoftPoint.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3208
+
+
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRU " в случае успешного завершения.
+E 
+
+SetLoftParam  Изменить параметры операции по сечениям
+Интерфейс...Синтаксис Automation:
+BOOL SetLoftParam (BOOL closed, 
+BOOL flipVertex, 
+BOOL autoPath);
+Синтаксис COM:
+BOOL SetLoftParam (BOOL closed, 
+BOOL flipVertex, 
+BOOL autoPath);
+Входные параметры:
+
+closed " признак замкнутости траектории:
+TRUE " траектория замкнута,
+FALSE " траектория разомкнута,
+3209
+
+
+
+flipVertex " параметр зарезервирован для дальней"
+шего использования,
+
+autoPath " признак автоматического формирова"
+ния траектории:
+TRUE " формировать траекторию автома"
+тически,
+FALSE " для формирования траектории
+использовать точки, заданные методом
+SetLoftPoint.
+
+Возвращаемое значение:
+
+TRU " в случае успешного завершения.
+E 
+
+SetThinParam  Изменить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3210
+
+
+
+Sketches  Получить указатель на интерфейс массива эскизов 
+элемента по сечениям
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Sketches();
+Синтаксис COM:
+LPENTITYCOLLECTION Sketches();
+Возвращаемое значение:
+
+" указатель на интерфейс массива эскизов
+ksEntityCollection или IEntityCollection.
+
+Примечания:
+
+1. В массиве включен контроль, не позволяющий добавить в него нулевой указатель на
+эскиз.
+
+2. Эскизы из данного массива используются для построения элемента по сечениям.
+
+ThinParam  Получить указатель на интерфейс параметров тонкой 
+стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPARAM ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksThinParam или
+IThinParam.
+
+Элемент выдавливания (Интерфейсы ksExtrusionParam, 
+IExtrusionParam)
+Справка системы КОМПАС...
+
+Интерфейс параметров элемента выдавливания.
+
+ksExtrusionP " интерфейс Automation
+aram
+3211
+
+
+
+IExtrusionPar " интерфейс COM
+am
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IExtrusionParam  свойства
+
+depthNormal  Глубина выдавливания в прямом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+depthNormal = Получить свойство(* )
+iExtrusionParam.depthNormal
+iExtrusionParam.depthNormal = Установить свойство (* )
+depthNormal
+depthNormal = Получить свойство (**)
+iExtrusionParam.GetDepthNormal()
+iExtrusionParam.SetDepthNormal Установить свойство (**)
+(depthNormal)
+
+depthReverse  Глубина выдавливания в обратном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+depthReverse = Получить свойство(* )
+iExtrusionParam.depthReverse
+iExtrusionParam.depthReverse = Установить свойство (* )
+depthReverse
+depthReverse = Получить свойство (**)
+iExtrusionParam.GetDepthReverse()
+iExtrusionParam.SetDepthReverse Установить свойство (**)
+(depthReverse)
+3212
+
+
+
+direction  Направление выдавливания
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+Прямое направление совпадает с нормалью, проведенной к плоскости эскиза.
+Для вырезаемого элемента выдавливания направление противоположно нормали.
+Значения свойства:
+
+Типы направлений...
+
+Синтаксис Automation:
+
+direction = iExtrusionParam.direction Получить свойство(* )
+iExtrusionParam.direction = direction Установить свойство (* )
+direction = Получить свойство (**)
+iExtrusionParam.GetDirection()
+iExtrusionParam.SetDirection(direction) Установить свойство (**)
+
+Примечание:
+Нормаль, проведенная к грани, всегда направлена наружу ("из тела детали").
+
+draftOutwardNormal  Признак уклона внутрь в прямом 
+направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Синтаксис Automation:
+
+draftOutwardNormal = Получить свойство(* )
+iExtrusionParam.draftOutwardNormal
+iExtrusionParam.draftOutwardNormal = Установить свойство (* )
+draftOutwardNormal
+draftOutwardNormal = Получить свойство (**)
+iExtrusionParam.GetDraftOutwardNormal
+()
+iExtrusionParam.SetDraftOutwardNormal Установить свойство (**)
+(draftOutwardNormal)
+3213
+
+
+
+draftOutwardReverse  Признак уклона внутрь в обратном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Синтаксис Automation:
+
+draftOutwardReverse = Получить свойство(* )
+iExtrusionParam.draftOutwardReverse
+iExtrusionParam.draftOutwardReverse = Установить свойство (* )
+draftOutwardReverse
+draftOutwardReverse = Получить свойство (**)
+iExtrusionParam.GetDraftOutwardReverse(
+)
+iExtrusionParam.SetDraftOutwardReverse Установить свойство (**)
+(draftOutwardReverse)
+
+draftValueNormal  Угол уклона в прямом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+draftValueNormal = Получить свойство(* )
+iExtrusionParam.draftValueNormal
+iExtrusionParam.draftValueNormal = Установить свойство (* )
+draftValueNormal
+draftValueNormal = Получить свойство (**)
+iExtrusionParam.GetDraftValueNormal()
+iExtrusionParam.SetDraftValueNormal Установить свойство (**)
+(draftValueNormal)
+
+draftValueReverse  Угол уклона в обратном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+3214
+
+
+
+Синтаксис Automation:
+
+draftValueReverse = Получить
+iExtrusionParam.draftValueReverse свойство(* )
+iExtrusionParam.draftValueReverse = Установить
+draftValueReverse свойство (* )
+draftValueReverse = Получить
+iExtrusionParam.GetDraftValueReverse() свойство (**)
+iExtrusionParam.SetDraftValueReverse Установить
+(draftValueReverse) свойство (**)
+
+typeNormal  Тип выдавливания в прямом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: short
+Значения свойства:
+
+Типы выдавливания... 
+
+Синтаксис Automation:
+
+typeNormal = Получить свойство(* )
+iExtrusionParam.typeNormal
+iExtrusionParam.typeNormal = Установить свойство (* )
+typeNormal
+typeNormal = Получить свойство (**)
+iExtrusionParam.GetTypeNormal()
+iExtrusionParam.SetTypeNormal Установить свойство (**)
+(typeNormal)
+
+typeReverse  Тип выдавливания в обратном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: short
+Значения свойства:
+
+Типы выдавливания...
+
+Синтаксис Automation:
+3215
+
+
+
+typeReverse = Получить свойство(* )
+iExtrusionParam.typeReverse
+iExtrusionParam.typeReverse = Установить свойство (* )
+typeReverse
+typeReverse = Получить свойство (**)
+iExtrusionParam.GetTypeReverse()
+iExtrusionParam.SetTypeReverse Установить свойство (**)
+(typeReverse)
+
+Вырезанный элемент выдавливания (Интерфейсы 
+ksCutExtrusionDefinition, ICutExtrusionDefinition)
+Справка системы КОМПАС...
+CM_BASE_EXTRUSION_SOLID.htm
+Интерфейс параметров вырезанного элемента выдавливания.
+
+ksCutExtrusionDefini " интерфейс Automation
+tion
+ICutExtrusionDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ICutExtrusionDefinition  свойства
+
+chooseType  Тип области применения
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: из перечисления...
+Синтаксис Automation:
+
+chooseType = iCutExtrusion.chooseType Получить свойство(* )
+iCutExtrusion.chooseType = chooseType Установить свойство (* )
+chooseType = Получить свойство (**)
+iCutExtrusion.GetchooseType()
+iCutExtrusion.SetchooseType(chooseTyp Установить свойство (**)
+e)
+3216
+
+
+
+cut  Признак результата операции
+Интерфейс...Справка системы КОМПАС...
+249_25_8_Rez_oper.htm
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " результат операции " вычитание элемента,
+FALSE " результат операции " пересечение элементов.
+
+Синтаксис Automation:
+
+cut = iCutExtrusion.cut Получить свойство(* )
+iCutExtrusion.cut = cut Установить свойство (* )
+cut = iCutExtrusion.GetCut() Получить свойство (**)
+iCutExtrusion.SetCut(cut) Установить свойство (**)
+
+directionType  Направление выдавливания
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_EXTRUSION_SOLID.htm
+Тип данных: short
+Синтаксис Automation:
+
+directionType = Получить свойство(* )
+iCutExtrusion.directionType
+iCutExtrusion.directionType= Установить свойство (* )
+directionType
+directionType = Получить свойство (**)
+iCutExtrusion.GetDirectionType()
+iCutExtrusion.SetDirectionType(direction Установить свойство (**)
+Type)
+
+Значения свойства:
+
+Типы направлений..
+
+Примечание:
+
+1. Нормаль, проведенная к грани, всегда направлена наружу ("из тела детали").
+2. Прямое направление совпадает с нормалью, проведенной к плоскости эскиза.
+3. Для вырезаемого элемента выдавливания направление противоположно нормали.
+3217
+
+
+
+ICutExtrusionDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+
+ChooseParts  Получить указатель на интерфейс для работы с 
+областью применения для компонентов
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ChooseParts();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс для работы с областью
+применения для компонентов ksChooseParts или
+IChooseParts.
+
+Примечание.
+Интерфейс можно получить только для операции в сборке.
+
+ExtrusionParam  Получить указатель на интерфейс параметров 
+элемента выдавливания
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_EXTRUSION_SOLID.htm
+Синтаксис Automation:
+3218
+
+
+
+LPDISPATCH ExtrusionParam();
+Синтаксис COM:
+LPEXTRUSIONPARAM ExtrusionParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksExtrusionParam или
+IExtrusionParam.
+
+GetDepthObject  Получить объект, задающий глубину 
+выдавливания
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_EXTRUSION_SOLID.htm
+Синтаксис Automation:
+LPDISPATCH GetDepthObject (BOOL normal);
+Синтаксис COM:
+LPENTITY GetDepthObject (BOOL normal);
+Входной параметр:
+
+normal " направление выдавливания:
+(TRUE " совпадает с направлением нормали к плоскости 
+эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза).
+
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или
+IEntity.
+
+GetSideParam  Получить параметры выдавливания в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_EXTRUSION_SOLID.htm
+Синтаксис Automation:
+BOOL GetSideParam (BOOL forward, 
+short *type, 
+double *depth, 
+double *draftValue, 
+3219
+
+
+
+BOOL *draftOutward);
+Синтаксис COM:
+BOOL GetSideParam (BOOL forward, 
+short *type, 
+double *depth, 
+double *draftValue, 
+BOOL *draftOutward);
+Входной параметр:
+
+forward " направление выдавливания:
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Выходные параметры:
+
+type " тип выдавливания,
+depth " глубина выдавливания,
+draftValue " угол уклона,
+draftOutward " направление уклона:
+
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Типы выдавливания...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetSketch  Получить указатель на интерфейс эскиза элемента
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_EXTRUSION_SOLID.htm
+Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+ 
+
+" указатель на интерфейс эскиза ksEntity или
+IEntity.
+3220
+
+
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThic " толщина стенки в прямом направлении,
+kness
+reverseThic " толщина стенки в обратном направле"
+kness нии.
+
+Типы направлений...Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ResetDepthObject  Отказаться от установленного методом 
+SetDepthObject объекта, задающего глубину выдавливания
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL ResetDepthObject (BOOL normal);
+Синтаксис COM:

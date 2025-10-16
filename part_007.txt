@@ -1,0 +1,2533 @@
+
+
+
+Синтаксис Automation:
+BOOL RebuildDocument();
+Синтаксис COM:
+HRESULT RebuildDocument( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IKompasDocument1
+Дополнительный интерфейс IKompasDocument.
+Иерархия:
+IKompasAPIObject
+
+IKompasDocument1
+Примечание:
+Интерфейс является дополнительным к интерфейсу документа IKompasDocument. Ин"
+терфейс можно получить посредством вызова метода IUnknown::QueryInterface (const
+GUID far& iid, void** pif).
+
+IKompasDocument1  свойства
+
+Attributes  Массив атрибутов документа в виде массива 
+SAFEARRAY DISPATCH  VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_DISPATCH
+Синтаксис Automation:
+
+Attributes = Object.Attributes( long Key1, Получить свойство (* )
+long Key2,
+long Key3,
+long Key4,
+double Numb,
+VARIANT Objects )
+Attributes = Object.GetAttributes( long Key1, Получить свойство (**)
+long Key2,
+long Key3,
+long Key4,
+double Numb,
+VARIANT Objects )
+
+Синтаксис COM:
+319
+
+
+
+Object.get_Attributes( long Key1, Получить свойство
+long Key2,
+long Key3,
+long Key4,
+double Numb,
+VARIANT Objects,
+&Attributes )
+
+Входные параметры:
+
+Key1, Key2, Key3, Key4 " ключи атрибута,
+Numb " уникальный номер типа атрибута,
+Objects " массив VT_ARRAY | VT_DISPATCH объектов, атрибуты 
+
+которых нужно получить, или указатель на объект 
+VT_DISPATCH.
+
+Примечание:
+
+1. Свойство позволяет получать атрибуты документа. Если возвращается один объект, то
+тип VARIANT"а будет VT_DISPATCH, если возвращается несколько объектов, то тип
+VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+2. Свойство доступно только для чтения.
+3. Чтобы получить все объекты с заданным атрибутом, надо в качестве параметра Objects
+
+передать VARIANT с типом VT_EMPTY
+4. Чтобы получить атрибуты документа, надо в качестве параметра Objects передать указа"
+
+тель на документ (тип VT_DISPATCH).
+5. Чтобы получить все атрибуты объекта, надо в качестве параметра Numb передать 0.
+6. Если в качестве параметра Objects будет передан массив объектов, то вернутся группо"
+
+вые атрибуты для этих объектов.
+
+Author  Автор
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Author = Object.Author Получить свойство (* )
+Object.Author = Author Установить свойство (* )
+Author = Object.GetAuthor() Получить свойство (**)
+Object.SetAuthor( Author ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Author( &Author ) Получить свойство
+Object.put_Author(  Author ) Установить свойство
+320
+
+
+
+Comment  Комментарий
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Comment = Object.Comment Получить свойство (* )
+Object.Comment = Comment Установить свойство (* )
+Comment = Object.GetComment() Получить свойство (**)
+Object.SetComment( Author ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Comment( &Comment ) Получить свойство
+Object.put_Comment(  Comment ) Установить свойство
+
+CreationDate  Получить дату создания документа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+CreationDate = Object.CreationDate Получить свойство (* )
+Object.CreationDate = CreationDate Установить свойство (* )
+CreationDate = Object.GetCreationDate() Получить свойство (**)
+Object.SetCreationDate( CreationDate ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CreationDate( &CreationDate ) Получить свойство
+Object.put_CreationDate(  CreationDate ) Установить свойство
+
+DocumentTypeId  Идентификатор типа документа
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+DocumentTypeId = Object.DocumentTypeId Получить свойство (* )
+DocumentTypeId = Получить свойство (**)
+Object.GetDocumentTypeId()
+
+Синтаксис COM:
+
+Object.get_DocumentTypeId( Получить свойство
+&DocumentTypeId )
+321
+
+
+
+ExternalFilesNames  Список внешних файлов
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_BSTR
+Синтаксис Automation:
+
+ExternalFilesNames = Получить свойство (* )
+Object.ExternalFilesNames
+ExternalFilesNames = Получить свойство (**)
+Object.GetExternalFilesNames()
+
+Синтаксис COM:
+
+Object.get_ExternalFilesNames( Получить свойство
+&ExternalFilesNames )
+
+Примечание:
+
+1. Свойство позволяет получать список внешних файлов.
+2. Свойство доступно только для чтения.
+
+LastChangeDate  Получить дату последнего изменения 
+документа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+LastChangeDate = Object.LastChangeDate Получить свойство (* )
+Object.LastChangeDate = LastChangeDate Установить свойство (* )
+LastChangeDate = Object.GetLastChangeDate() Получить свойство (**)
+Object.SetLastChangeDate( LastChangeDate ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LastChangeDate( &LastChangeDate ) Получить свойство
+Object.put_LastChangeDate(  LastChangeDate ) Установить свойство
+
+Metadata  Метаданные
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Metadata = Object.Metadata Получить свойство (* )
+Object.Metadata = Metadata Установить свойство (* )
+Metadata = Object.GetMetadata() Получить свойство (**)
+322
+
+
+
+Object.SetMetadata( Metadata ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_Metadata( &Metadata Получить свойство
+Object.put_Metadata(  Metadata ) Установить свойство
+
+Свойство позволяет получить и задать метаданные документа.
+
+ObjectsByAttr  Массив объектов документа в виде 
+массива SAFEARRAY DISPATCH  VT_ARRAY | 
+VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_DISPATCH
+Синтаксис Automation:
+
+Attributes = Object.ObjectsByAttr( long Получить свойство (* )
+Key1,
+long Key2,
+long Key3,
+long Key4,
+double Numb,
+VARIANT ObjectType )
+Attributes = Object.ObjectsByAttr( long Получить свойство (**)
+Key1,
+long Key2,
+long Key3,
+long Key4,
+double Numb,
+VARIANT ObjectType )
+
+Синтаксис COM:
+
+Object.get_ObjectsByAttr( long Key1, Получить свойство
+long Key2,
+long Key3,
+long Key4,
+double Numb,
+VARIANT ObjectType,
+&Attributes )
+
+Входные параметры:
+
+Key1, Key2, Key3, Key4 " ключи атрибута,
+Numb " уникальный номер типа атрибута,
+ObjectType " тип объектов.
+323
+
+
+
+Примечание:
+
+1. Свойство позволяет получать объекты с заданным типом атрибута. Если возвращается
+один объект, то тип VARIANT"а будет VT_DISPATCH, если возвращается несколько объ"
+ектов, то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+2. Свойство доступно только для чтения.
+
+OpenVersion  Версия файла, с которой документ был 
+сохранен
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+OpenVersion = Object.OpenVersion Получить свойство (* )
+OpenVersion = Object.GetOpenVersion() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OpenVersion( &OpenVersion ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения
+Свойство возвращает номер версии Компас, с которой документ был сохранен послед"
+ний раз в случае открытия документа с диска.
+Если документ сохранен в официальных версиях дистрибутива Компас, свойство вернет
+значение из перечисления ksSaveDocumentVersionEnum.
+Если документ сохранен в промежуточных версиях, может вернуться числовая версия
+потока.
+
+Organization  Организация 
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Organization = Object.Organization Получить свойство (* )
+Object.Organization = Organization Установить свойство (* )
+Organization = Object.GetOrganization() Получить свойство (**)
+Object.SetOrganization( Organization ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Organization( &Organization ) Получить свойство
+Object.put_Organization(  Organization ) Установить свойство
+324
+
+
+
+IKompasDocument1  методы
+
+ActivateToolbarSet  Активизировать набор по 
+идентификатору
+Интерфейс...
+Синтаксис Automation:
+BOOL ActivateToolbarSet( BSTR TolbrSetId );
+Синтаксис COM:
+HRESULT ActivateToolbarSet( BSTR TolbrSetId, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения, 
+FALS " в случае неудачи.
+E
+
+Входные параметры:
+
+TolbrSetId " cтроковый идентификатор набора панелей.
+
+ApplyMetadataFromFile  Применить метаданные из 
+файла
+Интерфейс...
+Синтаксис Automation:
+BOOL ApplyMetadataFromFile( BSTR FileName );
+Синтаксис COM:
+HRESULT ApplyMetadataFromFile( BSTR FileName, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения, 
+FALSE " в случае неудачи.
+
+ Входные параметры:
+
+FileName " имя файла.
+
+CreateAttr Создать атрибут по номеру типа атрибута из 
+библиотеки libname 
+Интерфейс...
+Синтаксис Automation:
+325
+
+
+
+LPDISPATCH CreateAttr( double AttrID,
+BSTR  Libname,
+VARIANT Objects );
+Синтаксис COM:
+HRESULT CreateAttr(  AttrID,
+ Libname,
+VARIANT Objects,
+IAttribute ** Result );
+Входные параметры:
+
+AttrID " уникальный номер типа атрибута,
+Libname " имя библиотеки типов атрибутов,
+Objects " объект или массив объектов, к которым нужно 
+
+добавить атрибут ( VARIANT типа VT_DISPATCH или 
+VT_ARRAY | VT_DISPATCH ).
+
+Возвращаемое значение:
+
+указатель на интерфейс атрибута IAttribute.
+
+Примечание:
+Метод позволяет создать атрибут по номеру типа из заданной библиотеки.
+
+Delete  Удалить объект или объекты
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete( VARIANT Objects );
+Синтаксис COM:
+HRESULT Delete( VARIANT Objects,
+BOOL * Result );
+Входные параметры:
+
+Objects " объект или массив объектов, которые нужно удалить 
+(VARIANT типа VT_DISPATCH или VT_ARRAY | 
+VT_DISPATCH).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить объект или объекты.
+326
+
+
+
+GetExternalFilesNamesEx  Получить список внешних 
+файлов в виде SAFEARRAY  BSTR  (VT_ARRAY | VT_BSTR) 
+и их типов в виде SAFEARRAY  long  (VT_ARRAY | VT_I4)
+Интерфейс...
+Синтаксис Automation:
+BOOL GetExternalFilesNamesEx( BOOL allFiles, VARIANT * Files, VARIANT * FilesTypes );
+Синтаксис COM:
+BOOL GetExternalFilesNamesEx( BOOL allFiles, VARIANT * Files, VARIANT * FilesTypes );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения, 
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+allFiles  " TRUE " рекурсивно по всем файлам,
+ " FALSE " только по внешнему уровню.
+
+Выходные параметры:
+
+Files  " массив VT_ARRAY | VT_BSTR имен файлов,
+FilesTypes  " массив VT_ARRAY | VT_I4 типов файлов (из перечисления 
+
+ksExternalFilesTypesEnum).
+
+GetInterface  Получить вспомогательный интерфейс
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetInterface( long Type );
+Синтаксис COM:
+HRESULT GetInterface( KompasAPIObjectTypeEnum Type,
+IKompasAPIObject ** Result );
+Входные параметры:
+
+Type " тип интерфейса из перечисления KompasAPIObjectTypeEnum.
+
+Возвращаемое значение:
+
+" указатель на интерфейс IKompasAPIObject.
+
+Примечание:
+Метод позволяет получить вспомогательный интерфейс.
+В зависимости от значения параметра Type возвращается указатель на интерфейс:
+327
+
+
+
+▼ в 2D документе:
+▼ ksObjectCopyObjectParam " параметры копирования ICopyObjectParam
+▼ ksObjectCurveCopyObjectParam " параметры копирования по кривой
+
+ICurveCopyObjectParam
+▼ ksObjectCircleCopyObjectParam " параметры копирования по окружности
+
+ICircleCopyObjectParam
+▼ ksObjectCircularCopyObjectParam " параметры копирования по концентрической
+
+сетке ICircularCopyObjectParam
+▼ ksObjectMeshCopyObjectParam     " параметры копирования по сетке
+
+IMeshCopyObjectParam
+▼ ksObjectFindObjectParameters " интерфейс расширенного поиска объектов
+
+IFindObjectParameters
+▼ в 3D документе:
+
+▼  case ksObjectReportProcess " интерфейс для управления процессом Создать от
+чет IReportProcess
+
+RedrawDocument  Перерисовать окна документа
+Интерфейс...
+Синтаксис Automation:
+BOOL RedrawDocument( ksRedrawDocumentModeEnum Mode );
+Синтаксис COM:
+HRESULT RedrawDocument( ksRedrawDocumentModeEnum Mode, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения, 
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Mode " режим перерисовки окон документа.
+
+ReportPropertiesMultieditMode  Включить/Выключить 
+режим массовой работы со свойствами объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL ReportPropertiesMultieditMode( BOOL On, BOOL UpdateProps );
+Синтаксис COM:
+HRESULT ReportPropertiesMultieditMode( BOOL On, BOOL UpdateProps, BOOL * Result );
+Входные параметры:
+328
+
+
+
+On " включить режим,
+UpdateProps " применить изменение свойств.
+
+SaveAsEx  Сохранить документ под другим именем
+Интерфейс...
+Синтаксис Automation:
+BOOL SaveAsEx( BSTR PathName, long saveMode );
+Синтаксис COM:
+HRESULT SaveAsEx( BSTR PathName, long saveMode, BOOL * Result );
+Входные параметры:
+
+PathName " новое имя файла документа,
+saveMode " версия для сохранения.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения, 
+FALSE " в случае неудачи.
+
+ViewEditAttr  Открыть диалог для просмотра атрибутов 
+объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL ViewEditAttr( OLE_HANDLE HWnd,
+VARIANT  Objects );
+Синтаксис COM:
+HRESULT ViewEditAttr( OLE_HANDLE HWnd,
+VARIANT Objects,
+BOOL *   Result );
+Входные параметры:
+
+HWnd " дескриптор главного окна КОМПАС (можно получить с 
+помощью функции GetHWindow,
+
+Objects " объект или массив объектов, атрибуты которых нужно 
+просмотреть ( VARIANT типа VT_DISPATCH или 
+VT_ARRAY | VT_DISPATCH ).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+329
+
+
+
+FALSE " в случае неудачи.
+Примечание:
+Метод позволяет вывести диалог для просмотра атрибутов объекта.
+
+WriteMetadataToFile  Записать метаданные в файл
+Интерфейс...
+Синтаксис Automation:
+BOOL WriteMetadataToFile( BSTR FileName );
+Синтаксис COM:
+HRESULT WriteMetadataToFile( BSTR FileName, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения, 
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+FileName " имя файла.
+
+Интерфейс IKompasDocument2D1
+Дополнительный интерфейс IKompasDocument2D.
+Иерархия:
+IKompasAPIObject
+
+IKompasDocument2D1
+Примечание:
+Интерфейс является дополнительным к интерфейсу документа IKompasDocument2D.
+Интерфейс можно получить посредством вызова метода IUnknown::QueryInterface (const
+GUID far& iid, void** pif).
+
+IKompasDocument2D1  свойства
+
+ChooseManager  Менеджера выбора (подсветки) 
+объектов
+Интерфейс...
+Тип данных: указатель на интерфейс менеджера выбора IChooseManager
+Синтаксис Automation:
+
+ChooseManager = Object.ChooseManager Получить свойство (* )
+ChooseManager = Получить свойство (**)
+Object.GetChooseManager()
+330
+
+
+
+Синтаксис COM:
+
+Object.get_ChooseManager( Получить свойство
+&ChooseManager )
+
+Примечание:
+
+1. Свойство позволяет получать указатель на менеджер выбора.
+2. Свойство доступно только для чтения.
+
+CurrentGroup  Текущая группа
+Интерфейс...
+Тип данных: указатель на интерфейс группы IDrawingGroup
+Синтаксис Automation:
+
+CurrentGroup = Object.CurrentGroup Получить свойство (* )
+CurrentGroup = Object.GetCurrentGroup() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CurrentGroup( &CurrentGroup ) Получить свойство
+
+Примечание:
+
+1. Свойство позволяет получать указатель на интерфейс текущей группы.
+2. Свойство доступно только для чтения.
+
+DrawingGroups  Коллекция групп
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции групп IDrawingGroups
+Синтаксис Automation:
+
+DrawingGroups = Object.DrawingGroups Получить свойство (* )
+DrawingGroups = Получить свойство (**)
+Object.GetDrawingGroups()
+
+Синтаксис COM:
+
+Object.get_DrawingGroups( Получить свойство
+&DrawingGroups )
+
+Примечание:
+
+1. Свойство позволяет получать указатель на коллекцию групп.
+2. Свойство доступно только для чтения.
+331
+
+
+
+EditMacroObject  Редактируемый макроэлемент
+Интерфейс...
+Тип данных: указатель на интерфейс макроэлемента IMacroObject
+Синтаксис Automation:
+
+EditMacroObject = Object.EditMacroObject Получить свойство (* )
+EditMacroObject = Получить свойство (**)
+Object.GetEditMacroObject()
+
+Синтаксис COM:
+
+Object.get_EditMacroObject( Получить свойство
+&EditMacroObject )
+
+Примечание:
+
+1. Свойство позволяет получать указатель на редактируемый макроэлемент.
+2. Свойство доступно только для чтения.
+
+EditMacroVisibleRegime  Находится ли документ в 
+режиме редактирования макроэлемента
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+EditMacroVisibleRegime = Получить свойство (* )
+Object.EditMacroVisibleRegime
+EditMacroVisibleRegime = Получить свойство (**)
+Object.GetEditMacroVisibleRegime()
+
+Синтаксис COM:
+
+Object.get_EditMacroVisibleRegi Получить свойство
+me( &EditMacroVisibleRegime )
+
+Возвращаемое значение:
+
+TRUE  " режим редактирования макроэлемента включен,
+FALSE  " режим редактирования макроэлемента отключен.
+
+Примечание:
+332
+
+
+
+1. Свойство доступно только для чтения.
+2. Свойство используется при редактировании макроэлементов.
+
+LibProcess  Получить объект процесса
+Интерфейс...
+Тип данных: Указатель на интерфейс IProcess2D 
+Синтаксис Automation:
+
+LibProcess = Object.LibProcess( Получить свойство (* )
+ProcessType )
+LibProcess = Object.GetLibProcess( Получить свойство (**)
+ProcessType )
+
+Синтаксис COM:
+
+Object.get_LibProcess( ProcessType, Получить свойство
+&LibProcess )
+
+Примечание:
+Свойство доступно только для чтения.
+
+NamedGroups  Коллекция именованных групп
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции групп IDrawingGroups
+Синтаксис Automation:
+
+NamedGroups = Object.NamedGroups Получить свойство (* )
+NamedGroups = Object.GetNamedGroups() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NamedGroups( &NamedGroups Получить свойство
+)
+
+Примечание:
+
+1. Свойство позволяет получать указатель на коллекцию именованных групп.
+2. Свойство доступно только для чтения.
+
+SelectionManager  Менеджер выделенных объектов
+Интерфейс...
+Тип данных: " указатель на интерфейс менеджера выделенных объектов
+ISelectionManager
+333
+
+
+
+Синтаксис Automation:
+
+SelectionManager = Получить свойство (* )
+Object.SelectionManager
+SelectionManager = Получить свойство (**)
+Object.GetSelectionManager()
+
+Синтаксис COM:
+
+Object.get_SelectionManager( Получить свойство
+&SelectionManager )
+
+Примечание:
+
+1. Свойство позволяет получать указатель на менеджер выделенных объектов.
+2. Свойство доступно только для чтения.
+
+Variable  Получить параметрическую переменную по 
+имени, индексу или указателю на размер
+Интерфейс...
+Тип данных: указатель на интерфейс параметрической переменной IVariable7
+Синтаксис Automation:
+
+Variable = Object.Variable (VARIANT Index ) Получить свойство (* )
+Variable = Object.GetVariable (VARIANT Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Variable (VARIANT Index, &Variable ) Получить свойство
+
+Входные параметры:
+
+Index  " индекс, имя или указатель на размер параметрической переменной.
+
+Свойство позволяет получать интерфейс параметрической переменной.
+Примечание:
+Свойство доступно только для чтения.
+
+Variables  Получить массив параметрических 
+переменных
+Интерфейс...
+Тип данных: SAFEARRAY VT_DISPATCH
+Синтаксис Automation:
+334
+
+
+
+Variables = Object.Variables Получить свойство (* )
+Variables = Object.GetVariables() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Variables( &Variables ) Получить свойство
+
+Свойство позволяет получать массив параметрических переменных.
+Примечание:
+Свойство доступно только для чтения.
+
+VariablesCount  Получить количество параметрических 
+переменных
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+VariablesCount = Object.VariablesCount Получить свойство (* )
+VariablesCount = Object.GetVariablesCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VariablesCount( &VariablesCount ) Получить свойство
+
+Свойство позволяет получать количество параметрических переменных.
+Примечание:
+Свойство доступно только для чтения.
+
+VariableTable  Таблица переменных
+Интерфейс...
+Тип данных: указатель на интерфейс таблицы переменных IVariableTable
+Синтаксис Automation:
+
+VariableTable = Object.VariableTable Получить свойство (* )
+VariableTable = Object.GetVariableTable() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VariableTable( &VariableTable ) Получить свойство
+
+Свойство позволяет получать интерфейс таблицы переменных.
+335
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+IKompasDocument2D1  методы
+
+AddVariable  Создать переменную
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddVariable();
+Синтаксис COM:
+HRESULT AddVariable( IVariable7 ** Result);
+Возвращаемое значение:
+
+" указатель на интерфейс параметрической 
+переменной IVariable7
+
+Метод позволяет создать переменную (добавить переменную в массив переменных и до"
+кумент).
+
+CopyObjects  Копировать объекты
+Интерфейс...
+Синтаксис Automation:
+VARIANT CopyObjects( VARIANT Objects,
+LPDISPATCH * params );
+Синтаксис COM:
+HRESULT CopyObjects( VARIANT Objects,
+ICopyObjectParam * params,
+VARIANT * Result );
+Входные параметры:
+
+Objects " объект или массив объектов для копирования ( VARIANT типа VT_DISPATCH или 
+VT_ARRAY | VT_DISPATCH ),
+
+params " указатель на интерфейс параметров копирования ICopyObjectParam.
+
+Возвращаемое значение:
+
+Объект или массив копий объектов ( VARIANT типа VT_DISPATCH или VT_ARRAY | 
+VT_DISPATCH ).
+
+Примечание:
+Метод позволяет создать атрибут по номеру типа атрибута.
+Способ копирования зависит от типа интерфейса параметров копирования:
+336
+
+
+
+▼ ICopyObjectParam " параметры копирования, 
+▼ ICurveCopyObjectParam " параметры копирования по кривой,
+▼ ICircleCopyObjectParam " параметры копирования по окружности, 
+▼ ICircularCopyObjectParam " параметры копирования по концентрической сетке, 
+▼ IMeshCopyObjectParam " параметры копирования по сетке. 
+
+Нужный интерфейс параметров копирования можно получить с помощью функции
+IKompasDocument1::GetInterface.
+
+CreateHyperLink  Создать гиперссылку
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateHyperLink( VARIANT Objects, 
+ksHyperLinkTypeEnum Type,
+BSTR Text,
+IDrawingObject * LinkObject,
+longLevel );
+Синтаксис COM:
+HRESULT CreateHyperLink( VARIANT Objects,
+ksHyperLinkTypeEnum Type,
+BSTR Text,
+IDrawingObject * LinkObject,
+long Level,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Входные параметры:
+
+Objects " VT_DISPATCH или массив VT_ARRAY | VT_DISPATCH 
+объектов, содержащих ссылку,
+
+Type " тип ссылки,
+Text " текст ссылки,
+LinkObject " объект, на который сделана ссылка,
+Level " уровень.
+
+DeleteHyperLinks  Удалить гиперссылки
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteHyperLinks( VARIANT Objects );
+Синтаксис COM:
+HRESULT DeleteHyperLinks( VARIANT Objects, BOOL * Result );
+337
+
+
+
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Входные параметры:
+
+Objects " объекты, содержащие гиперссылку.
+
+GetHyperLinkObjects  Получить объекты, имеющие 
+гиперссылку
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetHyperLinkObjects( ksHyperLinkTypeEnum Type, 
+IDrawingObject * LinkObject,
+long Level, 
+BSTR Text );
+Синтаксис COM:
+HRESULT GetHyperLinkObjects( ksHyperLinkTypeEnum Type,
+IDrawingObject * LinkObject,
+long Level,
+BSTR Text,
+VARIANT * Result );
+Возвращаемое значение:
+VT_DISPATCH или массив VT_ARRAY | VT_DISPATCH объектов, содержащих ссылку
+Входные параметры:
+
+Type " тип ссылки,
+Text " текст ссылки,
+LinkObject " объект, на который сделана ссылка,
+Level " уровень.
+
+GetObjectById  Получить объект по его уникальному 
+идентификатору
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetObjectById( int64 Id );
+Синтаксис COM:
+HRESULT GetObjectById( int64 Id, IDrawingObject ** Result );
+Возвращаемое значение:
+338
+
+
+
+ " указатель на интерфейс объекта IDrawingObject.
+
+Входные параметры:
+
+Id  " идентификатор объекта.
+
+FindObject  Найти объект, ближайший к заданной точке, 
+удовлетворяющий параметрам поиска
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH FindObject( double X, double Y, double Limit, IFindObjectParameters * Param );
+Синтаксис COM:
+HRESULT FindObject( double X, double Y, double Limit, IFindObjectParameters * Param,
+IDrawingObject * * Result );
+Возвращаемое значение: 
+
+ " указатель на интерфейс объекта IDrawingObject.
+
+Входные параметры:
+
+X " первая координата точки,
+Y " вторая координата точки,
+Limit " предел поиска и найденное расстояние,
+Param " параметры поиска объектов IFindObjectParameters.
+
+Примечание:
+Для поиска объектов в точке могут быть заданы расширенные параметры поиска.
+Интерфейс расширенных параметров поиска IFindObjectParameters можно получить с
+помощью метода IKompasDocument1::GetInterface в 2D " документах при использовании
+константы ksObjectFindObjectParameters.
+Если расширенные параметры поиска не требуются, необходимо передать NULL в фун"
+кцию.
+
+FindObjects  Найти объекты в заданной точке, 
+удовлетворяющие параметрам поиска
+Интерфейс...
+Синтаксис Automation:
+VARIANT FindObjects( double X, double Y, double Limit, IFindObjectParameters * Param );
+Синтаксис COM :
+339
+
+
+
+HRESULT FindObjects( double X, double Y, double Limit, IFindObjectParameters * Param,
+VARIANT * Result );
+Возвращаемое значение: 
+
+VARIANT  " объект типа VARIANT на безопасный массив 
+SAFEARRAY: VT_ARRAY|VT_DISPATCH.
+
+Входные параметры:
+
+X " первая координата точки,
+Y " вторая координата точки,
+Limit " предел поиска и найденное расстояние,
+Param " параметры поиска объектов IFindObjectParameters.
+
+Примечание:
+Для поиска объектов в точке могут быть заданы расширенные параметры поиска.
+Интерфейс расширенных параметров поиска IFindObjectParameters можно получить с
+помощью метода IKompasDocument1::GetInterface в 2D " документах при использовании
+константы ksObjectFindObjectParameters.
+Если расширенные параметры поиска не требуются, необходимо передать NULL в фун"
+кцию.
+
+SelectObjects  Отобрать объекты рамкой
+Интерфейс...
+Синтаксис Automation:
+VARIANT SelectObjects( ksRegionTypeEnum RegionType, double XMin, double YMin, double
+XMax, double YMax );
+Синтаксис COM :
+ HRESULT SelectObjects( ksRegionTypeEnum RegionType, double XMin, double YMin, double
+XMax, double YMax, VARIANT * Result );
+Возвращаемое значение: 
+
+VARIANT  " объект типа VARIANT на безопасный массив 
+SAFEARRAY: VT_ARRAY|VT_DISPATCH.
+
+Входные параметры:
+
+RegionType " тип региона,
+XMin " минимальная граница поиска по x
+YMin " минимальная граница поиска по y,
+XMax " максимальная граница поиска по x,
+YMax " максимальная граница поиска по y.
+340
+
+
+
+IsVariableNameValid  Проверить допустимость создания 
+новой переменной с данным именем
+Интерфейс...
+Синтаксис Automation:
+BOOL IsVariableNameValid( BSTR Name );
+Синтаксис COM:
+HRESULT IsVariableNameValid( BSTR Name, BOOL * Result );
+Входные параметры:
+
+Name  " имя переменной.
+
+Возвращаемое значение:
+
+TRUE  " переменную с данным именем создать можно,
+FALSE  " переменную с данным именем создать нельзя.
+
+Метод позволяет проверить, можно ли создать переменную с данным именем (проверя"
+ются синтаксис имени и наличие в документе переменной с данным именем).
+
+RebuildDocument  Перестроить документ
+Интерфейс...
+Синтаксис Automation:
+BOOL RebuildDocument();
+Синтаксис COM:
+HRESULT RebuildDocument( BOOL * Result );
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Метод позволяет перестроить документ.
+
+UpdateVariables  Установить новые значения внешних 
+переменных
+Интерфейс...
+Синтаксис Automation:
+BOOL UpdateVariables()
+Синтаксис COM:
+HRESULT UpdateVariables( BOOL * Result );
+Возвращаемое значение:
+341
+
+
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Метод позволяет применить новые значения внешних переменных.
+
+Интерфейс IKompasDocument3D1
+Дополнительный интерфейс для 3D документа.
+Иерархия:
+IDispatch
+
+IKompasDocument3D1
+
+IKompasDocument3D1  свойства
+
+Document3DManager  Менеджер 3D документа
+Тип данных: Указатель на интерфейс IDocument3DManager 
+Синтаксис Automation:
+
+Document3DManager = Получить свойство (* )
+Object.Document3DManager
+Document3DManager = Получить свойство (**)
+Object.GetDocument3DManager()
+
+Синтаксис COM:
+
+Object.get_Document3DManager( Получить свойство
+&Document3DManager )
+
+Примечание:
+Свойство доступно только для чтения.
+
+HideLayoutGeometry  Скрыть / показать 
+компоновочную геометрию
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+HideLayoutGeometry = Получить свойство (* )
+Object.HideLayoutGeometry
+Object.HideLayoutGeometry = Установить свойство (* )
+HideLayoutGeometry
+342
+
+
+
+HideLayoutGeometry = Получить свойство (**)
+Object.GetHideLayoutGeometry()
+Object.SetHideLayoutGeometry( Установить свойство (**)
+HideLayoutGeometry )
+
+Синтаксис COM:
+
+Object.get_HideLayoutGeometry( Получить свойство
+&HideLayoutGeometry )
+Object.put_HideLayoutGeometry(  Установить свойство
+HideLayoutGeometry )
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+EditObject  Редактируемый объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IFeature7
+Синтаксис Automation:
+
+EditObject = Object.EditObject Получить свойство (* )
+Object.EditObject = EditObject Установить свойство (* )
+EditObject = Object.GetEditObject() Получить свойство (**)
+Object.SetEditObject( EditObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EditObject( &EditObject )) Получить свойство
+Object.put_EditObject(  EditObject ) Установить свойство
+
+LibProcess  Получить объект процесса
+Интерфейс...
+Тип данных: Указатель на интерфейс IProcess3D
+Синтаксис Automation:
+
+LibProcess = Object.LibProcess( Получить свойство (* )
+ProcessType )
+LibProcess = Object.GetLibProcess( Получить свойство (**)
+ProcessType )
+
+Синтаксис COM:
+343
+
+
+
+Object.get_LibProcess( ProcessType, Получить свойство
+&LibProcess )
+
+Примечание:
+Cвойство доступно только для чтения.
+
+MateConstraints  Коллекция сопряжений
+Интерфейс...
+Тип данных: Указатель на интерфейс IMateConstraints3D 
+Синтаксис Automation:
+
+MateConstraints = Object.MateConstraints Получить свойство (* )
+MateConstraints = Получить свойство (**)
+Object.GetMateConstraints()
+
+Синтаксис COM:
+
+Object.get_MateConstraints( Получить свойство
+&MateConstraints )
+
+Примечание:
+Свойство доступно только для чтения.
+
+SpecRough  Неуказанная шероховатость 3D
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecRough3D 
+Синтаксис Automation:
+
+SpecRough = Object.SpecRough Получить свойство (* )
+SpecRough = Object.GetSpecRough() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SpecRough( Получить свойство
+&SpecRough )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IKompasDocument3D1  методы
+
+ClearUndo  Очистить очередь Undo
+Интерфейс...
+344
+
+
+
+Синтаксис Automation:
+BOOL ClearUndo();
+Синтаксис COM:
+HRESULT ClearUndo( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ExcludeObjects  Исключить из расчета объект или 
+объекты
+Интерфейс...
+Синтаксис Automation:
+BOOL ExcludeObjects( VARIANT Objects, BOOL Excl );
+Синтаксис COM:
+HRESULT ExcludeObjects( VARIANT Objects, BOOL Excl, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Objects " объект (VT_DISPATCH) или Список объектов 
+VT_ARRAY | VT_DISPATCH,
+
+  Excl " TRUE " исключить из расчета
+" FALSE " включить в расчет.
+
+ExecuteProcessOfInsertComponentFromFile  Запустить 
+процесс вставки компонента из файла или библиотеки 
+моделей
+Интерфейс...
+Синтаксис Automation:
+BOOL ExecuteProcessOfInsertComponentFromFile( BSTR FileName, ProcessTypeEnum
+ProcessType );
+Синтаксис COM:
+HRESULT ExecuteProcessOfInsertComponentFromFile( BSTR FileName, ProcessTypeEnum
+ProcessType, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+345
+
+
+
+FALSE " в случае неудачи.
+Входные параметры:
+
+FileName " имя файла,
+ProcessType " тип процесса,
+prAddPartFromFile " добавить компонент из файла,
+prAddLocalPartFromFile " добавить локальную деталь из файла,
+prAddLayoutGeometryFromFile " добавить компоновочную геометрию,
+prAddBilletPartFromFile " добавить деталь"заготовку.
+
+Подсветка и выделение объектов
+Интерфейс IChooseManager
+Справка системы КОМПАС...
+kompas.chm::/98_8_5_Vydelenie_obwektov.htm
+Интерфейс менеджера выбора (подсветки) объектов.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IChooseManager
+
+Описание:
+Интерфейс позволяет осуществлять выбор (подсветку) объектов. Используется при со"
+здании отчета по выбранным объектам.
+Примечание:
+Интерфейс является дополнительным для интерфейса таблицы отчетов IReport. Интер"
+фейс можно получить посредством вызова метода IUnknown::QueryInterface (const GUID
+far& iid, void** pif) и у интерфейса документа 3D с помощью свойства
+IKompasDocument3D::ChooseManager, а также у дополнительного интерфейса документа
+2D с помощью свойства IKompasDocument2D1::ChooseManager.
+
+IChooseManager  свойства
+
+ChoosenObjects  Получить массив выделенных объектов 
+в виде SAFEARRAY | VT_DISPATCH.
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_DISPATCH
+Синтаксис Automation:
+
+ChoosenObjects = Object.ChoosenObjects Получить свойство (* )
+ChoosenObjects = Получить свойство (**)
+Object.GetChoosenObjects()
+346
+
+
+
+Синтаксис COM:
+
+Object.get_ChoosenObjects( Получить свойство
+&ChoosenObjects )
+
+Примечание:
+
+1. Свойство позволяет получать массив выделенных объектов. Если возвращается один
+объект, то тип VARIANT"а будет VT_DISPATCH, если возвращается несколько объектов,
+то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+2. Свойство доступно только для чтения.
+
+CurrentManagerType  Получить тип текущего 
+менеджера
+Интерфейс...
+Тип данных: из перечисления ksChooseManagerTypeEnum
+Синтаксис Automation:
+
+CurrentManagerType = Получить свойство (* )
+Object.CurrentManagerType
+Object.CurrentManagerType = Установить свойство (* )
+CurrentManagerType
+CurrentManagerType = Получить свойство (**)
+Object.GetCurrentManagerType()
+Object.SetCurrentManagerType( Установить свойство (**)
+CurrentManagerType )
+
+Синтаксис COM:
+
+Object.get_CurrentManagerType( Получить свойство
+&CurrentManagerType )
+Object.put_CurrentManagerType(  Установить свойство
+CurrentManagerType )
+
+IChooseManager  методы
+
+Choose  Выделить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Choose(VARIANT Objects);
+Синтаксис COM:
+HRESULT Choose (VARIANT Objects,
+BOOL * Result);
+Входные параметры:
+347
+
+
+
+Objects " объект или массив объектов, которые нужно 
+выделить (VARIANT типа VT_DISPATCH или 
+VT_ARRAY | VT_DISPATCH).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет выделить объект.
+
+GetManagerIndex  Получить индекс менеджера по 
+указателю на выбранный объект
+Интерфейс...
+Синтаксис Automation:
+ksChooseManagerTypeEnum GetManagerIndex (LPDISPATCH Object);
+Синтаксис COM:
+HRESULT GetManagerIndex( IKompasAPIObject * Object, ksChooseManagerTypeEnum *
+Result );
+Входные параметры:
+
+Object " указатель на выбранный объект.
+
+Возвращаемое значение:
+
+тип текущего менеджера из перечисления 
+ksChooseManagerTypeEnum
+
+IsChoosen  Выделен ли объект
+Интерфейс...
+Синтаксис Automation:
+BOOL IsChoosen( LPDISPATCH Object );
+Синтаксис COM:
+HRESULT IsChoosen( IKompasAPIObject * Object,
+BOOL  * Result );
+Входные параметры:
+
+Objects " объект.
+
+Возвращаемое значение:
+348
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет определить, выделен ли объект.
+
+Unchoose  Снять выделение объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL Unchoose( VARIANT Objects );
+Синтаксис COM:
+HRESULT Unchoose( VARIANT Objects,
+BOOL * Result );
+Входные параметры:
+
+Objects " объект или массив объектов, с которых нужно 
+снять выделение ( VARIANT типа VT_DISPATCH 
+или VT_ARRAY | VT_DISPATCH ).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет снять выделение объекта.
+
+UnchooseAll  Снять выделение всех объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL UnchooseAll();
+Синтаксис COM:
+HRESULT UnchooseAll( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет снять выделение со всех объектов.
+349
+
+
+
+Интерфейс ISelectionManager
+Справка системы КОМПАС...
+kompas.chm::/98_8_5_Vydelenie_obwektov.htm
+Интерфейс менеджера выделенных объектов.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ISelectionManager
+
+Описание:
+Интерфейс позволяет осуществлять выделение объектов.
+Примечание:
+Интерфейс можно получить у интерфейса документа 3D с помощью свойства
+IKompasDocument3D::SelectionManager и у дополнительного интерфейса документа 2D с
+помощью свойства IKompasDocument2D1::SelectionManager.
+
+ISelectionManager  свойства
+
+SelectedObjects  Получить массив выделенных объектов 
+в виде SAFEARRAY | VT_DISPATCH
+Тип данных: VARIANT типа VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Синтаксис Automation:
+
+SelectedObjects = Object.SelectedObjects Получить свойство (* )
+SelectedObjects = Получить свойство (**)
+Object.GetSelectedObjects()
+
+Синтаксис COM:
+
+Object.get_SelectedObjects( Получить свойство
+&SelectedObjects )
+
+Примечание:
+
+1. Свойство позволяет получать массив выделенных объектов. Если возвращается один
+объект, то тип VARIANT"а будет VT_DISPATCH, если возвращается несколько объектов,
+то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+2. Свойство доступно только для чтения.
+350
+
+
+
+ISelectionManager  методы
+
+IsSelected  Выделен ли объект
+Интерфейс...
+Синтаксис Automation:
+BOOL IsSelected( LPDISPATCH Object );
+Синтаксис COM:
+HRESULT IsSelected( IKompasAPIObject * Object,
+BOOL * Result );
+Входные параметры:
+
+Objects " объект.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет определить, выделен ли объект.
+
+Select  Выделить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Select( VARIANT Objects );
+Синтаксис COM:
+HRESULT Select( VARIANT Objects,
+BOOL *  Result );
+Входные параметры:
+
+Objects " объект или массив объектов, которые нужно 
+выделить ( VARIANT типа VT_DISPATCH или 
+VT_ARRAY | VT_DISPATCH ).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет выделить объект.
+351
+
+
+
+Unselect  Снять выделение объекта 
+Интерфейс...
+Синтаксис Automation:
+BOOL Unselect( VARIANT Objects );
+Синтаксис COM:
+HRESULT Unselect( VARIANT Objects,
+BOOL * Result );
+Входные параметры:
+
+Objects " объект или массив объектов, с которых нужно 
+снять выделение ( VARIANT типа VT_DISPATCH 
+или VT_ARRAY | VT_DISPATCH ).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет снять выделение объекта.
+
+UnselectAll  Снять выделение всех объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL UnselectAll();
+Синтаксис COM:
+HRESULT UnselectAll( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет снять выделение со всех объектов.
+352
+
+
+
+Окна документа
+Интерфейс IDocumentFrame
+Интерфейс событий...
+
+Справка системы КОМПАС...
+kompas.chm::/63_1_2_1_okno_sistemy.htm
+Интерфейс окна документа.
+IKompasAPIObject
+
+IDocumentFrame
+IFrameTreesManager
+Примечание:
+
+1. Данный интерфейс может быть получен от интерфейса окон документа
+IDocumentFrames с помощью свойства IDocumentFrames::Item.
+
+2. У данного интерфейса посредством вызова метода IUnknown::QueryInterface (const GUID
+far& IID, void** pif) можно получить дополнительный интерфейс IFrameTreesManager.
+
+IDocumentFrame  свойства
+
+Active  Активность окна
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Active = iObject.Active Получить свойство (* )
+iObject.Active = Active Установить свойство (* )
+Active = iObject.GetActive() Получить свойство (**)
+iObject.SetActive (Active) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Active (&Active) Получить свойство,
+iObject">put_Active (Active) Установить свойство
+
+Примечание:
+С помощью данного свойства можно получить и изменить активность данного окна.
+
+Caption  Заголовок окна
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+353
+
+
+
+Caption = iObject.Caption Получить свойство (* )
+Caption = iObject.GetCaption() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Caption (&Caption) Получить свойство,
+
+Примечание:
+
+1. С помощью данного свойства можно получить заголовок данного окна.
+2. Свойство доступно только для чтения.
+
+CurrentCursorStep  Текущий шаг дискретного 
+перемещения курсора
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CurrentCursorStep = Получить свойство (* )
+Object.CurrentCursorStep( )
+CurrentCursorStep = Получить свойство (**)
+Object.GetCurrentCursorStep()
+
+Синтаксис COM:
+
+Object.get_CurrentCursorStep( Получить свойство,
+&CurrentCursorStep )
+
+Примечание
+При включенном режиме округления IDocumentFrame::RoundModeOn значения параме"
+тров округляются до ближайшего значения, кратного текущему шагу курсора.
+
+Regime  Pежим отображения окна
+Интерфейс...
+Тип данных: режим отображения окна из перечисления FrameRegimeEnum
+Синтаксис Automation:
+
+Regime = iObject.Regime Получить свойство (* )
+iObject.Regime = Regime Установить свойство (* )
+Regime = iObject.GetRegime() Получить свойство (**)
+iObject.SetRegime (Regime) Установить свойство (**)
+354
+
+
+
+Синтаксис COM:
+
+iObject">get_Regime (&Regime) Получить свойство,
+iObject">put_Regime (Regime) Установить свойство
+
+Примечание:
+С помощью данного свойства можно получить и изменить режим отображения данного
+окна.
+
+RoundModeOn  Состояние режима округления 
+линейных величин до значений, кратных шагу курсора
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+RoundModeOn = Object.RoundModeOn( ) Получить свойство (* )
+RoundModeOn = Object.GetRoundModeOn() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_RoundModeOn( Получить свойство,
+&RoundModeOn )
+
+Примечание
+При включенном режиме значения параметров округляются до ближайшего значения,
+кратного текущему шагу курсора IDocumentFrame::CurrentCursorStep.
+
+IDocumentFrame  методы
+
+ConvertCoordinates  Преобразовать оконные 
+координаты в координаты СК согласно 
+ConvertCoordTypeEnum
+Интерфейс...
+Синтаксис Automation:
+BOOL ConvertCoordinates (ConvertCoordTypeEnum type,
+long lx,
+long ly,
+double* x,
+double* y,
+double* z);
+355
+
+
+
+Синтаксис COM:
+HRESULT ConvertCoordinates ([in]ConvertCoordTypeEnum type,
+[in]long lx,
+[in]long ly,
+[out]double* x,
+[out]double* y,
+[out]double* z,
+[out, retval]
+VARIANT_BOOL* Result);
+Входные параметры:
+
+lx, ly " координаты в экранных пикселах,
+type " тип СК в которую нужно преобразовать оконные 
+
+координаты.
+
+Выходные параметры:
+
+x, y, z " координаты в мм в СК согласно ConvertCoordTypeEnum.
+
+Возвращаемое значение:
+
+TRUE " преобразование прошло успешно,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Получив координаты мыши в оконных координатах при обработке событий из
+ksDocumentFrameNotify:
+
+frMouseDown 3 Нажатие кнопки мыши.
+frMouseUp 4 Отпускание кнопки мыши.
+frMouseDblClick 5 Двойной щелчок мыши.
+frMouseMove 12 Перемещение мыши.
+
+ их можно преобразовать в системы координат, указанные в ConvertCoordTypeEnum:
+▼ для графических документов можно получить координаты в СК листа и текущего вида,
+▼ для СП и текстового документа в СК первого листа,
+▼ для модели в СК документа и в СК текущей плоской грани. Грань должна быть выделена
+
+в дереве.
+2. Если курсор находится в нерабочей области окна активного документа, то конвертация
+
+координат не производится, возвращается FALSE. Нерабочей областью окна является,
+например, панель команд или панель свойств в этом же активном документе.
+
+ExecuteKompasCommand  Выполнить команду системы 
+КОМПАС
+Интерфейс...
+356
+
+
+
+Синтаксис Automation:
+BOOL ExecuteKompasCommand (long commandID, BOOL post);
+Синтаксис COM:
+HRESULT ExecuteKompasCommand (long commandID, BOOL post, BOOL * retval);
+Входные параметры:
+
+commandID " константа из перечисления ProcessTypeEnum или 
+ksKompasCommandEnum,
+
+post " true " запуск команды через PostMessage,
+" false " через SendMessage.
+
+Возвращаемое значение:
+
+TRUE " в случае удачи,
+FALSE " в случае ошибки.
+
+Примечание:
+
+1. Проверить доступность команды можно с помощью функции
+IDocumentFrame::IsKompasCommandEnable.
+
+2. Проверить, нажата ли в данный момент кнопка команды, можно с помощью
+IDocumentFrame::IsKompasCommandCheck.
+
+GetHWND  Получить дескриптор окна
+Интерфейс...
+Синтаксис Automation:
+long GetHWND();
+Синтаксис COM:
+HRESULT GetHWND ([out, retval] OLE_HANDLE* hwnd);
+Возвращаемое значение:
+
+Дескриптор окна
+
+GetPickRay  Преобразовать оконные координаты в луч 
+взгляда
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPickRay ( long lx, long ly, 
+                                 double* x, double* y, double* z, 
+                                 double* zx, double* zy, double* zz);
+Синтаксис COM:
+357
+
+
+
+ HRESULT GetPickRay( long lx, long ly,
+                                       double* x, double* y, double* z, 
+                                       double* zx, double* zy, double* zz, 
+                                        VARIANT_BOOL* Result);
+Входные параметры:
+
+ lx, ly " координаты в экранных пикселах.
+
+Выходные параметры:
+
+x, y, z " координаты точки на ближайший к лучу взгляда объект, 
+в координатах компонента,
+
+zx, zy, zz " направления вектора взгляда.
+
+Возвращаемое значение:
+
+TRUE " преобразование прошло успешно,
+FALSE " в случае неудачи.
+
+Примечание:
+Луч смотрит перпендикулярно экрану. Луч строится с учетом перспективной проекции,
+если она включена.
+
+GetZoomScale  Получить масштаб и центр окна 
+документа
+Интерфейс...
+Синтаксис Automation:
+void GetZoomScale (double* x, double* y, double* scale);
+Синтаксис COM:
+HRESULT GetZoomScale ([out]double* x, [out]double* y, [out]double* scale);
+Выходные параметры:
+
+x, y " координаты (в СК вида) точки центра изменения масштаба,
+scale " коэффициент изменения масштаба изображения.
+
+Примечание:
+
+1. Метод позволяет получить текущий масштаб отображения документа в окне с центром в
+точке х, у (точка х, у в центре окна).
+
+2. Метод работает только для графических документов.
+358
+
+
+
+IsKompasCommandCheck  Проверить, нажата ли кнопка 
+команды
+Интерфейс...
+Синтаксис Automation:
+long IsKompasCommandCheck (long commandID);
+Синтаксис COM:
+HRESULT IsKompasCommandCheck (long commandID, long * retVal);
+Входные параметры:
+
+commandID " константа из перечисления ProcessTypeEnum или 
+ksKompasCommandEnum.
+
+Возвращаемое значение:
+
+1 " кнопка нажата,
+0 " кнопка отжата.
+
+IsKompasCommandEnable  Проверить доступность 
+выполнения команды
+Интерфейс...
+Синтаксис Automation:
+BOOL IsKompasCommandEnable (long commandID);
+Синтаксис COM:
+HRESULT IsKompasCommandEnable (long commandID, BOOL * retVal);
+Входные параметры:
+
+commandID " константа из перечисления ProcessTypeEnum или 
+ksKompasCommandEnum.
+
+Возвращаемое значение:
+
+TRUE " команда доступна,
+FALSE " команда недоступна.
+
+RefreshWindow  Обновить изображение окна
+Интерфейс...
+Синтаксис Automation:
+void RefreshWindow();
+Синтаксис COM:
+359
+
+
+
+HRESULT RefreshWindow();
+
+SetGabaritModifying  Сообщить окну документа, что 
+библиотека меняет габарит документа
+Интерфейс...
+Синтаксис Automation:
+void SetGabaritModifying();
+Синтаксис COM:
+SetGabaritModifying();
+Примечание:
+Использование метода может понадобиться для собственного рисования в окне. Если
+габарит изменен, то это приведет к генерации события frAddGabarit (определение габа"
+ритов документа) из ksDocumentFrameNotify. В обработчике события frAddGabarit библи"
+отека может указать свой габаритный прямоугольник, если документ является чертежом
+или фрагментом или свой габаритный куб, если документ является моделью. Значение
+габарита библиотеки сложится с габаритом документа.
+
+Zoom  Увеличить масштаб окна рамкой
+Интерфейс...
+Синтаксис Automation:
+void Zoom (double x1, double y1, double x2, double y2);
+Синтаксис COM:
+HRESULT Zoom ([in]double x1, [in]double y1, [in]double x2, [in]double y2);
+Входные параметры:
+
+x1, y1 " координаты (в СК вида) первой точки диагонали рамки,
+x2, y2 " координаты (в СК вида) второй точки диагонали рамки.
+
+Примечание:
+
+1. Метод позволяет растянуть часть документа, заданную рамкой, во все окно.
+2. Метод работает только для графических документов.
+
+ZoomPrevNextOrAll  Отобразить предыдущий/
+следующий масштаб или показать весь документ
+Интерфейс...
+Синтаксис Automation:
+void ZoomPrevNextOrAll (long Type);
+Синтаксис COM:
+HRESULT ZoomPrevNextOrAll ([in]ZoomTypeEnum type);
+360
+
+
+
+Входные параметры:
+
+type " тип изменения масштаба из перечисления ZoomTypeEnum.
+
+Примечание:
+
+1. Установка следующего масштаба возможно только после отката к предыдущему мас"
+штабу.
+
+2. Метод работает в полном объеме только для графических документов. Для документов"
+моделей работает только режим ksZoomAll (Показать весь документ).
+
+3. В текстовом документе и в спецификации метод не работает.
+
+ZoomScale  Изменить масштаб изображения окна
+Интерфейс...
+Синтаксис Automation:
+void ZoomScale (double x, double y, double scale);
+Синтаксис COM:
+HRESULT ZoomScale ([in]double x, [in]double y, [in]double scale);
+Входные параметры:
+
+x, y " координаты (в СК вида) точки центра изменения масштаба,
+scale " коэффициент изменения масштаба изображения.
+
+Примечание:
+
+1. Метод позволяет установить новый масштаб отображения документа в окне с центром в
+точке х,у.
+
+2. Метод работает только для графических документов.
+
+Интерфейс IDocumentFrames
+Справка системы КОМПАС...
+KOMPAS.chm::/63_1_2_1_okno_sistemy.htm
+Коллекция окон документа.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDocumentFrames
+
+Примечание:
+Данный интерфейс может быть получен от интерфейса документа IKompasDocument с
+помощью свойства IKompasDocument::DocumentFrames.
+361
+
+
+
+IDocumentFrames  свойства
+
+Item  Окно, заданное по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс окна IDocumentFrame
+Синтаксис Automation:
+
+frame = iObject.Item (Index) Получить свойство (* )
+frame = iObject.GetItem (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, &Frame) Получить свойство
+
+Входные параметры:
+
+Index " индекс в коллекции, тип VARIANT.
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IFrameTreesManager
+Интерфейс менеджера вкладок окна документа.
+Описание:
+Дополнительный интерфейс для IDocumentFrame.
+Данный интерфейс можно получить у интерфейса IDocumentFrame посредством вызова
+метода IUnknown::QueryInterface (const GUID far& IID, void** pif).
+Примечание:
+
+1. Позволяет создавать вкладку в окне дерева документа.
+2. Добавить вкладку можно в окно чертежа, 3D модели и сборки.
+3. Для создания закладки используется метод AddTab.
+
+IFrameTreesManager  свойства
+
+ActiveTab  Активная закладка
+Интерфейс...
+Тип данных: IDispatch
+Синтаксис Automation:
+
+ActiveTab = Object.ActiveTab Получить свойство (* )
+Object.ActiveTab = ActiveTab Установить свойство (* )
+362
+
+
+
+ActiveTab = Object.GetActiveTab() Получить свойство (**)
+Object.SetActiveTab( ActiveTab ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ActiveTab( &ActiveTab ) Получить свойство
+Object.put_ActiveTab(  ActiveTab ) Установить свойство
+
+Примечание:
+
+1. Позволяет получить и установить активность вкладки окна дерева документа.
+2. Для активизации закладки дерева документа системы КОМПАС нужно передать NULL.
+3. Для активизации закладки ActiveX библиотеки нужно передать указатель на интерфейс
+
+созданного функцией AddTab ActiveX.
+
+TabVisible  Видимость закладки
+Интерфейс...
+Тип данных: BOOL
+
+Синтаксис Automation:
+
+TabVisible = Object.TabVisible( ocx ) Получить свойство (* )
+Object.TabVisible( ocx ) = TabVisible Установить свойство (* )
+TabVisible = Object.GetTabVisible( ocx ) Получить свойство (**)
+Object.SetTabVisible( ocx, TabVisible ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TabVisible( ocx, &TabVisible ) Получить свойство
+Object.put_TabVisible( ocx, TabVisible ) Установить свойство
+
+Входные параметры:
+
+ocx " указатель на интерфейс ActiveX контрола, добав"
+ленного на закладку.
+
+TabsVisible  Видимость вкладок документа
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+TabsVisible = Object.TabsVisible Получить свойство (* )
+Object.TabsVisible = TabsVisible Установить свойство (* )
+TabsVisible = Object.GetTabsVisible() Получить свойство (**)
+Object.SetTabsVisible( TabsVisible ) Установить свойство (**)
+363
+
+
+
+Синтаксис COM:
+
+Object.get_TabsVisible( &TabsVisible ) Получить свойство
+Object.put_TabsVisible(  TabsVisible ) Установить свойство
+
+Примечание:
+Позволяет получить и установить видимость окна дерева документа.
+
+TreeCaption  Заголовок окна Дерева документа, 
+устанавливаемый при активизации закладки
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+TreeCaption = Object.TreeCaption( Ocx ) Получить свойство (* )
+Object.TreeCaption( Ocx ) = TreeCaption Установить свойство (* )
+TreeCaption = Object.GetTreeCaption( Ocx ) Получить свойство (**)
+Object.SetTreeCaption( Ocx, TreeCaption ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TreeCaption( Ocx, &TreeCaption ) Получить свойство
+Object.put_TreeCaption( Ocx, TreeCaption ) Установить свойство
+
+Входные параметры:
+Ocx " Указатель на интерфейс ActiveX"окна, возвращаемого методом
+IFrameTreesManager::AddTab
+
+IFrameTreesManager  методы
+
+AddTab  Добавить вкладку
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddTab( BSTR tabCaption, BSTR ocxProgID );
+Синтаксис COM:
+HRESULT AddTab( BSTR tabCaption, BSTR ocxProgID, IDispatch ** PVal );
+Входные параметры:
+
+tabCaption " заголовок для новой закладки,
+ocxProgID " ProgID " ActiveX элемента (ActiveX дерева );
+
+Например, «VCTree.VCTreeCtrl.1» " для создания дерева, из 
+примеров SDK. см SDK\lib\VCTree.ocx, проект SDK\OCX\VCTree. 
+Пример использования SDK\C++\Visualc\TestVCTree.
+364
+
+
+
+Возвращаемое значение:
+
+" Указатель на интерфейс созданного ActiveX элемента.
+
+AddTabEx  Добавить закладку
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddTabEx( BSTR TabCaption, BSTR TreeCaption, BSTR OcxClassID, BOOL
+Active, PropertyManagerLayout Layout );
+Синтаксис COM:
+HRESULT AddTabEx( BSTR TabCaption, BSTR TreeCaption, BSTR OcxClassID, BOOL Active,
+PropertyManagerLayout Layout, IDispatch* * Result );
+Возвращаемое значение:
+
+" Указатель на интерфейс созданного ActiveX элемента.
+
+Входные параметры:
+
+tabCaption " имя закладки,
+TreeCaption " заголовок дерева ,
+ocxProgID " ProgID " ActiveX элемента (ActiveX дерева);
+
+Например, «VCTree.VCTreeCtrl.1» " для создания дерева, из 
+примеров SDK. см SDK\lib\VCTree.ocx, проект SDK\OCX\VCTree. 
+Пример использования SDK\C++\Visualc\TestVCTree,
+
+Active " активизировать закладку при создании,
+Layout " умолчательное расположение.
+
+Примечание:
+При повторном создании закладки она будет создана в том же положении, где ее разме"
+стил пользователь.
+
+RemoveTab  Удалить вкладку
+Интерфейс...
+Синтаксис Automation:
+BOOL RemoveTab( LPDISPATCH ocx );
+Синтаксис COM:
+HRESULT RemoveTab( LPDISPATCH ocx, BOOL * Result );
+Входные параметры:
+
+o " указатель на интерфейс ActiveX окна.
+c
+x
+
+365
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+OpenGL
+
+Интерфейс IExternalGDIObject
+Интерфейс внешнего GDI объекта.
+Иерархия:
+IKompasAPIObject
+
+IExternalGDIObject
+Примечание:
+
+1. Интерфейс позволяет реализовать отрисовку внешних GDI" объектов (для V11 только
+текстов).
+
+2. Управление интерфейсом (создание и удаление) осуществляется через менеджер
+IExternalTessellationManager.
+
+IExternalGDIObject  свойства
+
+AlwaysDrawInScreenPlane  Способ преобразования 
+координат внешней триангуляции
+Интерфейс...
+Тип данных: из перечисления ksDrawInScreenPlaneEnum
+Синтаксис Automation:
+
+AlwaysDrawInScreenPlane = Получить свойство (* )
+Object.AlwaysDrawInScreenPlane
+Object.AlwaysDrawInScreenPlane = Установить свойство (* )
+AlwaysDrawInScreenPlane
+AlwaysDrawInScreenPlane = Получить свойство (**)
+Object.GetAlwaysDrawInScreenPlane()
+Object.SetAlwaysDrawInScreenPlane( Установить свойство (**)
+AlwaysDrawInScreenPlane )
+
+Синтаксис COM:
+
+Object.get_AlwaysDrawInScreenPlane( Получить свойство
+&AlwaysDrawInScreenPlane )
+366
+
+
+
+Object.put_AlwaysDrawInScreenPlane( Установить свойство
+AlwaysDrawInScreenPlane )
+
+NonScalableX  Не масштабировать по X
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NonScalableX = Object.NonScalableX Получить свойство (* )
+Object.NonScalableX = NonScalableX Установить свойство (* )
+NonScalableX = Object.GetNonScalableX() Получить свойство (**)
+Object.SetNonScalableX( NonScalableX ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NonScalableX( &NonScalableX ) Получить свойство
+Object.put_NonScalableX(  NonScalableX ) Установить свойство
+
+NonScalableY  Не масштабировать по Y
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NonScalableY = Object.NonScalableY Получить свойство (* )
+Object.NonScalableY = NonScalableY Установить свойство (* )
+NonScalableY = Object.GetNonScalableY() Получить свойство (**)
+Object.SetNonScalableY( NonScalableY ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NonScalableY( &NonScalableY ) Получить свойство
+Object.put_NonScalableY(  NonScalableY ) Установить свойство
+
+NonScalableZ  Не масштабировать по Z
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NonScalableZ = Object.NonScalableZ Получить свойство (* )
+Object.NonScalableZ = NonScalableZ Установить свойство (* )
+NonScalableZ = Object.GetNonScalableZ() Получить свойство (**)
+Object.SetNonScalableZ( NonScalableZ ) Установить свойство (**)
+367
+
+
+
+Синтаксис COM:
+
+Object.get_NonScalableZ( &NonScalableZ ) Получить свойство
+Object.put_NonScalableZ(  NonScalableZ ) Установить свойство
+
+ObjectID  Идентификатор объекта
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ObjectID = Object.ObjectID Получить свойство (* )
+ObjectID = Object.GetObjectID() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ObjectID( &ObjectID ) Получить свойство,
+
+Примечание:
+
+1. Позволяет получить идентификатор объекта. По идентификатору объекта осуществляет"
+ся установка видимости и удаление объектов.
+
+2. Свойство доступно только для чтения.
+
+ScalableText  Признак масштабирования текста
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ScalableText = Object.ScalableText Получить свойство (* )
+Object.ScalableText = ScalableText Установить свойство (* )
+ScalableText = Object.GetScalableText() Получить свойство (**)
+Object.SetScalableText( ScalableText ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ScalableText( &ScalableText ) Получить свойство
+Object.put_ScalableText(  ScalableText ) Установить свойство
+
+Visible  Показать\скрыть объект
+Интерфейс...
+Тип данных: BOOL
+368
+
+
+
+Синтаксис Automation:
+
+Object.Visible( frame ) = Visible Установить свойство (* )
+Object.SetVisible( frame, Visible ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.put_Visible( frame, Visible ) Установить свойство,
+
+Входные параметры:
+
+frame " указатель на интерфейс окна документа IDocumentFrame.
+
+Примечание:
+
+1.  Позволяет изменить видимость объекта в заданном окне.
+2.  Если frame == NULL, то объект будет отображаться во всех окнах документа.
+3.  Свойство доступно только для изменения.
+
+IExternalGDIObject  методы
+
+Delete  Удалить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete( );
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Перед удалением объекта нужно выключить видимость объекта в окнах документа.
+2. Для удаления группы объектов используется функция
+
+IExternalTessellationManager::DeleteObjects.
+3. Для удаления всех внешних объектов используется метод
+
+IExternalTessellationManager::Clear.
+
+SetBkColors  Установить цвета фона текстов с Alpha 
+каналом
+Интерфейс...
+Синтаксис Automation:
+369
+
+
+
+BOOL SetBkColors( VARIANT BkColors );
+Синтаксис COM:
+HRESULT SetBkColors( VARIANT BkColors, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае ошибки.
+
+Входные параметры:
+
+BkColors " массив SafeArray VT_ARRAY | VT_I4.
+
+SetPlace  Установить матрицу для отрисовки объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlace( VARIANT Place );
+Синтаксис COM:
+HRESULT SetPlace( VARIANT Place, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Place " массив SAFEARRAY double (VT_ARRAY |
+VT_R8).
+
+SetTextColors  Установить цвета текстов
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTextColors( VARIANT textColors );
+Синтаксис COM:
+HRESULT SetTextColors( VARIANT textColors, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+370
+
+
+
+textColors " массив цветов " SafeArray целых чисел
+VT_ARRAY | VT_I4.
+
+SetTextOrientation  Установить наклон символов 
+текстов
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTextOrientation( VARIANT textOrients );
+Синтаксис COM:
+HRESULT SetTextOrientation( VARIANT textOrients, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+textOrients " массив наклонов.
+
+SetTexts  Установить тексты и их параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTexts( VARIANT Texts,
+VARIANT Points,
+VARIANT Colors,
+VARIANT Fonts,
+BOOL Is3DPoints );
+Синтаксис COM:
+HRESULT SetTexts( VARIANT Texts,
+VARIANT Points,
+VARIANT Colors,
+VARIANT Fonts,
+BOOL Is3DPoints,
+BOOL * Result );
+Входные параметры:
+371
+
+
+
+Points " массив SafeArray VT_ARRAY | VT_R8 координат точек отрисовки 
+текстов.
+Координаты в массиве могут лежать в последовательности :
+" для Is3DPoints == TRUE
+x0, y0, z0, x1, y1, z1, ... xi, yi, zi
+" для Is3DPoints == FALSE
+x0, y0, x1, y1, ... xi, yi,
+
+Texts " массив SafeArray VT_ARRAY | VT_BSTR текстов,
+Сolors " массив цветов текстов.
+
+Массив может быть не задан " тип VARIANT"а VT_EMPTY, в этом 
+случае используется черный цвет. Может быть задан один цвет " тип 
+VARIANT"а VT_I4. Может быть задан цвет для каждого текста тип 
+VARIANT"а VT_ARRAY | VT_I4,
+
+Fonts " массив шрифтов текстов.
+Массив может быть не задан " тип VARIANT"а VT_EMPTY. В этом 
+случае используется шрифт, установленный в модели. Может быть 
+задан один шрифт " тип VARIANT"а VT_DISPATCH. Может быть 
+задан шрифт для каждого текста тип VARIANT"а VT_ARRAY | 
+VT_DISPATCH.
+Передаваемый интерфейс " интерфейс IFontDispPtr, который можно 
+получить от объекта MFC" класса CFontHolder,
+
+Is3DPoints " признак использования 3D"координат отрисовки текстов.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+SetTextsAlign  Установить выравнивание текста
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTextsAlign( VARIANT TextsAlign );
+Синтаксис COM:
+HRESULT SetTextsAlign( VARIANT TextsAlign, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае ошибки.
+
+Входные параметры:
+
+TextsAlign " массив SafeArray VT_ARRAY | VT_I4 констант из 
+перечисления ksTextAlignEnum.
+372
+
+
+
+Интерфейс IExternalTessellationManager
+Менеджер объектов с внешней триангуляцией.
+
+IExternalTessellationManager " интерфейс Automation
+Описание:
+Дополнительный интерфейс для IKompasDocument3D.
+Данный интерфейс можно получить у интерфейса IKompasDocument3D посредством вы"
+зова метода IUnknown::QueryInterface (const GUID far& IID, void** pif).
+Примечание:
+Позволяет создавать объекты с внешней триангуляцией, отрисовываемые треугольника"
+ми и ребрами.
+
+IExternalTessellationManager  свойства
+
+DisableModelRotation  Запретить поворот модели и 
+изменение ориентации вида
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DisableModelRotation = Получить свойство (* )
+Object.DisableModelRotation
+Object.DisableModelRotation = Установить свойство (* )
+DisableModelRotation

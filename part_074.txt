@@ -1,0 +1,2532 @@
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " указатель отсутствует,
+1 " точка,
+2 " стрелка.
+
+Синтаксис Automation:
+
+arrowType = iPosLeaderParam.arrowType Получить свойство (* )
+iPosLeaderParam.arrowType = arrowType Установить свойство (* )
+arrowType = iPosLeaderParam.GetArrowType() Получить свойство (**)
+4022
+
+
+
+iPosLeaderParam.SetArrowType( arrowType ) Установить свойство (**)
+
+dirX  Направление полки линиивыноски относительно оси 
+OX
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+ 1 " вправо (по оси OX),
+"1 " влево (против оси OX).
+
+Синтаксис Automation:
+
+dirX = iPosLeaderParam.dirX Получить свойство (* )
+iPosLeaderParam.dirX = dirX Установить свойство (* )
+dirX = iPosLeaderParam.GetDirX() Получить свойство (**)
+iPosLeaderParam.SetDirX( dirX ) Установить свойство (**)
+
+dirY  Направление полки линиивыноски относительно оси 
+OY
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+ 1 " вверх (по оси OY),
+"1 " вниз (против оси OY).
+
+Синтаксис Automation:
+
+dirY = iPosLeaderParam.dirY Получить свойство (* )
+iPosLeaderParam.dirY = dirY Установить свойство (* )
+dirY = iPosLeaderParam.GetDirY() Получить свойство (**)
+iPosLeaderParam.SetDirY( dirY ) Установить свойство (**)
+
+style  Стиль текста
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,  
+номер пользовательского стиля,
+4023
+
+
+
+INDICATIN_TEXT_LINE_ARR " в этом случае текст задается массивом 
+строк, и стиль текста может быть указан 
+индивидуально для каждой строки.
+
+Системные стили текстов...
+Синтаксис Automation:
+
+style = iPosLeaderParam.style Получить свойство (* )
+iPosLeaderParam.style = style Установить свойство (* )
+style = iPosLeaderParam.GetStyle() Получить свойство (**)
+iPosLeaderParam.SetStyle( style ) Установить свойство (**)
+
+Примечание:
+Если style = INDICATIN_TEXT_LINE_ARR, то динамический массив pText " типа
+TEXT_LINE_ARR. В остальных случаях " типа CHAR_STR_ARR.
+
+x, y  Координаты базовой точки линиивыноски 
+обозначения позиции
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x = iPosLeaderParam.x Получить свойство (* )
+iPosLeaderParam.x = x Установить свойство (* )
+x = iPosLeaderParam.GetX() Получить свойство (**)
+iPosLeaderParam.SetX( x ) Установить свойство (**)
+
+Примечание:
+Базовая точка линии"выноски " начало первой полки, точка выхода из нее "ножки".
+
+ksPosLeaderParam  методы
+
+GetpPolyline  Получить указатель на интерфейс 
+динамического массива ответвлений позиционной линии
+выноски ksDynamicArray типа POLYLINE_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpPolyline();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа POLYLINE_ARR.
+
+Примечание:
+4024
+
+
+
+В общем случае одно ответвление " это ломаная линия. Первый узел " базовая точка (ее
+в массив помещать не нужно, т.к. она общая для всех ответвлений), остальные узлы " из"
+ломы (могут отсутствовать), последний узел " конец ответвления (указывает на объект).
+Смотрите также: ksMathPointParam
+
+GetpTextline  Получить указатель на интерфейс 
+динамического массива текста обозначения позиции 
+ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpTextline();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа POLYLINE_ARR.
+
+Примечания:
+
+1. Если свойство ksPosLeaderParam::style = INDICATIN_TEXT_LINE_ARR, то динамический
+массив " типа TEXT_LINE_ARR (динамический массив строк текста), в остальных случаях
+" типа CHAR_STR_ARR (динамический массив строк обозначения позиции).
+
+2. Каждая строка соответствует одному номеру позиции.
+Смотрите также:
+ksTextLineParam
+ksChar255
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Метод обнуляет все параметры.
+2. Создается динамический массив pText типа CHAR_STR_ARR.
+3. Создается динамический массив pPolyline типа POLYLINE_ARR.
+4025
+
+
+
+SetpPolyline  Установить указатель на интерфейс 
+динамического массива ответвлений позиционной линии
+выноски ksDynamicArray типа POLYLINE_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpPolyline (LPDISPATCH pPolyline);
+Входной параметр:
+
+pPolyline " указатель на интерфейс динамического
+массива ksDynamicArray типа
+POLYLINE_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+В общем случае одно ответвление " это ломаная линия. Первый узел " базовая точка (ее
+в массив помещать не нужно, т.к. она общая для всех ответвлений), остальные узлы " из"
+ломы (могут отсутствовать), последний узел " конец ответвления (указывает на объект).
+Смотрите также: ksMathPointParam
+
+SetpTextline  Установить указатель на интерфейс 
+динамического массива текста обозначения позиции 
+ksDynamicArray в каждой строке лежит одна позиция
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpTextline (LPDISPATCH pTextline);
+Входной параметр:
+
+pTextline  " указатель на интерфейс динамического
+массива ksDynamicArray типа
+POLYLINE_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+4026
+
+
+
+1. Если свойство ksPosLeaderParam::style = INDICATIN_TEXT_LINE_ARR, то динамический
+массив " типа TEXT_LINE_ARR (динамический массив строк текста), в остальных случаях
+" типа CHAR_STR_ARR (динамический массив строк обозначения позиции).
+
+2. Каждая строка соответствует одному номеру позиции.
+Смотрите также:
+ksTextLineParam
+ksChar255
+
+Линия  выноска для обозначения параметров 
+клеймения (Интерфейс ksBrandLeaderParam)
+Интерфейс параметров линиивыноски для обозначения клеймения.
+Аналог данных параметров при использовании API экспортных функций "
+BrandLeaderParam.
+Примечания:
+
+1. Если cText0 = 0 или cText1 = 0 или cText2 = 0, то соответствующий текст на линии"выно"
+ске отсутствует.
+
+2. Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksBrandLeaderParam  свойства
+
+arrowType  Тип знака на "ножке" линиивыноски 
+обозначения клеймения
+Интерфейс..
+Тип данных: short
+Значения свойства:
+
+0 " знак отсутствует,
+1 " точка,
+2 " стрелка.
+
+Синтаксис Automation:
+
+arrowType = iBrandLeaderParam.arrowType Получить свойство (* )
+iBrandLeaderParam.arrowType = arrowType Установить свойство (* )
+arrowType = iBrandLeaderParam.GetArrowType() Получить свойство (**)
+iBrandLeaderParam.SetArrowType( arrowType ) Установить свойство (**)
+4027
+
+
+
+cText0  Количество строк текста в знаке клеймения (не более 
+одной строки)
+Интерфейс..
+Тип данных: short
+Синтаксис Automation:
+
+cText0 = iBrandLeaderParam.cText0 Получить свойство (* )
+iBrandLeaderParam.cText0 = cText0 Установить свойство (* )
+cText0 = iBrandLeaderParam.GetCText0() Получить свойство (**)
+iBrandLeaderParam.SetCText0( cText0 ) Установить свойство (**)
+
+cText1  Количество строк текста над "ножкой" (не более 
+одной строки)
+Интерфейс..
+Тип данных: short
+Синтаксис Automation:
+
+cText1 = iBrandLeaderParam.cText1 Получить свойство (* )
+iBrandLeaderParam.cText1 = cText1 Установить свойство (* )
+cText1 = iBrandLeaderParam.GetCText1() Получить свойство (**)
+iBrandLeaderParam.SetCText1( cText1 ) Установить свойство (**)
+
+cText2  Количество строк текста под "ножкой" (не более 
+одной строки)
+Интерфейс..
+Тип данных: short
+Синтаксис Automation:
+
+cText2 = iBrandLeaderParam.cText2 Получить свойство (* )
+iBrandLeaderParam.cText2 = cText2 Установить свойство (* )
+cText2 = iBrandLeaderParam.GetCText2() Получить свойство (**)
+iBrandLeaderParam.SetCText2( cText2 ) Установить свойство (**)
+
+dirX  Направление полки относительно оси OX
+Интерфейс..
+Тип данных: long
+Значения свойства:
+
+1 " вправо (по оси OX),
+4028
+
+
+
+"1 " влево (против оси OX).
+Синтаксис Automation:
+
+dirX = iBrandLeaderParam.dirX Получить свойство (* )
+iBrandLeaderParam.dirX = dirX Установить свойство (* )
+dirX = iBrandLeaderParam.GetDirX() Получить свойство (**)
+iBrandLeaderParam.SetDirX( dirX ) Установить свойство (**)
+
+style1  Стиль текста в знаке клеймения
+Интерфейс..
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,
+номер пользовательского стиля,
+INDICATIN_TEXT_LINE_ARR " в этом случае текст задается массивом 
+
+строк и стиль текста может быть указан 
+индивидуально для каждой строки.
+
+Системные стили текстов...
+Синтаксис Automation:
+
+style1 = iBrandLeaderParam.style1 Получить свойство (* )
+iBrandLeaderParam.style1 = style1 Установить свойство (* )
+style1 = iBrandLeaderParam.GetStyle1() Получить свойство (**)
+iBrandLeaderParam.SetStyle1( style1 ) Установить свойство (**)
+
+Примечание:
+Если style1 = INDICATIN_TEXT_LINE_ARR, то динамический массив текстов " типа
+TEXT_LINE_ARR. В остальных случаях " типа CHAR_STR_ARR.
+
+style2  Стиль текстов у "ножки" знака клеймения
+Интерфейс..
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,  
+номер пользовательского стиля.
+
+Системные стили текстов...
+Синтаксис Automation:
+
+style2 = iBrandLeaderParam.style2 Получить свойство (* )
+iBrandLeaderParam.style1 = style2 Установить свойство (* )
+4029
+
+
+
+style2 = iBrandLeaderParam.GetStyle2() Получить свойство (**)
+iBrandLeaderParam.SetStyle2( style2 ) Установить свойство (**)
+
+Примечание:
+Используется, если style1 не равен INDICATIN_TEXT_LINE_ARR.
+
+x, y  Координаты базовой точки обозначения клеймения
+Интерфейс..
+Тип данных: double
+Синтаксис Automation:
+
+x = iBrandLeaderParam.x Получить свойство (* )
+iBrandLeaderParam.x = x Установить свойство (* )
+x = iBrandLeaderParam.GetX() Получить свойство (**)
+iBrandLeaderParam.SetX( x ) Установить свойство (**)
+
+Примечание:
+Базовая точка обозначения клеймения " точка выхода из знака "ножки".
+
+ksBrandLeaderParam  методы
+
+GetpPolyline  Получить указатель на интерфейс 
+динамического массива ответвлений линиивыноски 
+обозначения клеймения ksDynamicArray типа POLYLINE_ARR
+Интерфейс..
+Получить указатель на интерфейс динамического массива ответвлений линии"выноски
+обозначения клеймения ksDynamicArray типа POLYLINE_ARR.
+Синтаксис Automation:
+LPDISPATCH GetpPolyline();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа POLYLINE_AR.
+
+Примечание:
+В общем случае одно ответвление " это ломаная линия. Первый узел " базовая точка (ее
+в массив помещать не нужно, т.к. она общая для всех ответвлений), остальные узлы " из"
+ломы (могут отсутствовать), последний узел " конец ответвления (указывает на объект).
+Смотрите также: ksMathPointParam
+4030
+
+
+
+GetpTextline  Получить указатель на интерфейс 
+динамического массива текста обозначения клеймения 
+ksDynamicArray
+Интерфейс..
+Синтаксис Automation:
+LPDISPATCH GetpTextline();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray.
+
+Примечания:
+
+1. Если свойство ksBrandLeaderParam::style1 = INDICATIN_TEXT_LINE_ARR, то динамиче"
+ский массив " типа TEXT_LINE_ARR (динамический массив строк текста), в остальных
+случаях " типа CHAR_STR_ARR (динамический массив строк символов текста клейме"
+ния).
+
+2. Различают три разных текста для обозначения клеймения, их строки лежат в следующей
+последовательности:
+
+▼ текст над полкой. Если свойство cText0 = 0, то этот текст отсутствует;
+▼ текста над "ножкой". Если свойство cText1 = 0, то этот текст отсутствует;
+▼ текст под "ножкой". Если свойство cText2 = 0, то этот текст отсутствует.
+
+Смотрите также:
+ ksTextLineParam
+ksChar255
+
+Init  Инициализировать параметры
+Интерфейс..
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Метод обнуляет все параметры.
+2. Создается динамический массив pText типа CHAR_STR_ARR.
+3. Создается динамический массив pPolyline типа POLYLINE_ARR.
+4031
+
+
+
+SetpPolyline  Установить указатель на интерфейс 
+динамического массива ответвлений линиивыноски 
+обозначения клеймения ksDynamicArray типа POLYLINE_ARR
+Интерфейс..
+Синтаксис Automation:
+BOOL SetpPolyline (LPDISPATCH pPolyline);
+Входной параметр:
+
+pPolyline " указатель на интерфейс динамического
+массива ksDynamicArray типа
+POLYLINE_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+В общем случае одно ответвление " это ломаная линия. Первый узел " базовая точка (ее
+в массив помещать не нужно, т.к. она общая для всех ответвлений), остальные узлы " из"
+ломы (могут отсутствовать), последний узел " конец ответвления (указывает на объект).
+Смотрите также: ksMathPointParam
+
+SetpTextline  Установить указатель на интерфейс 
+динамического массива обозначения клеймения 
+ksDynamicArray
+Интерфейс..
+Синтаксис Automation:
+BOOL SetpTextline (LPDISPATCH pTextline);
+Входной параметр:
+
+pTextline  " указатель на интерфейс динамического
+массива ksDynamicArray типа POLYLINE_AR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Если свойство ksBrandLeaderParam::style1 = INDICATIN_TEXT_LINE_ARR, то динамиче"
+ский массив ksDynamicArray " типа TEXT_LINE_ARR (динамический массив строк текста),
+4032
+
+
+
+в остальных случаях " типа CHAR_STR_ARR (динамический массив строк символов тек"
+ста клеймения).
+
+2. Различают три разных текста для обозначения клеймения, их строки лежат в следующей
+последовательности:
+
+▼ текст над полкой. Если свойство cText0 = 0, то этот текст отсутствует;
+▼ текста над "ножкой". Если свойство cText1 = 0, то этот текст отсутствует;
+▼ текст под "ножкой". Если свойство свойство cText2 = 0, то этот текст отсутствует.
+
+Смотрите также:
+ ksTextLineParam
+ksChar255 
+
+Линия  выноска для обозначения маркировки 
+(Интерфейс ksMarkerLeaderParam)
+Интерфейс параметров линиивыноски для обозначения маркировки.
+Аналог данных параметров при использовании API экспортных функций "
+MarkerLeaderParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ ksMarkerLeaderParam  свойства
+
+arrowType  Тип указателя линиивыноски
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " указатель отсутствует,
+1 " точка,
+2 " стрелка.
+
+Синтаксис Automation:
+
+arrowType = iMarkerLeaderParam.arrowType Получить свойство (* )
+iMarkerLeaderParam.arrowType = arrowType Установить свойство (* )
+arrowType = iMarkerLeaderParam.GetArrowType() Получить свойство (**)
+iMarkerLeaderParam.SetArrowType( arrowType ) Установить свойство (**)
+4033
+
+
+
+cText0  Количество строк текста в знаке маркировки (не 
+более одной строки)
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+cText0 = iMarkerLeaderParam.cText0 Получить свойство (* )
+iMarkerLeaderParam.cText0 = cText0 Установить свойство (* )
+cText0 = iMarkerLeaderParam.GetCText0() Получить свойство (**)
+iMarkerLeaderParam.SetCText0( cText0 ) Установить свойство (**)
+
+cText1  Количество строк текста над "ножкой" линии
+выноски обозначения маркировки (не более одной строки)
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+cText1 = iMarkerLeaderParam.cText1 Получить свойство (* )
+iMarkerLeaderParam.cText1 = cText1 Установить свойство (* )
+cText1 = iMarkerLeaderParam.GetCText1() Получить свойство (**)
+iMarkerLeaderParam.SetCText1(cText1) Установить свойство (**)
+
+cText2  Количество строк текста под "ножкой" линии
+выноски обозначения маркировки (не более одной строки)
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+cText2 = iMarkerLeaderParam.cText2 Получить свойство (* )
+iMarkerLeaderParam.cText2 = cText2 Установить свойство (* )
+cText2 = iMarkerLeaderParam.GetCText2() Получить свойство (**)
+iMarkerLeaderParam.SetCText2(cText2) Установить свойство (**)
+
+style1  Стиль текста в знаке маркировки
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,  
+4034
+
+
+
+номер пользовательского стиля,
+INDICATIN_TEXT_LINE_ARR " в этом случае текст задается массивом строк и стиль 
+
+текста может быть указан индивидуально для каждой 
+строки.
+
+Системные стили текстов... 
+Синтаксис Automation:
+
+style1 = iMarkerLeaderParam.style1 Получить свойство (* )
+iMarkerLeaderParam.style1 = style1 Установить свойство (* )
+style1 = iMarkerLeaderParam.GetStyle1() Получить свойство (**)
+iMarkerLeaderParam.SetStyle1( style1 ) Установить свойство (**)
+
+Примечание:
+Если style1 = INDICATIN_TEXT_LINE_ARR, то динамический массив текстов " типа
+TEXT_LINE_ARR. В остальных случаях " типа CHAR_STR_ARR.
+
+style2  Стиль текстов у "ножки" линиивыноски обозначения 
+маркировки
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,
+номер пользовательского стиля.
+
+Системные стили текстов... 
+Синтаксис Automation:
+
+style2 = iMarkerLeaderParam.style2 Получить свойство (* )
+iMarkerLeaderParam.style2 = style2 Установить свойство (* )
+style2 = iMarkerLeaderParam.GetStyle2() Получить свойство (**)
+iMarkerLeaderParam.SetStyle2( style2 ) Установить свойство (**)
+
+Примечание:
+Используется, если style1 не равен INDICATIN_TEXT_LINE_ARR.
+
+x, y  Координаты базовой точки линиивыноски 
+обозначения маркировки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x = iMarkerLeaderParam.x Получить свойство (* )
+4035
+
+
+
+iMarkerLeaderParam.x = x Установить свойство (* )
+x = iMarkerLeaderParam.GetX() Получить свойство (**)
+iMarkerLeaderParam.SetX( x ) Установить свойство (**)
+
+Примечание:
+Базовая точка линии"выноски " точка выхода "ножки" из знака маркировки.
+
+ ksMarkerLeaderParam  методы
+
+GetpPolyline  Получить указатель на интерфейс 
+динамического массива ответвлений линиивыноски 
+обозначения маркировки ksDynamicArray типа 
+POLYLINE_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpPolyline();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа POLYLINE_ARR.
+
+Примечание:
+В общем случае одно ответвление " это ломаная линия. Первый узел " базовая точка (ее
+в массив помещать не нужно, т.к. она общая для всех ответвлений), остальные узлы " из"
+ломы (могут отсутствовать), последний узел " конец ответвления (указывает на объект).
+Смотрите также
+ksMathPointParam 
+
+GetpTextline  Получить указатель на интерфейс 
+динамического массива текста обозначения маркирования 
+ksDynamicArray
+Интерфейс...
+Получить указатель на интерфейс динамического массива текста обозначения маркиро"
+вания ksDynamicArray.
+Синтаксис Automation:
+LPDISPATCH GetpTextline();
+Возвращаемое значение:
+4036
+
+
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray.
+
+Примечания:
+
+1. Если свойство ksMarkerLeaderParam::style1 = INDICATIN_TEXT_LINE_ARR, то динамиче"
+ский массив ksDynamicArray " типа TEXT_LINE_ARR (динамический массив строк текста),
+в остальных случаях " типа CHAR_STR_ARR (динамический массив строк символов тек"
+ста маркировки).
+
+2. Различают три разных текста для обозначения маркировки, их строки лежат в следую"
+щей последовательности:
+
+▼ текст над полкой. Если свойство cText0 = 0, то этот текст отсутствует;
+▼ текста над "ножкой". Если свойство cText1 = 0, то этот текст отсутствует;
+▼ текст под "ножкой". Если свойство cText2 = 0, то этот текст отсутствует.
+
+Смотрите также:
+ksTextLineParam
+ksChar255
+
+Init Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Метод обнуляет все параметры.
+2. Создается динамический массив pText типа CHAR_STR_ARR.
+3. Создается динамический массив pPolyline типа POLYLINE_ARR.
+
+SetpPolyline  Установить указатель на интерфейс 
+динамического массива ответвлений линиивыноски 
+обозначения маркировки ksDynamicArray типа 
+POLYLINE_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpPolyline (LPDISPATCH pPolyline);
+Входной параметр:
+4037
+
+
+
+pPolyline " указатель на интерфейс динамического массива 
+ksDynamicArray типа POLYLINE_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+В общем случае одно ответвление " это ломаная линия. Первый узел " базовая точка (ее
+в массив помещать не нужно, т.к. она общая для всех ответвлений), остальные узлы " из"
+ломы (могут отсутствовать), последний узел " конец ответвления (указывает на объект).
+Смотрите также
+ksMathPointParam 
+
+SetpTextline  Установить указатель на интерфейс 
+динамического массива текста обозначения маркировки 
+ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpTextline (LPDISPATCH pTextline);
+Входной параметр:
+
+pTextline  " указатель на интерфейс динамического
+массива ksDynamicArray.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Если свойство ksMarkerLeaderParam::style1 = INDICATIN_TEXT_LINE_ARR, то динамиче"
+ский массив ksDynamicArray " типа TEXT_LINE_ARR (динамический массив строк текста),
+в остальных случаях " типа CHAR_STR_ARR (динамический массив строк символов тек"
+ста маркировки).
+
+2. Различают три разных текста для обозначения маркировки, их строки лежат в следую"
+щей последовательности:
+
+▼ текст над полкой. Если свойство cText0 = 0, то этот текст отсутствует;
+▼ текста над "ножкой". Если свойство cText1 = 0, то этот текст отсутствует;
+▼ текст под "ножкой". Если свойство cText2 = 0, то этот текст отсутствует.
+
+Смотрите также:
+4038
+
+
+
+ksTextLineParam
+ksChar255
+
+Линия разреза/сечения (Интерфейс ksCutLineParam)
+Интерфейс параметров линии разреза/сечения.
+Аналог данных параметров при использовании API экспортных функций " CutLineParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksCutLineParam  свойства
+
+right  Положение стрелок относительно линии разреза/
+сечения
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " слева,
+1 " справа.
+
+Синтаксис Automation:
+
+right = iCutLineParam.right Получить свойство (* )
+iCutLineParam.right = right Установить свойство (* )
+right = iCutLineParam.GetRight() Получить свойство (**)
+iCutLineParam.SetRight( right ) Установить свойство (**)
+
+str  Текст на линии разреза/сечения
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+str = iCutLineParam.str Получить свойство (* )
+iCutLineParam.str = str Установить свойство (* )
+str = iCutLineParam.GetStr() Получить свойство (**)
+iCutLineParam.SetStr( str ) Установить свойство (**)
+
+Примечание:
+4039
+
+
+
+Свойство используется при ksCutLineParam::type = 0 (т.е. при способе задания надписи
+на линии в виде строки).
+
+style  Стиль текста
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,  
+номер пользовательского стиля.
+
+Системные стили текстов...
+Синтаксис Automation:
+
+style = iCutLineParam.style Получить свойство (* )
+iCutLineParam.style = style Установить свойство (* )
+style = iCutLineParam.GetStyle() Получить свойство (**)
+iCutLineParam.SetStyle( style ) Установить свойство (**)
+
+type  Способ задания надписи на линии разреза/сечения
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " текст в виде строки (используется значение
+свойства ksCutLineParam::str),
+
+1 " динамический массив компонент текста (ис"
+пользуется массив pTextline).
+
+Синтаксис Automation:
+
+type = iCutLineParam.type Получить свойство (* )
+iCutLineParam.type = type Установить свойство (* )
+type = iCutLineParam.GetType() Получить свойство (**)
+iCutLineParam.SetType(type) Установить свойство (**)
+
+Смотрите также:
+ksCutLineParam::SetpTextline,
+ksCutLineParam::GetpTextline
+4040
+
+
+
+х1, y1  Координаты надписи у первого участка линии 
+разреза/сечения
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x1 = iCutLineParam.x1 Получить свойство (* )
+iCutLineParam.x1 = x1 Установить свойство (* )
+x1 = iCutLineParam.GetX1() Получить свойство (**)
+iCutLineParam.SetX1( x1 ) Установить свойство (**)
+
+х2, y2  Координаты надписи у второго участка линии 
+разреза/сечения
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x2 = iCutLineParam.x2 Получить свойство (* )
+iCutLineParam.x2 = x2 Установить свойство (* )
+x2 = iCutLineParam.GetX2() Получить свойство (**)
+iCutLineParam.SetX2( x2 ) Установить свойство (**)
+
+ksCutLineParam  методы
+
+GetpMathPoint  Получить указатель на интерфейс 
+динамического массива точек ломаной линии 
+ksDynamicArray типа POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpMathPoint();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа POINT_ARR.
+
+Примечание:
+Массив точек ломаной состоит из начальной точки, точек излома и конечной точки.
+Смотрите также:
+ ksMathPointParam
+4041
+
+
+
+GetpTextline  Получить указатель на интерфейс 
+динамического массива компонент текста ksDynamicArray 
+типа TEXT_ITEM_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpTextline();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray компонент текста типа
+TEXT_ITEM_ARR.
+
+Примечание:
+Массив используется при ksCutLineParam::type = 1 (т.е. при способе задания надписи на
+линии).
+Смотрите также: StructTextItem
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Метод обнуляет все параметры.
+2. Создается динамический массив pTextItem типа TEXT_ITEM_ARR.
+3. Создается динамический массив pMathPoint типа POINT_ARR.
+
+SetpMathPoint  Установить указатель на интерфейс 
+динамического массива точек ломаной линии 
+ksDynamicArray типа POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpMathPoint (LPDISPATCH pMathPoint);
+Входной параметр:
+4042
+
+
+
+pMathPoint " указатель на интерфейс динамического
+массива ksDynamicArray типа POINT_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Массив точек ломаной состоит из начальной точки, точек излома и конечной точки.
+Смотрите также: ksMathPointParam
+
+SetpTextline  Установить указатель на интерфейс 
+динамического массива компонент текста ksDynamicArray 
+типа TEXT_ITEM_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpTextline (LPDISPATCH pTextline);
+Входной параметр:
+
+pTextline " указатель на интерфейс динамического
+массива ksDynamicArray компонент текста
+типа TEXT_ITEM_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Массив используется при ksCutLineParam::type = 1 (т.е. при способе задания надписи на
+линии).
+Смотрите также: TextItemParam
+
+Допуск формы и расположения поверхностей
+
+Интерфейс ksToleranceBranch
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_FORMTOLERANCE.htm
+Интерфейс параметров "опоры" допуска формы.
+Аналог данных параметров при использовании API экспортных функций "
+ToleranceBranch .
+4043
+
+
+
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksToleranceBranch  свойства
+
+arrowType  Тип "опоры"
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " "опора" отсутствует,
+1 " "опора"" треугольник,
+2 " "опора"" стрелка.
+
+Синтаксис Automation:
+
+arrowType = iToleranceBranch.arrowType Получить свойство (* )
+iToleranceBranch.arrowType = arrowType Установить свойство (* )
+arrowType = iToleranceBranch.GetArrowType() Получить свойство (**)
+iToleranceBranch.SetArrowType( arrowType ) Установить свойство (**)
+
+tCorner  Точка выхода "опоры" из таблицы допуска формы
+Интерфейс...
+Тип данных: short
+Значения свойства 
+Синтаксис Automation:
+
+tCorner = iToleranceBranch.tCorner Получить свойство (* )
+iToleranceBranch.tCorner = tCorner Установить свойство (* )
+tCorner = iToleranceBranch.GetTCorner() Получить свойство (**)
+iToleranceBranch.SetTCorner( tCorner ) Установить свойство (**)
+
+ksToleranceBranch  методы
+
+GetpMathPoint  Получить указатель на интерфейс 
+динамического массив точек "опоры" ksDynamicArray типа 
+POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpMathPoint();
+4044
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва математических точек ksDynamicArray типа
+POINT_ARR.
+
+Примечание:
+Массив точек опоры состоит из начальной точки, принадлежащей таблице (ее в массив
+помещать не нужно, т.к. она определена свойством tCorner), точек излома (они могут от"
+сутствовать) и конечной точки "опоры", указывающей на объект.
+Смотрите также: ksMathPointParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1.  Метод обнуляет все параметры.
+2.  Создается динамический массив pMathPoint типа POINT_ARR.
+
+SetpMathPoint  Установить указатель на интерфейс 
+динамического массива точек "опоры" ksDynamicArray типа 
+POINT_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpMathPoint(LPDISPATCH pMathPoint);
+Входной параметр:
+
+pMathPoint " указатель на интерфейс динамического
+массива математических точек
+ksDynamicArray типа POINT_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+4045
+
+
+
+Массив точек опоры состоит из начальной точки, принадлежащей таблице (ее в массив
+помещать не нужно, т.к. она определена свойством tCorner), точек излома (они могут от"
+сутствовать) и конечной точки "опоры", указывающей на объект.
+Смотрите также: ksMathPointParam
+
+Интерфейс ksToleranceParam
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_FORMTOLERANCE.htm
+Интерфейс параметров обозначения допуска формы и расположения повер
+хностей.
+Аналог данных параметров при использовании API экспортных функций "
+ToleranceParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksToleranceParam  свойства
+
+tBase  Положение базовой точки на таблице допуска формы
+Интерфейс...
+Тип данных: short
+Значения свойства...
+Синтаксис Automation:
+
+tBase = iToleranceParam.tBase Получить свойство (* )
+iToleranceParam.tBase = tBase Установить свойство (* )
+tBase = iToleranceParam.GetTBase() Получить свойство (**)
+iToleranceParam.SetTBase( tBase ) Установить свойство (**)
+
+style  Стиль текста
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,
+номер пользовательского стиля.
+
+Системные стили текстов...
+Синтаксис Automation:
+4046
+
+
+
+style = iToleranceParam.style Получить свойство (* )
+iToleranceParam.style = style Установить свойство (* )
+style = iToleranceParam.GetStyle() Получить свойство (**)
+iToleranceParam.SetStyle( style ) Установить свойство (**)
+
+type  Ориентация таблицы допуска формы
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " горизонтально,
+1 " вертикально.
+
+Синтаксис Automation:
+
+type = iToleranceParam.type Получить свойство (* )
+iToleranceParam.type = type Установить свойство (* )
+type = iToleranceParam.GetType() Получить свойство (**)
+iToleranceParam.SetType( type ) Установить свойство (**)
+
+x, y  Координаты базовой точки таблицы допуска формы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x = iToleranceParam.x Получить свойство (* )
+iToleranceParam.x = x Установить свойство (* )
+x = iToleranceParam.GetX() Получить свойство (**)
+iToleranceParam.SetX( x ) Установить свойство (**)
+
+ksToleranceParam  методы
+
+GetBranchArr  Получить указатель на интерфейс 
+динамического массива опор допуска формы
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetBranchArr();
+Возвращаемое значение:
+4047
+
+
+
+" указатель на интерфейс динамического масси"
+ва опор допуска формы ksDynamicArray типа
+TOLERANCEBRANCH_ARR.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Метод обнуляет все параметры.
+2. Создается динамический массив branchArr типа TOLERANCEBRANCH_ARR.
+
+SetBranchArr  Установить указатель на интерфейс 
+динамического массива опор допуска формы
+Интерфейс...
+Синтаксис Automation:
+BOOL SetBranchArr (LPDISPATCH pBranchArr);
+Входной параметр:
+
+pBranchArr " указатель на интерфейс динамического массива опор 
+допуска формы ksDynamicArray типа 
+TOLERANCEBRANCH_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Стрелка направления взгляда (Интерфейс 
+ksViewPointerParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_VIEWPOINTER.htm
+Интерфейс параметров стрелки направления взгляда.
+Аналог данных параметров при использовании API экспортных функций "
+ViewPointerParam.
+4048
+
+
+
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksViewPointerParam  свойства
+
+str  Текст на стрелке направления взгляда
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+str = iViewPointerParam.str Получить свойство (* )
+iViewPointerParam.str = str Установить свойство (* )
+str = iViewPointerParam.GetStr() Получить свойство (**)
+iViewPointerParam.SetStr(str) Установить свойство (**)
+
+Примечание:
+Свойство используется при ksViewPointerParam::type = 0 (т.е. при способе задания над"
+писи на линии в виде строки).
+
+style  Стиль текста
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,  
+номер пользовательского стиля.
+
+Системные стили текстов...
+Синтаксис Automation:
+
+style = iViewPointerParam.style Получить свойство (* )
+iViewPointerParam.style = style Установить свойство (* )
+style = iViewPointerParam.GetStyle() Получить свойство (**)
+iViewPointerParam.SetStyle(style) Установить свойство (**)
+
+type  Способ задания надписи на стрелке направления 
+взгляда
+Интерфейс...
+Тип данных: short
+Значения свойства:
+4049
+
+
+
+0 " текст в виде строки (используется Значение свойства
+ksViewPointerParam),
+
+1 " динамический массив компонент текста (использует"
+ся массив pTextline).
+
+Синтаксис Automation:
+
+type = iViewPointerParam.type Получить свойство (* )
+iViewPointerParam.type = type Установить свойство (* )
+type = iViewPointerParam.GetType() Получить свойство (**)
+iViewPointerParam.SetType(type) Установить свойство (**)
+
+Смотрите также
+ksViewPointerParam::SetpTextline
+ksViewPointerParam::GetpTextline
+
+x1, y1  Координаты вершины ("острия") стрелки 
+направления взгляда
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x1 = iViewPointerParam.x1 Получить свойство (* )
+iViewPointerParam.x1 = x1 Установить свойство (* )
+x1 = iViewPointerParam.GetX1() Получить свойство (**)
+iViewPointerParam.SetX1(x1) Установить свойство (**)
+
+x2, y2  Координаты конечной точки стрелки направления 
+взгляда
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x2 = iViewPointerParam.x2 Получить свойство (* )
+iViewPointerParam.x2 = x2 Установить свойство (* )
+x2 = iViewPointerParam.GetX2() Получить свойство (**)
+iViewPointerParam.SetX2(x2) Установить свойство (**)
+
+хt, yt  Координаты точки привязки текста
+Интерфейс...
+Тип данных: double
+4050
+
+
+
+Синтаксис Automation:
+
+xt = iViewPointerParam.xt Получить свойство (* )
+iViewPointerParam.xt = xt Установить свойство (* )
+xt = iViewPointerParam.GetXt() Получить свойство (**)
+iViewPointerParam.SetXt(xt) Установить свойство (**)
+
+ksViewPointerParam  методы
+
+GetpTextline  Получить указатель на интерфейс 
+динамического массива компонент текста ksDynamicArray 
+типа TEXT_ITEM_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpTextline();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray компонент текста типа
+TEXT_ITEM_ARR.
+
+Примечание:
+Массив используется при ksViewPointerParam::type = 1 (т.е. при способе задания надписи
+на линии).
+Смотрите также
+ksTextItemParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Метод обнуляет все параметры.
+2. Свойство ksViewPointerParam::type = 1.
+3. Создается динамический массив pTextItem типа TEXT_ITEM_ARR.
+4051
+
+
+
+SetpTextline  Установить указатель на интерфейс 
+динамического массива компонент текста ksDynamicArray 
+типа TEXT_ITEM_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpTextline (LPDISPATCH pTextline);
+Входной параметр:
+
+pTextline " указатель на интерфейс динамического
+массива ksDynamicArray компонент текста
+типа TEXT_ITEM_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Массив используется при ksViewPointerParam::type = 1 (т.е. при способе задания надписи
+на линии).
+Смотрите также: ksTextItemParam
+
+Выносной элемент (Интерфейс ksRemoteElementParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_CREATE_MAIN_REMOTE_VIEW.htm
+Интерфейс параметров объекта "выносной элемент".
+Аналог данных параметров при использовании API экспортных функций "
+RemoteElementParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+
+ksRemoteElementParam  свойства
+
+signType  Тип значка из LtRemoteElmSignType
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+signType = iRemoteElementParam.signType Получить свойство (* )
+4052
+
+
+
+iRemoteElementParam.signType = signType Установить свойство (* )
+signType = iRemoteElementParam.GetSignType() Получить свойство (**)
+iRemoteElementParam.SetSignType(signType) Установить свойство (**)
+
+height  Высота выносного элемента (для прямоугольника и 
+скругленного прямоугольника)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+height = iRemoteElementParam.height Получить свойство (* )
+iRemoteElementParam.height = height Установить свойство (* )
+height = iRemoteElementParam.GetHeight() Получить свойство (**)
+iRemoteElementParam.SetHeight(height) Установить свойство (**)
+
+radius  Радиус окружности (для окружности)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+radius = iRemoteElementParam.radius Получить свойство (* )
+iRemoteElementParam.radius = radius Установить свойство (* )
+radius = iRemoteElementParam.GetRadius() Получить свойство (**)
+iRemoteElementParam.SetRadius(radius) Установить свойство (**)
+
+shelfX  Координата x начала полки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+shelfX = iRemoteElementParam.shelfX Получить свойство (* )
+iRemoteElementParam.shelfX = shelfX Установить свойство (* )
+shelfX = iRemoteElementParam.GetShelfX() Получить свойство (**)
+iRemoteElementParam.SetShelfX(shelfX) Установить свойство (**)
+
+shelfY  Координата y начала полки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+shelfY = iRemoteElementParam.shelfY Получить свойство (* )
+iRemoteElementParam.shelfY = shelfY Установить свойство (* )
+shelfY = iRemoteElementParam.GetShelfY() Получить свойство (**)
+4053
+
+
+
+iRemoteElementParam.SetShelfY(shelfY) Установить свойство (**)
+
+shelfDir  Направление полки
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+1 " вправо,
+"1 " влево,
+2 " вверх,
+3 " вниз.
+
+Синтаксис Automation:
+
+shelfDir = iRemoteElementParam.shelfDir Получить свойство (* )
+iRemoteElementParam.shelfDir = shelfDir Установить свойство (* )
+shelfDir = iRemoteElementParam.GetShelfDir() Получить свойство (**)
+iRemoteElementParam.SetShelfDir(shelfDir) Установить свойство (**)
+
+smooth  Радиус скругления (для прямоугольника)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+iRemoteElementParam.smooth Получить свойство (* )
+iRemoteElementParam.smooth = smooth Установить свойство (* )
+smooth = iRemoteElementParam.GetSmooth() Получить свойство (**)
+iRemoteElementParam.SetSmooth(smooth) Установить свойство (**)
+
+style  Стиль текста
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+style = iRemoteElementParam.style Получить свойство (* )
+iRemoteElementParam.style = style Установить свойство (* )
+style = iRemoteElementParam.GetStyle() Получить свойство (**)
+iRemoteElementParam.SetStyle( style ) Установить свойство (**)
+
+Примечание:
+Если style == INDICATIN_TEXT_LINE_ARR, создается динамический массив строк текста
+TEXT_LINE_ARR, структура которого описана в StructTextLineParam. В противном случае
+создается динамический массив указателей на строки символов CHAR_STR_ARR.
+4054
+
+
+
+width  Ширина выносного элемента (для прямоугольника и 
+скругленного прямоугольника)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+width = iRemoteElementParam.width Получить свойство (* )
+iRemoteElementParam.width = width Установить свойство (* )
+width = iRemoteElementParam.GetWidth() Получить свойство (**)
+iRemoteElementParam.SetWidth(Width) Установить свойство (**)
+
+x  Координата х центра выносного элемента
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x = iRemoteElementParam.x Получить свойство (* )
+iRemoteElementParam.x = x Установить свойство (* )
+x = iRemoteElementParam.GetX() Получить свойство (**)
+iRemoteElementParam.SetX(x) Установить свойство (**)
+
+y  Координата y центра выносного элемента
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+y = iRemoteElementParam.y Получить свойство (* )
+iRemoteElementParam.y = y Установить свойство (* )
+y = iRemoteElementParam.GetY() Получить свойство (**)
+iRemoteElementParam.SetY(y) Установить свойство (**)
+
+ksRemoteElementParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init (long style);
+Входной параметр:
+
+(long) style " стиль текста.
+4055
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+
+1. Метод обнуляет поля структуры параметров RemoteElementParam, которую обслужива"
+ет.
+
+2. Если style == INDICATIN_TEXT_LINE_ARR, то создается динамический массив строк тек"
+ста TEXT_LINE_ARR. Его структура описывается TextLineParam.
+
+3. Если style == 0, то создается динамический массив указателей на строки символов
+CHAR_STR_ARR.
+
+GetPText  Получить указатель на интерфейс динамического 
+массива строк текста
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPText();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray.
+
+Примечания:
+
+1. Если style == INDICATIN_TEXT_LINE_ARR, то тип динамического массива будет
+TEXT_LINE_ARR.
+
+2. Если style == 0, то тип динамического массива будет CHAR_STR_ARR.
+
+SetPText  Установить динамический массив строк текста
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPText (LPDISPATCH strArr)
+Входной параметр:
+
+strArr " указатель на интерфейс динамического
+массива ksDynamicArray.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+4056
+
+
+
+Примечания:
+
+1. Если style == INDICATIN_TEXT_LINE_ARR, то тип динамического массива будет
+TEXT_LINE_ARR.
+
+2. Если style == 0, то тип динамического массива будет CHAR_STR_ARR.
+
+Знак изменения (Интерфейс ksChangeLeaderParam)
+Интерфейс параметров линиивыноски для обозначения изменения.
+Аналог данных параметров при использовании API экспортных функций "
+ChangeLeaderParam.
+Описание.
+Интерфейс позволяет задать параметры для создания обозначения изменения (см. фун"
+кцию ksDocument2D::ksChangeLeader, а также используется для получения и изменения
+параметров обозначения изменения (см. функции ksDocument2D::ksGetObjParam и
+ksDocument2D::ksSetObjParam).
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksChangeLeaderParam  свойства
+
+leaderLength  Длина ответвлений
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+leaderLength = ksChangeLeaderParam.leaderLength Получить свойство (* )
+ksChangeLeaderParam.leaderLength = leaderLength Установить свойство (* )
+leaderLength = ksChangeLeaderParam.GetleaderLength() Получить свойство (**)
+ksChangeLeaderParam.SetleaderLength( dirX ) Установить свойство (**)
+
+Примечание:
+Если leaderLength >= 0, длина всех ответвлений одинакова и равна leaderLength.
+Если leaderLength < 0 " ответвление на всю длину. Длина для каждого ответвления зада"
+ется координатами конца ответвления.
+
+signHeight  Высота или диаметр значка
+Интерфейс...
+Тип данных: double
+4057
+
+
+
+Синтаксис Automation:
+
+signHeight = ksChangeLeaderParam.signHeight Получить свойство (* )
+ksChangeLeaderParam.signHeight = signHeight Установить свойство (* )
+signHeight = ksChangeLeaderParam.GetsignHeight() Получить свойство (**)
+ksChangeLeaderParam.SetsignHeight(signHeight) Установить свойство (**)
+
+signType  Тип значка
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " квадрат,
+1 " окружность,
+2 " квадратные скобки,
+3 " круглые скобки,
+4 " угловые скобки.
+
+Синтаксис Automation:
+
+signType = ksChangeLeaderParam.signType Получить свойство (* )
+ksChangeLeaderParam.signType = signType Установить свойство (* )
+signType = ksChangeLeaderParam.GetSignType() Получить свойство (**)
+ksChangeLeaderParam.SetSignType( signType ) Установить свойство (**)
+
+style  Стиль текста
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,  
+номер пользовательского стиля.
+INDICATIN_TEXT_LINE_ARR " в этом случае текст задается массивом строк, и стиль 
+
+текста может быть указан индивидуально для каждой 
+строки.
+
+Системные стили текстов...
+Синтаксис Automation:
+
+style = iChangeLeaderParam.style Получить свойство (* )
+iChangeLeaderParam.style = style Установить свойство (* )
+style = iChangeLeaderParam.GetStyle() Получить свойство (**)
+iChangeLeaderParam.SetStyle( style ) Установить свойство (**)
+4058
+
+
+
+Примечание:
+Если style = INDICATIN_TEXT_LINE_ARR, то динамический массив pText " типа
+TEXT_LINE_ARR. В остальных случаях " типа CHAR_STR_ARR.
+
+x  Координата X базовой точки обозначения изменения
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x = ksChangeLeaderParam.x Получить свойство (* )
+ksChangeLeaderParam.x = x Установить свойство (* )
+x = ksChangeLeaderParam.GetX() Получить свойство (**)
+ksChangeLeaderParam.SetX(x) Установить свойство (**)
+
+y  Координата Y базовой точки обозначения изменения
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+y = ksChangeLeaderParam.y Получить свойство (* )
+ksChangeLeaderParam.y = y Установить свойство (* )
+y = ksChangeLeaderParam.GetY() Получить свойство (**)
+ksChangeLeaderParam.SetY(y) Установить свойство (**)
+
+ksChangeLeaderParam  методы
+
+GetpPolyline  Получить указатель на интерфейс 
+динамического массива ответвлений линиивыноски 
+ksDynamicArray типа POLYLINE_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpPolyline();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа TEXT_LINE_ARR.
+
+Примечание:
+В общем случае одно ответвление " это ломаная линия. Первый узел " базовая точка (ее
+в массив помещать не нужно, т.к. она общая для всех ответвлений), остальные узлы " из"
+ломы (могут отсутствовать), последний узел " конец ответвления (указывает на объект).
+4059
+
+
+
+Смотрите также: ksMathPointParam
+
+GetpTextline  Получить указатель на интерфейс 
+динамического массива строк текста знака изменения 
+ksDynamicArray типа TEXT_LINE_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpTextline();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа TEXT_LINE_ARR.
+
+Смотрите также: ksTextLineParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Метод обнуляет все параметры.
+2. Создается динамический массив pTextline типа TEXT_LINE_ARR.
+3. Создается динамический массив pPolytline типа POLYLINE_ARR.
+
+SetpPolyline  Установить указатель на интерфейс 
+динамического массива ответвлений линиивыноски 
+ksDynamicArray типа POLYLINE_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpPolyline (LPDISPATCH pPolyline);
+Входной параметр:
+
+pPolyline " указатель на интерфейс динамического массива 
+ksDynamicArray типа TEXT_LINE_ARR.
+4060
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+В общем случае одно ответвление " это ломаная линия. Первый узел " базовая точка (ее
+в массив помещать не нужно, т.к. она общая для всех ответвлений), остальные узлы " из"
+ломы (могут отсутствовать), последний узел " конец ответвления (указывает на объект).
+Смотрите также:
+ ksMathPointParam
+
+SetpTextline  Установить указатель на интерфейс 
+динамического массива текста знака изменения 
+ksDynamicArray типа TEXT_LINE_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpTextline (LPDISPATCH pTextline);
+Входной параметр:
+
+pTextline " указатель на интерфейс динамического массива 
+ksDynamicArray типа TEXT_LINE_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также: ksTextLineParam
+
+Технические требования (Интерфейс 
+ksTechnicalDemandParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/413_Glava47_Tekhnicheskie_trebo.htm
+Интерфейс параметров технических требований.
+Аналог данных параметров при использовании API экспортных функций "
+TechnicalDemandParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+4061
+
+
+
+ ksTechnicalDemandParam  свойства
+
+strCount  Количество строк в технических требованиях
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+strCount = iTechnicalDemandParam.strCount Получить свойство (* )
+iTechnicalDemandParam.strCount = strCount Установить свойство (* )
+strCount = iTechnicalDemandParam.GetStrCount() Получить свойство (**)
+iTechnicalDemandParam.SetStrCount( strCount ) Установить свойство (**)
+
+style  Стиль текста
+Интерфейс...
+Тип данных: long
+Системные стили текста...
+Синтаксис Automation:
+
+style = iTechnicalDemandParam.style Получить свойство (* )
+iTechnicalDemandParam.style = style Установить свойство (* )
+style = iTechnicalDemandParam.GetStyle() Получить свойство (**)
+iTechnicalDemandParam.SetStyle( style ) Установить свойство (**)
+
+ ksTechnicalDemandParam  методы
+
+GetPGab  Получить указатель на интерфейс динамического 
+массива ksDynamicArray параметров габаритных 
+прямоугольников типа RECT_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPGab();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray параметров габаритных пря"
+моугольников типа RECT_ARR.
+
+Смотрите также: ksRectParam
+4062
+
+
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод обнуляет все параметры технических требований.
+
+SetPGab  Установить динамический массив параметров 
+ksDynamicArray габаритных прямоугольников типа 
+RECT_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPGab(LPDISPATCH pGab);
+Входной параметр:
+
+pGab " указатель на интерфейс динамического масси"
+ва ksDynamicArray параметров габаритных пря"
+моугольников типа RECT_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Знак неуказанной шероховатости(Интерфейс 
+ksSpecRoughParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/363_41_3_Znak_neukazannoj_shero.htm
+Интерфейс параметров знака неуказанной шероховатости.
+Аналог данных параметров при использовании API экспортных функций "
+SpecRoughParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+4063
+
+
+
+Смотрите также: KompasObject
+
+ksSpecRoughParam  свойства
+
+s  Текст
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+s = iSpecRoughParam.s Получить свойство (* )
+iSpecRoughParam.s = s Установить свойство (* )
+s = iSpecRoughParam.GetS() Получить свойство (**)
+iSpecRoughParam.SetS( s ) Установить свойство (**)
+
+sign  Тип знака неуказанной шероховатости
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " вид обработки не устанавливается,
+1 " обработка удалением слоя материала,
+2 " обработка без удаления слоя материала.
+
+Синтаксис Automation:
+
+sign = iSpecRoughParam.sign Получить свойство (* )
+iSpecRoughParam.sign = sign Установить свойство (* )
+sign = iSpecRoughParam.GetSign() Получить свойство (**)
+iSpecRoughParam.SetSign( sign ) Установить свойство (**)
+
+style  Номер стиля текста
+Интерфейс...
+Тип данных: long
+Системные стили текста...
+Синтаксис Automation:
+
+style = iSpecRoughParam.style Получить свойство (* )
+iSpecRoughParam.style = style Установить свойство (* )
+style = iSpecRoughParam.GetStyle() Получить свойство (**)
+iSpecRoughParam.SetStyle (style) Установить свойство (**)
+4064
+
+
+
+t  Признак наличия знака в скобках
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+FALSE " знака нет,
+TRUE " знак есть.
+
+Синтаксис Automation:
+
+t = iSpecRoughParam.t Получить свойство (* )
+iSpecRoughParam.t = t Установить свойство (* )
+t = iSpecRoughParam.GetT() Получить свойство (**)
+iSpecRoughParam.SetT( t ) Установить свойство (**)
+
+ksSpecRoughParam  методы
+
+Init Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры знака неуказанной шероховатости.
+
+Интерфейс параметров копирования объекта 
+(Интерфейс ksCopyObjectParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_COPY_PROPERTY.htm
+Интерфейс параметров копирования объекта графического документа.
+Аналог данных параметров при использовании API экспортных функций "
+CopyObjectParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+4065
+
+
+
+ksCopyObjectParam  свойства
+angle  Угол поворота в градусах
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+angle = iCopyObjParam.angle Получить свойство (* )
+iCopyObjParam.angle = angle Установить свойство (* )
+angle = iCopyObjParam.GetAngle() Получить свойство (**)
+iCopyObjParam.SetAngle(angle) Установить свойство (**)
+
+attrCopy  Признак копирования атрибутов
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " копировать атрибуты,
+FALSE " не копировать атрибуты.
+
+Синтаксис Automation:
+
+attrCopy = iCopyObjParam.attrCopy Получить свойство (* )
+iCopyObjParam.attrCopy = attrCopy Установить свойство (* )
+attrCopy = iCopyObjParam.GetAttrCopy() Получить свойство (**)
+iCopyObjParam.SetAttrCopy(attrCopy) Установить свойство (**)
+
+dimLineScale  Признак масштабирования выносных 
+линий
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " выносные линии масштабировать,
+FALSE " выносные линии не масштабировать.
+
+Синтаксис Automation:
+
+dimLineScale = iCopyObjParam.dimLineScale Получить свойство (* )
+iCopyObjParam.dimLineScale = dimLineScale Установить свойство (* )
+dimLineScale = iCopyObjParam.GetDimLineScale() Получить свойство (**)
+iCopyObjParam.SetDimLineScale(dimLineScale) Установить свойство (**)
+4066
+
+
+
+hyperLinksCopy  Копировать ссылки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+hyperLinksCopy = Object.hyperLinksCopy Получить свойство (* )
+Object.hyperLinksCopy = hyperLinksCopy Установить свойство (* )
+hyperLinksCopy = Object.GetHyperLinksCopy() Получить свойство (**)
+Object.SetНyperLinksCopy( hyperLinksCopy ) Установить свойство (**)
+
+Значения свойства:
+
+TRUE " копировать ссылки,
+FALSE " не копировать ссылки.
+
+objRef  Указатель на копируемый объект, группу, вид, 
+слой
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+objRef = iCopyObjParam.objRef Получить свойство (* )
+iCopyObjParam.objRef = objRef Установить свойство (* )
+ objRef = iCopyObjParam.GetObjRef() Получить свойство (**)
+iCopyObjParam.SetObjRef(objRef) Установить свойство (**)
+
+scale  Масштаб
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+scale = iCopyObjParam.scale Получить свойство (* )
+iCopyObjParam.scale = scale Установить свойство (* )
+scale = iCopyObjParam.GetScale() Получить свойство (**)
+iCopyObjParam.SetScale(scale) Установить свойство (**)
+
+spcObjCopy  Копировать объекты спецификации
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+4067
+
+
+
+objRef = iCopyObjParam.objRef Получить свойство (* )
+iCopyObjParam.objRef = objRef Установить свойство (* )
+ objRef = iCopyObjParam.GetObjRef() Получить свойство (**)
+iCopyObjParam.SetObjRef(objRef) Установить свойство (**)
+
+Значения свойства:
+
+TRUE " копировать объекты спецификации,
+FALSE " не копировать объекты спецификации.
+
+storagesCopy  Копировать пользовательские данные и 
+свойства
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+storagesCopy = Object.storagesCopy Получить свойство (* )
+Object.storagesCopy = storagesCopy Установить свойство (* )
+storagesCopy = Object.GetStoragesCopy() Получить свойство (**)
+Object.SetStoragesCopy( storagesCopy ) Установить свойство (**)
+
+Значения свойства:
+
+TRUE " копировать пользовательские данные и свойства,
+FALSE " не копировать пользовательские данные и свойства.
+
+xNew, yNew  Координаты точки вставки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+xNew = iCopyObjParam.xNew Получить свойство (* )
+iCopyObjParam.xNew = xNew Установить свойство (* )
+xNew = iCopyObjParam.GetXNew() Получить свойство (**)
+iCopyObjParam.SetXNew(xNew) Установить свойство (**)
+
+Примечание:
+Значения xNew и yNew задаются в системе координат текущего вида.
+4068
+
+
+
+xOld, yOld  Координата базовой точки копируемого 
+объекта
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+xOld = iCopyObjParam.xOld Получить свойство (* )
+iCopyObjParam.xOld = xOld Установить свойство (* )
+xOld = iCopyObjParam.GetXOld() Получить свойство (**)
+iCopyObjParam.SetXOld(xOld) Установить свойство (**)
+
+Примечание:
+Значения xOld и yOld задаются в системе координат текущего вида.
+
+ksCopyObjectParam  методы
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Итератор (Интерфейс ksIterator)
+Интерфейс итератора.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода KompasObject::GetIterator.
+Смотрите также: KompasObject
+
+ksIterator  свойства
+reference  Указатель на итератор
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ref = iIterator.reference Получить свойство (* )
+iIterator.reference = ref Установить свойство (* )
+ref = iIterator.GetReference() Получить свойство (**)
+4069
+
+
+
+iIterator.SetReference(ref) Установить свойство (**)
+
+ksIterator  методы
+ksCreateAttrIterator  Создать итератор для перебора 
+атрибутов объекта
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " CreateAttrIterator.
+Синтаксис Automation:
+BOOL ksCreateAttrIterator(long obj, 
+long key1, 
+long key2, 
+long key3, 
+long key4, 
+double numb);
+Входные параметры:
+
+obj " указатель на объект,
+key1, key2, key3, key4 " ключи для поиска по ключам,
+numb " номер типа атрибута для поиска по номеру.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Если obj = 0, то производится перемещение по объектам с заданным атрибутом внутри
+графического документа.
+
+2. Если obj не равен 0, то объектом может быть объект вида, вид, группа, слой, тогда дви"
+жение будет происходить по атрибутам этого объекта.
+
+3. Если obj не равен 0, то объектом может быть документ, тогда движение будет происхо"
+дить по атрибутам документа.
+
+4. Итератор работает с атрибутами активного документа.
+
+ksCreateIterator  Cоздать итератор для перемещения по 
+объектам документа
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " CreateIterator.
+Синтаксис Automation:
+4070
+
+
+
+BOOL ksCreateIterator (long tipSearch, 
+long parent);
+Входные параметры:
+
+tipSearch " тип объекта,
+parent " указатель на объект (для движения по группе,
+
+внутри макроэлемента, по слою).
+
+Типы объектов и интерфейсы...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Для перемещения по документам, видам, группам, слоям parent = 0.
+2. Передвижение по объектам документа ("навигация") производится в соответствии с
+
+условиями, заданными в специальном блоке параметров. Он содержит тип объектов
+tipSearch, определяющий режим перемещения (например, по видам, по слоям, по всем
+объектам, по объектам заданного типа) и указатель комплексного объекта (макроэле"
+мента, контура, группы) при перемещении по составляющим его объектам. Итератор
+"привязан" к конкретному режиму графического редактора (например, документу, виду),
+поэтому невозможно использовать один и тот же итератор для навигации в разных ви"
+дах, штампах и т.п. Итератор сохраняет свое действие до окончания сеанса работы с би"
+блиотекой. При переходе внутри библиотечной функции под управление КОМПАС"ГРА"
+ФИК после возврата значение всех итераторов будет "сброшено".
+
+3. Итератор работает с атрибутами активного документа.
+
+ksCreateQualityIterator  Создать итератор для 
+перемещения по квалитетам
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksCreateQualityIterator.
+Синтаксис Automation:
+BOOL ksCreateQualityIterator (short system, 
+short withLimitation);
+Входные параметры:
+
+system " система допуска
+1 " система отверстия, 
+0 " система вала,
+4071
+
+
+
+withLimitation " признак учета ограничений, наложенных в системе:
+0 " без учёта ограничений, 
+1 " с учётом ограничений.
+
+Возвращаемое значение:
+
+указатель на итератор " в случае успешного завершения,
+0 " в случае неудачи.
+
+ksCreateSpcIterator  Создать итератор для перебора 
+объектов спецификации
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " CreateSpcIterator.
+Синтаксис Automation:
+BOOL ksCreateSpcIterator (BSTR nameLib, 
+long styleNumb, 
+long spcObjType);
+Входные параметры:
+
+nameLib " имя библиотеки стилей спецификации,
+styleNumb " номер стиля спецификации в библиотеке,
+spcObjType " тип объектов:
+
+0 " базовые,
+1 " вспомогательные,
+2 " базовые и вспомогательные из сортирован"
+ного массива,
+3 " все объекты.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Если функция вызывается в графическом документе, то итератор создается для объек"
+тов, образованных по описанию, определяемому именем библиотеки стилей специфи"
+кации и номером стиля.
+В документе"спецификации параметры nameLib и styleNumb не используются (т.к. все
+объекты в ней создаются по единственному описанию, однозначно определяемому теку"
+щим стилем).
+4072
+
+
+
+ksDeleteIterator  Удалить блок параметров навигации 
+по модели
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " DeleteIterator.
+Синтаксис Automation:
+long ksDeleteIterator();
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+ksMoveAttrIterator  Перемещаться по атрибутам
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " MoveAttrIterator.
+Синтаксис Automation:
+long ksMoveAttrIterator (BSTR ch, 
+long* pObj);
+Входные параметры:
+
+ch " направление перемещения итератора:
+F " первый атрибут,
+N " следующий атрибут,
+
+pObj " указатель на группу.
+
+Возвращаемое значение:
+
+указатель на атрибут " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Если итератор создан для движения по элементам с определенным атрибутом, то pObj "
+указатель на объект с данным атрибутом.
+
+ksMoveIterator  Переместить итератор 
+(позиционироваться на объекте)
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " MoveIterator.
+Синтаксис Automation:
+long ksMoveIterator (BSTR ch);
+4073
+
+
+
+Входной параметр:
+
+ch " направление перемещения итератора:
+F " первый объект,
+N " следующий объект.
+
+Возвращаемое значение:
+
+указатель на объект " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Функция перемещает текущий указатель итератора (блока параметров навигации) на
+очередной объект модели. Режим позиционирования (тип объектов, участвующих в по"
+иске) определяется при создании итератора методом ksCreateIterator.
+При позиционировании на именованную группу она автоматически становится текущей
+(рабочей). К ней будут относиться операции добавления и исключения объектов (при
+исключении всех объектов из именованной группы она автоматически удаляется).
+
+ksMoveQualityIterator  Перемещаться по квалитетам
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksMoveQualityIterator.
+Синтаксис Automation:
+BOOL ksMoveQualityIterator (LPDISPATCH param, 
+short inMM, 
+BSTR ch);
+Входные параметры:
+
+param " указатель на интерфейс параметров квалитета ksQualityContensParam,
+inMM " размерность параметров интервала квалитета minLimit, maxLimit, high, low :
+
+1 " миллиметры, 
+0 " единицы измерения текущего документа.
+
+ch " направление перемещения итератора:
+F " предыдущий квалитет,
+N " следующий квалитет.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+4074
+
+
+
+Хранение данных некоторого типа (Интерфейс 
+ksLtVariant)
+Интерфейс для хранения данных некоторого типа.
+Аналог данных параметров при использовании API экспортных функций " LtVariant 
+Типы данных...
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksLtVariant  свойства
+charVal  Символ
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+charVal = iLtVariant.charVal Получить свойство (* )
+iLtVariant.charVal = charVal Установить свойство (* )
+charVal = iLtVariant.GetCharVal() Получить свойство (**)
+iLtVariant.SetCharVal(charVal) Установить свойство (**)
+
+doubleVal  Двойное вещественное значение
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+doubleVal = iLtVariant.doubleVal Получить свойство (* )
+iLtVariant.doubleVal = doubleVal Установить свойство (* )
+doubleVal = iLtVariant.GetDoubleVal() Получить свойство (**)
+iLtVariant.SetDoubleVal(doubleVal) Установить свойство (**)
+
+floatVal  Вещественное значение
+Интерфейс...
+Тип данных: float
+Синтаксис Automation:
+
+floatVal = iLtVariant.floatVal Получить свойство (* )
+iLtVariant.floatVal = floatVal Установить свойство (* )
+floatVal = iLtVariant.GetFloatVal() Получить свойство (**)
+iLtVariant.SetFloatVal( floatVal ) Установить свойство (**)
+4075
+
+
+
+intVal  Целое
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+intVal = iLtVariant.intVal Получить свойство (* )
+iLtVariant.intVal = intVal Установить свойство (* )
+intVal = iLtVariant.GetIntVal() Получить свойство (**)
+iLtVariant.SetIntVal( intVal ) Установить свойство (**)
+
+longlVal  Длинное целое
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+longVal = iLtVariant.longVal Получить свойство (* )
+iLtVariant.longVal = longVal Установить свойство (* )
+longVal = iLtVariant.GetLongVal() Получить свойство (**)
+iLtVariant.SetLongVal( longVal ) Установить свойство (**)
+
+shortVal  Короткое целое
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+shortVal = iLtVariant.shortVal Получить свойство (* )
+iLtVariant.shortVal = shortVal Установить свойство (* )
+shortVal = iLtVariant.GetShortVal() Получить свойство (**)
+iLtVariant.SetShortVal( shortVal ) Установить свойство (**)
+
+strVal  Строка в 255 символов для типа ltv_Str
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+strVal = iLtVariant.strVal Получить свойство (* )
+iLtVariant.strVal = strVal Установить свойство (* )
+strVal = iLtVariant.GetStrVal() Получить свойство (**)
+iLtVariant.SetStrVal( strVal ) Установить свойство (**)
+4076
+
+
+
+uCharVal  Значение типа byte (беззнаковый char)
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+uCharVal = iLtVariant.uCharVal Получить свойство (* )
+iLtVariant.uCharVal = uCharVal Установить свойство (* )
+uCharVal = iLtVariant.GetUCharVal() Получить свойство (**)
+iLtVariant.SetUCharVal(uCharVal) Установить свойство (**)
+
+uIntVal  Беззнаковое целое
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+uIntVal = iLtVariant.uIntVal Получить свойство (* )
+iLtVariant.uIntVal = uIntVal Установить свойство (* )
+uIntVal = iLtVariant.GetUIntVal() Получить свойство (**)
+iLtVariant.SetUIntVal(uIntVal) Установить свойство (**)
+
+valType  Тип хранимого значения
+Интерфейс...
+Тип данных: short
+Типы данных...
+Синтаксис Automation:
+
+valType = iLtVariant.valType Получить свойство (* )
+valType = iLtVariant.GetValType() Получить свойство (**)
+
+wstrVal  Строка в 255 символов для типа ltv_WStr
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+.wstrVal Получить свойство (* )
+iLtVariant.wstrVal = wstrVal Установить свойство (* )
+.GetwstrVall() Получить свойство (**)
+iChar255.SetStr( str ) Установить свойство (**)
+
+Примечание:
+4077
+
+
+
+Свойство предназначено только для чтения.
+
+ksLtVariant  методы
+Init  Инициализировать параметры
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры.
+
+Параметры, определяемые 
+пользователем(Интерфейс ksUserParam)
+Интерфейс пользовательских параметров.
+Примечания:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Интерфейс используется для передачи массива пользовательских данных:
+
+1. Установить/получить массив значений ячеек таблицы атрибутов.
+Смотрите: ksAttributeParam::SetValues, ksAttributeParam::GetValues.
+
+2. Установить/получить значение ячейки в таблице атрибута.
+Смотрите: ksAttributeObject::ksSetAttrValue, ksAttributeObject::ksSetAttrValue.
+
+3. Установить/получить данные строки в таблице атрибута.
+Смотрите: ksAttributeObject::ksGetAttrRow, ksAttributeObject::ksSetAttrRow.
+
+4. Добавить строку к табличному атрибуту.
+Смотрите: ksAttributeObject::ksAddAttrRow.
+
+5. Установить/получить пользовательские параметры макроэлемента.
+Смотрите: ksDocument2D::ksSetMacroParam , ksDocument2D::ksGetMacroParam.
+
+6. Получить запись из базы данных.
+Смотрите: ksDataBaseObject::ksReadRecord.
+
+7. Изменить значение компоненты в колонке.
+Смотрите: ksSpecification::ksSpcChangeValue.
+
+8. Установить/получить пользовательские параметры компоненты (модели подсборки).
+9. Установить/получить пользовательские параметры макроэлемента 3D.
+
+Смотрите: ksMacro3DDefinition::SetUserParam, ksMacro3DDefinition::GetUserParam.
+4078
+
+
+
+10.  Для поддержки Unicode в интерфейс ksLtVariant добавлено свойство ksLtVariant::wstrVal
+.В динамический массив для строковых данных требуется добавлять однотипные типы
+строковых параметров. Они должны быть или все типа ltv_WStr или все типа ltv_Str. Это
+критично при работе с атрибутами.
+При получении пользовательских параметров требуется использовать тот же тип, что и

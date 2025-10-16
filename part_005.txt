@@ -1,0 +1,2533 @@
+211
+
+
+
+ 
+
+Синтаксис COM:
+
+Object.get_CurrentIndex( Получить свойство
+&CurrentIndex )
+Object.put_CurrentIndex( Установить свойство
+CurrentIndex )
+
+Свойство позволяет устанавливать и получать индекс текущего стиля.
+
+IPropertyStyleList  методы
+
+Add  Добавить массив стилей в список
+Интерфейс...
+Синтаксис Automation:
+BOOL Add( VARIANT Styles ); 
+Синтаксис COM:
+HRESULT Add( VARIANT Styles, BOOL * Result );
+Входные параметры:
+
+Styles  " список стилей.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+Примечание:
+Если добавляется один стиль, его можно передать как VT_I4.
+Если требуется добавить несколько стилей, то нужно создать массив VT_ARRAY | VT_I4.
+
+ClearList  Очистить список
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearList(); 
+Синтаксис COM:
+HRESULT ClearList( BOOL * Result );
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+Find  Найти индекс стиля по значению
+Интерфейс...
+212
+
+
+
+ 
+
+Синтаксис Automation:
+long Find( long Val ); 
+Синтаксис COM:
+HRESULT Find( long Val, long * Result );
+Возвращаемое значение:
+
+индекс значения в списке " в случае удачи,
+"1  " если значение не найдено.
+
+Интерфейс IPropertyTextButton
+Интерфейс элемента управления Панели свойств типа Кнопка с текстом.
+
+Элемент панели свойств
+Иерархия:
+IKompasAPIObject
+
+IPropertyControl
+IPropertyTextButton
+
+Примечание:
+
+1. Данный интерфейс можно получить через коллекцию элементов управления Панели
+свойств IPropertyControls. 
+
+2. При нажатии на кнопку вызывается событие ksPropertyManagerNotify::ControlCommand.
+3. Элемент управления работает как обычная кнопка со стилем BS_PUSHBUTTON.
+
+Интерфейс IPropertyUserControl
+События...
+Интерфейс элемента управления Панели свойств Пользовательский элемент
+управления.
+Иерархия:
+IKompasAPIObject
+
+IPropertyControl
+IPropertyUserControl
+
+Данный элемент управления позволяет отображать на Панели свойств нестандартные
+элементы управления и их наборы. В качестве вложенного нестандартного элемента
+управления используется элемент управления OCX. Используемый элемент управления
+OCX должен быть зарегистрирован в реестре Windows.
+После создания элемента управления OCX библиотеке посылается событие
+ksPropertyUserControlNotify::CreateOCX. В этом событии передается Dispatch"интерфейс
+элемента управления OCX и библиотека может подписаться на события от этого элемен"
+та управления.
+213
+
+
+
+ 
+
+Перед удалением элемента управления OCX библиотеке посылается событие
+ksPropertyUserControlNotify::DestroyOCX. При обработке этого события библиотека
+должна отписаться от событий этого элемента управления.
+Примечание:
+Данный интерфейс можно получить через коллекцию элементов управления Панели
+свойств IPropertyControls.
+
+ IPropertyUserControl  свойства
+
+AutoSize  Автоматический расчет высоты контрола. 
+TRUE  Растягивать на всю доступную область
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoSize = Object.AutoSize Получить свойство (* )
+Object.AutoSize = AutoSize Установить свойство (* )
+AutoSize = Object.GetAutoSize() Получить свойство(**)
+Object.SetAutoSize( AutoSize ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AutoSize( &AutoSize ) Получить свойство
+Object.put_AutoSize(  AutoSize ) Установить свойство
+
+FixHeight  Зафиксировать высоту элемента управления
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+FixHeight = iObject.FixHeight Получить свойство (* )
+iObject.FixHeight = FixHeight Установить свойство (* )
+FixHeight = iObject.GetFixHeight() Получить свойство(**)
+iObject.SetFixHeight(FixHeight) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_FixHeight(&FixHeight) Получить свойство
+iObject">put_FixHeight(FixHeight) Установить свойство
+
+Значение свойства:
+TRUE " размер элемента управления по высоте зафиксирован и равен значению, уста"
+новленному в свойстве Height " Высота элемента управления.
+Примечание:
+214
+
+
+
+ 
+
+По умолчанию свойство имеет значение FALSE " размер элемента управления по высоте
+не зафиксирован.
+
+FixWidth  Зафиксировать ширину элемента управления
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+FixWidth = iObject.FixWidth Получить свойство (* )
+iObject.FixWidth = FixWidth Установить свойство (* )
+FixWidth = iObject.GetFixWidth() Получить свойство(**)
+iObject.SetFixWidth(FixWidth) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_FixWidth(&FixWidth) Получить свойство
+iObject">put_FixWidth(FixWidth) Установить свойство
+
+Значение свойства:
+TRUE " размер элемента управления по ширине зафиксирован и равен значению, уста"
+новленному в свойстве Width " Ширина элемента управления.
+Примечание:
+По умолчанию свойство имеет значение FALSE " размер элемента управления по ширине
+не зафиксирован. Свойство работает при горизонтальном размещении Панели свойств.
+
+Height  Высота элемента управления
+Интерфейс...
+Тип данных: long.
+Синтаксис Automation:
+
+Height = iObject.Height Получить свойство (* )
+iObject.Height = Height Установить свойство (* )
+Height = iObject.GetHeight() Получить свойство(**)
+iObject.SetHeight (Height) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Height (&Height) Получить свойство
+iObject">put_Height (Height) Установить свойство
+
+Значение свойства:
+
+Высота элемента управления в пикселах.
+215
+
+
+
+ 
+
+Width  Ширина элемента управления
+Интерфейс...
+Тип данных: long.
+Синтаксис Automation:
+
+Width = iObject.Width Получить свойство (* )
+iObject.Width = Width Установить свойство (* )
+Width = iObject.GetWidth() Получить свойство(**)
+iObject.SetWidth (Width) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Width (&Width) Получить свойство
+iObject">put_Width (Width) Установить свойство
+
+Значение свойства:
+
+Ширина элемента управления в пикселах.
+
+Примечание:
+Используется только для Панели свойств в горизонтальном положении. В вертикальном
+определяется шириной самой Панели свойств.
+
+ IPropertyUserControl  методы
+
+SetOCXControl  Установить progID элемента управления 
+OCX
+Интерфейс...
+Синтаксис Automation:
+void SetOCXControl (LPCTSTR progID);
+Синтаксис COM:
+HRESULT SetOCXControl ([in] BSTR progID);
+Входные параметры:
+
+progID " строка progID элемента управления OCX.
+
+Примечание:
+OCX контрол должен быть зарегистрирован в реестре Windows.
+
+Интерфейс IPropertyManager
+Интерфейс событий...
+216
+
+
+
+ 
+
+Справка системы КОМПАС...
+kompas.chm::/CM_2DPROCESSBAR_VISIBLE.htm
+Интерфейс Панели свойств.
+Иерархия:
+IKompasAPIObject
+
+IPropertyManager
+КОМПАС"3D использует стандартную Панель свойств, которая позволяет задавать пара"
+метры процессов. Библиотеки КОМПАС могут добавлять вкладки в стандартную Панель
+свойств и создавать собственные Панели свойств. Их состав формируется при подклю"
+чении библиотеки или выполнении библиотечной команды. После отключения библио"
+теки или завершения работы команды созданные ими элементы управления исчезают.
+Сигналом для этого служат изменения активности документов или процессов. Чтобы от"
+слеживать эти изменения активности, библиотека должна быть подписана на соответст"
+вующие события. При изменении состояния элементов управления Панели свойств, со"
+зданных библиотекой, система передает управление библиотеке посредством вызовов
+событий.
+Для стандартной Панели свойств все свойства данного интерфейса доступны только по
+чтению. Библиотека может управлять состоянием только собственной Панели свойств
+либо вкладок на стандартной. Остальные вкладки и их элементы управления будут недо"
+ступны для изменения.
+Панель свойств или вкладки на стандартной Панели свойств, созданные библиотекой,
+будут удалены после освобождения библиотекой их интерфейса. Чтобы эти элементы
+управления были доступны, библиотека должна держать ссылку на интерфейс Панели
+свойств все время от начала до завершения ее использования.
+Панель свойств библиотеки может быть расположена только слева, справа или нахо"
+диться в плавающем состоянии.
+Примечание:
+Создать панель свойств и получить данный интерфейс можно от интерфейса приложе"
+ния IApplication с помощью свойства IApplication::CreatePropertyManager.
+
+IPropertyManager  свойства
+
+AutoHideMode  Свернутость Панели свойств
+Функция не поддерживается
+Интерфейс...
+Тип данных: BOOL.
+Синтаксис Automation:
+
+AutoHideMode = iObject.AutoHideMode; Получить свойство (* )
+iObject.AutoHideMode = AutoHideMode; Установить свойство (* )
+AutoHideMode = Получить свойство(**)
+iObject.GetAutoHideMode();
+iObject.SetAutoHideMode( AutoHideMode ); Установить свойство (**)
+217
+
+
+
+ 
+
+Синтаксис COM:
+
+iObject">get_AutoHideMode( Получить свойство
+&AutoHideMode );
+iObject">put_AutoHideMode( Установить свойство
+AutoHideMode );
+
+Значения свойства:
+
+TRUE " панель свернута,
+FALSE " панель развернута.
+
+Примечание:
+Позволяет получать и устанавливать свойство, определяющее свернута панель или нет.
+
+Caption  Заголовок Панели свойств
+Интерфейс...
+Тип данных: BSTR (строка).
+Синтаксис Automation:
+
+Caption = iObject.Caption Получить свойство (* )
+iObject.Caption = Caption Установить свойство (* )
+Caption = iObject.GetCaption() Получить свойство(**)
+iObject.SetCaption (Caption) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Caption (&Caption) Получить свойство
+iObject">put_Caption (Caption) Установить свойство
+
+Примечание:
+С помощью данного свойства можно получить и изменить заголовок Панели свойств.
+
+EnterButtonIconType  Тип иконки для кнопки Cоздать
+Интерфейс...
+Тип данных: из перечисления ksEnterButtonIconTypeEnum
+Синтаксис Automation:
+
+EnterButtonIconType = Получить свойство (* )
+Object.EnterButtonIconType
+Object.EnterButtonIconType = Установить свойство (* )
+EnterButtonIconType
+EnterButtonIconType = Получить свойство(**)
+Object.GetEnterButtonIconType()
+218
+
+
+
+ 
+
+Object.SetEnterButtonIconType( Установить свойство (**)
+EnterButtonIconType )
+
+Синтаксис COM:
+
+Object.get_EnterButtonIconType( Получить свойство
+&EnterButtonIconType )
+Object.put_EnterButtonIconType(  Установить свойство
+EnterButtonIconType )
+
+Label  Заголовок 2 панели свойств
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ Label = Object.Label Получить свойство (* )
+Object.Label = Label Установить свойство (* )
+Label = Object.GetLabel() Получить свойство(**)
+Object.SetLabel( Label ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Label( &Label ) Получить свойство
+Object.put_Label(  Label ) Установить свойство
+
+Layout  Положение Панели свойств (вверху, внизу, 
+слева, справа, плавает)
+Интерфейс...
+Тип данных: положение Панели свойств из перечисления PropertyManagerLayout.
+Синтаксис Automation:
+
+Layout = iObject.Layout Получить свойство (* )
+iObject.Layout = Layout Установить свойство (* )
+Layout = iObject.GetLayout() Получить свойство(**)
+iObject.SetLayout (Layout) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Layout (&Layout) Получить свойство
+iObject">put_Layout (Layout) Установить свойство
+
+Примечание:
+С помощью данного свойства можно получить и изменить положение Панели свойств.
+219
+
+
+
+ 
+
+PropertyTabs  Коллекция закладок Панели свойств
+Интерфейс...
+Тип данных: указатель на интерфейс IPropertyTabs.
+Синтаксис Automation:
+
+PropertyTabs = iObject.PropertyTabs Получить свойство (* )
+PropertyTabs = iObject.GetPropertyTabs() Получить свойство(**)
+
+Синтаксис COM:
+
+iObject">get_PropertyTabs (&PropertyTabs) Получить свойство
+
+Примечание:
+
+1. Свойство только для чтения.
+2. Позволяет получить доступ к вкладкам Панели свойств.
+
+ResModule  Модуль с описанием пользовательской 
+спецпанели
+Интерфейс...
+Тип данных: VARIANT ( LONG_PTR или BSTR).
+Синтаксис Automation:
+
+ResModule = Object.ResModule Получить свойство (* )
+Object.ResModule = ResModule Установить свойство (* )
+ResModule = Object.GetResModule() Получить свойство(**)
+Object.SetResModule( ResModule ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ResModule( &ResModule ) Получить свойство
+Object.put_ResModule(  ResModule ) Установить свойство
+
+Значение свойства:
+
+HINSTANCE (тип значения  LONG_PTR ) " полный путь к файлу (тип значения BSTR) dll"
+модуля, в котором находятся все необходимые 
+ресурсы.
+
+Примечание:
+
+1. HINSTANCE библиотеки нужно передать через VARIANT, как VT_I4 в Win32 и VT_I8 в x64.
+Для правильного формирования _variant_t HINSTANCE нужно передавать через приведе"
+ние к (LONG_PTR).
+220
+
+
+
+ 
+
+2. Данное свойство позволяет установить или получить dll"модуль, в котором находится
+описание пользовательской спецпанели, (пример для пользовательских кнопок см.
+IPropertyManager::SpecToolbarEx).
+
+3. Свойство не используется при работе со шрифтовыми иконками
+
+SpecToolbar  Специальная панель
+Интерфейс...
+Тип данных: тип предопределенной спецпанели для Панели свойств из перечисления
+SpecPropertyToolBarEnum.
+Синтаксис Automation:
+
+SpecToolbar = iObject.SpecToolbar Получить свойство (* )
+iObject.SpecToolbar = SpecToolbar Установить свойство (* )
+SpecToolbar = iObject.GetSpecToolbar() Получить свойство(**)
+iObject.SetSpecToolbar (SpecToolbar) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_SpecToolbar (&SpecToolbar) Получить свойство
+iObject">put_SpecToolbar (SpecToolbar) Установить свойство
+
+Примечание:
+С помощью данного свойства можно получить и изменить тип предопределенной спец"
+панели для Панели свойств.
+
+SpecToolbarEx  Пользовательская спецпанель
+Интерфейс...
+Тип данных: long.
+Синтаксис Automation:
+
+SpecToolbarEx = Object.SpecToolbarEx Получить свойство (* )
+Object.SpecToolbarEx = SpecToolbarEx Установить свойство (* )
+SpecToolbarEx = Object.GetSpecToolbarEx() Получить свойство(**)
+Object.SetSpecToolbarEx( SpecToolbarEx ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SpecToolbarEx( &SpecToolbarEx ) Получить свойство
+Object.put_SpecToolbarEx(  SpecToolbarEx ) Установить свойство
+
+Примечание:
+
+1. Данное свойство является расширением свойства IPropertyManager::SpecToolbar.
+2. Свойство позволяет установить или получить идентификатор спецпанели. 
+221
+
+
+
+ 
+
+Может быть установлен идентификатор из перечисления SpecPropertyToolBarEnum
+(предопределенных спецпанелей для панели свойств) либо задан идентификатор ресур"
+са пользовательской спецпанели, уникальный в рамках библиотеки.
+
+3. Свойство SpecToolbarEx используется совместно со свойством
+IPropertyManager::ResModule.
+
+4. Чтобы описать пользовательскую спецпанель, нужно: 
+4.1. Объявить уникальный идентификатор спецпанели в h файле
+#define ITB_SPEC_TOOLBAR 3000 
+#define END_OF_RESOURCE_TABLE 0xffff
+4.2. В ресурсном файле описать RCDATA панели и пользовательские кнопки
+rc2"файл:
+ITB_SPEC_TOOLBAR RCDATA 
+{
+  1 //pbEnter
+  2 //pbEsc
+  3 //pbHelpсправка
+  20 //пользовательская кнопка 
+
+  END_OF_RESOURCE_TABLE
+}
+
+В примере для пользовательской спецпанели определено 4 кнопки.
+1, 2, 3 " предопределенные кнопки из перечисления SpecPropertyToolBarEnum
+20 " пользовательская кнопка
+//битмап для пользовательской кнопки спецпанели
+20 ICON DISCARDABLE "res\\st_reduc.ico" // CREATE процесса настройки фильтра для вы"
+бора объектов отчета
+//tips\hint для пользовательской кнопки спецпанели
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  20 "Для тестирования пользовательской кнопки\nПользовательская кнопка"
+END
+
+StatusMessage  Строка подсказки
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+StatusMessage = Object.StatusMessage Получить свойство (* )
+222
+
+
+
+ 
+
+Object.StatusMessage = StatusMessage Установить свойство (* )
+StatusMessage = Получить свойство(**)
+Object.GetStatusMessage() 
+Object.SetStatusMessage( StatusMessage ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_StatusMessage( &StatusMessage ) Получить свойство
+Object.put_StatusMessage(  StatusMessage ) Установить свойство
+
+Visible  Видимость Панели свойств
+Интерфейс...
+Тип данных: BOOL.
+Синтаксис Automation:
+
+Visible = iObject.Visible Получить свойство (* )
+iObject.Visible = Visible Установить свойство (* )
+Visible = iObject.GetVisible() Получить свойство(**)
+iObject.SetVisible (Visible) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Visible (&Visible) Получить свойство
+iObject">put_Visible (Visible) Установить свойство
+
+Примечание:
+С помощью данного свойства можно управлять видимостью Панели свойств.
+
+IPropertyManager  методы
+
+AddSetupMenuCommand  Добавить пункт в меню 
+настроек процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL AddSetupMenuCommand( BSTR Title, long Command, BOOL Checable );
+Синтаксис COM:
+HRESULT AddSetupMenuCommand( BSTR Title, long Command, BOOL Checable, BOOL *
+Result );
+Возвращаемое значение: 
+
+TRUE " успешное завершение,
+FALSE " в случае неудачи.
+
+Входные параметры:
+223
+
+
+
+ 
+
+Title " заголовок,
+Command " идентификатор команды,
+Checable " FALSE "выполняемая команда, TRUE " флаг состояния.
+
+AddSpecToolbarButton  Добавить кнопку в спецпанель
+Интерфейс...
+Синтаксис Automation:
+BOOL AddSpecToolbarButton( long BtnID, VARIANT Bmp, BSTR Tips, BSTR IconFont );
+Синтаксис COM:
+HRESULT AddSpecToolbarButton( long BtnID, VARIANT Bmp, BSTR Tips, BSTR IconFont,
+BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " успешное завершение,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+BtnID " идентификатор кнопки,
+Bmp " идентификатор картинки или символа шрифта или путь к файлу,
+Tips " имя кнопки,
+IconFont " имя шрифта.
+
+Примечание:
+
+1. Для использования иконок из шрифта Компас нужно передать параметр IconFont == пу"
+стой строке.
+
+2. Для использования шрифта библиотеки, описанного в манифесте библиотеки, нужно
+передать строчку, полученную методом IProceduresLibrary::IconsFont.
+
+3. Для использования картинок из ресурсов требуется установить свойство
+IPropertyManager::ResModule.
+
+4. Для использования шрифтовых иконок свойство IPropertyManager::ResModule устанав"
+ливаться не должно.
+
+ClearSpecToolbar  Очистить спецпанель
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearSpecToolbar();
+Синтаксис COM:
+HRESULT ClearSpecToolbar( BOOL * Result );
+Возвращаемое значение: 
+224
+
+
+
+ 
+
+TRUE " успешное завершение.
+
+GetGabaritRect  Получить габаритный прямоугольник 
+Панели свойств
+Интерфейс...
+Синтаксис Automation:
+void GetGabaritRect (long* left,
+long* top,
+long* right,
+long* bottom);
+Синтаксис COM:
+HRESULT GetGabaritRect ([out] long* left,
+[out] long* top,
+[out] long* right,
+[out] long* bottom);
+Выходные параметры:
+
+left, top " координата верхней левой точки,
+right, bottom " координата нижней правой точки.
+
+Примечание:
+Метод позволяет получить габаритный прямоугольник Панели свойств. Точки задаются
+в относительных координатах окна КОМПАС.
+
+HideTabs  Скрыть вкладки и их содержимое на Панели 
+свойств
+Интерфейс...
+Синтаксис Automation:
+BOOL HideTabs();
+Синтаксис COM:
+HRESULT HideTabs ([out, retval] VARIANT_BOOL * pVal);
+Возвращаемое значение:
+
+TRUE " успешное завершение,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет скрыть вкладки и их содержимое на Панели свойств.
+225
+
+
+
+ 
+
+RepeatCommand  Повторить команду (посылает 
+повторно событие панели свойств)
+Интерфейс...
+Синтаксис Automation:
+BOOL RepeatCommand();
+Синтаксис COM:
+HRESULT RepeatCommand( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " успешное завершение,
+FALSE " в случае неудачи.
+
+SetGabaritRect  Установить габаритный прямоугольник 
+Панели свойств
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+void SetGabaritRect (long left,
+long top,
+long right,
+long bottom);
+Синтаксис COM:
+HRESULT SetGabaritRect ([in] long left,
+[in] long top,
+[in] long right,
+[in] long bottom);
+Входные параметры:
+
+left, top " координата верхней левой точки,
+right, bottom " координата нижней правой точки.
+
+Примечание:
+Метод позволяет установить габаритный прямоугольник Панели свойств. Точки задают"
+ся в относительных координатах окна КОМПАС.
+
+SetSetupMenuCommandState  Установить состояние 
+команды меню настроек процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL SetSetupMenuCommandState( long Command, BOOL Visible, BOOL Enable, BOOL
+Checked );
+226
+
+
+
+ 
+
+Синтаксис COM:
+HRESULT SetSetupMenuCommandState( long Command, BOOL Visible, BOOL Enable, BOOL
+Checked, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " успешное завершение,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Command " идентификатор команды,
+Visible " видимость,
+Enable " доступность,
+Checked " признак выбора.
+
+ShowTabs  Отобразить вкладки и их содержимое на 
+Панели свойств
+Интерфейс...
+Синтаксис Automation:
+BOOL ShowTabs();
+Синтаксис COM:
+HRESULT ShowTabs ([out, retval] VARIANT_BOOL * pVal);
+Возвращаемое значение:
+
+TRUE " успешное завершение,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет отобразить вкладки и их содержимое на Панели свойств.
+
+UpdateTabs  Обновить вкладки и их содержимое на 
+Панели свойств
+Интерфейс...
+Синтаксис Automation:
+BOOL UpdateTabs();
+Синтаксис COM:
+HRESULT UpdateTabs ([out, retval] VARIANT_BOOL * pVal);
+Возвращаемое значение:
+
+TRUE " успешное завершение,
+FALSE " в случае неудачи.
+227
+
+
+
+ 
+
+Примечание:
+Метод позволяет обновить вкладки и их содержимое на Панели свойств.
+
+Интерфейс IPropertyTab
+Интерфейс вкладки Панели свойств.
+Иерархия:
+IKompasAPIObject
+
+IPropertyTab
+Примечание:
+Данный интерфейс может быть получен от интерфейса коллекции закладок панели
+свойств IPropertyTabs с помощью свойств IPropertyTabs::Item, IPropertyTabs::Active и ме"
+тода IPropertyTabs::Add.
+
+IPropertyTab  свойства
+
+Active  Активность закладки Панели свойств
+Функция не поддерживается
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Active = iObject.Active Получить свойство (* )
+iObject.Active = Active Установить свойство (* )
+Active = iObject.GetActive() Получить свойство(**)
+iObject.SetActive (Active) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Active (&Active) Получить свойство
+iObject">put_Active (Active) Установить свойство
+
+Примечание:
+Свойство позволяет получить и изменить активность вкладки Панели свойств.
+
+Caption  Заголовок вкладки Панели свойств
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+Caption = iObject.Caption Получить свойство (* )
+iObject.Caption = Caption Установить свойство (* )
+Caption = iObject.GetCaption() Получить свойство(**)
+iObject.SetCaption (Caption) Установить свойство (**)
+228
+
+
+
+ 
+
+Синтаксис COM:
+
+iObject">get_Caption (&Caption) Получить свойство
+iObject">put_Caption (Caption) Установить свойство
+
+Примечание:
+Свойство позволяет получить и изменить заголовок вкладки Панели свойств.
+
+Expanded  Признак развернутой закладки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Expanded = Object.Expanded Получить свойство (* )
+Object.Expanded = Expanded Установить свойство (* )
+Expanded = Object.GetExpanded() Получить свойство(**)
+Object.SetExpanded( Expanded ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Expanded( &Expanded ) Получить свойство
+Object.put_Expanded(  Expanded ) Установить свойство
+
+Image  Растровый рисунок на вкладке
+Функция не поддерживается
+Интерфейс...
+Тип данных: VARIANT (long или BSTR).
+Значения свойства:
+
+HINSTANCE (тип " полный путь к файлу (тип значения BSTR) dll 
+значения long) модуля в котором находятся все необходимые 
+
+ресурсы.
+
+Синтаксис Automation:
+
+Image = iObject.Image Получить свойство (* )
+iObject.Image = Image Установить свойство (* )
+Image = iObject.GetImage() Получить свойство(**)
+iObject.SetImage(Image) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Image(&Image) Получить свойство
+iObject">put_Image(Image) Установить свойство
+229
+
+
+
+ 
+
+Примечание:
+Свойство позволяет получить или установить битмап на закладке.
+Битмап можно задать в виде идентификатора в файле ресурсов (тип данных long) или
+полного пути к bmp"файлу значка (тип данных BSTR).
+
+PropertyControls  Коллекция элементов управления на 
+вкладке
+Интерфейс...
+Тип данных: указатель на интерфейс IPropertyControls.
+Синтаксис Automation:
+
+PropertyControls = iObject.PropertyControls Получить свойство (* )
+PropertyControls = Получить свойство(**)
+iObject.GetPropertyControls()
+
+Синтаксис COM:
+
+iObject">get_PropertyControls Получить свойство
+(&PropertyControls)
+
+Примечание:
+Свойство доступно только для чтения. Позволяет получить коллекцию элементов управ"
+ления вкладки Панели свойств.
+
+ResModule  Растровый рисунок на вкладке
+Функция не поддерживается
+Интерфейс...
+Тип данных: VARIANT (long или BSTR).
+Значения свойства:
+
+HINSTANCE (тип " полный путь к файлу (тип значения BSTR) dll 
+значения long) модуля, в котором находятся все необходимые 
+
+ресурсы.
+
+Синтаксис Automation:
+
+ResModule = iObject.ResModule Получить свойство (* )
+iObject.ResModule = ResModule Установить свойство (* )
+ResModule = iObject.GetResModule() Получить свойство(**)
+iObject.SetResModule(ResModule) Установить свойство (**)
+
+Синтаксис COM:
+230
+
+
+
+ 
+
+iObject">get_ResModule(&ResModule) Получить свойство
+iObject">put_ResModule(ResModule) Установить свойство
+
+Примечание:
+Свойство позволяет получить или установить dll"модуль, в котором находится рисунок
+для кнопки.
+
+Visible  Видимость вкладки Панели свойств
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Visible = iObject.Visible Получить свойство (* )
+iObject.Visible = Visible Установить свойство (* )
+Visible =iObject.Visible Получить свойство(**)
+iObject.SetVisible Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Visible (&Visible) Получить свойство
+iObject">put_Visible (Visible) Установить свойство
+
+Примечание:
+Свойство позволяет получить и изменить видимость вкладки Панели свойств.
+
+Интерфейс IPropertyControl1
+Справка системы КОМПАС...
+kompas.chm::/CM_2DPROCESSBAR_VISIBLE.htm
+Дополнительный интерфейс элемента управления Панели свойств.
+Иерархия:
+IKompasAPIObject
+
+IPropertyControl1
+Примечание:
+Данный интерфейс можно получить у элемента управления Панели свойств
+IPropertyControl посредством вызова метода IUnknown::QueryInterface (const GUID far&
+IID, void** pif).
+
+IPropertyControl1  свойства
+
+AdditionButtonNeedMouseEnterLeaveMessages  
+Необходимость получать сообщения о наведении/
+231
+
+
+
+ 
+
+уходе курсора мыши на дополнительных кнопках от 
+данного контрола
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AdditionButtonNeedMouseEnterLeaveMessages = Получить свойство(* )
+Object.AdditionButtonNeedMouseEnterLeaveMessages
+Object.AdditionButtonNeedMouseEnterLeaveMessages = Установить свойство (* )
+AdditionButtonNeedMouseEnterLeaveMessages
+AdditionButtonNeedMouseEnterLeaveMessages = Получить свойство (**)
+Object.GetAdditionButtonNeedMouseEnterLeaveMessages()
+Object.SetAdditionButtonNeedMouseEnterLeaveMessages( Установить свойство (**)
+AdditionButtonNeedMouseEnterLeaveMessages )
+
+Синтаксис COM:
+
+Object.get_AdditionButtonNeedMouseEnterLeaveMessages( Получить свойство(* )
+&AdditionButtonNeedMouseEnterLeaveMessages )
+Object.put_AdditionButtonNeedMouseEnterLeaveMessages(  Установить свойство (* )
+AdditionButtonNeedMouseEnterLeaveMessages )
+
+Входные параметры:
+
+long   BtnID " пользовательский идентификатор кнопки.
+
+Примечание:
+Включение свойства позволит обрабатывать событие
+ksProcess2DNotify::GetMouseEnterLeavePoint.
+Это позволит подсвечивать точку в поле 2D документа, положение которой зависит от
+контрола под курсором.
+
+AdditionButtonChecked  Состояние дополнительной 
+кнопки (нажата/отжата)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AdditionButtonChecked = Получить свойство (* )
+Object.AdditionButtonChecked( BtnID )
+Object.AdditionButtonChecked( BtnID ) = Установить свойство (* )
+AdditionButtonChecked
+AdditionButtonChecked = Получить свойство(**)
+Object.GetAdditionButtonChecked( BtnID )
+232
+
+
+
+ 
+
+Object.SetAdditionButtonChecked( BtnID, Установить свойство (**)
+AdditionButtonChecked )
+
+Синтаксис COM:
+
+Object.get_AdditionButtonChecked( BtnID, Получить свойство
+&AdditionButtonChecked ) 
+Object.put_AdditionButtonChecked(  BtnID, Установить свойство
+AdditionButtonChecked )
+
+Входные параметры:
+
+BtnID " идентификатор кнопки.
+
+AdditionButtonEnable  Состояние (доступность) 
+дополнительной кнопки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AdditionButtonEnable = Получить свойство (* )
+Object.AdditionButtonEnable( BtnID )
+Object.AdditionButtonEnable( BtnID ) = Установить свойство (* )
+AdditionButtonEnable
+AdditionButtonEnable = Получить свойство(**)
+Object.GetAdditionButtonEnable( BtnID )
+Object.SetAdditionButtonEnable( BtnID, Установить свойство (**)
+AdditionButtonEnable )
+
+Синтаксис COM:
+
+Object.get_AdditionButtonEnable( BtnID, Получить свойство
+&AdditionButtonEnable ) 
+Object.put_AdditionButtonEnable(  BtnID, Установить свойство
+AdditionButtonEnable )
+
+Входные параметры:
+
+BtnID " идентификатор кнопки.
+
+AdditionButtonVisible  Видимость дополнительной 
+кнопки
+Интерфейс...
+Тип данных: BOOL
+233
+
+
+
+ 
+
+Синтаксис Automation:
+
+AdditionButtonVisible = Получить свойство (* )
+Object.AdditionButtonVisible( BtnID )
+Object.AdditionButtonVisible( BtnID ) = Установить свойство (* )
+AdditionButtonVisible
+AdditionButtonVisible = Получить свойство(**)
+Object.GetAdditionButtonVisible( BtnID )
+Object.SetAdditionButtonVisible( BtnID, Установить свойство (**)
+AdditionButtonVisible )
+
+ Синтаксис COM:
+
+Object.get_AdditionButtonVisible( BtnID, Получить свойство
+&AdditionButtonVisible) 
+Object.put_AdditionButtonVisible(  BtnID, Установить свойство
+AdditionButtonVisible )
+
+Входные параметры:
+
+BtnID " идентификатор кнопки.
+
+HyperLinkNameStyle  Отображать имя контрола в виде 
+ссылки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+HyperLinkNameStyle = Получить свойство (* )
+Object.HyperLinkNameStyle
+Object.HyperLinkNameStyle = Установить свойство (* )
+HyperLinkNameStyle
+HyperLinkNameStyle = Получить свойство(**)
+Object.GetHyperLinkNameStyle()
+Object.SetHyperLinkNameStyle( Установить свойство (**)
+HyperLinkNameStyle ))
+
+Синтаксис COM:
+
+Object.get_HyperLinkNameStyle( Получить свойство
+&HyperLinkNameStyle )
+Object.put_HyperLinkNameStyle(  Установить свойство
+HyperLinkNameStyle )
+234
+
+
+
+ 
+
+Image  Дополнительный битмап контрол
+Функция не поддерживается
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Image = iObject.Image Получить свойство (* )
+iObject.Image = Image Установить свойство (* )
+Image = iObject.GetImage() Получить свойство(**)
+iObject.SetImage (Image) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Image (&Image) Получить свойство
+iObject">put_Image (Image) Установить свойство
+
+Значения свойства:
+
+" HINSTANCE (тип значения LONG_PTR).
+
+NeedMouseEnterLeaveMessages  Необходимость 
+получать сообщения о наведении/уходе курсора мыши 
+на поле редактирования контрола
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NeedMouseEnterLeaveMessages = Получить свойство(* )
+Object.NeedMouseEnterLeaveMessages
+Object.NeedMouseEnterLeaveMessages = Установить свойство (* )
+NeedMouseEnterLeaveMessages
+NeedMouseEnterLeaveMessages = Получить свойство (**)
+Object.GetNeedMouseEnterLeaveMessages()
+Object.SetNeedMouseEnterLeaveMessages( Установить свойство (**)
+NeedMouseEnterLeaveMessages )
+
+Синтаксис COM:
+
+Object.get_NeedMouseEnterLeaveMessages( Получить свойство(* )
+&NeedMouseEnterLeaveMessages )
+Object.put_NeedMouseEnterLeaveMessages(  Установить свойство (* )
+NeedMouseEnterLeaveMessages )
+
+Примечание:
+235
+
+
+
+ 
+
+Включение свойства позволит обрабатывать событие
+ksProcess2DNotify::GetMouseEnterLeavePoint.
+Это позволит подсвечивать точку в поле 2D документа, положение которой зависит от
+контрола под курсором.
+
+PredefineNumber  Идентификатор предопределённого 
+ввода
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+predefineNumber = Получить свойство (* )
+iKompasObject.PredefineNumber
+iKompasObject.PredefineNumber = Установить свойство (* )
+predefineNumber
+predefineNumber = Получить свойство(**)
+iKompasObject.GetPredefineNumber()
+iKompasObject.SetPredefineNumber( Установить свойство (**)
+predefineNumber )
+
+Примечание:
+
+1. Позволяет получить и установить идентификатор предопределённого ввода для элемен"
+тов управления, содержащих окно ввода, например, поле ввода IPropertyEdit.
+
+2. Значение по умолчанию = "1.
+3. Если идентификатор задан (положительное число), то он должен быть уникальным в
+
+пределах коллекции элементов управления конкретной вкладки.
+4. Работает только на запущенном процессе. При нажатии клавиш клавиатуры из коллек"
+
+ции выбирается элемент управления с наименьшим идентификатором предопределён"
+ного ввода (среди отображаемых) элементов управления и ему передается фокус. При
+подтверждении ввода ищется следующий индекс предопределённого ввода и запомина"
+ется для последующих нажатий клавиш. Если пользователь отказывается от ввода, на"
+пример нажимает клавишу Esc, то индекс элемента управления предопределённого вво"
+да, которому будут передаваться значения, не меняется.
+
+5.  Задать значение свойства можно только до запуска процесса.
+
+ResModule  Модуль с ресурсом битмапа
+Функция не поддерживается
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ResModule = iObject.ResModule Получить свойство (* )
+iObject.ResModule = ResModule Установить свойство (* )
+236
+
+
+
+ 
+
+ResModule = iObject.GetResModule() Получить свойство(**)
+iObject.SetResModule (ResModule) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ResModule (&ResModule) Получить свойство
+iObject">put_ResModule (ResModule) Установить свойство
+
+Значения свойства:
+
+" HINSTANCE (тип значения LONG_PTR).
+
+Примечание:
+Данное свойство позволяет установить или получить dll"модуль, в котором находится
+описание пользовательской спецпанели, рисунки для пользовательских кнопок.
+
+UserMenu  Дескриптор пользовательского меню
+Интерфейс...
+Тип данных: OLE_HANDLE
+Синтаксис Automation:
+
+UserMenu = iObject.UserMenu Получить свойство (* )
+iObject.UserMenu = UserMenu Установить свойство (* )
+UserMenu = iObject.GetUserMenu() Получить свойство(**)
+iObject.SetUserMenu (UserMenu) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_UserMenu (&UserMenu) Получить свойство
+iObject">put_UserMenu (UserMenu) Установить свойство
+
+Значения свойства:
+
+Дескриптор пользовательского контекстного меню на элементе 
+управления.
+
+Примечание:
+Если на элементе управления уже было меню, то в случае задания оно заменяется на
+пользовательское. Дескриптор должен создаваться в библиотеке и быть валидным до
+конца процесса. Деструктурироваться дескриптор должен на стороне библиотеки по
+окончанию процесса. После того как меню вывелось и пользователь выбрал какой"то
+пункт генерируется новое событие " prUserMenuCommand.
+237
+
+
+
+ 
+
+IPropertyControl1  методы
+
+AddAdditionButton  Добавить дополнительную кнопку
+Интерфейс...
+Синтаксис Automation:
+BOOL AddAdditionButton( long BtnID, VARIANT Bmp, BSTR Tips, BSTR IconFont );
+Синтаксис COM:
+HRESULT AddAdditionButton( long BtnID, VARIANT Bmp, BSTR Tips, BSTR IconFont, BOOL *
+Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+Входные параметры:
+
+BtnID " идентификатор кнопки,
+Bmp " идентификатор иконки из шрифта или идентификатор картинки из ресурсов,
+Tips " текст подсказки для кнопки,
+IconFont " имя библиотечного шрифта.
+
+AddAdditionCheckButton  Добавить дополнительную 
+кнопку (checkbox)
+Интерфейс...
+Синтаксис Automation:
+BOOL AddAdditionCheckButton( long BtnID, VARIANT BmpChecked, VARIANT
+BmpUnChecked, VARIANT BmpUndefine, BSTR Tips, BSTR IconFont );
+Синтаксис COM:
+HRESULT AddAdditionCheckButton( long BtnID, VARIANT BmpChecked, VARIANT
+BmpUnChecked, VARIANT BmpUndefine, BSTR Tips, BSTR IconFont, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи. 
+
+Входные параметры:
+
+BtnID " идентификатор кнопки,
+BmpChecked " идентификатор иконки из шрифта или идентификатор 
+
+картинки из ресурсов для нажатого состояния,
+BmpUnChecked " идентификатор иконки из шрифта или идентификатор 
+
+картинки из ресурсов для отжатого состояния
+238
+
+
+
+ 
+
+BmpUndefine " идентификатор иконки из шрифта или идентификатор 
+картинки из ресурсов для неопределенного состояния,
+
+Tips " подсказка для кнопки,
+IconFont " имя шрифта.
+
+ 
+
+GetHWND  Получить Handle окна
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+OLE_HANDLE GetHWND();
+Синтаксис COM:
+HRESULT GetHWND( OLE_HANDLE * Result );
+Возвращаемое значение: 
+
+" дескриптор окна.
+
+Интерфейс IPropertyPoint3D
+Интерфейс элемента Панели свойств Точка 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPropertyControl
+
+IPropertyPoint3D
+Примечания:
+
+1.  Интерфейс позволяет добавить элемент Панели свойств " точка 3D. 
+2. Данный интерфейс может быть получен от интерфейса коллекции элементов управле"
+
+ния IPropertyControls с помощью свойства IPropertyControls::Item или метода
+IPropertyControls::Add   с последующим приведением интерфейса IPropertyControl к дан"
+ному интерфейсу с помощью метода IUnknown::QueryInterface.
+
+IPropertyPoint3D  свойства
+
+Coordinate  Параметры координаты по индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IPropertyEdit
+Синтаксис Automation:
+
+Coordinate = Object.Coordinate( Index ) Получить свойство (* )
+Coordinate = Object.GetCoordinate( Index ) Получить свойство (**)
+239
+
+
+
+ 
+
+Синтаксис COM:
+
+Object.get_Coordinate( Получить свойство
+Index, &Coordinate );
+Object.put_Coordinate(  Установить свойство
+Index, Coordinate ));
+
+ Входные параметры:
+
+ Index " индекс координаты.
+
+CoordinateState  Состояние координаты по индексу
+Интерфейс...
+Тип данных: из перечисления CheckStateEnum
+Синтаксис Automation:
+
+CoordinateState = Object.CoordinateState( Index ) Получить свойство (* )
+Object.CoordinateState( Index ) = CoordinateState Установить свойство (* )
+CoordinateState = Object.GetCoordinateState( Index ) Получить свойство(**)
+Object.SetCoordinateState( Index, CoordinateState ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CoordinateState( Index, Получить свойство
+&CoordinateState )
+Object.put_CoordinateState(  Index, Установить свойство
+CoordinateState )
+
+ Входные параметры:
+
+ Index " индекс координаты.
+
+CoordinateValue  Значение координаты по индексу
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+CoordinateValue = Object.CoordinateValue( Index ) Получить свойство (* )
+Object.CoordinateValue( Index ) = CoordinateValue Установить свойство (* )
+CoordinateValue = Object.GetCoordinateValue( Получить свойство(**)
+Index )
+Object.SetCoordinateValue( Index, Установить свойство (**)
+CoordinateValue )
+240
+
+
+
+ 
+
+Синтаксис COM:
+
+Object.get_CoordinateValue( Index, Получить свойство
+&CoordinateValue )
+Object.put_CoordinateValue(  Index, Установить свойство
+CoordinateValue )
+
+ Входные параметры:
+
+ Index " индекс координаты.
+
+Point3DType  Тип системы координат точки
+Интерфейс...
+Тип данных: из перечисления ksPoint3DTypeEnum
+Синтаксис Automation:
+
+Point3DType = Object.Point3DType Получить свойство (* )
+Object.Point3DType = Point3DType Установить свойство (* )
+Point3DType = Object.GetPoint3DType() Получить свойство(**)
+Object.SetPoint3DType( Point3DType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Point3DType( &Point3DType ) Получить свойство
+Object.put_Point3DType(  Point3DType ) Установить свойство
+
+Интерфейс IPropertyEditCheckBox
+Интерфейс элемента управления Панели свойств типа «Поле c чекбоксом в виде
+картинки»
+
+Элемент панели свойств
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPropertyEditCheckBox
+
+Данный интерфейс можно получить, используя коллекцию элементов управления Пане"
+ли свойств IPropertyControls.
+241
+
+
+
+ 
+
+IPropertyEditCheckBox  свойства
+
+CheckButton  Состояние кнопки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CheckButton = Object.CheckButton Получить свойство (* )
+Object.CheckButton = CheckButton Установить свойство (* )
+CheckButton = Object.GetCheckButton() Получить свойство(**)
+Object.SetCheckButton( CheckButton ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CheckButton( &CheckButton ) Получить свойство
+Object.put_CheckButton(  CheckButton ) Установить свойство
+
+Значения свойства:
+
+TRUE " включено,
+FALSE " отключено.
+
+DefaultValue  Значение по умолчанию
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+DefaultValue = Object.DefaultValue Получить свойство (* )
+Object.DefaultValue = DefaultValue Установить свойство (* )
+DefaultValue = Object.GetDefaultValue() Получить свойство(**)
+Object.SetDefaultValue( DefaultValue ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DefaultValue( &DefaultValue Получить свойство
+Object.put_DefaultValue(  DefaultValue ) Установить свойство
+
+Примечание:
+Свойство задает строку приглашения отображаемую в пустом регистраторе. 
+
+EnableCheckButton  Состояние доступности кнопки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+242
+
+
+
+ 
+
+EnableCheckButton = Object.EnableCheckButton Получить свойство (* )
+Object.EnableCheckButton = EnableCheckButton Установить свойство (* )
+EnableCheckButton = Object.GetEnableCheckButton() Получить свойство(**)
+Object.SetEnableCheckButton( EnableCheckButton ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EnableCheckButton( &EnableCheckButton ) Получить свойство
+Object.put_EnableCheckButton(  EnableCheckButton ) Установить свойство
+
+Значения свойства:
+
+TRUE " доступна,
+FALSE " недоступна.
+
+EnableDeleteValue  Признак возможности удаления 
+значения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+EnableDeleteValue = Object.EnableDeleteValue Получить свойство (* )
+Object.EnableDeleteValue = EnableDeleteValue Установить свойство (* )
+EnableDeleteValue = Получить свойство(**)
+Object.GetEnableDeleteValue()
+Object.SetEnableDeleteValue( EnableDeleteValue ) Установить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_EnableDeleteValue( &EnableDeleteValue ) Получить свойство
+Object.put_EnableDeleteValue(  EnableDeleteValue ) Установить свойство
+
+IsLinkValue  Признак ссылочного содержимого
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsLinkValue = Object.IsLinkValue Получить свойство (* )
+Object.IsLinkValue = IsLinkValue Установить свойство (* )
+IsLinkValue = Object.GetIsLinkValue() Получить свойство(**)
+Object.SetIsLinkValue( IsLinkValue ) Установить свойство (**)
+
+Синтаксис COM:
+243
+
+
+
+ 
+
+Object.get_IsLinkValue( &IsLinkValue Получить свойство
+Object.put_IsLinkValue(  IsLinkValue ) Установить свойство
+
+Missing  Потерянный объект
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Missing = Object.Missing Получить свойство (* )
+Object.Missing = Missing Установить свойство (* )
+Missing = Object.GetMissing() Получить свойство(**)
+Object.SetMissing( Missing ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Missing( &Missing ) Получить свойство
+Object.put_Missing(  Missing ) Установить свойство
+
+IPropertyEditCheckBox  методы
+
+SetCustomBitmaps  Установить собственное 
+изображение кнопки в разных состояниях
+Интерфейс...
+Синтаксис Automation:
+void SetCustomBitmaps( VARIANT IdUnchecked,
+VARIANT IdChecked,
+VARIANT IdIndeterminate,
+VARIANT HInstance );
+Синтаксис COM:
+HRESULT SetCustomBitmaps( VARIANT IdUnchecked,
+VARIANT IdChecked,
+VARIANT IdIndeterminate,
+VARIANT HInstance,
+void *  Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+IdUnchecked " значок ненажатого состояния,
+244
+
+
+
+ 
+
+IdChecked " значок нажатого состояния,
+IdIndeterminate " значок неопределенного состояния,
+HInstance " dll"модуль с ресурсами значков.
+Примечания:
+
+1. Значки могут быть заданы в виде идентификаторов в ресурсе dll"модуля (тип данных
+long) или в виде полного пути к bmp"файлу значка (тип данных BSTR). Обязательным яв"
+ляется задание значка для ненажатого состояния idUnchecked, остальные могут быть не
+заданы.
+
+2. Все значения переменных должны быть одного типа (или long, или BSTR).
+3. Если значки задаются в виде идентификатора, то обязательно должен быть задан dll"мо"
+
+дуль, в ресурсах которого лежат эти значки. Модуль с ресурсами значков hInstance мо"
+жет быть задан в виде HINSTANCE (тип значения long) или полного пути к файлу (тип
+значения BSTR) dll"модуля.
+
+Интерфейс IPropertyPreviewText
+Интерфейс элемента Панели свойств Предпросмотр текста.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPropertyControl
+
+IPropertyPreviewText
+Примечания:
+
+1. Интерфейс позволяет добавить элемент Панели свойств " Предпросмотр текста. 
+2. Данный интерфейс может быть получен от интерфейса коллекции элементов управле"
+
+ния IPropertyControls с помощью свойства IPropertyControls::Item или метода
+IPropertyControls::Add с последующим приведением интерфейса IPropertyControl к дан"
+ному интерфейсу с помощью метода IUnknown::QueryInterface.
+
+IPropertyPreviewText  свойства
+
+DoubleSize  Двойной размер
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DoubleSize = Object.DoubleSize Получить свойство (* )
+Object.DoubleSize = DoubleSize Установить свойство (* )
+DoubleSize = Object.GetDoubleSize() Получить свойство(**)
+Object.SetDoubleSize( DoubleSize ) Установить свойство (**)
+
+ Синтаксис COM:
+245
+
+
+
+ 
+
+Object.get_DoubleSize( &DoubleSize ) Получить свойство
+Object.put_DoubleSize(  DoubleSize ) Установить свойство
+
+PreviewText  Текст
+Интерфейс...
+Тип данных: Указатель на интерфейс IText
+Синтаксис Automation:
+
+PreviewText = Object.PreviewText Получить свойство (* )
+PreviewText = Object.GetPreviewText() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PreviewText( &PreviewText ) Получить свойство,
+
+Примечание:
+Свойство доступно только для чтения.
+
+IPropertyPreviewText  методы
+
+UpdateParam  Обновить параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL UpdateParam();
+Синтаксис COM:
+HRESULT UpdateParam( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IPropertyToolBar
+Интерфейс вспомогательного элемента Панели свойств. Набор команд элемен
+та управления.
+Иерархия:
+IDispatch
+
+IPropertyToolBar
+Описание:
+Позволяет управлять командами элемента управления на Панели свойств.
+Примечание:
+246
+
+
+
+ 
+
+Данный интерфейс можно получить у интерфейсов IPropertyGrid или IPropertyEditList по"
+средством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif).
+
+IPropertyToolBar  свойства
+
+ButtonChecked  Нажатие кнопки
+Интерфейс...
+Тип данных: BOOL.
+Синтаксис Automation:
+
+BOOL ButtonChecked = Получить свойство (* )
+iObject.ButtonChecked (BtnID)
+BOOL ButtonChecked = Установить свойство (* )
+iObject.GetButtonChecked (BtnID)
+iObject.ButtonChecked (BtnID) = Получить свойство(**)
+ButtonChecked
+iObject.SetButtonChecked (BtnID, Установить свойство (**)
+ButtonChecked)
+
+Синтаксис COM:
+
+iObject">get_ButtonChecked (BtnID, Получить свойство
+&ButtonChecked)
+iObject">put_ButtonChecked (BtnID,  Установить свойство
+ButtonChecked)
+
+Входные параметры:
+
+Long BtnID " идентификатор кнопки.
+
+ButtonEnable  Доступность кнопки
+Интерфейс...
+Тип данных: BOOL.
+Синтаксис Automation:
+
+BOOL ButtonEnable = iObject.ButtonEnable( Получить свойство (* )
+BtnID )
+BOOL ButtonEnable = Установить свойство (* )
+iObject.GetButtonEnable( BtnID )
+iObject.ButtonEnable( BtnID ) = Получить свойство(**)
+ButtonEnable
+iObject.SetButtonEnable( BtnID, Установить свойство (**)
+ButtonEnable )
+
+Синтаксис COM:
+247
+
+
+
+ 
+
+iObject">get_ButtonEnable( BtnID, Получить свойство
+&ButtonEnable )
+iObject">put_ButtonEnable( BtnID,  Установить свойство
+ButtonEnable )
+
+Входные параметры:
+
+Long BtnID " идентификатор кнопки.
+
+ButtonIconFont  Шрифт для кнопок
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ButtonIconFont = Object.ButtonIconFont( Получить свойство (* )
+BtnID )
+ Object.ButtonIconFont( BtnID ) = Установить свойство (* )
+ButtonIconFont 
+ButtonIconFont = Object.GetButtonIconFont( Получить свойство(**)
+BtnID )
+Object.SetButtonIconFont( BtnID, Установить свойство (**)
+ButtonIconFont )
+
+ Синтаксис COM:
+
+Object.get_ButtonIconFont( BtnID, Получить свойство
+&ButtonIconFont )
+Object.put_ButtonIconFont(  BtnID, Установить свойство
+ButtonIconFont )
+
+Входные параметры:
+
+BtnID " идентификатор кнопки.
+
+ButtonHint  Строка подсказки для кнопки, 
+отображаемая в Строке сообщений
+
+Интерфейс...
+Тип данных: BSTR (строка).
+Синтаксис Automation:
+
+ButtonHint = iObject.ButtonHint (BtnID) Получить свойство (* )
+ButtonHint = iObject.GetButtonHint (BtnID) Установить свойство (* )
+248
+
+
+
+ 
+
+iObject.ButtonHint( BtnID ) = ButtonHint Получить свойство(**)
+iObject.SetButtonHint (BtnID, ButtonHint) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ButtonHint (BtnID, Получить свойство
+&ButtonHint)
+iObject">put_ButtonHint (BtnID,  ButtonHint) Установить свойство
+
+Входные параметры:
+
+Long BtnID " идентификатор кнопки.
+
+ButtonTips  Строка контекстной всплывающей 
+подсказки для кнопки
+Интерфейс...
+Тип данных: BSTR (строка).
+Синтаксис Automation:
+
+ButtonTips = iObject.ButtonTips (BtnID) Получить свойство (* )
+ButtonTips = iObject.GetButtonTips (BtnID) Установить свойство (* )
+iObject.ButtonTips (BtnID) = ButtonTips Получить свойство(**)
+iObject.SetButtonTips (BtnID, ButtonTips) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ButtonTips (BtnID, Получить свойство
+&ButtonTips)
+iObject">put_ButtonTips (BtnID,  Установить свойство
+ButtonTips)
+
+Входные параметры:
+
+Long BtnID " идентификатор кнопки.
+
+ButtonType  Тип кнопки
+Интерфейс...
+Тип данных: из перечисления ButtonTypeEnum
+Синтаксис Automation:
+
+ButtonType = Object.ButtonType Получить свойство (* )
+Object.ButtonType = ButtonType Установить свойство (* )
+ButtonType = Object.GetButtonType() Получить свойство(**)
+Object.SetButtonType( ButtonType ) Установить свойство (**)
+249
+
+
+
+ 
+
+Синтаксис COM:
+
+Object.get_ButtonType( &ButtonType ) Получить свойство
+Object.put_ButtonType(  ButtonType ) Установить свойство
+
+ButtonVisible  Отображение кнопки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ButtonVisible = Object.ButtonVisible( BtnID ) Получить свойство (* )
+Object.ButtonVisible( BtnID ) = ButtonVisible Установить свойство (* )
+ButtonVisible = Object.GetButtonVisible( Получить свойство(**)
+BtnID )
+Object.SetButtonVisible( BtnID, Установить свойство (**)
+ButtonVisible )
+
+Синтаксис COM:
+
+Object.get_ButtonVisible( BtnID, Получить свойство
+&ButtonVisible )
+Object.put_ButtonVisible(  BtnID, Установить свойство
+ButtonVisible )
+
+Входные параметры:
+
+BtnID " идентификатор кнопки.
+
+ResModule  Модуль с ресурсами битмапов
+Интерфейс...
+Тип данных: VARIANT.
+Синтаксис Automation:
+
+VARIANT ResModule = iObject.ResModule Получить свойство (* )
+iObject.ResModule = ResModule Установить свойство (* )
+VARIANT ResModule = Получить свойство(**)
+iObject.GetResModule()
+iObject.SetResModule (ResModule) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ResModule (&ResModule) Получить свойство
+iObject">put_ResModule (ResModule) Установить свойство
+
+Примечание:
+250
+
+
+
+ 
+
+1. Значение свойства ResModule необходимо устанавливать до добавления кнопок.
+2. Модуль с ресурсами может быть задан строкой (имя файла ресурса) или значением типа
+
+long (идентификатор ресурса).
+
+IPropertyToolBar  методы
+
+AddButton  Добавить кнопку
+Интерфейс...
+Синтаксис Automation:
+void AddButton( long BtnID, VARIANT Bmp, long InsertAt );
+Синтаксис COM:
+HRESULT AddButton( long BtnID, VARIANT Bmp, long InsertAt );
+Входные параметры:
+
+BtnID " идентификатор кнопки,
+Bmp " строка (имя bmp"файла) или идентификатор битмапа 
+
+(long),
+InsertAt " индекс кнопки.
+
+Интерфейс IPropertyAggregateControl
+Интерфейс составного контрола.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPropertyControl
+
+IPropertyAggregateControl
+Примечания:
+
+1. Интерфейс позволяет добавить элемент Панели свойств " составной контрол. 
+2. Данный интерфейс может быть получен от интерфейса коллекции элементов управле"
+
+ния IPropertyControls с помощью свойства IPropertyControls::Item или метода
+IPropertyControls::Add с последующим приведением интерфейса IPropertyControl к дан"
+ному интерфейсу с помощью метода IUnknown::QueryInterface.
+
+IPropertyAggregateControl  свойства
+
+PropertyControl  Получить контрол по индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IPropertyControl 
+Синтаксис Automation:
+251
+
+
+
+ 
+
+PropertyControl = Object.PropertyControl( Получить свойство (* )
+Index ) 
+PropertyControl = Получить свойство(**)
+Object.GetPropertyControl( Index )
+
+Синтаксис COM:
+
+Object.get_PropertyControl( Index, Получить свойство
+&PropertyControl )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IPropertyAggregateControl  методы
+
+Add  Добавить контрол в группу
+Интерфейс...
+Синтаксис Automation:
+BOOL Add( IPropertyControl * Control );
+Синтаксис COM:
+HRESULT Add( IPropertyControl * Control, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Control " указатель на интерфейс добавляемого контрола.
+
+Интерфейс IPropertyControls
+Интерфейс коллекции элементов управления.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IPropertyControls
+
+Примечание:
+
+1. Интерфейс позволяет управлять коллекцией элементов управления.
+2. Данный интерфейс может быть получен от интерфейса закладки панели свойств
+
+IPropertyTab с помощью свойства IPropertyTab::PropertyControls.
+252
+
+
+
+ 
+
+IPropertyControls  свойства
+
+Item  Элемент управления, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IPropertyControl.
+Синтаксис Automation:
+
+Item = iObject.Item (Index) Получить свойство (* )
+Item = iObject.GetItem (Index) Получить свойство(**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&IPropertyControl)
+
+Входные параметры:
+
+index " индекс элемента управления.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IPropertyControls  методы
+
+Add  Создать элемент управления
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add (ControlTypeEnum type);
+Синтаксис COM:
+HRESULT Add ([in] ControlTypeEnum Type, [out, retval] IPropertyControl** Result);
+Входные параметры:
+
+type " тип элемента управления из ControlTypeEnum.
+
+Возвращаемое значение:
+
+Указатель на интерфейс IPropertyControl
+
+Примечание:
+Добавляет элемент управления в коллекцию.
+253
+
+
+
+ 
+
+Delete  Удалить элемент управления
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete (VARIANT Index);
+Синтаксис COM:
+HRESULT Delete ([in] VARIANT Index, [out, retval] VARIANT_BOOL* pVal);
+Входные параметры:
+
+index " индекс элемента управления или имя элемента управления.
+
+Возвращаемое значение:
+
+" результат выполнения метода.
+
+Примечание:
+Метод позволяет удалить элемент управления, заданный по индексу.
+
+Интерфейс IPropertyTabs
+Интерфейс коллекции вкладок Панели свойств.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IPropertyTabs
+
+Примечание:
+Данный интерфейс может быть получен от интерфейса параметров процесса
+IProcessParam с помощью свойства IProcessParam::PropertyTabs или от интерфейса па"
+нели свойств IPropertyManager с помощью свойства IPropertyManager::PropertyTabs.
+
+IPropertyTabs  свойства
+
+Active  Интерфейс текущей вкладки Панели свойств
+Функция не поддерживается
+Интерфейс...
+Тип данных: указатель на интерфейс IPropertyTab.
+Синтаксис Automation:
+
+Active = iObject.Active Получить свойство (* )
+Active = iObject.GetActive() Получить свойство(**)
+
+Синтаксис COM:
+254
+
+
+
+ 
+
+iObject">get_Active (&Active) Получить свойство
+
+Item  Вкладка, заданная по индексу или по имени
+Интерфейс...
+Тип данных: указатель на интерфейс IPropertyTab.
+Синтаксис Automation:
+
+Item = iObject.Item Получить свойство (* )
+Item = iObject.GetItem() Получить свойство(**)
+
+Синтаксис COM:
+
+iObject">get_Item (&PropertyTab) Получить свойство
+
+Входные параметры:
+
+index " индекс или имя закладки (тип VARIANT).
+
+Примечание:
+Свойство доступно только для чтения.
+
+SystemTab  Интерфейс системной вкладки
+Интерфейс...
+Интерфейс системной вкладки.
+Тип данных: указатель на интерфейс IPropertyTab.
+Синтаксис Automation:
+
+SystemTab = iObject.SystemTab Получить свойство (* )
+SystemTab = iObject.GetSystemTab() Получить свойство(**)
+
+Синтаксис COM:
+
+iObject">get_SystemTab(&SystemTab) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2. Системную вкладку можно получить для процессных параметров. Для системной вклад"
+
+ки можно установить свойства:
+▼ Visible " видимость закладки Панели свойств, т.е. сделать закладку невидимой. Caption"
+
+изменить заголовок вкладки Панели свойств.
+▼ Caption" заголовок вкладки Панели свойств.
+255
+
+
+
+ 
+
+▼ Image " установить битмап на вкладке.
+▼ ResModule " модуль с ресурсом битмапа, если битмап задан в виде идентификатора ре"
+
+сурса библиотеки.
+
+IPropertyTabs  методы
+
+Add  Создать вкладку Панели свойств (добавляет 
+вкладку в коллекцию)
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add (BSTR caption);
+Синтаксис COM:
+HRESULT Add ([in] BSTR caption, [out, retval] IPropertyTab** Result);
+Входные параметры:
+
+caption " имя закладки.
+
+Возвращаемое значение:
+
+" указатель на интерфейс IPropertyTab.
+
+Delete  Удалить вкладку Панели свойств, заданную по 
+индексу или по имени
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete (VARIANT index);
+Синтаксис COM:
+HRESULT Delete ([in] VARIANT index, [out, retval] VARIANT_BOOL* pVal);
+Входные параметры:
+
+Index " индекс или имя закладки.
+
+Возвращаемое значение:
+
+" результат выполнения метода.
+
+Работа с контекстной панелью и меню
+Интерфейс IProcessContextPanel 
+Интерфейс контекстной панели процесса.
+256
+
+
+
+ 
+
+Иерархия:
+IDispatch
+
+IProcessContextPanel
+Примечание:
+Интерфейс используется в событии ksPropertyManagerNotify::FillContextPanel
+Интерфейс позволяет заменить обычное меню процесса на панель которая может со"
+держать контролы Панели свойств. 
+Для использования контекстной панели в процессе нужно в событии
+ksPropertyManagerNotify::GetContextMenuType вернуть константу ksProcessContextPanel
+из перечисления ksProcessContextMenuType .
+
+IProcessContextPanel  методы
+
+AddAdditionalButtonsFromControl  Добавить группу 
+дополнительных кнопок
+Интерфейс...
+Синтаксис Automation:
+BOOL AddAdditionalButtonsFromControl( IPropertyControl * PVal, BSTR Title );
+Синтаксис COM:
+HRESULT AddAdditionalButtonsFromControl( IPropertyControl * PVal, BSTR Title, BOOL *
+Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+PVal " указатель на интерфейс добавляемого контрола,
+Title " заголовок.
+
+AddControl  Добавить контрол
+Интерфейс...
+Синтаксис Automation:
+BOOL AddControl( IPropertyControl * PVal );
+Синтаксис COM:
+HRESULT AddControl( IPropertyControl * PVal, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+257
+
+
+
+ 
+
+Входные параметры:
+
+PVal " указатель на интерфейс добавляемого контрола.
+
+AddGeomCalculatorCommands  Добавить команды 
+меню геометрического калькулятора
+Интерфейс...
+Синтаксис Automation:
+BOOL AddGeomCalculatorCommands( IPropertyControl * PVal );
+Синтаксис COM:
+HRESULT AddGeomCalculatorCommands( IPropertyControl * PVal, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+PVal " указатель на интерфейс контрола.
+
+AddGroupBegin  Добавить начало подгруппы
+Интерфейс...
+Синтаксис Automation:
+BOOL AddGroupBegin( BSTR Title );
+Синтаксис COM:
+HRESULT AddGroupBegin( BSTR Title, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Title " заголовок.
+
+AddGroupEnd  Добавить конец подгруппы
+Интерфейс...
+Синтаксис Automation:
+BOOL AddGroupEnd();
+Синтаксис COM:
+258
+
+
+
+ 
+
+HRESULT AddGroupEnd( BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+AddLinkContentButton  Добавить кнопку ссылочного 
+содержимого регистратора
+Интерфейс...
+Синтаксис Automation:
+BOOL AddLinkContentButton( IPropertyControl * PVal, BSTR Title );
+Синтаксис COM:
+HRESULT AddLinkContentButton( IPropertyControl * PVal, BSTR Title, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+PVal " указатель на интерфейс добавляемого контрола,
+Title " заголовок.
+
+AddNewSearchButton  Добавить кнопку перебор 
+объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL AddNewSearchButton();
+Синтаксис COM:
+HRESULT AddNewSearchButton( BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+AddSeparator  Добавить разделитель
+Интерфейс...
+Синтаксис Automation:
+259
+
+
+
+ 
+
+BOOL AddSeparator();
+Синтаксис COM:
+HRESULT AddSeparator( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+AddSnapCommands  Добавить команды привязок
+Интерфейс...
+Синтаксис Automation:
+BOOL AddSnapCommands();
+Синтаксис COM:
+HRESULT AddSnapCommands( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IProcessContextIconMenu
+Интерфейс контекстного меню процесса с иконками.
+Иерархия:
+IDispatch
+
+IProcessContextIconMenu
+
+IProcessContextIconMenu  методы
+
+AddMenuCommand  Добавить пункт меню
+Интерфейс...
+Синтаксис Automation:
+BOOL AddMenuCommand( long Id, BSTR Title, long Icon, BSTR IconFont );
+Синтаксис COM:
+HRESULT AddMenuCommand( long Id, BSTR Title, long Icon, BSTR IconFont, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+260
+
+
+
+ 
+
+Id " идентификатор команды,
+Title " заголовок,
+Icon " идентификатор иконки из шрифта,
+IconFont " имя библиотечного шрифта или пустая строка для 
+
+шрифта Компас.
+
+ 
+
+261
+
+
+
+ 
+
+262
+
+
+
+Документ
+Атрибуты
+Интерфейс IAttrTypeMng
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Менеджер типов атрибутов.
+Иерархия:
+IKompasAPIObject
+
+IAttrTypeMng
+Примечание:
+
+1. Интерфейс позволяет создавать, получать и просматривать типы атрибутов.
+2. Интерфейс является дополнительным к интерфейсу приложения IApplication.
+
+IAttrTypeMng  методы
+
+ChoiceAttrTypes  Открыть диалог для просмотра в 
+библиотеке атрибутов списка типов атрибутов и выбора 
+нужного типа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH ChoiceAttrTypes( OLE_HANDLE HWnd,
+VARIANT Libname );
+Синтаксис COM:
+HRESULT ChoiceAttrTypes( OLE_HANDLE HWnd,
+VARIANT Libname,
+IAttributeType ** Result );
+Входные параметры:
+
+HWnd " дескриптор главного окна системы КОМПАС, который 
+можно получить с помощью функции GetHWindow,
+
+Libname " имя библиотеки типов атрибутов.
+
+Возвращаемое значение:
+
+Указатель на интерфейс выбранного в диалоге типа атрибута IAttributeType.
+
+Примечание:
+Метод позволяет открыть диалог просмотра типов атрибутов в библиотеке.
+263
+
+
+
+CreateAttrType  Создать тип атрибута в заданной 
+библиотеке
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH CreateAttrType( VARIANT Libname );
+Синтаксис COM:
+HRESULT CreateAttrType( VARIANT Libname,
+IAttributeType ** Result );
+Входные параметры:
+
+Libname " имя библиотеки типов атрибутов.
+
+Возвращаемое значение:
+
+" указатель на интерфейс типа атрибута IAttributeType.
+
+Примечание:
+Метод позволяет создать тип атрибута в библиотеке Libname.
+
+GetAttrType  Получить тип атрибута из заданной 
+библиотеки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetAttrType( double AttrID,
+VARIANT Libname );
+Синтаксис COM:
+HRESULT GetAttrType( double AttrID,
+VARIANT Libname,
+IAttributeType ** Result );
+Входные параметры:
+
+AttrID " уникальный номер типа атрибута,
+Libname " имя библиотеки типов атрибутов.
+
+Возвращаемое значение:
+
+" указатель на интерфейс типа атрибута IAttributeType.
+
+Примечание:
+Метод позволяет получить тип атрибута из библиотеки Libname.
+264
+
+
+
+GetAttrTypes  Возвращает массив типов атрибутов, 
+находящихся в заданной библиотеке типов
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetAttrTypes( VARIANT Libname );
+Синтаксис COM:
+HRESULT GetAttrTypes( VARIANT  Libname,
+VARIANT * Result );
+Входные параметры:
+

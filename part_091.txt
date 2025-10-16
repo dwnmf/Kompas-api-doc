@@ -1,0 +1,2532 @@
+
+ом AM
+DIM DimText ksDimTextParam IDim
+_TE Text
+XT_
+PAR
+AM
+DIM ADimSource ksADimSourcePara IBrea
+_SO m Dime
+URS
+E_P
+ARA
+M
+
+4925
+
+
+
+ension
+ms
+
+ension
+:Nomi
+alue
+
+Размер htDim
+высоты n
+
+ension
+
+htDim
+n
+
+ension
+ms
+
+ension
+:Nomi
+alue
+DIM BreakDimDrawing ksBreakDimDrawin IDim
+_DR g Para
+AW
+_PA
+RA
+M
+DIM DimensionPartsPa ksDimensionParts
+_PA ram Param
+RTS
+SHE DimensionPartsPa ksDimensionParts
+ET_ ram Param
+DIM
+_PA
+RTS
+DIM double ksDoubleValue IDim
+_VA Text:
+LUE nalV
+
+ ksDrOrdinat 40 ORDINATEDIM ALL OrdinatedDimPara ksOrdinatedDimPar IHeig
+eDimension ENSION_OBJ PAR m am ensio
+
+AM
+DIM DimText ksDimTextParam IDim
+_TE Text
+XT_
+PAR
+AM
+DIM OrdinatedSource ksOrdinatedSource IHeig
+_SO Param ensio
+URS
+E_P
+ARA
+M
+DIM OrdinatedDrawing ksOrdinatedDrawin IDim
+_DR gParam Para
+AW
+_PA
+RA
+M
+DIM DimensionPartsPa ksDimensionParts
+_PA ram Param
+RTS
+SHE DimensionPartsPa ksDimensionParts
+ET_ ram Param
+DIM
+_PA
+RTS
+DIM double ksDoubleValue IDim
+_VA Text:
+LUE nalV
+4926
+
+
+
+Фонов uring
+заливк
+цветом
+Обозна treMar
+центра
+
+LinePa
+
+Размер imens
+дуги
+
+ension
+
+imens
+
+ension
+msо
+
+ension
+:Nomi
+alue
+
+Объект cificati
+специф ject
+
+cificati
+seObje
+
+cificati
+mmen
+ct
+
+Растро ter
+объект
+ая ksDrColorFi 41 COLORFILL_OB ALL long (цвет) ksLtVariant (цвет) IColo
+а ll J PAR
+
+AM
+чение ksDrCentre 42 CENTREMARK ALL CentreParam ksCentreParam ICen
+
+Marker ER_OBJ PAR ker
+AM IAxis
+
+ram 
+ длины ksDrArcDim 43 ARCDIMENSIO ALL нереализовано нереализовано IArcD
+
+ension N_OBJ PAR ionо
+AM
+DIM DimText ksDimTextParam IDim
+_TE Text
+XT_
+PAR
+AM
+DIM нереализовано нереализовано IArcD
+_SO ionо
+URS
+E_P
+ARA
+M
+DIM нереализовано нереализовано IDim
+_DR Para
+AW
+_PA
+RA
+M
+DIM DimensionPartsPa ksDimensionParts
+_PA ram Param
+RTS
+SHE DimensionPartsPa ksDimensionParts
+ET_ ram Param
+DIM
+_PA
+RTS
+DIM double ksDoubleValue IDim
+_VA Text:
+LUE nalV
+
+ не 2D 44 SPC_OBJ ALL SpcObjParam ksSpcObjParam ISpe
+икации объект PAR onOb
+
+AM ISpe
+onBa
+ct
+ISpe
+onCo
+tObje
+
+вый ksDrRaster 45 RASTER_OBJ ALL RasterParam ksRasterParam IRas
+PAR
+AM
+4927
+
+
+
+Обозна ngeLea
+измене
+
+Вынос oteEle
+элемен t
+
+Осевая Line
+LinePa
+
+Вставк rawin
+объект ect
+
+Номер Markin
+
+Фигурн e
+скобка
+
+Марка kOnLea
+позици
+обозна
+линией
+выноск
+Марка kOnLin
+позици
+обозна
+на лин
+Марка kInside
+позици
+обозна
+без ли
+выноск
+Волнис eLine
+линияВ
+ая
+Пряма ightAxi
+
+Линия enLine
+с изло
+
+Кругов leAxis
+
+Дугова xis
+чение ksDrChang 46 CHANGE_LEAD ALL ChangeLeaderPara ksChangeLeaderPa ICha
+ния eLeader ER_OBJ PAR m ram der
+
+AM
+ной ksDrRemot 47 REMOTE_ELE ALL RemoteElementPa ksRemoteElementP IRem
+т eElement MENT_OBJ PAR ram aram men
+
+AM
+ линия ksDrAxisLin 48 AXISLINE_OBJ ALL AxisLineParam ksAxisLineParam IAxis
+
+e PAR IAxis
+AM ram
+
+а OLE ksDrOLEObj 49 OLEOBJECT_O ALL не реализовано не реализовано IOleD
+а ect BJ PAR gObj
+
+AM
+ узла ksDrUnitNu 50 KNOTNUMBER ALL не реализовано не реализовано IUnit
+
+mber _OBJ PAR g
+AM
+
+ая ksDrBrace 51 BRACE_OBJ ALL не реализовано не реализовано IBrac
+PAR
+AM
+
+/Марка/ ksDrMarkO 52 POSNUM_OBJ ALL не реализовано не реализовано IMar
+онное nLeader PAR der
+чение с AM
+"
+ой
+
+/ ksDrMarkO 53 MARKONLDR_ ALL не реализовано не реализовано IMar
+онное nLine OBJ PAR e
+чение AM
+ии
+/ ksDrMarkIn 54 MARKWOLDR_ ALL не реализовано не реализовано IMar
+онное sideForm OBJ PAR Form
+чение AM
+нии"
+и
+тая ksDrWaveLi 55 WAVELINE_OB ALL не реализовано не реализовано IWav
+олнист ne J PAR
+
+AM
+я ось ksDrStraigh 56 DIRAXIS_OBJ ALL не реализовано не реализовано IStra
+
+tAxis PAR s
+AM
+
+ обрыва ksDrBroken 57 BROKENLINE_ ALL не реализовано не реализовано IBrok
+мами Line OBJ PAR
+
+AM
+ая ось ksDrCircleA 58 CIRCLEAXIS_O ALL не реализовано не реализовано ICirc
+
+xis BJ PAR
+AM
+
+я ось ksDrArcAxi 59 ARCAXIS_OBJ ALL не реализовано не реализовано IArcA
+s PAR
+
+AM
+4928
+
+
+
+Обозна nitMar
+узла в 
+
+Обозна Markin
+узла
+
+Вынос tiTextL
+надпис
+многос
+м 
+констр
+Вставк rtionVi
+внешн
+
+Аннота Segme
+й отре
+
+otative
+ct
+
+Аннота le
+я окру otative
+
+ct
+Аннота se
+й элли otative
+
+ct
+Аннота
+я дуга
+
+otative
+ct
+
+Аннота seArc
+я дуга otative
+
+ct
+Аннота line
+я поли otative
+
+ct
+Аннота t
+я точка otative
+
+ct
+Текст с ingTe
+анната
+й точко
+привяз otative
+
+ct
+Мульти tiline
+
+Линия ine
+разрез
+сечени
+СПДС
+чение ksDrCutUnit 60 CUTUNITMARK ALL не реализовано не реализовано ICutU
+сечении Marking ING PAR king
+
+AM
+чение ksDrUnitMa 61 UNITMARKING ALL не реализовано не реализовано IUnit
+
+rking PAR g
+AM
+
+ная ksDrMultiT 62 MULTITEXTLEA ALL не реализовано не реализовано IMul
+ь к extLeade DER PAR eade
+лойны AM
+
+укциям
+а ksDrExtern 63 EXTERNALVIE ALL не реализовано не реализовано IInse
+его вида alView W_OBJ PAR ew
+
+AM
+ционны ksDrAnnLin 64 ANNLINESEG_ ALL LineSegParam ksLineSegParam ILine
+
+зок eSeg OBJ PAR nt
+AM IAnn
+
+Obje
+ционна ksDrAnnCir 65 ANNCIRCLE_O ALL CircleParam ksCircleParam ICirc
+
+жность cle BJ PAR IAnn
+AM Obje
+
+ционны ksDrAnnElli 66 ANNELLIPSE_ ALL EllipseParam ksEllipseParam IEllip
+пс pse OBJ PAR IAnn
+
+AM Obje
+ционна ksDrAnnArc 67 ANNARC_OBJ ALL ArcParam ksArcByAnglePara IArc
+
+PAR m  
+AM IAnn
+
+Obje
+ционна ksDrAnnElli 68 ANNELLIPSE_A ALL EllipseArcParam ksEllipseArcParam IEllip
+эллипса pseArc RC_OBJ PAR IAnn
+
+AM Obje
+ционна ksDrAnnPol 69 ANNPOLYLINE ALL PolylineParamEx ksPolylineParam IPoly
+линия yline _OBJ PAR IAnn
+
+AM Obje
+ционна ksDrAnnPoi 70 ANNPOINT_OB ALL PointParam ksPointParam IPoin
+
+nt J PAR IAnn
+AM Obje
+
+ ksDrAnnTe 71 ANNTEXT_OBJ ALL TextParam ksTextParam IDraw
+ционно xt PAR xt
+й AM IText
+ки IAnn
+
+Obje
+линия ksDrMultiLi 72 MULTILINE_OB ALL не реализовано не реализовано IMul
+
+ne J PAR
+AM
+
+ ksDrBuildin 73 BUILDINGCUTL ALL CutLineParam ksCutLineParam ICutL
+а/ gCutLine INE_OBJ PAR
+я для AM
+4929
+
+
+
+Присое er
+ая лин
+выноск
+Условн ditionC
+пересе ng
+
+Ассоци ciatio
+таблиц le
+
+Таблиц ciatio
+исполн le
+
+Кривая ingOb
+вида 
+(проек ingOb
+кривая
+Таблиц ciatio
+параме le
+массив
+NURBS sByPo
+по точк
+
+s
+Кониче icCurve
+кривая
+
+Кругов ularCe
+центро
+
+Линейн arCent
+сетка ц
+
+Дугова
+осевая изова
+
+Cпециф cificati
+на лис scripti
+
+howO
+et
+
+неуказ cRoug
+шерох
+ь 
+Вид
+
+Не объ
+2D
+диненн ksDrAttach 74 ATTACHED_LE ALL LeaderParam ksLeaderParam ILead
+ия edLeader ADER_OBJ PAR
+и AM
+ое ksDrConditi 75 CONDITIONCR ALL не реализовано не реализовано ICon
+чение onCrossing OSSING_OBJ PAR rossi
+
+AM
+ативная ksReportTa 76 REPORTTABLE ALL не реализовано не реализовано IAsso
+а отчета ble _OBJ PAR nTab
+
+AM
+а ksEmbodim 77 EMBODIMENTS ALL не реализовано не реализовано IAsso
+ений entsTable TABLE_OBJ PAR nTab
+
+AM
+ общего 78 SPECIALCURV ALL не реализовано не реализовано IDraw
+
+E_OBJ PAR ject
+ционная AM IDraw
+) ject1
+а ksArrayPar 79 ARRAYPARAM ALL не реализовано не реализовано IAsso
+тров amTable TABLE_OBJ PAR nTab
+а AM
+"кривая ksDrNurbsB 80 NURBS_BY_PO ALL не реализовано не реализовано INurb
+ам yPoints INTS_OBJ PAR ints
+
+AM INurb
+ская ksDrConicC 81 CONIC_CURVE ALL не реализовано не реализовано ICon
+
+urve _OBJ PAR
+AM
+
+ая сетка ksDrCircula 84 CIRCULAR_CE ALL не реализовано не реализовано ICirc
+в rCentres NTRES_OBJ PAR ntres
+
+AM
+ая ksDrLinear 85 LINEAR_CENT ALL не реализовано не реализовано ILine
+ентров Centres RES_OBJ PAR res
+
+AM
+я ksDrEllipse 86 ELLIPSE_ARC_ ALL не реализовано не реализовано не 
+ линия ArcAxis AXIS_OBJ PAR реал
+
+AM но
+икация не объект 121 SPECIFICATION ALL не реализовано не реализовано ISpe
+
+те 2D _OBJ PAR onDe
+AM on::S
+
+nShe
+анная не объект 122 SPECROUGH_ ALL не реализовано не реализовано ISpe
+оватост 2D OBJ PAR h
+
+AM
+ksView 123 VIEW_OBJ ALL ViewParam ksViewParam IView
+
+PAR
+AM
+
+екты 
+4930
+
+
+
+графи pasDo
+докуме ent2D
+(чертеж pasDo
+фрагм ent2D1
+
+mentD
+ent
+ingDo
+
+ent
+технич nicalD
+требов d
+
+ки, 
+ник) 
+ в 
+
+Штамп p
+ческий 124 DOCUMENT_O ALL DocumentParam ksDocumentParam IKom
+нт BJ PAR cum
+ или AM IKom
+
+ент) cum
+IFrag
+ocum
+IDraw
+cum
+
+еские 125 TECHNICALDE ALL TechnicalDemand ksTechnicalDeman ITech
+ания MAND_OBJ PAR Param dParam eman
+
+AM ksDynamicArray 
+или (массив строк 
+TEC TEXT_LINE_ARR)
+HNI
+CAL
+_DE
+MA
+ND_
+PAR
+0, 1, 
+2... 
+TT_
+FIR
+ST_
+STR 
+refe
+renc
+e 
+(ма
+с"си
+в 
+стр
+ок 
+TEX
+T_LI
+NE_
+ARR
+)
+
+Примечание: Массив составляют только стро
+входящие в страницу (габаритный прямоуголь
+технических требований с номером, заданным
+TECHNICAL_DEMAND_PAR.
+
+126 STAMP_OBJ ALL нереализовано нереализовано? IStam
+PAR можно 
+AM использовать 
+
+ksStamp
+4931
+
+
+
+Группа ctionM
+селект er
+я
+Имено ingGr
+группа
+
+Рабоча ingGr
+группа
+
+Докум cificati
+специф cume
+
+utShe
+
+etForm
+
+pasDo
+nt::Act
+
+Докум pasDo
+модель nt3D
+(детал pasDo
+сборка nt3D1
+
+Docum
+
+mblyD
+ent
+pasDo
+nt::Act
+
+Таблиц ingDo
+измене nt::Ch
+
+ListDe
+tions
+
+Тексто Docum
+докуме
+
+Все до lication
+ument
+ 127 SELECT_GROU ALL нереализовано нереализовано ISele
+ировани P_OBJ PAR anag
+
+AM
+ванная 128 NAME_GROUP ALL нереализовано нереализовано IDraw
+
+_OBJ PAR oup
+AM
+
+я 129 WORK_GROUP ALL нереализовано нереализовано IDraw
+_OBJ PAR oup
+
+AM
+ент" 130 SPC_DOCUME ALL DocumentParam ksDocumentParam ISpe
+
+икация NT_OBJ PAR onDo
+AM nt
+DOC SheetSize ksSheetSize ILayo
+UM et
+ENT IShe
+_SI at
+ZE
+DOC int (состояние ksLtVariant IKom
+UM документа) (состояние cume
+ENT документа) можно ive
+_ST использовать 
+ATE ksSpcDocument
+
+ент" 131 D3_DOCUMEN ALL DocumentParam ksDocumentParam IKom
+ T_OBJ PAR cume
+
+ь или AM IKom
+). cume
+
+IPart
+ent
+IAsse
+ocum
+
+DOC int (состояние ksLtVariant IKom
+UM документа) (состояние cume
+ENT документа), ive
+_ST можно 
+ATE использовать 
+
+IDocument3D 
+ksDocument3D
+
+а 132 CHANGE_LIST_ ALL нереализовано нереализовано IDraw
+ний OBJ PAR cume
+
+AM ange
+scrip
+
+вый 133 TXT_DOCUME ALL TextDocumentPara ksTextDocumentPa IText
+нт NT_OBJ PAR m ram ent
+
+AM
+кументы 134 ALL_DOCUME константа используется при создании IApp
+
+NTS итератора по документам ::Doc
+s
+
+4932
+
+
+
+Верхня
+границ
+поиска
+
+Все об
+которы
+входит
+в поря
+отрисо
+я 134 MAX_TIP_SEA не 
+а типов RCH исп
+
+оль
+зует
+ся
+
+ъекты, " ALL_OBJ_SHO константа используется при создании 
+е могут 100 W_ORDER итератора по объектам вида
+ь в вид 0
+дке 
+вки
+
+Примечание:
+Для SHEET_ALLPARAM используются те же структуры, что и для ALLPARAM.
+
+ksObjectPropertyControlTypeEnum  Типы контролов 
+для отображения свойств в окне свойств
+
+Константа Тип контрола Используемые поля в структуре 
+PropertyParam кроме propertyType, 
+propertyId, propertyInstance, isDefCpyProp, 
+enable, и emptyValue
+
+ksOPControlGroup 0 Группа свойств " 
+ksOPControlPointCoord 1 Координаты точки propertyValue " Координата X  VT_R8
+
+additionData " Координата Y  VT_R8
+ksOPControlPointStyle 2 Стиль точки 2D propertyValue " Стиль точки из перечисления 
+
+ksAnnotationSymbolEnum VT_I4
+ksOPControlLineStyle 4 Стиль линии 2D propertyValue " Стиль линии из 
+
+перечисления ksCurveStyleEnum или 
+пользовательский VT_I4
+
+ksOPControlHatchStyle 5 Стиль штриховки propertyValue " Стиль штриховки из 
+перечисления ksHatchStyleEnum или 
+пользовательский VT_I4 
+
+ksOPControlColor 6 Цвет propertyValue " Цвет VT_I4
+ksOPControlEditDouble 7 Вещественное propertyValue    " Значение VT_R8
+
+значение                                                                                                   
+propertyMinValue " Минимальное значение
+                                                                                                  
+propertyMaxValue " Максимальное значение
+
+ksOPControlEditInt 10 Целое значение propertyValue    " Значение VT_I4
+                                                                                                  
+propertyMinValue " Минимальное значение
+                                                                                                  
+propertyMaxValue " Максимальное значение
+4933
+
+
+
+ksOPControlListDouble 11 Список propertyValue    " Значение VT_R8
+вещественных                                                                                                   
+значений propertyMinValue " Минимальное значение
+
+                                                                                                  
+propertyMaxValue " Максимальное значение
+                                                                                                  
+additionData     " Список значений VT_ARRAY 
+| VT_R8 или VT_EMPTY для фиксированного 
+списка загружаемого из ресурсов
+
+ksOPControlListInt 12 Список целых propertyValue    " Значение VT_I4
+значений                                                                                                   
+
+propertyMinValue " Минимальное значение
+                                                                                                  
+propertyMaxValue " Максимальное значение
+                                                                                                  
+additionData     " Список значений VT_ARRAY 
+| VT_I4 или VT_EMPTY для фиксированного 
+списка загружаемого из ресурсов 
+
+ksOPControlListCheck 15 Элемент который propertyValue " Значение VT_BOOL
+принимает два 
+значения true, false
+
+ksOPControlListBmp 16 Список с propertyValue    " Значение VT_I4 
+битмапами Идентификатор текущего битмапа
+
+ksOPControlListString 17 Список строк  propertyValue    " Значение VT_BSTR
+                                                                                                  
+additionData     " Список значений VT_ARRAY 
+| VT_BSTR или VT_EMPTY для 
+фиксированного списка загружаемого из 
+ресурсов 
+
+ksOPControlSimpleText 19 Однострочный 
+текст объекта
+
+ksOPControlText 25 Многострочный 
+текст
+
+ksOPControlEdit 31 Строка propertyValue    " Значение VT_BSTR 
+ksOPControlExternalEdit 34 Внешнее свойство propertyValue " Значение любой простой тип 
+
+с внешним Variant"а (Не отображается. Используется 
+редактированием. для сравнения значений)
+Отображает                                                                                                   
+битмап additionData " Значение любой тип (Не 
+
+отображается. Не используется) 
+                                                                                                  
+propertyValue и additionData библиотека 
+
+ksOPControlExternalString 35 Внешнее свойство propertyValue " Значение VT_BSTR
+Edit с внешним 
+
+редактированием. 
+Отображает строку
+
+ksOPControlFontImageList 38 Список со 
+шрифтовыми 
+иконками
+4934
+
+
+
+ksOPControlExternalText 44 Однострочный 
+текст объекта с 
+внешним 
+редактированием
+
+ksOPControlExternalMulty 45 Многострочный 
+Text текст с внешним 
+
+редактированием
+ksOPControlUserLineStyle 47 Пользовательский 
+
+стиль линии
+
+ ksHotPointEnum Типы горячих точек
+
+ksHPDefault "1
+ksHPNormal 0 " обычный
+ksHPSmall 1 " маленький
+ksHPRing 2 " изменение угла поворота
+ksHPBiDirArrow 3 " изменение длины
+ksHPMiddlepoint 4 " средняя точка
+ksHPTriangleDisplaced 5 " смещенный треугольник
+ksHPVisibilityOn 6 " глаз " видимый объект
+ksHPVisibilityOff 7 перечеркнутый глаз " скрытый объект
+ksHPTilt 12 наклон
+
+Прочие
+3D
+D3FormatConvType  Определения для конвертации в 
+дополнительные форматы jgs, sat, xt, step, stl, VRML,C3D 
+
+format_SAT 1 формат SAT
+format_XT 2 формат XT
+format_STEP 3 формат STEP
+format_IGES 4 формат IGES
+format_VRML 5 формат VRML
+format_STL 6 формат STL
+format_JT 8 формат JT
+load_format_SAT "1 формат SAT, для открытия до"
+
+кументов
+load_format_XT "2 формат XT, для открытия доку"
+
+ментов
+load_format_STEP "3 формат STEP, для открытия до"
+
+кументов
+load_format_IGES "4 формат IGES, для открытия до"
+
+кументов
+load_format_STL "6 формат STL для открытия доку"
+
+ментов
+4935
+
+
+
+load_format_C3D "7 формат C3D, для открытия до"
+кументов математического
+ядра
+
+load_format_JT "8 формат JT, для открытия доку"
+ментов
+
+format_STEP_AP203 203 формат STEP AP203. Приклад"
+ной протокол 203 (Проектиро"
+вание с управляемой конфигу"
+рацией)
+
+format_STEP_AP214 214 формат STEP AP214. Приклад"
+ной протокол 214 (Проектиро"
+вание автомобилей )
+
+format_STEP_AP242 242 формат STEP AP242.Приклад"
+ной протокол 242 (Проектиро"
+вание автомобилей )
+
+При использовании константы format_STEP сохранение выполняется в формат STEP
+AP203
+
+Positioner_Type  Тип перемещения
+
+pnMove 0 сдвиг
+pnRotate 1 вращение
+
+PartType  Типы компонентов
+
+pInPlace_Part "4 компонент, редактируемый на месте
+pNew_Part "3 новый компонент
+pEdit_Part "2 редактируемый компонент
+pTop_Part "1 главный компонент, в составе которо"
+
+го находится новый или редактируе"
+мый, или указанный компонент (на"
+пример, сборка, в составе которой
+находится редактируемая деталь)
+
+ MateConstraintType  Типы сопряжений
+
+mc_Coincidence 0 совпадение объектов
+mc_Parallel 1 параллельность
+mc_Perpendicular 2 перпендикулярность
+mc_Tangency 3 касательность
+mc_Concentric 4 концентричность
+mc_Distance 5 постоянное расстояние между объектами
+mc_Angle 6 постоянный угол между объектами
+4936
+
+
+
+mc_InPlace 7 создание компонента "на месте"
+(эквивалентно совпадению системы координат 
+плоскости, на которой создается компонент, и 
+системы координат плоскости первого эскиза 
+этого компонента)
+
+mc_Transmission 9 Механическая передача
+mc_CamGear 10 Кулачковый механизм. Кулачек"толкатель
+mc_Symmetric 11 Симметрия
+mc_Dependent 14 Зависимое положение
+
+ksMateFixedTypeEnum  Фиксация компонентов при 
+создании сопряжения
+
+Неопределено ksMFixedUnknown = 0
+Фиксировать первый компонент ksMFixedPart1  =  1
+Фиксировать второй компонент ksMFixedPart2  =  2
+
+ksTypeLookStyle  Тип отрисовки визуальной части
+
+tls_VisualStudio_97 0 Microsoft Visual Studio 97
+tls_VisualStudio_NET 1 Microsoft Visual Studio.NET 2003
+tls_Office_2003 2 Microsoft Office 2003
+tls_VisualStudio2005 3 Microsoft Visual Studio 2005
+tls_WindowsXP 4 Microsoft Windows XP native look
+tls_Office_2007 5 Microsoft Office 2007
+tls_Office_2007_LunaBlue 5 Microsoft Office 2007. Luna Blue
+tls_Office_2007_ObsidianBlack 6 Microsoft Office 2007. Obsidian Black
+tls_Office_2007_Aqua 7 Microsoft Office 2007. Aqua
+tls_Office_2007_Silver 8 Microsoft Office 2007. Silver
+tls_VisualStudio2008 9 Microsoft Visual Studio 2008
+tls_VisualStudio2010 10 Microsoft Visual Studio 2010
+tls_Office_2010_Blue 11 Microsoft Office 2010 Blue
+tls_Office_2010_Dark 12 Microsoft Office 2010 Dark
+tls_Office_2010_White 13 Microsoft Office 2010 White
+tls_Carbon 14 Carbon
+
+ViewMode  Способы отображения моделей
+
+vm_Wireframe 0 каркас
+vm_HiddenRemoved 1 без невидимых линий
+vm_HiddenThin 2 невидимые линии тонкие
+vm_Shaded 3 полутоновой
+
+ksLineBuildingType  Способ построения сегмента 
+ломаной
+
+ksLBTByPoint 0 По точкам
+ksLBTXDirection 1 По оси X
+4937
+
+
+
+Иде
+7
+
+o3d_
+
+o3d_
+o3d_
+o3d_
+o3d_
+
+Эле
+o3d_
+ksLBTYDirection 2 По оси Y
+ksLBTZDirection 3 По оси Z
+ksLBTParallel 4 Параллельно объекту
+ksLBTPerpendicular 5 Перпендикулярно объекту
+ksLineBuildingType 6 Через построение точки
+
+DirectionTypes  Типы направлений выдавливания
+
+dtNormal 0 прямое направление 
+(для тонкой стенки " наружу)
+
+dtReverse 1 обратное направление
+(для тонкой стенки " внутрь)
+
+dtBoth 2 в обе стороны
+dtMiddlePlane 3 от средней плоскости
+
+Примечание:
+
+1. При типе направления dtMiddlePlane в методах SetSideParam и GetSideParam параметр
+depth интерпретируется как общая глубина выдавливания и задается следующим обра"
+зом:
+SetSideParam(TRUE, etBlind, depth,...)
+
+2. В API7 соответствует перечислению ksDirectionTypeEnum.
+
+ksContour3DBuildingTypeTypeEnum  Способ построения 
+Контура 3D
+
+ksCBTUnknown 0 Не определен
+ksCBTEdges 1 Ребрами
+ksCBTEquidistant 2 Эквидистанта
+
+Obj3dType (ksObj3dTypeEnum)  Типы объектов 
+документамодели; соответствие интерфейсов API 5 и 
+API 7
+В таблице представлены идентификаторы объектов для интерфейсов API 5 и API 7.
+.
+
+нтификатор объекта Название объекта Интерфейс Интерфейс 
+параметров API 5 параметров API 
+
+unknown 0 неизвестный 
+(включает все 
+объекты)
+
+planeXOY 1 плоскость XOY ksDefaultObject IPlane3D
+planeXOZ 2 плоскость XOZ ksDefaultObject IPlane3D
+planeYOZ 3 плоскость YOZ ksDefaultObject IPlane3D
+pointCS 4 точка начала системы ksDefaultObject IModelObject
+
+координат
+менты детали
+sketch 5 эскиз ksSketchDefinition ISketch
+4938
+
+
+
+o3d_
+o3d_
+o3d_
+Кон
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_ urf
+
+o3d_ Fac
+
+o3d_ dPo
+
+o3d_ oi
+
+o3d_ ular
+
+o3d_
+
+o3d_ dPl
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+face 6 поверхность ksFaceDefinition IFace
+edge 7 ребро ksEdgeDefinition IEdge
+vertex 8 вершина ksVertexDefinition IVertex
+
+структивные элементы
+axis2Planes 9 ось по двум ksAxis2PlanesDefinitio IAxis3DBy2Planes
+
+плоскостям n
+axis2Points 10 ось по двум точкам ksAxis2PointsDefinitio IAxis3DBy2Points
+
+n
+axisConeFace 11 ось конической грани ksAxisConefaceDefiniti IAxis3DByConeface
+
+on
+axisEdge 12 ось, проходящая через ksAxisEdgeDefinition IAxis3DByEdge
+
+ребро
+axisOperation 13 ось операции ksAxisOperationsDefini IAxis3DByOperation
+
+tion
+planeOffset 14 смещённая плоскость ksPlaneOffsetDefinitio IPlane3DByOffset
+
+n
+planeAngle 15 плоскость под углом ksPlaneAngleDefinition IPlane3DByAngle
+plane3Points 16 плоскость по 3"м ksPlane3PointsDefiniti IPlane3DBy3Points
+
+точкам on
+planeNormal 17 нормальная плоскость ksPlaneNormalToSurfa IPlane3DNormalToS
+
+ceDefinition ace
+planeTangent 18 касательная плоскость ksPlaneTangentToSurf IPlane3DTangentTo
+
+aceDefinition e
+planeEdgePoint 19 плоскость через ребро ksPlaneEdgePointDefin IPlane3DByEdgeAn
+
+и вершину ition int
+planeParallel 20 плоскость через ksPlaneParallelDefiniti IPlane3DParallelByP
+
+вершину параллельно on nt
+другой плоскости
+
+planePerpendicular 21 плоскость через ksPlanePerpendicularD IPlane3DPerpendic
+вершину efinition ByEdge
+перпендикулярно 
+ребру
+
+planeLineToEdge 22 плоскость через ребро ksPlaneLineToEdgeDef IPlane3DBy2Edge
+параллельно / inition
+перпендикулярно 
+другому ребру
+
+planeLineToPlane 23 плоскость через ребро ksPlaneLineToPlaneDe IPlane3DByEdgeAn
+параллельно / finition ane
+перпендикулярно 
+грани
+
+baseExtrusion 24 базовая операция ksBaseExtrusionDefinit IExtrusion
+выдавливания ion
+
+bossExtrusion 25 приклеивание ksBossExtrusionDefinit IExtrusion
+выдавливанием ion
+
+cutExtrusion 26 вырезать ksCutExtrusionDefiniti ICutExtrusion
+выдавливанием on
+
+baseRotated 27 базовая операция ksBaseRotatedDefinitio IRotated
+вращения n
+
+bossRotated 28 приклеивание ksBossRotatedDefinitio IRotated
+вращением n
+
+cutRotated 29 вырезать вращением ksCutRotatedDefinition ICutRotated
+4939
+
+
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+Кри
+o3d_
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+baseLoft 30 базовая операция по ksBaseLoftDefinition ILoft
+сечениям
+
+bossLoft 31 приклеивание ksBossLoftDefinition ILoft
+по сечениям
+
+cutLoft 32 вырезать по сечениям ksCutLoftDefinition ILoft
+chamfer 33 операция "фаска" ksChamferDefinition IChamfer
+fillet 34 операция "скругление" ksFilletDefinition IFillet
+meshCopy 35 операция копирования ksMeshCopyDefinition ILinearPattern
+
+по сетке
+circularCopy 36 операция копирования ksCircularCopyDefiniti ICircularPattern
+
+по концентрической on
+сетке
+
+curveCopy 37 операция копирования ksCurveCopyDefinition IPathPattern
+по кривой
+
+circPartArray 38 операция массив по ksCircularPartArrayDef ICircularPattern
+концентрической inition
+сетке для сборки
+
+meshPartArray 39 операция массив по ksMeshPartArrayDefini ILinearPattern
+сетке для сборки tion
+
+curvePartArray 40 операция массив по ksCurvePartArrayDefini IPathPattern
+кривой для сборки tion
+
+derivPartArray 41 операция массив по ksDerivativePartArrayD IDerivedPattern
+образцу для сборки efinition
+
+incline 42 операция "уклон" ksInclineDefinition IIncline
+shellOperation 43 операция "оболочка" ksShellDefinition IShell
+ribOperation 44 операция "ребро ksRibDefinition IRib
+
+жесткости"
+baseEvolution 45 кинематическая ksBaseEvolutionDefinit IEvolution
+
+операция ion
+bossEvolution 46 приклеить ksBossEvolutionDefinit IEvolution
+
+кинематически ion
+cutEvolution 47 вырезать ksCutEvolutionDefinitio IEvolution
+
+кинематически n
+mirrorOperation 48 операция "зеркальный ksMirrorCopyDefinition IMirrorPattern
+
+массив"
+mirrorAllOperation 49 операция "зеркально ksMirrorCopyAllDefiniti IMirrorPattern
+
+отразить все" on
+cutByPlane 50 операция "сечение ksCutByPlaneDefinitio ICut
+
+поверхностью" n
+cutBySketch 51 операция "сечение ksCutBySketchDefiniti ICut
+
+эскизом" on
+holeOperation 52 отверстие
+вые
+polyline 53 ломаная ksPolyLineDefinition IPolyLine
+conicSpiral 54 коническая спираль ksConicSpiralDefinitio IConicSpiral3D
+
+n
+spline 55 сплайн ksSplineDefinition ISpline3D
+cylindricSpiral 56 цилиндрическая ksCylindricSpiralDefinit ICylindricSpiral3D
+
+спираль ion
+importedSurface 57 импортирванная ksImportedSurfaceDefi IImportedSurface
+
+поверхность nition
+4940
+
+
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+o3d_
+o3d_
+o3d_
+o3d_
+o3d_ d
+o3d_
+
+o3d_
+
+o3d_
+o3d_ n3D
+
+o3d_
+
+o3d_
+
+o3d_ n3
+
+o3d_
+o3d_ ste
+
+o3d_
+o3d_
+o3d_
+
+o3d_
+thread 58 условное ksThreadDefinition IThread
+изображение резьбы
+
+EvolutionSurface 59 кинематическая ksEvolutionSurfaceDefi IEvolution
+поверхность nition
+
+ExtrusionSurface 60 поверхность ksExtrusionSurfaceDefi IExtrusionSurface
+выдавливания nition
+
+RotatedSurface 61 поверхность вращения ksRotatedSurfaceDefin IRotatedSurface
+ition
+
+LoftSurface 62 поверхность по ksLoftSurfaceDefinitio ILoft
+сечениям n
+
+MacroObject 63 макроэлемент 3D ksMacro3DDefinition IMacroObject3D
+UnionComponents 64 операция объединения ksUnionComponentsD IUnionComponents
+
+компонентов efinition
+MoldCavity 65 операция вычитания ksMoldCavityDefinition IMoldCavity
+
+компонентов
+planeMiddle 66 средняя плоскость ksPlaneMiddleDefinitio IPlane3DMiddle
+
+n
+controlPoint 67 контрольная точка ksControlPointDefinitio IControlPoint
+
+n
+conjunctivePoint 68 присоединительная ksConjunctivePointDefi IConjunctivePoint
+
+точка nition
+aggregate 69 Булева операция ksAggregateDefinition IBoolean
+point3D 70 Конструктивная 3D IPoint3D
+
+точка
+axisOX 71 Ось OX ksDefaultObject IAxis3D
+axisOY 72 Ось OY ksDefaultObject IAxis3D
+axisOZ 73 Ось OZ ksDefaultObject IAxis3D
+sheetMetalBody 74 Листовое тело ISheetMetalBody
+sheetMetalBend 75 Сгиб ISheetMetalBend
+sheetMetalLineBend 76 Сгиб по линии ISheetMetalLineBen
+sheetMetalHole 77 Элемент листового ISheetMetalHole
+
+тела "отверстие"
+sheetMetalCut 78 Элемент листового ISheetMetalCut
+
+тела "вырез"
+UnHistoried 79 Операция без истории
+baselineDimension3D 80 Линейный размер 3D IBaseLineDimensio
+
+(от отрезка до точки)
+lineDimension3D 81 Линейный размер 3D ILineDimension3D
+
+(на плоскости)
+radialDimension3D 82 Радиальный размер IRadialDimension3D
+
+3D
+diametralDimension3D 83 Диаметральный IDiametralDimensio
+
+размер 3D D
+angleDimension3D 84 Угловой размер 3D IAngleDimension3D
+localCoordinateSystem 85 Локальная система ILocalCoordinateSy
+
+координат m
+leader3D 86 Линия"выноска 3D ILeader
+markLeader3D 87 Знак маркировки 3D IMarkLeader
+rough3D 88 Обозначение 3D IRough3D
+
+шероховатости
+positionLeader3D 89 Обозначение позиции IPositionLeader
+
+3D
+4941
+
+
+
+o3d_
+o3d_
+o3d_
+o3d_
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+o3d_ nC
+e
+o3d_
+
+Эле
+o3d_
+
+o3d_
+o3d_
+
+o3d_ 3D
+o3d_
+o3d_
+o3d_
+o3d_
+
+o3d_
+
+Объ
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+brandLeader3D 90 Знак клеймения 3D IBrandLeader
+base3D 91 Обозначение 3D базы IBase3D
+tolerance3D 92 Допуск формы 3D ITolerance3D
+SplitLine 93 Линия разъема ISplitLine
+SurfacePatch 94 Заплатка ISurfacePatch
+FaceRemover 95 Операция удаления IFaceRemover
+
+граней
+SurfaceSewer 96 Операция сшивки ISurfaceSewer
+
+поверхностей
+NurbsSurface 97 NURBS"поверхность INurbsSurface
+SurfacesIntersectionCurv 98 Кривая пересечения ISurfacesIntersectio
+
+поверхностей urve
+lastEntityElement 99 Всегда последний из 
+
+Entity!!!
+менты, не являющиеся Entity
+variable 100 параметрическая ksVariable IVariable7
+
+переменная
+placement 101 местоположение ksPlacement IPlacement3D
+entityCollection 102 Массив трехмерных ksEntityCollection
+
+объектов
+document 103 Документ"модель ksDocument3D IKompasDocument
+part 104 Деталь ksPart IPart7
+entity 105 Объект ksEntity IModelObject
+mateConstraint 106 сопряжение ksMateConstraint IMateConstraint3D
+mateConstraintCollection 107 Массив сопряжений ksMateConstraintColle IMateConstraints3D
+
+ction
+partCollection 108 Массив элементов ksPartCollection IParts7
+
+сборки
+единенные типы объектов для создания EntityCollection
+constrElement 109 конструктивные 
+
+элементы"плоскости и 
+оси (конструктивные 
+от o3d_axis2Planes до 
+o3d_plane3Points)
+
+operationElement 110 Операции (от 
+o3d_baseExtrusion до 
+o3d_cylindricSpiral)
+
+curveElement 111 Кривые 
+(пространственные и 
+ребра)
+
+rasterFormat 112 интерфейс ksRasterFormatParam
+параметров для 
+конвертации в 
+растровый формат
+
+additionFormat 113 интерфейс ksAdditionFormatPara
+параметров для m
+конвертации в 
+дополнительные 
+форматы: jgs, sat, xt, 
+x_b, step, stl, VRML
+4942
+
+
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+bodyCollection 114 интерфейс массива ksBodyCollection
+трехмерных тел
+
+body 115 интерфейс ksBody IBody7
+трехмерного тела
+
+faceCollection 116 интерфейс массива ksFaceCollection
+граней
+
+tessellation 117 интерфейс ksTessellation ITesselllation7
+триангуляции
+
+facet 118 интерфейс ksFacet
+триангуляционной 
+пластины
+
+featureCollection 119 интерфейс массива ksFeatureCollection
+объектов дерева
+
+feature 120 интерфейс объекта ksFeature IFeature7
+дерева
+
+edgeCollection 121 интерфейс массива ksEdgeCollection
+ребер
+
+orientedEdge 122 интерфейс ksOrientedEdge IOrientedEdge7
+ориентированного 
+ребра
+
+orientedEdgeCollection 123 интерфейс массива ksOrientedEdgeCollecti
+ориентированных on
+ребер
+
+loop 124 интерфейс цикла ksLoop ILoop7
+loopCollection 125 интерфейс массива ksLoopCollection
+
+циклов
+curve3D 126 интерфейс ksCurve3D IMathCurve3D
+
+математической 
+кривой в трехмерном 
+пространстве
+
+surface 127 интерфейс ksSurface IMathSurface3D
+математической 
+поверхности в 
+трехмерном 
+пространстве
+
+massInertiaParam 128 Интерфейс ksMassInertiaParam IMassInertiaParam7
+параметров для 
+расчета массово"
+центровочных 
+характеристик
+
+line3dParam 129 Интерфейс ksLineSeg3dParam
+параметров 3dLine
+
+circle3dParam 130 Интерфейс ksCircle3dParam
+параметров 3dCircle
+
+ellipse3dParam 131 Интерфейс ksEllipse3dParam
+параметров 3dEllipce
+
+nurbsPoint3dParam 132 Интерфейс ksNurbsPoint3dParam
+параметров точки для 
+трехмерной NURBS
+4943
+
+
+
+o3d_
+
+o3d_
+on
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+nurbsPoint3dCollection 133 Интерфейс массива ksNurbsPoint3dCollect
+точек для трехмерной ion
+NURBS
+
+nurbsPoint3dCollCollecti 134 Интерфейс массива ksNurbsPoint3dCollCol
+массивов точек для lection
+трехмерной NURBS 
+поверхности
+
+nurbsKnotCollection 135 Интерфейс массива ksNurbsKnotCollection
+узлов для трехмерного 
+NURBS
+
+nurbs3dParam 136 Интерфейс ksNurbs3dParam
+параметров 
+трехмерного NURBS
+
+planeParam 137 Интерфейс ksPlaneParam
+параметров плоскости
+
+coneParam 138 Интерфейс ksConeParam
+параметров 
+конической 
+поверхности
+
+cylinderParam 139 Интерфейс ksCylinderParam
+параметров 
+цилиндрической 
+поверхности
+
+sphereParam 140 Интерфейс ksSphereParam
+параметров сферы
+
+torusParam 141 Интерфейс ksTorusParam
+параметров тора
+
+nurbsSurfaceParam 142 Интерфейс ksNurbsSurfaceParam
+параметров NURBS"
+поверхности
+
+mateConstraintGroup 143 Объект дерева: группа IModelObject IFeature7
+сопряжений
+
+measurer 144 Интерфейс для ksMeasurer
+измерений расстояния 
+и угла между двумя 
+примитивами 
+(гранями, ребрами, 
+вершинами)
+
+selectionMng 145 Интерфейс менеджера ksSelectionMng ISelectionManager
+выделенных объектов
+
+chooseMng 146 Интерфейс менеджера ksChooseMng IChooseManager
+выбора (подсветки) 
+объектов
+
+arc3dParam 147 Интерфейс ksArc3dParam
+параметров 
+трехмерной дуги
+4944
+
+
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+m
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+o3d_
+deletedCopyCollection 148 Интерфейс массива ksDeletedCopyCollecti
+удаленных индексов on
+для операций 
+копирования и 
+массивов компонент
+
+viewProjection 149 Интерфейс проекции ksViewProjection
+отображения модели в 
+окне
+
+viewProjectionCollection 150 Интерфейс массива ksViewProjectionColle
+проекций ction
+отображения модели в 
+окне
+
+attribute 151 Интерфейс атрибута ksAttribute3D IAttribute
+объекта модели
+
+attributeCollection 152 Интерфейс массива ksAttribute3DCollectio
+атрибутов объекта n
+модели
+
+componentPositioner 153 Интерфейс ksComponentPositione
+управления r
+положением 
+компонентов в сборке
+
+modelLibrary 154 Интерфейс ksModelLibrary IInsertsLibrary
+библиотеки моделей
+
+ObjectsFilter3D 155 Не используется
+coordinate3dCollection 156 Интерфейс коллекции ksCoordinate3dCollecti
+
+координат on
+intersectionResult 157 Интерфейс ksIntersectionResult
+
+результатов 
+пересечений двух тел
+
+PolygonalLineVertexPara 158 Параметры вершины ksPolyLineVertexPara ICurveVertexParam
+полилинии m
+
+variableCollection 159 Массив ksvariableCollection
+параметрических 
+переменных
+
+sTrackingPointsMeasurer 160 Интерфейс для IsTrackingPointsMeas
+расчета координат urer
+точек при S" образном 
+соединении 
+прямолинейных рёбер
+
+surfaceElement 161 Поверхности
+designationElemen 162 Размеры и условные 
+
+обозначения
+copyleftObject 163 Объекты доступные 
+
+для копирования
+Embodiment 164 Исполнение IEmbodiment
+userMateConstraint 165 Пользовательское IMateConstraint + 
+
+сопряжение IUserObject3D
+
+firstEntityElement2 500 Первый из Entity2!!!
+Equidistant3D 501 Эквидистанта 3D IEquidistant3D
+4945
+
+
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+n
+o3d_
+
+o3d_
+TrimmedCurve 502 Операция усечения ITrimmedCurve
+кривой
+
+TrimmedCurveObject 503 Усеченная кривая ITrimmedCurve
+AuxMeshCopy 504 Массив ILinearPattern
+
+вспомогательной 
+геометрии по сетке
+
+AuxCircularCopy 505 Массив ICircularPattern
+вспомогательной 
+геометрии по 
+концентрической 
+сетке
+
+AuxCurveCopy 506 Массив IPathPattern
+вспомогательной 
+геометрии вдоль 
+кривой
+
+PointDrivenPattern 507 Массив операций по IPointDrivenPattern
+точкам
+
+PartsPointDrivenPattern 508 Массив компонентов IPointDrivenPattern
+по точкам
+
+AuxMirrorOperation 509 Зеркальный массив IMirrorPattern
+вспомогательной 
+геометрии
+
+ConnectCurve 510 Операция соединения IConnectCurve
+кривых
+
+ConnectCurveObject 511 Кривая соединения IModelObject
+FilletCurve 512 Операция скругления IFilletCurve
+
+кривых
+FilletCurveObject 513 Скругленная кривая IModelObject
+EquidistantSurface 514 Операция построения IEquidistantSurface
+
+эквидистанты 
+поверхности
+
+RuledSurface 515 Линейчатая IRuledSurface
+поверхность
+
+TrimmedSurface 516 Операция усечения ITrimmedSurface
+поверхности
+
+ExtensionSurface 517 Операция продления IExtensionSurface
+поверхности
+
+SurfaceThickening 518 Операция придания ISurfaceThickening
+толщины поверхности
+
+Arc3D 519 3D дуга IArc3D
+AuxPointDrivenPattern 520 Массив IPointDrivenPattern
+
+вспомогательной 
+геометрии по точкам
+
+BodiesPointDrivenPatter 521 Массив тел по точкам IPointDrivenPattern
+
+TablePattern 522 Массив операций по ITablePattern
+таблице из файла
+
+PartsTablePattern 523 Массив компонентов ITablePattern
+по таблице из файла
+4946
+
+
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_ e
+
+o3d_
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+
+o3d_ ut
+
+o3d_
+
+o3d_ en
+d
+
+o3d_ Str
+n
+o3d_ Str
+
+o3d_ fol
+
+o3d_ or
+
+o3d_
+
+o3d_ rmi
+
+o3d_ rmi
+
+o3d_ r
+
+o3d_
+AuxTablePattern 524 Массив ITablePattern
+вспомогательной 
+геометрии по таблице 
+из файла
+
+BodiesTablePattern 525 Массив тел по таблице ITablePattern
+из файла
+
+MeshPointsSurface 526 Поверхность по сети IMeshPointsSurface
+точек
+
+CloudPointsSurface 527 Поверхность по пласту ICloudPointsSurfac
+(облаку) точек
+
+BodiesMeshCopy 528 Массив тел по сетке ILinearPattern
+BodiesCircularCopy 529 Массив тел по ICircularPattern
+
+концентрической 
+сетке
+
+BodiesCurveCopy 530 Массив тел вдоль IPathPattern
+кривой
+
+Scaling3D 531 Масштабирование IScaling3D
+MirrorPart 532 Зеркальная деталь, с IBilletObsolete
+
+внешней ссылкой на 
+источник (зеркальная 
+вставка детали 
+заготовки)
+
+sheetMetalUndercut 533 Листовой металл, ISheetMetalUnderc
+операция подсечка
+
+sheetMetalPlate 534 Листовой металл, ISheetMetalPlate
+операция пластина
+
+sheetMetalCombinedBen 535 Листовой металл, ISheetMetalSketchB
+операция d
+комбинированный 
+сгиб, " cгиб по эскизу
+
+sheetMetalBendStraighte 536 Листовой металл, ISheetMetalBended
+операция разогнуть aighten
+
+sheetMetalBendBended 537 Листовой металл, ISheetMetalBended
+операция согнуть aighten
+
+sheetMetalBendUnfold 538 Листовой металл, ISheetMetalBendUn
+операция развертка dParameters
+
+sheetMetalClosedCorner 539 Листовой металл, ISheetMetalClosedC
+операция 'замыкание ner
+углов'
+
+sheetMetalBendObject 540 Листовой металл, IModelObject
+сгибы листовых 
+операций
+
+sheetMetalDimpleCutout 541 Листовой металл, ISheetMetalPressFo
+закрытая штамповка ng
+
+sheetMetalDrawnCutout 542 Листовой металл, ISheetMetalPressFo
+открытая штамповка ng
+
+sheetMetalBeat 543 Листовой металл, ISheetMetalShoulde
+буртик
+
+sheetMetalLouver 544 Листовой металл, ISheetMetalJalousie
+жалюзи
+4947
+
+
+
+o3d_ ell
+o3d_
+
+o3d_
+o3d_ e
+
+o3d_
+o3d_
+
+o3d_
+
+o3d_ urv
+esh
+
+o3d_ Fac
+ToFa
+
+o3d_ rve
+
+o3d_
+
+o3d_ sur
+
+o3d_ rem
+
+o3d_ D
+
+o3d_ Obj
+n
+o3d_
+o3d_ ns
+
+o3d_
+o3d_
+
+o3d_
+o3d_
+
+o3d_ sS
+
+o3d_
+o3d_
+o3d_
+
+o3d_
+o3d_
+sheetMetalCowling 545 Обечайка ISheetMetalRuledSh
+PointsArrOnCurve 546 Группа точек по IPointsArrOnCurve
+
+кривой
+PointsArrFromFile 547 Группа точек из файла IPointsArrFromFile
+PointsArrOnSurface 548 Группа точек на IPointsArrOnSurfac
+
+поверхности
+ArrayExemplar 549 Экземпляр массива IModelObject
+AuxGeomArrayExemplar 550 Экземпляр массива IModelObject
+
+вспомогательной 
+геометрии
+
+BodyArrayExemplar 551 Экземпляр массива IModelObject
+копирования тел
+
+NurbsSurfaceByCurvesM 552 Сплайновая INurbsSurfacesByC
+поверхность по сетке esMeshs
+кривых
+
+PlaneByPointAndTangent 553 Конструктивная IPlane3DTangentTo
+ce касательная плоскость eInPoint
+
+к грани в точке
+PlaneByPlaneCurve 554 Конструктивная IPlane3DByPlaneCu
+
+касательная плоскость 
+через плоскую кривую
+
+JointSurface 555 Поверхность IJointSurface
+соединения
+
+DistanceAngleMeasure 556 Объект 'Измерение IDistanceAngleMea
+расстояния и угла' ement3D
+
+EdgeLengthMeasure 557 Объект 'Измерение IEdgeLengthMeasu
+длины ребра' ent3D
+
+AreaMeasure 558 Объект 'Измерение IAreaMeasurement3
+площади'
+
+AxisFromPointByDirectio 559 Ось через вершину по IAxis3DByPointAnd
+направлению ect
+
+Curve3DWithoutHistory 560 Кривая без истории IUnhistoredCurve3D
+CurveBy2Projections 561 Кривая по двум ICurveBy2Projectio
+
+проекциям
+CurveByLaw 562 Кривая по закону ICurveByLaw
+IsoparametricCurve 563 Изопараметрическая IIsoparametricCurve
+
+кривая
+CurveOutLine 564 Линия очерка ICurveOutLine
+SplineOnSurface 565 Сплайн на ISplineOnSurface
+
+поверхности
+IsoparametricCurvesSet 566 Группа IIsoparametricCurve
+
+изопараметрических et
+кривых
+
+ProjectionCurve 567 Проекционная кривая IProjectionCurve
+Contour3D 568 Контур 3D IContour3D
+BodyReposition 569 Перепозиционировани IBodyReposition
+
+е тела, поверхности
+LineSegment3D 570 Отрезок 3D ILineSegment3D
+Billet 571 Операция 'деталь IBilletObsolete
+
+заготовка'
+4948
+
+
+
+o3d_
+
+o3d_ n3D
+n
+
+o3d_
+on
+o3d_
+n
+
+o3d_ n3
+nsio
+
+o3d_ n3D
+
+o3d_
+
+o3d_
+nsio
+
+o3d_
+
+o3d_
+sion
+
+o3d_ n3
+on
+
+o3d_
+o3d_
+
+o3d_
+o3d_
+o3d_
+o3d_
+o3d_
+o3d_ y
+o3d_
+
+o3d_
+
+o3d_
+PolyLine3DPoint 572 Точка ломаной и IModelObject
+сплайна
+
+OperationLinearDimensio 573 Управляющий IBaseLineDimensio
+линейный размер 
+операции 3D
+
+OperationAngularDimensi 574 Управляющий угловой IAngleDimension3D
+размер операции 3D
+
+OperationRadialDimensio 575 Управляющий IRadialDimension3D
+радиальный размер 
+операции 3D
+
+OperationDiametralDime 576 Управляющий IDiametralDimensio
+n диаметральный D
+
+размер операции 3D
+SketchLinearDimension 577 Управляющий IBaseLineDimensio
+
+линейный размер 
+эскиза 3D
+
+SketchAngularDimension 578 Управляющий угловой IAngleDimension3D
+размер эскиза 3D
+
+SketchBreakAngularDime 579 Управляющий угловой IAngleDimension3D
+n размер эскиза 3D с 
+
+обрывом
+SketchRadialDimension 580 Управляющий IRadialDimension3D
+
+радиальный размер 
+эскиза 3D
+
+SketchBreakRadialDimen 581 Управляющий IRadialDimension3D
+радиальный размер 
+эскиза 3D с обрывом
+
+SketchDiametralDimensi 582 Управляющий IDiametralDimensio
+диаметральный D
+размер эскиза 3D
+
+Hole3D 583 Отверстие 3D IHole3D
+UserObjectOperation 584 Пользовательская IUserObject3D
+
+многотельная 
+операция
+
+Zone3D 585 Зона 3D IZone
+Zone3DDivision 586 Разбиение зон IZoneDivision
+Zones3D 587 Группа Зоны 3D IZonesManager
+WireFrame3D 588 Трехмерный каркас
+CopyGeometry 589 Копия геометрии ICopyGeometry
+CollectionGeometry 590 Коллекция геометрии ICollectionGeometr
+MeshPatternAnyCopy 591 Копирование ILinearPattern
+
+произвольных 
+объектов по сетке
+
+CircularPatternAnyCopy 592 Копирование ICircularPattern
+произвольных 
+объектов по 
+окружности
+
+CurvePatternAnyCopy 593 Копирование IPathPattern
+произвольных 
+объектов по кривой
+4949
+
+
+
+o3d_
+py
+
+o3d_
+
+o3d_ n3D
+ion
+o3d_
+nsio
+o3d_
+ion
+o3d_ n3
+ensio
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_
+
+o3d_ n3D
+sion
+
+o3d_ ule
+
+ell
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+o3d_
+j
+
+o3d_
+
+o3d_
+
+o3d_
+o3d_
+o3d_
+PointDrivenPatternAnyCo 595 Копирование IPointDrivenPattern
+произвольных 
+объектов по точкам
+
+TablePatternAnyCopy 596 Копирование ITablePattern
+произвольных 
+объектов по таблице
+
+LinearUnhistoriedDimens 597 Импортированный IBaseLineDimensio
+линейный размер
+
+AngularUnhistoriedDime 598 Импортированный IAngleDimension3D
+n угловой размер
+RadialUnhistoriedDimens 599 Импортированный IRadialDimension3D
+
+радиальный размер
+DiametralUnhistoriedDim 600 Импортированный IDiametralDimensio
+n диаметральный D
+
+размер
+FaceLift 601 Операция IModelObject
+
+подтягивания граней
+UserWireFrame3D 602 Трехмерный каркас " IUserObject3D
+
+пользовательский 
+объект
+
+UndefPartObject 603 Модельный объект IModelObject
+неопределенного типа
+
+SpecRough3D 604 Неуказанная ISpecRough3D
+шероховатость 3D
+
+SketchBreakLinearDimen 605 Управляющий IBaseLineDimensio
+линейный размер 
+эскиза 3D с обрывом
+
+sheetMetalRuledCowling 606 Линейчатая обечайка ISheetMetalLinearR
+dShell, 
+ISheetMetalRuledSh
+
+UserDesignationObject3D 607 Пользовательский IUserObject3D
+объект обозначение 
+3D
+
+SplineFormOperation 608 Операция прямого 
+редактирования
+
+UnhistoriedBase3D 609 База без истории IBase3D
+UnhistoriedThread 610 Резьба без истории IModelObject
+UserDesignationCompOb 611 Составной объект для IUserObject3D
+
+пользовательских 
+объектов обозначений 
+3D
+
+UserFolder 612 Пользовательская IUserObject3D
+директория 3D
+
+MeshObject3D 613 Полигональный IMeshObject3D
+объект 3D
+
+sheetMetalRib 614 Ребро усиления ISheetMetalRib
+axis3D 615 Ось 3D IAxis3D
+SubFoldLine 616 Подобъект Линия IModelObject
+
+сгиба
+4950
+
+
+
+o3d_
+on 
+
+o3d_
+o3d_ ion
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+o3d_
+
+o3d_
+o3d_
+OperationLeaderDimensi 617 Управляющий размер IBaseLeader3D
+операции в виде линии 
+выноски
+
+FullFillet 618 Полное скругление IFullFillet
+DynamicCrossSection 619 Динамическое сечение IDynamicCrossSect
+RestoredSurface 620 Восстановленная IRestoredSurface
+
+поверхность
+CurvatureGraph 621 График кривизны
+CollisionObject 622 Информация о 
+
+коллизии
+CurvatureCheckObject 623 Проверка кривизны
+ContinuityCheck 624 Проверка 
+
+непрерывности
+SketchFace 625 Контур эскиза
+lastEntityElement2 150 Всегда последний из 
+
+0 Entity2!!!
+
+ErrorType3d  Коды ошибок документа модели
+
+Фатальные ошибки " работа прекращается
+et3dNo3dDocument "7 Документ не активизирован или не является 
+
+деталью/сборкой
+et3dAbort "1 Аварийное завершение.
+Нефатальные ошибки " выполнение продолжается
+et3dError123 123 Объекты пересекаются
+et3dError124 124 Неподходящий тип кривой
+et3dError125 125 Преобразование текста выполнить 
+
+невозможно
+et3dError126 126 Контур не разбивает ни одну из граней или 
+
+совпадает с кромкой грани
+et3dError127 127 Для данной операции в эскизе должна быть 
+
+только одна точка
+et3dError128 128 Эскиз с одной точкой может использоваться 
+
+только для крайнего сечения
+et3dError129 129 Построение тонкой стенки невозможно, если 
+
+одно из сечений представляет собой точку
+et3dError130 130 Ошибочная топология
+et3dError131 131 Нет объекта в прямом направлении
+et3dError132 132 Нет объекта в обратном направлении
+et3dError133 133 Тела изменены булевой операцией
+et3dError134 134 Кривая содержит сегменты нулевой длины
+et3dError135 135 Не найдены одна или несколько исходных 
+
+операций
+et3dError136 136 Контур состоит из 2 отрезков, проходящих 
+
+друг по другу
+et3dError137 137 Избыточное количество переменных
+et3dError138 138 Область определения не соответствует 
+
+заданным значениям
+et3dError139 139 Неизвестная ошибка при работе транслятора
+4951
+
+
+
+et3dError140 140 Неизвестная ошибка при работе 
+синтаксического анализатора
+
+et3dError141 141 В строке присутствует неизвестный символ
+et3dError142 142 Не хватает закрывающей скобки
+et3dError143 143 Не хватает открывающей скобки
+et3dError144 144 Невозможная операция

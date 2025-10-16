@@ -1,0 +1,2532 @@
+
+
+
+" указатель на интерфейс ksFaceCollection или IFaceCollection.
+
+GetFeature  Получить объект дерева, связанный с данным телом
+Интерфейс..Синтаксис Automation:
+LPDISPATCH GetFeature();
+Синтаксис COM:
+LPFEATURE GetFeature();
+Возвращаемое значение:
+
+" указатель на интерфейс ksFeature или IFeature.
+
+GetGabarit  Получить габарит тела
+Интерфейс...Синтаксис Automation:
+BOOL GetGabarit (double *x1, 
+double *y1, 
+double *z1, 
+double * x2, 
+double *y2, 
+double *z2);
+Синтаксис COM:
+BOOL GetGabarit (double *x1, 
+double *y1, 
+double *z1, 
+double * x2, 
+double *y2, 
+double *z2);
+Выходные параметры:
+
+x1, y1, z1 " координаты первой вершины габаритного куба,
+x2, y2, z2 " координаты второй вершины габаритного куба.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+GetIntersectionFacesWithBody  Определить взаимодействующие 
+грани при пересечении данного тела с другим
+Интерфейс..Синтаксис Automation:
+3342
+
+
+
+BOOL GetIntersectionFacesWithBody (LPDISPATCH otherBody, VARIANT *
+intersectionFaces1,
+VARIANT * intersectionFaces2,
+VARIANT * connectedFaces1,
+VARIANT * connectedFaces2); 
+Синтаксис COM:
+BOOL GetIntersectionFacesWithBody (LPBODY otherBody, VARIANT * intersectionFaces1,
+VARIANT * intersectionFaces2,
+VARIANT * connectedFaces1,
+VARIANT * connectedFaces2).
+Входные параметры:
+
+otherBody  " второе тело.
+
+Выходные параметры:
+
+intersectionFaces1  " пересекаемые грани первого тела,
+intersectionFaces2  " пересекаемые грани второго тела,
+connectedFaces1  " совпадающие грани первого тела,
+connectedFaces2  " совпадающие грани второго тела.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Примечание:
+Пересекаемые и совпадающие грани возвращаются в VARIANT"е так:
+
+▼ Если грань одна, то VARIANT заполняется как VT_DISPATH в автоматизации и
+VT_UNKNOVN в COM.
+
+▼ Если граней несколько, то VARIANT заполняется как массив SafeArray типа VT_ARRAY |
+VT_DISPATH в автоматизации и VT_ARRAY | VT_UNKNOVN в COM.
+Количество граней в массивах intersectionFaces1 и intersectionFaces2 совпадают и обра"
+зуют пары, т.е. грань с индексом i из массива intersectionFaces1 пересекается с гранью i
+из массива intersectionFaces2.
+Одна и та же грань может встречаться в массиве несколько раз, если она пересекается с
+несколькими гранями.
+Так же заполняются и массивы connectedFaces1 и connectedFaces2.
+
+IsSolid  Является ли объект твердым телом или поверхностью
+Интерфейс..Синтаксис Automation:
+BOOL IsSolid();
+Синтаксис COM:
+3343
+
+
+
+BOOL IsSolid();
+Возвращаемое значение:
+
+TRUE " объект является твердым телом,
+FALSE " объект является поверхностью.
+
+Примечание:
+Твердое тело может состоять из набора поверхностей.
+
+MassInertiaParam  Получить указатель на интерфейс массово
+центровочных характеристик
+Интерфейс..Синтаксис Automation:
+LPDISPATCH CalcMassInertiaProperties (long bitVector);
+Синтаксис COM:
+LPMASSINERTIAPARAM CalcMassInertiaProperties (unsigned int bitVector);
+Входной параметр:
+
+bitVector " определяет размерность длины, размерность массы.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksIMassInertiaParam или IMassInertiaParam.
+
+Примечания:
+Варианты значений для задания значений bitVector находятся в интервале
+[ST_MIX_MM..ST_MIX_KG]
+Пример:
+(метры|кг " ST_MIX_M|ST_MIX_KG).
+
+Интерфейс частей тела (Интерфейсы ksBodyParts, IBodyParts)
+Справка системы КОМПАС...
+Интерфейс частей тела.
+
+ksBodyParts " интерфейс Automation
+IBodyParts " интерфейс COM
+
+Описание:
+Некоторые операции в 3D позволяют создавать несколько частей результирующего те"
+ла. Интерфейс позволяет получить информацию о частях тела и управлять их включени"
+ем в расчет и выключением из расчета. Желательно включить части таким образом, что"
+бы тело оказалось целым.
+Примечание:
+3344
+
+
+
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetBodyParts или IEntity::GetBodyParts.
+
+IBodyParts  свойства 
+
+AllSelected  Признак включения или выключения из расчета всех 
+частей тела
+Интерфейс..Тип данных:BOOL.
+Значения свойства:
+
+TRUE " выбраны все части,
+FALSE " не все части выбраны.
+
+Синтаксис Automation:
+
+AllSelected = Получить
+iPart.AllSelected свойство(* )
+iPart.AllSelected = Установить
+AllSelected свойство (* )
+AllSelected = Получить
+iPart.GetAllSelected() свойство (**)
+iPart.SetAllSelected(AllSelec Установить
+ted ) свойство (**)
+
+Примечание:
+Если нужно включить или выключить все части из расчета или узнать, включены ли все
+части, то для ускорения используется это свойство. Для этой же цели можно анализиро"
+вать или изменять каждую часть отдельно.
+
+IBodyParts  методы
+
+GetCount  Получить количество частей
+Интерфейс..Синтаксис Automation:
+long Count();
+Синтаксис COM:
+long GetCount();
+Возвращаемое значение:
+
+количество частей " в случае успешного завершения.
+
+Примечание:
+Позволяет получить количество частей тела для данной операции.
+3345
+
+
+
+GetPartSelected  Получить для части тела с индексом признак 
+включения
+Интерфейс..Синтаксис Automation:
+BOOL GetPartSelected( long Index );
+Синтаксис COM:
+BOOL GetPartSelected( long Index );
+Входные параметры:
+
+Index " индекс выбираемой части.
+
+Возвращаемое значение:
+
+TRUE " часть тела включена,
+FALSE " часть тела выключена.
+
+Примечание:
+Метод позволяет получить для части тела с индексом признак включения.
+
+SetGreatPartsSelected  Включить часть тела по умолчанию 
+(максимальную)
+Интерфейс..Синтаксис Automation:
+BOOL SetGreatPartsSelected();
+Синтаксис COM:
+BOOL SetGreatPartsSelected();
+Входные параметры:
+
+Index " индекс выбираемой части.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет включить часть тела по умолчанию, как правило это большая часть.
+
+SetPartSelected  Установить для части тела с индексом признак 
+включения
+Интерфейс..Синтаксис Automation:
+BOOL SetPartSelected( long Index, BOOL Select );
+Синтаксис COM:
+3346
+
+
+
+BOOL SetPartSelected( long Index, BOOL Select );
+Входные параметры:
+
+Index " индекс выбираемой части,
+Select " признак включения в расчет; TRUE " включить,
+
+FALSE " выключить часть из расчета.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет изменить признак включения части тела с индексом.
+
+UserBodyPartsChoice  Запустить визуальный процесс выбора 
+частей тела
+Интерфейс...Синтаксис Automation:
+BOOL UserBodyPartsChoice();
+Синтаксис COM:
+BOOL  UserBodyPartsChoice();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Позволяет запустить визуальный процесс выбора частей тела.
+
+Интерфейс массива трехмерных тел (Интерфейсы 
+ksBodyCollection, IBodyCollection)
+Интерфейс массива трехмерных тел.
+
+ksBodyCollection " интерфейс Automation
+IBodyCollection " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить от следующих интерфейсов:
+
+▼ Интерфейс булевой операции над твердыми телами ksAggregateDefinition или
+IAggregateDefinition.
+
+▼ Интерфейс области применения для тел в операции ksChooseBodies или IChooseBodies.
+3347
+
+
+
+▼ Интерфейс объекта Дерева построения ksFeature или IFeature.
+▼ Интерфейс детали или подсборки в составе сборки ksPart или IPart.
+▼ Интерфейс элемента модели (оси, плоскости, формообразующего элемента) ksEntityи"
+
+ли IEntity.
+
+IBodyCollection  методы
+
+Add  Добавить элемент в конец массива
+Интерфейс..Синтаксис Automation:
+BOOL Add(LPDISPATCH body);
+Синтаксис COM:
+BOOL Add(LPBODY body);
+Входные параметры:
+
+body " указатель на интерфейс ksBody или IBody добавля"
+емого объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатель на интерфейс добавляемого объекта body не должен быть равен 0.
+
+AddAt  Добавить объект с заданным индексом в массив
+Интерфейс..Синтаксис Automation:
+BOOL AddAt(LPDISPATCH body, long index);
+Синтаксис COM:
+BOOL AddAt(LPBODY body, long index);
+Входные параметры:
+
+body " указатель на интерфейс ksBody или IBody,
+index " индекс в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатель на интерфейс добавляемого объекта body не должен быть равен 0.
+3348
+
+
+
+AddBefore  Добавить объект перед указанным объектом в 
+массиве
+Интерфейс..Синтаксис Automation:
+BOOL AddBefore(LPDISPATCH body, LPDISPATCH base);
+Синтаксис COM:
+BOOL AddBefore(LPBODY body, LPBODY base);
+Входные параметры:
+
+body " указатель на интерфейс ksBody или IBody добавляемого объекта,
+base " указатель на интерфейс ksBody или IBody базового объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатели на интерфейсы добавляемого и базового объекта body и base не должны быть
+равны 0.
+
+Clear  Очистить массив
+Интерфейс..Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+BOOL Clear();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Объекты удаляются только из массива, в модель изменения не передаются.
+
+DetachByBody  Удалить указанный объект из массива
+Интерфейс..Синтаксис Automation:
+BOOL DetachByBody(LPDISPATCH body);
+Синтаксис COM:
+BOOL DetachByBody(LPBODY body);
+Входные параметры:
+
+body " указатель на интерфейс ksBody или IBody.
+3349
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатель на интерфейс удаляемого объекта body не должен быть равен 0.
+
+DetachByIndex  Удалить объект из массива по индексу
+Интерфейс..Синтаксис Automation:
+BOOL DetachByIndex(long index);
+Синтаксис COM:
+BOOL DetachByIndex(long index);
+Входные параметры:
+
+index " индекс удаляемого объекта в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Элемент массива из модели не удаляется.
+
+FindIt  Получить индекс элемента в массиве
+Интерфейс..Синтаксис Automation:
+long FindIt (LPDISPATCH entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+"1 " если элемент не найден.
+
+Синтаксис COM:
+unsigned long FindIt (LPBODY entity );
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+SYS_MAX_UINT " если элемент не найден.
+
+Входные параметры:
+3350
+
+
+
+entity " указатель на интерфейс компонента ksBody или IBody.
+
+First  Получить указатель на интерфейс первого объекта в 
+массиве
+Интерфейс..Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPBODY First();
+Возвращаемое значение:
+
+" указатель на интерфейс ksBody или IBody.
+
+GetByIndex  Получить указатель на интерфейс объекта в массиве 
+по индексу
+Интерфейс..Синтаксис Automation:
+LPDISPATCH GetByIndex (long index);
+Синтаксис COM:
+LPBODY GetByIndex (long index);
+Входной параметр:
+
+index " номер объекта в массиве.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksBody или IBody.
+
+GetCount  Получить количество элементов в массиве
+Интерфейс..Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+long GetCount();
+Возвращаемое значение:
+
+" количество элементов массива.
+3351
+
+
+
+Last  Получить указатель на интерфейс последнего объекта в 
+массиве
+Интерфейс..Синтаксис Automation:
+LPDISPATCH Last();
+Синтаксис COM:
+LPBODY Last();
+Возвращаемое значение:
+
+" указатель на интерфейс ksBody или IBody.
+
+Next  Получить указатель на интерфейс следующего объекта в 
+массиве
+Интерфейс..Синтаксис Automation:
+LPDISPATCH Next();
+Синтаксис COM:
+LPBODY Next();
+Возвращаемое значение:
+
+" указатель на интерфейс ksBody или IBody.
+
+Prev  Получить указатель на интерфейс предыдущего объекта в 
+массиве
+Интерфейс..Синтаксис Automation:
+LPDISPATCH Prev();
+Синтаксис COM:
+LPBODY Prev();
+Возвращаемое значение:
+
+" указатель на интерфейс компонента ksBody или IBody.
+
+Refresh  Обновить массив
+Интерфейс...Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+3352
+
+
+
+"
+
+FALSE " в случае неудачи.
+Примечание:
+После вызова данной функции возникает полное соответствие массива с массивом тел
+трехмерной детали или сборки и удаляются все предыдущие изменения в массиве.
+
+SetByIndex  Заменить объект с указанным индексом в массиве на 
+присланный объект
+Интерфейс..Синтаксис Automation:
+BOOL SetByIndex(LPDISPATCH body, long index);
+Синтаксис COM:
+BOOL SetByIndex(LPBODY body, long index);
+Входные параметры:
+
+body " указатель на интерфейс ksBody или IBody присоединяе
+мого объекта,
+
+index " индекс элемента в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного заверше"
+ния,
+
+FALSE " в случае неудачи.
+
+Интерфейс параметров вершины ломаной Интерфейсы 
+ksPolyLineVertexParam, IPolygonalLineVertexParam)
+Справка системы КОМПАС...
+CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Интерфейс параметров вершины ломаной.
+
+ksPolyLineVertexParam " интерфейс Automation
+IPolygonalLineVertexParam " интерфейс COM
+
+IPolygonalLineVertexParam  свойства
+
+buildingType   Способ построения сегмента ломаной
+Интерфейс...
+Тип данных: ksLineBuildingType
+3353
+
+
+
+Синтаксис Automation:
+
+buildingType = Получить
+iObject.buildingType свойство(* )
+iObject.buildingType = Установить
+buildingType свойство (* )
+buildingType = Получить
+iObject.GetbuildingType() свойство (**)
+iObject.SetbuildingType Установить
+(buildingType) свойство (**)
+
+IPolygonalLineVertexParam  методы
+
+GetAssociation  Получить ассоциированную вершину
+Интерфейс...
+Синтаксис Automation:
+ksEntity * GetAssociation();
+Синтаксис COM:
+LPENTITY GetAssociation();
+Возвращаемое значение:
+
+Указатель на интерфейс объекта ksEntity " если объект задан,
+или IEntity
+NULL " если объект не задан.
+
+Примечание:
+Тип возвращаемого объекта вершина o3d_vertex.
+
+GetBuildingObject  Получить объект относительно которого 
+ведется построение
+Интерфейс...
+Синтаксис Automation:
+ksEntity * GetBuildingObject();
+Синтаксис COM:
+LPENTITY GetBuildingObject();
+Возвращаемое значение:
+
+Указатель на интерфейс объ" " если объект задан,
+екта ksEntity или IEntity
+NULL " если объект не задан.
+3354
+
+
+
+Примечание:
+Задать объект, относительно которого ведется построение, можно для типа построения
+ksLineBuildingType, равного ksLBTParallel и ksLBTPerpendicular.
+
+GetIndex  Получить индекс вершины
+Интерфейс...
+Синтаксис:
+int GetIndex();
+Возвращаемое значение:
+
+Индекс вершины. " если объект задан.
+
+GetParamByDistance  Получить расстояние и радиус
+Интерфейс...
+Синтаксис:
+BOOL GetParamByDistance (double * distance, double * radius);
+Входные параметры:
+
+distance " расстояние до предыдущей вершины,
+radius " радиус.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Для вершины с индексом 0 расстояние выдается до вершины с индексом 1. Для осталь"
+ных вершин расстояние выдается до вершины с индексом на 1 меньше, чем у данной
+вершины.
+
+2. Получить расстояние можно для любого типа построения.
+3. Установить расстояние можно, если тип построения ksLineBuildingType не равен
+
+ksLBTByPoint.
+
+GetParamVertex  Получить параметры вершины
+Интерфейс...
+Синтаксис:
+BOOL GetParamVertex (double *x, double *y, double *z, double *radius);
+Входные параметры:
+3355
+
+
+
+x " x координата вершины,
+y " y координата вершины,
+z " z координата вершины,
+radius " радиус.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetVertex  Получить вершину
+Интерфейс...
+Синтаксис Automation:
+ksEntity * GetVertex();
+Синтаксис COM:
+LPENTITY GetVertex();
+Возвращаемое значение:
+
+ Указатель на интерфейс " если объект задан,
+объекта ksEntity или IEntity
+NULL " если объект не задан.
+
+Примечание:
+Тип возвращаемого объекта " вершина o3d_vertex.
+
+SetAssociation  Установить ассоциированную вершину
+Интерфейс...
+Синтаксис Automation:
+BOOL SetAssociation (ksEntity * vertex);
+Синтаксис COM:
+BOOL SetAssociation( LPENTITY vertex);
+Входные параметры:
+
+vertex " указатель на интерфейс объекта ksEntity или IEntity, если 
+нужно установить ассоциацию,
+
+NULL " если нужно снять ассоциацию.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3356
+
+
+
+Примечание:
+Объект должен быть вершиной o3d_vertex.
+
+SetBuildingObject  Установить объект относительно которого 
+ведется построение
+Интерфейс...
+Синтаксис Automation:
+BOOL SetBuildingObject (ksEntity * object);
+Синтаксис COM:
+BOOL SetBuildingObject (LPENTITY object);
+Входные параметры:
+
+object " указатель на интерфейс объекта ksEntity или IEntity
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Задать объект, относительно которого ведется построение, можно для типа построения
+ksLineBuildingType, равного ksLBTParallel и ksLBTPerpendicular.
+
+SetParamByDistance  Установить расстояние и радиус
+Интерфейс...
+Синтаксис:
+BOOL SetParamByDistance (double distance, double radius);
+Входные параметры:
+
+distance " расстояние до предыдущей вершины,
+radius " радиус.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Установить расстояние можно, если тип построения ksLineBuildingType не равен
+ksLBTByPoint.
+
+2. Нельзя установить расстояние для вершины с индексом 0.
+3357
+
+
+
+SetParamByVertex  Установить параметры вершины по 
+парамерам вершины другого объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL SetParamByVertex (ksEntity * vertex, double radius);
+Синтаксис COM:
+BOOL SetParamByVertex (LPENTITY vertex, double radius);
+Входные параметры:
+
+vertex " указатель на интерфейс параметров вершины ksEntity или 
+IEntity,
+
+radius " радиус.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetParamVertex  Установить параметры вершины
+Интерфейс...
+Синтаксис:
+BOOL SetParamVertex (double x, double y, double z, double radius);
+Входные параметры:
+
+x " x координата вершины,
+y " y координата вершины,
+z " z координата вершины,
+radius " радиус.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейсы параметров умолчательного объекта 
+(IDefaultObject, ksDefaultObject)
+Интерфейс параметров умолчательного объекта.
+Иерархия:
+IDispatch
+
+IDefaultObject
+3358
+
+
+
+Примечание:
+
+1. Интерфейс можно получить для умолчательных объектов документа " базовых плоско"
+стей и базовых осей.
+
+2. Интерфейс возвращается функцией IEntity::GetDefinition и ksEntity::GetDefinition.
+
+ksDefaultObject методы 
+
+GetCurve3D  Получить интерфейс математической кривой для 
+базовых осей
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH   GetCurve3D();
+Синтаксис COM:
+LPCURVE3D    GetCurve3D();
+Возвращаемое значение:
+
+Интерфейс математической кривой ksCurve3D или ICurve3D.
+
+GetSurface  Получить интерфейс математической поверхности 
+для базовой плоскости
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH   GetSurface();
+Синтаксис COM:
+LPSURFACE    GetSurface();
+Возвращаемое значение:
+
+Интерфейс математической поверхности ksSurface или ISurface.
+
+Математическая поверхность в трехмерном 
+пространстве 
+
+Интерфейсы ksSurface, ISurface
+Интерфейс математической поверхности в трехмерном пространстве.
+
+ksSurface " интерфейс Automation
+ISurface " интерфейс COM
+3359
+
+
+
+Примечание:
+Данный интерфейс может быть получен с использованием методов интерфейсов
+ksPlaneAngleDefinition::GetSurface, ksPlaneMiddleDefinition::GetSurface,
+ksPlaneLineToPlaneDefinition::GetSurface, ksPlaneNormalToSurfaceDefinition::GetSurface,
+ksPlane3PointsDefinition::GetSurface ksPlanePerpendicularDefinition::GetSurface,
+ksPlaneTangentToSurfaceDefinition::GetSurface, ksSketchDefinition::GetSurface,
+ksPlaneEdgePointDefinition::GetSurface, ksPlaneLineToEdgeDefinition::GetSurface,
+ksPlaneParallelDefinition::GetSurface, ksPlaneOffsetDefinition::GetSurface,
+IDefaultObject::GetSurface, ksFaceDefinition::GetSurface.
+
+ISurface  свойства
+
+BoundaryCount  Количество контуров, задающих границу 
+поверхности
+Интерфейс...Тип данных: long
+Синтаксис Automation:
+
+BoundaryCount = Object.BoundaryCount Получить
+свойство (* )
+
+BoundaryCount = Получить
+Object.GetBoundaryCount() свойство
+
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+ISurface  методы
+
+CurveIntersection  Рассчитать пересечения с кривой
+Интерфейс...Синтаксис Automation:
+BOOL CurveIntersection( LPDISPATCH curve, LPDISPATCH points, BOOL extSurf, BOOL
+extCurve );
+Синтаксис COM:
+BOOL CurveIntersection( LPCURVE3D curve, LPCOORDINATE3DCOLLECTION points, BOOL
+extSurf, BOOL extCurve );
+Входные параметры:
+
+curve " указатель на интерфейс 3D кривой ksCurve3D,
+extSurf " TRUE " учитывать продолжение поверхности,
+
+" FALSE " не учитывать продолжение поверхности,
+extCurve " TRUE " учитывать продолжение кривой,
+
+" FALSE " не учитывать продолжение кривой.
+3360
+
+
+
+Выходные параметры:
+
+points " Коллекция координат точек пересечений ksCoordinate3dCollection.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Координаты точек сортируются по параметру кривой t.
+2. Параметр points является необязательным.
+3. Заполняются только присланные коллекции.
+4. Интерфейсы коллекций координат точек ksCoordinate3dCollection нужно получить с по"
+
+мощью функций ksDocument3D::GetInterface с параметром o3dType =
+o3d_coordinate3dCollection.
+
+GetArea  Получить площадь поверхности
+Интерфейс...Синтаксис Automation:
+double GetArea (long bitVector);
+Синтаксис COM:
+double GetArea (unsigned long bitVector);
+Входные параметры:
+
+bitVector " единицы измерения в интервале [ST_MIX_MM..ST_MIX_M].
+
+Возвращаемое значение:
+
+площадь поверхности " в случае успешного завершения,
+0 " в случае неудачи.
+
+GetBoundaryUVNurbs  Получить параметры NURBS
+представления границы поверхности
+Интерфейс...Синтаксис Automation:
+BOOL GetBoundaryUVNurbs( BOOL uv,
+BOOL unclamped,
+long loopIndex,
+long * degree,
+long edgeIndex,
+VARIANT * points,
+VARIANT * weights,
+3361
+
+
+
+VARIANT * knots,
+double * tMin,
+double * tMax );
+Синтаксис COM:
+BOOL GetBoundaryUVNurbs( BOOL uv,
+BOOL unclamped,
+long loopIndex,
+long edgeIndex,
+long * degree,
+VARIANT * points,
+VARIANT * weights,
+VARIANT * knots,
+double * tMin,
+double * tMax );
+Входные параметры:
+
+uv " TRUE " получить параметры границы поверхности в UV" 
+параметрическом представлении исходной поверхности,
+" FALSE " получить параметры границы поверхности в 3D 
+координатах,
+
+unclamped " TRUE " сомкнуть, если граница разомкнутая
+" FALSE " разомкнуть, если граница замкнутая,
+
+loopIndex " индекс цикла,
+edgeIndex индекс ребра в цикле (совпадает с индексом ребра в коллекции 
+
+ориентированных ребер).
+
+Выходные параметры:
+
+degree " порядок NURBS (степень полинома + 1), от 3 до
+10,
+
+points " массив параметров UV или координат вершин "
+массив SafeArray вещественных чисел
+VT_ARRAY | VT_R8,
+
+weights " веса точек " массив SafeArray вещественных чи"
+сел VT_ARRAY | VT_R8,
+
+knots " узлы точек " массив SafeArray вещественных
+чисел VT_ARRAY | VT_R8,
+
+tMin, tMax " минимальный и максимальный параметры.
+
+Примечание:
+Если признак UV равен TRUE, то в массиве points возвращаются параметры UV для
+Nurbs"представления границы. Параметры в массиве лежат в следующей последова"
+тельности:
+u0, v0, u1, v1, ... ui, vi.
+3362
+
+
+
+Если признак UV равен FALSE, то в массиве points возвращаются координаты вершин
+Nurbs"представления границы. Координаты точек в полученном массиве лежат в следу"
+ющей последовательности:
+x0, y0, z0, x1, y1, z1, ...xi, yi, zi.
+
+▼ Если индекс ребра равен "1, формируется Nurbs"представление контура границы.
+▼ Если индекс >= 0, то формируется Nurbs"представление ребра, входящего в цикл, пара"
+
+метр unclamped при этом игнорируется.
+
+GetDerivativeU  Получить первую производную по U
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeU (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeU (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом 
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " первая производная по U.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetDerivativeV Получить первую производную по V
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeV (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeV (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом 
+представлении поверхности.
+3363
+
+
+
+Выходные параметры:
+
+x, y, z " первая производная по V.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetDerivativeUU  Получить вторую производную по UU
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeUU (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeUU (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом 
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " вторая производная по UU.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetDerivativeVV  Получить вторую производную по VV
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeVV (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeVV (double paramU, double paramV, double * x, double *y, double *z);
+3364
+
+
+
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом 
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " вторая производная по VV.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetDerivativeUV  Получить вторую производную по UV
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeUV (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeUV (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом 
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " вторая производная по UV.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+3365
+
+
+
+GetDerivativeUUU  Получить третью производную по UUU
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeUUU (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeUUU (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом 
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " третья производная по UUU.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetDerivativeVVV  Получить третью производную по VVV
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeVVV (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeVVV (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " третья производная по VVV.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3366
+
+
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetDerivativeUVV  Получить третью производную по UVV
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeUVV (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeUVV (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом 
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " третья производная по UVV.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetDerivativeUUV  Получить третью производную по UUV
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeUUV (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeUUV (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, " значения параметров U и V в параметрическом
+paramV представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " третья производная по UUV.
+3367
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetEdgesCount  Количество ребер в цикле
+Интерфейс...Количество ребер в цикле.
+Синтаксис Automation:
+long GetEdgesCount( long loopIndex );
+Синтаксис COM:
+long GetEdgesCount( long loopIndex );
+
+GetGabarit  Получить габаритный параллелепипед 
+поверхности
+Интерфейс...Синтаксис Automation:
+BOOL GetGabarit (double * x1, double *y1, double *z1, double * x2, double *y2, double *z2);
+Синтаксис COM:
+BOOL GetGabarit (double * x1, double *y1, double *z1, double * x2, double *y2, double *z2);
+Выходные параметры:
+
+x1, y1, z1, x2, y2, z2 " координаты вер"
+шин габаритного
+параллелепипеда.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Координаты вершин параллелепипеда возвращаются в системе координат компонента.
+
+GetNormal  Получить направление нормали
+Интерфейс...Синтаксис Automation:
+BOOL GetNormal (double paramU, double paramV, double * x, double *y, double *z);
+3368
+
+
+
+Синтаксис COM:
+BOOL GetNormal (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом 
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " вектор нормали.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetNurbsSurfaceParam  Получить NURBSпредставление 
+поверхности
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetNurbsSurfaceParam();
+Синтаксис COM:
+LPNURBS3DPARAM GetNurbsSurfaceParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsSurfaceParam или INurbsSurfaceParam.
+
+Примечание:
+Метод позволяет получить параметры поверхности в NURBS"представлении. Для полу"
+чения параметров поверхности в NURBS"представлении создается математическая
+Nurbs"поверхность, аналогичная заданной. Если заданная кривая является NURBS"по"
+верхности, то возвращаются ее параметры без создания NURBS"представления.
+
+GetParamUMin  Получить начальное значение параметра U в 
+параметрическом представлении поверхности
+Интерфейс...Синтаксис Automation:
+double GetParamUMin();
+3369
+
+
+
+Синтаксис COM:
+double GetParamUMin();
+Возвращаемое значение:
+
+Значение параметра U. " в случае успеха,
+0 " в случае неудачи.
+
+GetParamUMax  Получить конечное значение параметра U в 
+параметрическом представлении поверхности
+Интерфейс...Синтаксис Automation:
+double GetParamUMax();
+Синтаксис COM:
+double GetParamUMax();
+Возвращаемое значение:
+
+Значение параметра U " в случае успеха,
+0 " в случае неудачи.
+
+GetParamVMin  Получить начальное значение параметра V в 
+параметрическом представлении поверхности
+Интерфейс...Синтаксис Automation:
+double GetParamVMin();
+Синтаксис COM:
+double GetParamVMin();
+Возвращаемое значение:
+
+Значение параметра V " в случае успеха,
+0 " в случае неудачи.
+
+GetParamVMax  Получить конечное значение параметра V в 
+параметрическом представлении поверхности
+Интерфейс...Синтаксис Automation:
+double GetParamVMax();
+Синтаксис COM:
+double GetParamVMax();
+Возвращаемое значение:
+
+Значение параметра V " в случае успеха,
+0 " в случае неудачи.
+3370
+
+
+
+GetPoint  Получить координаты точки на поверхности
+Интерфейс...Синтаксис Automation:
+BOOL GetPoint (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetPoint (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " координаты точки на поверхности.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetSurfaceParam  Получить параметры плоскости, конуса, 
+цилиндра, тора, сферы, NURBS или NULL
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSurfaceParam();
+Синтаксис COM:
+LPDISPATCH GetSurfaceParam();
+Возвращаемое значение:
+
+" указатель на интерфейс параметра поверхности.
+
+Примечание:
+В соответствии с типом объекта метод вернет указатель на интерфейс параметра:
+
+" плоскости ksPlaneParam или IPlaneParam,
+" конуса ksConeParam или IConeParam,
+" цилиндра ksCylinderParam или ICylinderParam,
+" тора ksTorusParam или ITorusParam,
+" сферы ksSphereParam или ISphereParam,
+3371
+
+
+
+" NURBS" ksNurbsSurfaceParam или INurbsSurfaceParam.
+поверхности
+Зная тип объекта, можно базовый интерфейс привести к конечному (IDispatch или
+IUnknown). Для определения типа объекта можно воспользоваться методами IsPlane,
+IsCone, IsCylinder, IsTorus, IsSphere, IsNurbsSurface.
+
+GetTangentVectorU  Получить направление касательного 
+вектора по U
+Интерфейс...Синтаксис Automation:
+BOOL GetTangentVectorU  (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetTangentVectorU (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+
+paramU, paramV " значения параметров U и V в параметрическом
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " касательный вектор по U.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+GetTangentVectorV  Получить направление касательного 
+вектора по V
+Интерфейс...Синтаксис Automation:
+BOOL GetTangentVectorV (double paramU, double paramV, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetTangentVectorV (double paramU, double paramV, double * x, double *y, double *z);
+Входные параметры:
+3372
+
+
+
+paramU, paramV " значения параметров U и V в параметрическом 
+представлении поверхности.
+
+Выходные параметры:
+
+x, y, z " касательный вектор по V.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметров U и V получаются при помощи методов GetParamUMin
+и GetParamUMax и GetParamVMin и GetParamVMax. Координаты точки возвращаются в
+системе координат компонента.
+
+IsClosedU  Определить, является ли поверхность замкнутой 
+по U
+Интерфейс...Синтаксис Automation:
+BOOL IsClosedU();
+Синтаксис COM:
+BOOL IsClosedU();
+Возвращаемое значение:
+
+TRUE " кривая замкнута,
+FALSE " кривая разомкнута.
+
+IsClosedV  Определить, является ли поверхность замкнутой 
+по V
+Интерфейс...Синтаксис Automation:
+BOOL IsClosedV();
+Синтаксис COM:
+BOOL IsClosedV();
+Возвращаемое значение:
+
+TRUE " кривая замкнута,
+FALSE " кривая разомкнута.
+3373
+
+
+
+IsCone  Определить, является ли поверхность конической
+Интерфейс...Синтаксис Automation:
+BOOL IsCone();
+Синтаксис COM:
+BOOL IsCone();
+Возвращаемое значение:
+
+TRUE " поверхность является конической,
+FALSE " поверхность не является конической.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetSurfaceParam
+вернет указатель на интерфейс параметра конуса ksConeParam или IConeParam.
+
+IsCylinder  Определить, является ли поверхность 
+цилиндрической
+Интерфейс...Синтаксис Automation:
+BOOL IsCylinder();
+Синтаксис COM:
+BOOL IsCylinder();
+Возвращаемое значение:
+
+TRUE " поверхность является цилиндрической,
+FALSE " поверхность не является цилиндрической.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetSurfaceParam
+вернет указатель на интерфейс параметра цилиндра ksCylinderParam или IPlaneCylinder.
+
+IsNurbsSurface  Определить, является ли поверхность NURBS
+Интерфейс...Синтаксис Automation:
+BOOL IsNurbsSurface();
+Синтаксис COM:
+BOOL IsNurbsSurface();
+Возвращаемое значение:
+
+TRUE " поверхность является NURBS,
+3374
+
+
+
+FALSE " поверхность не является NURBS.
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetCurveParam
+вернет указатель на интерфейс параметра NURBS ksNurbsSurfaceParam или
+INurbsSurfaceParam.
+
+IsPlIane  Определить, является ли грань плоской
+Интерфейс...Синтаксис Automation:
+BOOL IsPlane();
+Синтаксис COM:
+BOOL IsPlane();
+Возвращаемое значение:
+
+TRUE " поверхность является плоской,
+FALSE " поверхность не является плоской.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetSurfaceParam
+вернет указатель на интерфейс параметра плоскости ksPlaneParam или IPlaneParam.
+
+IsRevolved  Определить, является ли поверхность 
+поверхностью вращения
+Интерфейс...Синтаксис Automation:
+BOOL IsRevolved();
+Синтаксис COM:
+BOOL IsRevolved();
+Возвращаемое значение:
+
+TRUE " поверхность является поверхностью вращения,
+FALSE " поверхность не является поверхностью вращения.
+
+IsSIphere  Определить, является ли поверхность сферой
+Интерфейс...Синтаксис Automation:
+BOOL IsSphere();
+3375
+
+
+
+Синтаксис COM:
+BOOL IsSphere();
+Возвращаемое значение:
+
+TRUE " поверхность является сферической,
+FALSE " поверхность не является сферической.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetSurfaceParam
+вернет указатель на интерфейс параметра сферы ksSphereParam или ISphereParam.
+
+IsSwIept  Определить, является ли поверхность 
+поверхностью по траектории
+Интерфейс...Синтаксис Automation:
+BOOL IsSwept();
+Синтаксис COM:
+BOOL IsSwept();
+Возвращаемое значение:
+
+TRUE " поверхность является поверхностью по траектории,
+FALSE " поверхность не является поверхностью по траектории.
+
+IsTorus  Определить, является ли поверхность тором
+Интерфейс...Синтаксис Automation:
+BOOL IsTorus();
+Синтаксис COM:
+BOOL IsTorus();
+Возвращаемое значение:
+
+TRUE " поверхность является тороидальной,
+FALSE " поверхность не является тороидальной.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetSurfaceParam
+вернет указатель на интерфейс параметра тора ksTorusParam или ITorusParam.
+3376
+
+
+
+NearPointProjection  Получить ближайшую проекцию точки 
+на поверхность
+Интерфейс...Синтаксис Automation:
+BOOL NearPointProjection (double x, double y, double z, double * u, double * v, BOOL ext);
+Синтаксис COM:
+BOOL NearPointProjection (double x, double y, double z, double * u, double * v, BOOL ext);
+Входные параметры:
+
+x, y, z " координаты исходной пространственной точки,
+ext " если проекция точки вне поверхности:
+
+" TRUE проецировать на продолжение поверхности, 
+" FALSE найти ближайшую граничную точку поверхности.
+Если проекция точки внутри поверхности, значение этого параметра не 
+учитывается.
+
+Выходные параметры:
+
+u, v " параметрические координаты точки на поверхности.
+
+Возвращаемое значение:
+
+TRUE " если проекция точки попала на саму поверхность или если
+ext равен TRUE,
+
+FALSE " если проекция точки не попала на саму поверхность.
+
+Tessellation  Получить указатель на интерфейс 
+триангуляции
+Интерфейс...Синтаксис Automation:
+LPDISPATCH  GetTessellation();
+Синтаксис COM:
+LPTESSELLATION GetTessellation();
+Возвращаемое значение:
+
+" Указатель на интерфейс ksTessellation или ITessellation.
+
+Триангуляция (аппроксимирующая поверхность грани), 
+Интерфейсы ksTessellation, ITessellation
+Интерфейс триангуляции (аппроксимирующей поверхности грани).
+3377
+
+
+
+ksTessellation " интерфейс Automation
+ITessellation " интерфейс COM
+
+Описание:
+Существуют два вида триангуляции:
+
+▼ обычная, которая рассчитывается для отображения;
+▼ для производства прочностных расчетов.
+
+По умолчанию выдается обычная триангуляция " рассчитанная аппроксимирующая по"
+верхность для отображения. Если необходима триангуляция для расчетов, то следует
+указать ограничение размера ребра триангуляционной пластины.
+
+1. Триангуляционная сетка может быть построена с учетом нескольких параметров:
+▼ Установить ограничение размера ребра для триангуляциооной пластины
+
+ksTessellation::SetFacetSize.
+▼ Установить ограничение прогиба поверхности триангуляциооной пластины
+
+ksTessellation::SetFacetSag.
+▼ Установить ограничение углового отклонения поверхности ksTessellation::SetFacetAngle.
+
+Если ни один из параметров не задан (равны 0), возвращаются параметры рассчитанной
+в модели сетки.
+
+2. В Компас при расчете триангуляции ограничение размера ребра рассчитывается в зави"
+симости от габаритов модели.
+Получить значение рассчитанной величины ограничения размера ребра можно с помо"
+щью функции IPart7::GetMaxSag.
+Для расчетов рекомендуемое значение шага ребра составляет до 2% от максимального
+значения габарита. Для визуализации должно быть задано расстояние от аппроксимиру"
+ющей хорды до кривой. Это значение должно составлять 0,04% от максимального габа"
+рита детали.
+Примечание:
+Данный интерфейс можно получить от следующих интерфейсов:
+
+▼ Интерфейс свойств грани ksFaceDefinition или ksFaceDefinition.
+▼ Интерфейс математической поверхности в трехмерном пространстве ksSurface или
+
+ISurface.
+
+ITessellation  методы
+
+GetFacet  Получить интерфейс триангуляционной пластины
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetFacet();
+Синтаксис COM:
+LPFACET GetFacet();
+Возвращаемое значение:
+3378
+
+
+
+" указатель на интерфейс ksFacet или IFacet.
+
+GetFacetAngle Получить ограничение углового отклонения 
+поверхности
+Интерфейс...Синтаксис Automation:
+double GetFacetAngle();
+Синтаксис COM:
+double GetFacetAngle();
+
+GetFacetsCount  Получить количество триангуляционных пластин
+Интерфейс...Синтаксис Automation:
+long GetFacetsCount();
+Синтаксис COM:
+long GetFacetsCount();
+Возвращаемое значение:
+
+Количество триангуляционных пластин " в случае успеха,
+"1 " в случае неудачи.
+
+GetFacetData  Получить данные триангуляционной пластины по 
+индексу в массиве триангуляционных пластин
+Интерфейс...Синтаксис Automation:
+BOOL GetFacetData (long index, LPDISPATCH facet);
+Синтаксис COM:
+BOOL GetFacetData (int index, LPFACET facet);
+Входные параметры:
+
+index " индекс триангуляционной пластины в массиве,
+facet " указатель на интерфейс ksFacet или IFacet.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатель на интерфейс триангуляционной пластины не должен быть равен 0.
+3379
+
+
+
+GetFacetNormals  Получить параметры нормалей вершин 
+триангуляционной сетки
+Интерфейс...Синтаксис Automation:
+BOOL GetFacetNormals (VARIANT * normals);
+Синтаксис COM:
+BOOL GetFacetNormals (VARIANT * normals);
+Выходные параметры:
+
+normals " массив SafeArray вещественных чисел "
+нормалей вершин триангуляционной сетки.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. В массиве нормалей вершин триангуляционной сетки координаты нормалей лежат в по"
+следовательности x, y, z нормаль для первой точки, x, y, z нормаль второй точки и т.д.
+
+2. Функция используется совместно с GetFacetPoints.
+
+GetFacetPoints  Получить параметры вершин триангуляционной 
+сетки
+Интерфейс...Синтаксис Automation:
+BOOL GetFacetPoints (VARIANT * points, VARIANT * indexes);
+Синтаксис COM:
+BOOL GetFacetPoints (VARIANT * points, VARIANT * indexes);
+Выходные параметры:
+
+points " массив SafeArray вещественных чисел " координат вершин 
+триангуляционной сетки,
+
+indexes " массив SafeArray целых чисел " индексов вершин триангуляционной 
+сетки.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+1. В массиве индексов вершин триангуляционной сетки хранятся индексы точек из мас"
+сива координат точек points. Для получения параметров вершины триангуляционной
+сетки нужно получить индекс точки из массива indexes.
+3380
+
+
+
+2. Координаты точек в массиве points лежат в последовательности x, y, z первой точки,
+x, y, z второй точки и т.д.
+
+GetFacetSize  Получить ограничение размера ребра для 
+триангуляционной пластины
+Интерфейс...Синтаксис Automation:
+double GetFacetSize();
+Синтаксис COM:
+double GetFacetSize();
+Возвращаемое значение:
+
+" ограничение размера ребра для триангуляционной пластины.
+
+GetFacetParams  Получить параметрические координаты вершин 
+триангуляционных сетки
+Интерфейс...Синтаксис Automation:
+BOOL GetFacetParams( VARIANT * params );
+Синтаксис COM:
+BOOL GetFacetParams( VARIANT * params );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Выходной параметр:
+
+params " SafeArray " массив вещественных чисел "
+параметрических координат вершин триан"
+гуляционных сетки. Для формирование па"
+раметрических координат триангуляцион"
+ной сетки требуется установить признак
+ksTessellation::SetNeedParams.
+
+Примечание:
+В массиве параметрические координаты вершин лежат в последовательности:
+u, v для первой точки, u, v второй точки и т.д.
+3381
+
+
+
+GetFacetSag  Получить ограничение прогиба поверхности 
+триангуляционной пластины
+Интерфейс...Синтаксис Automation:
+ double GetFacetSag();
+Синтаксис COM:
+double GetFacetSag();
+
+GetNeedParams  Получить признак необходимости заполнения 
+параметров вершин
+Интерфейс...Синтаксис Automation:
+BOOL GetNeedParams();
+Синтаксис COM:
+BOOL GetNeedParams();
+
+GetNormal  Получить координаты нормали триангуляционной 
+сетки
+Интерфейс...Синтаксис Automation:
+BOOL GetNormal (long index, double * x, double * y, double * z);
+Синтаксис COM:
+BOOL GetNormal (int index, float * x, float * y, float * z);
+Входные параметры:
+
+index " индекс вершины в пластине.
+
+Выходные параметры:
+
+x, y, z " координаты нормали.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+GetPoint  Получить координаты вершины триангуляционной 
+сетки
+Интерфейс...Синтаксис Automation:
+BOOL GetPoint (long index, double * x, double * y, double * z);
+Синтаксис COM:
+3382
+
+
+
+BOOL GetPoint (int index, float * x, float * y, float * z);
+Входные параметры:
+
+index " индекс вершины в массиве вершин.
+
+Выходные параметры:
+
+x, y, z " координаты вершины.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+GetPointsCount  Получить указатель на интерфейс последнего 
+объекта в массиве
+Интерфейс...Синтаксис Automation:
+long GetPointsCount();
+Синтаксис COM:
+long GetPointsCount();
+Возвращаемое значение:
+
+Количество вершин триангуляционной сетки " в случае успеха,
+"1 " в случае неудачи.
+
+Refresh  Обновить триангуляцию если изменилась геометрия
+Интерфейс...Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+SetFacetAngle  Задать ограничение углового отклонения 
+триангуляционной пластины
+Интерфейс...Синтаксис Automation:
+BOOL SetFacetAngle( double angle );
+Синтаксис COM:
+3383
+
+
+
+BOOL SetFacetAngle( double angle );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Выходной параметр:
+
+angle " величина углового отклонения.
+
+Примечание:
+
+1. Триангуляционная сетка может быть построена с учетом нескольких параметров:
+▼ Установить ограничение размера ребра для триангуляциооной пластины
+
+ksTessellation::SetFacetSize.
+▼ Установить ограничение прогиба поверхности триангуляциооной пластины
+
+ksTessellation::SetFacetSag.
+▼ Установить ограничение углового отклонения поверхности ksTessellation::SetFacetAngle.
+
+Если ни один из параметров не задан (равны 0), возвращаются параметры рассчитанной
+в модели сетки.
+
+2. В Компас при расчете триангуляции ограничение размера ребра рассчитывается в зави"
+симости от габаритов модели.
+Получить значение расчитанной величины ограничения размера ребра можно с помо"
+щью метода IPart7::GetMaxSag.
+
+SetFacetSag  Задать ограничение прогиба поверхности 
+триангуляционной пластины ( Если 0, обычная триангуляция)
+Интерфейс...Синтаксис Automation:
+BOOL SetFacetSag( double sag );
+Синтаксис COM:
+BOOL SetFacetSag( double sag );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Выходной параметр:
+
+sag " величина максимально допустимого про"
+гиба на расстоянии шага.
+
+Примечание:
+3384
+
+
+
+1. Триангуляционная сетка может быть построена с учетом нескольких параметров:
+▼ Установить ограничение размера ребра для триангуляционной пластины
+
+ksTessellation::SetFacetSize.
+▼ Установить ограничение прогиба поверхности триангуляционной пластины
+
+ksTessellation::SetFacetSag.
+▼ Установить ограничение углового отклонения поверхности ksTessellation::SetFacetAngle.
+
+Если ни один из параметров не задан (равны 0), возвращаются параметры рассчитанной
+в модели сетки.
+
+2. В Компас при расчете триангуляции ограничение размера ребра рассчитывается в зави"
+симости от габаритов модели.
+Получить значение рассчитанной величины ограничения размера ребра можно с помо"
+щью метода IPart7::GetMaxSag.
+
+SetFacetSize  Изменить ограничение размера ребра для 
+триангуляционной пластины
+Интерфейс...Синтаксис Automation:
+BOOL SetFacetSize (double sag);
+Синтаксис COM:
+BOOL SetFacetSize (double sag);
+Входные параметры:
+
+sag 0 " обычная триангуляция (для отображения),
+sag >0 " триангуляция для прочностных расчетов.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Триангуляционная сетка может быть построена с учетом нескольких параметров:
+▼ Установить ограничение размера ребра для триангуляционной пластины
+
+ksTessellation::SetFacetSize.
+▼ Установить ограничение прогиба поверхности триангуляционной пластины
+
+ksTessellation::SetFacetSag.
+▼ Установить ограничение углового отклонения поверхности ksTessellation::SetFacetAngle.
+
+Если ни один из параметров не задан (равны 0), возвращаются параметры рассчитанной
+в модели сетки.
+
+2. В Компас при расчете триангуляции ограничение размера ребра рассчитывается в зави"
+симости от габаритов модели.
+3385
+
+
+
+Получить значение рассчитанной величины ограничения размера ребра можно с помо"
+щью метода IPart7::GetMaxSag.
+
+3. Рекомендуемое значение шага ребра для расчетов " до 2% от максимального значения
+габарита.
+
+SetNeedParams  Задать необходимость заполнения параметров 
+вершин
+Интерфейс...Синтаксис Automation:
+BOOL SetNeedParams( BOOL need );
+Синтаксис COM:
+BOOL SetNeedParams( BOOL need );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Триангуляционная пластина (Интерфейсы ksFacet, IFacet)
+Интерфейс триангуляционной пластины.
+
+ksFacet " интерфейс Automation
+IFacet " интерфейс COM
+
+Описание::
+Триангуляционная пластина это треугольная или четырехугольная пластина, из которых
+состоит аппроксимирующая поверхность.
+Примечание:
+Данный интерфейс можно получить от следующих интерфейсов:
+Интерфейс триангуляции (аппроксимирующей поверхности грани) ksTessellation или
+ITessellation.
+
+IFacet  методы
+
+GetPoint  Получить координаты вершины
+Интерфейс...Синтаксис Automation:
+BOOL GetPoint (long index, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetPoint (int index, float * x, float *y, float *z);
+3386
+
+
+
+Входной параметр:
+
+index " индекс вершины в пластине.
+
+Выходные параметры:
+
+x, y, z " координаты вершины.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+GetPointsCount  Получить количество вершин пластины
+Интерфейс...Синтаксис Automation:
+long GetPointsCount();
+Синтаксис COM:
+int GetPointsCount();
+Возвращаемое значение:
+
+количество вершин пластины " в случае успеха,
+0 " в случае неудачи.
+
+GetNormal  Получить координаты нормали
+Интерфейс...Синтаксис Automation:
+BOOL GetNormal (long index, double * x, double *y, double *z);
+Синтаксис COM:
+ BOOL GetNormal (int index, float * x, float *y, float *z);
+Входной параметр:
+
+index " индекс вершины в пластине.
+
+Выходные параметры:
+
+x, y, z " координаты вершины.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+3387
+
+
+
+GetTessellationIndex  Получить индекс вершины в массиве 
+вершин триангуляционной сетки
+Интерфейс...Синтаксис Automation:
+long GetTessellationIndex (long index);
+Синтаксис COM:
+int GetTessellationIndex (int index);
+Входной параметр:
+
+index " индекс вершины в пластине.
+
+Возвращаемое значение:
+
+Индекс вершины в массиве вершин " в случае успеха,
+триангуляционной сетки
+"1 " в случае неудачи.
+
+Параметры сферы (Интерфейсы ksSphereParam, 
+ISphereParam)
+Интерфейс параметров сферы.
+
+ksSphereParam " интерфейс Automation
+ISphereParam " интерфейс COM
+
+Описание:
+Сфера определяется системой координат и радиусом.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksSurface::GetSurfaceParam.
+
+ISphereParam  свойства
+
+radius  Радиус сферы
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+radius = iSphereParam.radius Получить
+свойство (* )
+
+radius = iSphereParam.GetRadius() Получить
+свойство
+(**)
+3388
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+ISphereParam  методы
+
+GetPlacement  Получить систему координат сферы
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPlacement или IPlacement.
+
+Параметры конической поверхности (Интерфейсы 
+ksConeParam, IConeParam)
+Интерфейс параметров конической поверхности.
+
+ksConeParam " интерфейс Automation
+IConeParam " интерфейс COM
+
+Описание:
+Коническая поверхность определяется системой координат, радиусом, высотой и углом
+образующей. Оси X и Y системы координат лежат в плоскости основания конуса.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksSurface::GetSurfaceParam.
+
+IConeParam  свойства
+
+angle  Угол образующей поверхности
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+angle = iConeParam.angle Получить
+свойство (* )
+
+angle = Получить
+iConeParam.GetAngle() свойство
+
+(**)
+
+Примечание:
+3389
+
+
+
+Свойство доступно только для чтения.
+
+height  Высота поверхности
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+height = iConeParam.height Получить
+свойство (* )
+
+height = Получить
+iConeParam.GetHeight() свойство
+
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+radius  Радиус ортогонального сечения, проходящего через 
+начало системы координат поверхности
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+radius = iConeParam.radius Получить
+свойство (* )
+
+radius = Получить
+iConeParam.GetRadius() свойство
+
+(**)
+
+Примечания:
+
+1.  Свойство доступно только для чтения.
+2.  Систему координат конической поверхности можно получить с помощью методов
+
+ksConeParam::GetPlacement и IConeParam::GetPlacement.
+
+IConeParam  методы
+
+GetPlacement  Получить систему координат конической 
+поверхности
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение:
+3390
+
+
+
+" указатель на интерфейс ksPlacement или IPlacement.
+
+Параметры тора (Интерфейсы ksTorusParam, ITorusParam)
+Интерфейс параметров тора.
+
+ksTorusParam " интерфейс Automation
+ITorusParam " интерфейс COM
+
+Описание:
+Тор определяется системой координат и радиусом центров и радиусом образующей.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksSurface::GetSurfaceParam.
+
+ITorusParam  свойства
+
+generatrixRadius  Радиус образующей
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+radius = Получить
+iTorusParam.generatrixRadius свойство (* )
+
+Получить
+iTorusParam.GetGeneratrixRadius() свойство
+
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+radius  Радиус центров
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+radius = iTorusParam.radius Получить
+свойство (* )
+
+radius = iTorusParam.GetRadius() Получить
+свойство
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+3391
+
+
+
+ITorusParam  методы
+
+GetPlacement  Получить систему координат тора
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPlacement или IPlacement.
+
+Параметры плоскости (Интерфейсы ksPlaneParam, 
+IPlaneParam)
+Интерфейс параметров плоскости.
+
+ksPlaneParam " интерфейс Automation
+IPlaneParam " интерфейс COM
+
+Описание:
+Плоскость определяется системой координат. Оси X и Y системы координат лежат в пло"
+скости.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksSurface::GetSurfaceParam
+
+IPlaneParam  методы
+
+GetPlacement  Получить систему координат плоскости
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPlacement или IPlacement.
+
+Параметры цилиндрической поверхности (Интерфейсы 
+ksCylinderParam, ICylinderParam)
+Интерфейс параметров цилиндрической поверхности.
+3392
+
+
+
+ksCylinderParam " интерфейс Automation
+ICylinderParam " интерфейс COM
+
+Описание:
+Цилиндрическая поверхность определяется системой координат, радиусом и высотой.
+Оси X и Y лежат в плоскости основания.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksSurface::GetSurfaceParam.
+
+ICylinderParam  свойства
+
+height  Высота поверхности
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+height = iCylinderParam.height Получить
+свойство (* )
+
+height = Получить
+iCylinderParam.GetHeight() свойство
+
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+radius  Радиус основания
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+radius = iCylinderParam.radius Получить
+свойство (* )
+
+radius = Получить
+iCylinderParam.GetRadius() свойство
+
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+3393
+
+
+
+ICylinderParam  методы
+
+GetPlacement  Получить систему координат основания
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPlacement или IPlacement.
+
+Параметры NURBS  поверхности (Интерфейсы 
+ksNurbsSurfaceParam, INurbsSurfaceParam)
+Интерфейс параметров NURBSповерхности.
+
+ksNurbsSurfaceParam " интерфейс Automation
+INurbsSurfaceParam " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksSurface::GetSurfaceParam.
+
+ksNurbsSurfaceParam  свойства
+
+BoundaryCount  Количество контуров, образующих границу 
+поверхности
+Интерфейс...Тип данных: long
+Синтаксис Automation:
+
+BoundaryCount = Object.BoundaryCount Получить
+свойство (* )
+
+BoundaryCount = Получить
+Object.GetBoundaryCount() свойство
+
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+3394
+
+
+
+INurbsSurfaceParam  методы
+
+GetBoundaryUVNurbs  Получить параметры NURBS
+представления границы поверхности
+Интерфейс...Синтаксис Automation:
+BOOL GetBoundaryUVNurbs (BOOL uv,
+BOOL closed,
+long loopIndex,
+long * degree,
+long edgeIndex,
+VARIANT * points,
+VARIANT * weights,
+VARIANT * knots,
+double * tMin,
+double * tMax)
+Синтаксис COM:
+BOOL GetBoundaryUVNurbs (BOOL uv,
+BOOL closed,
+long loopIndex,
+long edgeIndex,
+long * degree,
+VARIANT * points,
+VARIANT * weights,
+VARIANT * knots,
+double * tMin,
+double * tMax)
+Входные параметры:
+
+Uv  " TRUE " получить параметры границы повер"
+хности в UV" параметрическом представлении
+исходной поверхности,
+ " FALSE " получить параметры границы повер"
+хности в 3D координатах,
+
+Closed  " TRUE " сомкнуть, если граница разомкнутая,
+ " FALSE " разомкнуть, если граница замкнутая,
+
+loopIndex  " индекс цикла,
+edgeIndex  " индекс ребра в цикле (совпадает с индексом
+
+ребра в коллекции ориентированных ребер).
+
+Выходные параметры:
+
+degree  " порядок NURBS (степень полинома + 1),
+от 3 до 10,
+3395
+
+
+
+points  " массив параметров UV или координат
+вершин " массив SafeArray вещественных
+чисел VT_ARRAY | VT_R8,
+
+weights  " веса точек " массив SafeArray веществен"
+ных чисел VT_ARRAY | VT_R8,
+
+knots  " узлы точек " массив SafeArray веществен"
+ных чисел VT_ARRAY | VT_R8,
+
+tMin, tMax  " минимальный и максимальный параме"
+тры.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Примечание:
+▼ Если признак UV равен TRUE, то в массиве points возвращаются параметры UV для
+
+Nurbs"представления границы. Параметры в массиве лежат в следующей последова"
+тельности:
+u0, v0, u1, v1, ... ui, vi.
+
+▼ Если признак UV равен FALSE, то в массиве points возвращаются координаты вершин
+Nurbs"представления границы. Координаты точек в полученном массиве лежат в следу"
+ющей последовательности:
+x0, y0, z0, x1, y1, z1, ...xi, yi, zi.
+
+▼ Если индекс ребра равен "1, формируется Nurbs"представление контура границы.
+▼ Если индекс >= 0, то формируется Nurbs"представление ребра, входящего в цикл; пара"
+
+метр unclamped при этом игнорируется.
+
+GetClose  Получить тип замыкания сплайна
+Интерфейс...Синтаксис Automation:
+BOOL GetClose (BOOL paramU);
+Синтаксис COM:
+BOOL GetClose (BOOL paramU);
+Входные параметры:
+
+paramU TRUE " для параметра U,
+paramU FALSE " для параметра V.
+
+Возвращаемое значение:
+
+TRUE " сплайн замкнутый,
+FALSE " сплайн разомкнутый.
+
+Примечание:
+3396
+
+
+
+Значение paramU позволяет выбрать параметр представления поверхности U или V, для
+которого выполняется метод.
+
+GetDegree  Получить степень сплайна
+Интерфейс...Синтаксис Automation:
+short GetDegree (BOOL paramU);
+Синтаксис COM:
+short GetDegree (BOOL paramU);
+Входные параметры:
+
+paramU TRUE " для параметра U,
+paramU FALSE " для параметра V.

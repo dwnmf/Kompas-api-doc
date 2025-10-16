@@ -1,0 +1,2532 @@
+FALSE " режим динамической фильтрации выключен.
+
+Примечания:
+Метод позволяет получить флаг режима динамической фильтрации (TRUE " включен).
+3509
+
+
+
+Метод распространяется на работу процесса указания местоположения или объектов
+IDocument3D::UserGetPlacementAndEntity.
+Перед запуском процесса определяются параметры запроса к системе " интерфейс
+IRequestInfo, в котором можно определить функцию фильтрации.
+Если свойство DynamicFiltering, определяющее режим динамической фильтрации, равно
+FALSE (умолчательный режим), то функция фильтрации вызывается только когда кур"
+сор проходит над объектом, чтобы библиотека могла сообщить системе, подходит дан"
+ный объект или нет. Если функция фильтрации возвращает TRUE, объект библиотеке
+подходит.
+Если свойство DynamicFiltering равно TRUE, то функция фильтрации вызывается не
+только когда курсор проходит над объектом, но и когда объекта под курсором нет. В та"
+ком случае передается сигнал библиотеке, что объекта под курсором нет. Возвращаемое
+значение функции фильтрации игнорируется.
+
+GetEntityCollection  Получить указатель на интерфейс 
+массива объектов, указанных в процессе
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetEntityCollection();
+Синтаксис COM:
+LPENTITYCOLLECTION GetEntityCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntityCollection или IEntityCollection.
+
+Примечание:
+В возвращаемом массиве контроль выключен, что позволяет добавлять в массив нуле"
+вые указатели.
+
+GetFilterCallBack  Получить имя (в Automation) или 
+адрес (в COM) функции обратной связи для фильтрации 
+объектов
+Интерфейс...
+Синтаксис Automation:
+BSTR GetFilterCallBack();
+Возвращаемое значение:
+
+" имя функции.
+3510
+
+
+
+Синтаксис COM:
+USERSELECTFILTERPROC GetFilterCallBack();
+Возвращаемое значение:
+
+" адрес функции.
+
+GetMateConstraintCollection  Получить указатель на 
+интерфейс массива временных сопряжений для 
+фантома
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetMateConstraintCollection();
+Синтаксис COM:
+LPMATECONSTRAINTCOLLECTION GetMateConstraintCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс
+ksMateConstraintCollection или
+ImateConstraintCollection.
+
+GetMenuId  Получить идентификатор меню
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::MenuId.
+Синтаксис COM:
+long GetMenuId();
+Возвращаемое значение:
+
+" идентификатор меню.
+
+GetIPhantom  Получить указатель на интерфейс 
+фантома
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetIPhantom();
+Синтаксис COM:
+3511
+
+
+
+LPPART GetIPhantom();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPart или IPart.
+
+GetPlacement  Получить указатель на интерфейс 
+локальной системы координат
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPlacement или IPlacement.
+
+GetProcessParam  Получить указатель на интерфейс 
+параметров процесса
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::processParam.
+Синтаксис COM:
+LPUNKNOWN GetProcessParam();
+Возвращаемое значение:
+
+" Указатель на интерфейс IProcessParam.
+
+Примечания:
+Если в интерфейсе параметров запроса к системе указатель на интерфейс параметров
+процесса не NULL, то при выполнении процесса UserGetPlacementAndEntity элементы
+управления из IProcessParam попадут на Панель свойств процесса.
+
+GetPrompt  Получить строкуподсказку процесса
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::Prompt.
+Синтаксис COM:
+3512
+
+
+
+GetPrompt();
+Возвращаемое значение:
+
+" строка подсказки.
+
+GetTitle  Получить заголовок
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство ksRequestInfo3D::title.
+Синтаксис COM:
+LPOLESTR GetTitle();
+Возвращаемое значение:
+
+" заголовок.
+
+SetCallBack  Изменить имя (в Automation) или адрес (в 
+COM) функции обратной связи процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCallBack (BSTR methodName, 
+long hInst, 
+LPDISPATCH dispatchOCX);
+Входные параметры:
+
+methodName " имя функции,
+hInst " HINSTANCE модуля, в котором находится функция,
+dispatchOCX " интерфейс, в котором находится функция.
+
+Синтаксис COM:
+BOOL SetCallBack (USERSELECTCALLBACKPROC callBack);
+Входной параметр:
+
+callBack " адрес функции.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+Тип функции обратной связи для выбора объекта:
+typedef int (__stdcall * USERSELECTCALLBACKPROC)(LPENTITY, LPREQUESTINFO);
+3513
+
+
+
+Прототип CallBackфункции:
+Синтаксис Automation (пример для Visual C):
+int WINAPI SELECTCALLBACKPROC (LPDISPATCH entity, 
+LPDISPATCH info);
+Синтаксис COM:
+int __stdcall SelectCallBackProc (LPENTITY entity, LPREQUESTINFO info);
+Входные параметры:
+
+entity " указатель на интерфейс ksEntity или IEntity,
+info " указатель на интерфейс kIsRequestInfo3D
+
+или IRequestInfo.
+
+Функция вызывается по нажатию кнопки мыши на подсвеченном объекте.
+Получить доступ к массиву объектов, указываемых в процессе, можно вызовом метода
+GetEntityCollection у параметра info.
+Если входной параметр entity равен 0, то в процессе была указана точка и рекомендуется
+заполнить массив нулевыми указателями.
+Если entity не равен 0, то при необходимости можно добавить данный объект в массив.
+CallBack"функция должна вернуть 1, если содержимое массива выбранных элементов
+было изменено (в этом случае будет обновлена подсветка выбранных объектов в моде"
+ли), и 0, если массив не изменился (в модели никаких изменений не произойдет).
+Функция устарела. Использование данной функции может привести к ошибке в библио"
+теке, собранной с конфигурацией x64.Рекомендуется использовать функцию
+ksRequestInfo3D::SetCallBackEx.
+
+SetCallBackEx  Установить функцию обратной связи
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCallBackEx(LPCTSTR methodName, VARIANT hInst, LPDISPATCH dispatchOCX);
+Входные параметры:
+
+methodName " строка с именем функции обратной связи,
+hInst " идентификатор приложения (dll), в котором 
+
+реализована CallBack"функция,
+dispatchOCX " указатель на интерфейc IDispatch, в котором 
+
+реализована CallBack"функция.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3514
+
+
+
+Аналог функции в COM см. IRequestInfo3D::SetCallBack.
+Прототип FilterCallBackфункции:
+Синтаксис Automation (пример для Visual C):
+int WINAPI SELECTCALLBACKPROC(LPDISPATCH entity, LPDISPATCH info);
+Входной параметр:
+
+entity " указатель на интерфейс текущего элемента или объекта 
+ksEntity,
+
+info " указатель на интерфейс ksRequestInfo3D.
+
+Примечание:
+Функция вызывается по нажатию кнопки мыши на подсвеченном объекте.
+Получить доступ к массиву объектов, указываемых в процессе, можно вызовом метода
+GetEntityCollection у параметра info.
+
+▼ Если входной параметр entity равен 0, то в процессе была указана точка и рекомендуется
+заполнить массив нулевыми указателями.
+
+▼ Если entity не равен 0, то при необходимости можно добавить данный объект в массив.
+CallBack"функция должна вернуть:
+
+▼  1, если содержимое массива выбранных элементов было изменено (в этом случае будет
+обновлена подсветка выбранных объектов в модели).
+
+▼  0, если массив не изменился (в модели никаких изменений не произойдет).
+ HINSTANCE библиотеки нужно передать через VARIANT, как VT_I4 в Win32 и VT_I8 в x64.
+Для правильного формирования _variant_t HINSTANCE нужно передавать через приведе"
+ние к (LONG_PTR).
+В библиотеках, использующих автоматизацию, рекомендуется использовать данную
+функцию вместо ksRequestInfo3D::SetCallBack.
+
+SetCommandsString  Установить строку меню, если 
+меню было задано строкой
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::Prompt.
+Синтаксис COM:
+BOOL SetCommandsString(LPOLESTR menu);
+Входные параметры:
+
+menu " строка меню.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+3515
+
+
+
+FALSE " в случае неудачи.
+
+SetCursorId  Установить идентификатор курсора
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::CursorId.
+Синтаксис COM:
+BOOL SetCursorId(long cursorId);
+Входные параметры:
+
+cursorId " идентификатор курсора.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetCursorName  Установить имя курсора
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::CursorName.
+Синтаксис COM:
+BOOL SetCursorName(LPOLESTR cursor);
+Входные параметры:
+
+cursor " имя курсора.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetCursorText  Установить текст курсора
+Интерфейс...
+Синтаксис COM:
+BOOL SetCursorText( BSTR Text );
+Примечание
+Функция работает при запущенном процессе.
+Текст сразу выдается над курсором.
+3516
+
+
+
+SetDynamicFiltering  Установить свойство режима 
+динамической фильтрации
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::DynamicFiltering.
+Синтаксис COM:
+SetDynamicFiltering(BOOL f);
+Входные параметры:
+
+f " (BOOL) " флаг режима динамической фильтрации (TRUE " включить).
+
+Возвращаемое значение:
+
+TRUE " режим динамической фильтрации изменен.
+
+Примечания:
+Метод позволяет установить флаг режима динамической фильтрации (TRUE " включен).
+Метод распространяется на работу процесса указания местоположения или объектов
+IDocument3D::UserGetPlacementAndEntity.
+Перед запуском процесса определяются параметры запроса к системе " интерфейс
+IRequestInfo, в котором можно определить функцию фильтрации.
+Если свойство DynamicFiltering, определяющее режим динамической фильтрации, равно
+FALSE (умолчательный режим), то функция фильтрации вызывается только когда кур"
+сор проходит над объектом, чтобы библиотека могла сообщить системе, подходит дан"
+ный объект или нет. Если функция фильтрации возвращает TRUE, объект библиотеке
+подходит.
+Если свойство DynamicFiltering равно TRUE, то функция фильтрации вызывается не
+только когда курсор проходит над объектом, но и когда объекта под курсором нет. В та"
+ком случае передается сигнал библиотеке, что объекта под курсором нет. Возвращаемое
+значение функции фильтрации игнорируется.
+
+SetFilterCallBack  Изменить имя (в Automation) или 
+адрес (в COM) функции обратной связи для фильтрации 
+объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL SetFilterCallBack (BSTR methodName, 
+long hInst, 
+LPDISPATCH dispatchOCX);
+Входные параметры:
+3517
+
+
+
+methodName " имя функции,
+hInst " HINSTANCE модуля, в котором находится функция,
+dispatchOCX " интерфейс, в котором находится функция.
+
+Синтаксис COM:
+BOOL SetFilterCallBack (USERSELECTFILTERPROC callBack);
+Входной параметр:
+
+callBack " адрес функции.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+Тип функции обратной связи для фильтрации объекта (функции"«фильтра»)
+typedef BOOL (__stdcall * USERSELECTFILTERPROC)(LPENTITY);
+Прототип FilterCallBackфункции:
+Синтаксис Automation (пример для Visual C):
+BOOL WINAPI SELECTFILTERPROC (LPDISPATCH _entity);
+Синтаксис COM:
+BOOL __stdcall SelectFilterProc (LPENTITY entity);
+Входной параметр:
+
+entity " указатель на интерфейс текущего элемента или объекта 
+ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " объект будет подсвечен.
+
+В данной функции можно отобрать интересующие пользователя элементы или объекты.
+Функция вызывается при изменении положения курсора, если курсор находится рядом
+с элементом или объектом модели.
+Функция устарела. Использование данной функции может привести к ошибке в библио"
+теке, собранной с конфигурацией x64.
+Рекомендуется использовать функцию ksRequestInfo3D::SetFilterCallBackEx.
+ 
+
+SetFilterCallBackEx  Установить функцию обратной 
+связи для фильтрации объектов
+Интерфейс...
+3518
+
+
+
+Синтаксис Automation:
+BOOL SetFilterCallBackEx(LPCTSTR methodName, VARIANT hInst, LPDISPATCH
+dispatchOCX);
+Входные параметры:
+
+methodName " строка с именем функции обратной связи,
+hInst " идентификатор приложения (dll), в котором 
+
+реали"зована CallBack"функция,
+dispatchOCX " указатель на интерфейc IDispatch, в котором 
+
+реализована CallBack"функция.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Аналог функции в COM, см. IRequestInfo3D::SetFilterCallBack.
+Прототип FilterCallBackфункции:
+Синтаксис Automation (пример для Visual C):
+BOOL WINAPI SELECTFILTERPROC (LPDISPATCH _entity);
+Входной параметр:
+
+entity " указатель на интерфейс текущего элемента или объекта 
+ksEntity или IEntity.
+
+Примечание:
+ В данной функции можно отобрать интересующие пользователя элементы или объекты.
+Функция вызывается при изменении положения курсора, если курсор находится рядом
+с элементом или объектом модели. 
+ HINSTANCE библиотеки нужно передать через VARIANT, как VT_I4 в Win32 и VT_I8 в x64.
+Для правильного формирования _variant_t HINSTANCE нужно передавать через приведе"
+ние к (LONG_PTR).
+В библиотеках, использующих автоматизацию, рекомендуется использовать данную
+функцию вместо ksRequestInfo3D::SetFilterCallBack.
+
+SetMenuId  Установить идентификатор меню
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::MenuId.
+Синтаксис COM:
+BOOL SetMenuId(long menuId);
+Входные параметры:
+3519
+
+
+
+menuId " идентификатор меню.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetObjectsFilter3D  Способ фильтрации 3D объектов в 
+процессе
+Интерфейс...
+Синтаксис Automation:
+BOOL SetObjectsFilter3D( long filterType, BOOL newVal);
+Синтаксис COM :
+BOOL SetObjectsFilter3D( long filterType, BOOL newVal);
+Входные параметры:
+
+filterType " тип объектов для фильтрации в процессе из 
+перечисления ksProcessObjectsFilter3DEnum.
+
+ newVal " признак фильтрации 
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetProcessingGroupObjectsCallBack  Установить имя (в 
+Automation) или адрес (в COM) функции обратной связи 
+для обработки объектов, пришедших при 
+селектировании рамкой
+Интерфейс...
+Синтаксис Automation :
+BOOL SetProcessingGroupObjectsCallBack(BSTR methodName, VARIANT hInst, LPDISPATCH
+dispatchOCX);
+Входные параметры:
+ 
+
+methodName " имя функции,
+hInst " HINSTANCE модуля, в котором находится функция,
+dispatchOCX " интерфейс, в котором находится функция.
+3520
+
+
+
+Синтаксис COM :
+BOOL               SetProcessingGroupObjectsCallBack(void* callBack);
+Входной параметр:
+
+callBack " адрес функции.
+
+Возвращаемое значение
+
+TRUE " в случае успешного завершения.
+
+Прототип CallBackфункции:
+Синтаксис Automation (пример для Visual C):
+BOOL WINAPI  USERPROCESSINGGROUPOBJECTS( VARIANT * Objects, long selectionType );
+Синтаксис COM:
+BOOL __stdcall USERPROCESSINGGROUPOBJECTS( VARIANT * Objects, long selectionType
+);
+Входные параметры:
+
+Objects " список объектов массив SafeArray тип VT_ARRAY | 
+VT_DISPATCH в автоматизации;
+                                                   VT_ARRAY | VT_UNKNOWN в COM.
+
+selectionType " Тип селектирования из перечисления. 
+
+Возвращаемое значение
+
+ " не используется.
+
+Примечание
+HINSTANCE библиотеки нужно передать через VARIANT, как VT_I4 в Win32 и VT_I8 в x64.
+Для правильного формирования _variant_t HINSTANCE нужно передавать через приведе"
+ние к (LONG_PTR).
+
+SetProcessParam  Установить указатель на интерфейс 
+параметров процесса
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::processParam.
+Синтаксис COM:
+BOOL SetProcessParam( LPUNKNOWN param);
+Входные параметры:
+3521
+
+
+
+param " указатель на интерфейс IProcessParam.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+Если в интерфейсе параметров запроса к системе указатель на интерфейс параметров
+процесса не NULL, то при выполнении процесса UserGetPlacementAndEntity элементы
+управления из IProcessParam попадут на Панель свойств процесса.
+
+SetPrompt  Установить строкуподсказку процесса
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство
+ksRequestInfo3D::Prompt.
+Синтаксис COM:
+BOOL SetPrompt(LPOLESTR prompt);
+Входные параметры:
+
+prompt " строка подсказки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetTitle  Установить заголовок
+Интерфейс...
+Аналог данного метода при использовании Automation " свойство ksRequestInfo3D::title 
+Синтаксис COM:
+BOOL SetTitle(LPOLESTR title);
+Входные параметры:
+
+title " заголовок.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+3522
+
+
+
+FALSE " в случае неудачи.
+
+Положение объекта (Интерфейсы ksPlacement, 
+IPlacement)
+Интерфейс локальной системы координат (положение объекта).
+
+ksPlacement " интерфейс Automation
+IPlacement " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием методов интерфейсов
+ksRequestInfo3D::GetPlacement, ksObject3DNotifyResult::GetPlacement,
+ksPlaneParam::GetPlacement, ksTorusParam::GetPlacement,
+ksEllipse3dParam::GetPlacement, ksCylinderParam::GetPlacement,
+ksArc3dParam::GetPlacement, ksConeParam::GetPlacement,
+ksDocument3D::DefaultPlacement, ksViewProjection::GetPlacement,
+ksCircle3dParam::GetPlacement, ksPart::GetPlacement, ksSphereParam::GetPlacement.
+
+IPlacement  методы
+
+GetAxis  Получить компоненты вектора направления оси 
+OX, OY или OZ локальной системы координат
+Интерфейс...
+Синтаксис Automation:
+BOOL GetAxis (double* x, 
+double* y, 
+double* z, 
+long type);
+Синтаксис COM:
+BOOL GetAxis (double *x, 
+double *y, 
+double *z, 
+long type);
+Входной параметр:
+
+type " тип оси:
+0 – OX,
+1– OY,
+>1– OZ.
+
+Выходные параметры:
+3523
+
+
+
+x, y, z " компоненты вектора направления оси.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+Положение начала локальной системы координат можно получить при помощи метода
+GetOrigin.
+
+GetMatrix Получить суммарную матрицу преобразования 
+координат 
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetMatrix();
+Синтаксис COM:
+HRESULT GetMatrix( VARIANT * Result );
+Возвращаемое значение:
+
+" массив SafeAttray типа (VT_ARRAY | VT_R8).
+
+Примечание:
+
+1. Элементы матрицы возвращаются в виде одномерного массива из 16 элементов.
+2. Матрица имеет размер 4х4.
+
+GetOrigin  Получить координаты начала локальной системы 
+координат
+Интерфейс...
+Синтаксис Automation:
+BOOL GetOrigin (double* x, 
+double* y, 
+double* z);
+Синтаксис COM:
+BOOL GetOrigin (double *x, 
+double *y, 
+double *z);
+Выходные параметры:
+3524
+
+
+
+x, y, z " координаты начала локальной системы коор"
+динат в глобальной системе координат.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+Направление осей локальной системы координат можно получить при помощи метода
+GetAxis.
+
+GetVector  Получить вектор для указанной оси
+Интерфейс...
+Синтаксис Automation:
+BOOL GetVector( long type, double * X, double * Y, double * Z );
+Синтаксис COM:
+BOOL GetVector( long type, double * X, double * Y, double * Z );
+Возвращаемое значение:
+
+TRUE " в случае удачи.
+
+Входные параметры:
+
+type " тип оси:
+         0 – OX,
+         1 – OY,
+        >1 – OZ.
+
+Выходные параметры:
+
+X, Y, Z " компоненты вектора направления оси.
+
+InitByMatrix3D  Установить систему координат по матрице 
+Интерфейс...
+Синтаксис Automation:
+BOOL InitByMatrix3D( VARIANT * mtr );
+Синтаксис COM:
+BOOL InitByMatrix3D( VARIANT * mtr );
+Входные параметры:
+3525
+
+
+
+mtr " массив SafeAttray типа (VT_ARRAY | VT_R8).
+
+Примечание:
+
+1. Элементы матрицы возвращаются в виде одномерного массива из 16 элементов.
+2. Матрица имеет размер 4х4.
+
+PointOn Получить пространственную точку по точке на 
+плоскости XY
+Интерфейс...
+Синтаксис Automation:
+BOOL PointOn (double XIn, double YIn, double * XOut, double * YOut, double * ZOut);
+Синтаксис COM:
+BOOL PointOn (double XIn, double YIn, double * XOut, double * YOut, double * ZOut);
+Входные параметры:
+
+XIn, YIn " координаты исходной точки на плоскости XY.
+
+Выходные параметры:
+
+XOut, YOut, ZOut " координаты пространственной точки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+PointProjection  Получить проекцию точки на плоскость XY
+Интерфейс...
+Синтаксис Automation:
+BOOL PointProjection (double XIn, double YIn, double ZIn, double * XOut, double * YOut);
+Синтаксис COM:
+BOOL PointProjection (double XIn, double YIn, double ZIn, double * XOut, double * YOut);
+Входные параметры:
+
+XIn, YIn, ZIn " координаты исходной пространственной точки.
+
+Выходные параметры:
+
+XOut, YOut " координаты точки на плоскости XY.
+3526
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Rotate  Получить последний объект в дереве
+Интерфейс...
+Синтаксис Automation:
+BOOL Rotate( double X0, double Y0, double Z0, double AxisZX, double AxisZXY, double
+AxisZZ, double Angle );
+Синтаксис COM:
+BOOL Rotate( double X0, double Y0, double Z0, double AxisZX, double AxisZXY, double
+AxisZZ, double Angle );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+
+SetAxes  Установить оси X и Y
+Пример...
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL SetAxes (double Xx,
+double Xy,
+double Xz,
+double Yx,
+double Yy,
+double Yz );
+Синтаксис COM:
+BOOL SetAxes (double Xx,
+double Xy,
+double Xz,
+double Yx,
+double Yy,
+double Yz)
+Входные параметры:
+
+Xx, Xy, Xz " координаты точки на оси X,
+3527
+
+
+
+Yx, Yy, Yz " координаты точки на оси Y.
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetAxis  Установить компоненты вектора направления оси 
+OX, OY или OZ локальной системы координат
+Пример...
+Интерфейс...
+Синтаксис Automation:
+BOOL SetAxis (double x, 
+double y, 
+double z, 
+long type);
+Синтаксис COM:
+BOOL SetAxis (double x, 
+double y, 
+double z, 
+int type);
+Входные параметры:
+
+x, y, z " компоненты вектора направления оси,
+type " тип оси:
+
+0 – OX,
+>0 – OY.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetOrigin  Изменить координаты начала локальной системы 
+координат
+Пример...
+Интерфейс...
+Синтаксис Automation:
+BOOL SetOrigin (double x, 
+double y, 
+double z);
+3528
+
+
+
+Синтаксис COM:
+BOOL SetOrigin (double x, 
+double y, 
+double z);
+Входные параметры:
+
+x, y, z " координаты начала локальной системы коор"
+динат в глобальной системе координат.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPlacement  Изменить локальную систему координат
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlacement (LPDISPATCH placement);
+Синтаксис COM:
+BOOL SetPlacement (LPPLACEMENT placement);
+Входной параметр:
+
+placement " указатель на интерфейс ksPlacement или IPlacement.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetVector  Задать вектор для указанной оси
+Интерфейс...
+Синтаксис Automation:
+BOOL SetVector( long type, double * X, double * Y, double * Z );
+Синтаксис COM:
+BOOL SetVector( long type, double * X, double * Y, double * Z );
+Возвращаемое значение:
+
+TRUE " в случае удачи.
+
+Входные параметры:
+3529
+
+
+
+type " тип оси:
+         0 – OX,
+         1 – OY,
+       >1 – OZ.
+
+Выходные параметры:
+
+X, Y, Z " компоненты вектора направления оси.
+
+Массив объектов модели
+Интерфейсы ksEntityCollection и IEntityCollection 
+
+Объект модели
+Интерфейсы ksEntity и IEntity
+Интерфейсы пространственных кривых
+Интерфейсы поверхностей
+Интерфейсы копирования
+Интерфейсы копирования компонентов сборки
+Интерфейсы формообразующих операций
+Интерфейсы дополнительных элементов
+Интерфейсы вспомогательной геометрии
+
+Массив сопряжений (Интерфейсы 
+ksMateConstraintCollection, IMateConstraintCollection)
+Справка системы КОМПАС...
+kompas.chm::/1024_112_1_Obshchije_sved_sopr.htm
+Интерфейс параметров массива сопряжений компонента сборки.
+
+ksMateConstraintCollection " интерфейс Automation
+IMateConstraintCollection " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksRequestInfo3D::GetMateConstraintCollection.
+3530
+
+
+
+IMateConstraintCollection  методы
+
+AddMateConstraint  Добавить сопряжение в массив
+Интерфейс...
+Синтаксис Automation:
+BOOL AddMateConstraint (LPDISPATCH mate);
+Синтаксис COM:
+BOOL AddMateConstraint (LPMATECONSTRAINT mate);
+Входные параметры:
+
+mate " указатель на интерфейс
+ksMateConstraint или IMateConstraint.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Clear Очистить массив сопряжений
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+BOOL Clear();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Объекты удаляются только из массива, в модель изменения не передаются.
+
+GetByIndex  Получить указатель на интерфейс объекта с 
+указанным индексом в массиве сопряжений
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetByIndex (long index);
+Синтаксис COM:
+LPMATECONSTRAINT GetByIndex (long index);
+Входной параметр:
+3531
+
+
+
+index " индекс сопряжения в массиве.
+
+Возвращаемое значение:
+
+" указатель на интерфейс параметров сопряже"
+ния ksMateConstraint или IMateConstraint.
+
+GetCount  Получить количество элементов в массиве 
+сопряжений
+Интерфейс...
+Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+unsigned long GetCount();
+Возвращаемое значение:
+
+" количество элементов в массиве сопряжений.
+
+GetSafeArrayByObj  Сформировать массив SAFEARRAY 
+параметров сопряжений по объекту
+Интерфейс...
+Синтаксис Automation:
+BOOL GetSafeArrayByObj( LPDISPATCH obj, VARIANT * pArray );
+Синтаксис COM:
+BOOL GetSafeArrayByObj( LPUNKNOWN obj, VARIANT * pArray );
+Входные параметры:
+
+obj " указатель на объект.
+
+Выходные параметры:
+
+pArray " указатель на массив параметров сопряжений.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+3532
+
+
+
+1. Тип выходного массива VT_ARRAY | VT_UNKNOWN. Элемент, лежащий в массиве,
+IMateConstraint.
+
+2. Входной объект либо компонент IPart, тогда будет сформирован массив всех сопряже"
+ний для этого компонента, либо объект модели, который может фигурировать в сопря"
+жениях.
+
+FindIt  Получить индекс элемента в массиве
+Интерфейс...
+Синтаксис Automation:
+long FindIt (LPDISPATCH entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+"1 " если элемент не найден.
+
+Синтаксис COM:
+unsigned long FindIt (LPMATECONSTRAINT entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+SYS_MAX_UINT " если элемент не найден.
+
+Входные параметры:
+
+entity " указатель на интерфейс
+ksMateConstraint или IMateConstraint.
+
+First  Получить указатель на интерфейс первого объекта в 
+массиве сопряжений
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPMATECONSTRAINT First();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров сопряже"
+ния ksMateConstraint или IMateConstraint.
+3533
+
+
+
+Last  Получить указатель на интерфейс последнего объекта 
+в массиве сопряжений
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Last();
+Синтаксис COM:
+LPMATECONSTRAINT Last();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров сопряже"
+ния ksMateConstraint или IMateConstraint.
+
+Next  Получить указатель на интерфейс следующего 
+объекта в массиве сопряжений
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Next();
+Синтаксис COM:
+LPMATECONSTRAINT Next();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров сопряже"
+ния ksMateConstraint или IMateConstraint.
+
+Prev  Получить указатель на интерфейс предыдущего 
+объекта в массиве сопряжений
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Prev();
+Синтаксис COM:
+LPMATECONSTRAINT Prev();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров сопряже"
+ния ksMateConstraint или IMateConstraint.
+
+Refresh  Обновить массив сопряжений
+Интерфейс...
+3534
+
+
+
+Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод не работает для временного массива (полученного от
+ksRequestInfo3D::GetMateConstraintCollection).
+
+RemoveMateConstraint  Удалить сопряжение из массива
+Интерфейс...
+Синтаксис Automation:
+BOOL RemoveMateConstraint (LPDISPATCH mate);
+Синтаксис COM:
+BOOL RemoveMateConstraint (LPMATECONSTRAINT mate);
+Входные параметры:
+
+mate " указатель на интерфейс
+ksMateConstraint или IMateConstraint.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Интерфейсы структуры параметров сопряжения 
+(Интерфейсы ksMateConstraint, IMateConstraint)
+Справка системы КОМПАС...
+kompas.chm::/1024_112_1_Obshchije_sved_sopr.htm
+Интерфейс параметров сопряжения.
+
+ksMateConstraint " интерфейс Automation
+ImateConstraint " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен следующими способами:
+
+▼ с использованием метода интерфейса ksDocument3D::GetMateConstraint,
+3535
+
+
+
+▼ с использованием методов интерфейса ksMateConstraintCollection.
+
+IMateConstraint  свойства
+
+constraintType  Тип сопряжения
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+сonstraintType = Получить
+mateConstraint.сonstraintType свойство(* )
+mateConstraint.сonstraintType = Установить
+сonstraintType свойство (* )
+сonstraintType = Получить
+mateConstraint.GetConstraintType() свойство (**)
+mateConstraint.SetConstraintType(сons Установить
+traintType) свойство (**)
+
+Синтаксис COM:
+
+сonstraintType = Получить свой"
+mateConstraint.GetConstraintType() ство
+mateConstraint.SetConstraintType(сonstr Установить
+aintType) свойство
+
+Типы сопряжений...
+
+direction  Направление
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+direction = Получить
+mateConstraint.direction свойство(* )
+mateConstraint.direction = Установить
+direction свойство (* )
+direction = Получить
+mateConstraint.GetDirection свойство (**)
+()
+mateConstraint.SetDirection( Установить
+direction) свойство (**)
+
+Синтаксис COM:
+3536
+
+
+
+direction = Получить свой"
+mateConstraint.GetDirection() ство
+mateConstraint.SetDirection(d Установить
+irection) свойство
+
+Направления сопряжений...
+
+distance  Расстояние между объектами
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+distance = Получить
+mateConstraint.distance свойство(* )
+mateConstraint.distance = Установить
+distance свойство (* )
+distance = Получить
+mateConstraint.GetDistance( свойство (**)
+)
+mateConstraint.SetDistance( Установить
+distance) свойство (**)
+
+Синтаксис COM:
+
+distance = Получить свой"
+mateConstraint.GetDistance() ство
+mateConstraint.SetDistance(di Установить
+stance) свойство
+
+fixed  Фиксация
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+fixed = mateConstraint.fixed Получить
+свойство(* )
+
+mateConstraint.fixed = fixed Установить
+свойство (* )
+
+fixed = Получить
+mateConstraint.GetFixed() свойство (**)
+mateConstraint.SetFixed(fixe Установить
+d) свойство (**)
+
+Синтаксис COM:
+3537
+
+
+
+fixed = Получить свой"
+mateConstraint.GetFixed() ство
+mateConstraint.SetFixed(fixed Установить
+) свойство
+
+Фиксации сопряжений...
+Примечание:
+В настоящее время не используется.
+
+IMateConstraint  методы
+
+Create  Создать временное сопряжение
+Интерфейс...
+Синтаксис Automation:
+BOOL Create();
+Синтаксис COM:
+BOOL Create();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Сопряжения бывают постоянными и временными. Временные сопряжения, в отличие от
+постоянных, существуют только в течении процесса указания местоположения или объ"
+ектов. Процесс запускается методом ksDocument3D::UserGetPlacementAndEntity. Посто"
+янные сопряжения создаются с помощью метода ksDocument3D::AddMateConstraint.
+
+2.  Данный метод необходимо вызвать для создания временного сопряжения в модели по"
+сле создания интерфейса с помощью метода ksDocument3D::GetMateConstraint и изме"
+нения параметров создаваемого сопряжения. Если до вызова данного метода параметры
+не изменены, сопряжение создается с параметрами, принятыми по умолчанию.
+
+3. Пример использования методов создания временных и постоянных сопряжений приве"
+ден в демонстрационной библиотеке построения модели стандартного изделия (шпиль"
+ки), которая сохранена в файле STUDS3D.rtw.
+
+GetBaseObj  Получить указатель на интерфейс объекта для 
+сопряжения по номеру
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetBaseObj (short number);
+Синтаксис COM:
+3538
+
+
+
+LPENTITY GetBaseObj (short number);
+Входные параметры:
+
+number " номер объекта для сопряжения (1 или 2).
+
+Возвращаемое значение:
+
+" указатель на интерфейс объекта для сопряжения ksEntity или IEntity.
+
+GetEntityParams  Получить параметры математических 
+обектов, участвующих в сопряжении
+Интерфейс...
+Синтаксис Automation:
+long GetEntityParams (long index, VARIANT * params);
+Синтаксис COM:
+int GetEntityParams (int index, VARIANT * params);
+Входные параметры:
+
+index " индекс объекта.
+
+Выходные параметры Automation:
+
+params " параметры объекта массив SafeArray вещественных чисел.
+
+Выходные параметры COM:
+
+params " параметры объекта.
+
+Возвращаемое значение:
+
+тип математического объекта, участвующего в " если параметры получены,
+сопряжении из ksMateType
+ksMateUnknown " в случае ошибки.
+
+Примечание:
+
+1. Параметры возвращаются в системе координат сборки. При необходимости их можно
+перевести в систему координат нужного компонента с помощью функции
+IPart::TransformPoint.
+
+2. Геометрический объект для сопряжения описывается набором из 8"ми вещественных
+чисел, сгруппированных следующим образом:
+
+▼ три координаты точки Pc, Pc = { pointX, pointY, pointZ },
+▼ три координаты вектора V, V  = { vectorI, vectorJ, vectorK },
+3539
+
+
+
+▼ две координаты, соответствующие радиусам, V  = { vectorI, vectorJ, vectorK }.
+Представление математических объектов, участвующих в сопряжении...
+
+GetFeature  Получить указатель на интерфейс параметров 
+объекта дерева построения, связанного с данным объектом
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetFeature();
+Синтаксис COM:
+LPFEATURE GetFeature();
+Возвращаемое значение:
+
+" указатель на интерфейс ksFeature или IFeature.
+
+SetBaseObj  Установить указатель на интерфейс объекта для 
+сопряжения по номеру
+Интерфейс...
+Синтаксис Automation:
+BOOL SetBaseObj (short number, LPDISPATCH obj);
+Синтаксис COM:
+BOOL SetBaseObj (short number, LPENTITY obj);
+Входные параметры:
+
+number " номер объекта для сопряжения (1 или 2),
+obj " указатель на интерфейс объекта для сопряжения ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3540
+
+
+
+Менеджер выбора (подсветки) объектов 
+(Интерфейсы ksChooseMng, IChooseMng)
+Справка системы КОМПАС...
+kompas.chm::/98_8_5_Vydelenie_obwektov.htm
+Интерфейс менеджера выбора (подсветки) объектов.
+
+ksChooseMng " интерфейс Automation
+IChooseMng " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksDocument3D::GetChooseMng.
+
+IChooseMng методы
+
+Choose  Выбрать (подсветить) объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Choose (LPDISPATCH obj)
+Синтаксис COM:
+BOOL Choose (LPUNKNOWN obj);
+Входной параметр:
+
+obj " указатель на интерфейс IDispatch или IUnknown.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+First  Получить указатель на интерфейс первого 
+выбранного (подсвеченного) объекта
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPUNKNOWN First();
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+3541
+
+
+
+GetCount  Получить количество выбранных 
+(подсвеченных) объектов
+Интерфейс...
+Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+int GetCount();
+Возвращаемое значение:
+
+" количество выбранных (подсвеченных) объектов.
+
+GetManagerIndex  Получить индекс менеджера по 
+указателю на выбранный объект
+Интерфейс...
+Синтаксис Automation:
+long GetManagerIndex( LPDISPATCH obj );
+Синтаксис COM:
+long GetManagerIndex( LPUNKNOWN obj );
+Входной параметр:
+
+obj " указатель на объект.
+
+Возвращаемое значение:
+
+Индекс менеджера из перечисления ksChooseManagerTypeEnum
+
+GetObjectByIndex  Получить указатель на интерфейс 
+выделенного (подсвеченного) объекта по индексу
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetObjectByIndex (long index);
+Синтаксис COM:
+LPDISPATCH GetObjectByIndex (long index);
+Входной параметр:
+
+index " индекс выделенного (подсвеченного) объекта.
+3542
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+
+GetObjectType  Получить тип выделенного 
+(подсвеченного) объекта по индексу
+Интерфейс...
+Синтаксис Automation:
+long GetObjectType (long index);
+Синтаксис COM:
+int GetObjectType (int index);
+Входной параметр:
+
+index " индекс выделенного (подсвеченного) объекта.
+
+Возвращаемое значение:
+
+" тип выделенного (подсвеченного) объекта Obj3dType.
+
+IsChoosen  Получить признак подсвеченности (выбора) 
+объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL IsChoosen (LPDISPATCH obj);
+Синтаксис COM:
+BOOL IsChoosen (LPUNKNOWN obj);
+Входной параметр:
+
+obj " указатель на интерфейс IDispatch или IUnknown.
+
+Возвращаемое значение:
+
+TRUE " объект подсвечен,
+FALSE " объект не подсвечен.
+
+Last  Получить указатель на интерфейс последнего 
+выбранного (подсвеченного) объекта
+Интерфейс...
+Синтаксис Automation:
+3543
+
+
+
+LPDISPATCH Last();
+Синтаксис COM:
+LPUNKNOWN Last();
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+
+Next  Получить указатель на интерфейс следующего 
+выбранного (подсвеченного) объекта
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Next();
+Синтаксис COM:
+LPUNKNOWN Next();
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+
+Prev  Получить указатель на интерфейс предыдущего 
+выбранного (подсвеченного) объекта
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Prev();
+Синтаксис COM:
+LPUNKNOWN Prev();
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+
+UnChoose  Снять выбор (подсветку) с объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL UnChoose (LPDISPATCH obj);
+Синтаксис COM:
+BOOL UnChoose (LPUNKNOWN obj);
+Входной параметр:
+3544
+
+
+
+obj " указатель на интерфейс IDispatch или IUnknown.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+UnChooseAll  Снять выбор (подсветку) со всех 
+подсвеченных объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL UnChooseAll();
+Синтаксис COM:
+BOOL UnChooseAll();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Менеджер выделенных объектов (Интерфейсы 
+ksSelectionMng, ISelectionMng)
+Интерфейс событий...
+
+Справка системы КОМПАС...
+kompas.chm::/98_8_5_Vydelenie_obwektov.htm
+Интерфейс менеджера выделенных объектов.
+
+ksSelectionMng " интерфейс Automation
+ISelectionMng " интерфейс COM
+
+Примечание:
+Указатель на интерфейс может быть получен от интерфейса ksDocument3D,
+IDocument3D с помощью метода ksDocument3D::GetSelectionMng,
+IDocument3D::GetSelectionMng.
+
+ISelectionMng  методы
+
+First  Получить указатель на интерфейс первого 
+выделенного объекта
+Интерфейс...
+3545
+
+
+
+Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPUNKNOWN First();
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+
+GetCount  Получить количество выделенных объектов
+Интерфейс...
+Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+int GetCount();
+Возвращаемое значение:
+
+" количество выделенных объектов.
+
+GetObjectByIndex  Получить указатель на интерфейс 
+выделенного (подсвеченного) объекта по индексу
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetObjectByIndex (long index);
+Синтаксис COM:
+LPDISPATCH GetObjectByIndex (long index);
+Входной параметр:
+
+index " индекс выделенного (подсвеченного) объекта.
+
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+
+GetObjectType  Получить тип выделенного 
+(подсвеченного) объекта по индексу
+Интерфейс...
+Синтаксис Automation:
+long GetObjectType (long index);
+3546
+
+
+
+о
+
+Синтаксис COM:
+int GetObjectType (int index);
+Входной параметр:
+
+index " индекс выделенного (подсвеченного) объекта.
+
+Возвращаемое значение:
+
+" тип выделенного (подсвеченного) объекта Obj3dType.
+
+IsSelected  Определить, выделен ли объект
+Интерфейс...
+Синтаксис Automation:
+BOOL IsSelected (LPDISPATCH obj);
+Синтаксис COM:
+BOOL IsSelected (LPUNKNOWN obj);
+Входной параметр:
+
+obj " указатель на интерфейс IDispatch или IUnknown выделенног
+объекта.
+
+Возвращаемое значение:
+
+TRUE " объект выделен,
+FALSE " объект не выделен.
+
+Last  Получить указатель на интерфейс последнего 
+выделенного объекта
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Last();
+Синтаксис COM:
+LPUNKNOWN Last();
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+3547
+
+
+
+Next  Получить указатель на интерфейс следующего 
+выделенного объекта
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Next();
+Синтаксис COM:
+LPUNKNOWN Next();
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+
+Prev  Получить указатель на интерфейс предыдущего 
+выделенного объекта
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Prev();
+Синтаксис COM:
+LPUNKNOWN Prev();
+Возвращаемое значение:
+
+" указатель на интерфейс IDispatch или IUnknown.
+
+Select  Выделить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Select (LPDISPATCH obj);
+Синтаксис COM:
+BOOL Select (LPUNKNOWN obj);
+Входной параметр:
+
+obj " указатель на интерфейс IDispatch или IUnknown.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Unselect  Снять выделение с объекта
+Интерфейс...
+3548
+
+
+
+Синтаксис Automation:
+BOOL Unselect (LPDISPATCH obj);
+Синтаксис COM:
+BOOL Unselect (LPUNKNOWN obj);
+Входной параметр:
+
+obj " указатель на интерфейс IDispatch или IUnknown.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+UnselectAll  Снять выделение со всех объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL UnselectAll();
+Синтаксис COM:
+BOOL UnselectAll();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Параметры сохранения растра (Интерфейсы 
+ksRasterFormatParam, IRasterFormatParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/645_79_3_Sokhranenie_v_rastrovy.htm
+Интерфейс параметров для записи документа в растровом формате.
+
+ksRasterFormatParam " интерфейс Automation
+IRasterFormatParam " интерфейс COM
+
+Аналог данных параметров при использовании API экспортных функций "
+RasterFormatParam.
+Примечание:
+Данный интерфейс может быть получен с использованием методов интерфейсов
+ksSpcDocument::RasterFormatParam, ksDocument3D::RasterFormatParam,
+ksDocumentTxt::RasterFormatParam, ksDocument2D::RasterFormatParam.
+3549
+
+
+
+IRasterFormatParam  свойства
+
+colorBPP  Цветность растра
+Интерфейс...
+Тип данных: short
+Значения свойства...
+Синтаксис Automation:
+
+colorBPP = iRasterFormatParam.colorBPP Получить
+свойство(* )
+
+iRasterFormatParam.colorBPP = colorBPP Установить
+свойство (* )
+
+colorBPP = Получить
+iRasterFormatParam.GetColorBPP() свойство (**)
+iRasterFormatParam.SetColorBPP(colorBPP) Установить
+
+свойство (**)
+
+сolorType  Цвет вывода объектов
+Интерфейс...
+Тип данных: short
+Значения свойства...
+Синтаксис Automation:
+
+сolorType = iRasterFormatParam.сolorType Получить
+свойство(* )
+
+iRasterFormatParam.сolorType = сolorType Установить
+свойство (* )
+
+сolorType = Получить
+iRasterFormatParam.GetСolorType() свойство (**)
+iRasterFormatParam.SetСolorType(сolorType) Установить
+
+свойство (**)
+
+extResolution  Разрешение растра
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+extResolution = iRasterFormatParam.extResolution Получить
+свойство(* )
+
+iRasterFormatParam.extResolution = extResolution Установить
+свойство (* )
+3550
+
+
+
+extResolution = iRasterFormatParam.GetExtResolution() Получить
+свойство (**)
+
+iRasterFormatParam.SetExtResolution(extResolution) Установить
+свойство (**)
+
+Примечание:
+Значение 0 соответствует текущему экранному разрешению.
+
+extScale  Масштаб
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+extScale = iRasterFormatParam.extScale Получить
+свойство(* )
+
+iRasterFormatParam.extScale = extScale Установить
+свойство (* )
+
+extScale = Получить
+iRasterFormatParam.GetExtScale() свойство (**)
+iRasterFormatParam.SetExtScale(extScale) Установить
+
+свойство (**)
+
+format  Формат растра
+Интерфейс...
+Тип данных: short
+Значения свойства...
+Синтаксис Automation:
+
+format = iRasterFormatParam.format Получить
+свойство(* )
+
+iRasterFormatParam.format = format Установить
+свойство (* )
+
+format = Получить
+iRasterFormatParam.GetFormat() свойство (**)
+iRasterFormatParam.SetFormat(format) Установить
+
+свойство (**)
+
+greyScale  Признак сохранения в оттенках серого
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+3551
+
+
+
+TRUE " использовать оттенки серого,
+FALSE " сохранять цветной растр.
+
+Синтаксис Automation:
+
+greyScale = iRasterFormatParam.greyScale Получить
+свойство(* )
+
+iRasterFormatParam.greyScale = greyScale Установить
+свойство (* )
+
+greyScale = iRasterFormatParam.GetGreyScale() Получить
+свойство (**)
+
+iRasterFormatParam.SetGreyScale(greyScale) Установить
+свойство (**)
+
+multiPageOutput  Признак сохранения всех листов в 
+одном файле
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " сохранять все листы в одном файле,
+FALSE " сохранять листы в отдельных файлах.
+
+Синтаксис Automation:
+
+multiPageOutput = iRasterFormatParam.multiPageOutput Получить
+свойство(* )
+
+iRasterFormatParam.multiPageOutput = multiPageOutput Установить
+свойство (* )
+
+multiPageOutput = iRasterFormatParam.GetMultiPageOutput() Получить
+свойство (**)
+
+iRasterFormatParam.SetMultiPageOutput(multiPageOutput) Установить
+свойство (**)
+
+Примечание:
+Свойство используется только для формата TIFF.
+
+onlyThinLine  Признак вывода всех линий тонкими
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+3552
+
+
+
+TRUE " выводить все только тонкими линиями,
+FALSE " использовать установленные для объектов толщины линий.
+
+Синтаксис Automation:
+
+onlyThinLine = iRasterFormatParam.onlyThinLine Получить
+свойство(* )
+
+iRasterFormatParam.onlyThinLine = onlyThinLine Установить
+свойство (* )
+
+onlyThinLine = iRasterFormatParam.GetOnlyThinLine() Получить
+свойство (**)
+
+iRasterFormatParam.SetOnlyThinLine(onlyThinLine) Установить
+свойство (**)
+
+pages  Список диапазонов выводимых страниц
+Интерфейс...
+Тип данных: строка
+Значения свойства:
+Формат списка " "beg1"end1, beg2"end2, beg3"end3, ...",
+где begN " начало N"го интервала, endN " конец N"го интервала.
+Например, "1"18, 24"25".
+Синтаксис Automation:
+
+pages = iRasterFormatParam.pages Получить
+свойство(* )
+
+iRasterFormatParam.pages = pages Установить
+свойство (* )
+
+pages = Получить
+iRasterFormatParam.GetPages() свойство (**)
+iRasterFormatParam.SetPages(pages) Установить
+
+свойство (**)
+
+Примечание:
+
+1. Свойство используется для многолистовых документов (текстовых документов и специ"
+фикаций).
+
+2. Если строка пуста, свойство не используется.
+
+rangeIndex  Признак выбора стороны страниц
+Интерфейс...
+Тип данных: short
+Значения свойства:
+3553
+
+
+
+0 " все страницы,
+1 " нечетные страницы,
+2 " четные страницы.
+
+Синтаксис Automation:
+
+rangeIndex = iRasterFormatParam.rangeIndex Получить
+свойство(* )
+
+iRasterFormatParam.rangeIndex = rangeIndex Установить
+свойство (* )
+
+rangeIndex = iRasterFormatParam.GetRangeIndex() Получить
+свойство (**)
+
+iRasterFormatParam.SetRangeIndex(rangeIndex) Установить
+свойство (**)
+
+Примечание:
+Свойство используется для многолистовых документов (текстовых документов и специ"
+фикаций).
+
+saveWorkArea  Cохранить отображение рабочей 
+области
+Интерфейс...
+Тип данных: BOOL
+Синтаксис:
+
+saveWorkArea = Object.saveWorkArea Получить
+свойство(* )
+
+Object.saveWorkArea = saveWorkArea Установить
+свойство (* )
+
+saveWorkArea = Object.GetSaveWorkArea() Получить
+свойство (**)
+
+Object.SetSaveWorkArea( saveWorkArea ) Установить
+свойство (**)
+
+IRasterFormatParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Синтаксис COM:
+3554
+
+
+
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры записи документа в растровом формате.
+
+Конвертация в дополнительные форматы 
+(Интерфейсы ksAdditionFormatParam, 
+IAdditionFormatParam)
+Справка системы КОМПАС...
+kompas.chm::/990_Glava123_Obmen_informaciej_.htm
+Интерфейс параметров для записи модели в форматы IGES, SAT, XT, X_B, STEP,
+STL, VRML.
+
+ksAdditionFormatParam " интерфейс Automation
+IAdditionFormatParam " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksDocument3D::AdditionFormatParam.
+
+IAdditionFormatParam  свойства
+
+angle  Максимально допустимое угловое отклонение 
+касательных кривой или нормалей поверхности в 
+соседних точках на расстоянии шага
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+angle = Object.angle Получить
+свойство(* )
+
+Object.angle = angle Установить
+свойство (* )
+
+angle = Object.GetAngle() Получить
+свойство (**)
+
+Object.SetAngle( angle ) Установить
+свойство (**)
+3555
+
+
+
+author  Автор
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+author = Object.author Получить
+свойство(* )
+
+Object.author = author Установить
+свойство (* )
+
+author = Object.GetAuthor() Получить
+свойство (**)
+
+Object.SetAuthor( author ) Установить
+свойство (**)
+
+comment  Комментарий
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+comment = Object.comment Получить
+свойство(* )
+
+Object.comment = comment Установить
+свойство (* )
+
+comment = Object.GetComment() Получить
+свойство (**)
+
+Object.SetComment( comment ) Установить
+свойство (**)
+
+createLocalComponents  TRUE  создавать вставки как 
+локальные. FALSE  сохранять вставки в отдельных 
+файлах
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+createLocalComponents = Получить
+Object.createLocalComponents свойство(* )
+Object.createLocalComponents = Установить
+createLocalComponents свойство (* )
+3556
+
+
+
+createLocalComponents = Получить
+Object.GetCreateLocalComponents() свойство (**)
+Object.SetCreateLocalComponents( Установить
+createLocalComponents ) свойство (**)
+
+format  Формат файла для записи модели
+Интерфейс...
+Тип данных: D3FormatConvType
+Значения свойства...
+Синтаксис Automation:
+
+format = iAdditionFormatParam.format Получить
+свойство(* )
+
+iAdditionFormatParam.format = format Установить
+свойство (* )
+
+format = Получить
+iAdditionFormatParam.GetFormat() свойство (**)
+iAdditionFormatParam.SetFormat(format) Установить
+
+свойство (**)
+
+formatBinary  Признак, определяющий тип файла 
+(двоичный или текстовый)
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " двоичный формат,
+FALSE " текстовый формат.
+
+Синтаксис Automation:
+
+formatBinary = iAdditionFormatParam.formatBinary Получить
+свойство(* )
+
+iAdditionFormatParam.formatBinary = formatBinary Установить
+свойство (* )
+
+formatBinary = iAdditionFormatParam.GetFormatBinary() Получить
+свойство (**)
+
+iAdditionFormatParam.SetFormatBinary(formatBinary) Установить
+свойство (**)
+
+Примечание:
+Свойство используется при записи в форматы XT, X_B, STL.
+3557
+
+
+
+length  Максимально допустимое расстояние между 
+соседними точками на расстоянии шага
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+length = Object.length Получить
+свойство(* )
+
+Object.length = length Установить
+свойство (* )
+
+length = Object.GetLength() Получить
+свойство (**)
+
+Object.SetLength( length ) Установить
+свойство (**)
+
+lengthUnits  Единицы измерения длины
+Интерфейс...
+Тип данных: из перечисления ksLengthUnitsEnum
+Синтаксис Automation:
+
+lengthUnits = Object.lengthUnits Получить
+свойство(* )
+
+Object.lengthUnits = lengthUnits Установить
+свойство (* )
+
+ lengthUnits = Object.GetLengthUnits() Получить
+свойство (**)
+
+Object.SetLengthUnits( lengthUnits ) Установить
+свойство (**)
+
+maxTeselationCellCount  Максимальное количество 
+ячеек в строке и ряду триангуляционной сетки (если 0, то 
+не задано)
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+maxTeselationCellCount = Получить
+Object.maxTeselationCellCount свойство(* )
+3558
+
+
+
+Object.maxTeselationCellCount = Установить
+maxTeselationCellCount свойство (* )
+maxTeselationCellCount = Получить
+Object.GetMaxTeselationCellCount() свойство (**)
+Object.SetMaxTeselationCellCount( Установить
+maxTeselationCellCount ) свойство (**)
+
+needCreateComponentsFiles  Создавать файлы 
+компонентов
+Интерфейс...
+Тип данных: BOOL
+Синтаксис:
+
+needCreateComponentsFiles = Получить
+Object.needCreateComponentsFiles свойство(* )
+Object.needCreateComponentsFiles = Установить
+needCreateComponentsFiles свойство (* )
+needCreateComponentsFiles = Получить
+Object.GetNeedCreateComponentsFiles свойство (**)
+()
+Object.SetNeedCreateComponentsFiles Установить
+( needCreateComponentsFiles ) свойство (**)
+
+Примечание
+По умолчанию используется значение TRUE " файлы компонентов создаются на диске
+рядом с файлом сборки,
+FALSE " создаются локальные вставки.
+
+organization  Организация
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+organization = Object.organization Получить
+свойство(* )
+
+Object.organization = organization Установить
+свойство (* )
+
+organization = Object.GetOrganization() Получить
+свойство (**)
+
+Object.SetOrganization( organization ) Установить
+свойство (**)
+3559
+
+
+
+password  Пароль для загрузки упрощенных вставок 
+перед экспортом
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+password = Object.password Получить
+свойство(* )
+
+Object.password = password Установить
+свойство (* )
+
+password = Object.GetPassword() Получить
+свойство (**)
+
+Object.SetPassword( password )  Установить
+свойство (**)
+
+saveResultDocument  Сохранить полученный документ
+Интерфейс...
+Тип данных: BOOL
+Синтаксис:
+
+saveResultDocument = Получить
+Object.saveResultDocument свойство(* )
+Object.saveResultDocument = Установить
+saveResultDocument свойство (* )
+saveResultDocument = Получить
+Object.GetSaveResultDocument() свойство (**)
+Object.SetSaveResultDocument( Установить
+saveResultDocument ) свойство (**)
+
+stepType  Способ вычисления приращения параметра 
+при движении по объекту
+Интерфейс...
+Тип данных: из перечисления ksStepTypeEnum
+Синтаксис Automation:
+
+stepType = Object.stepType Получить
+свойство(* )
+3560
+
+
+
+Object.stepType = stepType Установить
+свойство (* )
+
+stepType = Object.GetStepType() Получить
+свойство (**)
+
+Object.SetStepType( stepType ) Установить
+свойство (**)
+
+Примечание:
+Тип шага может определяться комбинацией значений из перечисления ksStepTypeEnum.
+
+stitchSurfaces  Флаг необходимости сшивки 
+поверхностей при импорте
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+stitchSurfaces = Object.stitchSurfaces Получить
+свойство(* )
+
+Object.stitchSurfaces = stitchSurfaces Установить
+свойство (* )
+
+stitchSurfaces = Получить
+Object.GetStitchSurfaces() свойство (**)
+Object.SetStitchSurfaces( Установить
+stitchSurfaces ) свойство (**)
+
+stitchPrecision  Точность сшивки поверхностей
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+stitchPrecision = Object.stitchPrecision Получить
+свойство(* )
+
+Object.stitchPrecision = stitchPrecision Установить
+свойство (* )
+
+stitchPrecision = Получить
+Object.GetStitchPrecision() свойство (**)
+Object.SetStitchPrecision( Установить
+stitchPrecision ) свойство (**)
+3561
+
+
+
+textExportForm  Признак, чтения\записи текстов
+Интерфейс...
+Тип данных: из перечисления ksTextExportFormEnum
+Синтаксис Automation:
+
+textExportForm = Получить
+Object.textExportForm свойство(* )
+Object.textExportForm = Установить
+textExportForm свойство (* )
+textExportForm = Получить
+Object.GetTextExportForm() свойство (**)
+Object.SetTextExportForm( Установить
+textExportForm ) свойство (**)
+
+topolgyIncluded  Признак, определяющий, включать ли 
+топологию модели при экспорте
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " включить топологию,
+FALSE " не включать топологию.
+
+Синтаксис Automation:
+
+topolgyIncluded = iAdditionFormatParam.topolgyIncluded Получить
+свойство(* )
+
+iAdditionFormatParam.topolgyIncluded = topolgyIncluded Установить
+свойство (* )
+
+topolgyIncluded = iAdditionFormatParam.GetTopolgyIncluded() Получить
+свойство (**)
+
+iAdditionFormatParam.SetTopolgyIncluded(topolgyIncluded) Установить
+свойство (**)
+
+Примечание:
+Свойство используется при записи в формат IGES.
+
+IAdditionFormatParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+3562
+
+
+
+BOOL Init();
+Синтаксис COM:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры записи модели в дополнительные форматы.
+
+GetObjectsOptions  Получить признак чтения\записи 
+объектов модели
+Интерфейс...
+Синтаксис Automation:
+BOOL               GetObjectsOptions( long option );
+Синтаксис COM:
+BOOL               GetObjectsOptions( long option );
+Входные параметры:
+
+option " константа из перечисления
+ksD3ConverterOptionsEnum.
+
+GetPlacement  Получить систему координат 
+позиционирования модели
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Возвращаемое значение : 
+
+ " указатель на интерфейс ksPlacement системы
+координат отображения модели в окне.
+
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение : 
+
+ " указатель на интерфейс IPlacement системы
+координат отображения модели в окне.
+3563
+
+
+
+SetPlacement  Установить систему координат 
+позиционирования модели
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlacement( LPDISPATCH place );
+Возвращаемое значение:
+ 
+
+TRUE  " в случае успеха.
+
+Входные параметры :
+
+ " указатель на интерфейс ksPlacement системы
+координат отображения модели в окне.
+
+Синтаксис COM:
+BOOL SetPlacement( LPPLACEMENT place );
+Возвращаемое значение : 
+
+TRUE  " в случае успеха.
+
+ Входные параметры :
+
+ " указатель на интерфейс IPlacement системы
+координат отображения модели в окне.
+
+SetObjectsOptions  Установить признак чтения\записи 
+объектов модели
+Интерфейс...
+Синтаксис Automation:
+BOOL               SetObjectsOptions( long option, BOOL set );
+Синтаксис COM:
+BOOL               SetObjectsOptions( long option, BOOL set );
+Входные параметры:
+
+option " константа из перечисления
+ksD3ConverterOptionsEnum,
+
+set " TRUE включить признак, FALSE " выключить
+признак.
+3564
+
+
+
+Интерфейсы спецификации ksSpecification, 
+ISpecification
+Интерфейс спецификации ksSpecification
+События...
+
+Справка системы КОМПАС...
+kompas.chm::/1168_Glava135_Rabota_s_dokument.htm
+Интерфейс для работы со спецификацией.
+Примечания:
+
+1. Для Автоматизации используется интерфейс ksSpecification.
+2. Для COM используется интерфейс ISpecification3D и группа экспортных функций. Указа"
+
+тель на интерфейс ISpecification3D можно получить из интерфейса IDocument3D через
+стандартную функцию QueryInterface.
+
+3. Указатель на интерфейс можно получить при помощи методов
+ksDocument2D::GetSpecification, ksSpcDocument::GetSpecification,
+ksDocument3D::GetSpecification.
+
+4. События интерфейса позволяют контролировать редактирование описаний специфика"
+ции. В Automation источником событий для подписки на данный интерфейс является
+объект ksSpecification. В COM источником для подписки является документ (графиче"
+ский, документ"модель, спецификация).
+Смотрите также:
+
+▼ ksDocument2D,
+▼ ksDocument3D,
+▼ ksSpcDocument.
+
+ksSpecification  методы
+
+D3GetSpcObjForGeomWithLimit  Получить указатель на 
+объект спецификации, подключенный к трехмерному 
+компоненту (детали или подсборке) с ограничениями по 
+номеру раздела и типу атрибута
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/1154_132_2_Obwekty_specifikacii.htm
+Аналог данного метода при использовании API экспортных функций "
+D3GetSpcObjForGeomWithLimit.
+Синтаксис Automation:
+long D3GetSpcObjForGeomWithLimit (LPCTSTR nameLib, 
+3565
+
+
+
+.
+
+long numb, 
+LPDISPATCH part, 
+short first, 
+short section, 

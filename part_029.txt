@@ -1,0 +1,2532 @@
+ Object.get_Curve3DType( Получить свойство
+&Curve3DType )
+
+Примечание:
+Свойство доступно только для чтения.
+1514
+
+
+
+Edges  Получить указатель на интерфейс массива ребер, 
+стыкующихся с данным ребром
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Edges = Object.Edges( Start ) Получить свойство (* )
+Edges = Object.GetEdges( Start ) Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_Edges( Start, &Edges Получить свойство
+)
+
+Примечание:
+Свойство доступно только для чтения.
+
+IsPeriodic  Является ли ребро периодичным
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsPeriodic = Object.IsPeriodic Получить свойство (* )
+IsPeriodic = Получить свойство (**)
+Object.GetIsPeriodic()
+
+Синтаксис COM:
+
+ Object.get_IsPeriodic( Получить свойство
+&IsPeriodic )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IsSketchEdge  Является ли ребро кривой эскиза
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+1515
+
+
+
+IsSketchEdge = Получить свойство (* )
+Object.IsSketchEdge
+IsSketchEdge = Получить свойство (**)
+Object.GetIsSketchEdge()
+
+Синтаксис COM:
+
+ Object.get_IsSketchEdge( Получить свойство
+&IsSketchEdge )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IsStraight  Является ли ребро прямым
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsStraight = Object.IsStraight Получить свойство (* )
+IsStraight = Получить свойство (**)
+Object.GetIsStraight()
+
+Синтаксис COM:
+
+ Object.get_IsStraight( Получить свойство
+&IsStraight )
+
+Примечание:
+Свойство доступно только для чтения.
+
+MathCurve  Получить указатель на интерфейс 
+математической кривой
+Интерфейс...
+Тип данных: Указатель на интерфейс IMathCurve3D. 
+Синтаксис Automation:
+
+MathCurve = Object.MathCurve Получить свойство
+(* )
+
+MathCurve = Получить свойство
+Object.GetMathCurve() (**)
+1516
+
+
+
+Синтаксис COM:
+
+ Object.get_MathCurve( Получить свойство
+&MathCurve )
+
+Примечание:
+Свойство доступно только для чтения.
+
+OrientedEdges  Получить указатель на массив 
+ориентированных ребер
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+OrientedEdges = Получить свойство (* )
+Object.OrientedEdges 
+OrientedEdges = Получить свойство (**)
+Object.GetOrientedEdges()
+
+Синтаксис COM:
+
+ Object.get_OrientedEdges( Получить свойство
+&OrientedEdges )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Vertex  Получить указатель на интерфейс вершин: 
+начальной и конечной
+Интерфейс...
+Тип данных: Указатель на интерфейс IVertex. 
+Синтаксис Automation:
+
+Vertex = Object.Vertex( Start ) Получить свойство (* )
+Vertex = Object.GetVertex( Start ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Vertex( Start, &Vertex Получить свойство
+)
+
+Примечание:
+1517
+
+
+
+Свойство доступно только для чтения.
+
+IEdge  методы
+
+GetLength  Получить длину ребра
+Интерфейс...
+Синтаксис Automation:
+double GetLength( ksLengthUnitsEnum Unit );
+Синтаксис COM:
+HRESULT GetLength( ksLengthUnitsEnum Unit, double * Result );
+Возвращаемое значение: 
+
+"длина ребра.
+
+Входные параметры:
+
+Unit " единицы измерения длины из перечисления ksLengthUnitsEnum.
+
+Интерфейс IFace
+Интерфейс грани.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IFace
+КОМПАС версия v18
+
+IFace  свойства
+
+BaseSurface3DType  Тип базовой поверхности
+Интерфейс...
+Тип данных: из перечисления ksMathSurface3DTypeEnum.
+Синтаксис Automation:
+
+BaseSurface3DType = Получить свойство (* )
+Object.BaseSurface3DType
+BaseSurface3DType = Получить свойство (**)
+Object.GetBaseSurface3DType()
+
+Синтаксис COM:
+1518
+
+
+
+ Object.get_BaseSurface3DType( Получить свойство
+&BaseSurface3DType )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ConnectedFaces  Массив граней, стыкующихся с данной 
+гранью в виде SAFEARRAY'я DISPATCH  VT_ARRAY | 
+VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ConnectedFaces = Получить свойство (* )
+Object.ConnectedFaces
+ConnectedFaces = Получить свойство (**)
+Object.GetConnectedFaces()
+
+Синтаксис COM:
+
+ Object.get_ConnectedFaces( Получить свойство
+&ConnectedFaces )
+
+Примечание:
+Свойство доступно только для чтения.
+
+LimitingEdges  Массив ребер, ограничивающих грань в виде 
+SAFEARRAY'я DISPATCH  VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+LimitingEdges = Получить свойство (* )
+Object.LimitingEdges
+LimitingEdges = Получить свойство (**)
+Object.GetLimitingEdges()
+
+Синтаксис COM:
+
+ Object.get_LimitingEdges( Получить свойство
+&LimitingEdges )
+
+Примечание:
+1519
+
+
+
+Свойство доступно только для чтения.
+
+Loops  Массив циклов в виде SAFEARRAY'я DISPATCH  
+VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Loops = Object.Loops Получить свойство (* )
+Loops = Object.GetLoops() Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_Loops( &Loops ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+MathSurface  Получить интерфейс математической 
+поверхности
+Интерфейс...
+Тип данных: Указатель на интерфейс IMathSurface3D.
+Синтаксис Automation:
+
+ MathSurface = Object. Получить свойство (* )
+MathSurface
+ MathSurface = Object.Get Получить свойство (**)
+MathSurface()
+
+Синтаксис COM:
+
+ Object.get_ MathSurface( & Получить свойство
+MathSurface )
+
+Примечание:
+Свойство доступно только для чтения.
+
+NormalOrientation  Признак ориентации нормали
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+1520
+
+
+
+  NormalOrientation = Object. Получить свойство (* )
+NormalOrientation
+  NormalOrientation = Object.Get Получить свойство (**)
+NormalOrientation()
+
+Синтаксис COM:
+
+ Object.get_  NormalOrientation( Получить свойство
+&  NormalOrientation )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Radius  Дать максимальный радиус
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = Object.Radius Получить свойство (* )
+Radius = Object.GetRadius() Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_Radius( &Radius ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Surface3DType  Тип поверхности
+Интерфейс...
+Тип данных: из перечисления ksMathSurface3DTypeEnum.
+Синтаксис Automation:
+
+Surface3DType = Получить свойство (* )
+Object.Surface3DType
+Surface3DType = Получить свойство (**)
+Object.GetSurface3DType()
+
+Синтаксис COM:
+
+ Object.get_Surface3DType( Получить свойство
+&Surface3DType )
+1521
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+Tessellation  Параметры триангуляционной сетки
+Интерфейс...
+Тип данных: Указатель на интерфейс ITessellation7.
+Синтаксис Automation:
+
+Tessellation = Получить свойство (* )
+Object.Tessellation
+Tessellation = Получить свойство (**)
+Object.GetTessellation()
+
+Синтаксис COM:
+
+ Object.get_Tessellation( Получить свойство
+&Tessellation )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IFace  методы
+
+GetConeParam  Получить параметры конической грани
+Интерфейс...
+Синтаксис Automation:
+BOOL GetConeParam( double * Height, double * Angle, double * Radius );
+Синтаксис COM:
+HRESULT GetConeParam( double * Height, double * Angle, double * Radius, BOOL * Result );
+Возвращаемое значение: 
+
+ TRUE " в случае успешного
+завершения.
+
+Выходные параметры:
+
+Height " высота,
+Angle " угол,
+Radius " радиус.
+1522
+
+
+
+GetArea  Получить площадь грани
+Интерфейс...
+Синтаксис Automation:
+double GetArea( ksLengthUnitsEnum Unit );
+Синтаксис COM:
+HRESULT GetArea( ksLengthUnitsEnum Unit, double * Result );
+Возвращаемое значение: 
+  
+
+" площадь грани.
+
+Входные параметры:
+
+Unit " единицы измерения длины из 
+перечисления 
+ksLengthUnitsEnum.
+
+Интерфейс ILoop7
+Интерфейс цикла (содержит информацию о связях с другими гранями).
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ ILoop7
+
+Данный интерфейс можно получить с помощью метода IFace::Loops.
+КОМПАС версия v18
+
+ILoop7  свойства
+
+Edges  Получить массив ребер
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Edges = Object.Edges Получить свойство (* )
+Edges = Object.GetEdges() Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_Edges( &Edges ) Получить свойство
+
+Примечание:
+1523
+
+
+
+1. Свойство доступно только для чтения.
+2. Свойство позволяет получить массив SafeArray (VT_APPAY|VT_DISPATCH) ребер грани
+
+IEdge.
+
+IsOuter  TRUE  цикл внешний, FALSE  цикл внутренний
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsOuter = Object.IsOuter Получить свойство (* )
+IsOuter = Object.GetIsOuter() Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_IsOuter( &IsOuter ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+OrientedEdges  Получить массив ориентированных ребер
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+OrientedEdges = Получить свойство (* )
+Object.OrientedEdges
+OrientedEdges = Получить свойство (**)
+Object.GetOrientedEdges()
+
+Синтаксис COM:
+
+ Object.get_OrientedEdges( Получить свойство
+&OrientedEdges )
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. Свойство позволяет получить массив SafeArray (VT_APPAY|VT_DISPATCH) ориентиро"
+
+ванных ребер IOrientedEdge7.
+1524
+
+
+
+ILoop7  методы
+
+GetLength  Получить общую длину ребер. bitVector = 
+ST_MIX_MM..ST_MIX_M единицы измерения
+Интерфейс...
+Синтаксис Automation:
+double GetLength( ksLengthUnitsEnum Unit );
+Синтаксис COM:
+HRESULT GetLength( ksLengthUnitsEnum Unit, double * Result );
+Возвращаемое значение: 
+
+" общая длина ребер цикла.
+
+ Входные параметры:
+
+ Unit " единицы измерения длины из 
+перечисления 
+ksLengthUnitsEnum.
+
+Интерфейс IOrientedEdge7
+Интерфейс ориентированного ребра.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IOrientedEdge7
+
+КОМПАС версия v18
+
+IOrientedEdge7  свойства
+
+AdjacentFace  Получить грань, в которой ребро входит в цикл
+Интерфейс...
+Тип данных: Указатель на интерфейс IFace.
+Синтаксис Automation:
+
+AdjacentFace = Получить свойство (* )
+Object.AdjacentFace( FacePlus )
+AdjacentFace = Получить свойство (**)
+Object.GetAdjacentFace(
+FacePlus )
+1525
+
+
+
+Синтаксис COM:
+
+Object.get_AdjacentFace( Получить свойство
+FacePlus, &AdjacentFace )
+
+Примечание:
+Свойство доступно только для чтения.
+TRUE " ориентация плюс.
+
+Edge  Получить интерфейс базового ребра
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+Edge = Object.Edge Получить свойство (* )
+Edge = Object.GetEdge() Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_Edge( &Edge ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Next  Получить следующее ориентированное ребро
+Интерфейс...
+Тип данных: Указатель на интерфейс IOrientedEdge7.
+
+Next = Object.Next Получить свойство (* )
+Next = Object.GetNext() Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_Next( &Next ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Orientation  Получить направление относительно базового 
+ребра 
+Интерфейс...
+1526
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+Orientation = Object.Orientation Получить свойство (* )
+Orientation = Получить свойство (**)
+Object.GetOrientation()
+
+Синтаксис COM:
+
+ Object.get_Orientation( Получить свойство
+&Orientation )
+
+Примечание:
+Свойство доступно только для чтения.
+TRUE " направления совпадают.
+
+SameSense  Получить направление относительно кривой
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SameSense = Object.SameSense Получить свойство (* )
+SameSense = Получить свойство (**)
+Object.GetSameSense()
+
+Синтаксис COM:
+
+ Object.get_SameSense( Получить свойство
+&SameSense )
+
+Примечание:
+ Свойство доступно только для чтения.
+ TRUE " направления совпадают.
+
+Интерфейс ITessellation7
+Интерфейс триангуляции грани.
+Иерархия:
+IDispatch
+
+ITessellation7
+Данный интерфейс можно получить, используя свойство грани IFace::Tessellation.
+КОМПАС версия v18
+1527
+
+
+
+ITessellation7  свойства
+
+FacetAngle  Ограничение углового отклонения 
+триангуляционной пластины (Если 0, обычная триангуляция)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+FacetAngle = Object.FacetAngle; Получить свойство (* )
+Object.FacetAngle = FacetAngle; Установить свойство (* )
+FacetAngle = Получить свойство (**)
+Object.GetFacetAngle();
+Object.SetFacetAngle( FacetAngle Установить свойство (**)
+);
+
+Синтаксис COM:
+
+Object.get_FacetAngle( Получить свойство
+&FacetAngle )
+Object.put_FacetAngle( Установить свойство
+FacetAngle )
+
+FacetSag  Ограничение прогиба поверхности (Если 0, 
+обычная триангуляция)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+FacetSag = Object.FacetSag; Получить свойство (* )
+Object.FacetSag = FacetSag; Установить свойство (* )
+FacetSag = Object.GetFacetSag(); Получить свойство (**)
+Object.SetFacetSag( FacetSag ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FacetSag( &FacetSag ) Получить свойство
+Object.put_FacetSag(  FacetSag ) Установить свойство
+1528
+
+
+
+FacetSize  Ограничение размера ребра (Если 0, обычная 
+триангуляция)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+FacetSize = Object.FacetSize; Получить свойство (* )
+Object.FacetSize = FacetSize; Установить свойство (* )
+FacetSize = Object.GetFacetSize(); Получить свойство (**)
+Object.SetFacetSize( FacetSize ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FacetSize( &FacetSize Получить свойство
+)
+Object.put_FacetSize(  FacetSize ) Установить свойство
+
+NeedParams  Необходимость заполнения параметров 
+вершин
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+NeedParams  = Получить свойство (* )
+Object.NeedParams ;
+Object.NeedParams  = Установить свойство (* )
+NeedParams ;
+NeedParams  = Получить свойство (**)
+Object.GetNeedParams ();
+Object.SetNeedParams ( Установить свойство (**)
+NeedParams  );
+
+Синтаксис COM:
+
+Object.get_NeedParams ( Получить свойство
+&NeedParams  )
+Object.put_NeedParams ( Установить свойство
+NeedParams  )
+1529
+
+
+
+ITessellation7  методы
+
+RebuildTessellation  Перестроить после изменения 
+параметров сетки
+Интерфейс...
+Синтаксис Automation:
+BOOL RebuildTessellation();
+Синтаксис COM:
+HRESULT RebuildTessellation( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+GetFacetPoints  Получить параметры вершин 
+треагуляционной сетки
+Интерфейс...
+Синтаксис Automation:
+BOOL GetFacetPoints( VARIANT * Points, VARIANT * Indexes, VARIANT * Normals );
+Синтаксис COM:
+HRESULT GetFacetPoints( VARIANT * Points, VARIANT * Indexes, VARIANT * Normals, BOOL
+* Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Выходные параметры:
+
+Points  " массив SafeArray вещественных чисел " 
+координат вершин триангуляционной сетки,
+
+Indexes " массив SafeArray целых чисел " индексов 
+вершин триангуляционной сетки,
+
+Normals " массив SafeArray вещественных чисел " 
+нормалей вершин триангуляционной сетки.
+
+Примечание:
+
+1. В массиве индексов вершин триангуляционной сетки хранятся индексы точек из массива
+координат точек points. Для получения параметров вершины триангуляционной сетки
+нужно получить индекс точки из массива indexes.
+
+2. Координаты точек в массиве points лежат в последовательности x, y, z первой точки, x,
+y, z второй точки и т.д.
+1530
+
+
+
+3. В массиве нормалей вершин триангуляционной сетки координаты нормалей лежат в по"
+следовательности x, y, z " нормаль для первой точки, x, y, z" нормаль второй точки и т.д.
+
+GetFacetParams  Получить параметры вершин 
+триангуляционной сетки
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetFacetParams();
+Синтаксис COM:
+HRESULT GetFacetParams( VARIANT * Result );
+Возвращаемое значение: 
+
+SafeArray " массив вещественных чисел " параметрических координат вершин 
+триангуляционных сетки.
+Для формирование параметрических координат триангуляционной 
+сетки требуется установить признак ITessellation7::NeedParams.
+
+Интерфейс IVertex
+Интерфейс вершины.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IVertex
+Данный интерфейс можно получить с помощью метода IEdge::Vertex.
+КОМПАС версия v18
+
+IVertex  свойства
+
+IsFreeVertex  Является ли вершина свободной
+Интерфейс...
+Синтаксис Automation:
+
+IsFreeVertex = Object.IsFreeVertex; Получить свойство (* )
+IsFreeVertex = Object.GetIsFreeVertex(); Получить свойство (**)
+
+Синтаксис COM:
+1531
+
+
+
+Object.get_IsFreeV Получить свойство
+ertex(
+&IsFreeVertex )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IsTopologyVertex  Является ли вершина топологической
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsTopologyVertex = Object.IsTopologyVertex; Получить свойство (* )
+IsTopologyVertex = Получить свойство (**)
+Object.GetIsTopologyVertex();
+
+Синтаксис COM:
+
+Object.get_IsTopologyVertex( Получить свойство
+&IsTopologyVertex )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IsSketchVertex  Является ли вершина точкой эскиза
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsSketchVertex = Получить свойство (* )
+Object.IsSketchVertex;
+IsSketchVertex = Получить свойство (**)
+Object.GetIsSketchVertex();
+
+Синтаксис COM:
+
+Object.get_IsSketchVertex( Получить свойство
+&IsSketchVertex )
+
+Примечание:
+Свойство доступно только для чтения.
+1532
+
+
+
+IVertex  методы
+
+GetPoint  Получить координаты вершины
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPoint( double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetPoint( double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного
+завершения.
+
+Выходные параметры:
+  
+
+ X, Y, Z " координаты точки.
+
+ Интерфейс ICurveVertexParam
+Справка системы КОМПАС...
+kompas.chm::/1087_116_5_5_Tablicha_parametrov_vershin.htm
+Интерфейс параметров вершины кривой.
+Иерархия:
+IKompasAPIObject
+
+ICurveVertexParam
+Указатель на интерфейс можно получить у сплайнов или ломаных, используя свойство
+ISpline3D::VertexParams, ISpline3D::VertexParamsArray и метод ISpline3D::AddVertex.
+
+ICurveVertexParam  свойства
+
+AssociationVertex  Ассоциативная вершина
+Интерфейс...
+Тип данных: Указатель на интерфейс модельного объекта IModelObject
+Синтаксис Automation:
+
+AssociationVertex = Получить свойство (* )
+iObject.AssociationVertex;
+iObject.AssociationVertex = Установить свойство (* )
+AssociationVertex;
+1533
+
+
+
+AssociationVertex = Получить свойство (**)
+iObject.GetAssociationVertex();
+iObject.SetAssociationVertex(Associa Установить свойство (**)
+tionVertex);
+
+Синтаксис COM:
+
+iObject">get_AssociationVertex Получить свойство
+(&AssociationVertex)
+iObject">put_AssociationVertex Установить свойство
+(AssociationVertex)
+
+BuildingObject  Объект, относительно которого ведется 
+построение
+Интерфейс...
+Тип данных: Указатель на интерфейс модельного объекта IModelObject
+Синтаксис Automation:
+
+BuildingObject = iObject.BuildingObject; Получить свойство (* )
+iObject.BuildingObject = BuildingObject; Установить свойство (* )
+BuildingObject = Получить свойство (**)
+iObject.GetBuildingObject();
+iObject.SetBuildingObject(BuildingObjec Установить свойство (**)
+t);
+
+Синтаксис COM:
+
+iObject">get_BuildingObject Получить свойство
+(&BuildingObject)
+iObject">put_BuildingObject Установить свойство
+(BuildingObject)
+
+Примечание:
+Задать объект, относительно которого ведется построение, можно для типа построения
+ksLineBuildingType, равного ksLBTParallel и ksLBTPerpendicular.
+
+BuildingType  Способ построения сегмента кривой
+Интерфейс...
+Тип данных: из перечисления ksLineBuildingType
+Синтаксис Automation:
+
+BuildingType = iObject.BuildingType; Получить свойство (* )
+iObject.BuildingType = BuildingType; Установить свойство (* )
+1534
+
+
+
+BuildingType = Получить свойство (**)
+iObject.GetBuildingType();
+iObject.SetBuildingType(BuildingType); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_BuildingType Получить свойство
+(&BuildingType)
+iObject">put_BuildingType Установить свойство
+(BuildingType)
+
+Примечание:
+
+1.  Для сплайна используются только константы ksLBTByPoint и ksLBTByPoint3DParams.
+2.  В случае задания ksLBTByPoint3DParams начинают работать свойства PointType и
+
+PointParameters.
+
+Index  Индекс вершины в массиве вершин кривой
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Index = iObject.Index; Получить свойство (* )
+Index = iObject.GetIndex(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Index Получить свойство
+(&Index)
+
+Примечание:
+Свойство доступно только для чтения.
+
+PointParameters  Интерфейс параметров точки
+Интерфейс...
+Тип данных: Указатель на интерфейс параметров вершины ломанной IKompasAPIObject
+Синтаксис Automation:
+
+PointParameters = Получить свойство (* )
+iObject.PointParameters( Index );
+PointParameters = Получить свойство (**)
+iObject.GetPointParameters( Index );
+
+Синтаксис COM:
+1535
+
+
+
+iObject" Получить свойство
+>get_PointParame
+ters( Index,
+&PointParameters
+)
+
+Входные параметры:
+
+Index " индекс вершины.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В зависимости от типа PointType интерфейс параметров должен приводится к одному
+
+из следующих вариантов:
+ksPDisplace " IPoint3DParamDisplace " Интерфейс параметров пространственной точки,
+заданной по смещению от опорного объекта.
+ksPIntersect " IPoint3DParamIntersect " Интерфейс параметров пространственной точки,
+заданной на пересечении опорных объектов.
+ksPCenter " IPoint3DParamCenter   " Интерфейс параметров пространственной точки, за"
+данной в центре опорного объекта,
+ksPCurve " IPoint3DParamCurve " Интерфейс параметров пространственной точки, задан"
+ной на кривой со смещением.
+ksPSurface " IPoint3DparamSurface " Интерфейс параметров пространственной точки, за"
+данной на поверхности.
+ksPProjection " IPoint3DParamProjection   Интерфейс параметров пространственной точ"
+ки, заданной проецированием.
+
+PointType  Способ построения точки
+Интерфейс...
+Тип данных: Из перечисления ksPoint3DTypeEnum
+Синтаксис Automation:
+
+PointType = iObject.PointType; Получить свойство (* )
+iObject.PointType = PointType; Установить свойство (* )
+PointType = iObject.GetPointType(); Получить свойство (**)
+iObject.SetPointType(PointType); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_PointType (&PointType) Получить свойство
+iObject">put_PointType (PointType) Установить свойство
+1536
+
+
+
+Vector3D  Получить параметры вектора
+Интерфейс...
+Тип данных: указатель на интерфейс IVector3D
+Синтаксис Automation:
+
+Vector3D = Object.Vector3D Получить свойство (* )
+Vector3D = Object.GetVector3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Vector3D( &Vector3D ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получить интерфейс вектора, задающего направление построения
+сегмента ломаной или сплайна.
+
+2.  Свойство доступно только для чтения.
+
+Vertex  Вершина кривой
+Интерфейс...
+Тип данных: указатель на интерфейс модельного объекта IModelObject.
+Синтаксис Automation:
+
+Vertex = iObject.Vertex; Получить свойство (* )
+Vertex = iObject.GetVertex(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_Vertex
+
+Примечание:
+Свойство доступно только для чтения.
+
+ICurveVertexParam  методы
+
+GetParamByDistance  Получить расстояние и радиус (для 
+ломаной) или вес (для сплайна)
+Интерфейс...
+Синтаксис Automation:
+BOOL GetParamByDistance( double * Distance,
+double * Value );
+1537
+
+
+
+Синтаксис Automation:
+HRESULT GetParamByDistance( [out] double * Distance,
+[out] double * Value,
+[out, retval] VARIANT_BOOL * PVal );
+Выходные параметры:
+
+Distance " расстояние до предыдущей вершины,
+value " радиус для точки ломаной и вес для сплайна.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Для вершины с индексом 0 расстояние выдается до вершины с индексом 1. Для осталь"
+ных вершин расстояние выдается до вершины с индексом на 1 меньше, чем у данной
+вершины.
+
+2.  Получить расстояние можно для любого типа построения.
+3.  Установить расстояние можно, если тип построения ksLineBuildingType не равен
+
+ksLBTByPoint и не равен ksLBTByPoint3DParams.
+
+GetParamVertex  Получить параметры вершины
+Интерфейс...
+Синтаксис Automation:
+BOOL GetParamVertex( double * x,
+double * y,
+double * z,
+double * value );
+Синтаксис Automation:
+HRESULT GetParamVertex( [out] double * x,
+[out] double * y,
+[out] double * z,
+[out] double * value,
+[out, retval] VARIANT_BOOL * PVal );
+Выходные параметры:
+
+x, y, z " пространственные координаты вершины,
+value " радиус для точки ломаной и вес для сплайна.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+1538
+
+
+
+FALSE " в случае неудачи.
+
+SetParamByDistance  Установить расстояние, радиус 
+(ломаная) или вес (сплайн)
+Интерфейс...
+Синтаксис Automation:
+double Distance,
+double Value );
+HRESULT SetParamByDistance( [in] double Distance,
+ double Value,
+[out, retval] VARIANT_BOOL * PVal );
+
+Distance " расстояние до предыдущей вершины,
+value " радиус для точки ломаной и вес для сплайна.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание.
+1.  Нельзя установить расстояние для вершины с индексом 0.
+2. Установить расстояние можно, если тип построения ksLineBuildingType не равен
+
+ksLBTByPoint и не равен ksLBTByPoint3DParams.
+
+SetParamByVertex  Установить параметры вершины по 
+указателю на вершину
+Интерфейс...
+Синтаксис Automation:
+BOOL SetParamByVertex( LPDISPATCH Obj,
+double Value );
+Синтаксис Automation:
+HRESULT SetParamByVertex( [in] IModelObject * Obj,
+[in] double Value,
+[out, retval] VARIANT_BOOL * PVal );
+Входные параметры:
+
+obj " указатель на вершину,
+value " радиус для точки ломаной и вес для сплайна.
+1539
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+FALSE " в случае неудачи.
+
+SetParamVertex  Установить параметры вершины
+Интерфейс...
+Синтаксис Automation:
+BOOL SetParamVertex( double x,
+double y,
+double z,
+double value );
+Синтаксис Automation:
+HRESULT SetParamVertex( [in] double x,
+[in] double y,
+[in] double z,
+[in] double value,
+[out, retval] VARIANT_BOOL * PVal );
+Входные параметры:
+
+x, y, z " пространственные координаты вершины,
+value " радиус для точки ломаной и вес для сплайна.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+FALSE " в случае неудачи.
+
+Update  Обновить параметры вершин кривой начиная с 
+этой
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис Automation:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+1540
+
+
+
+Интерфейс IModelCurve3D
+Объект 3Dкривая.
+Иерархия:
+IDispatch
+
+IModelCurve3D
+Описание:
+Позволяет получить и изменить общие свойства для 3D"кривых. 
+Является дополнительным интерфейсом для IModelObject.
+
+IModelCurve3D  свойства
+
+EdgesStyle  Стиль линии
+Интерфейс...
+Тип данных: из перечисления ksCurveStyleEnum 
+Синтаксис Automation:
+
+EdgesStyle = Object.EdgesStyle Получить свойство (* )
+Object.EdgesStyle = EdgesStyle Установить свойство (* )
+EdgesStyle = Object.GetEdgesStyle() Получить свойство (**)
+Object.SetEdgesStyle( EdgesStyle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EdgesStyle( &EdgesStyle ) Получить свойство
+Object.put_EdgesStyle(  EdgesStyle ) Установить свойство
+
+Свойство позволяет устанавливать и получать стиль линии.
+
+VertexStyle  Стиль вершин
+Интерфейс...
+Тип данных: из перечисления ksAnnotationSymbolEnum
+Синтаксис Automation:
+
+VertexStyle = Object.VertexStyle Получить свойство (* )
+Object.VertexStyle = VertexStyle Установить свойство (* )
+VertexStyle = Object.GetVertexStyle() Получить свойство (**)
+Object.SetVertexStyle( VertexStyle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VertexStyle( &VertexStyle Получить свойство
+)
+
+1541
+
+
+
+Object.put_VertexStyle(  VertexStyle ) Установить свойство
+Свойство позволяет устанавливать и получать стиль вершин.
+
+VertexVisible  Признак отображения вершин
+Интерфейс...
+Тип данных: BOOL 
+Синтаксис Automation:
+
+VertexVisible = Object.VertexVisible Получить свойство (* )
+Object.VertexVisible = VertexVisible Установить свойство (* )
+VertexVisible = Object.GetVertexVisible() Получить свойство (**)
+Object.SetVertexVisible( VertexVisible ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VertexVisible( &EdgesCheck ) Получить свойство
+Object.put_VertexVisible(  EdgesCheck ) Установить свойство
+
+Свойство позволяет устанавливать и получать признак отображения вершин.
+
+IModelCurve3D  методы
+
+GetVerticesParams  Получить параметры вершин 
+кривой
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetVerticesParams();
+Синтаксис COM:
+HRESULT GetVerticesParams( VARIANT * Result );
+Возвращаемое значение:
+
+" массив параметров вершин " SafeArray вещест"
+венных чисел VT_ARRAY | VT_R8.
+
+Интерфейс IMathCurve3D 
+Интерфейс математической кривой в трехмерном пространстве.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IMathCurve3D
+1542
+
+
+
+IMathCurve3D  свойства
+
+Closed  Замкнутость кривой
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Closed = Object.Closed; Получить свойство (* )
+Closed = Object.GetClosed(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Closed( &Closed ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+CurveType  Получить тип кривой
+Интерфейс...
+Тип данных: из перечисления ksMathCurve3DTypeEnum
+Синтаксис Automation:
+
+CurveType = Object.CurveType; Получить свойство (* )
+CurveType = Object.GetCurveType(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CurveType( &CurveType ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Degenerate  Проверка вырожденности кривой
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Degenerate = Object.Degenerate; Получить свойство (* )
+Degenerate = Object.GetDegenerate(); Получить свойство (**)
+
+Синтаксис COM:
+1543
+
+
+
+Object.get_Degenerate( &Degenerate ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ParamMax  Получить значение параметра конечное
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ParamMax = Object.ParamMax; Получить свойство (* )
+ParamMax = Object.GetParamMax(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ParamMax( &ParamMax) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ParamMin  Получить значение параметра начальное
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ParamMin = Object.ParamMin; Получить свойство (* )
+ParamMin = Object.GetParamMin(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ParamMin( &ParamMin ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Periodic  Периодичность замкнутой кривой
+Интерфейс...
+Тип данных:BOOL
+Синтаксис Automation:
+1544
+
+
+
+Periodic = Object.Periodic; Получить свойство (* )
+Periodic = Object.GetPeriodic(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Periodic( &Periodic ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Radius  Радиус кривой
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = Object.Radius; Получить свойство (* )
+Radius = Object.GetRadius(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Radius( &Radius ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IMathCurve3D  методы
+
+CalculatePolygon  Получить полигон точек на кривой
+Интерфейс...
+Синтаксис Automation:
+VARIANT CalculatePolygon( double Step );
+Синтаксис COM:
+HRESULT CalculatePolygon( double Step, VARIANT * Result );
+Возвращаемое значение:
+
+" массив VT_ARRAY | VT_R8 координат точек на
+кривой.
+
+Входные параметры:
+
+Step " шаг для расчета полигона.
+1545
+
+
+
+Примечание:
+
+1. Если шаг задан равным 0, то применяется шаг, используемый в системе КОМПАС, кото"
+рый рассчитывается с учетом габаритов детали.
+
+2. Если шаг задан "1, то применяется шаг, используемый в системе КОМПАС при отрисовке
+кривых. Он рассчитывается с учетом следующих параметров:
+
+▼ габариты детали и масштаба отображения модели,
+▼ тип возвращаемого массива VT_ARRAY | VT_R8,
+▼ значения координат в массиве лежат в последовательности x1, y1, z1, x2, y2, z2 ... xn, yn,
+
+zn.
+
+GetCentre  Получить центр кривой
+Интерфейс...
+Синтаксис Automation:
+BOOL GetCentre( double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetCentre( double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Выходные параметры:
+
+X, Y, " координаты центра кривой.
+Z
+
+GetWeightCentre  Получить центр тяжести кривой
+Интерфейс...
+Синтаксис Automation:
+BOOL GetWeightCentre( double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetWeightCentre( double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Выходные параметры:
+
+X, Y, " координаты центра тяжести кривой.
+Z
+
+1546
+
+
+
+GetDerivativeT  Получить первую производную по T
+Интерфейс...
+Синтаксис Automation:
+BOOL GetDerivativeT( double ParamT, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetDerivativeT( double ParamT, double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ParamT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+X, Y, " первая производная по T.
+Z
+
+GetDerivativeTT  Получить вторую производную по T
+Интерфейс...
+Синтаксис Automation:
+BOOL GetDerivativeTT( double ParamT, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetDerivativeTT( double ParamT, double * X, double * Y, double * Z, BOOL * Result
+);
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ParamT " значение параметра T в параметрическом пред"
+ставлении кривой.
+
+Выходные параметры:
+
+X, Y, " вторая производная по T.
+Z
+
+1547
+
+
+
+GetDerivativeTTT  Получить третью производную по T
+Интерфейс...
+Синтаксис Automation:
+BOOL GetDerivativeTTT( double ParamT, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetDerivativeTTT( double ParamT, double * X, double * Y, double * Z, BOOL * Result
+);
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ParamT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+X, Y,Z " третья производная по T.
+
+GetGabarit  Выдать габарит кривой
+Интерфейс...
+Синтаксис Automation:
+BOOL GetGabarit( double * X1, double * Y1, double * Z1, double * X2, double * Y2, double *
+Z2 ) ;
+Синтаксис COM:
+HRESULT GetGabarit( double * X1, double * Y1, double * Z1, double * X2, double * Y2, double
+* Z2, BOOL * Result ) ;
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+X1,Y1,Z1,X2,Y2,Z2 " координаты вершин габаритного параллелепипеда.
+
+Примечание:
+Координаты вершин параллелепипеда возвращаются в системе координат компонента.
+1548
+
+
+
+GetLength  Получить длину кривой 
+(ST_MIX_MM..ST_MIX_M единицы измерения)
+Интерфейс...
+Синтаксис Automation:
+double GetLength( ksLengthUnitEnum BitVector ) ;
+Синтаксис COM:
+HRESULT GetLength( ksLengthUnitEnum BitVector, double * Result ) ;
+Возвращаемое значение:
+
+" длина кривой.
+
+Входные параметры:
+
+BitVector " единица измерения.
+
+GetMetricLength  Метрическая длина кривой
+Интерфейс...
+Синтаксис Automation:
+ double GetMetricLength( double StartParam, double EndParam );
+Синтаксис COM:
+HRESULT GetMetricLength( double StartParam, double EndParam, double * Result ) ;
+Возвращаемое значение:
+
+" длина кривой.
+
+Входные параметры:
+
+StartParam " начальное значение параметра T в параметрическом 
+представлении кривой,
+
+EndParam " конечное значение параметра T в параметрическом 
+представлении кривой.
+
+GetNormal  Получить нормаль
+Интерфейс...
+Синтаксис Automation:
+BOOL GetNormal( double ParamT, double * X, double * Y, double * Z ;
+Синтаксис COM:
+HRESULT GetNormal( double ParamT, double * X, double * Y, double * Z, BOOL * Result ;
+Возвращаемое значение:
+1549
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ParamT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+X, Y,Z " вектор нормали.
+
+GetPoint  Получить точку на кривой
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPoint( double ParamT, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetPoint( double ParamT, double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ParamT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+X, Y,Z " координаты точки на кривой.
+
+GetTangentVector  Получить тангенциальный вектор 
+(нормализованный)
+Интерфейс...
+Синтаксис Automation:
+BOOL GetTangentVector( double ParamT, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetTangentVector( double ParamT, double * X, double * Y, double * Z, BOOL *
+Result );
+1550
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ParamT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+X, Y,Z " касательный вектор.
+
+NearPointProjection  Получить ближайшую проекцию 
+точки на кривую
+Интерфейс...
+Синтаксис Automation:
+BOOL NearPointProjection( double X, double Y, double Z, double * T, BOOL Ext );
+Синтаксис COM:
+HRESULT NearPointProjection( double X, double Y, double Z, double * T, BOOL Ext, BOOL *
+Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+X, Y, Z " координаты исходной пространственной точки,
+Ext " если проекция точки вне кривой,
+TRUE " проецировать на продолжение кривой,
+FALSE " найти ближайшую граничную точку кривой.
+
+Если проекция точки внутри кривой, значение
+этого параметра не учитывается.
+
+Выходные параметры:
+
+T " параметрические координаты точки на кривой.
+1551
+
+
+
+3Dобъект
+Интерфейс IModelObject
+Базовый интерфейс для всех модельных объектов.
+Иерархия:
+IKompasAPIObject
+
+IModelObject
+Примечание:
+
+1.  Данный интерфейс является базовым для модельных объектов.
+2.  Интерфейс можно получить из коллекции модельных объектов IModelObjects с помо"
+
+щью свойства IModelObjects::Item.
+3.  Интерфейс может быть получен с помощью метода IUnknown QueryInterface от модель"
+
+ного объекта, например, IPart7, IFeature7.
+4.  Интерфейс может быть получен от интерфейса IModelContainer с помощью свойства
+
+IModelContainer::Objects из массива SAFEARRAY типа VT_ARRAY|VT_DISPATCH с прео"
+бразованием от интерфейса IDispatch к IModelObject c помощью метода IUnknown
+QueryInterface.
+
+5.  Интерфейс может быть получен от интерфейса IFeature7 с помощью свойства
+IFeature7::ModelObjects из массива SAFEARRAY типа VT_ARRAY|VT_DISPATCH с преобра"
+зованием от интерфейса IDispatch к IModelObject c помощью метода IUnknown
+QueryInterface.
+
+6.  Имеет дополнительный интерфейс IColorParam7, который можно получить с помощью
+метода IUnknown::QueryInterface.
+
+IModelObject  свойства
+Hidden  Состояние видимости объекта
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " объект скрыт,
+FALSE " объект показан.
+
+Синтаксис Automation:
+
+Hidden = Получить свойство(* )
+iObject.Hidden
+iObject.Hidden Установить свойство (* )
+= Hidden
+1552
+
+
+
+Hidden = Получить свойство (**)
+iObject.GetHidd
+en( )
+iObject.SetHidd Установить свойство (**)
+en ( Hidden )
+
+Синтаксис COM:
+
+iObject">get_Hidden ( &Hidden ) Получить свойство
+iObject">put_Hidden ( Hidden ) Установить свойство
+
+Примечание:
+
+1.  Позволяет получить и установить состояние видимости объекта.
+2.  Свойство вступает в силу после вызова метода IModelObject::Update.
+
+ModelObjectType  Тип модельного объекта
+Интерфейс...
+Тип данных: указатель на интерфейс Obj3dType
+Синтаксис Automation:
+
+ModelObjectType = Получить свойство(* )
+iObject.ModelObjectType
+ModelObjectType = Получить свойство (**)
+iObject.GetModelObjectType( )
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ModelObjectType ( 
+&ModelObjectType )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Name  Имя элемента трехмерной модели
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство(* )
+iObject.Name = Name Установить свойство (* )
+Name = iObject.GetName( ) Получить свойство (**)
+iObject.SetName( Name ) Установить свойство (**)
+1553
+
+
+
+Синтаксис COM:
+
+iObject">get_Name( &Name ) Получить свойство
+iObject">put_Name(  Name ) Установить свойство
+
+Примечание:
+1.  Позволяет получить и установить имя трехмерной модели.
+2.  Свойство вступает в силу после вызова метода IModelObject::Update.
+3.  Не все объекты имеют имя, например, ребра.
+
+Owner  Объект дерева, породивший этот объект
+Интерфейс...
+Тип данных: указатель на интерфейс IFeature7
+Синтаксис Automation:
+
+Owner = Получить
+iObject.Owner свойство(* )
+Owner = Получить
+iObject.GetOwn свойство (**)
+er( )
+
+Синтаксис COM:
+
+HRESULT Получить
+Owner( [out, свойство
+retval]
+IFeature7**
+Result );
+
+Примечание:
+Свойство доступно только для чтения.
+
+Part  Компонент, владеющий элементом
+Интерфейс...
+Тип данных: указатель на интерфейс IPart7.
+Синтаксис Automation:
+
+Part = Получить
+iObject.Part свойство(* )
+Part = Получить
+iObject.GetPart свойство (**)
+( )
+1554
+
+
+
+Синтаксис COM:
+
+HRESULT Part( [out, retval] Получить свойство
+IPart7** Result );
+
+Примечание:
+
+1.  Возвращает указатель на интерфейс компонента, владеющий объектом.
+2.  Свойство доступно только для чтения.
+
+Valid  Признак невырожденности объекта
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " объект скрыт,
+FALSE " объект показан.
+
+Синтаксис Automation:
+
+Valid = iObject.Valid Получить свойство(* )
+Valid = iObject.GetValid( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Valid ( &Valid ) Получить свойство
+
+Примечание:
+
+1.  Позволяет получить признак невырожденности объекта.
+2.  Свойство доступно только для чтения.
+
+IModelObject  методы
+Update  Обновить данные объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL Update( );
+Синтаксис COM:
+HRESULT Update ( [out, retval] VARIANT_BOOL* pRes );
+Возвращаемое значение:
+1555
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+1.  Метод Update необходимо вызвать для объекта, свойства которого были изменены (по"
+
+сле вызова Set" cвойств или методов интерфейса), чтобы эти изменения вступили в си"
+лу.
+
+2.  Метод Update вернёт TRUE в случае успеха и FALSE в случае неудачи.
+3.  Вызов Update сработает как при изменении одного свойства, так и при изменении груп"
+
+пы свойств объекта.
+
+Интерфейс IMeshObject3D
+Интерфейс пространственного полигонального объекта.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject1
+
+ IMeshObject3D
+Интерфейс можно получить, выполнив QueryInterface для объекта IModelObject с типом
+o3d_MeshObject3D
+
+IMeshObject3D  методы
+
+InitByObjects  Создать по объектам
+Интерфейс...
+Синтаксис Automation:
+BOOL InitByObjects( VARIANT Objects );
+Синтаксис COM :
+HRESULT InitByObjects( VARIANT Objects, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного 
+завершения,
+
+Входные параметры:
+
+Objects " объект или массив объектов (VARIANT типа 
+VT_DISPATCH или VT_ARRAY | VT_DISPATCH),
+1556
+
+
+
+Интерфейс IModelObject1
+Интерфейс 3D объекта.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject1
+
+Примечание:
+Интерфейс можно получить у интерфейса IModelObject с помощью метода
+IUnknown::QueryInterface.
+
+IModelObject1  свойства
+Childrens  Потомки объекта
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Childrens = Object.Childrens( RelType ); Получить свойство (* )
+Childrens = Object.GetChildrens( RelType ); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Childrens( RelType, &Childrens ) Получить свойство
+
+Параметры:
+
+ksRelationTypeEnum RelType " тип родственных отношений.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство возвращает массив VT_ARRAY | VT_DISPATCH объектов"потомков данного
+
+объекта.
+
+ConnectedWithInitialEmbodiment  Отменить/
+восстановить связь объекта зависимого исполнения с 
+соответствующим объектом исходного исполнения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+1557
+
+
+
+ConnectedWithInitialEmbodiment = Получить свойство (* )
+Object.ConnectedWithInitialEmbodime
+nt
+Object.ConnectedWithInitialEmbodime Установить свойство (* )
+nt = ConnectedWithInitialEmbodiment
+ConnectedWithInitialEmbodiment = Получить свойство (**)
+Object.GetConnectedWithInitialEmbodi
+ment()
+Object.SetConnectedWithInitialEmbodi Установить свойство (**)
+ment(
+ConnectedWithInitialEmbodiment )
+
+Синтаксис COM:
+
+Object.get_ConnectedWithInitialEmbod Получить свойство
+iment(
+&ConnectedWithInitialEmbodiment )
+Object.put_ConnectedWithInitialEmbod Установить свойство
+iment(
+ConnectedWithInitialEmbodiment )
+
+Editable  Признак редактирования
+Интерфейс...
+Тип данных: из перечисления ksEditableStateEnum
+Синтаксис Automation:
+
+Editable = Object.Editable Получить свойство (* )
+Object.Editable = Editable Установить свойство (* )
+Editable = Object.GetEditable() Получить свойство (**)
+Object.SetEditable( Editable ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Editable( &Editable ) Получить свойство
+Object.put_Editable(  Editable ) Установить свойство
+
+HiddenEx  Состояние видимости объекта
+Интерфейс...
+Тип данных: из перечисления ksVisibleStateEnum 
+Синтаксис Automation:
+1558
+
+
+
+HiddenEx = Object.HiddenEx Получить свойство (* )
+Object.HiddenEx = HiddenEx Установить свойство (* )
+HiddenEx = Object.GetHiddenEx() Получить свойство (**)
+Object.SetHiddenEx( HiddenEx ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HiddenEx( &HiddenEx ) Получить свойство
+Object.put_HiddenEx(  HiddenEx ) Установить свойство
+
+IsEditableObject  Признак текущей доступности 
+редактирования объекта
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsEditableObject = Object.IsEditableObject; Получить свойство (* )
+IsEditableObject = Получить свойство (**)
+Object.GetIsEditableObject();
+
+Синтаксис COM:
+
+Object.get_IsEditableObject( Получить свойство
+&IsEditableObject )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IsExternalObject  Объект является внешним по 
+отношению к текущему редактируемому контексту
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsExternalObject = Object.IsExternalObject Получить свойство (* )
+IsExternalObject = Получить свойство (**)
+Object.GetIsExternalObject()
+
+Синтаксис COM:
+
+Object.get_IsExternalObject( Получить свойство
+&IsExternalObject )
+1559
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+LayerNumber  Номер слоя
+Интерфейс...
+Тип данных: long 
+Синтаксис Automation:
+
+LayerNumber = Object.LayerNumber Получить свойство (* )
+Object.LayerNumber = LayerNumber Установить свойство (* )
+LayerNumber = Получить свойство (**)
+Object.GetLayerNumber()
+Object.SetLayerNumber( LayerNumber Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_LayerNumber( Получить свойство
+&LayerNumber )
+ Object.put_LayerNumber( Установить свойство
+LayerNumber )
+
+Links  Ccылки на опорные примитивы объекта
+Интерфейс...
+Тип данных: VARIANT массив
+Синтаксис Automation:
+
+Links = Object.Links; Получить свойство (* )
+Links = Object.GetLinks(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Links( &Links ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+MathObject  Математический объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IKompasAPIObject
+1560
+
+
+
+Синтаксис Automation:
+
+MathObject = Object.MathObject; Получить свойство (* )
+MathObject = Object.GetMathObject(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_MathObject( &MathObject ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Parents Родители объекта
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Parents = Object.Parents( RelType ); Получить свойство (* )
+Parents = Object.GetParents( RelType ); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Parents( RelType, &Parents Получить свойство
+)
+
+Параметры:
+
+ksRelationTypeEnum RelType тип родственных отношений
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство возвращает массив VT_ARRAY | VT_DISPATCH объектов"родителей данного
+
+объекта.
+
+Projected  Признак проецирования
+Интерфейс...
+Тип данных: из перечисления ksProjectionOptionEnum 
+Синтаксис Automation:
+
+Projected = Object.Projected Получить свойство (* )
+Object.Projected = Projected Установить свойство (* )
+Projected = Object.GetProjected() Получить свойство (**)
+1561
+
+
+
+Object.SetProjected( Projected ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_Projected( &Projected ) Получить свойство
+ Object.put_Projected(  Projected ) Установить свойство
+
+IModelObject1  методы
+IsMyLink  Является ли примитив опорным для объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL IsMyLink( ksRelationTypeEnum RelType,
+                   LPDISPATCH Primitive );
+Синтаксис COM:
+HRESULT IsMyLink( ksRelationTypeEnum RelType,
+                      IModelObject * Primitive,
+                      BOOL * Result );
+Возвращаемое значение:
+
+TRUE " примитив является опорным.
+
+Входные параметры:
+
+RelType " тип родственных отношений,
+Primitive " проверяемый примитив.
+
+Метод позволяет проверить, является ли примитив опорным для объекта 3D (например,
+ребро кинематической операции опорным для операции скругления).
+
+Reset  Сбросить заданные параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Reset();
+Синтаксис COM:
+HRESULT Reset( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+1562
+
+
+
+Интерфейс IUserParameters
+Интерфейс объекта, создаваемого библиотекой.
+Иерархия:
+IDispatch
+
+IUserParameters
+Является дополнительным интерфейсом для интерфейса IUserObject3D.
+
+IUserParameters  свойства
+Command  Номер команды
+Интерфейс...
+Тип данных: long 
+Синтаксис Automation:
+
+Command = Object.Command Получить свойство (* )
+Object.Command = Command Установить свойство (* )
+Command = Object.GetCommand() Получить свойство (**)
+Object.SetCommand( Command ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Command( &Command ) Получить свойство
+ Object.put_Command(  Command ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать команду редактирования библиотеки.
+
+LibraryFileName  Имя файла библиотеки
+Интерфейс...
+Тип данных: BSTR 
+Синтаксис Automation:
+
+FileName = Object.FileName Получить свойство (* )
+Object.FileName = FileName Установить свойство (* )
+FileName = Object.GetFileName() Получить свойство (**)
+Object.SetFileName( FileName ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FileName( &FileName ) Получить свойство
+ Object.put_FileName(  FileName ) Установить свойство
+1563
+
+
+
+Примечание:
+Свойство позволяет устанавливать имя файла библиотеки.
+
+LibraryName  Имя библиотеки
+Интерфейс...
+Тип данных: BSTR 
+Синтаксис Automation:
+
+Name = Object.Name Получить свойство (* )
+Object.Name = Name Установить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+Object.SetName( Name ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name( &Name ) Получить свойство
+ Object.put_Name(  Name ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать имя библиотеки.
+
+ObjectID  Идентификатор объекта
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ObjectID = Object.ObjectID Получить свойство (* )
+Object.ObjectID = ObjectID Установить свойство (* )
+ObjectID = Object.GetObjectID() Получить свойство (**)
+Object.SetObjectID( ObjectID ) Установить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_ObjectID( &ObjectID ) Получить свойство
+ Object.put_ObjectID(  ObjectID ) Установить свойство
+
+UserParams  Пользовательские параметры
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+UserParams = Object.UserParams Получить свойство (* )
+1564
+
+
+
+Object.UserParams = UserParams Установить свойство (* )
+UserParams = Object.GetUserParams() Получить свойство (**)
+Object.SetUserParams( UserParams ) Установить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_UserParams( &UserParams Получить свойство
+)
+ Object.put_UserParams(  UserParams ) Установить свойство
+
+Значение свойства:
+
+Принимает\возвращает безопа"
+сный массив SAFEARRAY типа
+VT_ARRAY | VT_UI1.
+
+Примечание:
+Свойство используется для сохранения/получения пользовательских параметров в виде
+безопасного массива SAFEARRAY байтов.
+
+Компоненты
+Интерфейс IBodyRepositions
+Интерфейс коллекции операций перепозиционирования тела, поверхности.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IBodyRepositions
+
+Данный интерфейс можно получить, используя свойство контейнера трехмерных объек"
+тов IModelContainer::BodyRepositions.
+КОМПАС версия v18
+
+IBodyRepositions  свойства
+BodyReposition  Возвращает элемент, заданный по 
+индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IBodyReposition.
+Синтаксис Automation:
+1565
+
+
+
+BodyReposition = Получить свойство (* )
+Object.BodyReposition( Index );
+BodyReposition = Получить свойство (**)
+Object.GetBodyReposition( Index );
+
+Синтаксис COM:
+
+Object.get_BodyReposition( Index, Получить свойство
+&BodyReposition )
+
+Входные параметры:
+
+VARIANT Index " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IBodyRepositions  методы
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IBodyReposition * * Result );
+Возвращаемое значение: 
+
+" указатель на интерфейс 
+IBodyReposition.
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс операции перепозиционирования тела, по"
+верхности.
+
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+IModelObject::Update.
+
+Интерфейс IBodyReposition
+Интерфейс перепозиционирования тела, поверхности.
+Иерархия:
+1566
+
+
+
+IDispatch
+IKompasAPIObject
+
+IModelObject
+  IBodyReposition
+
+Данный интерфейс можно получить с помощью метода коллекции операций перепози"
+ционирования тела, поверхности IBodyRepositions::Add или свойства
+IBodyRepositions::BodyReposition.
+
+IBodyReposition  свойства
+CopyBoby  Копировать тело
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CopyBoby = Object.CopyBoby Получить свойство (* )
+Object.CopyBoby = CopyBoby Установить свойство (* )
+CopyBoby = Object.GetCopyBoby() Получить свойство (**)
+Object.SetCopyBoby( CopyBoby ) Установить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_CopyBoby( &CopyBoby ) Получить свойство
+Object.put_CopyBoby(  CopyBoby ) Установить свойство
+
+Position  Параметры смещения
+Интерфейс...
+Тип данных: Указатель на интерфейс ILocalCoordinateSystem. 
+Синтаксис Automation:
+
+Position = Object.Position; Получить свойство (* )
+Position = Object.GetPosition(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Position( &Position ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+1567
+
+
+
+RepositionBody  Перемещаемое тело или поверхность
+Интерфейс...
+Тип данных: Указатель на интерфейс IKompasAPIObject. 
+Синтаксис Automation:
+
+RepositionBody = Получить свойство (* )
+Object.RepositionBody
+Object.RepositionBody = Установить свойство (* )
+RepositionBody
+RepositionBody = Получить свойство (**)
+Object.GetRepositionBody()
+Object.SetRepositionBody( Установить свойство (**)
+RepositionBody )
+
+ Синтаксис COM:
+
+Object.get_RepositionBody( Получить свойство
+&RepositionBody )
+Object.put_RepositionBody( Установить свойство
+RepositionBody )
+
+RepositionCentre  Точка центра смещения
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject. 
+Синтаксис Automation:
+
+RepositionCentre = Получить свойство (* )
+Object.RepositionCentre
+Object.RepositionCentre = Установить свойство (* )
+RepositionCentre
+RepositionCentre = Получить свойство (**)
+Object.GetRepositionCentre()
+Object.SetRepositionCentre( Установить свойство (**)
+RepositionCentre )
+
+ Синтаксис COM:
+
+Object.get_RepositionCentre( Получить свойство
+&RepositionCentre )
+Object.put_RepositionCentre( Установить свойство
+RepositionCentre )
+1568
+
+
+
+Интерфейс IChooseObjects
+Интерфейс области применения для тел и компонентов документа в операции.
+Иерархия:
+IDispatch
+
+ IChooseObjects
+Данный интерфейс позволяет выбирать тела и компоненты, участвующие в операции.
+КОМПАС версия v18
+
+IChooseObjects  свойства
+ChooseBodies  Заменить массив тел (SAFEARRAY)
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ChooseBodies = Object.ChooseBodies Получить свойство (* )
+Object.ChooseBodies = ChooseBodies Установить свойство (* )
+ChooseBodies = Получить свойство (**)
+Object.GetChooseBodies()
+Object.SetChooseBodies( Установить свойство (**)
+ChooseBodies )
+
+ Синтаксис COM:
+
+Object.get_ChooseBodies( Получить свойство
+&ChooseBodies )
+Object.put_ChooseBodies( Установить свойство
+ChooseBodies )
+
+Примечание.
+Свойство позволяет получать и устанавливать тело или массив тел, участвующих в опе"
+рации. 
+Массив возвращается в виде массива SAFEARRAY тел LPDISPATCH (VT_ARRAY |
+VT_DISPATCH).
+
+ChooseParts  Массив вставок (SAFEARRAY)
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ChooseParts = Object.ChooseParts Получить свойство (* )
+Object.ChooseParts = ChooseParts Установить свойство (* )
+1569
+
+
+
+ChooseParts = Получить свойство (**)
+Object.GetChooseParts()
+Object.SetChooseParts( ChooseParts ) Установить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_ChooseParts( Получить свойство
+&ChooseParts )
+Object.put_ChooseParts(  ChooseParts Установить свойство
+)
+
+Примечание.
+Свойство позволяет получать и устанавливать компонент или массив компонентов, уча"
+ствующих в операции. 
+Массив возвращается в виде массива SAFEARRAY компонентов LPDISPATCH (VT_ARRAY
+| VT_DISPATCH).
+
+ChoosePartsType  Область применения. Объекты
+Интерфейс...
+Тип данных: Значение из перечисления ksChoosePartsType.
+Синтаксис Automation:
+
+ChoosePartsType = Получить свойство (* )
+Object.ChoosePartsType

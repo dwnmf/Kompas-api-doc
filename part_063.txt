@@ -1,0 +1,2532 @@
+
+Возвращаемое значение:
+
+" порядок NURBS (степень полинома + 1), от 3 до 10.
+
+Примечание:
+Значение paramU позволяет выбрать параметр представления поверхности U или V, для
+которого выполняется метод.
+
+GetEdgesCount  Количество ребер в цикле
+Интерфейс...Синтаксис Automation:
+long GetEdgesCount (long loopIndex)
+Синтаксис COM:
+long GetEdgesCount (long loopIndex)
+Входные параметры:
+
+loopIndex  " номер цикла.
+
+Возвращаемое значение:
+
+" количество ребер в цикле.
+
+Примечание:
+Свойство доступно только для чтения.
+
+GetMinMaxParameters  Получить параметры поверхности
+Интерфейс...Синтаксис Automation:
+BOOL GetMinMaxParameters (BOOL closedV, BOOL closedU, double * uMin,  double * uMax,
+double * vMin,  double * vMax)
+Синтаксис COM:
+3397
+
+
+
+BOOL GetMinMaxParameters (BOOL closedV, BOOL closedU, double * uMin,  double * uMax,
+double * vMin,  double * vMax)
+Входные параметры:
+
+closedV  " TRUE " получение параметров для замкнуто"
+го по V представления, 
+ " FALSE " получение параметров для разо"
+мкнутого по V представления,
+
+closedU  " TRUE " получение параметров для замкнуто"
+го по U представления, 
+ " FALSE " получение параметров для разо"
+мкнутого по V представления.
+
+Выходные параметры:
+
+uMin  " значение минимального параметра по U,
+uMax  " значение максимального параметра по U,
+vMin  " значение минимального параметра по V,
+vMax  " значение максимального параметра по V.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+GetNurbsParams  Получить параметры NURBSповерхности
+Интерфейс...Синтаксис Automation:
+BOOL GetNurbsParams( BOOL unClampedV,
+BOOL unClampedU,
+long * degreeV,
+long * degreeU,
+long * nPV, long * nPU,
+VARIANT * points,
+VARIANT * weights,
+VARIANT * knotsV,
+VARIANT * knotsU );
+Синтаксис COM:
+BOOL GetNurbsParams( BOOL unClampedV,
+BOOL unClampedU,
+long * degreeV,
+long * degreeU
+long * nPV,
+long * nPU,
+VARIANT * points,
+VARIANT * weights,
+3398
+
+
+
+VARIANT * knotsV,
+VARIANT * knotsU );
+Входные параметры:
+
+unClampedV " TRUE " вернуть параметры для замкнутого по
+V представления,
+" FALSE " вернуть параметры для разомкнутого
+по V представления,
+
+unClampedU " TRUE вернуть параметры для замкнутого по U
+представления,
+" FALSE вернуть параметры для разомкнутого
+по U представления.
+
+Выходные параметры:
+
+degreeV, " порядок NURBS (степень полинома + 1) по
+degreeU V и U, от 3 до 10,
+nPV, nPU " количество точек по V и U,
+points " массив координат вершин " массив
+
+SafeArray вещественных чисел VT_ARRAY |
+VT_R8,
+
+weights " веса в вершинах " массив SafeArray веще"
+ственных чисел VT_ARRAY | VT_R8,
+
+knotsV, " узлы точек " массив SafeArray веществен"
+knotsU ных чисел VT_ARRAY | VT_R8.
+
+GetPeriodic  Получить периодичность сплайна
+Интерфейс...Синтаксис Automation:
+BOOL GetPeriodic (BOOL paramU);
+Синтаксис COM:
+BOOL GetPeriodic (BOOL paramU);
+Входные параметры:
+
+paramU TRUE " для параметра U,
+paramU FALSE " для параметра V.
+
+Возвращаемое значение:
+
+TRUE " сплайн периодический,
+FALSE " сплайн непериодический.
+
+Примечание:
+Значение paramU позволяет выбрать параметр представления поверхности U или V, для
+которого выполняется метод.
+3399
+
+
+
+NurbsKnotCollection  Получить указатель на интерфейс массива 
+узлов для NURBSповерхности
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetKnotCollection (BOOL paramU);
+Синтаксис COM:
+LPNURBSKNOTCOLLECTION GetKnotCollection (BOOL paramU);
+Входные параметры:
+
+paramU TRUE " для параметра U,
+paramU FALSE " для параметра V.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsKnotCollection или INurbsKnotCollection.
+
+Примечание:
+Значение paramU позволяет выбрать параметр представления поверхности U или V, для
+которого выполняется метод.
+
+NurbsPoint3DCollCollection  Получить указатель на интерфейс 
+массива массивов точек для NURBSповерхности
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetPointCollection();
+Синтаксис COM:
+LPNURBSPOINT3DCOLLCOLLECTION GetPointCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3DCollCollection или 
+INurbsPoint3DCollCollection.
+
+Параметры точки для трехмерных NURBS (Интерфейсы 
+ksNurbsPoint3dCollCollection, INurbsPoint3dCollCollection)
+Интерфейс массива массивов точек для трехмерных NURBS поверхностей.
+
+ksNurbsPoint3dCollCollection " интерфейс Automation
+INurbsPoint3dCollCollection " интерфейс COM
+
+Примечание:
+3400
+
+
+
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksNurbsSurfaceParam::NurbsPoint3DCollCollection.
+
+INurbsPoint3dCollCollection  методы
+
+Add  Добавить объект в конец массива
+Интерфейс...Синтаксис Automation:
+BOOL Add (LPDISPATCH obj);
+Синтаксис COM:
+BOOL Add (LPNURBSPOINT3DCOLLECTION obj);
+Входной параметр:
+
+obj " указатель на интерфейс ksNurbsPoint3dCollection
+или INurbsPoint3dCollection параметров точки для
+трехмерной NURBS.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатель на интерфейс добавляемого объекта obj не должен быть равен 0.
+
+AddAt  Добавить объект с заданным индексом в массив
+Интерфейс...Синтаксис Automation:
+BOOL AddAt (LPDISPATCH obj, long index);
+Синтаксис COM:
+BOOL AddAt (LPNURBSPOINT3DCOLLECTION obj, long index);
+Входные параметры:
+
+obj " указатель на интерфейс ksNurbsPoint3dCollection или 
+INurbsPoint3dCollection параметров точки для трехмерной 
+NURBS,
+
+index " индекс в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатель на интерфейс добавляемого объекта obj не должен быть равен 0.
+3401
+
+
+
+AddBefore  Добавить объект перед указанным объектом в 
+массиве
+Интерфейс...Синтаксис Automation:
+BOOL AddBefore (LPDISPATCH obj, LPDISPATCH base);
+Синтаксис COM:
+BOOL AddBefore (LPNURBSPOINT3DCOLLECTION obj, LPNURBSPOINT3DCOLLECTION
+base);
+Входные параметры:
+
+obj " указатель на интерфейс ksNurbsPoint3dCollection
+или INurbsPoint3dCollection добавляемого объекта,
+
+base " указатель на интерфейс ksNurbsPoint3dCollection
+или INurbsPoint3dCollection базового объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатели на интерфейсы добавляемого и базового объекта obj и base не должны быть
+равны 0.
+
+Clear  Очистить массив
+Интерфейс...Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+BOOL Clear();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Объекты удаляются только из массива, в модель изменения не передаются.
+
+DetachByBody  Удалить указанный объект из массива
+Интерфейс...Синтаксис Automation:
+BOOL DetachByBody (LPDISPATCH obj);
+Синтаксис COM:
+BOOL DetachByBody (LPNURBSPOINT3DCOLLECTION obj);
+Входные параметры:
+3402
+
+
+
+obj " указатель на интерфейс ksNurbsPoint3dCollection
+или INurbsPoint3dCollection удаляемого объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+Указатель на интерфейс удаляемого объекта obj не должен быть равен 0.
+
+DetachByIndex  Удалить объект из массива по индексу
+Интерфейс...Синтаксис Automation:
+BOOL DetachByIndex (long index);
+Синтаксис COM:
+BOOL DetachByIndex (long index);
+Входной параметр:
+
+index " индекс удаляемого объекта в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Элемент массива из модели не удаляется.
+
+FindIt  Получить индекс элемента в массиве
+Интерфейс...Синтаксис Automation:
+long FindIt (LPDISPATCH entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+"1 " если элемент не найден.
+
+Синтаксис COM:
+unsigned long FindIt (LPNURBSPOINT3DCOLLECTION entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+3403
+
+
+
+SYS_MAX_UINT " если элемент не найден.
+Входные параметры:
+
+entity " указатель на интерфейс компонента
+ksNurbsPoint3dCollection или
+INurbsPoint3dCollection.
+
+First  Получить указатель на интерфейс первого объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPNURBSPOINT3DCOLLECTION First();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3dCollection
+или INurbsPoint3dCollection.
+
+GetByIndex  Получить указатель на интерфейс объекта в массиве 
+по индексу
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetByIndex (long index);
+Синтаксис COM:
+LPNURBSPOINT3DCOLLECTION GetByIndex (long index);
+Входной параметр:
+
+index " номер объекта в массиве.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3dCollection
+или INurbsPoint3dCollection.
+
+GetCount  Получить количество элементов в массиве
+Интерфейс...Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+3404
+
+
+
+long GetCount();
+Возвращаемое значение:
+
+" количество элементов массива.
+
+Last  Получить указатель на интерфейс последнего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Last();
+Синтаксис COM:
+LPNURBSPOINT3DCOLLECTION Last();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3dCollection
+или INurbsPoint3dCollection.
+
+Next  Получить указатель на интерфейс следующего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Next();
+Синтаксис COM:
+LPNURBSPOINT3DCOLLECTION Next();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3dCollection
+или INurbsPoint3dCollection.
+
+Prev  Получить указатель на интерфейс предыдущего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Prev();
+Синтаксис COM:
+LPNURBSPOINT3DCOLLECTION Prev();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3dCollection
+или INurbsPoint3dCollection.
+3405
+
+
+
+Refresh  Обновить массив
+Интерфейс...Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+После вызова данной функции возникает полное соответствие массива с массивом то"
+чек поверхности и удаляются все предыдущие изменения в массиве.
+
+SetByIndex  Заменить объект с указанным индексом в массиве на 
+присланный объект
+Интерфейс...Синтаксис Automation:
+BOOL SetByIndex (LPDISPATCH obj, long index );
+Синтаксис COM:
+BOOL SetByIndex (LPNURBSPOINT3DCOLLECTION obj, long index);
+Входные параметры:
+
+obj " указатель на интерфейс ksINurbsPoint3dCollection
+или INurbsPoint3dCollection присоединяемого объ"
+екта,
+
+index " индекс элемента в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Массив узлов для трехмерных NURBS  поверхностей 
+(Интерфейсы ksNurbsKnotCollection, INurbsKnotCollection)
+Интерфейс массива узлов для трехмерных NURBS поверхностей.
+
+ksNurbsKnotCollection " интерфейс Automation
+INurbsKnotCollection " интерфейс COM
+3406
+
+
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса ksNurbs3dParam
+ksNurbs3dParam::NurbsKnotCollection или интерфейса ksNurbsSurfaceParam
+ksNurbsSurfaceParam::NurbsKnotCollection.
+
+INurbsKnotCollection  методы
+
+Add  Добавить элемент в конец массива
+Интерфейс...Синтаксис Automation:
+BOOL Add (double obj);
+Синтаксис COM:
+BOOL Add (double obj);
+Входной параметр:
+
+obj " значение узла.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+AddAt  Добавить объект с заданным индексом в массив
+Интерфейс...Синтаксис Automation:
+BOOL AddAt (double obj, long index);
+Синтаксис COM:
+BOOL AddAt (double obj, long index);
+Входные параметры:
+
+obj " значение узла,
+index " индекс в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+AddBefore  Добавить объект перед указанным объектом в 
+массиве
+Интерфейс...Синтаксис Automation:
+BOOL AddBefore (double obj, double base);
+Синтаксис COM:
+3407
+
+
+
+BOOL AddBefore (double obj, double base);
+Входные параметры:
+
+obj " значение добавляемого узла,
+base " значение базового узла.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Clear  Очистить массив
+Интерфейс...Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+BOOL Clear();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Объекты удаляются только из массива, в модель изменения не передаются.
+
+DetachByBody  Удалить указанный объект из массива
+Интерфейс...Синтаксис Automation:
+BOOL DetachByBody (double obj);
+Синтаксис COM:
+BOOL DetachByBody (double obj);
+Входные параметры:
+
+obj " значение удаляемого узла.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3408
+
+
+
+DetachByIndex Удалить объект из массива по индексу
+Интерфейс...Синтаксис Automation:
+BOOL DetachByIndex (long index);
+Синтаксис COM:
+BOOL DetachByIndex (long index);
+Входной параметр:
+
+index " индекс удаляемого объекта в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Элемент массива из модели не удаляется.
+
+First  Получить первый объект в массиве
+Интерфейс...Синтаксис Automation:
+double First();
+Синтаксис COM:
+double First();
+Возвращаемое значение:
+
+" первый объект в массиве.
+
+GetByIndex  Получить элемент массива по индексу
+Интерфейс...Синтаксис Automation:
+double GetByIndex (long index);
+Синтаксис COM:
+double GetByIndex ( long index );
+Входной параметр:
+
+index " номер объекта в массиве.
+
+Возвращаемое значение:
+
+" значение узла.
+3409
+
+
+
+GetCount  Получить количество элементов в массиве
+Интерфейс...Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+long GetCount();
+Возвращаемое значение:
+
+" количество элементов массива.
+
+Last  Получить последний объект в массиве
+Интерфейс...Синтаксис Automation:
+double Last();
+Синтаксис COM:
+double Last();
+Возвращаемое значение:
+
+" последний объект в массиве.
+
+Next  Получить следующий объект в массиве
+Интерфейс...Синтаксис Automation:
+double Next();
+Синтаксис COM:
+double Next();
+Возвращаемое значение:
+
+" следующий объект в массиве.
+
+Prev  Получить предыдущий объект в массиве
+Интерфейс...Синтаксис Automation:
+double Prev();
+Синтаксис COM:
+double Prev();
+Возвращаемое значение:
+
+" предыдущий объект в массиве.
+3410
+
+
+
+Refresh  Обновить массив
+Интерфейс...Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+После вызова данной функции возникает полное соответствие массива с массивом уз"
+лов ребра (поверхности) и удаляются все предыдущие изменения в массиве.
+
+SetByIndex  Заменить объект с указанным индексом в массиве на 
+присланный объект
+Интерфейс...Синтаксис Automation:
+BOOL SetByIndex (double obj, long index);
+Синтаксис COM:
+BOOL SetByIndex (double obj, long index);
+Входные параметры:
+
+obj " значение присоединяемого узла,
+index " индекс элемента в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Параметры точки для трехмерных NURBS(Интерфейсы 
+ksNurbsPoint3dParam, INurbsPoint3dParam)
+Интерфейс параметров точки для трехмерных NURBS.
+
+ksNurbsPoint3dParam " интерфейс Automation
+INurbsPoint3dParam " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksSurface::GetSurfaceParam .
+3411
+
+
+
+INurbsPoint3dParam  свойства
+
+weight  Вес точки
+Интерфейс..Тип данных: double
+Синтаксис Automation:
+
+weight = iNurbsPoint3dParam.weight Получить свойство (* )
+weight = Получить свойство (**)
+iNurbsPoint3dParam.GetWeight()
+
+Примечание:
+Свойство доступно только для чтения.
+
+INurbsPoint3dParam  методы
+
+GetPoint  Получить координаты базовой точки
+Интерфейс..Синтаксис Automation:
+BOOL GetPoint (double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetPoint (double * x, double *y, double *z);
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Выходные параметры:
+
+x, y, z " координаты базовой точки.
+
+Параметры элемента вращения (Интерфейсы 
+ksRotatedParam, IRotatedParam)
+Справка системы КОМПАС...
+
+Интерфейс параметров элемента вращения.
+
+ksRotatedParam " интерфейс Automation
+IRotatedParam " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksSurface::GetSurfaceParam.
+3412
+
+
+
+IRotatedParam  свойства
+
+angleNormal  Угол вращения в прямом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+angleNormal = Получить
+iRotatedParam.angleNormal свойство(* )
+iRotatedParam.angleNormal = Установить
+angleNormal свойство (* )
+angleNormal = Получить
+iRotatedParam.GetAngleNorm свойство (**)
+al()
+iRotatedParam.SetAngleNorm Установить
+al(angleNormal) свойство (**)
+
+angleReverse  Угол вращения в обратном направлении
+Интерфейс..Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+angleReverse = Получить
+iRotatedParam.angleReverse свойство(* )
+iRotatedParam.angleReverse = Установить
+angleReverse свойство (* )
+angleReverse = Получить
+iRotatedParam.GetAngleRever свойство (**)
+se()
+iRotatedParam.SetAngleRever Установить
+se(angleReverse) свойство (**)
+
+direction  Направление вращения
+Интерфейс..Справка системы КОМПАС...
+
+Тип данных: long
+Значения свойства:
+
+Типы направлений...
+3413
+
+
+
+Синтаксис Automation:
+
+direction = Получить
+iRotatedParam.direction свойство(* )
+iRotatedParam.direction = Установить
+direction свойство (* )
+direction = Получить
+iRotatedParam.GetDirection() свойство (**)
+iRotatedParam.SetDirection(di Установить
+rection) свойство (**)
+
+Примечание:
+Прямое направление " вдоль нормали к плоскости эскиза и всегда против часовой стрел"
+ки. 
+Нормаль, проведенная к поверхности тела, всегда выходит из тела.
+
+toroidShape  Признак тороида
+Интерфейс..Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " тороид,
+FALSE " сфероид.
+
+Синтаксис Automation:
+
+toroidShape = Получить
+iRotatedParam.toroidShape свойство(* )
+iRotatedParam.toroidShape = Установить
+toroidShape свойство (* )
+toroidShape = Получить
+iRotatedParam.GetToroidShap свойство (**)
+e()
+iRotatedParam.SetToroidShap Установить
+e (toroidShape свойство (**)
+
+Математическая кривая в трехмерном пространстве 
+(Интерфейсы ksCurve3D, ICurve3D)
+Интерфейс математической кривой в трехмерном пространстве.
+
+ksCurve3D " интерфейс Automation
+ICurve3D " интерфейс COM
+3414
+
+
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейсов
+ksAxisConefaceDefinition::GetCurve3D, IDefaultObject::GetCurve3D,
+ksAxisEdgeDefinition::GetCurve3D, ksAxis2PlanesDefinition::GetCurve3D,
+ksAxisOperationsDefinition::GetCurve3D, ksAxis2PointsDefinition::GetCurve3D,
+ksEdgeDefinition::GetCurve3D.
+
+ICurve3D  методы
+
+CalculatePolygon  Рассчитать полигон
+Интерфейс...Синтаксис Automation:
+VARIANT CalculatePolygon( double step );
+Синтаксис COM:
+BOOL CalculatePolygon( VARIANT * points,
+double step );
+Входные параметры:
+
+step " шаг для расчета полигона.
+
+Возвращаемое значение:
+
+" массив SafeArray координат
+точек на кривой, полученных с
+шагом step.
+
+Примечание:
+
+1. Если шаг задан равным 0, то используется шаг применяемый в системе КОМПАС, кото"
+рый рассчитывается с учетом габаритов детали.
+
+2. Если шаг задан "1, то используется шаг применяемый в системе КОМПАС при отрисовке
+кривых. Он рассчитывается с учетом следующих параметров:
+
+▼ габариты детали и масштаба отображения модели.
+▼ тип возвращаемого массива VT_ARRAY | VT_R8
+▼ значения координат в массиве лежат в последовательности x1, y1, z1, x2, y2, z2 ... xn, yn,
+
+zn.
+
+GetCurveParam  Получить параметры линии, окружности, 
+эллипса, NURBS или NULL
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetCurveParam();
+Синтаксис COM:
+3415
+
+
+
+LPUNKNOWN GetCurveParam();
+Возвращаемое значение:
+
+" указатель на интерфейс параметра кривой.
+
+Примечание:
+В соответствии с типом объекта метод вернет указатель на интерфейс параметра:
+
+" отрезка ksILineSeg3dParam или ILineSeg3dParam,
+" дуги окружности ksArc3dParam или IArc3dParam,
+" окружности ks ICircle3dParam или ICircle3dParam,
+" эллипса ksEllipse3dParam или IEllipse3dParam,
+" NURBS kIsNurbs3dParam или INurbs3dParam.
+
+Зная тип объекта, можно базовый интерфейс привести к конечному (IDispatch или
+IUnknown). Для определения типа объекта можно воспользоваться методами IsLineSeg,
+IsArc,IsCircle, IsEllipse, IsNurbs.
+
+GetDerivativeT  Получить первую производную по T
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeT (double paramT, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeT (double paramT, double * x, double *y, double *z);
+Входной параметр:
+
+paramT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+x, y, z " первая производная по T.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметра T получаются при помощи методов GetParamMin и
+GetParamMax. Координата точки возвращается в координатах компонента.
+
+GetDerivativeTT  Получить вторую производную по T
+Интерфейс...Синтаксис Automation:
+3416
+
+
+
+BOOL GetDerivativeTT (double paramT, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeTT (double paramT, double * x, double *y, double *z);
+Входной параметр:
+
+paramT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+x, y, z " вторая производная по T.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметра T получаются при помощи методов GetParamMin и
+GetParamMax. Координата точки возвращается в координатах компонента.
+
+GetDerivativeTTT  Получить третью производную по T
+Интерфейс...Синтаксис Automation:
+BOOL GetDerivativeTTT (double paramT, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetDerivativeTTT (double paramT, double * x, double *y, double *z);
+Входной параметр:
+
+paramT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+x, y, z " третья производная по T.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметра T получаются при помощи методов GetParamMin и
+GetParamMax. Координата точки возвращается в координатах компонента.
+3417
+
+
+
+GetGabarit  Получить габаритный параллелепипед кривой
+Интерфейс...Синтаксис Automation:
+BOOL GetGabarit (double * x1, 
+double *y1, 
+double *z1, 
+double * x2, 
+double *y2, 
+double *z2);
+Синтаксис COM:
+BOOL GetGabarit (double * x1, 
+double *y1, 
+double *z1, 
+double * x2, 
+double *y2, 
+double *z2);
+Выходные параметры:
+
+x1, y1, z1, x2, y2, z2 " координаты вершин габаритного параллелепипеда.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Координаты вершин параллелепипеда возвращаются в системе координат компонента.
+
+GetLength  Получить длину кривой
+Интерфейс...Синтаксис Automation:
+double GetLength (unsigned long bitVector);
+Синтаксис COM:
+double GetLength (unsigned long bitVector);
+Входные параметры:
+
+bitVector " единицы измерения в интервале [ST_MIX_MM..ST_MIX_M].
+
+Возвращаемое значение:
+
+длина кривой " в случае успешного завершения,
+0 " в случае неудачи.
+3418
+
+
+
+GetMetricLength  Получить метрическую длину кривой
+Интерфейс...Синтаксис Automation:
+double GetMetricLength (double startParam, double endParam);
+Синтаксис COM:
+double GetMetricLength (double startParam, double endParam);
+Входные параметры:
+
+startParam " начальное значение параметра T в параметрическом 
+представлении кривой,
+
+endParam " конечное значение параметра T в параметрическом 
+представлении кривой.
+
+Возвращаемое значение:
+
+метрическая длина кривой " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Граничные значения параметра T получаются при помощи методов GetParamMin и
+GetParamMax.
+
+GetNormal  Получить направление нормали
+Интерфейс...Синтаксис Automation:
+BOOL GetNormal (double paramT, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetNormal (double paramT, double * x, double *y, double *z);
+Входной параметр:
+
+paramT " значение параметра T в параметрическом представлении кривой.
+
+Выходные параметры:
+
+x, y, z " вектор нормали.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметра T получаются при помощи методов GetParamMin и
+GetParamMax. Координата точки возвращается в координатах компонента.
+3419
+
+
+
+GetNurbs3dParam  Получить NURBSпредставление кривой
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetNurbs3dParam();
+Синтаксис COM:
+LPNURBS3DPARAM GetNurbs3dParam();
+Возвращаемое значение:
+
+" указатель на интерфейс
+ksNurbs3dParam/
+INurbs3dParam.
+
+Примечание:
+Метод позволяет получить параметры кривой в NURBS"представлении. Для получения
+параметров кривой в NURBS"представлении создается математическая NURBS"кривая,
+аналогичная заданной. Если заданная кривая является NURBS"кривой, то возвращаются
+ее параметры без создания NURBS"представления.
+
+GetParamMin  Получить начальное значение параметра T в 
+параметрическом представлении кривой
+Интерфейс...Синтаксис Automation:
+double GetParamMin();
+Синтаксис COM:
+double GetParamMin();
+Возвращаемое значение:
+
+Значение параметра T " в случае успеха,
+0 " в случае неудачи.
+
+GetParamMax  Получить конечное значение параметра T в 
+параметрическом представлении кривой
+Интерфейс...Синтаксис Automation:
+double GetParamMax();
+Синтаксис COM:
+double GetParamMax();
+Возвращаемое значение:
+
+Значение параметра T " в случае успеха,
+0 " в случае неудачи.
+3420
+
+
+
+GetPoint  Получить координаты точки на кривой
+Интерфейс...Синтаксис Automation:
+BOOL GetPoint (double paramT, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetPoint (double paramT, double * x, double *y, double *z);
+Входной параметр:
+
+paramT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+x, y, z " координаты точки на кривой.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Граничные значения параметра T получаются при помощи методов GetParamMin и
+GetParamMax. Координаты точки возвращаются в системе координат компонента.
+
+GetTangentVector  Получить направление касательного 
+вектора
+Интерфейс...Синтаксис Automation:
+BOOL GetTangentVector (double paramT, double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetTangentVector (double paramT, double * x, double *y, double *z);
+Входной параметр:
+
+paramT " значение параметра T в параметрическом представлении 
+кривой.
+
+Выходные параметры:
+
+x, y, z " касательный вектор.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+3421
+
+
+
+Примечание:
+Граничные значения параметра T получаются при помощи методов GetParamMin и
+GetParamMax. Координата точки возвращается в координатах компонента.
+
+IsArc  Определить, является ли кривая дугой окружности
+Интерфейс...Синтаксис Automation:
+BOOL IsArc();
+Синтаксис COM:
+BOOL IsArc();
+Возвращаемое значение:
+
+TRUE " кривая является дугой окружности,
+FALSE " кривая не является дугой окружности.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetCurveParam
+вернет указатель на интерфейс параметра дуги окружности ksArc3dParam или
+IArc3dParam.
+
+IsCirIcle  Определить, является ли кривая окружностью
+Интерфейс...Синтаксис Automation:
+BOOL IsCircle();
+Синтаксис COM:
+BOOL IsCircle();
+Возвращаемое значение:
+
+TRUE " кривая является окружностью,
+FALSE " кривая не является окружностью.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetCurveParam
+вернет указатель на интерфейс параметра окружности ksCircle3dParam или
+ICircle3dParam.
+
+IsClosed  Определить, является ли кривая замкнутой
+Интерфейс...Синтаксис Automation:
+BOOL IsClosed();
+3422
+
+
+
+Синтаксис COM:
+BOOL IsClosed();
+Возвращаемое значение:
+
+TRUE " кривая замкнута,
+FALSE " кривая разомкнута.
+
+IsDegenerate  Определить, является ли кривая вырожденной
+Интерфейс...Синтаксис Automation:
+BOOL IsDegenerate();
+Синтаксис COM:
+BOOL IsDegenerate();
+Возвращаемое значение:
+
+TRUE " кривая вырожденная,
+FALSE " кривая невырожденная.
+
+IsEllipIse  Определить, является ли кривая эллипсом
+Интерфейс...Синтаксис Automation:
+BOOL IsEllipse();
+Синтаксис COM:
+BOOL IsEllipse();
+Возвращаемое значение:
+
+TRUE " кривая является эллипсом,
+FALSE " кривая не является эллипсом.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetCurveParam
+вернет указатель на интерфейс параметра эллипса ksEllipse3dParamили IEllipse3dParam.
+
+IsLineSeg  Определить, является ли кривая отрезком
+Интерфейс...Синтаксис Automation:
+BOOL IsLineSeg();
+Синтаксис COM:
+BOOL IsLineSeg();
+Возвращаемое значение:
+3423
+
+
+
+TRUE " кривая является отрезком,
+FALSE " кривая не является отрезком.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetCurveParam
+вернет указатель на интерфейс параметра отрезка ksLineSeg3dParam или
+ILineSeg3dParam.
+
+IsNurbs  Определить, является ли кривая NURBS
+Интерфейс...Синтаксис Automation:
+BOOL IsNurbs();
+Синтаксис COM:
+BOOL IsNurbs();
+Возвращаемое значение:
+
+TRUE " кривая является NURBS,
+FALSE " кривая не является NURBS.
+
+Примечание:
+Данный метод удобно использовать для приведения базового интерфейса (IUnknown в
+COM и IDispatch в Automation) к конечному интерфейсу трехмерных объектов. Зная тип
+объекта, можно привести его к соответствующему интерфейсу. Метод GetCurveParam
+вернет указатель на интерфейс параметра NURBS ksNurbs3dParam или INurbs3dParam.
+
+IsPeriodic  Определить, является ли замкнутая кривая 
+периодической
+Интерфейс...Синтаксис Automation:
+BOOL IsPeriodic();
+Синтаксис COM:
+BOOL IsPeriodic();
+Возвращаемое значение:
+
+TRUE " кривая периодична,
+FALSE " кривая не периодична.
+
+IsPlanar  Определить, является ли кривая плоской
+Интерфейс...Синтаксис Automation:
+BOOL IsPlanar();
+3424
+
+
+
+Синтаксис COM:
+BOOL IsPlanar();
+Возвращаемое значение:
+
+TRUE " кривая плоская,
+FALSE " кривая неплоская.
+
+NearPointProjection  Получить ближайшую проекцию точки 
+на поверхность
+Интерфейс...Синтаксис Automation:
+BOOL NearPointProjection (double x, double y, double z, double * t, BOOL ext);
+Синтаксис COM:
+BOOL NearPointProjection (double x, double y, double z, double * t, BOOL ext);
+Входные параметры:
+
+x, y, z " координаты исходной пространственной точки,
+ext " если проекция точки вне кривой:
+
+" TRUE проецировать на продолжение кривой, 
+" FALSE найти ближайшую граничную точку кривой.
+Если проекция точки внутри кривой, значение этого
+параметра не учитывается.
+
+Выходные параметры:
+
+t " параметрические координаты
+точки на кривой.
+
+Возвращаемое значение:
+
+TRUE " если проекция точки попала
+на саму кривую или если ext
+равен TRUE,
+
+FALSE " если проекция точки не попа"
+ла на саму кривую.
+
+Параметры отрезка (Интерфейсы 
+ksLineSeg3dParam,ILineSeg3dParam)
+Интерфейс параметров отрезка.
+
+ksLineSeg3dParam " интерфейс Automation
+ILineSeg3dParam " интерфейс COM
+
+Описание:
+3425
+
+
+
+Отрезок определяется координатами начальной и конечной точек.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksCurve3D::GetCurveParam.
+
+ILineSeg3dParam  методы
+
+GetPointFirst  Получить координаты первой точки отрезка
+Интерфейс...Синтаксис Automation:
+BOOL GetPointFirst (double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetPointFirst (double * x, double *y, double *z);
+Выходные параметры:
+
+x, y, z " координаты первой точки отрезка.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Значения x, y, z возвращаются в системе координат компонента.
+
+GetPointLast  Получить координаты второй точки отрезка
+Интерфейс...Синтаксис Automation:
+BOOL GetPointLast (double * x, double *y, double *z);
+Синтаксис COM:
+BOOL GetPointLast (double * x, double *y, double *z);
+Выходные параметры:
+
+x, y, z " координаты первой точки отрезка.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Значения x, y, z возвращаются в системе координат компонента.
+3426
+
+
+
+Параметры окружности (Интерфейсы 
+ksCircle3dParam,ICircle3dParam)
+Интерфейс параметров окружности.
+
+ksCircle3dParam " интерфейс Automation
+ICircle3dParam " интерфейс COM
+
+Описание:
+Окружность определяется координатами центра и радиусом.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksCurve3D::GetCurveParam.
+
+ICircle3dParam  свойства
+
+radius  Радиус окружности
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+radius = iCircle3dParam.radius Получить свойство (* )
+radius = iCircle3dParam.GetRadius() Получить свойство (**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+ICircle3dParam  методы
+
+GetPlacement  Получить указатель на интерфейс положения 
+окружности
+Интерфейс..Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPlacement или IPlacement.
+
+Параметры эллипса (Интерфейсы ksEllipse3dParam, 
+IEllipse3dParam)
+Интерфейс параметров эллипса.
+3427
+
+
+
+ksEllipse3dParam " интерфейс Automation
+IEllipse3dParam " интерфейс COM
+
+Описание:
+Эллипс определяется координатами центра и двумя радиусами.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksCurve3D::GetCurveParam.
+
+IEllipse3dParam  свойства
+
+majorRadius  Больший радиус эллипса
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+majorRadius = Получить
+iEllipse3dPara свойство (* )
+m.majorRadius
+majorRadius = Получить
+iEllipse3dPara свойство
+m.GetMajorRad (**)
+ius()
+
+Примечание:
+Свойство доступно только для чтения.
+
+minorRadius  Меньший радиус эллипса
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+minorRadius = Получить
+iEllipse3dPara свойство (* )
+m.minorRadius
+minorRadius = Получить
+iEllipse3dPara свойство
+m.GetMinorRad (**)
+ius()
+
+Примечание:
+3428
+
+
+
+Свойство доступно только для чтения.
+
+IEllipse3dParam  методы
+
+GetPlacement  Получить указатель на интерфейс положения 
+эллипса
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPlacement или IPlacement.
+
+Параметры трехмерной дуги(Интерфейсы 
+ksArc3dParam,IArc3dParam)
+Интерфейс параметров трехмерной дуги.
+
+ksArc3dParam " интерфейс Automation
+IArc3dParam " интерфейс COM
+
+Описание:
+Трехмерная дуга определяется положением плоскости, в которой эта дуга лежит, углом
+раствора и радиусом. Угол раствора отсчитывается от оси OX плоскости дуги.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksCurve3D::GetCurveParam.
+
+IArc3dParam  свойства
+
+angle  Угол раствора дуги
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+angle = iArc3dParam.angle Получить
+свойство (* )
+
+angle = Получить
+iArc3dParam.GetAngle() свойство
+
+(**)
+3429
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+radius  Радиус дуги
+Интерфейс...Тип данных: double
+Синтаксис Automation:
+
+radius = iArc3dParam.radius Получить
+свойство (* )
+
+radius = Получить
+iArc3dParam.GetRadius() свойство
+
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+IArc3dParam  методы
+
+GetPlacement  Получить систему координат дуги
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetPlacement();
+Синтаксис COM:
+LPPLACEMENT GetPlacement();
+Возвращаемое значение:
+
+" указатель на интерфейс ksPlacement или IPlacement.
+
+Параметры трехмерных NURBS (Интерфейсы 
+ksNurbs3dParam,INurbs3dParam)
+Интерфейс параметров трехмерных NURBS.
+
+ksNurbs3dParam " интерфейс Automation
+INurbs3dParam " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksCurve3D::GetCurveParam.
+3430
+
+
+
+INurbs3dParam  свойства
+
+close  Замкнутость сплайна
+Интерфейс...Тип данных: BOOL
+Синтаксис Automation:
+
+close = iNurbs3dParam.close Получить
+свойство (* )
+
+close = Получить
+iNurbs3dParam.GetClose() свойство
+
+(**)
+
+Значения свойства:
+
+TRUE " сплайн замкнутый,
+FALSE " сплайн разомкнутый.
+
+Примечания:
+Свойство доступно только для чтения.
+
+degree  Порядок NURBS (степень полинома + 1), от 3 до 10
+Интерфейс...Тип данных: short
+Синтаксис Automation:
+
+degree = Получить
+iNurbs3dParam.degree свойство (* )
+degree = Получить
+iNurbs3dParam.GetDegree() свойство
+
+(**)
+
+Примечания:
+Свойство доступно только для чтения.
+
+periodic  Периодичность сплайна
+Интерфейс...Тип данных: BOOL
+Синтаксис Automation:
+
+periodic = Получить
+iNurbs3dParam.periodic свойство (* )
+periodic = Получить
+iNurbs3dParam.GetPeriodic() свойство
+
+(**)
+3431
+
+
+
+Значения свойства:
+
+TRUE " сплайн периодический,
+FALSE " сплайн непериодический.
+
+Примечания:
+Свойство доступно только для чтения.
+
+INurbs3dParam  методы
+
+GetMinMaxParameters  Получить параметры кривой
+Интерфейс...Синтаксис Automation:
+BOOL GetMinMaxParameters (BOOL closed, double * tMin,  double * tMax);
+Синтаксис COM:
+BOOL GetMinMaxParameters (BOOL closed, double * tMin,  double * tMax);
+Входные параметры:
+
+Closed  " TRUE " получение параметров для замкнутого представления, 
+ " FALSE " получение параметров для разомкнутого представления.
+
+Выходные параметры:
+
+tMin  " значение минимального параметра,
+tMax  " значение максимального параметра.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+GetNurbsPoints3DParams  Получить параметры точек для 
+Nurbs 3D
+Интерфейс...Синтаксис Automation:
+BOOL GetNurbsPoints3DParams( BOOL unClamped, VARIANT * points, VARIANT * weights,
+VARIANT * knots );
+Синтаксис COM:
+BOOL GetNurbsPoints3DParams( BOOL unClamped, VARIANT * points, VARIANT * weights,
+VARIANT * knots );
+Входные параметры:
+3432
+
+
+
+unClamped " true " вернуть параметры точек для замкнутого представления,
+" false " вернуть параметры точек для разомкнутого представления.
+
+Выходные параметры:
+
+points " координаты точек " массив SafeArray вещественных чисел 
+VT_ARRAY | VT_R8,
+
+weights  " веса точек " массив SafeArray вещественных чисел VT_ARRAY 
+| VT_R8,
+
+knots " узлы точек " массив SafeArray вещественных чисел VT_ARRAY 
+| VT_R8.
+
+Примечания:
+Координаты точек в полученном массиве лежат в следующей последовательности:
+ x0, y0, z0, x1, y1, z1, ...xi, yi, zi.
+
+NurbsKnotCollection  Получить указатель на интерфейс 
+массива узлов для трехмерного NURBS
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetKnotCollection();
+Синтаксис COM:
+LPNURBSKNOTCOLLECTION GetKnotCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsKnotCollection или 
+INurbsKnotCollection массива узлов для трехмерных NURBS 
+поверхностей.
+
+NurbsPoint3DCollection  Получить указатель на интерфейс 
+массива точек для трехмерного NURBS
+Интерфейс...LPDISPATCH GetPointCollection();
+Синтаксис COM:
+LPNURBSPOINT3DCOLLECTION GetPointCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3DCollection
+или INurbsPoint3DCollection массива точек для трех"
+мерных NURBS.
+3433
+
+
+
+Массив точек для трехмерных NURBS (Интерфейсы 
+ksNurbsPoint3dCollection, INurbsPoint3dCollection)
+Интерфейс массива точек для трехмерных NURBS.
+
+ksNurbsPoint3dCollection " интерфейс Automation
+INurbsPoint3dCollection " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+ksNurbs3dParam::NurbsPoint3DCollection.
+
+INurbsPoint3dCollection  методы
+
+Add  Добавить объект в конец массива
+Интерфейс...Синтаксис Automation:
+BOOL Add (LPDISPATCH obj);
+Синтаксис COM:
+BOOL Add (LPNURBSPOINT3DPARAM obj);
+Входной параметр:
+
+obj " указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam параметров точки для
+трехмерной NURBS.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатель на интерфейс добавляемого объекта obj не должен быть равен 0.
+
+AddAt  Добавить объект с заданным индексом в массив
+Интерфейс...Синтаксис Automation:
+BOOL AddAt (LPDISPATCH obj, long index);
+Синтаксис COM:
+BOOL AddAt (LPNURBSPOINT3DPARAM obj, long index);
+Входные параметры:
+
+obj " указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam параметров точки для
+трехмерной NURBS,
+3434
+
+
+
+index " индекс в массиве.
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатель на интерфейс добавляемого объекта obj не должен быть равен 0.
+
+AddBefore  Добавить объект перед указанным объектом в 
+массиве
+Интерфейс...Синтаксис Automation:
+BOOL AddBefore (LPDISPATCH obj, LPDISPATCH base);
+Синтаксис COM:
+BOOL AddBefore (LPNURBSPOINT3DPARAM obj, LPNURBSPOINT3DPARAM base);
+Входные параметры:
+
+obj " указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam добавляемого объекта,
+
+base " указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam базового объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатели на интерфейсы добавляемого и базового объекта obj и base не должны быть
+равны 0.
+
+Clear  Очистить массив
+Интерфейс...Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+BOOL Clear();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+3435
+
+
+
+Объекты удаляются только из массива, в модель изменения не передаются.
+
+DetachByBody  Удалить указанный объект из массива
+Интерфейс...Синтаксис Automation:
+BOOL DetachByBody (LPDISPATCH obj);
+Синтаксис COM:
+BOOL DetachByBody (LPNURBSPOINT3DPARAM obj);
+Входные параметры:
+
+obj " указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam удаляемого объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+Указатель на интерфейс удаляемого объекта obj не должен быть равен 0.
+
+DetachByIndex  Удалить объект из массива по индексу
+Интерфейс...Синтаксис Automation:
+BOOL DetachByIndex (long index);
+Синтаксис COM:
+BOOL DetachByIndex (long index);
+Входной параметр:
+
+index " индекс удаляемого объекта в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Элемент массива из модели не удаляется.
+
+GetByIndex  Получить указатель на интерфейс объекта в массиве 
+по индексу
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetByIndex (long index);
+3436
+
+
+
+Синтаксис COM:
+LPNURBSPOINT3DPARAM GetByIndex (long index);
+Входной параметр:
+
+index " номер объекта в массиве.
+
+Возвращаемое значение:
+
+указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam.
+
+GetCount  Получить количество элементов в массиве
+Интерфейс...Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+long GetCount();
+Возвращаемое значение:
+
+" количество элементов массива.
+
+FindIt  Получить индекс элемента в коллекции
+Интерфейс...Синтаксис Automation:
+long FindIt (LPDISPATCH entity);
+Входные параметры:
+
+entity " указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam точки для трехмерного
+NURBS.
+
+Возвращаемое значение:
+
+индекс элемента в " если элемент найден в коллекции,
+массиве.
+"1 " элемент в коллекции не найден.
+
+Синтаксис COM:
+unsigned long FindIt (LPNURBSPOINT3D entity);
+Входные параметры:
+3437
+
+
+
+entity " указатель на интерфейс ksNurbsPoint3dParam или 
+INurbsPoint3dParam точки для трехмерного NURBS.
+
+Возвращаемое значение:
+
+индекс элемента в " если элемент найден в коллекции,
+массиве.
+SYS_MAX_UINT " элемент в коллекции не найден.
+
+First  Получить указатель на интерфейс первого объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPNURBSPOINT3DPARAM First();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam.
+
+Last  Получить указатель на интерфейс последнего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Last();
+Синтаксис COM:
+LPNURBSPOINT3DPARAM Last();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam.
+
+Next  Получить указатель на интерфейс следующего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Next();
+Синтаксис COM:
+LPNURBSPOINT3DPARAM Next();
+Возвращаемое значение:
+3438
+
+
+
+" указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam.
+
+Prev  Получить указатель на интерфейс предыдущего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Prev();
+Синтаксис COM:
+LPNURBSPOINT3DPARAM Prev();
+Возвращаемое значение:
+
+" указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam.
+
+Refresh  Обновить массив
+Интерфейс...Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+После вызова данной функции возникает полное соответствие массива с массивом то"
+чек ребра (поверхности), и удаляются все предыдущие изменения в массиве.
+
+SetByIndex  Заменить объект с указанным индексом в массиве на 
+присланный объект
+Интерфейс...Синтаксис Automation:
+BOOL SetByIndex (LPDISPATCH obj, long index );
+Синтаксис COM:
+BOOL SetByIndex (LPNURBSPOINT3DPARAM obj, long index );
+Входные параметры:
+3439
+
+
+
+obj " указатель на интерфейс ksNurbsPoint3dParam
+или INurbsPoint3dParam присоединяемого объ"
+екта,
+
+index " индекс элемента в массиве.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Массив узлов для трехмерных NURBS поверхностей 
+(Интерфейсы ksNurbsKnotCollection, 
+INurbsKnotCollection)
+3440
+
+
+
+Объект Дерева построения (Интерфейсы ksFeature, 
+IFeature)
+Справка системы КОМПАС...
+kompas.chm::/659_81_3_Derevo_modeli.htm
+Интерфейс объекта Дерева построения.
+
+ksFeature " интерфейс Automation
+IFeature " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием методов следующих интер"
+фейсов:
+
+▼ Интерфейса объекта Дерева построения ksFeatureCollection,
+▼ Интерфейса детали или подсборки в составе сборки ksPart.
+
+IFeature  свойства
+
+excluded  Признак включения или выключения из расчета
+Интерфейс...
+
+Справка системы КОМПАС...
+kompas.chm::/962_117_10_Iskljuchenie_obwekto.htm
+Тип данных: BOOL
+Синтаксис Automation:
+
+excluded = iFeature.excluded Получить
+свойство (* )
+
+iFeature.excluded = excluded Установить
+свойство (* )
+
+excluded = Получить
+iFeature.GetExcluded() свойство (**)
+iFeature.SetExcluded(excluded Установить
+) свойство (**)
+
+name  Имя объекта
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+3441
+
+
+
+name = iFeature.name Получить
+свойство (* )
+
+name = iFeature.GetName() Получить
+свойство
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+objectError  Признак ошибки объекта
+Интерфейс...
+Тип данных: long.
+Синтаксис Automation:
+
+objectError = Получить
+object.objectError свойство (* )
+objectError = Получить
+object.GetObjectError() свойство
+
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+type  Тип объекта модели
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+type = iFeature.type Получить
+свойство (* )
+
+type = iFeature.GetType() Получить
+свойство
+(**)
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. Тип возвращаемого объекта может принимать значения:
+
+o3d_part " деталь,
+o3d_entity " объект,
+o3d_mateConstraint " сопряжение,
+o3d_body "тело. IBody или ksBody.
+3442
+
+
+
+Выбирается из Obj3dType. 
+
+updateStamp  Значение, определяющее время изменения 
+геометрии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+updateStamp = Получить
+iFeature.updateStamp свойство (* )
+updateStamp = Получить
+iFeature.GetUpdateStamp( свойство
+
+(**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+Feature  методы
+
+AttributeCollection  Получить массив атрибутов
+Интерфейс...
+Синтаксис Automation:
+ksAttribute3DCollection* AttributeCollection (long key1,
+long key2,
+long key3,
+long key4,
+double numb);
+Синтаксис COM:
+LPATTRIBUTE3DCOLLECTION AttributeCollection (long key1,
+long key2,
+long key3,
+long key4,
+double numb);
+Входные параметры:
+
+key1, key2, key3, key4 " ключи для поиска по ключам либо 0,
+Numb " номер типа атрибута для поиска по номеру либо 0.
+
+Возвращаемое значение:
+
+" указатель на массив атрибутов ksAttribute3DCollection.
+3443
+
+
+
+Примечание:
+Атрибут " это дополнительная неграфическая информация, связанная с объектом или
+несколькими объектами чертежа. Такая информация может быть представлена в виде
+числа, строки текста, а также таблицы с фиксированным или переменным числом строк.
+В дальнейшем значения атрибутов могут использоваться для поиска объектов, а также
+обрабатываться различными приложениями (например, системой проектирования спе"
+цификаций, различными расчетными программами и т.п.).
+Типы (описания структуры) атрибутов могут храниться как непосредственно в докумен"
+те, так и в специальных файлах (библиотеках типов атрибутов). Эти файлы имеют рас"
+ширение lat.
+
+AttributeCollectionEx  Получить массив атрибутов из 
+источника вставки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AttributeCollectionEx (long key1,
+long key2,
+long key3,
+long key4,
+double numb,
+LPDISPATCH sourcePart);
+Синтаксис COM:
+LPATTRIBUTE3DCOLLECTION AttributeCollectionEx (long key1,
+long key2,
+long key3,
+long key4,
+double numb,
+LPPART sourcePart);
+Входные параметры:
+
+key1, key2, key3, key4 " ключи для поиска по ключам либо 0,
+Numb " номер типа атрибута для поиска по номеру либо 0,
+sourcePart " указатель на интерфейс вставки"источника ksPart  или IPart.
+
+Возвращаемое значение:
+
+" указатель на интерфейс коллекции атрибутов 
+ksAttribute3DCollection или IAttribute3DCollection.
+
+Примечание:
+Атрибут " это дополнительная неграфическая информация, связанная с объектом или
+несколькими объектами чертежа. Такая информация может быть представлена в виде
+числа, строки текста, а также таблицы с фиксированным или переменным числом строк.
+3444
+
+
+
+В дальнейшем значения атрибутов могут использоваться для поиска объектов, а также
+обрабатываться различными приложениями (например, системой проектирования спе"
+цификаций, различными расчетными программами и т.п.).
+Типы (описания структуры) атрибутов могут храниться как непосредственно в докумен"
+те, так и в специальных файлах (библиотеках типов атрибутов). Эти файлы имеют рас"
+ширение lat.
+
+BodyCollection  Получить указатель на интерфейс массива 
+трехмерных тел
+Интерфейс...
+Синтаксис Automation:
+LPBODYCOLLECTION BodyCollection();
+Синтаксис COM:
+LPBODYCOLLECTION BodyCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс массива тел ksBodyCollection или 
+IBodyCollection.
+
+EntityCollection  Получить массив объектов (грани, ребра, 
+вершины)
+Интерфейс...
+Синтаксис Automation:
+ksEntityCollection * EntityCollection (short objType);
+Синтаксис COM:
+LPENTITYCOLLECTION EntityCollection (short objType);
+Входные параметры:
+
+objType " тип объектов (грани, ребра, вершины).
+
+Возвращаемое значение:
+
+указатель на интерфейс ksEntityCollection " в случае успеха,
+или IEntityCollection
+NULL " в случае неудачи.
+3445
+
+
+
+re.
+GetObject  Получить объект модели, связанный с объектом 
+дерева
+Интерфейс...
+
+Справка системы КОМПАС...
+kompas.chm::/919_109_2_Ierarkhicheskaja_para.htm
+Синтаксис Automation:
+LPDISPATCH GetObject();
+Синтаксис COM:
+LPUNKNOWN GetObject();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта.
+
+Примечание:
+Тип возвращаемого объекта выбирается из Obj3dType. Может принимать значение:
+
+o3d_part " деталь,
+o3d_entity " объект,
+o3d_mateConstraint " сопряжение,
+o3d_body "тело IBody или kIsBody
+
+GetOwnerFeature  Получить указатель на интерфейс 
+объекта, в состав которого входит данный объект
+Интерфейс...
+
+Справка системы КОМПАС...
+kompas.chm::/919_109_2_Ierarkhicheskaja_para.htm
+Синтаксис Automation:
+LPDISPATCH GetOwnerFeature();
+Синтаксис COM:
+LPFEATURE GetOwnerFeature();
+Возвращаемое значение:
+
+" указатель на интерфейс ksFeature или IFeatu
+3446
+
+
+
+IsModified  Определить, модифицирована ли модель с 
+момента последнего перестроения
+Интерфейс...
+Синтаксис Automation:
+BOOL IsModified (BOOL recursive);
+Синтаксис COM:
+BOOL IsModified (BOOL recursive);
+Входной параметр:
+
+recursive TRUE Определять по вложенным объектам.
+
+Возвращаемое значение:
+
+TRUE " модель изменена с момента последнего перестроения,
+FALSE " модель не изменена.
+
+IsRollBacked  Лежит ли объект ниже конца построения 
+модели
+Интерфейс...
+Синтаксис Automation:
+BOOL IsRollBacked();
+Синтаксис COM:
+BOOL IsRollBacked();
+Возвращаемое значение:
+
+TRUE " объект лежит ниже конца построения модели,
+FALSE " объект лежит выше конца построения модели.
+
+IsVIalid  Получить индикатор доступности объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL IsValid();
+Синтаксис COM:
+BOOL IsValid();
+Возвращаемое значение:
+
+TRUE " объект доступен,
+FALSE " объект недоступен.
+3447
+
+
+
+Примечание:
+Метод позволяет получить информацию о том, что элемент дерева построения доступен
+для редактирования. Элемент дерева построения может стать недоступным, например,
+если он исключен из расчета или указатель окончания построения перемещен в дереве
+выше этого элемента.
+
+SubFeatureCollection  Получить массив объектов, входящих в 
+данный объект
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH SubFeatureCollection (BOOL through, BOOL libObject);
+Синтаксис COM:
+LPFEATURECOLLECTION SubFeatureCollection (BOOL through, BOOL libObject);
+Входные параметры:
+
+Through TRUE " выдавать все объекты, включая скрытые,
+libObject TRUE " выдавать состав библиотечных элементов.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksFeatureCollection или 
+IFeatureCollection.
+
+VariableCollection  Получить указатель на интерфейс 
+массива внешних переменных
+Интерфейс...
+
+Справка системы КОМПАС...
+kompas.chm::/1868_175_5_vneshn_peremen.htm
+Синтаксис Automation:
+LPDISPATCH VariableCollection();
+Синтаксис COM:
+LPVARIABLECOLLECTION VariableCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksVariableCollection или 
+IVariableCollection.
+
+Примечание:
+Изменения в полученном массиве не отображаются в модели немедленно. Чтобы изме"
+нения вступили в силу, необходимо вызвать метод ksPart::RebuildModel.
+3448
+
+
+
+VariableCollectionEx  Получить массив переменных из 
+источника
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH VariableCollectionEx( BOOL sourсe );
+Синтаксис COM:
+LPVARIABLECOLLECTION VariableCollectionEx( BOOL sourсe );
+Входные параметры:
+
+Sourсe " признак получения списка переменных и значений из 
+источника.
+
+Возвращаемое значение:
+
+" указатель на интерфейс коллекции переменных ksVariableCollection или 
+IvariableCollection.
+
+Примечание:
+Метод позволяет получать и изменять переменные в исходном документе детали без от"
+крытия документа в отдельном окне или вслепую.
+
+Массив объектов Дерева построения (Интерфейсы 
+ksFeatureCollection, IFeatureCollection)
+Интерфейс массива объектов Дерева построения.
+
+ksFeatureCollection " интерфейс Automation
+IFeatureCollection " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием методов интерфейсов:
+
+▼ ksFeature::SubFeatureCollection,
+▼ ksMacro3DDefinition::FeatureCollection,
+▼ ksDocument3D::FeatureCollection.
+
+ksFeatureCollection  методы
+
+Add  Добавить объект в массив
+Интерфейс...
+Синтаксис Automation:
+BOOL Add (ksFeature* obj);
+Синтаксис COM:
+3449
+
+
+
+BOOL Add (LPFEATURE obj);
+Входные параметры:
+
+obj " указатель на интерфейс компонента ksFeature или IFeature.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+AddAt  Добавить в массив объект с заданным индексом
+Интерфейс...
+Синтаксис Automation:
+BOOL AddAt (ksFeature* obj, long index );
+Синтаксис COM:
+BOOL AddAt (LPFEATURE obj, long index );
+Входные параметры:
+
+obj " указатель на интерфейс компонента ksFeature или IFeature,
+index " индекс нового элемента.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание.
+При добавлении тела в макроэлемент в макроэлемент добавляются все операции данно"
+го тела на момент создания макроэлемента. Само тело в макроэлемент не добавляется.
+
+AddBefore  Добавить объект перед указанным объектом в 
+массиве
+Интерфейс...
+Синтаксис Automation:
+BOOL AddBefore (ksFeature* obj, ksFeature* base);
+Синтаксис COM:
+BOOL AddBefore (LPFEATURE obj, LPFEATURE base);
+Входные параметры:
+
+obj " указатель на интерфейс компонента ksFeature или IFeature,
+base " указатель на элемент массива.
+3450
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+AttributeCollection  Получить массив атрибутов
+Интерфейс...
+Синтаксис Automation:
+ksAttribute3DCollection* AttributeCollection (long key1,
+long key2,
+long key3,
+long key4,
+double numb);
+Синтаксис COM:
+LPATTRIBUTE3DCOLLECTION AttributeCollection (long key1,
+long key2,
+long key3,
+long key4,
+double numb);
+Входные параметры:
+
+key1, key2, key3, key4 " ключи для поиска по ключам либо 0,
+numb " номер типа атрибута для поиска по номеру либо 0.
+
+Возвращаемое значение:
+
+Указатель на массив атрибутов ksAttribute3DCollection
+
+Примечание:
+Атрибут " это дополнительная неграфическая информация, связанная с объектом или
+несколькими объектами чертежа. Такая информация может быть представлена в виде
+числа, строки текста, а также таблицы с фиксированным или переменным числом строк.
+Значения атрибутов могут использоваться для поиска объектов, а также обрабатываться
+различными приложениями, например, системой проектирования спецификаций, раз"
+личными расчетными программами и т.п.
+Типы (описания структуры) атрибутов могут храниться как непосредственно в докумен"
+те, так и в специальных файлах " библиотеках типов атрибутов. Эти файлы имеют рас"
+ширение lat.
+Структура параметров табличного атрибута.
+3451
+
+
+
+Clear  Очистить динамический массив объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+DetachByBody  Удалить указанный объект из массива
+Интерфейс...
+Синтаксис Automation:
+BOOL DetachByBody (LPDISPATCH obj);
+Синтаксис COM:
+BOOL DetachByBody (LPFEATURE obj);
+Входные параметры:
+
+obj " указатель на интерфейс удаляемого объекта
+ksFeature или IFeature.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Указатель на интерфейс удаляемого объекта obj не должен быть 0.
+
+DetachByIndex  Удалить объект из массива по индексу
+Интерфейс...
+Синтаксис Automation:
+BOOL DetachByIndex (long index);
+Синтаксис COM:
+BOOL DetachByIndex (long index);
+Входные параметры:
+
+index " индекс элемента.
+
+Возвращаемое значение:
+3452
+
+
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+FindIt  Получить индекс элемента в массиве
+Интерфейс...
+Синтаксис Automation:
+long FindIt (LPDISPATCH entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+"1 " если элемент не найден.
+
+Синтаксис COM:
+unsigned long FindIt(LPFEATURE entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+SYS_MAX_UINT " если элемент не найден.
+
+Входные параметры:
+
+entity " указатель на интерфейс компонента ksFeature или IFeature.
+
+First  Получить указатель на интерфейс первого объекта в 
+массиве
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPFEATURE First();
+Возвращаемое значение:
+
+" указатель на интерфейс ksFeature или IFeature.
+
+GetByIndex  Получить указатель на интерфейс объекта в 
+массиве по индексу
+Интерфейс...
+Синтаксис Automation:
+3453
+
+
+
+LPDISPATCH GetByIndex (long index);
+Синтаксис COM:
+LPFEATURE GetByIndex (long index);
+Входной параметр:
+
+index " номер объекта в массиве.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksFeature или IFeature.
+
+GetByName  Получить указатель на интерфейс объекта в 
+массиве по имени
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetByName (BSTR name,
+BOOL testFullName,
+BOOL testIgnoreCase);
+Синтаксис COM:
+LPFEATURE GetByName (LPOLESTR name, 
+BOOL testFullName, 
+BOOL testIgnoreCase);
+Входные параметры:
+
+name " имя объекта,
+testFullNa " признак полного имени:
+me TRUE " name " полное имя, 
+

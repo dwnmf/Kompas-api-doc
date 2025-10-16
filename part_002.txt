@@ -1,0 +1,2533 @@
+ссылку на параметры все время от начала до завершения их использования. При повтор"
+ном вызове этого метода будут созданы новые параметры.
+
+CreatePropertyManager  Создать Панель свойств
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH CreatePropertyManager (BOOL newManager);
+Синтаксис COM:
+HRESULT CreatePropertyManager([in, defaultvalue(FALSE)] VARIANT_BOOL newManager,
+[out, retval] IPropertyManager** propertyManager);
+Входные параметры:
+
+newManager " тип создаваемой Панели свойств:
+TRUE " библиотечная (создаваемая библиотекой) панель свойств,
+FALSE " панель свойств процесса системы КОМПАС"3D.
+
+Возвращаемое значение:
+
+ указатель на интерфейс IPropertyManager Панели свойств.
+
+Примечание:
+57
+
+
+
+ 
+
+1. При получении интерфейса доступа к панели свойств процесса системы КОМПАС"3D бу"
+дет возможно добавление собственных вкладок с элементами управления. Все осталь"
+ные вкладки и их элементы управления будут недоступны.
+
+2. Библиотечная (создаваемая библиотекой) панель свойств и/или создаваемые библиоте"
+кой вкладки на панели свойств процесса системы КОМПАС"3D будут удалены после ос"
+вобождения библиотекой их интерфейса, поэтому библиотека должна держать ссылку
+на интерфейс панели свойств все время от начала до завершения ее использования.
+
+3. При повторном вызове этого метода будет будет создана новая библиотечная (создава"
+емая библиотекой) панель свойств и/или создаваемые библиотекой вкладки на панели
+свойств процесса системы КОМПАС"3D.
+
+ExecuteKompasCommand  Выполнить команду системы 
+КОМПАС
+Интерфейс...
+Синтаксис Automation:
+BOOL ExecuteKompasCommand (long commandID, BOOL post);
+Синтаксис COM:
+HRESULT ExecuteKompasCommand (long commandID, BOOL post, BOOL * retval);
+Входные параметры:
+
+commandID " константа из перечисления ProcessTypeEnum или 
+ksKompasCommandEnum.
+
+post " true " запуск команды через PostMessage,
+" false " через SendMessage.
+
+Возвращаемое значение:
+
+TRUE " в случае удачи,
+FALSE " в случае ошибки.
+
+Примечание:
+
+1. Проверить доступность команды можно с помощью функции
+IApplication::IsKompasCommandEnable.
+
+2. Проверить, нажата ли в данный момент кнопка команды, можно с помощью
+IApplication::IsKompasCommandCheck.
+
+IsKompasCommandEnable  Проверить доступность 
+выполнения команды
+Интерфейс...
+Синтаксис Automation:
+BOOL IsKompasCommandEnable (long commandID);
+Синтаксис COM:
+58
+
+
+
+ 
+
+HRESULT IsKompasCommandEnable (long commandID, BOOL * retVal);
+Входные параметры:
+
+commandID " константа из перечисления ProcessTypeEnum или 
+ksKompasCommandEnum.
+
+Возвращаемое значение:
+
+TRUE " команда доступна,
+FALSE " команда недоступна.
+
+IsKompasCommandCheck  Проверить, нажата ли кнопка 
+команды
+Интерфейс...
+Синтаксис Automation:
+long IsKompasCommandCheck (long commandID);
+Синтаксис COM:
+HRESULT IsKompasCommandCheck (long commandID, long * retVal);
+Входные параметры:
+
+commandID " константа из перечисления ProcessTypeEnum или 
+ksKompasCommandEnum.
+
+Возвращаемое значение:
+
+1 " кнопка нажата,
+0 " кнопка отжата.
+
+MessageBoxEx  Выдать всплывающее сообщение
+Интерфейс...
+Синтаксис Automation:
+long MessageBoxEx( BSTR Text, BSTR Caption, long Flags )
+Синтаксис COM:
+HRESULT MessageBoxEx( BSTR Text, BSTR Caption, long Flags, long * Result );
+Входные параметры:
+
+Text  " текст сообщения,
+Caption  " заголовок сообщения,
+Flags  " флаги.
+
+Примечание:
+59
+
+
+
+ 
+
+Параметр Flags и возвращаемое значение соответствует аналогичной функции WinApi
+MessageBox.
+Дополнительно функция позволяет выдать всплывающее сообщение если в настройках
+Компас установлен признак Сервис>Параметры>Система>Общее>Всплыва
+ющие сообщения>Использовать всплывающие сообщения вместо информа
+ционных диалогов.
+Сообщение выдается всплывающим, если используется комбинация флагов MB_OK |
+MB_ICONINFORMATION или MB_OK | MB_ICONWARNING.
+Если установлены какие"либо другие флаги, то сообщение выдается как обычное сооб"
+щение типа MessageBox.
+Если не задан заголовок сообщения, выдается умолчательный заголовок " «Сообщение
+библиотеки».
+Если не задан текст сообщения, выдается сообщение о текущей ошибке аналогично фун"
+кции MessageBoxResult.
+
+MessageDlg  Выдать модельное сообщение
+Интерфейс...
+Синтаксис Automation:
+long MessageDlg( OLE_HANDLE Parent, BSTR Text, BSTR Caption, BSTR Explanation, long
+Flags, BSTR PositiveButton, BSTR NegativeButton, BSTR CancelButton, long HelpId, BSTR
+HelpFileName );
+Синтаксис COM:
+HRESULT MessageDlg( OLE_HANDLE Parent, BSTR Text, BSTR Caption, BSTR Explanation,
+long Flags, BSTR PositiveButton, BSTR NegativeButton, BSTR CancelButton, long HelpId,
+BSTR HelpFileName, long * Result );
+Возвращаемое значение:
+ 
+
+"   идентификатор нажатой в диалоге кнопки.
+
+Входные параметры:
+
+Parent " дескриптор родительского окна,
+Text " текст сообщения,
+Caption " заголовок,
+Explanation " дополнительный текст сообщения,
+Flags " флаги,
+PositiveButton " текст кнопки для позитивного результата,
+NegativeButton " текст кнопки для негативного результата,
+CancelButton " текст кнопки для отмены,
+HelpId " идентификатор справки,
+HelpFileName " имя файла справки.
+
+Примечание:
+60
+
+
+
+ 
+
+1. Параметр Flags и возвращаемое значение соответствует аналогичной функции WinApi
+MessageBox.
+
+2. Тексты кнопок не обязательные параметры.
+3. Если тексты не заданы, используются названия кнопок по умолчанию.
+4. Наличие кнопок в диалоге зависит от параметра Flags.
+
+Quit  Закрыть приложение
+Интерфейс...
+Синтаксис Automation:
+void Quit();
+Синтаксис COM:
+HRESULT Quit();
+Примечание:
+Используется при работе из"под внешнего контроллера.
+
+StopCurrentProcess  Остановить текущий процесс 
+в документе
+Интерфейс...
+Синтаксис Automation:
+void StopCurrentProcess (BOOL postMessage, LPDISPATCH pDoc);
+Синтаксис COM:
+HRESULT StopCurrentProcess([in, defaultvalue(FALSE)]VARIANT_BOOL postMessage, [in,
+defaultvalue(0)] IKompasDocument* pDoc);
+Входные параметры:
+
+postMessage " способ остановки процесса,
+pDoc " указатель на интерфейс IKompasDocument, 
+
+ в котором требуется остановить процесс.
+
+Примечание:
+
+1. Если процесс требуется остановить немедленно то параметр postMessage должен иметь
+значение FALSE, однако такая остановка не всегда возможна, например, остановка из
+обработчика события. В этом случае результат обработки события должен быть обрабо"
+тан процессом; в этом случае процессу надо сообщить чтобы он остановился после об"
+работки события. Для этого параметру postMessage нужно установить значение TRUE.
+
+2. Если параметру pDoc установлено значение 0, то процесс будет остановлен в текущем
+документе.
+
+IApplication  события
+См. Интерфейс ksKompasObjectNotify
+61
+
+
+
+ 
+
+Менеджер лицензий
+Интерфейс IApplicationLicenseManager
+Менеджер лицензий
+Иерархия:
+IDispatch
+
+IApplicationLicenseManager
+Примечание:
+Интерфейс является дополнительным к интерфейсу приложения IApplication. Интер"
+фейс можно получить посредством вызова метода IUnknown::QueryInterface  (const GUID
+far& iid, void** pif).
+Версия: Компас v19
+
+IApplicationLicenseManager  свойства
+
+KompasModuleActive  Доступность компонентов 
+КОМПАС
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+KompasModuleActive = Получить свойство (* )
+Object.KompasModuleActive( 
+Module )
+Object.KompasModuleActive( Установить свойство (* )
+Module ) = 
+KompasModuleActive
+KompasModuleActive = Получить свойство (**)
+Object.GetKompasModuleActiv
+e( Module )
+Object.SetKompasModuleActiv Установить свойство (* )
+e( Module, 
+KompasModuleActive )
+
+Синтаксис COM:
+
+Object.get_KompasModuleActive( Получить свойство
+Module, &KompasModuleActive )
+Object.put_KompasModuleActive( Установить свойство
+Module, KompasModuleActive )
+
+Входные параметры:
+62
+
+
+
+ 
+
+ksKompasModuleEnum " Module " Модули Компас.
+
+KompasVariant  Получение типа установленного 
+дистрибутива в виде комбинации флагов
+из ksKompasVariantEnum
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+KompasVariant = Object.KompasVariant Получить свойство (* )
+KompasVariant = Object.GetKompasVariant() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_KompasVariant( &KompasVariant ) Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+LibraryActive  Доступность продукта по номеру
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+LibraryActive = Object.LibraryActive( ProductNumber ) Получить свойство (* )
+Object.LibraryActive( ProductNumber ) = LibraryActive Установить свойство (* )
+LibraryActive = Object.GetLibraryActive( ProductNumber ) Получить свойство (**)
+Object.SetLibraryActive( ProductNumber, LibraryActive ) Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_LibraryActive( ProductNumber, &LibraryActive ) Получить свойство
+Object.put_LibraryActive(  ProductNumber, LibraryActive ) Установить свойство
+
+Входные параметры:
+
+ long   ProductNumber " номер продукта.
+
+LibraryLocalStatus  Признак локальный/
+сетевой продукт
+Интерфейс...
+Тип данных: BOOL
+63
+
+
+
+ 
+
+Синтаксис Automation:
+
+LibraryLocalStatus = Object.LibraryLocalStatus( ProductNumber ) Получить свойство (* )
+LibraryLocalStatus = Object.GetLibraryLocalStatus( ProductNumber ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LibraryLocalStatus( ProductNumber, Получить свойство (* )
+&LibraryLocalStatus )
+
+Входные параметры:
+
+ long   ProductNumber " номер продукта.
+
+Примечание:
+Свойство доступно только для чтения.
+
+LibraryStatus  Получить текущий статус продукта 
+по номеру
+Интерфейс...
+Тип данных: из перечисления ksProtectProductStatusEnum.
+Синтаксис Automation:
+
+LibraryStatus = Object.LibraryStatus( ProductNumber ) Получить свойство (* )
+LibraryStatus = Object.GetLibraryStatus( ProductNumber ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LibraryStatus( ProductNumber, &LibraryStatus ) Получить свойство (* )
+
+Входные параметры:
+
+ long   ProductNumber " номер продукта.
+
+Примечание:
+Свойство доступно только для чтения.
+
+LibraryTrialStatus  Ознакомительный период
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+LibraryTrialStatus = Object.LibraryTrialStatus( ProductNumber ) Получить свойство (* )
+LibraryTrialStatus = Object.GetLibraryTrialStatus( ProductNumber ) Получить свойство (**)
+64
+
+
+
+ 
+
+)
+
+Синтаксис COM:
+
+Object.get_LibraryTrialStatus( ProductNumber, &LibraryTrialStatus ) Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+LibraryProductKeyInfo  Информация о текущей сессии
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+LibraryProductKeyInfo = Object.LibraryProductKeyInfo(ProductNumber) Получить свойство (* )
+LibraryProductKeyInfo = Object.GetLibraryProductKeyInfo(ProductNumber) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LibraryProductKeyInfo(ProductNumber, &LibraryProductKeyInfo ) Получить свойство (* 
+
+Входные параметры:
+
+ long   ProductNumber " номер продукта.
+
+Примечание:
+Свойство доступно только для чтения.
+
+LibraryProductName  Получить название продукта
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+LibraryProductName = Object.LibraryProductName( ProductNumber ) Получить свойство (* )
+LibraryProductName = Object.GetLibraryProductName( ProductNumber ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LibraryProductName( ProductNumber, &LibraryProductName ) Получить свойство (* )
+
+Входные параметры:
+
+ long   ProductNumber " номер продукта.
+
+Примечание:
+Свойство доступно только для чтения.
+65
+
+
+
+ 
+
+IApplicationLicenseManager  методы
+
+EnableKompasInvisible  Установить ключ
+для КОМПАС Invisible
+Интерфейс...
+Синтаксис Automation:
+BOOL EnableKompasInvisible( BSTR Key, BSTR Signature );
+Синтаксис COM:
+HRESULT EnableKompasInvisible( BSTR Key, BSTR Signature, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения.
+
+Входные параметры:
+
+ Key " имя (передается из внешнего приложения),
+ Signature " лицензия для проверки подлинности 
+
+(передается из внешнего приложения).
+
+RegisterLibraryNumber  Зарегистрировать номер 
+продукта на сервере лицензий Компас
+Интерфейс...
+Синтаксис Automation:
+long RegisterLibraryNumber( long ProductNumber ); 
+Синтаксис COM:
+HRESULT RegisterLibraryNumber( long ProductNumber, long * ProductNumbUnicueId  );
+Возвращаемое значение: 
+
+   Уникальный идентификатор продукта.
+
+Входные параметры:
+
+ long   ProductNumber " номер продукта.
+
+Примечание
+Уникальный идентификатор продукта используется для разрегистрации продукта фун"
+кцией IApplicationLicenseManager::UnRegisterLibraryNumber.
+66
+
+
+
+ 
+
+UnRegisterLibraryNumber  Разрегистрировать номер 
+продукта на сервере лицензий Компас
+Интерфейс...
+Синтаксис Automation:
+long UnRegisterLibraryNumber( long ProductNumbUnicueId ); 
+Синтаксис COM:
+HRESULT UnRegisterLibraryNumber( long ProductNumbUnicueId, BOOL * Result  );
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения.
+
+Входные параметры:
+
+ long   ProductNumber " номер продукта.
+
+Интерфейс IPLMObject 
+Интерфейс объекта системы версионирования.
+Иерархия:
+IDispatch
+
+IPLMObject
+Версия KOMPAS v19
+
+IPLMObject  свойства
+
+PLMStatus  Статус в системе версионирования
+Интерфейс...
+Тип данных: из перечисления ksPLMStatusEnum
+Синтаксис Automation:
+
+PLMStatus = Object.PLMStatus Получить свойство (* )
+Object.PLMStatus = PLMStatus Установить свойство (* )
+PLMStatus = Object.GetPLMStatus() Получить свойство (**)
+Object.SetPLMStatus( PLMStatus ) Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_PLMStatus( &PLMStatus ) Получить свойство
+Object.put_PLMStatus(  PLMStatus ) Установить свойство
+67
+
+
+
+ 
+
+PLMChange  Отличие в системе версионирования
+Интерфейс...
+Тип данных: из перечисления ksPLMChangesEnum.
+Синтаксис Automation:
+
+PLMChange = Object.PLMChange Получить свойство (* )
+Object.PLMChange = PLMChange Установить свойство (* )
+PLMChange = Object.GetPLMChange() Получить свойство (**)
+Object.SetPLMChange( PLMChange ) Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_PLMChange( &PLMChange ) Получить свойство
+Object.put_PLMChange(  PLMChange ) Установить свойство
+
+Интерфейс IPLMObjectsManager
+Менеджер объектов системы версионирования.
+Иерархия:
+IDispatch
+
+IPLMObjectsManager
+Версия KOMPAS v19
+
+IPLMObjectsManager свойства
+
+PLMChange  Отличие в системе версионирования
+Интерфейс...
+Тип данных: из перечисления ksPLMChangesEnum.
+Синтаксис Automation:
+
+PLMChange = Object.PLMChange( FileName ) Получить свойство (* )
+Object.PLMChange( FileName ) = PLMChange Установить свойство (* )
+PLMChange = Object.GetPLMChange( FileName ) Получить свойство (**)
+Object.SetPLMChange( FileName, PLMChange ) Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_PLMChange( FileName, &PLMChange ) Получить свойство
+Object.put_PLMChange(  FileName, PLMChange ) Установить свойство
+
+Входные параметры:
+
+BSTR " FileName " имя файла.
+
+Примечание
+68
+
+
+
+ 
+
+Свойство позволяет получить/установить признак отличия объектов версионирования
+по имени файла.
+
+PLMStatus  Статус в системе версионирования
+Интерфейс...
+Тип данных: из перечисления ksPLMStatusEnum.
+Синтаксис Automation:
+
+PLMStatus = Object.PLMStatus( FileName ) Получить свойство (* )
+Object.PLMStatus( FileName ) = PLMStatus Установить свойство (* )
+PLMStatus = Object.GetPLMStatus( FileName ) Получить свойство (**)
+Object.SetPLMStatus( FileName, PLMStatus ) Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_PLMStatus( FileName, &PLMStatus ) Получить свойство
+Object.put_PLMStatus(  FileName, PLMStatus ) Установить свойство
+
+Входные параметры:
+
+BSTR " FileName " имя файла.
+
+Примечание:
+Свойство позволяет получить/установить статус объектов версионирования по имени
+файла.
+
+IPLMObjectsManager  методы
+
+SetPLMStatusAttrAvailability  Установить доступность 
+в настройках дерева документа пункта меню “ЛОЦМАН 
+Статус”
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPLMStatusAttrAvailability( BOOL Available, BOOL Enabled );
+Синтаксис COM :
+HRESULT SetPLMStatusAttrAvailability( BOOL Available, BOOL Enabled, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения.
+
+Входные параметры:
+69
+
+
+
+ 
+
+Available " доступность атрибута “ЛОЦМАН Статус” 
+  в контекстном меню настроек Дерева документа,
+
+ Enabled " видимость атрибутов “ЛОЦМАН Статус” в Дереве.
+
+SetPLMChangesAttrAvailability  Установить доступность 
+в настройках Дерева документа пункта меню “ЛОЦМАН 
+Отличия”
+Интерфейс...
+Синтаксис Automation :
+BOOL SetPLMChangesAttrAvailability( BOOL Available, BOOL Enabled );
+Синтаксис COM :
+HRESULT SetPLMChangesAttrAvailability( BOOL Available, BOOL Enabled, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения.
+
+Входные параметры:
+ 
+
+Available " доступность атрибута “ЛОЦМАН Отличия” в контекстном 
+меню настроек Дерева документа,
+
+ Enabled " видимость в атрибутов “ЛОЦМАН Отличия” в Дереве.
+
+Коллекция документов
+Интерфейс IDocuments
+Коллекция документов, открытых в приложении КОМПАС3D.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDocuments
+
+Примечание:
+Данный интерфейс может быть получен от интерфейса приложения IApplication с помо"
+щью свойства IApplication::Documents.
+
+IDocuments  свойства
+
+DocumentSynchronize  Синхронизировать
+с зависимыми документами
+Интерфейс...
+70
+
+
+
+ 
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+DocumentSynchronize = Object.DocumentSynchronize Получить свойство (* )
+Object.DocumentSynchronize = DocumentSynchronize Установить свойство (* )
+DocumentSynchronize = Object.GetDocumentSynchronize() Получить свойство(**)
+Object.SetDocumentSynchronize( DocumentSynchronize ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DocumentSynchronize( &DocumentSynchronize ) Получить свойство
+Object.put_DocumentSynchronize(  DocumentSynchronize ) Установить свойство
+
+Свойство позволяет устанавливать и получать признак синхронизации с зависимыми до"
+кументами. Реализовано только для спецификации.
+
+Item  Документ, заданный по имени, ссылке 
+или по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс документа IKompasDocument
+Синтаксис Automation:
+
+document = iObject.Item (Index) Получить свойство(* )
+document = iObject.GetItem (Index) Получить свойство(**)
+
+Синтаксис COM:
+
+iObject">get_IItem ( Index, &Document ) Получить свойство
+
+Входные параметры:
+
+Index " Тип VARIANT, полное имя PathName документа, 
+   ссылка на документ или индекс в коллекции.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Полное имя файла документа состоит из пути, имени и расширения файла.
+
+RecoverError  Признак ошибки после открытия файла 
+с восстановлением
+Интерфейс...
+Тип данных: ksRecoverErrorEnum
+Синтаксис Automation:
+71
+
+
+
+ 
+
+RecoverError = Object.RecoverError Получить свойство (* )
+Object.RecoverError = RecoverError Установить свойство (* )
+RecoverError = Object.GetRecoverError() Получить свойство(**)
+Object.SetRecoverError( RecoverError ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_RecoverError( &RecoverError ) Получить свойство
+Object.put_RecoverError(  RecoverError ) Установить свойство
+
+RecoverMode  Признак открытия файлов в режиме 
+восстановления
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+RecoverMode = Object.RecoverMode Получить свойство (* )
+Object.RecoverMode = RecoverMode Установить свойство (* )
+RecoverMode = Object.GetRecoverMode() Получить свойство(**)
+Object.SetRecoverMode( RecoverMode ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_RecoverMode( &RecoverMode ) Получить свойство
+Object.put_RecoverMode(  RecoverMode ) Установить свойство
+
+RecoverModeErrorList  Список ошибок, исправленных 
+при открытии файла с восстановлением
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+RecoverModeErrorList = Object.RecoverModeErrorList( ) Получить свойство(* )
+RecoverModeErrorList = Object.GetRecoverModeErrorList() Получить свойство(**)
+
+Синтаксис COM:
+
+Object.get_RecoverModeErrorList( &RecoverModeErrorList ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+Список ошибок возвращается в виде массива VT_ARRAY | VT_I4.
+72
+
+
+
+ 
+
+IDocuments  методы
+
+Add  Создать новый документ и добавить его
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add (long Type, BOOL Visible);
+Синтаксис COM:
+HRESULT Add([in] DocumentTypeEnum Type, [in, defaultvalue(TRUE)] VARIANT_BOOL
+Visible, [out, retval] IKompasDocument** Result);
+Входные параметры:
+
+Type " тип документа из перечисления DocumentTypeEnum,
+Visible " видимость документа:
+
+  TRUE создавать документ в видимом режиме,
+  FALSE в слепом.
+
+Возвращаемое значение:
+
+указатель на интерфейс IKompasDocument
+
+AddCustomDocument  Создать новый документ 
+по идентификатору и добавить его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddCustomDocument( BSTR DocumentTypeId );
+Синтаксис COM:
+HRESULT AddCustomDocument( BSTR DocumentTypeId, IKompasDocument** Result);
+Возвращаемое значение :
+
+указатель на интерфейс IKompasDocument
+
+AddNewDocumentFromTemplate  Создать новый 
+документ по шаблону и добавить его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddNewDocumentFromTemplate( BSTR TemplateFileName );
+Синтаксис COM:
+HRESULT AddNewDocumentFromTemplate( BSTR TemplateFileName, IKompasDocument**
+Result);
+73
+
+
+
+ 
+
+Возвращаемое значение :
+  
+
+указатель на интерфейс IKompasDocument
+
+AddWithDefaultSettings  Создать новый документ
+с параметрами из настроек для новых документов
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddWithDefaultSettings( DocumentTypeEnum Type, BOOL Visible );
+Синтаксис COM:
+HRESULT AddWithDefaultSettings( DocumentTypeEnum Type, BOOL Visible,
+IKompasDocument** Result );
+Входные параметры:
+
+Type  " тип документа DocumentTypeEnum,
+Visible  " TRUE видимый,
+
+ " FALSE " невидимый.
+
+Возвращаемое значение:
+
+индекс линии разрыва,
+указатель на интерфейс IKompasDocument.
+
+GetEmbodimentsTree  Дерево исполнений
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetEmbodimentsTree( BSTR FileName, ksVariantMarkingTypeEnum MarkingType,
+BOOL AddSystemDelimer, BOOL AddSpaces, long * CurrentEmbodiment );
+Синтаксис COM:
+HRESULT GetEmbodimentsTree( BSTR FileName, ksVariantMarkingTypeEnum MarkingType,
+BOOL AddSystemDelimer, BOOL AddSpaces, long * CurrentEmbodiment, VARIANT * Tree );
+Входные параметры:
+
+FileName " Имя файла,
+MarkingType " Формат возвращаемых обозначений 
+
+ksVariantMarkingTypeEnum,
+AddSystemDelimer " Возвращать системные разделители в обозначении,
+AddSpaces " Добавить пробелы для определения уровня исполнения в 
+
+дереве исполнений,
+CurrentEmbodiment " Индекс текущего исполнения в списке исполнений.
+
+Возвращаемое значение:
+74
+
+
+
+ 
+
+ " Дерево исполнений. Массив узлов дерева исполнений. SAFEARRAY BSTR " (VT_ARRAY
+| VT_BSTR)
+
+GetLoadCombinations  Получить массив типов загрузки 
+в виде массива SAFEARRAY BSTR  (VT_ARRAY | VT_BSTR)
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/1072_116_2_Tipy_zagruzki_sborki.htm
+Синтаксис Automation:
+VARIANT GetLoadCombinations (LPCTSTR PathName, long * CurrentIndex);
+Синтаксис COM:
+HRESULT GetLoadCombinations([in] BSTR PathName, [out] long * CurrentIndex,  [out, retval]
+VARIANT * Value );
+Входные параметры:
+
+PathName " полное имя файла документа, состоящее из пути, имени 
+  и расширения файла.
+
+Выходные параметры:
+
+CurrentIndex " текущий индекс типа загрузки, по которому загружается     
+документ по умолчанию.
+
+Возвращаемое значение:
+
+тип значения VARIANT " массив типов загрузки в виде массива SAFEARRAY BSTR " 
+(VT_ARRAY | VT_BSTR)
+
+Примечание:
+Метод позволяет получить массив типов загрузки документа до открытия документа.
+Метод в настоящее время используется только для сборки 3D. У сборки 3D есть три
+умолчательных способа загрузки, индексы которых соответствуют перечислению
+ksLoadStateEnum:
+
+Полная 0 " полная загрузка,
+Пустая 1 " все компоненты не загружены,
+Упрощенная 2 " все компоненты загружены частично.
+
+Кроме этого, могут быть еще и пользовательские типы загрузки.
+
+GetLoadCombinationsParam  Получить интерфейс типов 
+загрузки документа
+Интерфейс...
+75
+
+
+
+ 
+
+Синтаксис Automation:
+LPDISPATCH GetLoadCombinationsParam (BSTR PathName);
+Синтаксис COM:
+HRESULT GetLoadCombinationsParam (BSTR PathName, ILoadCombinationsParam ** Result
+);
+Входные параметры:
+PathName " имя документа
+Возвращаемое значение:
+Указатель на интерфейс ILoadCombinationsParam
+
+GetOpenDocumentParam  Получить интерфейс 
+параметров открытия документа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetOpenDocumentParam();
+Синтаксис COM:
+HRESULT GetOpenDocumentParam( IOpenDocumentParam ** Result );
+Возвращаемое значение:
+Указатель на интерфейс IOpenDocumentParam
+
+Open  Открыть документ
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Open (LPCTSTR PathName, BOOL Visible, BOOL ReadOnly);
+Синтаксис COM:
+HRESULT Open([in] BSTR PathName, [in, defaultvalue(TRUE)] VARIANT_BOOL Visible, [in,
+defaultvalue(FALSE)] VARIANT_BOOL ReadOnly, [out, retval] IKompasDocument** Result);
+Входные параметры:
+
+PathName " полное имя файла документа, состоящее из пути, имени и 
+расширения файла,
+
+Visible " видимость документа:
+TRUE создавать документ в видимом режиме,
+FALSE в невидимом,
+
+ReadOnly " TRUE " открыть документ только для чтения.
+
+Возвращаемое значение:
+76
+
+
+
+ 
+
+указатель на интерфейс " в случае успешного завершения,
+IKompasDocument
+NULL " в случае неудачи.
+
+Примечание:
+Открывает существующий документ и добавляет его в коллекцию.
+
+OpenEx  Открыть документ
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH OpenEx (LPCTSTR PathName, BOOL Visible, BOOL ReadOnly, VARIANT
+LoadCombinationIndex);
+Синтаксис COM:
+HRESULT OpenEx([in] BSTR PathName, [in, defaultvalue(TRUE)] VARIANT_BOOL Visible, [in,
+defaultvalue(FALSE)] VARIANT_BOOL ReadOnly, [in]VARIANT LoadCombinationIndex, [out,
+retval] IKompasDocument** Result);
+Входные параметры:
+
+PathName " полное имя файла документа, состоящее из пути, имени 
+и расширения файла,
+
+Visible " видимость документа:
+TRUE создавать документ в видимом режиме,
+FALSE в невидимом,
+
+ReadOnly " TRUE " открыть документ только для чтения,
+LoadCombinationIndex " тип VARIANT " индекс загружаемого набора или имя 
+
+набора.
+
+Возвращаемое значение:
+
+указатель на интерфейс IKompasDocument " в случае успешного завершения,
+NULL " в случае неудачи.
+
+Примечание:
+
+1. Открывает существующий документ и добавляет его в коллекцию.
+2. Для сборки 3D можно задать индекс набора для загрузки. Для других типов документов
+
+индекс загружаемого набора игнорируется.
+
+OpenDocument  Открыть документ с заданными 
+параметрами открытия документа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH OpenDocument( BSTR FileName, IOpenDocumentParam * Param )
+77
+
+
+
+ 
+
+Синтаксис COM:
+HRESULT OpenDocument( BSTR FileName, IOpenDocumentParam * Param,
+IKompasDocument ** Result );
+Возвращаемое значение:
+Указатель на интерфейс документа IKompasDocument
+Входные параметры:
+
+FileName  " имя файла документа
+Param  " указатель на интерфейс параметров открытия документа IOpenDocumentParam
+
+Информация об ошибках
+Интерфейс IKompasError
+Интерфейс информации об ошибке системы КОМПАС.
+Иерархия:
+
+IKompasAPIObject
+IKompasError
+
+Описание:
+
+1. Позволяет получить информацию об ошибке, возникшей при работе API системы КОМ"
+ПАС.
+
+2. Системные ошибки описаны двумя перечислениями: Ошибки API ErrorType и Ошибки 3D
+API ErrorType3d
+В случае возникновения фатальных ошибок большинство методов интерфейсов и эк"
+спортных функций API КОМПАС выполняться не будут.
+Если в результате работы библиотеки возникает ошибка, то ее можно снять вызовом од"
+ного из следующих свойств и методов: Description, Report или Clear. Если указанные
+свойства и методы не вызывались, сообщение об ошибке будет автоматически выведено
+после завершения выполнения команды библиотеки.
+Примечание:
+Данный интерфейс может быть получен от интерфейса приложения IApplication с помо"
+щью свойства IApplication::KompasError.
+
+IKompasError свойства
+
+Code  Код ошибки
+Интерфейс...
+Тип данных: из перечисления ErrorType и ErrorType3d.
+Синтаксис Automation:
+
+Code = iObject.Code Получить свойство (* )
+78
+
+
+
+ 
+
+Code = iObject.GetCode() Получить свойство (**)
+Синтаксис COM:
+
+iObject">get_Code (&Code) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения. Так как коды ошибок из ErrorType и ErrorType3d
+пересекаются, то для определения из какого перечисления взведена ошибка, нужно вос"
+пользоваться свойством Error3D.
+
+Description  Описание ошибки
+Интерфейс...
+Тип данных:BSTR (строка).
+Синтаксис Automation:
+
+Description = iObject.Description Получить свойство (* )
+Description = iObject.GetDescription() Получить свойство(**)
+
+Синтаксис COM:
+
+iObject">get_Description (&Description) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения. Позволяет получить символьное описание воз"
+никшей ошибки в системе КОМПАС. После выдачи описания ошибки она сбрасывается,
+т.е. устанавливается в etSuccess (Успешное завершение).
+
+Error3D  Ошибка для 3D
+Интерфейс...
+Тип данных:BOOL.
+Синтаксис Automation:
+
+Error3D = iObject.Error3D Получить свойство (* )
+Error3D = iObject.GetError3D() Получить свойство(**)
+
+Синтаксис COM:
+
+iObject">get_Error3D (&Error3D) Получить свойство
+
+Значения свойства:
+
+TRUE " ошибка возникла в 3D API (перечисление ErrorType3d),
+FALSE " ошибка из перечисления ErrorType.
+79
+
+
+
+ 
+
+Примечание:
+Свойство доступно только для чтения. Позволяет определить, какому из двух перечисле"
+ний соответствует код ошибки, полученный через свойство Code
+
+IKompasError методы
+
+Clear Сбросить ошибку
+Интерфейс...
+Синтаксис Automation:
+void Clear();
+Синтаксис COM:
+HRESULT Clear();
+Примечание:
+В результате выполнения метода код ошибки устанавливается в etSuccess (Успешное за"
+вершение).
+
+Report  Вывести сообщение о ошибке
+Интерфейс...
+Синтаксис Automation:
+void Report();
+Синтаксис COM:
+HRESULT Report();
+Примечание:
+В результате выполнения этого метода на экран выводится диалог с описанием возник"
+шей ошибки. После выдачи сообщения о ошибке она сбрасывается, то есть устанавли"
+вается в etSuccess (Успешное завершение).
+
+Параметры процесса
+Интерфейс IProcessParam
+Интерфейс событий...
+Интерфейс параметров процесса.
+Иерархия:
+IKompasAPIObject
+
+IProcessParam
+Примечание:
+
+1. Интерфейс позволяет управлять параметрами процесса.
+2. Данный интерфейс может быть получен от интерфейса приложения IApplication с помо"
+
+щью свойства IApplication::CreateProcessParam.
+80
+
+
+
+ 
+
+IProcessParam  свойства
+
+AutoReduce  Завершение процесса автоматически 
+после задания всех параметров
+Интерфейс...
+Тип данных:BOOL
+Синтаксис Automation:
+
+AutoReduce = iObject.AutoReduce Получить свойство (* )
+iObject.AutoReduce = AutoReduce Установить свойство (* )
+AutoReduce = iObject.GetAutoReduce() Получить свойство(**)
+iObject.SetAutoReduce (AutoReduce) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_AutoReduce (&AutoReduce) Получить свойство
+iObject">put_AutoReduce (AutoReduce) Установить свойство
+
+Примечание:
+С помощью данного свойства можно получить и изменить завершение процесса после
+задания всех параметров.
+
+BmpBeginId  Начальный диапазон для иконок 
+специальной панели
+Интерфейс...
+Тип данных long.
+Синтаксис Automation:
+
+BmpBeginId(Size) = iObject.BmpBeginId Получить свойство (* )
+iObject.BmpBeginId(Size) = BmpBeginId Установить свойство (* )
+BmpBeginId = iObject.GetBmpBeginId(Size) Получить свойство(**)
+iObject.SetBmpBeginId(Size, BmpBeginId) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_BmpBeginId(Size,&BmpBeginId) Получить свойство
+iObject">put_BmpBeginId(Size, BmpBeginId) Установить свойство
+
+Входные параметры:
+Size " размер битмапов
+Свойство BmpBeginId используется совместно со свойствами ResModuleI и
+SpecToolbarEx.
+81
+
+
+
+ 
+
+Caption  Заголовок процесса
+Интерфейс...
+Тип данных:BSTR (строка).
+Синтаксис Automation:
+
+Caption = iObject.Caption Получить свойство (* )
+iObject.Caption = Caption Установить свойство (* )
+Caption = iObject.GetCaption() Получить свойство(**)
+iObject.SetCaption (Caption) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Caption (&Caption) Получить свойство (* )
+iObject">put_Caption (Caption) Установить свойство (* )
+
+Примечание:
+Позволяет получить и установить заголовок процесса.
+
+DefaultControlFix  Cостояние фиксированности для 
+умолчательных элементов управления Панели свойств
+Интерфейс...
+Тип данных: состояние фиксированности для умолчательных элементов управления па"
+нели свойств из перечисления DefaultFixTypeEnum.
+Синтаксис Automation:
+
+DefaultControlFix = iObject.DefaultControlFix Получить свойство (* )
+iObject.DefaultControlFix = DefaultControlFix Установить свойство (* )
+DefaultControlFix = iObject.GetDefaultControlFix() Получить свойство(**)
+iObject.SetDefaultControlFix (DefaultControlFix) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_DefaultControlFix (&DefaultControlFix) Получить свойство (* )
+iObject">put_DefaultControlFix (DefaultControlFix) Установить свойство (* )
+
+Примечание:
+С помощью данного свойства можно получить и изменить состояние фиксированности
+для умолчательных элементов управления Панели свойств.
+
+EnableUndoRedo  Признак обработки процессом Undo/
+Redo команд
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+82
+
+
+
+ 
+
+EnableUndoRedo = Object.EnableUndoRedo Получить свойство (* )
+Object.EnableUndoRedo = EnableUndoRedo Установить свойство (* )
+EnableUndoRedo = Object.GetEnableUndoRedo() Получить свойство(**)
+Object.SetEnableUndoRedo( EnableUndoRedo ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EnableUndoRedo( &EnableUndoRedo ) Получить свойство (* )
+Object.put_EnableUndoRedo(  EnableUndoRedo ) Установить свойство (* )
+
+EnterButtonIconType  Тип иконки для кнопки Cоздать
+Интерфейс...
+Тип данных: из перечисления ksEnterButtonIconTypeEnum
+Синтаксис Automation:
+
+EnterButtonIconType = Object.EnterButtonIconType Получить свойство (* )
+Object.EnterButtonIconType = EnterButtonIconType Установить свойство (* )
+EnterButtonIconType = Object.GetEnterButtonIconType() Получить свойство(**)
+Object.SetEnterButtonIconType( EnterButtonIconType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EnterButtonIconType( &EnterButtonIconType ) Получить свойство (* )
+Object.put_EnterButtonIconType(  EnterButtonIconType ) Установить свойство (* )
+
+Layout  Положение панели свойств (вверху, внизу, 
+слева, справа, плавает)
+Функция не поддерживается
+Интерфейс...
+Тип данных: положение Панели свойств из перечисления PropertyManagerLayout.
+Синтаксис Automation:
+
+Layout = iObject.Layout() Получить свойство (* )
+Layout = iObject.GetLayout() Получить свойство(**)
+
+Синтаксис COM:
+
+iObject">get_Layout( &Layout ) Получить свойство
+
+Примечание:
+С помощью данного свойства можно получить положение Панели свойств.
+Свойство доступно только для чтения.
+83
+
+
+
+ 
+
+PropertyTabs  Коллекция вкладок Панели свойств
+Интерфейс...
+Тип данных:указатель на интерфейс IPropertyTabs.
+Синтаксис Automation:
+
+PropertyTabs = iObject.PropertyTabs Получить свойство (* )
+PropertyTabs = iObject.GetPropertyTabs() Получить свойство(**)
+
+Синтаксис COM:
+
+iObject">get_PropertyTabs (&PropertyTabs ) Получить свойство
+
+Примечание:
+
+1. Свойство только для чтения.
+2. Позволяет получить доступ к вкладкам Панели свойств.
+
+ResModule  Модуль с описанием пользовательской 
+спецпанели
+Интерфейс...
+Тип данных:VARIANT (long или BSTR).
+Синтаксис Automation:
+
+ResModule = iObject.ResModule Получить свойство (* )
+iObject.ResModule = ResModule Установить свойство (* )
+ResModule = iObject.GetResModule() Получить свойство(**)
+iObject.SetResModule(ResModule) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ResModule(&ResModule) Получить свойство
+iObject">put_ResModule(ResModule) Установить свойство
+
+Значение свойства:
+HINSTANCE (тип значения long)
+" полный путь к файлу (тип значения BSTR) dll"модуля, в котором находятся все необхо"
+димые ресурсы.
+Примечание:
+Данное свойство позволяет установить или получить dll"модуль, в котором находится
+описание пользовательской спецпанели, рисунки для пользовательских кнопок (см.
+IProcessParam::SpecToolbarEx и IProcessParam::BmpBeginID).
+
+ShowCommandWindow  Показывать командное окно
+Интерфейс...
+84
+
+
+
+ 
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+ ShowCommandWindow = Object.ShowCommandWindow Получить свойство (* )
+Object.ShowCommandWindow = ShowCommandWindow Установить свойство (* )
+ShowCommandWindow = Object.GetShowCommandWindow() Получить свойство(**)
+Object.SetShowCommandWindow( ShowCommandWindow ) Установить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_ShowCommandWindow( &ShowCommandWindow ) Получить свойство
+ Object.put_ShowCommandWindow(  ShowCommandWindow ) Установить свойство
+
+ShowContextMenuOfGeomCalculator  Наличие кнопки 
+Геометрический калькулятор в контекстном меню 
+процесса
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ ShowContextMenuOfGeomCalculator = Получить свойство (* )
+Object.ShowContextMenuOfGeomCalculator
+Object.ShowContextMenuOfGeomCalculator = Установить свойство (* )
+ShowContextMenuOfGeomCalculator
+ShowContextMenuOfGeomCalculator = Получить свойство(**)
+Object.GetShowContextMenuOfGeomCalculator()
+Object.SetShowContextMenuOfGeomCalculator( Установить свойство (**)
+ShowContextMenuOfGeomCalculator )
+
+Синтаксис COM:
+
+ Object.get_ShowContextMenuOfGeomCalculator Получить свойство
+( &ShowContextMenuOfGeomCalculator )
+ Object.put_ShowContextMenuOfGeomCalculator Установить свойство
+( ShowContextMenuOfGeomCalculator )
+
+Значение свойства:
+
+TRUE " команда Геометрический калькулятор присутствует в контекстном 
+меню процесса,
+
+FALSE " команда Геометрический калькулятор отсутствует в контекстном 
+меню процесса.
+85
+
+
+
+ 
+
+ShowContextMenuOfSnap  Наличие кнопки Привязки 
+в контекстном меню процесса
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ ShowContextMenuOfSnap = Object.ShowContextMenuOfSnap Получить свойство (* )
+Object.ShowContextMenuOfSnap = ShowContextMenuOfSnap Установить свойство (* )
+ShowContextMenuOfSnap = Получить свойство(**)
+Object.GetShowContextMenuOfSnap()
+Object.SetShowContextMenuOfSnap( ShowContextMenuOfSnap ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShowContextMenuOfSnap( &ShowContextMenuOfSnap ) Получить свойство
+ Object.put_ShowContextMenuOfSnap(  ShowContextMenuOfSnap ) Установить свойство
+
+Значение свойства:
+
+TRUE " команда Привязки присутствует в контекстном меню 
+процесса,
+
+FALSE " команда Привязки отсутствует в контекстном меню 
+процесса.
+
+SpecToolbar  Специальная панель
+Интерфейс...
+Тип данных: тип предопределенной спецпанели для Панели свойств из перечисления
+SpecPropertyToolBarEnum.
+Синтаксис Automation:
+
+SpecToolbar = iObject.SpecToolbar Получить свойство (* )
+iObject.SpecToolbar = SpecToolbar Установить свойство (* )
+SpecToolbar = iObject.GetSpecToolbar() Получить свойство(**)
+iObject.SetSpecToolbar (SpecToolbar) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_SpecToolbar (&SpecToolbar) Получить свойство
+iObject">put_SpecToolbar (SpecToolbar) Установить свойство
+
+Примечание:
+С помощью данного свойства можно получить и изменить тип предопределенной спец"
+панели для Панели свойств.
+86
+
+
+
+ 
+
+SpecToolbarEx  Специальная панель
+Интерфейс...
+Тип данных long.
+Синтаксис Automation:
+
+SpecToolbarEx = iObject.SpecToolbarEx Получить свойство (* )
+iObject.SpecToolbarEx = SpecToolbarEx Установить свойство (* )
+SpecToolbarEx = iObject.GetSpecToolbarEx() Получить свойство(**)
+iObject.SetSpecToolbarEx(SpecToolbarEx) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_SpecToolbarEx(&SpecToolbarEx) Получить свойство
+iObject">put_SpecToolbarEx(SpecToolbarEx) Установить свойство
+
+Значение свойства:
+long идентификатор спецпанели в Панели свойств.
+Примечание:
+Данное свойство является расширением свойства SpecToolbar.
+Свойство позволяет установить или получить идентификатор спецпанели. Может быть
+установлен идентификатор из перечисления SpecPropertyToolBarEnum " Предопреде
+ленные спецпанели для панели свойств либо задан идентификатор ресурса пользо"
+вательской спецпанели, уникальный в рамках библиотеки.
+Свойство SpecToolbarEx используется совместно со свойствами ResModule и
+BmpBeginId.
+Чтобы описать пользовательскую спецпанель, нужно: 
+
+1.  Объявить уникальный идентификатор спецпанели  в h файле
+#define ITB_SPEC_TOOLBAR                3000  
+#define END_OF_RESOURCE_TABLE           0xffff
+
+2. В ресурсном файле описать RCDATA панели и пользовательские кнопки
+rc2"файл:
+
+ITB_SPEC_TOOLBAR  RCDATA   
+{
+  1 //pbEnter
+  2 //pbEsc
+  3 //pbHelpсправка
+
+  20   //пользовательская кнопка 
+  END_OF_RESOURCE_TABLE
+87
+
+
+
+ 
+
+}
+В примере для пользовательской спецпанели определено 4 кнопки.
+1, 2, 3 " предопределенные кнопки из перечисления SpecPropertyToolBarEnum
+20 " пользовательская кнопка
+
+//битмап для пользовательской кнопки спецпанели
+20               BITMAP "res\\st_reduc.bmp"     // CREATE процесса настройки фильтра для
+выбора объектов отчета
+
+//tips\hint для пользовательской кнопки спецпанели
+STRINGTABLE  LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+20 "Для тестирования пользовательской кнопки\nПользовательская кнопка"
+END
+
+IProcessParam  методы
+
+AddSetupMenuCommand  Добавить пункт в меню 
+настроек процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL AddSetupMenuCommand( BSTR Title, long Command, BOOL Checable );
+Синтаксис COM:
+HRESULT AddSetupMenuCommand( BSTR Title, long Command, BOOL Checable, BOOL *
+Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Title " заголовок,
+Command " идентификатор команды,
+Checable " FALSE " выполняемая команда,
+
+ TRUE " флаг состояния.
+
+AddSpecToolbarButton  Добавить кнопку в спецпанель
+Интерфейс...
+Синтаксис Automation:
+88
+
+
+
+ 
+
+BOOL AddSpecToolbarButton( long BtnID, VARIANT Bmp, BSTR Tips, BSTR IconFont );
+Синтаксис COM:
+HRESULT AddSpecToolbarButton( long BtnID, VARIANT Bmp, BSTR Tips, BSTR IconFont,
+BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+BtnID " идентификатор кнопки,
+Bmp " идентификатор картинки или символа шрифта или путь к файлу,
+ips " имя кнопки,
+IconFont " имя шрифта.
+
+Примечание:
+
+1. Для использования иконок из шрифта Компас нужно передать параметр IconFont == пу"
+стой строке.
+
+2. Для использования шрифта библиотеки, описанного в манифесте библиотеки, нужно
+передать строчку полученную методом IProceduresLibrary::IconsFont.
+
+3. Для использования картинок из ресурсов требуется установить свойство
+IProcessParam::ResModule. Для использования шрифтовых иконок свойство
+IProcessParam::ResModule устанавливаться не должно. 
+
+ClearSpecToolbar  Очистить спецпанель
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearSpecToolbar(  );
+Синтаксис COM:
+HRESULT ClearSpecToolbar( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetGabaritRect  Получить габаритный прямоугольник 
+Панели свойств
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+  void GetGabaritRect( long * left,
+89
+
+
+
+ 
+
+                       long * top,
+                       long * right,
+                       long * bottom );
+Синтаксис COM:
+ HRESULT GetGabaritRect( [out]long * left,
+                          [out]long * top,
+                          [out]long * right,
+                          [out]long * bottom );
+Выходные параметры:
+
+left, top " координата верхней левой точки,
+right, bottom " координата нижней правой точки.
+
+Примечание:
+Метод позволяет получить габаритный прямоугольник Панели свойств. Точки задаются
+в относительных координатах окна КОМПАС. 
+
+PopProcessName  Убрать имя подпроцесса
+Интерфейс...
+Синтаксис Automation:
+BOOL PopProcessName();
+Синтаксис COM:
+HRESULT PopProcessName( BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+PushProcessName  Установить имя подпроцесса
+Интерфейс...
+Синтаксис Automation:
+BOOL PushProcessName( BSTR Name );
+Синтаксис COM:
+HRESULT PushProcessName( BSTR Name, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Входные параметры:
+90
+
+
+
+ 
+
+Name " добавочное имя подпроцесса.
+
+SetSetupMenuCommandState  Установить состояние 
+команды меню настроек процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL SetSetupMenuCommandState( long Command, BOOL Visible, BOOL Enable, BOOL
+Checked );
+Синтаксис COM:
+HRESULT SetSetupMenuCommandState( long Command, BOOL Visible, BOOL Enable, BOOL
+Checked, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Command " идентификатор команды,
+Visible " видимость,
+Enable " доступность,
+Checked " признак выбора.
+
+Интерфейс IProcess
+Интерфейс процесса.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IProcess
+
+Примечание:
+Интерфейс можно получить с помощью методов:
+IKompasDocument2D1::LibProcess
+IKompasDocument3D1::LibProcess
+
+IProcess  свойства
+
+Caption  Заголовок процесса
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+91
+
+
+
+ 
+
+Caption= Object.CursorId Получить свойство (* )
+Object.Caption= CursorId Установить свойство (* )
+Caption= Object.GetCursorId() Получить свойство(**)
+Object.SetCursorId( Caption) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Caption( &Caption ) Получить свойство
+Object.put_Caption(  Caption ) Установить свойство
+
+Critical  Признак критического процесса
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Critical = Object.Critical Получить свойство (* )
+Object.Critical = Critical Установить свойство (* )
+Critical = Object.GetCritical() Получить свойство(**)
+Object.SetCritical( Critical ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Critical( &Critical ) Получить свойство
+Object.put_Critical(  Critical ) Установить свойство
+
+CursorId  Строка с именем стандартного курсора или 
+идентификатор
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+CursorId = Object.CursorId Получить свойство (* )
+Object.CursorId = CursorId Установить свойство (* )
+CursorId = Object.GetCursorId() Получить свойство(**)
+Object.SetCursorId( CursorId ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CursorId( &CursorId ) Получить свойство
+Object.put_CursorId(  CursorId ) Установить свойство
+92
+
+
+
+ 
+
+Dynamic  Признак динамического запроса
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Dynamic = Object.Dynamic Получить свойство (* )
+Object.Dynamic = Dynamic Установить свойство (* )
+Dynamic = Object.GetDynamic() Получить свойство(**)
+Object.SetDynamic( Dynamic ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Dynamic( &Dynamic ) Получить свойство
+Object.put_Dynamic(  Dynamic ) Установить свойство
+
+Menu  Меню
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Menu = Object.Menu Получить свойство (* )
+Object.Menu = Menu Установить свойство (* )
+Menu = Object.GetMenu() Получить свойство(**)
+Object.SetMenu( Menu ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Menu( &Menu ) Получить свойство
+Object.put_Menu(  Menu ) Установить свойство
+
+ProcessParam  Параметры процесса
+Интерфейс...
+Тип данных: Указатель на интерфейс IProcessParam
+Синтаксис Automation:
+
+ProcessParam = Object.ProcessParam Получить свойство (* )
+Object.ProcessParam = ProcessParam Установить свойство (* )
+ProcessParam = Object.GetProcessParam() Получить свойство(**)
+Object.SetProcessParam( ProcessParam ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProcessParam( &ProcessParam ) Получить свойство
+Object.put_ProcessParam(  ProcessParam ) Установить свойство
+93
+
+
+
+ 
+
+Prompt  Строка приглашения
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Prompt= Object.Prompt Получить свойство (* )
+Object.Prompt= Prompt Установить свойство (* )
+Prompt= Object.GetPrompt() Получить свойство(**)
+Object.SetPrompt( Prompt) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Prompt( &Prompt ) Получить свойство
+Object.put_Prompt(  Prompt ) Установить свойство
+
+ResModule  Модуль с описанием пользовательской 
+спецпанели
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ResModule = Object.ResModule Получить свойство (* )
+Object.ResModule = ResModule Установить свойство (* )
+ResModule = Object.GetResModule() Получить свойство(**)
+Object.SetResModule( ResModule ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ResModule( &ResModule ) Получить свойство
+Object.put_ResModule(  ResModule ) Установить свойство
+
+IProcess  методы
+
+Run  Запустить процесс
+Интерфейс...
+Синтаксис Automation:
+BOOL Run( BOOL Modal, BOOL PostMessage );
+Синтаксис COM:
+HRESULT Run( BOOL Modal, BOOL PostMessage, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+94
+
+
+
+ 
+
+FALSE " в случае неудачи.
+Входные параметры:
+
+ Modal TRUE " модальный процесс,
+FALSE " немодальный процесс,
+
+PostMessage TRUE " отложенный запуск для немодального процесса.
+
+Примечание:
+▼ При запуске модального процесса Функция ожидает завершение работы процесса.
+▼ При запуске немодального процесса процесс начнет работу позже.
+▼ Модальный процесс может быть запущен только один.
+▼ Немодальные процессы можно запустить в разных документах.
+
+SetCursorText  Установить текст курсора
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCursorText( BSTR PVal );
+Синтаксис COM:
+HRESULT SetCursorText( BSTR PVal, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+PVal " Строка для текста курсора.
+
+Stop  Остановить процесс
+Интерфейс...
+Синтаксис Automation:
+BOOL Stop();
+Синтаксис COM:
+HRESULT Stop( BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Update  Обновить параметры процесса
+Интерфейс...
+Синтаксис Automation:
+95
+
+
+
+ 
+
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IProcess2D
+Интерфейс процесса 2D.
+Иерархия:
+IDispatch
+
+IProcess
+IProcess2D
+
+Примечание:
+Интерфейс является дополнительным для IProcess.
+Интерфейс можно получить с помощью метода: IKompasDocument2D1::LibProcess
+
+IProcess2D  свойства
+
+Angle  Угол
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство
+Object.put_Angle(  Angle ) Установить свойство
+
+Phantom2D  Параметры фантома
+Интерфейс...
+Тип данных: Указатель на интерфейс IPhantom2D
+
+Phantom2D = Object.Phantom2D Получить свойство(* )
+Phantom2D = Object.GetPhantom2D() Получить свойство (**)
+96
+
+
+
+ 
+
+Синтаксис COM:
+
+Object.get_Phantom2D( &Phantom2D )) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+X  Координата X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X Получить свойство(* )
+Object.X = X Установить свойство (* )
+ X = Object.GetX()) Получить свойство (**)
+Object.SetX( X ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ) Получить свойство
+Object.put_X(  X ) Установить свойство
+
+Y  Координата Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y Получить свойство(* )
+Object.Y = Y Установить свойство (* )
+ Y = Object.GetY()) Получить свойство (**)
+Object.SetY( Y ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y( &Y ) Получить свойство
+Object.put_Y(  Y ) Установить свойство
+
+Интерфейс IProcess3D
+Интерфейс процесса 3D.
+Иерархия:
+IDispatch
+
+IProcess
+IProcess3D
+97
+
+
+
+ 
+
+Примечание:
+Интерфейс является дополнительным для IProcess.
+Интерфейс можно получить с помощью метода: IKompasDocument3D1::LibProcess
+
+IProcess3D  свойства
+
+ClearProcessUndo  Очистить стэк команд Undo процесса
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClearProcessUndo = Object.ClearProcessUndo Получить свойство (* )
+Object.ClearProcessUndo = ClearProcessUndo Установить свойство (* )
+ClearProcessUndo = Object.GetClearProcessUndo() Получить свойство (**)
+Object.SetClearProcessUndo( ClearProcessUndo ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ClearProcessUndo( &ClearProcessUndo ) Получить свойство
+Object.put_ClearProcessUndo( ClearProcessUndo ) Установить свойство
+
+Manipulators  Коллекция манипуляторов
+Интерфейс...
+Тип данных: Указатель на интерфейс IManipulators 
+Синтаксис Automation:
+
+Manipulators = Object.Manipulators Получить свойство (* )
+Manipulators = Object.GetManipulators() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Manipulators( &Manipulators ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+MateConstraints  Коллекция сопряжений
+Интерфейс...
+Тип данных: Указатель на интерфейс IMateConstraints3D 
+Синтаксис Automation:
+
+MateConstraints  = Object.MateConstraints ; Получить свойство (* )
+98
+
+
+
+ 
+
+MateConstraints = Object.GetMateConstraints() Получить свойство (**)
+ Синтаксис COM:
+
+Object.get_MateConstraints( &MateConstraints ); Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+MateConstraintsObjects  Выбранные объекты 
+для сопряжений
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+MateConstraintsObjects = Object.MateConstraintsObjects Получить свойство(* )
+Object.MateConstraintsObjects  = MateConstraintsObjects Установить свойство (* )
+MateConstraintsObjects = Object.GetMateConstraintsObjects() Получить свойство (**)
+Object.SetMateConstraintsObjects( MateConstraintsObjects ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_MateConstraintsObjects( &MateConstraintsObjects ); Получить свойство
+Object.put_MateConstraintsObjects(  MateConstraintsObjects ); Установить свойство
+
+ObjectsFilter3D  Способ фильтрации 3D объектов
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ObjectsFilter3D = Object.ObjectsFilter3D( Type ) Получить свойство (* )
+Object.ObjectsFilter3D( Type ) = ObjectsFilter3D Установить свойство (* )
+ObjectsFilter3D = Object.GetObjectsFilter3D( Type ) Получить свойство (**)
+Object.SetObjectsFilter3D( Type, ObjectsFilter3D ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ObjectsFilter3D( Type, &ObjectsFilter3D ) Получить свойство
+Object.put_ObjectsFilter3D(  Type, ObjectsFilter3D ) Установить свойство
+
+Входные параметры:
+
+ksProcessObjectsFilter3DEnum " Type " Режим использования прямоугольной рамки     
+для выделения объектов.
+99
+
+
+
+ 
+
+PhantomObject  Фантом
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+PhantomObject = Object.PhantomObject Получить свойство(* )
+Object.PhantomObject = PhantomObject Установить свойство (* )
+PhantomObject = Object.GetPhantomObject() Получить свойство (**)
+Object.SetPhantomObject( PhantomObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PhantomObject( &PhantomObject ); Получить свойство
+Object.put_PhantomObject(  PhantomObject ); Установить свойство
+
+Placement  Интерфейс локальной системы координат 
+(положение объекта)
+Интерфейс...
+Тип данных: Указатель на интерфейс IPlacement3D
+Синтаксис Automation:
+
+Placement = Object.Placement; Получить свойство (* )
+Placement = Object.GetPlacement() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Placement( &Placement ); Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+SelectionBandMode  Режим использования 
+прямоугольной рамки для выделения объектов
+Интерфейс...
+Тип данных: из перечисления ksSelectionBandMode
+Синтаксис Automation:
+
+SelectionBandMode = Object.SelectionBandMode Получить свойство (* )
+Object.SelectionBandMode = SelectionBandMode Установить свойство (* )
+SelectionBandMode = Object.GetSelectionBandMode() Получить свойство (**)
+Object.SetSelectionBandMode( SelectionBandMode ) Установить свойство (**)
+
+Синтаксис COM:
+100
+
+
+
+ 
+
+Object.get_SelectionBandMode( &SelectionBandMode) Получить свойство
+Object.put_SelectionBandMode(  SelectionBandMode ) Установить свойство
+
+Примечание:
+Свойство позволяет включить режим группового выделения объектов рамкой в процес"
+се. 
+При групповом селектировании рамкой будет посылаться событие
+ksProcess3DNotify::ProcessingGroupObjects.
+
+TakeProcessObject  Объект, создаваемый в подпроцессе
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+TakeProcessObject = Object.TakeProcessObject Получить свойство(* )
+Object.TakeProcessObject  = TakeProcessObject Установить свойство (* )
+TakeProcessObject = Object.GetTakeProcessObject() Получить свойство (**)
+Object.SetTakeProcessObject( TakeProcessObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TakeProcessObject( &PhantomObject ); Получить свойство
+Object.put_TakeProcessObject(  TakeProcessObject ); Установить свойство
+
+IProcess3D  методы
+
+RunTakeCreateObjectProcess  Запустить подчиненный 
+режим создания объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL RunTakeCreateObjectProcess( ProcessTypeEnum ProcessType, LPDISPATCH
+TakeObject, BOOL NeedCreateTakeObj, BOOL LostTakeObj );
+Синтаксис COM:
+HRESULT RunTakeCreateObjectProcess( ProcessTypeEnum ProcessType, IModelObject *
+TakeObject, BOOL NeedCreateTakeObj, BOOL LostTakeObj, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+ Выходные параметры:
+101
+
+
+
+ 
+
+ProcessType " тип подпроцесса,
+TakeObject " указатель на интерфейс редактируемого в подпроцессе объекта,
+NeedCreateTakeObj " необходимость создания объекта в подпроцессе,
+LostTakeObj " фиксировать параметры создаваемого объекта.
+
+ Функция позволяет запустить следующие подпроцессы:
+
+prPoint3D Точка 3D
+
+prAxisByDirection Ось через вершину по объекту
+
+prCAxis2Points Ось по двум точкам
+
+prCAxis2Planes Ось по двум плоскостям
+
+prCAxisConeface Ось конической грани
+
+prCAxisEdge Ось проходящая через ребро
+
+prContour3D Контур 3D
+
+prLocalCoordinateSystem Локальная система координат
+
+prIsoparamCurve Изопараметрическая кривая
+
+prEquidistant3D Эквидистанта 3D
+
+prCPlaneOffset Смещённая плоскость
+
+prCPlane3Points Плоскость по 3"м точкам
+
+prCPlaneAngle Плоскость под углом
+
+prCPlaneEdgePoint Плоскость через ребро и вершину
+
+prCPlaneParallel Плоскость через вершину параллельно 
+другой плоскости
+
+prCPlanePerpendicular Плоскость через вершину 
+перпендикулярно ребру
+
+prCPlaneNormalToSurface Нормальная плоскость
+
+prCPlaneTangentToSurface Касательная плоскость
+
+prCPlaneLineToEdge Плоскость через ребро параллельно/
+перпендикулярно другому ребру
+102
+
+
+
+ 
+
+prCPlaneLineToFlat Плоскость через ребро параллельно/
+перпендикулярно грани
+
+prCPlaneMiddle Средняя плоскость
+
+prCPlaneTangentAtPoint Плоскость, касательная к грани в точке
+
+prCPlaneAtCurve Плоскость через плоскую кривую
+
+prMateParallel Сопряжения компонентов " 
+Параллельность
+
+prMatePerpendicular Сопряжения компонентов " 
+Перпендикулярность
+
+prMateOnDistance Сопряжения компонентов " На расстоянии
+
+prMateOnAngle Сопряжения компонентов " Под углом
+
+prMateTangent Сопряжения компонентов " Касание
+
+prMateConcentric Сопряжения компонентов " Соосность
+
+prMateCoincident Сопряжения компонентов " Совпадение
+
+prMateSymmetry Сопряжения компонентов " Симметрия
+
+prMateDependent Сопряжения компонентов " Зависимое 
+положение
+
+Интерфейс IProgressBarIndicator
+Интерфейс индикатора прогресса.
+Иерархия:
+IKompasAPIObject
+
+IProgressBarIndicator
+Описание:
+Позволяет запускать, устанавливать текущее значение, останавливать индикатор про"
+гресса, устанавливать текст в строке состояния.
+Примечание:
+
+1. Данный интерфейс можно получить от интерфейса IApplication с помощью метода
+IApplication::ProgressBarIndicator.
+
+2. Для работы с индикатором прогресса необходимо, получив указатель на интерфейс ин"
+дикатора, запустить его командой IProgressBarIndicator::Star. Текущие значения и текст
+устанавливать командой IProgressBarIndicator::SetProgress. По завершении отображае"
+103
+
+
+
+ 
+
+мого процесса завершить работу с индикатором командой IProgressBarIndicator::Stop.
+Для отображения следующего процесса необходимо повторно запустить индикатор (при
+необходимости с новыми параметрами) от ранее полученного указателя на интерфейс.
+
+3. Команда IProgressBarIndicator::SetText выполняется независимо от того, запущен инди"
+катор прогресса или нет.
+
+4. Если получены несколько указателей на интерфейс IProgressBarIndicator, и по одному из
+указателей индикатор запущен командой IProgressBarIndicator::Start, по любому другому
+указателю может быть выполнена команда IProgressBarIndicator::SetProgress или
+IProgressBarIndicator::Stop. Команда IProgressBarIndicator::Start повторно не выполняет"
+ся до остановки индикатора.
+
+IProgressBarIndicator  методы
+
+SetProgress  Установить текущее значение индикатора
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ksSetProgressBar
+Синтаксис Automation:
+void SetProgress (long currentVal, LPCTSTR newText, BOOL resetText);
+Синтаксис COM:
+HRESULT SetProgress (long currentVal, BSTR newText, VARIANT_BOOL resetText);
+Входные параметры:
+
+currentVal " текущее значение значение индикатора,
+newText " текст в строке состояния,
+resetText " TRUE " обновить текст в строке состояния.
+
+Примечание:
+Метод выполняется, если индикатор прогресса запущен командой
+IProgressBarIndicator::Start.
+
+SetText  Установить текст в строке состояния 
+индикатора
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ksSetProgressText.
+Синтаксис Automation:
+void SetText (LPCTSTR newText);
+Синтаксис COM:
+HRESULT SetText (BSTR newText);
+Входные параметры:
+
+newText " текст в строке состояния,
+104
+
+
+
+ 
+
+Примечание:
+
+1. Метод выполняется как при запущенном индикаторе прогресса командой
+IProgressBarIndicator::Start, так и при остановленном.
+
+2. Если команда выполняется при запущенном индикаторе прогресса, устанавливаемый
+текст запоминается как последний текст перед запуском индикатора, и после остановки
+индикатора командой IProgressBarIndicator::Stop в строке состояния будет отображаться
+текст newText.
+
+Start  Запустить индикатор прогресса
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksStartProgressBar.
+Синтаксис Automation:
+void Start (long minVal, long maxVal, LPCTSTR newText, BOOL resetText);
+Синтаксис COM:
+HRESULT Start (long minVal, long maxVal, BSTR newText, VARIANT_BOOL resetText);
+Входные параметры:
+
+minVal " минимальное значение шкалы,
+maxVal " максимальное значение шкалы,
+newText " текст в строке состояния,
+resetText " TRUE " обновить текст в строке состояния.
+
+Примечание:
+После завершения работы индикатор прогресса должен быть остановлен командой
+IProgressBarIndicator::Stop.
+
+Stop  Остановить индикатор прогресса
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksStopProgressBar.
+Синтаксис Automation:
+void Stop (LPCTSTR newText, BOOL resetTxt);
+Синтаксис COM:
+HRESULT Stop (BSTR newText, VARIANT_BOOL resetTxt);
+Входные параметры:
+
+newText " текст в строке состояния,
+resetText " TRUE " обновить текст в строке состояния.
+
+Примечание:
+105
+
+
+
+ 
+
+Метод выполняется, если индикатор прогресса запущен командой
+IProgressBarIndicator::Start.
+
+Интерфейс IProcessInfoWindow
+Интерфейс информационного окна процесса.
+Иерархия:
+IKompasAPIObject
+
+IProcessInfoWindow
+Примечание:
+Интерфейс является дополнительным к интерфейсу IProcessParam и позволяет созда"
+вать информационное окно, принадлежащее процессу с возможностью чтения/записи
+текста и управления видимостью окна, а также дополнительными свойствами.
+Данный интерфейс можно получить у интерфейса IProcessParam процесса, в котором
+необходимо показать окно, посредством вызова метода IUnknown::QueryInterface (const
+GUID far& iid, void** pif); 
+
+IProcessInfoWindow  свойства
+
+CloseProcess  Закрытие процесса при закрытии окна
+Интерфейс...
+Тип данных: BOOL.
+Значения свойства:
+
+TRUE " закрывать процесс, которому принадлежит окно,
+FALSE " не закрывать.
+
+Синтаксис Automation:
+
+CloseProcess = iObject.CloseProcess; Получить свойство (* )
+iObject.CloseProcess = CloseProcess; Установить свойство (* )
+CloseProcess = iObject.GetCloseProcess(); Получить свойство(**)
+iObject.SetCloseProcess( CloseProcess ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_CloseProcess( &CloseProcess ); Получить свойство
+iObject">put_CloseProcess( CloseProcess ); Установить свойство
+
+CreateWindow  Управление созданием окна в процессе
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+106
+
+
+
+ 
+
+TRUE " создавать окно в процессе,
+FALSE " не создавать окно.
+
+Синтаксис Automation:
+
+CreateWindow = iObject.CreateWindow; Получить свойство (* )
+iObject.CreateWindow = CreateWindow; Установить свойство (* )
+CreateWindow = iObject.GetCreateWindow(); Получить свойство(**)
+iObject.SetCreateWindow( CreateWindow ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_CreateWindow( &CreateWindow ); Получить свойство
+iObject">put_CreateWindow( CreateWindow ); Установить свойство
+
+HelpId  Идентификатор справки
+Интерфейс...
+Тип данных: long.
+Синтаксис Automation:
+
+HelpId = Object.HelpId Получить свойство (* )
+Object.HelpId = HelpId Установить свойство (* )
+HelpId = Object.GetHelpId() Получить свойство(**)
+Object.SetHelpId( HelpId ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HelpId( &HelpId ) Получить свойство
+Object.put_HelpId(  HelpId ) Установить свойство
+
+Text  Текст в окне
+Интерфейс...
+Тип данных: BSTR.
+Синтаксис Automation:
+
+Text = iObject.Text; Получить свойство (* )
+iObject.Text = Text; Установить свойство (* )
+Text = iObject.GetText(); Получить свойство(**)
+iObject.SetText( Text ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Text( &Text ); Получить свойство
+iObject">put_Text( Text ); Установить свойство
+107
+
+
+
+ 
+
+Примечание:
+Позволяет устанавливать и получать текст в окне.
+
+Visible  Видимость окна
+Интерфейс...
+Тип данных: BOOL.
+Значения свойства:
+
+TRUE " окно видимое,
+FALSE " окно скрытое.
+
+Синтаксис Automation:
+
+Visible = iObject.Visible; Получить свойство (* )
+iObject.Visible = Visible; Установить свойство (* )
+Visible = iObject.GetVisible(); Получить свойство(**)
+iObject.SetVisible( Visible ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Visible( &Visible ); Получить свойство
+iObject">put_Visible( Visible ); Установить свойство
+
+WindowCaption  Заголовок окна
+Интерфейс...
+Тип данных: BSTR.
+Синтаксис Automation:
+
+WindowCaption = iObject.WindowCaption; Получить свойство (* )
+iObject.WindowCaption = WindowCaption; Установить свойство (* )
+WindowCaption = iObject.GetWindowCaption(); Получить свойство(**)
+iObject.SetWindowCaption( WindowCaption ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_WindowCaption( &WindowCaption ); Получить свойство
+iObject">put_WindowCaption( WindowCaption ); Установить свойство
+
+Примечание:
+Позволяет устанавливать и получать заголовок окна.
+
+Интерфейс IApplicationDialogs
+Интерфейс доступа к диалогам Компас.
+Иерархия:
+108
+
+
+
+ 
+
+IDispatch
+IApplicationDialogs

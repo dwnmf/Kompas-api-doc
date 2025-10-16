@@ -1,0 +1,2533 @@
+Libname " имя библиотеки типов атрибутов.
+
+Возвращаемое значение:
+
+" массив SAFEARRAY типа VT_ARRAY | VT_DISPATCH указателей на интерфейсы типов 
+атрибутов, находящихся в заданной библиотеке.
+
+Примечание:
+Метод позволяет получить массив типов атрибутов из заданной библиотеки. Если воз"
+вращается один объект, то тип VARIANT"а будет VT_DISPATCH, если возвращается не"
+сколько объектов, то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+Интерфейс IAttribute
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Интерфейс атрибута.
+Иерархия:
+IKompasAPIObject
+
+IAttribute
+Примечание:
+
+1. Интерфейс позволяет осуществлять работу с атрибутом.
+2. Интерфейс можно получить с помощью метода IKompasDocument1::CreateAttr.
+
+IAttribute  свойства
+
+AttributeType  Получить тип атрибута
+Интерфейс...
+Тип данных: указатель на интерфейс типа атрибута IAttributeType.
+Синтаксис Automation:
+265
+
+
+
+AttributeType = iObject.AttributeType  ( Index ); Получить свойство (* )
+AttributeType = iObject.GetAttributeType( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_AttributeType( Index, &AttributeType ) Получить свойство,
+
+Примечание:
+
+1. Свойство позволяет получить указатель на интерфейс типа атрибута.
+2. Свойство доступно только для чтения.
+
+ColumnsCount  Получить количество столбцов в таблице 
+атрибута
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ColumnsCount = Object.ColumnsCount Получить свойство (* )
+ColumnsCount = Object.GetColumnsCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ColumnsCount( &ColumnsCount ) Получить свойство,
+
+Примечание:
+
+1. Свойство позволяет получить количество столбцов в таблице атрибута.
+2. Свойство доступно только для чтения.
+
+ColumnKey  Получить ключи колонок
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_I4
+Синтаксис Automation:
+
+ColumnKey = Object.ColumnKey Получить свойство (* )
+ColumnKey = Object.GetColumnKey() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ColumnKey( &ColumnKey ) Получить свойство,
+
+Примечание:
+266
+
+
+
+1. Свойство позволяет получать значения ключей колонок атрибута.
+2. Для задания значений ключей колонок следует использовать метод
+
+IAttribute::SetColumnKey.
+3. Свойство доступно только для чтения.
+
+FlagVisible  Получить значения видимости колонок в 
+виде массива SAFEARRAY VT_ARRAY | VT_BOOL
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_BOOL
+Синтаксис Automation:
+
+FlagVisible = Object.FlagVisible Получить свойство (* )
+FlagVisible = Object.GetFlagVisible() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FlagVisible( &FlagVisible ) Получить свойство,
+
+Примечание:
+
+1. Свойство позволяет получать значения видимости колонок атрибута.
+2. Для задания значений видимости колонок следует использовать метод
+
+IAttribute::SetFlagVisible.
+3. Свойство доступно только для чтения.
+
+Objects  Объекты, прикрепленные к атрибуту в виде 
+массива SAFEARRAY DISPATCH  VT_ARRAY | 
+VT_DISPATCH
+Интерфейс...
+Тип данных:VARIANT типа VT_ARRAY | VT_DISPATCH
+Синтаксис Automation:
+
+Objects = Object.Objects Получить свойство (* )
+Object.Objects = Objects Установить свойство (* )
+Objects = Object.GetObjects() Получить свойство (**)
+Object.SetObjects( Objects ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Objects( &Objects ) Получить свойство,
+Object.put_Objects(  Objects ) Установить свойство.
+
+Примечание:
+267
+
+
+
+Свойство позволяет устанавливать и получать массив объектов, прикрепленных к атри"
+буту.
+
+RecordFlagVisible  Получить значения видимости 
+колонок внутри записи в виде массива SAFEARRAY 
+VT_ARRAY | VT_BOOL
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_BOOL
+Синтаксис Automation:
+
+RecordFlagVisible = Object.RecordFlagVisible( Получить свойство (* )
+ColumnNumb )
+RecordFlagVisible = Object.GetRecordFlagVisible( Получить свойство (**)
+ColumnNumb )
+
+Синтаксис COM:
+
+Object.get_ColumnsCount( ColumnNumb, Получить свойство
+&ColumnsCount )
+
+Входные параметры:
+
+ColumnNumb " номер колонки записи.
+
+Примечание:
+
+1. Свойство позволяет получить значения видимости колонок внутри записи.
+2. Установить значения видимости колонок записи можно с помощью метода
+
+IAttribute::SetRecordFlagVisible.
+3. Свойство доступно только для чтения.
+
+RowsCount  Получить количество строк в таблице 
+атрибута
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+RowsCount = Object.RowsCount Получить свойство (* )
+RowsCount = Object.GetRowsCount() Получить свойство (**)
+
+Синтаксис COM:
+268
+
+
+
+Object.get_RowsCount( &RowsCount ) Получить свойство,
+
+Примечание:
+
+1. Свойство позволяет получить количество строк в таблице атрибута.
+2. Свойство доступно только для чтения.
+
+Value  Значение ячейки из таблицы атрибута
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Value = Object.Value( RowNumb, ColumnNumb ) Получить свойство (* )
+Value = Object.GetValue( RowNumb, ColumnNumb ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Value( RowNumb, ColumnNumb, Получить свойство
+&Value )
+
+Входные параметры:
+
+RowNumb (long) " номер строки атрибута,
+ColumnNumb (long) " номер столбца атрибута.
+
+Примечание:
+
+1. Свойство позволяет получать значение ячейки атрибута.
+2. Для задания значения ячейки следует использовать метод IAttribute::SetValue.
+3. Свойство доступно только для чтения.
+
+Values  Получить значения всех ячеек из таблицы 
+атрибута
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_VARIANT
+Синтаксис Automation:
+
+Values = Object.Values Получить свойство (* )
+Values = Object.GetValues() Получить свойство (**)
+
+Синтаксис COM:
+269
+
+
+
+Object.get_Values( &Values ) Получить свойство
+
+Примечание:
+
+1. Свойство позволяет значения всех ячеек из таблицы атрибута.
+2. Свойство доступно только для чтения.
+
+IAttribute  методы
+
+AddRow  Добавить строку к табличному атрибуту 
+неопределенной длины
+Интерфейс...
+Синтаксис Automation:
+BOOL AddRow( BSTR Password,
+long RowNumb );
+Синтаксис COM:
+HRESULT AddRow( BSTR Password,
+long RowNumb,
+BOOL * Result );
+Входные параметры:
+
+Password " пароль,
+RowNumb " номер строки, после которой нужно вставить строку.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет добавить строку в таблицу атрибута.
+
+Delete  Удалить атрибут
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete( BSTR   Password,
+VARIANT Objects );
+Синтаксис COM:
+HRESULT Delete( BSTR  Password,
+VARIANT Objects
+BOOL * Result );
+270
+
+
+
+Входные параметры:
+
+Password " пароль,
+Objects " массив SAFEARRAY типа VT_ARRAY | VT_DISPATCH 
+
+объектов, у которых надо удалить атрибут.
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить атрибут у объектов.
+
+DeleteRow  Удалить строку табличного атрибута 
+неопределенной длины
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteRow( BSTR Password,
+long RowNumb );
+Синтаксис COM:
+HRESULT DeleteRow( BSTR Password,
+long RowNumb,
+BOOL * Result );
+Входные параметры:
+
+Password " пароль,
+RowNumb " номер удаляемой строки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить строку из таблицы атрибута.
+
+GetKeysInfo  Выдать информацию о ключах атрибута
+Интерфейс...
+Синтаксис Automation:
+BOOL GetKeysInfo( long*  Key1,
+long*  Key2,
+long*  Key3,
+271
+
+
+
+long*  Key4,
+double* Numb );
+Синтаксис COM:
+HRESULT GetKeysInfo( long*  Key1,
+long*  Key2,
+long*  Key3,
+long*  Key4,
+double* Numb,
+BOOL *  Result );
+Выходные параметры:
+
+Key1, Key2, Key3, Key4 " ключи атрибута,
+Numb " уникальный номер атрибута.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить информацию о ключах атрибута.
+
+SetColumnKey  Установить ключи колонок
+Интерфейс...
+Синтаксис Automation:
+BOOL SetColumnKey( BSTR  Password,
+VARIANT Keys );
+Синтаксис COM:
+HRESULT SetColumnKey( BSTR Password,
+VARIANT Keys,
+BOOL *Result );
+Входные параметры:
+
+Password " пароль,
+Keys " массив SAFEARRAY типа VT_ARRAY | VT_I4 значений 
+
+ключей колонок атрибута.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить ключи колонок атрибута.
+272
+
+
+
+SetFlagVisible  Установить значения видимости колонок 
+в виде массива SAFEARRAY VT_ARRAY | VT_BOOL
+Интерфейс...
+Синтаксис Automation:
+BOOL SetFlagVisible( BSTR Password,
+VARIANT Values );
+Синтаксис COM:
+HRESULT SetFlagVisible( BSTR Password,
+VARIANT Values,
+BOOL *Result );
+Входные параметры:
+
+Password " пароль,
+Values " массив SAFEARRAY типа VT_ARRAY | VT_BOOL 
+
+значений видимости колонок атрибута.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить значения видимости колонок атрибута.
+
+SetKeysInfo  Установить информацию о ключах 
+атрибута
+Интерфейс...
+Синтаксис Automation:
+BOOL SetKeysInfo( BSTR Password,
+long Key1,
+long Key2,
+long Key3,
+long Key4 );
+Синтаксис COM:
+HRESULT SetKeysInfo( BSTR Password,
+long Key1,
+long Key2,
+long Key3,
+long Key4,
+BOOL * Result );
+Входные параметры:
+273
+
+
+
+Password " пароль,
+Key1, Key2, Key3, Key4 " ключи атрибута.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет задать ключи атрибута.
+
+SetPassword  Установить новый пароль на изменение 
+данных атрибута
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPassword( BSTR OldPassword,
+BSTR NewPassword );
+Синтаксис COM:
+HRESULT SetPassword( BSTR OldPassword,
+BSTR NewPassword,
+BOOL * Result );
+Входные параметры:
+
+OldPassword " старый пароль,
+NewPassword " новый пароль.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить новый пароль на изменение данных атрибута.
+
+SetRecordFlagVisible  Установить значения видимости 
+колонок внутри записи в виде массива SAFEARRAY 
+VT_ARRAY | VT_BOOL
+Интерфейс...
+Синтаксис Automation:
+BOOL SetRecordFlagVisible( BSTR Password,
+long   ColumnNumb,
+VARIANT Values );
+274
+
+
+
+Синтаксис COM:
+HRESULT SetRecordFlagVisible( BSTR  Password,
+long  ColumnNumb,
+VARIANT Values,
+BOOL * Result );
+Входные параметры:
+
+Password " пароль,
+ColumnNumb " номер колонки записи,
+Values " массив SAFEARRAY типа VT_ARRAY | VT_BOOL 
+
+значений видимости колонок записи.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить значения видимости колонок записи.
+
+SetValue  Установить значение ячейки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetValue( BSTR Password,
+long RowNumb,
+long ColumnNumb,
+VARIANT Value );
+Синтаксис COM:
+HRESULT SetValue( BSTR Password,
+long RowNumb,
+long ColumnNumb,
+VARIANT Value,
+BOOL* Result );
+Входные параметры:
+
+Password " пароль,
+RowNumb " номер строки атрибута,
+ColumnNumb " номер столбца атрибута,
+Value " значение ячейки атрибута.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+275
+
+
+
+FALSE " в случае неудачи.
+Примечание:
+Метод позволяет установить значение ячейки атрибута.
+
+SetValues  Установить значения всех ячеек таблицы 
+атрибута
+Интерфейс...
+Синтаксис Automation:
+BOOL SetValues( BSTR Password,
+VARIANT Values );
+Синтаксис COM:
+HRESULT SetValues( BSTR Password,
+VARIANT Values,
+ BOOL *Result );
+Входные параметры:
+
+Password " пароль,
+Values " массив SAFEARRAY типа VT_ARRAY | VT_VARIANT 
+
+значений ячеек атрибута.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить значения всех ячеек таблицы атрибута.
+
+ViewEdit  Открыть диалог для просмотра 
+и редактирования атрибута
+Интерфейс...
+Синтаксис Automation:
+BOOL ViewEdit( OLE_HANDLE Parent,
+BSTR Password,
+BOOL ReadOnly );
+Синтаксис COM:
+HRESULT ViewEdit( OLE_HANDLE Parent,
+BSTR Password,
+BOOL ReadOnly,
+BOOL *Result );
+Выходные параметры:
+276
+
+
+
+Parent " дескриптор главного окна системы КОМПАС, который 
+можно получить с помощью функции GetHWindow,
+
+Password " пароль,
+ReadOnly " TRUE " открыть диалог для просмотра
+
+" FALSE " открыть диалог для редактирования.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет открыть диалог для просмотра и редактирования атрибута.
+
+Интерфейс IAttributeType
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Интерфейс параметров типа атрибута.
+Иерархия:
+IKompasAPIObject
+
+IAttributeType
+Примечание:
+
+1. Интерфейс позволяет задавать параметры типа атрибута.
+2. Интерфейс можно получить следующими способами:
+
+▼ у менеджера типа атрибутов с помощью методов IAttrTypeMng::CreateAttrType,
+IAttrTypeMng::GetAttrType, IAttrTypeMng::ChoiceAttrTypes,
+
+▼ у атрибута с помощью свойства IAttribute::AttributeType.
+
+IAttributeType  свойства
+
+AttrType  Тип данных
+Интерфейс...
+Тип данных: из перечисления ksAttributeTypeEnum
+Синтаксис Automation:
+
+AttrType = Object.AttrType Получить свойство (* )
+Object.AttrType = AttrType Установить свойство (* )
+AttrType = Object.GetAttrType() Получить свойство (**)
+Object.SetAttrType( AttrType ) Установить свойство (**)
+
+Синтаксис COM:
+277
+
+
+
+Object.get_AttrType( &AttrType ) Получить свойство,
+Object.put_AttrType(  AttrType ) Установить свойство.
+
+Примечание:
+Свойство позволяет устанавливать и получать тип данных для типа атрибута.
+
+ColumnsCount  Получить количество колонок 
+табличного атрибута
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ColumnsCount = Object.ColumnsCount Получить свойство (* )
+ColumnsCount = Object.GetColumnsCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ColumnsCount( &ColumnsCount ) Получить свойство,
+
+Примечание:
+Свойство доступно только для чтения.
+
+ColumnInfo  Получить информацию о столбце атрибута
+Интерфейс...
+Тип данных: указатель на интерфейс параметров столбца атрибута IColumnInfo
+Синтаксис Automation:
+
+ColumnInfo = Object.ColumnInfo ( Index ) Получить свойство (* )
+ColumnInfo = Object.GetColumnInfo( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ColumnInfo( Index, &ColumnInfo ) Получить свойство,
+
+Входные параметры:
+
+Index (VARIANT) " индекс столбца.
+
+Примечание:
+
+1. Свойство позволяет получать интерфейс параметров столбца атрибута.
+2. Свойство доступно только для чтения.
+278
+
+
+
+FileName  Имя библиотеки типов атрибутов
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+FileName = Object.FileName Получить свойство (* )
+FileName = Object.GetFileName() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FileName( &FileName ) Получить свойство,
+Object.put_RowsCount(  RowsCount ) Установить свойство.
+
+Примечание:
+
+1. Свойство позволяет получить имя библиотеки типов атрибутов.
+2. Свойство доступно только для чтения.
+
+RowsCount  Количество строк в таблице
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+RowsCount = Object.RowsCount Получить свойство (* )
+Object.RowsCount = RowsCount Установить свойство (* )
+RowsCount = Object.GetRowsCount() Получить свойство (**)
+Object.SetRowsCount( RowsCount ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_RowsCount( &RowsCount ) Получить свойство,
+Object.put_RowsCount(  RowsCount ) Установить свойство.
+
+Примечание:
+Свойство позволяет устанавливать и получать количество строк в таблице.
+
+TypeName  Название типа атрибута
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+TypeName = Object.TypeName Получить свойство (* )
+Object.TypeName = TypeName Установить свойство (* )
+TypeName = Object.GetTypeName() Получить свойство (**)
+279
+
+
+
+Object.SetTypeName( TypeName ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_TypeName( &TypeName ) Получить свойство,
+Object.put_TypeName(  TypeName ) Установить свойство.
+
+Примечание:
+Свойство позволяет устанавливать и получать название типа атрибута.
+
+UniqueNumb  Уникальный номер типа
+Интерфейс...
+Тип данных: double.
+Синтаксис Automation:
+
+UniqueNumb = Object.UniqueNumb Получить свойство (* )
+UniqueNumb = Object.GetUniqueNumb() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UniqueNumb( &UniqueNumb ) Получить свойство,
+
+Примечание:
+
+1. Свойство позволяет получать уникальный номер типа атрибута.
+2. Свойство доступно только для чтения.
+
+IAttributeType  методы
+
+AddColumn  Добавить колонку
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddColumn( long Index,
+long Type,
+BSTR Name );
+Синтаксис COM:
+HRESULT AddColumn( long Index,
+ksValueTypeEnum Type,
+BSTR Name,
+IColumnInfo**  Result );
+Входные параметры:
+
+Index " индекс колонки, после которой нужно добавить 
+колонку,
+280
+
+
+
+Type " тип значений колонки,
+Name " название колонки.
+
+Возвращаемое значение:
+
+Указатель на интерфейс IColumnInfo.
+
+Примечание:
+Метод позволяет добавить колонку к типу атрибута.
+
+Delete  Удалить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete (BSTR Password);
+Синтаксис COM:
+HRESULT Delete( BSTR Password,
+BOOL * Result );
+Входные параметры:
+
+Password " пароль.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить тип атрибута.
+
+GetKeysInfo  Получить информацию о ключах атрибута
+Интерфейс...
+Синтаксис Automation:
+BOOL GetKeysInfo( long* Key1,
+long* Key2,
+long* Key3,
+long* Key4);
+Синтаксис COM:
+HRESULT GetKeysInfo( long* Key1,
+long* Key2,
+long* Key3,
+long* Key4,
+BOOL* Result );
+281
+
+
+
+Выходные параметры:
+
+Key1, Key2, Key3, Key4 " ключи атрибута.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить информацию о ключах атрибута.
+
+SetKeysInfo  Установить информацию о ключах 
+атрибута
+Интерфейс...
+Синтаксис Automation:
+BOOL SetKeysInfo( long Key1,
+long Key2,
+long Key3,
+long Key4 );
+Синтаксис COM:
+HRESULT SetKeysInfo( long Key1,
+long Key2,
+long Key3,
+long Key4,
+BOOL * Result );
+Входные параметры:
+
+Key1, Key2, Key3, Key4 " ключи атрибута.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить информацию о ключах атрибута.
+
+SetPassword  Установить новый пароль на изменение 
+данных атрибута
+Интерфейс...
+Синтаксис Automation:
+282
+
+
+
+BOOL SetPassword( BSTR OldPassword,
+BSTR NewPassword );
+Синтаксис COM:
+HRESULT SetPassword( BSTR OldPassword,
+BSTR NewPassword,
+BOOL * Result );
+Входные параметры:
+
+OldPassword " старый пароль,
+NewPassword " новый пароль.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить новый пароль на изменение данных атрибута.
+
+Update  Обновить данные
+Интерфейс...
+Синтаксис Automation:
+BOOL Update( BSTR Password );
+Синтаксис COM:
+HRESULT Update( BSTR Password,
+BOOL * Result );
+Входные параметры:
+
+Password " пароль.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет обновить данные в типе атрибута.
+
+ViewEdit  Открыть диалог для просмотра и 
+редактирования типа атрибута
+Интерфейс...
+Синтаксис Automation:
+283
+
+
+
+BOOL ViewEdit( OLE_HANDLE Parent,
+BSTR Password,
+BOOL ReadOnly );
+Синтаксис COM:
+HRESULT ViewEdit( OLE_HANDLE Parent,
+BSTR Password,
+BOOL ReadOnly,
+BOOL *Result );
+Выходные параметры:
+
+Parent " дескриптор главного окна системы КОМПАС, который 
+можно получить с помощью функции GetHWindow,
+
+Password " пароль,
+ReadOnly " TRUE " открыть диалог для просмотра,
+
+" FALSE " открыть диалог для редактирования.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет открыть диалог для просмотра и редактирования типа атрибута.
+
+Интерфейс IColumnInfo
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Интерфейс параметров столбца табличного атрибута.
+Иерархия:
+IKompasAPIObject
+
+IColumnInfo
+Примечание:
+
+1. Интерфейс позволяет задавать параметры столбца табличного атрибута.
+2. Интерфейс можно получить следующими способами:
+
+▼ у интерфейса типа атрибута с помощью свойства IAttributeType::ColumnInfo и метода
+IAttributeType::AddColumn.
+
+▼ для столбца записи " с помощью свойства IColumnInfo::RecordColumnInfo и метода
+IColumnInfo::AddRecordColumn.
+284
+
+
+
+ IColumnInfo  свойства
+
+Caption  Заголовок столбца
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Caption = Object.Caption Получить свойство (* )
+Object.Caption = Caption Установить свойство (* )
+Caption = Object.GetCaption() Получить свойство (**)
+Object.SetCaption( Caption ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Caption( &Caption ) Получить свойство,
+Object.put_Caption(  Caption ) Установить свойство.
+
+Примечание:
+Свойство позволяет устанавливать и получать заголовок столбца атрибута.
+
+ColType  Тип данных столбца
+Интерфейс...
+Тип данных: из перечисления ksValueTypeEnum
+Синтаксис Automation:
+
+ColType = Object.ColType Получить свойство (* )
+Object.ColType = ColType Установить свойство (* )
+ColType = Object.GetColType() Получить свойство (**)
+Object.SetColType( ColType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ColType( &ColType ) Получить свойство,
+Object.put_ColType(  ColType ) Установить свойство.
+
+Примечание:
+
+1. Свойство позволяет устанавливать и получать тип данных столбца атрибута.
+2. При выборе типа ksValueTypeString длина строки задается свойством IColumnInfo::Range
+
+(1…4000).
+
+DefValue  Значение по умолчанию
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+285
+
+
+
+DefValue = Object.DefValue Получить свойство (* )
+Object.DefValue = DefValue Установить свойство (* )
+DefValue = Object.GetDefValue() Получить свойство (**)
+Object.SetDefValue( DefValue ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DefValue( &DefValue ) Получить свойство,
+Object.put_DefValue(  DefValue ) Установить свойство.
+
+Примечание:
+Свойство позволяет устанавливать и получать умолчательное значение колонки атрибу"
+та.
+
+Key  Ключ колонки
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+Key = Object.Key Получить свойство (* )
+Object.Key = Key Установить свойство (* )
+Key = Object.GetKey() Получить свойство (**)
+Object.SetKey( Key ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Key( &Key ) Получить свойство,
+Object.put_Key(  Key ) Установить свойство.
+
+Примечание:
+Свойство позволяет устанавливать и получать ключ столбца атрибута.
+
+ListValue  Использовать список значений
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ListValue = Object.ListValue Получить свойство (* )
+Object.ListValue = ListValue Установить свойство (* )
+ListValue = Object.GetListValue() Получить свойство (**)
+Object.SetListValue( ListValue ) Установить свойство (**)
+
+Синтаксис COM:
+286
+
+
+
+Object.get_ListValue( &ListValue ) Получить свойство,
+Object.put_ListValue(  ListValue ) Установить свойство.
+
+Примечание:
+Свойство позволяет устанавливать и получать признак использования списка значений.
+
+Range  Диапазон значений
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Range = Object.Range Получить свойство (* )
+Object.Range = Range Установить свойство (* )
+Range = Object.GetRange() Получить свойство (**)
+Object.SetRange( Range ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Range( &Range ) Получить свойство,
+Object.put_Range(  Range ) Установить свойство.
+
+Примечание:
+Свойство позволяет устанавливать и получать диапазон значений столбца атрибута.
+
+RecordColumnsCount  Получить количество столбцов 
+записи
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+RecordColumnsCount = Получить свойство (* )
+Object.RecordColumnsCount
+RecordColumnsCount = Получить свойство (**)
+Object.GetRecordColumnsCount()
+
+Синтаксис COM:
+
+Object.get_RecordColumnsCount( Получить свойство,
+&RecordColumnsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+287
+
+
+
+RecordColumnInfo  Получить информацию о столбце 
+атрибута
+Интерфейс...
+Тип данных: указатель на интерфейс IColumnInfo
+Синтаксис Automation:
+
+RecordColumnInfo = Object.RecordColumnInfo Получить свойство (* )
+RecordColumnInfo = Получить свойство (**)
+Object.GetRecordColumnInfo()
+
+Синтаксис COM:
+
+Object.get_RecordColumnInfo( Получить свойство,
+&RecordColumnInfo )
+
+Примечание:
+
+1. Свойство позволяет получать информацию о столбце записи.
+2. Свойство доступно только для чтения.
+
+SortListValue  Учитывать порядок размещения 
+значений при сортировке
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SortListValue = Object.SortListValue Получить свойство (* )
+Object.SortListValue = SortListValue Установить свойство (* )
+SortListValue = Object.GetSortListValue() Получить свойство (**)
+Object.SetSortListValue( SortListValue ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SortListValue( &SortListValue ) Получить свойство,
+Object.put_SortListValue(  SortListValue ) Установить свойство.
+
+Примечание:
+Свойство позволяет устанавливать и получать признак учета порядка значений при сор"
+тировке.
+288
+
+
+
+IColumnInfo  методы
+
+AddRecordColumn  Добавить колонку
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddRecordColumn( long Index,
+long Type,
+BSTR Name );
+Синтаксис COM:
+HRESULT AddRecordColumn( long Index,
+ksValueTypeEnum Type,
+BSTR Name,
+IColumnInfo**  Result );
+Входные параметры:
+
+Index " индекс колонки, после которой нужно добавить 
+колонку,
+
+Type " тип значений колонки,
+Name " название колонки.
+
+Возвращаемое значение:
+
+указатель на интерфейс IColumnInfo.
+
+Примечание:
+Метод позволяет добавить колонку к записи.
+
+Delete  Удалить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет добавить колонку к записи.
+289
+
+
+
+Базовые интерфейсы
+Интерфейс IKompasDocument
+Интерфейс событий документа, работа с файлом...
+Базовый класс документов КОМПАС.
+Иерархия:
+IKompasAPIObject
+
+IKompasDocument
+IKompasDocument1
+
+Примечание:
+
+1. Данный интерфейс является базовым для всех интерфейсов документов КОМПАС API.
+2. Данный интерфейс может быть получен следующими способами:
+
+▼ от интерфейса приложения IApplication с помощью свойства
+IApplication::ActiveDocument, 
+
+▼ от интерфейса коллекции документов IDocuments с помощью свойства IDocuments::Item
+и методов IDocuments::Add, IDocuments::Open,
+
+▼ от интерфейса элемента библиотеки документов IInsert с помощью метода IInsert::Edit.
+3. С помощью метода IUnknown::QueryInterface у интерфейса можно получить дополни"
+
+тельный интерфейс IKompasDocument1и IProductDataManager.
+
+IKompasDocument  свойства
+
+Active  Активность документа
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Active = iObject.Active Получить свойство (* )
+iObject.Active = Active Установить свойство (* )
+Active = iObject.GetActive() Получить свойство (**)
+iObject.SetActive (Active) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Active (&Active) Получить свойство
+iObject">put_Active (Active) Установить свойство
+
+Примечание:
+Позволяет получить активность документа. Установить можно только значение TRUE,
+т.е. сделать документ активным, если он неактивен. Значение FALSE игнорируется.
+290
+
+
+
+Changed  Документ изменен
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Changed = iObject.Changed Получить свойство (* )
+Changed = iObject.GetChanged() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Changed (&Changed) Получить свойство
+
+Значения свойства:
+
+TRUE " документ изменен с момента последнего сохранения,
+FALSE " документ не изменялся.
+
+DocumentFrames  Интерфейс коллекции окон 
+документа
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции окон IDocumentFrames
+Синтаксис Automation:
+
+DocumentFrames = iObject.DocumentFrames Получить свойство(* )
+DocumentFrames = Получить свойство (**)
+iObject.GetDocumentFrames()
+
+Синтаксис COM:
+
+iObject">get_DocumentFrames Получить свойство
+(&DocumentFrames)
+
+Примечание:
+Свойство доступно только для чтения.
+
+DocumentSettings  Настройки документа
+Интерфейс...
+Тип данных: " указатель на интерфейс IDocumentSettings текущих настроек документа.
+Синтаксис Automation:
+
+DocumentSettings = Получить свойство (* )
+iObject.DocumentSettings
+291
+
+
+
+DocumentSettings = Получить свойство (**)
+iObject.GetDocumentSettings()
+
+Синтаксис COM:
+
+iObject">get_DocumentSettings Получить свойство
+(&DocumentSettings)
+
+Примечание:
+Свойство доступно только для чтения.
+
+DocumentType  Тип документа
+Интерфейс...
+Тип данных: тип документа из перечисления DocumentTypeEnum
+Синтаксис Automation:
+
+DocumentType = iObject.DocumentType Получить свойство * )
+DocumentType = iObject.GetDocumentType() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_DocumentType (&DocumentType) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+LayoutSheets  Листы оформления
+Интерфейс...
+Тип данных: указатель на интерфейс ILayoutSheets коллекции листов оформления
+Синтаксис Automation:
+
+LayoutSheets = iObject.LayoutSheets Получить свойство 
+LayoutSheets = iObject.GetLayoutSheets() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_LayoutSheets (&LayoutSheets) Получить свойство
+
+Примечание:
+
+1. Свойство используется только для документа Чертеж.
+2. Свойство доступно только для чтения.
+
+Name  Имя документа
+Интерфейс...
+292
+
+
+
+Тип данных:строка.
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Name (&Name) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения. Возвращает имя файла документа без пути.
+
+Path  Путь к файлу документа
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+Path = iObject.Path Получить свойство (* )
+Path = iObject.GetPath() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Path (&Path) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения. Возвращает путь к файлу документа без имени и
+расширения файла.
+
+PathName  Полное имя документа
+Интерфейс...
+Тип данных:строка
+Синтаксис Automation:
+
+PathName = iObject.PathName Получить свойство (* )
+PathName = iObject.GetPathName() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_PathName Получить свойство
+(&PathName)
+
+Примечание:
+293
+
+
+
+Свойство доступно только для чтения. Возвращает полное имя файла документа, состо"
+ящее из пути, имени и расширения файла.
+
+ReadOnly  Только для чтения
+Интерфейс...
+Тип данных:BOOL
+Синтаксис Automation:
+
+ReadOnly = iObject.ReadOnly Получить свойство (* )
+iObject.ReadOnly = ReadOnly Установить свойство (* )
+ReadOnly = iObject.GetReadOnly() Получить свойство (**)
+iObject.SetReadOnly (ReadOnly) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ReadOnly (&ReadOnly) Получить свойство
+iObject">put_ReadOnly (ReadOnly) Установить свойство
+
+Примечание:
+Позволяет получить и изменить свойство документа Только для чтения.
+
+SpecificationDescriptions  Описания спецификации
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationDescriptions коллекции описаний спе"
+цификации
+Синтаксис Automation:
+
+SpecificationDescriptions = Получить свойство(* )
+iObject.SpecificationDescriptions
+SpecificationDescriptions = Получить свойство (**)
+iObject.GetSpecificationDescriptions()
+
+Синтаксис COM:
+
+iObject">get_SpecificationDescriptions Получить свойство
+(&SpecificationDescriptions)
+
+Примечание:
+Свойство доступно только для чтения.
+
+Visible  Видимость документа
+Интерфейс...
+Тип данных:BOOL
+294
+
+
+
+Синтаксис Automation:
+
+Visible = iObject.Visible Получить свойство (* )
+Visible = iObject.GetVisible() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Visible (&Visible) Получить свойство
+
+Значения свойства:
+
+TRUE " документ открыт в видимом режиме,
+FALSE " документ открыт в невидимом режиме.
+
+Примечание:
+Свойство доступно только для чтения. Возвращает свойство видимости документа.
+
+IKompasDocument  методы
+
+Close  Закрыть документ
+Интерфейс...
+Синтаксис Automation:
+BOOL Close (DocumentCloseOptions closeOptions);
+Синтаксис COM:
+HRESULT Close ([in, defaultvalue(FALSE)] DocumentCloseOptions closeOptions, [out, retval]
+VARIANT_BOOL* pRes);
+Входные параметры:
+
+closeOptions " действия при закрытии измененного документа из 
+перечисления DocumentCloseOptions.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Если документ не был изменен или его уже сохранили перед закрытием, то значение
+входного параметра будет проигнорировано.
+
+2. Если документ был изменен, то возможны три варианта:
+▼ закрыть документ без сохранения – kdDoNotSaveChanges (в этом случае все изменения
+
+будут потеряны),
+295
+
+
+
+▼ закрыть документ с сохранением – kdSaveChanges (в этом случае документ будет снача"
+ла сохранен, а потом закрыт),
+
+▼ предоставить право выбора пользователю – kdPromptToSaveChanges (в этом случае на
+экран будет выведено сообщение о возможных действиях). Если закрываем в режиме
+kdPromptToSaveChanges, то пользователь может вообще отказаться от закрытия изме"
+ненного документа, в этом случае метод вернет FALSE.
+
+Save  Сохранить документ на диске
+Интерфейс...
+Синтаксис Automation:
+void Save();
+Синтаксис COM:
+HRESULT Save();
+Примечание:
+Сохраняет все изменения в документе и снимает флаг измененности документа.
+
+SaveAs Сохранить документ под другим именем
+Интерфейс...
+Синтаксис Automation:
+void SaveAs (LPCTSTR PathName);
+Синтаксис COM:
+HRESULT SaveAs ([in] BSTR PathName);
+Входные параметры:
+
+PathName " полное имя файла документа, состоящее из пути, 
+имени и расширения файла.
+
+Примечание:
+Позволяет сохранить документ на диск под другим именем.
+
+UserDataStoragesMng  Интерфейс Менеджера 
+пользовательских хранилищ
+Интерфейс...
+Тип данных: указатель на интерфейс IUserDataStoragesMng Менеджера пользователь"
+ских хранилищ
+Синтаксис Automation:
+
+UserDataStoragesMng = Получить свойство (* )
+iObject.UserDataStoragesMng
+UserDataStoragesMng = Получить свойство (**)
+iObject.GetUserDataStoragesMng()
+296
+
+
+
+Синтаксис COM:
+
+iObject">get_UserDataStoragesMng Получить свойство
+(&UserDataStoragesMng)
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IKompasDocument2D
+Базовый класс графических документов КОМПАС.
+Иерархия:
+IKompasAPIObject
+
+IKompasDocument
+IKompasDocument2D
+
+IKompasDocument2D1
+IPropertyKeeper
+
+Примечание:
+
+1. Данный интерфейс является базовым для интерфейсов графических документов КОМ"
+ПАС API " чертежа и фрагмента.
+
+2. Интерфейс можно получить из коллекции документов IDocuments.
+3. Интерфейс может быть получен с помощью метода IUnknown QueryInterface от
+
+▼ интерфейса документа IKompasDocument,
+▼ интерфейса чертежа IDrawingDocument,
+▼ интерфейса фрагмента IFragmentDocument.
+4. С помощью метода IUnknown::QueryInterface у интерфейса можно получить дополни"
+
+тельные интерфейсы:
+▼ IKompasDocument2D1,
+▼ IPropertyKeeper.
+
+IKompasDocument2D  свойства
+
+ViewsAndLayersManager  Возвращает менеджер видов и 
+слоев документа
+Интерфейс...
+Тип данных: IViewsAndLayersManager
+Синтаксис Automation:
+
+ViewsAndLayersManager = Получить свойство (* )
+iObject.ViewsAndLayersManager
+297
+
+
+
+ViewsAndLayersManager = Получить свойство (**)
+iObject.GetViewsAndLayersManager()
+
+Синтаксис COM:
+
+iObject">get_ViewsAndLayersManager Получить свойство
+(&ViewsAndLayersManager)
+
+Примечание:
+Свойство доступно только для чтения.
+
+IKompasDocument2D  методы
+
+GetDrawingObjectNotifyResult  Получить интерфейс 
+результатов редактирования объекта при обработке 
+событий
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetDrawingObjectNotifyResult();
+Синтаксис COM:
+HRESULT GetDrawingObjectNotifyResult ([out, retval] IDispatch**Result);
+Возвращаемое значение:
+
+указатель на интерфейс ksObject2DNotifyResult
+
+Интерфейс IFragmentDocument
+Интерфейс фрагмента.
+IKompasAPIObject
+
+IKompasDocument
+IKompasDocument
+
+IFragmentDocument
+
+IFragmentDocument  свойства
+
+IsSketch  Документ является эскизом 
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+TRUE " документ является эскизом,
+FALSE " документ не является эскизом.
+298
+
+
+
+Синтаксис Automation:
+
+IsSketch = iObject.IsSketch Получить свойство (* )
+IsSketch = iObject.GetIsSketch( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_IsSketch ( &IsSketch ) Получить свойство (* )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IDrawingDocument
+Интерфейс чертежа.
+Иерархия:
+IKompasAPIObject
+
+IKompasDocument
+IKompasDocument2D
+
+IDrawingDocument
+
+IDrawingDocument  свойства
+
+ChangeListDescriptions  Описания таблицы изменений
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecificationDescriptions
+Синтаксис Automation:
+
+Descriptions = Получить свойство (* )
+Object.ChangeListDescriptions
+Descriptions = Получить свойство (**)
+Object.GetChangeListDescriptions()
+
+Синтаксис COM:
+
+Object.get_ChangeListDescriptions( Получить свойство
+&Descriptions )
+
+Примечание:
+
+1. Позволяет получать и создавать объекты спецификации таблицы изменения.
+2. Свойство доступно только для чтения.
+299
+
+
+
+SpecRough  Неуказанная шероховатость
+Интерфейс...
+Тип данных: указатель на интерфейс ISpecRough
+Синтаксис Automation:
+
+SpecRough = Object.SpecRough Получить свойство (* )
+SpecRough = Object.GetSpecRough() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SpecRough( &SpecRough ) Получить свойство
+
+Примечание:
+
+1. Свойство позволяет получать интерфейс неуказанной шероховатости.
+2. Свойство доступно только для чтения.
+
+TechnicalDemand  Технические требования
+Интерфейс...
+Тип данных: указатель на интерфейс ITechnicalDemand
+Синтаксис Automation:
+
+TechnicalDemand = Получить свойство (* )
+Object.TechnicalDemand
+TechnicalDemand = Получить свойство (**)
+Object.GetTechnicalDemand()
+
+Синтаксис COM:
+
+Object.get_TechnicalDemand( Получить свойство
+&TechnicalDemand )
+
+Примечание:
+
+1. Свойство позволяет получать интерфейс технических требований.
+2. Свойство доступно только для чтения.
+
+Интерфейс IKompasDocument3D
+Справка системы КОМПАС...
+kompas.chm::/260_Glava14_Osnovn_pon_trehmern_modelir.htm
+Базовый класс документовмоделей КОМПАС (скрытый).
+Иерархия:
+IKompasAPIObject
+300
+
+
+
+IKompasDocument
+IKompasDocument3D
+
+IExternalTessellationManager
+ISelectionManager
+IChooseManager
+Интерфейс событий...
+Синтаксис Automation:
+IKompasDocument3D document3D (application.GetActiveDocument());
+Синтаксис COM:
+pApplication">get_ActiveDocument( &document3D );
+Примечание:
+
+1. Данный интерфейс является базовым для интерфейсов документов"моделей КОМПАС
+API – детали IPartDocument и сборки IAssemblyDocument.
+
+2. Интерфейс можно получить у интерфейса приложения IApplication с помощью свойства
+IApplication::ActiveDocument или свойства IApplication::Documents.
+
+3. У данного интерфейса посредством вызова метода IUnknown::QueryInterface (const GUID
+far& IID, void** pif) можно получить дополнительные интерфейсы:
+
+▼ IEmbodimentsManager
+▼ IExternalTessellationManager
+▼ ISelectionManager
+▼ IChooseManager
+
+IKompasDocument3D  свойства
+
+AttributesEx  Массив атрибутов документа в виде массива 
+SAFEARRAY DISPATCH  VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+AttributesEx = Object.AttributesEx( Key1, Key2, Получить свойство (* )
+Key3, Key4, Numb, Objects, SourcePart )
+AttributesEx = Object.GetAttributesEx( Key1, Получить свойство (**)
+Key2, Key3, Key4, Numb, Objects, SourcePart )
+
+Синтаксис COM:
+
+Object.get_AttributesEx( Key1, Key2, Key3, Key4, Получить свойство
+Numb, Objects, SourcePart, &AttributesEx )
+
+Входные параметры:
+301
+
+
+
+key1, key2, key3, key4 " ключи атрибута,
+Numb " уникальный номер типа атрибута,
+Objects " массив VT_ARRAY | VT_DISPATCH объектов, для которых 
+
+назначается атрибут,
+SourcePart " указатель на интерфейс вставки детали IPart.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ChooseManager  Менеджер выбора (подсветки) объектов
+Интерфейс...
+Тип данных: указатель на интерфейс менеджера выбора (подсветки) объектов
+IChooseManager
+Синтаксис Automation:
+
+ChooseManager = Object.ChooseManager Получить свойство (* )
+ChooseManager = Object.GetChooseManager() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ChooseManager( &ChooseManager ) Получить свойство
+
+Свойство позволяет получать указатель на менеджер выбора (подсветки) объектов.
+Примечание:
+Свойство доступно только для чтения.
+
+CreateObjectsInCurrentLocalCS  Создавать новые объекты в 
+текущей ЛСК
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CreateObjectsInCurrentLocalCS = Получить свойство (* )
+Object.CreateObjectsInCurrentLocalCS
+Object.CreateObjectsInCurrentLocalCS = Установить свойство (* )
+CreateObjectsInCurrentLocalCS
+CreateObjectsInCurrentLocalCS = Получить свойство (**)
+Object.GetCreateObjectsInCurrentLocalCS()
+Object.SetCreateObjectsInCurrentLocalCS( Установить свойство (**)
+CreateObjectsInCurrentLocalCS )
+
+Синтаксис COM:
+302
+
+
+
+Object.get_CreateObjectsInCurrentLocalCS( Получить свойство
+&CreateObjectsInCurrentLocalCS )
+Object.put_CreateObjectsInCurrentLocalCS(  Установить свойство
+CreateObjectsInCurrentLocalCS )
+
+Примечание:
+Свойство позволяет включить режим создания объектов модели в текущей системе ко"
+ординат. Для правильной работы библиотек нужно включить режим, создать нужные
+объекты и выключить режим.
+Если флаг включен, то 3D точка, ломаная, сплайн, эскиз, импортированная поверхность,
+операция без истории, деталь заготовка через API будут создаваться в текущей локаль"
+ной системе координат.
+Параметры создания в локальной системе координат зависят от настроек системы.
+См. также: ISystemSettings::ModelLocalCSCreateInAbsoluteCS и
+ISystemSettings::ModelLocalCSSetActive.
+
+DrawMode  Режим визуализации
+Интерфейс...
+Тип данных: long
+Значение свойства:
+Из перечисления ViewMode
+Синтаксис Automation:
+
+long DrawMode = iObject.DrawMode Получить свойство (* )
+iObject.DrawMode = DrawMode Установить свойство (* )
+long DrawMode = iObject.GetDrawMode() Получить свойство (**)
+iObject.SetDrawMode( DrawMode ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_DrawMode( &DrawMode ) Получить свойство
+iObject">put_DrawMode( DrawMode ) Установить свойство
+
+EnableUndo  Включить/отключить добавление команд в 
+Undo
+Интерфейс...
+Тип данных: BOOL
+Синтаксис:
+
+EnableUndo = Object.EnableUndo Получить свойство (* )
+Object.EnableUndo = EnableUndo Установить свойство (* )
+EnableUndo = Object.GetEnableUndo() Получить свойство (**)
+303
+
+
+
+Object.SetEnableUndo( EnableUndo ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_EnableUndo( &EnableUndo ) Получить свойство
+Object.put_EnableUndo(  EnableUndo ) Установить свойство
+
+HideAllAuxiliaryGeom  Скрыть / показать все 
+вспомогательные объекты
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+HideAllAuxiliaryGeom = Object.HideAllAuxiliaryGeom Получить свойство (* )
+Object.HideAllAuxiliaryGeom = HideAllAuxiliaryGeom Установить свойство (* )
+HideAllAuxiliaryGeom = Object.GetHideAllAuxiliaryGeom() Получить свойство (**)
+Object.SetHideAllAuxiliaryGeom( HideAllAuxiliaryGeom ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HideAllAuxiliaryGeom( &HideAllAuxiliaryGeom ) Получить свойство
+Object.put_HideAllAuxiliaryGeom(  HideAllAuxiliaryGeom ) Установить свойство
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideAllAxis  Скрыть / показать конструктивные оси
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " конструктивные оси скрыты,
+FALSE " конструктивные оси показаны.
+
+Синтаксис Automation:
+
+BOOL HideAllAxis = iObject.HideAllAxis Получить свойство (* )
+iObject.HideAllAxis = HideAllAxis Установить свойство (* )
+BOOL HideAllAxis = iObject.GetHideAllAxis() Получить свойство (**)
+iObject.SetHideAllAxis (HideAllAxis) Установить свойство (**)
+
+Синтаксис COM:
+304
+
+
+
+iObject">get_HideAllAxis (&HideAllAxis) Получить свойство
+iObject">put_HideAllAxis (HideAllAxis) Установить свойство
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideAllControlPoints  Скрыть / показать контрольные точки
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " контрольные точки скрыты,
+FALSE " контрольные точки показаны.
+
+Синтаксис Automation:
+
+BOOL HideAllControlPoints = Получить свойство (* )
+iObject.HideAllControlPoints
+iObject.HideAllControlPoints = Установить свойство (* )
+HideAllControlPoints
+BOOL HideAllControlPoints = Получить свойство (**)
+iObject.GetHideAllControlPoints()
+iObject.SetHideAllControlPoints Установить свойство (**)
+(HideAllControlPoints)
+
+Синтаксис COM:
+
+iObject">get_HideAllControlPoints Получить свойство
+(&HideAllControlPoints)
+iObject">put_HideAllControlPoints Установить свойство
+(HideAllControlPoints)
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideAllCurves  Скрыть / показать пространственные кривые
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+305
+
+
+
+TRUE " пространственные кривые скрыты,
+FALSE " пространственные кривые показаны.
+
+Синтаксис Automation:
+
+BOOL HideAllCurves = iObject.HideAllCurves Получить свойство (* )
+iObject.HideAllCurves = HideAllCurves Установить свойство (* )
+BOOL HideAllCurves = iObject.GetHideAllCurves() Получить свойство (**)
+iObject.SetHideAllCurves (HideAllCurves) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_HideAllCurves (&HideAllCurves) Получить свойство
+iObject">put_HideAllCurves (HideAllCurves) Установить свойство
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideAllDesignations  Скрыть / показать условные 
+обозначения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+HideAllDesignations = Object.HideAllDesignations Получить свойство (* )
+Object.HideAllDesignations = HideAllDesignations Установить свойство (* )
+HideAllDesignations = Получить свойство (**)
+Object.GetHideAllDesignations()
+Object.SetHideAllDesignations( HideAllDesignations ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HideAllDesignations( &HideAllDesignations ) Получить свойство
+Object.put_HideAllDesignations(  HideAllDesignations ) Установить свойство
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideAllDimensions  Скрыть / показать размеры
+Интерфейс...
+Тип данных: BOOL
+306
+
+
+
+Синтаксис Automation:
+
+HideAllDimensions = Object.HideAllDimensions Получить свойство (* )
+Object.HideAllDimensions = HideAllDimensions Установить свойство (* )
+HideAllDimensions = Object.GetHideAllDimensions() Получить свойство (**)
+Object.SetHideAllDimensions( HideAllDimensions ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HideAllDimensions( &HideAllDimensions ) Получить свойство
+Object.put_HideAllDimensions(  HideAllDimensions ) Установить свойство
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideAllPlaces  Скрыть / показать начала координат
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " начала координат скрыты,
+FALSE " начала координат показаны.
+
+Синтаксис Automation:
+
+BOOL HideAllPlaces = iObject.HideAllPlaces Получить свойство (* )
+iObject.HideAllPlaces = HideAllPlaces Установить свойство (* )
+BOOL HideAllPlaces = iObject.GetHideAllPlaces() Получить свойство (**)
+iObject.SetHideAllPlaces (HideAllPlaces) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_HideAllPlaces (&HideAllPlaces) Получить свойство
+iObject">put_HideAllPlaces (HideAllPlaces) Установить свойство
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideAllPlanes  Скрыть / показать конструктивные плоскости
+Интерфейс...
+Тип данных: BOOL
+307
+
+
+
+Значения свойства:
+
+TRUE " конструктивные плоскости скрыты,
+FALSE " конструктивные плоскости показаны.
+
+Синтаксис Automation:
+
+BOOL HideAllPlanes = iObject.HideAllPlanes Получить свойство (* )
+iObject.HideAllPlanes = HideAllPlanes Установить свойство (* )
+BOOL HideAllPlanes = iObject.GetHideAllPlanes() Получить свойство (**)
+iObject.SetHideAllPlanes (HideAllPlanes) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_HideAllPlanes (&HideAllPlanes) Получить свойство
+iObject">put_HideAllPlanes (HideAllPlanes) Установить свойство
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideAllSketches  Скрыть / показать эскизы
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " эскизы скрыты,
+FALSE " эскизы показаны.
+
+Синтаксис Automation:
+
+BOOL HideAllSketches = iObject.HideAllSketches Получить свойство (* )
+iObject.HideAllSketches = HideAllSketches Установить свойство (* )
+BOOL HideAllSketches = iObject.GetHideAllSketches() Получить свойство (**)
+iObject.SetHideAllSketches (HideAllSketches) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_HideAllSketches (&HideAllSketches) Получить свойство
+iObject">put_HideAllSketches (HideAllSketches) Установить свойство
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+308
+
+
+
+HideAllSurfaces  Скрыть / показать поверхности
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " поверхности скрыты,
+FALSE " поверхности показаны.
+
+Синтаксис Automation:
+
+BOOL HideAllSurfaces = iObject.HideAllSurfaces Получить свойство (* )
+iObject.HideAllSurfaces = HideAllSurfaces Установить свойство (* )
+BOOL HideAllSurfaces = Получить свойство (**)
+iObject.GetHideAllSurfaces()
+iObject.SetHideAllSurfaces (HideAllSurfaces) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_HideAllSurfaces (&HideAllSurfaces) Получить свойство
+iObject">put_HideAllSurfaces (HideAllSurfaces) Установить свойство
+
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideAllThreads  Резьбы
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " резьбы скрыты,
+FALSE " резьбы показаны.
+
+Синтаксис Automation:
+
+BOOL HideAllThreads = iObject.HideAllThreads Получить свойство (* )
+iObject.HideAllThreads = HideAllThreads Установить свойство (* )
+BOOL HideAllThreads = Получить свойство (**)
+iObject.GetHideAllThreads()
+iObject.SetHideAllThreads (HideAllThreads) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_HideAllThreads (&HideAllThreads) Получить свойство
+309
+
+
+
+iObject">put_HideAllThreads (HideAllThreads) Установить свойство
+Примечание:
+В зависимости от флага HideInComponentsMode позволяет скрыть или показать все
+вспомогательные объекты в документе или, если документ является сборкой, во встав"
+ках.
+
+HideInComponentsMode  Режим скрытия вспомогательной 
+геометрии в компонентах
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+HideInComponentsMode = Object.HideInComponentsMode Получить свойство (* )
+Object.HideInComponentsMode = HideInComponentsMode Установить свойство (* )
+HideInComponentsMode = Object.GetHideInComponentsMode() Получить свойство (**)
+Object.SetHideInComponentsMode( HideInComponentsMode ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HideInComponentsMode( &HideInComponentsMode ) Получить свойство
+Object.put_HideInComponentsMode(  HideInComponentsMode ) Установить свойство
+
+Примечание:
+Флаг позволяет для сборки включить режим работы с флагами скрытия вспомогатель"
+ной геометрии во вставках или в документе.
+Если флаг включен, то свойства: HideAllPlanes, HideAllAxis, HideAllSketches,
+HideAllPlaces, HideAllSurfaces, HideAllThreads, HideAllCurves, HideAllControlPoints,
+HideAllDimensions, HideAllDesignations, HideAllAuxiliaryGeom
+управляют признаками скрытия вспомогательной геометрии во вставках.
+
+Perspective  Скрыть / показать перспективу
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " показывать перспективу,
+FALSE " не показывать перспективу.
+
+Синтаксис Automation:
+
+BOOL Perspective = iObject.Perspective Получить свойство (* )
+iObject.Perspective = Perspective Установить свойство (* )
+BOOL Perspective = iObject.GetPerspective() Получить свойство (**)
+iObject.SetPerspective (Perspective) Установить свойство (**)
+310
+
+
+
+Синтаксис COM:
+
+iObject">get_Perspective (&Perspective) Получить свойство
+iObject">put_Perspective (Perspective) Установить свойство
+
+SelectionManager  Менеджер селектированных объектов
+Интерфейс...
+Тип данных: указатель на интерфейс менеджера селектированных объектов
+ISelectionManager
+Синтаксис Automation:
+
+SelectionManager = Object.SelectionManager Получить свойство (* )
+SelectionManager = Object.GetSelectionManager() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SelectionManager (&SelectionManager) Получить свойство
+
+Свойство позволяет получать указатель на менеджер селектированных объектов.
+Примечание:
+Свойство доступно только для чтения.
+
+ShadedWireframe  Полутоновое изображение с каркасом
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " каркас показан,
+FALSE " каркас скрыт.
+
+Синтаксис Automation:
+
+BOOL ShadedWireframe = iObject.ShadedWireframe Получить свойство (* )
+iObject.ShadedWireframe = ShadedWireframe Установить свойство (* )
+ShadedWireframe = iObject.GetShadedWireframe() Получить свойство (**)
+iObject.SetShadedWireframe (ShadedWireframe) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ShadedWireframe (&ShadedWireframe) Получить свойство
+iObject">put_ShadedWireframe (ShadedWireframe) Установить свойство
+
+TechnicalDemand3D  Технические требования 3D
+Интерфейс...
+311
+
+
+
+Тип данных: указатель на интерфейс ITechnicalDemand3D
+Синтаксис Automation:
+
+TechnicalDemand3D = Object.TechnicalDemand3D Получить свойство (* )
+TechnicalDemand3D = Object.GetTechnicalDemand3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TechnicalDemand3D( &TechnicalDemand3D ) Получить свойство
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. Свойство позволяет получить указатель на интерфейс технических требований 3D.
+
+ToleranceMode  Включить/отключить режим пересчета по 
+допуску
+Интерфейс...
+Синтаксис Automation:
+
+ToleranceMode = Object.ToleranceMode Получить свойство (* )
+Object.ToleranceMode = ToleranceMode Установить свойство (* )
+ToleranceMode = Object.GetToleranceMode() Получить свойство (**)
+Object.SetToleranceMode( ToleranceMode ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ToleranceMode( &ToleranceMode ) Получить свойство
+Object.put_ToleranceMode( ToleranceMode ) Установить свойство
+
+Примечание:
+Свойство позволяет включать и отключать режим перестроения по допуску.
+
+TopPart  Верхний компонент (сам документ)
+Интерфейс...
+Тип данных: указатель на интерфейс IPart7
+Синтаксис Automation:
+
+TopPart = iObject.TopPart Получить свойство (* )
+TopPart = iObject.GetTopPart() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_TopPart( &TopPart ) Получить свойство
+312
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+UndoContainer  Включить/отключить объединение команд 
+в Undo
+Интерфейс...
+Тип данных: BOOL
+Синтаксис:
+
+UndoContainer = Object.UndoContainer Получить свойство (* )
+Object.UndoContainer = UndoContainer Установить свойство (* )
+UndoContainer = Object.GetUndoContainer() Получить свойство (**)
+Object.SetUndoContainer( UndoContainer ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UndoContainer( &UndoContainer ) Получить свойство
+Object.put_UndoContainer( UndoContainer ) Установить свойство
+
+IKompasDocument3D  методы
+
+CreateAttrEx  Создать атрибут по номеру типа атрибута из 
+библиотеки libname
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH CreateAttrEx( double AttrID, BSTR Libname, VARIANT Objects, IPart7 *
+SourcePart );
+Синтаксис COM:
+HRESULT CreateAttrEx( double AttrID, BSTR Libname, VARIANT Objects, IPart7 * SourcePart,
+IAttribute ** Result );
+Возвращаемое значение: 
+
+" указатель на интерфейс IAttribute
+
+Входные параметры:
+
+AttrID " уникальный номер типа атрибута,
+Libname " имя библиотеки типов атрибутов, если libname = NULL, то 
+
+тип атрибута берется из текущего документа,
+Objects " массив VT_ARRAY | VT_DISPATCH объектов, для которых 
+
+назначается атрибут,
+SourcePart " указатель на интерфейс вставки детали IPart.
+313
+
+
+
+DeleteHistory  Удалить историю построения
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteHistory();
+Синтаксис COM:
+HRESULT DeleteHistory( [out, retval] VARIANT_BOOL * Result);
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить историю построения.
+
+RebuildDocument  Перестроить документ
+Интерфейс...
+Синтаксис Automation:
+BOOL RebuildDocument();
+Синтаксис COM:
+HRESULT RebuildDocument( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет вызвать перестроение 3D"документа.
+
+Интерфейс IAssemblyDocument
+Интерфейс сборки.
+IKompasAPIObject
+
+IKompasDocument
+IKompasDocument3D
+
+IAssemblyDocument
+ILoadCombination
+Примечание:
+Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) у
+данного интерфейса можно получить дополнительный интерфейс ILoadCombination.
+314
+
+
+
+IAssemblyDocument  свойства
+
+DismantleMode  Разнесенная сборка
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DismantleMode = Object.DismantleMode Получить свойство (* )
+Object.DismantleMode = DismantleMode Установить свойство (* )
+DismantleMode = Object.GetDismantleMode() Получить свойство (**)
+Object.SetDismantleMode( DismantleMode ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DismantleMode( &DismantleMode ) Получить свойство
+Object.put_DismantleMode(  DismantleMode ) Установить свойство
+
+Свойство позволяет включать и отключать режим разнесенной сборки.
+
+Интерфейс IPartDocument
+Интерфейс детали.
+IKompasAPIObject
+
+IKompasDocument
+IKompasDocument3D
+
+IPartDocument
+
+Интерфейс ITextDocument
+Интерфейс текстового документа.
+IKompasAPIObject
+
+IKompasDocument
+ITextDocument
+
+ITextDocument  свойства
+
+BlocksGabarits  Габариты внутренних областей листов
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+BlocksGabarits = Object.BlocksGabarits Получить свойство (* )
+BlocksGabarits = Object.GetBlocksGabarits() Получить свойство (**)
+315
+
+
+
+Синтаксис COM:
+
+Object.get_BlocksGabarits( Получить свойство
+&BlocksGabarits )
+
+Примечание:
+Свойство доступно только для чтения.
+
+BlocksStartLineNumbers  Получить список номеров строк 
+начала страниц
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+BlocksStartLineNumbers = Получить свойство (* )
+Object.BlocksStartLineNumbers
+BlocksStartLineNumbers = Получить свойство (**)
+Object.GetBlocksStartLineNumbers()
+
+Синтаксис COM:
+
+Object.get_BlocksStartLineNumbers( Получить свойство
+&BlocksStartLineNumbers )
+
+Примечание:
+Свойство доступно только для чтения.
+
+SectionsStartLineNumbers  Получить список номеров строк 
+начала разделов
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+SectionsStartLineNumbers = Получить свойство (* )
+Object.SectionsStartLineNumbers
+SectionsStartLineNumbers = Получить свойство (**)
+Object.GetSectionsStartLineNumbers()
+
+Синтаксис COM:
+
+Object.get_SectionsStartLineNumbers( Получить свойство
+&SectionsStartLineNumbers )
+316
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+Text  Текст
+Интерфейс...
+Тип данных: Указатель на интерфейс IText
+Синтаксис Automation:
+
+Text = Object.Text Получить свойство (* )
+Text = Object.GetText() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Text( &Text ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ITextDocument  методы
+
+Update  Обновление данных
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс ISpecificationDocument
+Интерфейс документа спецификации.
+Иерархия:
+IKompasAPIObject
+
+IKompasDocument
+ISpecificationDocument
+317
+
+
+
+ISpecificationDocument  свойства
+
+AttachedDocuments  Управление сборкой. Присоединенные 
+документы
+Интерфейс...
+Тип данных: IAttachedDocuments
+Синтаксис Automation:
+
+AttachedDocuments = Получить свойство (* )
+Object.AttachedDocuments
+AttachedDocuments = Получить свойство (**)
+Object.GetAttachedDocuments()
+
+Синтаксис COM:
+
+Object.get_AttachedDocuments( Получить свойство
+&AttachedDocuments )
+
+Примечание:
+Позволяет получать и установить список документов, подключенных в управлении сбор"
+кой. Свойство IAttachedDocument_Comment для документов, подключенных через управ"
+ление сборкой, не используется.
+
+Crossed  Признак необходимости перестроения документа
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Crossed = Object.Crossed Получить свойство (* )
+Crossed = Object.GetCrossed() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Crossed( &Crossed ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+Версия Компас v18.1
+
+ISpecificationDocument  методы
+
+RebuildDocument  Перестроить документ
+Интерфейс...
+318

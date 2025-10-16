@@ -1,0 +1,2532 @@
+Object.GetBaseObjectAdjustmentOffset2(
+)
+Object.SetBaseObjectAdjustmentOffset2( Установить свойство (**)
+BaseObjectAdjustmentOffset2 ) 
+
+Синтаксис COM:
+
+Object.get_BaseObjectAdjustmentOffset2( Получить свойство
+&BaseObjectAdjustmentOffset2 )
+Object.put_BaseObjectAdjustmentOffset2( Установить свойство
+BaseObjectAdjustmentOffset2 )
+
+Direction  Направление резьбы (TRUE  прямое, FALSE  
+обратное)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство (* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство
+Object.put_Direction(  Direction ) Установить свойство
+
+ 
+
+InitialBorder  Начальная граница
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+1954
+
+
+
+InitialBorder = Object.InitialBorder Получить свойство (* )
+Object.InitialBorder = InitialBorder Установить свойство (* )
+InitialBorder = Object.GetInitialBorder() Получить свойство (**)
+Object.SetInitialBorder( InitialBorder ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_InitialBorder( &InitialBorder ) Получить свойство
+Object.put_InitialBorder(  InitialBorder ) Установить свойство
+
+FinalBorder  Конечная граница
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+FinalBorder = Object.FinalBorder Получить свойство (* )
+Object.FinalBorder = FinalBorder Установить свойство (* )
+FinalBorder = Object.GetFinalBorder() Получить свойство (**)
+Object.SetFinalBorder( FinalBorder ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FinalBorder( &FinalBorder ) Получить свойство
+Object.put_FinalBorder(  FinalBorder ) Установить свойство
+
+LeftThread  Левосторонняя резьба
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+LeftThread = Object.LeftThread Получить свойство (* )
+Object.LeftThread = LeftThread  Установить свойство (* )
+LeftThread = Object.GetLeftThread() Получить свойство (**)
+Object.SetLeftThread( LeftThread ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LeftThread( &LeftThread ) Получить свойство
+Object.put_LeftThread(  LeftThread ) Установить свойство
+
+Примечание
+Включение признака левой резьбы влияет на формирование обозначения резьбы. В об"
+значение будут добавлены буквы "LH", например, "МК 20*1,5 LH".
+1955
+
+
+
+Lenght  Длина резьбы (для варианта явного задания 
+длины)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Lenght = Object.Lenght Получить свойство (* )
+Object.Lenght = Lenght  Установить свойство (* )
+Lenght = Object.GetLenght() Получить свойство (**)
+Object.SetLenght( Lenght ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Lenght( &Lenght ) Получить свойство
+Object.put_Lenght(  Lenght ) Установить свойство
+
+ 
+
+Интерфейс IThreadPattern 
+Интерфейс параметров стандартной резьбы.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IThreadPattern
+
+Интерфейс можно получить методом ISystemSettings::ThreadPattern
+
+IThreadPattern  свойства
+
+ConeAngle  cone  Угол для конической резьбы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ConeAngle = Object.ConeAngle Получить свойство (* )
+ConeAngle = Object.GetConeAngle() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ConeAngle( &ConeAngle ) Получить свойство
+1956
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+ConeL1  L1 Смещение основной плоскости от торца 
+наружной резьбы (мм)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ConeL1 = Object.ConeL1( Index ) Получить свойство (* )
+ConeL1 = Object.GetConeL1( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ConeL1( Index, &ConeL1 ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ConeL2  L2 Смещение основной плоскости от торца 
+внутренней резьбы (мм)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ConeL2 = Object.ConeL2( Index ) Получить свойство (* )
+ConeL2 = Object.GetConeL2( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ConeL1( Index, &ConeL1 ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Designation  Обозначение резьбы
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Designation = Object.Designation( Index ) Получить свойство (* )
+1957
+
+
+
+Designation= Object.GetDesignation( Получить свойство (**)
+Index )
+
+Синтаксис COM:
+
+Object.get_Designation( Index, &Designation Получить свойство
+)
+
+Примечание:
+Свойство доступно только для чтения.
+
+HoleKoeff  koeff  Коэффициент резьбы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+HoleKoeff = Object.HoleKoeff Получить свойство (* )
+HoleKoeff= Object.GetHoleKoeff() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HoleKoeff(&HoleKoeff) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Lenght  L  Рабочая длина резьбы (мм)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Lenght = Object.Lenght( Index ) Получить свойство (* )
+Lenght= Object.GetLenght( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Lenght( Index, &Lenght ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+NominalDiameter  D  Номинальный диаметр резьбы 
+(мм)
+Интерфейс...
+1958
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+NominalDiameter = Получить свойство (* )
+Object.NominalDiameter( Index  
+NominalDiameter= Получить свойство (**)
+Object.GetNominalDiameter( Index )
+
+Синтаксис COM:
+
+Object.get_NominalDiameter( Index, Получить свойство
+&NominalDiameter )
+
+Примечание:
+Свойство доступно только для чтения.
+
+P  P  Шаг резьбы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+P = Object.P( Index ) Получить свойство (* )
+P= Object.GetP( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_P( Index, &P ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+PatternsCount  Количество записей в таблице
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+PatternsCount = Object.PatternsCount Получить свойство (* )
+PatternsCount= Object.PatternsCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PatternsCount( &PatternsCount ) Получить свойство
+
+Примечание:
+1959
+
+
+
+Свойство доступно только для чтения.
+
+Standart  Обозначение стандарта
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Standart = Object.Standart Получить свойство (* )
+Standart= Object.GetStandart() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Standart( &Standart ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+TableName  Имя таблицы данных
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+TableName = Object.TableName Получить свойство (* )
+TableName= Object.TableName() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TableName( &TableName) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IThreadPattern  методы
+
+GetParameters  Параметры резьбы для для заданного 
+диаметра и шага
+Интерфейс...
+Синтаксис Automation:
+BSTR GetParameters( long Index, double * NominalDiameter, double * P, double * L, double
+* L1, double * L2 );
+Синтаксис COM:
+1960
+
+
+
+HRESULT GetParameters( long Index, double * NominalDiameter, double * P, double * L,
+double * L1, double * L2, BSTR * Result );
+Возвращаемое значение: 
+
+" обозначение резьбы.
+
+Входные параметры:
+
+Ind " индекс списка значений в базе стандартов.
+ex
+
+Выходные параметры:
+
+NominalDiameter " номинальный диаметр,
+P " шаг резьбы,
+L " рабочая длина резьбы,
+L1 " длина смещения основной плоскости для внешней резьбы,
+L2 " длина смещения основной плоскости для внутренней резьбы.
+
+SelectDiameters  Cписок номинальных диаметров 
+резьбы (мм)
+Интерфейс...
+Синтаксис Automation:
+VARIANT SelectDiameters();
+Синтаксис COM:
+HRESULT SelectDiameters( VARIANT * Result );
+Возвращаемое значение:
+Массив SafeAttray типа (VT_ARRAY | VT_R8)
+со списком значений диаметров для текущего стандарта.
+
+SelectP  Cписок шагов резьбы для данного диаметра
+Интерфейс...
+Синтаксис Automation:
+VARIANT SelectP( double NominalDiameter);
+Синтаксис COM:
+HRESULT SelectP( double NominalDiameter, VARIANT * Result );
+Возвращаемое значение:
+Массив SafeAttray типа (VT_ARRAY | VT_R8)
+со списком значений шагов для заданного диаметра и текущего стандарта.
+Входные параметры:
+1961
+
+
+
+NominalDiameter " номинальный диаметр резьбы.
+
+SelectParameters  Параметры резьбы для для заданного 
+диаметра и шага
+Интерфейс...
+Синтаксис Automation:
+BSTR SelectParameters( double NominalDiameter, double P, double * L, double * L1, double
+* L2 );
+Синтаксис COM:
+HRESULT SelectParameters( double NominalDiameter, double P, double * L, double * L1,
+double * L2, BSTR * Result );
+Возвращаемое значение:
+Обозначение резьбы.
+Входные параметры:
+
+NominalDiameter " номинальный диаметр,
+P " шаг резьбы.
+
+Выходные параметры:
+
+L " рабочая длина резьбы,
+L1 " длина смещения основной плоскости для внешней резьбы,
+L2 " длина смещения основной плоскости для внутренней резьбы.
+
+Интерфейс IThreads
+Интерфейс коллекции условных обозначений резьбы.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IThreads
+
+Интерфейс можно получить с помощью метода: 
+      Symbols3DContainer::Threads
+1962
+
+
+
+IThreads  свойства
+
+Thread  Возвращает элемент, заданный по индексу или 
+по имени
+Интерфейс...
+Тип данных: Указатель на интерфейс IThread
+Синтаксис Automation:
+
+Thread = Object.Thread( Index ) Получить свойство (* )
+Thread = Object.GetThread( Получить свойство (**)
+Index ) 
+
+ Синтаксис COM:
+
+Object.get_Thread( Index, Получить свойство
+&Thread )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ IThreads  методы
+
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IThread * * Result );
+Возвращаемое значение: 
+
+"указатель на интерфейс условного 
+обозначения резьбы.
+
+Интерфейс IThreadsParameters
+Интерфейс параметров резьбы.
+Иерархия:
+IDispatch
+
+IThreadsParameters
+ Интерфейс является дополнительным для интерфейса IThread.
+1963
+
+
+
+IThreadsParameters  свойства
+
+ConicalThreadAngle  Угол уклона конической резьбы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ConicalThreadAngle = Получить свойство (* )
+Object.ConicalThreadAngle 
+ConicalThreadAngle = Получить свойство (**)
+Object.GetConicalThreadAngle()
+
+Синтаксис COM:
+
+Object.get_ConicalThreadAngle( Получить свойство
+&ConicalThreadAngle )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Diameter  Номинальный диаметр резьбы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Diameter = Object.Diameter Получить свойство (* )
+Object.Diameter = Diameter Установить свойство (* )
+Diameter = Object.GetDiameter() Получить свойство (**)
+Object.SetDiameter( Diameter ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Diameter( &Diameter ) Получить свойство
+Object.put_Diameter(  Diameter ) Установить свойство
+
+Internal  TRUE  внутренняя резьба, FALSE  внешняя
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Internal = Object.Internal Получить свойство (* )
+Internal = Object.GetInternal() Получить свойство (**)
+1964
+
+
+
+Синтаксис COM:
+
+Object.get_Internal( &Internal ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+InternalDiameterCoefficient  Коэффициент для расчета 
+внутреннего диаметра резьбы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+InternalDiameterCoefficient = Получить свойство (* )
+Object.InternalDiameterCoefficient  
+InternalDiameterCoefficient = Получить свойство (**)
+Object.GetInternalDiameterCoefficient()
+
+Синтаксис COM:
+
+Object.get_InternalDiameterCoefficient( Получить свойство
+&InternalDiameterCoefficient )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Pitch  Шаг резьбы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Pitch = Object.Pitch Получить свойство (* )
+Object.Pitch = Pitch Установить свойство (* )
+Pitch = Object.GetPitch() Получить свойство (**)
+Object.SetPitch( Pitch ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Pitch( &Pitch ) Получить свойство
+Object.put_Pitch(  Pitch ) Установить свойство
+1965
+
+
+
+а,
+ThreadStandardFileName  Имя файла с параметрами 
+стандартной резьбы
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ThreadStandardFileName = Получить свойство (* )
+Object.ThreadStandardFileName  
+ThreadStandardFileName = Получить свойство (**)
+Object.GetThreadStandardFileName()
+
+Синтаксис COM:
+
+Object.get_ThreadStandardFileName( Получить свойство
+&ThreadStandardFileName )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IThreadsParameters  методы
+
+Init  Инициализация параметров стандартной резьбы
+Интерфейс...
+Синтаксис Automation:
+BOOL Init( BSTR StandardFileName, double Diameter, double Pitch );
+Синтаксис COM:
+HRESULT Init( BSTR StandardFileName, double Diameter, double Pitch, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае удачи.
+
+Входные параметры:
+
+StandardFileName " имя таблицы стандарта резьбы,
+Diameter " номинальное значение диаметр
+Pitch " шаг.
+
+Интерфейс IThreadDialogParam
+Параметры диалога выбора стандартной резьбы.
+Иерархия:
+IDispatch
+1966
+
+
+
+IKompasAPIObject
+IThreadDialogParam
+
+Примечание:
+Интерфейс можно получить с помощью метода: 
+IApplicationDialogs::GetDialogParam, используя константу ksObjectThreadDialogParam.
+Интерфейс применяется в методе IApplicationDialogs::SelectThread.
+
+IThreadDialogParam  свойства
+
+IsConic  Фильтрация типа резьбы. Коническая или 
+цилиндрическая
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsConic = Object.IsConic ; Получить свойство (* )
+Object.IsConic = IsConic; Установить свойство (* )
+IsConic = Получить свойство (**)
+Object.GetIsConic();
+Object.SetIsConic( IsConic Установить свойство (**)
+);
+
+ Синтаксис COM:
+
+Object.get_IsConic( Получить свойство
+&IsConic );
+Object.put_IsConic(  Установить свойство
+IsConic );
+
+NominalDiameter  D  номинальный диаметр резьбы 
+(мм)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+NominalDiameter = Получить свойство (* )
+Object.NominalDiameter;
+Object.NominalDiameter = Установить свойство (* )
+NominalDiameter;
+1967
+
+
+
+NominalDiameter = Получить свойство (**)
+Object.GetNominalDiamete
+r();
+Object.SetNominalDiamete Установить свойство (**)
+r( NominalDiameter );
+
+ Синтаксис COM:
+
+Object.get_NominalDiamet Получить свойство
+er( &NominalDiameter );
+Object.put_NominalDiamet Установить свойство
+er(  NominalDiameter );
+
+P  P  шаг резьбы
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+P = Object.P; Получить свойство (* )
+Object.P = P; Установить свойство (* )
+P = Object.GetP(); Получить свойство (**)
+Object.SetP( P ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_P( &P ) ; Получить свойство
+Object.put_P(  P ); Установить свойство
+
+ 
+
+Standart  Стандарт резьбы
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Standart = Object.Standart Получить свойство (* )
+;
+Object.Standart = Standart; Установить свойство (* )
+Standart = Получить свойство (**)
+Object.GetStandart();
+Object.SetStandart( Установить свойство (**)
+Standart );
+
+Синтаксис COM:
+1968
+
+
+
+Object.get_Standart( Получить свойство
+&Standart );
+Object.put_Standart(  Установить свойство
+Standart );
+
+Интерфейс IChooseBodies7
+Справка системы КОМПАС...
+kompas.chm::/301_gl_33_Oblast_primenenija_operaciy.htm
+Интерфейс области применения для тел документа в операции.
+Иерархия:
+IDispatch
+
+IChooseBodies7
+Описание:
+Позволяет получить интерфейс области применения для тел документа в операции.
+Примечание:
+Данный интерфейс можно получить у операции выдавливание IExtrusion и интерфейса
+твердого тела IBody7 посредством вызова метода IUnknown::QueryInterface (const GUID
+far& iid, void** pif);
+
+IChooseBodies7  свойства
+
+Bodies  Массив тел (SAFEARRAY)
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Bodies = iObject.Bodies; Получить свойство (* )
+iObject.Bodies = Bodies; Установить свойство (* )
+Bodies = Получить свойство (**)
+iObject.GetBodies();
+iObject.SetBodies( Bodies Установить свойство (**)
+);
+
+Синтаксис COM:
+
+iObject">get_Bodies( Получить свойство
+&Bodies );
+iObject">put_Bodies( Установить свойство
+Bodies );
+1969
+
+
+
+Примечание:
+Позволяет установить и получить массив тел (SAFEARRAY) в области применения.
+
+ChooseBodiesType  Тип действия над телами из 
+перечисления ksChooseBodiesType
+Интерфейс...
+Тип данных: из перечисления ksChooseBodiesType
+Синтаксис Automation:
+
+ChooseBodiesType = Получить свойство (* )
+iObject.ChooseBodiesType
+;
+iObject.ChooseBodiesType Установить свойство (* )
+= ChooseBodiesType;
+ChooseBodiesType = Получить свойство (**)
+iObject.GetChooseBodiesT
+ype();
+iObject.SetChooseBodiesT Установить свойство (**)
+ype( ChooseBodiesType );
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ChooseBodiesType( 
+&ChooseBodiesType );
+iObject" Установить свойство
+>put_ChooseBodiesType( 
+ChooseBodiesType );
+
+Примечание:
+Позволяет установить и получить тип действия над телами.
+
+Интерфейс IExtrusion1
+Справка системы КОМПАС...
+kompas.chm::/237_25_1_elem_vydavl.htm
+Интерфейс параметров элемента выдавливания.
+Иерархия:
+IDispatch
+
+IExtrusion1
+Является дополнительным интерфейсом для IExtrusion.
+1970
+
+
+
+IExtrusion1  свойства
+
+CutOffByPoint  Флаг «отсекать» для способа 
+выдавливания До точки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CutOffByPoint( Normal ) = Object.CutOffByPoint Получить свойство (* )
+Object.CutOffByPoint( Normal ) = CutOffByPoint Установить свойство (* )
+CutOffByPoint = Object.GetCutOffByPoint( Normal ) Получить свойство (**)
+Object.SetCutOffByPoint( Normal, CutOffByPoint ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CutOffByPoint( Normal, &CutOffByPoint ) Получить свойство
+Object.put_CutOffByPoint( Normal,  CutOffByPoint ) Установить свойство
+
+DirectionObject  Направляющий объект для элемента 
+выдавливания
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+DirectionObject = Object.DirectionObject Получить свойство (* )
+Object.DirectionObject = DirectionObject Установить свойство (* )
+DirectionObject = Object.GetDirectionObject() Получить свойство (**)
+Object.SetDirectionObject( DirectionObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DirectionObject( &DirectionObject ) Получить свойство
+Object.put_DirectionObject(  DirectionObject ) Установить свойство
+
+Свойство позволяет устанавливать и получать объект, задающий направление выдавли"
+вания. Это может быть кривая 3D, ребро или эскиз.
+
+OperationResult  Результат операции
+Интерфейс...
+Тип данных: Значение из перечисления ksOperationResultEnum.
+Синтаксис Automation:
+1971
+
+
+
+OperationResult = Object.OperationResult Получить свойство (* )
+Object.OperationResult = OperationResult Установить свойство (* )
+OperationResult = Получить свойство (**)
+Object.GetOperationResult()
+Object.SetOperationResult( OperationResult ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OperationResult( Получить свойство
+&OperationResult )
+Object.put_OperationResult( Установить свойство
+OperationResult )
+
+Profile  Сечение элемента выдавливания
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Profile = Object.Profile Получить свойство (* )
+Object.Profile = Profile Установить свойство (* )
+Profile = Получить свойство (**)
+Object.GetProfile()
+Object.SetProfile( Profile Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_Profile( Получить свойство
+&Profile )
+Object.put_Profile( Установить свойство
+Profile )
+
+Свойство позволяет устанавливать и получать объект, определяющий форму сечения
+операции. Это может быть эскиз, грань, кривая 3D.
+
+Vector3D  Параметры вектора
+Интерфейс...
+Тип данных: указатель на интерфейс IVector3D.
+Синтаксис Automation:
+1972
+
+
+
+Vector3D = Object.Vector3D Получить свойство (* )
+Vector3D = Object.GetVector3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Vector3D( &Vector3D ) Получить свойство
+
+Свойство позволяет получать интерфейс вектора, задающего направление выдавлива"
+ния.
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IThinParameters
+Справка системы КОМПАС...
+kompas.chm::/708_84_5_Tonkaja_stenka.htm
+Интерфейс параметров тонкой стенки.
+Иерархия:
+IDispatch
+
+IThinParameters
+Примечание:
+IThinParameters является дополнительным интерфейсом операции выдавливание. Дан"
+ный интерфейс можно получить у операции выдавливание IExtrusion посредством вызо"
+ва метода IUnknown::QueryInterface (const GUID far& iid, void** pif);
+
+IThinParameters  свойства
+
+Thin  Признак формирования тонкой стенки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Thin = iObject.Thin; Получить свойство (* )
+iObject.Thin = Thin; Установить свойство (* )
+Thin = iObject.GetThin(); Получить свойство (**)
+iObject.SetThin( Thin ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Thin( &Thin ); Получить свойство
+iObject">put_Thin( Thin ); Установить свойство
+
+Примечание.
+1973
+
+
+
+Позволяет установить и получить признак формирования тонкой стенки.
+
+ThinType  Направление формирования тонкой стенки
+Интерфейс...
+Тип данных: из перечисления ksDirectionTypeEnum
+Синтаксис Automation:
+
+ThinType = Получить свойство (* )
+iObject.ThinType;
+iObject.ThinType = Установить свойство (* )
+ThinType;
+ThinType = Получить свойство (**)
+iObject.GetThinType();
+iObject.SetThinType( Установить свойство (**)
+ThinType );
+
+Синтаксис COM:
+
+iObject">get_ThinType( Получить свойство
+&ThinType );
+iObject">put_ThinType( Установить свойство
+ThinType );
+
+Примечание.
+Позволяет установить и получить направление формирования тонкой стенки.
+
+Thickness  Толщина стенки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Thickness = Получить свойство (* )
+iObject.Thickness( normal 
+);
+iObject.Thickness( normal Установить свойство (* )
+) = Thickness;
+Thickness = Получить свойство (**)
+iObject.GetThickness( 
+normal );
+iObject.SetThickness( Установить свойство (**)
+normal, Thickness );
+
+Синтаксис COM:
+1974
+
+
+
+iObject">get_Thickness( Получить свойство
+normal, &Thickness );
+iObject">put_Thickness( Установить свойство
+normal, Thickness );
+
+Входные параметры:
+
+normal " TRUE " толщина стенки 
+в направлении наружу,
+" FALSE " толщина стенки 
+в направлении внутрь.
+
+Примечание.
+Позволяет установить и получить толщину стенки.
+
+IThinParameters  методы
+
+GetThinParameters  Получить параметры тонкой стенки
+Интерфейс...
+Синтаксис Automation:
+BOOL GetThinParameters( BOOL * Thin,
+Direction_Type * ThinType,
+double * ThicknessNormal,
+double * ThicknessReverse
+Синтаксис COM:
+HRESULT GetThinParameters( BOOL * Thin,
+Direction_Type * ThinType,
+double * ThicknessNormal,
+double * ThicknessReverse
+Выходные параметры:
+
+Thin " признак формирования тонкой стенки,
+ThinType " направление формирования тонкой 
+
+стенки,
+ThicknessNormal " толщина стенки в направлении наружу,
+ThicknessReverse " толщина стенки в направлении внутрь.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получать параметры тонкой стенки.
+1975
+
+
+
+SetThinParameters  Установить параметры тонкой 
+стенки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetThinParameters( BOOL * Thin,
+Direction_Type * ThinType,
+double * ThicknessNormal,
+double * ThicknessReverse
+Синтаксис COM:
+HRESULT SetThinParameters( BOOL * Thin,
+Direction_Type * ThinType,
+double * ThicknessNormal,
+double * ThicknessReverse
+Выходные параметры:
+
+Thin " признак формирования тонкой стенки,
+ThinType " направление формирования тонкой 
+
+стенки,
+ThicknessNormal " толщина стенки в направлении наружу,
+ThicknessReverse " толщина стенки в направлении внутрь.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить параметры тонкой стенки.
+
+Интерфейс IHole3D 
+Интерфейс отверстия.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+   IHole3D
+Примечание:
+   Интерфейс можно получить с помощью методов: 
+   IHoles3D::Hole3D
+   IHoles3D::Add
+   Интерфейс отверстия имеет также дополнительный интерфейс
+   IHoleDisposal" Размещение
+1976
+
+
+
+IHole3D  свойства
+
+Axis  Создавать ось
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Axis = Object.Axis Получить свойство (* )
+Object.Axis = Axis Установить свойство (* )
+Axis = Object.GetAxis() Получить свойство (**)
+Object.SetAxis( Axis ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Axis( &Axis ) Получить свойство 
+Object.put_Axis(  Axis ) Установить свойство 
+
+Diameter  Диаметр отверстия
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Diameter = Object.Diameter Получить свойство (* )
+Object.Diameter = Diameter Установить свойство (* )
+Diameter = Object.GetDiameter() Получить свойство (**)
+Object.SetDiameter( Diameter ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Diameter( &Diameter ) Получить свойство 
+Object.put_Diameter(  Diameter ) Установить свойство 
+
+Depth  Глубина отверстия
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Depth = Object.Depth Получить свойство (* )
+Object.Depth = Depth Установить свойство (* )
+Depth = Object.GetDepth() Получить свойство (**)
+Object.SetDepth( Depth ) Установить свойство (**)
+
+Синтаксис COM:
+1977
+
+
+
+Object.get_Depth( &Depth ) Получить свойство 
+Object.put_Depth(  Depth ) Установить свойство 
+
+DepthType  Способ определения глубины отверстия
+Интерфейс...
+Тип данных: из перечисления ksDepthTypeEnum
+Синтаксис Automation:
+
+DepthType = Object.DepthType Получить свойство (* )
+Object.DepthType = DepthType Установить свойство (* )
+DepthType = Object.GetDepthType() Получить свойство (**)
+Object.SetDepthType( DepthType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DepthType( &DepthType ) Получить свойство 
+Object.put_DepthType(  DepthType ) Установить свойство 
+
+DepthVertex  Вершина или точка для определения 
+глубины отверстия
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+DepthVertex = Object.DepthVertex Получить свойство (* )
+Object.DepthVertex = DepthVertex Установить свойство (* )
+DepthVertex = Object.GetDepthVertex() Получить свойство (**)
+Object.SetDepthVertex( DepthVertex ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DepthVertex( &DepthVertex ) Получить свойство 
+Object.put_DepthVertex(  DepthVertex ) Установить свойство 
+
+DepthFace  Поверхность для определения глубины 
+отверстия
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+DepthFace = Object.DepthFace Получить свойство (* )
+Object.DepthFace = DepthFace Установить свойство (* )
+1978
+
+
+
+DepthFace = Object.GetDepthFace() Получить свойство (**)
+Object.SetDepthFace( DepthFace ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DepthFace( &DepthFace ) Получить свойство 
+Object.put_DepthFace(  DepthFace ) Установить свойство 
+
+EndFaceType  Форма торца
+Интерфейс...
+Тип данных: из перечисления ksEndFaceTypeEnum
+Синтаксис Automation:
+
+EndFaceType = Object.EndFaceType Получить свойство (* )
+Object.EndFaceType = EndFaceType Установить свойство (* )
+EndFaceType = Object.GetEndFaceType() Получить свойство (**)
+Object.SetEndFaceType( EndFaceType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EndFaceType( &EndFaceType ) Получить свойство 
+Object.put_EndFaceType(  EndFaceType ) Установить свойство 
+
+EndFaceAngle  Угол конуса торца
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+EndFaceAngle = Object.EndFaceAngle Получить свойство (* )
+Object.EndFaceAngle = EndFaceAngle Установить свойство (* )
+EndFaceAngle = Object.GetEndFaceAngle() Получить свойство (**)
+Object.SetEndFaceAngle( EndFaceAngle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EndFaceAngle( &EndFaceAngle ) Получить свойство 
+Object.put_EndFaceAngle(  EndFaceAngle ) Установить свойство 
+
+HoleType  Тип отверстия
+Интерфейс...
+Тип данных: из перечисления ksHoleTypeEnum
+Синтаксис Automation:
+1979
+
+
+
+HoleType = Object.HoleType Получить свойство (* )
+Object.HoleType = HoleType Установить свойство (* )
+HoleType = Object.GetHoleType() Получить свойство (**)
+Object.SetHoleType( HoleType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HoleType( &HoleType ) Получить свойство 
+Object.put_HoleType(  HoleType ) Установить свойство 
+
+HoleParameters  Параметры отверстия
+Интерфейс...
+Тип данных: Указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+
+HoleParameters = Получить свойство (* )
+Object.HoleParameters
+THoleParameters = Получить свойство (**)
+Object.GetHoleParameters()
+
+Синтаксис COM:
+
+Object.get_HoleParameters( Получить свойство,
+&HoleParameters )
+
+Примечание:
+Свойство доступно только для чтения.
+В зависимости от типа отверстия возвращаются интерфейсы
+
+▼      ksHTCounterbore    " ISpotfacingHoleParameters
+▼      ksHTCountersinking " ICountersinkHoleParameters
+▼      ksHTCounterdrill   " ICountersinkSpotfacingHoleParameters
+▼      ksHTConic          " IConicHoleParameters
+▼      ksHTLfrLibrary    " ILibraryHoleParameters
+
+ShowThread  Показывать резьбу
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowThread = Object.ShowThread Получить свойство (* )
+Object.ShowThread = ShowThread Установить свойство (* )
+ShowThread = Object.GetShowThread() Получить свойство (**)
+1980
+
+
+
+Object.SetShowThread( ShowThread ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_ShowThread( &ShowThread ) Получить свойство 
+Object.put_ShowThread(  ShowThread ) Установить свойство 
+
+Thread  Условное обозначение резьбы
+Интерфейс...
+Тип данных: Указатель на интерфейс IThread 
+Синтаксис Automation:
+
+Thread = Object.Thread Получить свойство (* )
+Thread = Object.GetThread() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Thread( &Thread ) Получить свойство,
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс ICountersinkHoleParameters
+Интерфейс отверстия с зенковкой.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ICountersinkHoleParameters
+
+ Интерфейс можно получить с помощью метода: 
+ IHole3D::HoleParameters
+
+ICountersinkHoleParameters  свойства
+
+CountersinkAngle  Угол конуса зенковки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+CountersinkAngle = Object.CountersinkAngle Получить свойство (* )
+Object.CountersinkAngle = CountersinkAngle Установить свойство (* )
+1981
+
+
+
+CountersinkAngle = Получить свойство (**)
+Object.GetCountersinkAngle()
+Object.SetCountersinkAngle( CountersinkAngle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CountersinkAngle( Получить свойство 
+&CountersinkAngle )
+Object.put_CountersinkAngle(  CountersinkAngle Установить свойство 
+) 
+
+CountersinkDepth  Глубина зенковки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+CountersinkDepth = Object.CountersinkDepth Получить свойство (* )
+Object.CountersinkDepth = CountersinkDepth Установить свойство (* )
+CountersinkDepth = Получить свойство (**)
+Object.GetCountersinkDepth()
+Object.SetCountersinkDepth( CountersinkDepth ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CountersinkDepth( Получить свойство 
+&CountersinkDepth )
+Object.put_CountersinkDepth( Установить свойство 
+CountersinkDepth )
+
+CountersinkDiameter  Диаметр зенковки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+CountersinkDiameter = Получить свойство (* )
+Object.CountersinkDiameter
+Object.CountersinkDiameter = Установить свойство (* )
+CountersinkDiameter
+CountersinkDiameter = Получить свойство (**)
+Object.GetCountersinkDiameter()
+Object.SetCountersinkDiameter( Установить свойство (**)
+CountersinkDiameter )
+
+Синтаксис COM:
+1982
+
+
+
+Object.get_CountersinkDiameter( Получить свойство 
+&CountersinkDiameter )
+Object.put_CountersinkDiameter( Установить свойство 
+CountersinkDiameter ) 
+
+CountersinkType  Способ определения параметров 
+зенковки
+Интерфейс...
+Тип данных: из перечисления ksCountersinkTypeEnum
+Синтаксис Automation:
+
+CountersinkType = Object.CountersinkType Получить свойство (* )
+Object.CountersinkType = CountersinkType Установить свойство (* )
+CountersinkType = Object.GetCountersinkType() Получить свойство (**)
+Object.SetCountersinkType( CountersinkType ) Установить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_CountersinkType( &CountersinkType Получить свойство 
+)
+Object.put_CountersinkType(  CountersinkType ) Установить свойство 
+
+Интерфейс ICountersinkSpotfacingHoleParameters 
+Интерфейс отверстия с зенковкой и цековкой.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ICountersinkSpotfacingHoleParameters
+
+ Интерфейс можно получить с помощью метода: 
+ IHole3D::HoleParameters
+
+ICountersinkSpotfacingHoleParameters  свойства
+
+CountersinkAngle  Угол конуса зенковки
+Интерфейс...
+Тип данных: double
+1983
+
+
+
+Синтаксис Automation:
+
+CountersinkAngle = Object.CountersinkAngle Получить свойство (* )
+Object.CountersinkAngle = CountersinkAngle Установить свойство (* )
+CountersinkAngle = Получить свойство (**)
+Object.GetCountersinkAngle()
+Object.SetCountersinkAngle( CountersinkAngle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CountersinkAngle( Получить свойство 
+&CountersinkAngle )
+Object.put_CountersinkAngle(  CountersinkAngle Установить свойство 
+)
+
+SpotfacingCountersinkDiameter  Диаметр цековки/
+зенковки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+SpotfacingCountersinkDiameter = Получить свойство (* )
+Object.SpotfacingCountersinkDiameter 
+Object.SpotfacingCountersinkDiameter = Установить свойство (* )
+SpotfacingCountersinkDiameter
+SpotfacingCountersinkDiameter = Получить свойство (**)
+Object.GetSpotfacingCountersinkDiameter()
+Object.SetSpotfacingCountersinkDiameter( Установить свойство (**)
+SpotfacingCountersinkDiameter )
+
+Синтаксис COM:
+
+Object.get_SpotfacingCountersinkDiameter( Получить свойство 
+&SpotfacingCountersinkDiameter )
+Object.put_SpotfacingCountersinkDiameter( Установить свойство 
+SpotfacingCountersinkDiameter )
+
+SpotfacingDepth  Глубина цековки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+SpotfacingDepth = Object.SpotfacingDepth Получить свойство (* )
+1984
+
+
+
+Object.SpotfacingDepth = SpotfacingDepth Установить свойство (* )
+SpotfacingDepth = Object.GetSpotfacingDepth() Получить свойство (**)
+Object.SetSpotfacingDepth( SpotfacingDepth ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SpotfacingDepth( &SpotfacingDepth ) Получить свойство 
+Object.put_SpotfacingDepth(  SpotfacingDepth ) Установить свойство 
+
+Интерфейс IConicHoleParameters
+Интерфейс конического отверстия.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IConicHoleParameters
+
+ Интерфейс можно получить с помощью метода: 
+ IHole3D::HoleParameters
+
+IConicHoleParameters  свойства
+
+ConicAngle  Угол конуса
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ConicAngle = Object.ConicAngle Получить свойство (* )
+Object.ConicAngle = ConicAngle Установить свойство (* )
+ConicAngle = Object.GetConicAngle( Получить свойство (**)
+Object.SetConicAngle( ConicAngle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ConicAngle( &ConicAngle ) Получить свойство 
+Object.put_ConicAngle(  ConicAngle ) Установить свойство 
+
+ConicDiameter  Диаметр основания конуса
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ConicDiameter = Object.ConicDiameter Получить свойство (* )
+1985
+
+
+
+Object.ConicDiameter = ConicDiameter Установить свойство (* )
+ConicDiameter = Object.GetConicDiameter() Получить свойство (**)
+Object.SetConicDiameter( ConicDiameter ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ConicDiameter( &ConicDiameter ) Получить свойство 
+Object.put_ConicDiameter(  ConicDiameter ) Установить свойство 
+
+ConicType  Способ определения параметров 
+конического отверстия
+Интерфейс...
+Тип данных: из перечисления ksConicTypeEnum
+Синтаксис Automation:
+
+ConicType = Object.ConicType Получить свойство (* )
+Object.ConicType = ConicType Установить свойство (* )
+ConicType = Object.GetConicType() Получить свойство (**)
+Object.SetConicType( ConicType ) Установить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_ConicType( &ConicType ) Получить свойство 
+Object.put_ConicType(  ConicType ) Установить свойство 
+
+Интерфейс ISpotfacingHoleParameters
+Интерфейс отверстия с цековкой.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ISpotfacingHoleParameters
+
+ Интерфейс можно получить с помощью метода: 
+ IHole3D::HoleParameters
+
+ISpotfacingHoleParameters  свойства
+
+SpotfacingDiameter  Диаметр цековки
+Интерфейс...
+Тип данных: double
+1986
+
+
+
+Синтаксис Automation:
+
+SpotfacingDiameter = Object.SpotfacingDiameter Получить свойство (* )
+Object.SpotfacingDiameter = SpotfacingDiameter Установить свойство (* )
+SpotfacingDiameter = Получить свойство (**)
+Object.GetSpotfacingDiameter()
+Object.SetSpotfacingDiameter( Установить свойство (**)
+SpotfacingDiameter )
+
+Синтаксис COM:
+
+Object.get_SpotfacingDiameter( Получить свойство 
+&SpotfacingDiameter )
+Object.put_SpotfacingDiameter( Установить свойство 
+SpotfacingDiameter )
+
+SpotfacingDepth  Глубина цековки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+SpotfacingDepth = Object.SpotfacingDepth Получить свойство (* )
+Object.SpotfacingDepth = SpotfacingDepth Установить свойство (* )
+SpotfacingDepth = Object.GetSpotfacingDepth() Получить свойство (**)
+Object.SetSpotfacingDepth( SpotfacingDepth ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SpotfacingDepth( &SpotfacingDepth ) Получить свойство 
+Object.put_SpotfacingDepth(  SpotfacingDepth ) Установить свойство 
+
+Интерфейс ILibraryHoleParameters 
+Интерфейс параметров отверстия из библиотеки.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ILibraryHoleParameters
+
+Данный интерфейс можно получить с помощью метода IHole3D::HoleParameters
+Версия Компас v18.1
+1987
+
+
+
+ILibraryHoleParameters  свойства
+
+FileName  Форма. Путь к библиотеке и имя фрагмента в 
+библиотеке документов
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+FileName = Object.FileName Получить свойство (* )
+Object.FileName = FileName Установить свойство (* )
+FileName = Object.GetFileName() Получить свойство (**)
+Object.SetFileName( FileName ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FileName( &FileName ) Получить свойство 
+Object.put_FileName(  FileName ) Установить свойство 
+
+Variable  Получить параметрическую переменную по 
+имени или индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IVariable7. 
+Синтаксис Automation:
+
+Variable = Object.Variable( Index ) Получить свойство (* )
+Variable = Object.GetVariable( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Variable( Index, &Variable ) Получить свойство,
+
+Примечание:
+Свойство доступно только для чтения.
+
+Variables  Получить массив параметрических 
+переменных в виде SAFEARRAY VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+1988
+
+
+
+Variables = Object.Variables Получить свойство (* )
+Variables = Object.GetVariables() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Variables( &Variables ) Получить свойство,
+
+Примечание:
+Свойство доступно только для чтения.
+
+VariablesCount  Получить количество параметрических 
+переменных
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+VariablesCount = Object.VariablesCount Получить свойство (* )
+VariablesCount = Получить свойство (**)
+Object.GetVariablesCount()
+
+Синтаксис COM:
+
+Object.get_VariablesCount( Получить свойство,
+&VariablesCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IHoleDisposal
+Интерфейс размещения отверстия.
+Иерархия:
+IDispatch
+
+IHoleDisposal
+Интерфейс можно получить методом QueryInterface у интерфейса IHole3D.
+
+IHoleDisposal  свойства
+
+AssociationVertex  Точечный объект
+Интерфейс...
+1989
+
+
+
+Тип данных: Указатель на интерфейс IModelObject 
+Синтаксис Automation:
+
+AssociationVertex = Object.AssociationVertex Получить свойство (* )
+Object.AssociationVertex = AssociationVertex Установить свойство (* )
+AssociationVertex = Получить свойство (**)
+Object.GetAssociationVertex()
+Object.SetAssociationVertex( AssociationVertex ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AssociationVertex( Получить свойство 
+&AssociationVertex 
+Object.put_AssociationVertex( Установить свойство 
+AssociationVertex )
+
+BaseSurface  Поверхность, на которой требуется 
+построить точку
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject 
+Синтаксис Automation:
+
+BaseSurface = Object.BaseSurface Получить свойство (* )
+Object.BaseSurface = BaseSurface Установить свойство (* )
+BaseSurface = Object.GetBaseSurface() Получить свойство (**)
+Object.SetBaseSurface( BaseSurface ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseSurface( &BaseSurface ) Получить свойство 
+Object.put_BaseSurface(  BaseSurface ) Установить свойство 
+
+Direction  Направление построения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство (* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+1990
+
+
+
+Object.SetDirection( Direction ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство 
+Object.put_Direction(  Direction ) Установить свойство 
+
+OffsetType  Тип смещения
+Интерфейс...
+Тип данных: из перечисления ksPoint3DSurfaceParamTypeEnum
+Синтаксис Automation:
+
+OffsetType = Object.OffsetType Получить свойство (* )
+Object.OffsetType = OffsetType Установить свойство (* )
+OffsetType = Object.GetOffsetType() Получить свойство (**)
+OffsetType = Object.GetOffsetType() Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OffsetType( &OffsetType ) Получить свойство 
+Object.put_OffsetType(  OffsetType ) Установить свойство 
+
+Perpendicular  Перпендикулярно поверхности
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Perpendicular = Object.Perpendicular Получить свойство (* )
+Object.Perpendicular = Perpendicular Установить свойство (* )
+Perpendicular = Object.GetPerpendicular() Получить свойство (**)
+Object.SetPerpendicular( Perpendicular ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Perpendicular( &Perpendicular ) Получить свойство 
+Object.put_Perpendicular(  Perpendicular ) Установить свойство 
+1991
+
+
+
+Point3DParamSurface  Параметры пространственной 
+точки на поверхности
+Интерфейс...
+Тип данных: Указатель на интерфейс IKompasAPIObject 
+Синтаксис Automation:
+
+Point3DParamSurface = Получить свойство (* )
+Object.Point3DParamSurface
+Point3DParamSurface = Получить свойство (**)
+Object.GetPoint3DParamSurface()
+
+Синтаксис COM:
+
+Object.get_Point3DParamSurface( Получить свойство,
+&Point3DParamSurface )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ProcessCanopy  Обрабатывать навес
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProcessCanopy = Object.ProcessCanopy Получить свойство (* )
+Object.ProcessCanopy = ProcessCanopy Установить свойство (* )
+ProcessCanopy = Object.GetProcessCanopy() Получить свойство (**)
+Object.SetProcessCanopy( ProcessCanopy ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProcessCanopy( &ProcessCanopy ) Получить свойство 
+Object.put_ProcessCanopy(  ProcessCanopy ) Установить свойство 
+
+Vector  Вектор
+Интерфейс...
+Тип данных: Указатель на интерфейс IVector3D 
+Синтаксис Automation:
+
+Vector = Object.Vector Получить свойство (* )
+1992
+
+
+
+Vector = Object.GetVector() Получить свойство (**)
+Синтаксис COM:
+
+Object.get_Vector( &Vector ) Получить свойство,
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IChamfer
+Интерфейс операции Фаска.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+  IChamfer
+Интерфейс можно получить с помощью метода коллекции операций фаска
+IChamfers::Add или свойства IChamfers::Chamfer.
+КОМПАС версия v18
+
+ IChamfer  свойства
+
+Angle  Угол фаски
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+       
+
+Angle = Object.Angle Получить свойство (* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство 
+Object.put_Angle(  Angle ) Установить свойство 
+
+BaseObjects  Массив ребер и граней, на которых 
+строится фаска
+Интерфейс...
+Тип данных: VARIANT
+1993
+
+
+
+Синтаксис Automation:
+       
+
+BaseObjects = Object.BaseObjects Получить свойство (* )
+Object.BaseObjects = BaseObjects Установить свойство (* )
+BaseObjects = Object.GetBaseObjects() Получить свойство (**)
+Object.SetBaseObjects( BaseObjects ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseObjects( &BaseObjects ) Получить свойство 
+Object.put_BaseObjects(  BaseObjects ) Установить свойство 
+
+Примечание.
+Позволяет получать и устанавливать опорный объект или массив опорных объектов, уча"
+ствующих в операции фаска. 
+Массив объектов возвращается в виде массива SAFEARRAY объектов LPDISPATCH
+(VT_ARRAY | VT_DISPATCH).
+
+BuildingType  Способ построения фаски
+Интерфейс...
+Тип данных: Значение из перечисления ksChamferBuildingTypeEnum
+Синтаксис Automation:
+       
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Object.GetBuildingType()) Получить свойство (**)
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( &BuildingType ) Получить свойство 
+Object.put_BuildingType(  BuildingType ) Установить свойство 
+
+Direction  Направление фаски
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+       
+
+Direction = Object.Direction Получить свойство (* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+1994
+
+
+
+Object.get_Direction( &Direction ) Получить свойство 
+Object.put_Direction(  Direction ) Установить свойство 
+
+Значение свойства:
+
+TRUE " первое,
+FALSE " второе.
+
+Distance1  Длина первой стороны
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+       
+
+Distance1 = Object.Distance1 Получить свойство (* )
+Object.Distance1 = Distance1 Установить свойство (* )
+Distance1 = Object.GetDistance1() Получить свойство (**)
+Object.SetDistance1( Distance1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Distance1( &Distance1 ) Получить свойство 
+Object.put_Distance1(  Distance1 ) Установить свойство 
+
+Distance2  Длина второй стороны
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+       
+
+Distance2 = Object.Distance2 Получить свойство (* )
+Object.Distance2 = Distance2 Установить свойство (* )
+Distance2 = Object.GetDistance2() Получить свойство (**)
+Object.SetDistance2( Distance2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Distance2( &Distance2 ) Получить свойство 
+Object.put_Distance2(  Distance2 ) Установить свойство 
+
+Tangent  По касательным ребрам
+Интерфейс...
+Тип данных: BOOL
+1995
+
+
+
+Синтаксис Automation:
+       
+
+Tangent = Object.Tangent Получить свойство (* )
+Object.Tangent = Tangent Установить свойство (* )
+Tangent = Object.GetTangent() Получить свойство (**)
+Object.SetTangent( Tangent ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Tangent( &Tangent ) Получить свойство 
+Object.put_Tangent(  Tangent ) Установить свойство 
+
+Интерфейс ICoupling
+Интерфейс цепочки операции Сечение.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ ICoupling
+Данный интерфейс можно получить с помощью методов операции по сечениям
+ILoft::AddCoupling и ILoft::Coupling.
+КОМПАС версия v18
+
+ICoupling  свойства
+
+Count  Количество сечений в цепочке
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Count = Object.Count Получить свойство (* )
+Count = Object.GetCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Count( &Count ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+1996
+
+
+
+Position  Величина смещения точки вдоль контура 
+сечения в %
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+       
+
+Position = Object.Position( Index ) Получить свойство (* )
+Object.Position( Index ) = Position Установить свойство (* )
+Position = Object.GetPosition( Index ) Получить свойство (**)
+Object.SetPosition( Index, Position ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Position( Index, &Position ) Получить свойство 
+Object.put_Position(  Index, Position ) Установить свойство 
+
+Входные параметры:
+
+long Index " индекс сечения в цепочке.
+
+PositionObject  Фиксирующий объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+       
+
+PositionObject = Object.PositionObject( Index ) Получить свойство (* )
+Object.PositionObject( Index ) = PositionObject Установить свойство (* )
+PositionObject = Object.GetPositionObject( Index Получить свойство (**)
+)
+Object.SetPositionObject( Index, PositionObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PositionObject( Index, Получить свойство 
+&PositionObject )
+Object.put_PositionObject(  Index, PositionObject Установить свойство 
+)
+
+Входные параметры:
+
+long Index " индекс сечения в цепочке.
+1997
+
+
+
+PositionOffset  Величина смещения точки вдоль контура 
+сечения в мм
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+       
+
+PositionOffset = Object.PositionOffset( Index ) Получить свойство (* )
+Object.PositionOffset( Index ) = PositionOffset Установить свойство (* )
+PositionOffset = Object.GetPositionOffset( Index ) Получить свойство (**)
+Object.SetPositionOffset( Index, PositionOffset ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PositionOffset( Index, Получить свойство 
+&PositionOffset )
+Object.put_PositionOffset(  Index, PositionOffset Установить свойство 
+)
+
+Входные параметры:
+
+long Index " индекс сечения в цепочке.
+
+Sketch  Сечение. Эскиз, контур, пространственная 
+кривая, грань
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject. 
+Синтаксис Automation:
+
+Sketch = Object.Sketch( Index ) Получить свойство (* )
+Sketch = Object.GetSketch( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sketch( Index, &Sketch ) Получить свойство
+
+Входные параметры:
+
+long Index " индекс сечения в цепочке.
+
+Примечание:
+Свойство доступно только для чтения.
+1998
+
+
+
+.
+
+.
+
+ICoupling  методы
+
+Delete  Удалить цепочку
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения
+
+GetPoint  Получить координаты точки
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPoint( long Index, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetPoint( long Index, double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения
+
+Входные параметры:
+
+long Index " индекс сечения в цепочке.
+
+Выходные параметры:
+
+X, Y, Z " координаты точки.
+
+SetPoint  Получить параметры точки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPoint( long Index, double X, double Y, double Z );
+Синтаксис COM:
+HRESULT SetPoint( long Index, double X, double Y, double Z, BOOL * Result );
+Возвращаемое значение: 
+1999
+
+
+
+.
+TRUE " в случае успешного завершения
+
+Входные параметры:
+
+long Index " индекс сечения в цепочке,
+X, Y, Z  " координаты точки.
+
+Интерфейс ICut
+Интерфейс операции Сечение.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ ICut
+КОМПАС версия v18
+
+ICut  свойства
+
+BuildingType  Способ сечения при сечении по эскизу
+Интерфейс...
+Тип данных: Значение из перечисления ksCutBuildingTypeEnum.
+Синтаксис Automation:
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Object.GetBuildingType() Получить свойство (**)
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( &BuildingType ) Получить свойство
+Object.put_BuildingType(  BuildingType ) Установить свойство
+
+ChooseBodies  Массив тел
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+2000
+
+
+
+ChooseBodies = Object.ChooseBodies Получить свойство (* )
+Object.ChooseBodies = ChooseBodies Установить свойство (* )
+ChooseBodies = Object.GetChooseBodies() Получить свойство (**)
+Object.SetChooseBodies( ChooseBodies ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ChooseBodies( &ChooseBodies Получить свойство
+)
+Object.put_ChooseBodies(  ChooseBodies ) Установить свойство
+
+Примечание.
+Позволяет получать и устанавливать тело или массив тел, участвующих в операции. 
+Массив возвращается в виде массива SAFEARRAY тел LPDISPATCH (VT_ARRAY |
+VT_DISPATCH).
+
+ChooseParts  Массив компонентов (SAFEARRAY)
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ChooseParts = Object.ChooseParts Получить свойство (* )
+Object.ChooseParts = ChooseParts Установить свойство (* )
+ChooseParts = Object.GetChooseParts() Получить свойство (**)
+Object.SetChooseParts( ChooseParts ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ChooseParts( &ChooseParts ) Получить свойство
+Object.put_ChooseParts(  ChooseParts ) Установить свойство
+
+Примечание.
+Позволяет получать и устанавливать компонент или массив компонентов, участвующих
+в операции. 
+Массив возвращается в виде массива SAFEARRAY компонентов LPDISPATCH (VT_ARRAY
+| VT_DISPATCH).
+
+ChoosePartsType  Способ определения области 
+применения для компонентов
+Интерфейс...
+Тип данных: Значение из перечисления ksChoosePartsType.
+Синтаксис Automation:
+2001
+
+
+
+ChoosePartsType = Получить свойство (* )
+Object.ChoosePartsType
+Object.ChoosePartsType = Установить свойство (* )
+ChoosePartsType
+ChoosePartsType = Получить свойство (**)
+Object.GetChoosePartsType()
+Object.SetChoosePartsType( Установить свойство (**)
+ChoosePartsType )
+
+Синтаксис COM:
+
+Object.get_ChoosePartsType( Получить свойство
+&ChoosePartsType )
+Object.put_ChoosePartsType( Установить свойство
+ChoosePartsType )
+
+ChooseType  Область применения
+Интерфейс...
+Тип данных: Значение из перечисления ksChooseType.
+Синтаксис Automation:
+
+ChooseType = Object.ChooseType Получить свойство (* )
+Object.ChooseType = ChooseType Установить свойство (* )
+ChooseType = Object.GetChooseType() Получить свойство (**)
+Object.SetChooseType( ChooseType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ChooseType( &ChooseType ) Получить свойство
+Object.put_ChooseType(  ChooseType ) Установить свойство
+
+CutObject  Секущий объект (эскиз или поверхность)
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+CutObject = Object.CutObject Получить свойство (* )
+Object.CutObject = CutObject Установить свойство (* )
+CutObject = Object.GetCutObject() Получить свойство (**)
+Object.SetCutObject( CutObject ) Установить свойство (**)
+
+Синтаксис COM:
+2002
+
+
+
+Object.get_CutObject( &CutObject ) Получить свойство
+Object.put_CutObject(  CutObject ) Установить свойство
+
+Direction  Направление отсечения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство (* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство
+Object.put_Direction(  Direction ) Установить свойство
+
+Значения свойства:
+ 
+
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Интерфейс IEvolution
+Интерфейс кинематической операции.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IEvolution
+Данный интерфейс можно получить с помощью метода коллекции операций по сечени"
+ям IEvolutions::Add или свойства IEvolutions::Evolution.
+Интерфейс также используется для кинематической поверхности.
+КОМПАС версия v18
+
+IEvolution  свойства
+2003
+
+
+
+BySurfaceNormal  Согласованно с нормалью 
+поверхности
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BySurfaceNormal = Получить свойство (* )
+Object.BySurfaceNormal
+Object.BySurfaceNormal = Установить свойство (* )
+BySurfaceNormal
+BySurfaceNormal = Получить свойство (**)
+Object.GetBySurfaceNormal()
+Object.SetBySurfaceNormal( Установить свойство (**)
+BySurfaceNormal )
+
+Синтаксис COM:
+
+Object.get_BySurfaceNormal( Получить свойство
+&BySurfaceNormal )
+Object.put_BySurfaceNormal( Установить свойство
+BySurfaceNormal )
+
+Edges  Траектория. Массив SAFEARRAY кривых, 
+задающих траекторию движения сечения 
+кинематического элемента
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Edges = Object.Edges Получить свойство (* )
+Object.Edges = Edges Установить свойство (* )
+Edges = Object.GetEdges() Получить свойство (**)
+Object.SetEdges( Edges ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Edges( &Edges ) Получить свойство
+Object.put_Edges(  Edges ) Установить свойство
+
+Примечание.
+Позволяет получать и устанавливать массив кривых, задающих траекторию движения
+сечения кинематического элемента. 
+2004
+
+
+
+Массив возвращается в виде массива SAFEARRAY объектов LPDISPATCH (VT_ARRAY |
+VT_DISPATCH).
+
+OperationResult  Результат операции
+Интерфейс...
+Тип данных: Значение из перечисления ksOperationResultEnum.
+Синтаксис Automation:
+
+OperationResult = Object.OperationResult Получить свойство (* )
+Object.OperationResult = OperationResult Установить свойство (* )
+OperationResult = Получить свойство (**)
+Object.GetOperationResult()
+Object.SetOperationResult( Установить свойство (**)
+OperationResult )
+
+Синтаксис COM:
+
+Object.get_OperationResult( Получить свойство
+&OperationResult)
+Object.put_OperationResult( Установить свойство
+OperationResult )
+
+Sketch  Сечение. Эскиз
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+Sketch = Object.Sketch Получить свойство (* )
+Object.Sketch = Sketch Установить свойство (* )
+Sketch = Object.GetSketch() Получить свойство (**)
+Object.SetSketch( Sketch ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sketch( &Sketch ) Получить свойство
+Object.put_Sketch(  Sketch ) Установить свойство
+
+SketchShiftType  Тип движения сечения по траектории
+Интерфейс...
+Тип данных: Значение из перечисления ksEvolutionShiftSketchTypeEnum.
+Синтаксис Automation:
+2005
+
+
+
+е"
+SketchShiftType = Object.SketchShiftType Получить свойство (* )
+Object.SketchShiftType = SketchShiftType Установить свойство (* )
+SketchShiftType = Получить свойство (**)
+Object.GetSketchShiftType()
+Object.SetSketchShiftType( Установить свойство (**)
+SketchShiftType )
+
+Синтаксис COM:
+
+Object.get_SketchShiftType( Получить свойство
+&SketchShiftType )
+Object.put_SketchShiftType( Установить свойство
+SketchShiftType )
+
+IEvolution  методы
+
+GetPathLength  Длина траектории
+Интерфейс...
+Синтаксис Automation:
+double GetPathLength( ksLengthUnitsEnum Unit );
+Синтаксис COM:
+HRESULT GetPathLength( ksLengthUnitsEnum Unit, double * Result );
+Возвращаемое значение: 
+ 
+
+" длина траектории.
+
+Входные параметры:
+ 
+
+Unit " единицы измерения длины из пер
+числения ksLengthUnitsEnum.
+
+Интерфейс IFillet 
+Интерфейс   операции Скругление.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ IFillet
+Интерфейс можно получить с помощью метода коллекции операций скругления
+IFillets::Add или свойства IFillets::Fillet.
+2006
+
+
+
+КОМПАС версия v18
+
+IFillet  свойства
+
+AutoSaveEdge  Автоопределение сохранения кромки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+       
+
+AutoSaveEdge = Object.AutoSaveEdge Получить свойство (* )
+Object.AutoSaveEdge = AutoSaveEdge Установить свойство (* )
+AutoSaveEdge = Object.GetAutoSaveEdge() Получить свойство (**)
+Object.SetAutoSaveEdge( AutoSaveEdge ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AutoSaveEdge( &AutoSaveEdge ) Получить свойство 
+Object.put_AutoSaveEdge(  AutoSaveEdge ) Установить свойство 
+
+BaseObjects  Массив скругляемых объектов (граней и 
+ребер)
+Интерфейс...
+Тип данных: VARIANT
+ Синтаксис Automation:
+       
+
+BaseObjects = Object.BaseObjects Получить свойство (* )
+Object.BaseObjects = BaseObjects Установить свойство (* )
+BaseObjects = Object.GetBaseObjects() Получить свойство (**)
+Object.SetBaseObjects( BaseObjects ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseObjects( &BaseObjects ) Получить свойство 
+Object.put_BaseObjects(  BaseObjects ) Установить свойство 
+
+BuildingType  Способ построения скругления
+Интерфейс...
+Тип данных: Значение из перечисления ksFilletBuildingTypeEnum.
+Синтаксис Automation:
+       
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Object.GetBuildingType() Получить свойство (**)
+2007
+
+
+
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_BuildingType( &BuildingType ) Получить свойство 
+Object.put_BuildingType(  BuildingType ) Установить свойство 
+
+Примечание.
+Метод позволяет получать и устанавливать опорный объект или массив опорных объек"
+тов, участвующих в операции Скругление. 
+Массив объектов возвращается в виде массива SAFEARRAY объектов LPDISPATCH
+(VT_ARRAY | VT_DISPATCH).
+
+Chord  Хорда
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+       
+
+Chord = Object.Chord Получить свойство (* )
+Object.Chord = Chord Установить свойство (* )
+Chord = Object.GetChord() Получить свойство (**)
+Object.SetChord( Chord ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Chord( &Chord ) Получить свойство 
+Object.put_Chord(  Chord ) Установить свойство 
+
+Coefficient  Коэффициент
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+       
+
+Coefficient = Object.Coefficient Получить свойство (* )
+Object.Coefficient = Coefficient Установить свойство (* )
+Coefficient = Object.GetCoefficient() Получить свойство (**)
+Object.SetCoefficient( Coefficient ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Coefficient( &Coefficient ) Получить свойство 
+Object.put_Coefficient(  Coefficient ) Установить свойство 
+2008
+
+
+
+Radius1  Радиус скругления или полуось 1
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+       
+
+Radius1 = Object.Radius1 Получить свойство (* )
+Object.Radius1 = Radius1 Установить свойство (* )
+Radius1 = Object.GetRadius1() Получить свойство (**)
+Object.SetRadius1( Radius1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Radius1( &Radius1 ) Получить свойство 
+Object.put_Radius1(  Radius1 ) Установить свойство 
+
+Radius2  Полуось 2
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+       
+
+Radius2 = Object.Radius2 Получить свойство (* )
+Object.Radius2 = Radius2 Установить свойство (* )
+Radius2 = Object.GetRadius2() Получить свойство (**)

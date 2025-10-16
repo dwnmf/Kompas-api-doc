@@ -1,0 +1,2532 @@
+
+Примечание:
+Свойство используется только для видов типа разрез или сечение.
+3904
+
+
+
+tangentEdgesShow  Признак отрисовки видимых линий 
+перехода
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+TRUE " отрисовка включена,
+FALSE " отрисовка выключена.
+
+Синтаксис Automation:
+
+tangentEdgesShow = Получить свойство (* )
+iAssViewParam.tangentEdgesShow
+iAssViewParam.tangentEdgesShow = Установить свойство (* )
+tangentEdgesShow
+tangentEdgesShow = Получить свойство (**)
+iAssViewParam.GetTangentEdgesShow()
+iAssViewParam. Установить свойство (**)
+SetTangentEdgesShow(tangentEdgesShow)
+
+tangentEdgesStyle  Номер стиля отрисовки видимых линий 
+перехода
+Интерфейс...
+Тип данных:long.
+Значения свойства:
+
+номер стиля
+0 " умолчательный стиль.
+
+Синтаксис Automation:
+
+tangentEdgesStyle = iAssViewParam.tangentEdgesStyle Получить свойство (* )
+iAssViewParam.tangentEdgesStyle = tangentEdgesStyle Установить свойство (* )
+tangentEdgesStyle = iAssViewParam.GetTangentEdgesStyle() Получить свойство (**)
+iAssViewParam. Установить свойство (**)
+SetTangentEdgesStyle(tangentEdgesStyle)
+
+visibleLinesStyle  Номер стиля отрисовки видимых ребер и 
+очерков
+Интерфейс...
+Тип данных:long.
+Значения свойства:
+3905
+
+
+
+номер стиля
+0 " умолчательный стиль.
+
+Синтаксис Automation:
+
+hiddenLinesStyle = iAssViewParam.hiddenLinesStyle Получить свойство (* )
+iAssViewParam.hiddenLinesStyle = hiddenLinesStyle Установить свойство (* )
+hiddenLinesStyle = iAssViewParam.GetHiddenLinesStyle() Получить свойство (**)
+iAssViewParam. Установить свойство (**)
+SetHiddenLinesStyle(hiddenLinesStyle)
+
+ksAssociationViewParam  методы
+
+GetHatchParam  Получить указатель на интерфейс 
+параметров штриховки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetHatchParam();
+Возвращаемое значение:
+
+" Указатель на интерфейс ksHatchParam.
+
+Примечание:
+Свойство используется только для видов типа разрез или сечение.
+
+GetViewParam  Получить указатель на интерфейс 
+параметров обычного вида
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetViewParam();
+Возвращаемое значение:
+
+" Указатель на интерфейс ksViewParam.
+
+Примечание:
+Свойство используется только для видов типа разрез или сечение.
+
+Init  Инициализировать параметры
+Интерфейс...
+3906
+
+
+
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+.
+
+SetDimensionLayoutScaling  Установить признак 
+масштабирования аннотационных объектов вида
+Интерфейс...
+Синтаксис Automation:
+BOOL SetDimensionLayoutScaling(BOOL scaling);
+Входной параметр:
+
+scaling TRUE " масштабировать аннотационные объекты вида,
+FALSE " не масштабировать объекты.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Используется только для изменения параметров вида ksDocument2D::ksSetObjParam.
+2. Используется для всех видов, в том числе и для обычного (неассоциативного) вида.
+
+viewType  Тип вида
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+" Тип вида LtViewType.
+
+Синтаксис Automation:
+
+viewType = iAssociationView.viewType Получить свойство (* )
+viewType = iAssociationView.GetViewType() Получить свойство (**)
+
+Примечание:
+Свойство доступно только для чтения.
+3907
+
+
+
+Параметры стандартного листа (Интерфейс 
+ksStandartSheet)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_FORMAT_SHEET.htm
+Интерфейс параметров стандартного листа.
+Аналог данных параметров при использовании API экспортных функций " StandartSheet.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksStandartSheet  свойства
+
+format  Формат листа
+Интерфейс...
+Тип данных:short.
+Стандартные форматы...
+Синтаксис Automation:
+
+format = iStandartSheet.format Получить свойство (* )
+iStandartSheet.format = format Установить свойство (* )
+format = iStandartSheet.GetFormat() Получить свойство (**)
+iStandartSheet.SetFormat (format) Установить свойство (**)
+
+multiply  Кратность формата
+Интерфейс...
+Тип данных:short.
+Синтаксис Automation:
+
+multiply = iStandartSheet.multiply Получить свойство (* )
+iStandartSheet.multiply = multiply Установить свойство (* )
+multiply = iStandartSheet.GetMultiply() Получить свойство (**)
+iStandartSheet.SetMultiply (multiply) Установить свойство (**)
+
+ksStandartSheet  методы
+
+direct  Расположение основной надписи
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+3908
+
+
+
+FALSE " вдоль короткой стороны,
+TRUE " вдоль длинной стороны.
+
+Синтаксис Automation:
+
+direct = iStandartSheet.direct Получить свойство (* )
+iStandartSheet.direct = direct Установить свойство (* )
+direct = iStandartSheet.GetDirect() Получить свойство (**)
+iStandartSheet.SetDirect (direct) Установить свойство (**)
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры стандартного листа.
+
+Размеры листа (Интерфейс ksSheetSize)
+Справка системы КОМПАС...
+KOMPAS.chm::/362_41_1_Listy.htm
+Интерфейс параметров размеров листа.
+Аналог данных параметров при использовании API экспортных функций " SheetSize.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksSheetSize  свойства
+
+height  Высота листа
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+height = iSheetSize.height Получить свойство (* )
+3909
+
+
+
+iSheetSize.height = height Установить свойство (* )
+height = iSheetSize.GetHeight() Получить свойство (**)
+iSheetSize.SetHeight( height ) Установить свойство (**)
+
+width  Ширина листа
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+width = iSheetSize.width Получить свойство (* )
+iSheetSize.width = width Установить свойство (* )
+width = iSheetSize.GetWidth() Получить свойство (**)
+iSheetSize.SetWidth( width ) Установить свойство (**)
+
+ksSheetSize  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры размеров листа.
+
+Оформление (Интерфейс ksSheetPar)
+Справка системы КОМПАС...
+KOMPAS.chm::/574_68_2_Osnovnaja_nadpisq_i_fo.htm
+Интерфейс параметров оформления.
+Аналог данных параметров при использовании API экспортных функций " SheetPar.
+Примечания:
+
+1. Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+
+2. Стандартный формат или нестандартный, определяется значением параметра type из па"
+раметров документа ksDocumentParam.
+Смотрите также: KompasObject
+3910
+
+
+
+ksSheetPar  свойства
+
+layoutName  Для чертежа  имя библиотеки оформления,
+для спецификации  имя библиотеки стилей спецификации
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+layoutName = iSheetPar.layoutName Получить свойство (* )
+iSheetPar.layoutName = layoutName Установить свойство (* )
+layoutName = iSheetPar.GetLayoutName() Получить свойство (**)
+iSheetPar.SetLayoutName( layoutName ) Установить свойство (**)
+
+Примечание:
+Если строка пустая, берется библиотека Graphic.lyt.
+
+shtType  Для чертежа  тип штампа из указанной 
+библиотеки,
+для спецификации  номер стиля из указанной библиотеки
+Интерфейс...
+Тип данных:short.
+Синтаксис Automation:
+
+shtType = iSheetPar.shtType Получить свойство (* )
+iSheetPar.shtType = shtType Установить свойство (* )
+shtType = iSheetPar.GetShtType() Получить свойство (**)
+iSheetPar.SetShtType( shtType ) Установить свойство (**)
+
+ksSheetPar  методы
+
+GetSheetParam  Получить указатель на интерфейс 
+параметров листа документа ksStandartSheet или ksSheetSize
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetSheetParam();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров листа до"
+кумента ksStandartSheet (для стандартного ли"
+ста) или ksSheetSize (для нестандартного листа).
+
+Примечание:
+3911
+
+
+
+Тип возвращаемого интерфейса определяется значением параметра type из параметров
+документа ksDocumentParam.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры оформления документа.
+
+Оформление (Интерфейс ksSheetOptions)
+Справка системы КОМПАС...
+KOMPAS.chm::/1132_133_1_Obshchie_svedenija.htm
+Интерфейс параметров оформления листа документа.
+Аналог данных параметров при использовании API экспортных функций " SheetOptions.
+Примечание:
+
+1. Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+
+2. Данный интерфейс используется при передаче данных методом ksGetDocOptions.
+
+ksSheetOptions  свойства
+
+layoutName  Имя библиотеки оформления
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+layoutName = iSheetOptions.layoutName Получить свойство (* )
+iSheetOptions.layoutName = layoutName Установить свойство (* )
+layoutName = iSheetOptions.GetLayoutName() Получить свойство (**)
+iSheetOptions.SetLayoutName( layoutName ) Установить свойство (**)
+
+sheetType  Тип листа
+Интерфейс...
+Тип данных:BOOL.
+3912
+
+
+
+Синтаксис Automation:
+
+sheetType = iSheetOptions.sheetType Получить свойство (* )
+iSheetOptions.sheetType = sheetType Установить свойство (* )
+sheetType = iSheetOptions.GetSheetType() Получить свойство (**)
+iSheetOptions.SetSheetType (sheetType) Установить свойство (**)
+
+Значения свойства:
+
+TRUE " пользовательский формат,
+FALSE " стандартный лист.
+
+Примечание:
+Свойство необходимо учитывать при вызове метода GetSheetParam. Значение свойства
+должно соответствовать значению входного параметра type. Осталась для совместимо"
+сти со старыми библиотеками.
+
+shtType  Для чертежа  тип основной надписи, 
+для спецификации  имя библиотеки стилей спецификации
+Интерфейс...
+Тип данных:short.
+Синтаксис Automation:
+
+shtType = iSheetOptions.shtType Получить свойство (* )
+iSheetOptions.shtType = shtType Установить свойство (* )
+shtType = iSheetOptions.GetShtType() Получить свойство (**)
+iSheetOptions.SetShtType(shtType) Установить свойство (**)
+
+ksSheetOptions  методы
+
+GetSheetParam  Получить указатель на интерфейс 
+параметров листа документа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetSheetParam (BOOL type);
+Входной параметр:
+
+type " признак формата листа:
+FALSE " стандартный лист, 
+TRUE " пользовательский формат.
+
+Возвращаемое значение:
+3913
+
+
+
+" указатель на интерфейс параметров листа
+ksStandartSheet или ksSheetSize.
+
+Примечание:
+При вызове метода необходимо учитывать свойство sheetType. Его значение должно со"
+ответствовать значению входного параметра type. Осталась для совместимости со ста"
+рыми библиотеками.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры.
+3914
+
+
+
+МЦХ плоской фигуры (Интерфейс ksInertiaParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_MIX.htm
+Интерфейс параметров для расчета МЦХ плоской фигуры.
+Аналог данных параметров при использовании API экспортных функций " InertiaParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksInertiaParam  свойства
+
+A  Угол между первой главной осью и осью x
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+A = iInertiaParam.A Получить свойство (* )
+A = iInertiaParam.GetA() Получить свойство (**)
+
+Примечание:
+Свойство только для чтения.
+
+F  Площадь
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+F = iInertiaParam.F Получить свойство (* )
+F = iInertiaParam.GetF() Получить свойство (**)
+
+Примечание:
+Свойство только для чтения.
+
+lx, ly  Моменты инерции относительно осей x и y
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+3915
+
+
+
+lx = iInertiaParam.lx Получить свойство (* )
+lx = iInertiaParam.GetLx() Получить свойство (**)
+
+Примечание:
+Свойства только для чтения.
+
+lxly  Центробежный момент инерции относительно 
+исходных осей x и y
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+lxy = iInertiaParam.lxy Получить свойство (* )
+lxy = iInertiaParam.GetLxy() Получить свойство (**)
+
+Примечание:
+Свойство только для чтения.
+
+jjx, jy  Главные центральные моменты инерции
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+jx = iInertiaParam.jx Получить свойство (* )
+jx = iInertiaParam.GetJx() Получить свойство (**)
+
+Примечание:
+Свойство только для чтения.
+
+mx, my  Моменты инерции относительно осей, 
+параллельных осям x и y и проходящих через центр 
+тяжести
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+mx = iInertiaParam.mx Получить свойство (* )
+mx = iInertiaParam.GetMx() Получить свойство (**)
+
+Примечание:
+3916
+
+
+
+Свойства только для чтения.
+
+mxy  Центробежный момент инерции относительно 
+осей, параллельных осям x и y
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+mxy = iInertiaParam.mxy Получить свойство (* )
+mxy = iInertiaParam.GetMxy() Получить свойство (**)
+
+Примечание:
+Свойство только для чтения.
+
+xc, yc  Координаты центра тяжести
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+xc = iInertiaParam.xc Получить свойство (* )
+xc = iInertiaParam.GetXc() Получить свойство (**)
+
+Примечание:
+Свойства только для чтения.
+
+Интерфейсы параметров стилей объектов
+Стиль линии
+
+Стиль линии (Интерфейс ksCurveStyleParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1093_130_1_Nastrojka_stilja_lin.htm
+Интерфейс параметров стиля кривой.
+Аналог данных параметров при использовании API экспортных функций "
+CurveStyleParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также
+KompasObject
+3917
+
+
+
+ksCurveStyleParam  свойства
+
+color  Цвет
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+color = iCurveStyleParam.color Получить свойство (* )
+iCurveStyleParam.color = color Установить свойство (* )
+color = iCurveStyleParam.GetСolor() Получить свойство (**)
+iCurveStyleParam.SetСolor( color ) Установить свойство (**)
+
+curveType  Тип кривой
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " сплошная,
+1 " прерывистая,
+2 " прерывистая, содержащая "картинки".
+
+Синтаксис Automation:
+
+curveType = iCurveStyleParam.curveType Получить свойство (* )
+iCurveStyleParam.curveType = curveType Установить свойство (* )
+curveType = iCurveStyleParam.GetСurveType() Получить свойство (**)
+iCurveStyleParam.SetСurveType( curveType ) Установить свойство (**)
+
+Смотрите также: ksCurveStyleParam::widthPen
+
+even  Тип окончания прерывистой кривой
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+1 " кривая всегда оканчивается штрихами,
+0 " кривая оканчивается "как получится".
+
+Синтаксис Automation:
+
+even = iCurveStyleParam.even Получить свойство (* )
+iCurveStyleParam.even = even Установить свойство (* )
+even = iCurveStyleParam.GetEven() Получить свойство (**)
+iCurveStyleParam.SetEven( even ) Установить свойство (**)
+3918
+
+
+
+name  Имя стиля
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+name = iCurveStyleParam.name Получить свойство (* )
+iCurveStyleParam.name = name Установить свойство (* )
+name = iCurveStyleParam.GetName() Получить свойство (**)
+iCurveStyleParam.SetName( name ) Установить свойство (**)
+
+paperWidth  Толщина линии на бумаге
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+paperWidth = iCurveStyleParam.paperWidth Получить свойство (* )
+iCurveStyleParam.paperWidth = paperWidth Установить свойство (* )
+paperWidth = iCurveStyleParam.GetPaperWidth() Получить свойство (**)
+iCurveStyleParam.SetPaperWidth( paperWidth ) Установить свойство (**)
+
+Примечание:
+Толщина линии, заданная этим свойством, используется, если свойство widthPen уста"
+новлено в пользовательский тип толщины линии.
+При инициализации параметров интерфейса методом Init также устанавливается поль"
+зовательский способ задания толщины линии.
+
+screenWidth Толщина линии на экране
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+screenWidth = iCurveStyleParam.screenWidth Получить свойство (* )
+iCurveStyleParam.screenWidth = screenWidth Установить свойство (* )
+screenWidth = iCurveStyleParam.GetScreenWidth() Получить свойство (**)
+iCurveStyleParam.SetScreenWidth( screenWidth ) Установить свойство (**)
+
+Примечание:
+Толщина линии, заданная этим свойством, используется, если свойство widthPen уста"
+новлено в пользовательский тип толщины линии.
+При инициализации параметров интерфейса методом Init также устанавливается поль"
+зовательский способ задания толщины линии.
+3919
+
+
+
+widthPen  Способ задания толщины линии
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " толщина задается пользователем,
+1 " толщина как у основной линии,
+2 " толщина как у тонкой линии,
+3 " толщина как у утолщенной линии.
+
+Синтаксис Automation:
+
+widthPen = iCurveStyleParam. widthPen Получить свойство (* )
+iCurveStyleParam. widthPen = widthPen Установить свойство (* )
+widthPen = iCurveStyleParam.GetWidthPen () Получить свойство (**)
+iCurveStyleParam.SetWidthPen( widthPen ) Установить свойство (**)
+
+Примечание:
+Если выбрано задание толщины пользователем, то используются значения толщины ли"
+нии, заданные свойствами paperWidth и screenWidth.
+
+ksCurveStyleParam  методы
+
+GetPPattern  Получить (для прерывистой кривой) указатель 
+на динамический массив параметров участков штриховой 
+кривой ksDynamicArray типа CURVE_PATTERN_ARR или 
+CURVE_PATTERN_ARR_EX
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPPattern (long type);
+Возвращаемое значение:
+
+" указатель на динамический массив ksDynamicArray типа CURVE_PATTERN_ARR 
+или CURVE_PATTERN_ARR_EX.
+
+Примечание:
+Типу массива CURVE_PATTERN_ARR соответствует интерфейс ksCurvePattern.
+Типу массива CURVE_PATTERN_ARR_EX соответствует интерфейс ksCurvePatternEx.
+Смотрите также :ksCurveStyleParam::curveType
+
+InIit  Инициализировать параметры
+Интерфейс...
+3920
+
+
+
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1.  Метод обнуляет все параметры.
+2.  Создается динамический массив pattern типа CURVE_PATTERN_ARR.
+
+SetPPattern  Установить (для прерывистой кривой) 
+указатель на динамический массив параметров участков 
+штриховой кривой ksDynamicArray типа 
+CURVE_PATTERN_ARR или CURVE_PATTERN_ARR_EX
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPPattern (LPDISPATCH pPattern);
+Входной параметр:
+
+pPattern " указатель на динамический массив ksDynamicArray типа 
+CURVE_PATTERN_ARR или CURVE_PATTERN_ARR_EX.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Типу массива CURVE_PATTERN_ARR соответствует интерфейс ksCurvePattern.
+Типу массива CURVE_PATTERN_ARR_EX соответствует интерфейс ksCurvePatternEx.
+Смотрите также: ksCurveStyleParam::curveType
+
+Участок штриховой линии (Интерфейс ksCurvePattern)
+Справка системы КОМПАС...
+KOMPAS.chm::/1093_130_1_Nastrojka_stilja_lin.htm
+Интерфейс параметров участка штриховой кривой.
+Аналог данных параметров при использовании API экспортных функций " CurvePattern.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+3921
+
+
+
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksCurvePattern  свойства
+
+inviisibleSeg  Длина невидимого участка линии
+Интерфейс..
+Тип данных:double.
+Синтаксис Automation:
+
+invisibleSeg = iCurvePattern.invisibleSeg Получить свойство (* )
+iCurvePattern.invisibleSeg = invisibleSeg Установить свойство (* )
+invisibleSeg = iCurvePattern.GetInvisibleSeg() Получить свойство (**)
+iCurvePattern.SetInvisibleSeg( invisibleSeg ) Установить свойство (**)
+
+visibleSeg  Длина видимого участка линии
+Интерфейс..
+Тип данных:double.
+Синтаксис Automation:
+
+visibleSeg = iCurvePattern.visibleSeg Получить свойство (* )
+iCurvePattern.visibleSeg = visibleSeg Установить свойство (* )
+visibleSeg = iCurvePattern.GetVisibleSeg() Получить свойство (**)
+iCurvePattern.SetVisibleSeg( visibleSeg ) Установить свойство (**)
+
+ksCurvePattern  методы
+
+Init  Инициализировать параметры
+Интерфейс..
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры участка линии.
+3922
+
+
+
+“Картинка”, входящая в стиль линии (Интерфейс 
+ksCurvePicture)
+Справка системы КОМПАС...
+KOMPAS.chm::/1093_130_1_Nastrojka_stilja_lin.htm
+Интерфейс параметров "картинки", включаемой в стиль линии.
+Аналог данных параметров при использовании API экспортных функций " CurvePicture.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct .
+Смотрите также: KompasObject
+
+ksCurvePicture  методы
+
+GetPolygon  Получить указатель на динамический массив 
+ломаных линий, описывающий "картинку" (точки в 
+координатах листа относительно 0 картинки) типа 
+POLYLINE_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPolygon();
+Возвращаемое значение:
+
+" указатель на динамический массив типа
+POLYLINE_ARR ksDynamicArray.
+
+Смотрите также: ksMathPointParam 
+
+GetFill  Получить указатель на динамический массив, 
+описывающий границу заливки типа POLYLINE_ARR (точки в 
+координатах листа относительно 0 картинки)
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetFill();
+Возвращаемое значение:
+
+" указатель на динамический массив типа
+POLYLINE_ARR ksDynamicArray.
+
+Смотрите также: ksMathPointParam
+3923
+
+
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1. Метод обнуляет все параметры.
+2. Создается динамический массив polygon типа POLYLINE_ARR.
+3. Создается динамический массив fill типа POLYLINE_ARR.
+
+SetFill  Установить указатель на динамический массив, 
+описывающий границу заливки типа POLYLINE_ARR (точки в 
+координатах листа относительно 0 картинки)
+Интерфейс...
+Синтаксис Automation:
+BOOL SetFill (LPDISPATCH fill);
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Входной параметр:
+
+fill " указатель на динамический массив типа
+POLYLINE_ARR ksDynamicArray.
+
+Смотрите также: ksMathPointParam
+
+SetPolygon  Установить указатель на динамический массив 
+ломаных линий, описывающий "картинку" (точки в 
+координатах листа относительно 0 картинки) типа 
+POLYLINE_ARR  ksDynamicArray
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPolygon (LPDISPATCH polygon);
+Входной параметр:
+3924
+
+
+
+polygon " указатель на динамический массив типа
+POLYLINE_ARR ksDynamicArray.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также: ksMathPointParam
+
+Стиль линии с “картинкой” (Интерфейс 
+ksCurvePatternEx)
+Справка системы КОМПАС...
+KOMPAS.chm::/1093_130_1_Nastrojka_stilja_lin.htm
+Интерфейс параметров участка "расширенной" штриховой кривой.
+Аналог данных параметров при использовании API экспортных функций "
+CurvePatternEx.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksCurvePatternEx  свойства
+
+dх, dy  Положение базовой точки (нуля) "картинки" 
+относительно начала образца
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+dx = iCurvePatternEx.dx Получить свойство (* )
+iCurvePatternEx.dx = dx Установить свойство (* )
+dx = iCurvePatternEx.GetDx() Получить свойство (**)
+iCurvePatternEx.SetDx( dx ) Установить свойство (**)
+
+frwName  Имя фрагментаисточника картинки
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+3925
+
+
+
+frwName = iCurvePatternEx.frwName Получить свойство (* )
+iCurvePatternEx.frwName = frwName Установить свойство (* )
+frwName = iCurvePatternEx.GetFrwName() Получить свойство (**)
+iCurvePatternEx.SetFrwName(frwName) Установить свойство (**)
+
+Примечание
+Картинка в виде фрагмента используется только в методе AddStyle (при создании сти"
+ля).
+Смотрите также: ksCurvePatternEx::pictureType
+
+invisiibleSeg  Длина невидимого участка линии
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+invisibleSeg = iCurvePatternEx.invisibleSeg Получить свойство (* )
+iCurvePatternEx.invisibleSeg = invisibleSeg Установить свойство (* )
+invisibleSeg = iCurvePatternEx.GetInvisibleSeg() Получить свойство (**)
+iCurvePatternEx.SetInvisibleSeg( invisibleSeg ) Установить свойство (**)
+
+pictureType  Тип картинки
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " картинка в виде массивов ломаных линий (доступ к массиву с помощью 
+методов ksCurvePatternEx::GetCurvePicture и ksCurvePatternEx::SetCurvePicture),
+
+1 " картинка в виде фрагмента (имя фрагмента"источника задается свойством 
+ksCurvePatternEx::frwName).
+
+Синтаксис Automation:
+
+pictureType = iCurvePatternEx.pictureType Получить свойство (* )
+iCurvePatternEx.pictureType = pictureType Установить свойство (* )
+pictureType = iCurvePatternEx.GetPictureType() Получить свойство (**)
+iCurvePatternEx.SetPictureType( pictureType ) Установить свойство (**)
+
+visibleSeg  Длина видимого участка линии
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+3926
+
+
+
+visibleSeg = iCurvePatternEx.visibleSeg Получить свойство (* )
+iCurvePatternEx.visibleSeg = visibleSeg Установить свойство (* )
+visibleSeg = iCurvePatternEx.GetVisibleSeg() Получить свойство (**)
+iCurvePatternEx.SetVisibleSeg( visibleSeg ) Установить свойство (**)
+
+ksCurvePatternEx  методы
+
+GetCurvePicture  Получить указатель на интерфейс картинки 
+в виде массивов полилиний ksCurvePicture
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetCurvePicture();
+Возвращаемое значение:
+
+" указатель на интерфейс ksCurvePicture
+
+Смотрите также: ksCurvePatternEx::pictureType
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры.
+
+SetCurvePicture  Установить указатель на интерфейс 
+картинки в виде массивов полилиний ksCurvePicture
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCurvePicture (LPDISPATCH picture);
+Входной параметр:
+ 
+
+picture " указатель на интерфейс ksCurvePicture
+3927
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также
+ksCurvePatternEx::pictureType
+
+Стиль штриховки
+
+Линия штриховки (Интерфейс ksHatchLineParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_CHOICE_HATCH_LINE.htm
+Интерфейс параметров линии штриховки.
+Аналог данного интерфейса параметров при использовании API экспортных функций "
+структура HatchLineParam .
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksHatchLineParam  свойства
+
+ang  Угол наклона линии (в градусах)
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_CHOICE_HATCH_LINE.htm
+Тип данных:double.
+Синтаксис Automation:
+
+ang = iHatchLineParam.ang Получить свойство (* )
+iHatchLineParam.ang = ang Установить свойство (* )
+ang = iHatchLineParam.GetAng() Получить свойство (**)
+iHatchLineParam.SetAng(ang) Установить свойство (**)
+
+dx, dy  Смещение следующей линии
+Интерфейс...
+3928
+
+
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_CHOICE_HATCH_LINE.htm
+Тип данных:double.
+Синтаксис Automation:
+
+dx = iHatchLineParam.dx Получить свойство (* )
+iHatchLineParam.dx = dx Установить свойство (* )
+dx = Получить свойство (**)
+iHatchLineParam.GetDx()
+iHatchLineParam.SetDx(dx Установить свойство (**)
+)
+
+style  Стиль линии
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_CHOICE_HATCH_LINE.htm
+Тип данных:short.
+Системные стили линий...
+Синтаксис Automation:
+
+style = iHatchLineParam.style Получить свойство (* )
+iHatchLineParam.style = style Установить свойство (* )
+style = iHatchLineParam.GetStyle() Получить свойство (**)
+iHatchLineParam.SetStyle(style) Установить свойство (**)
+
+typeCurvStyle  Признак стиля линии
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_CHOICE_HATCH_LINE.htm
+Тип данных:short.
+Значения свойства:
+
+1 " пользовательский,
+0 " системный.
+
+Синтаксис Automation:
+
+typeCurvStyle = iHatchLineParam.typeCurvStyle Получить свойство (* )
+iHatchLineParam.typeCurvStyle = typeCurvStyle Установить свойство (* )
+typeCurvStyle = iHatchLineParam.GetTypeCurvStyle() Получить свойство (**)
+3929
+
+
+
+iHatchLineParam.SetTypeCurvStyle(typeCurvStyle) Установить свойство (**)
+Смотрите также: ksHatchLineParam::style
+
+x, y  Координаты точки привязки
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_CHOICE_HATCH_LINE.htm
+Тип данных:double.
+Синтаксис Automation:
+
+x = iHatchLineParam.x Получить свойство (* )
+iHatchLineParam.x = x Установить свойство (* )
+x = iHatchLineParam.GetX() Получить свойство (**)
+iHatchLineParam.SetX(x) Установить свойство (**)
+
+ksHatchLineParam  методы
+
+GetCurPar  Получить указатель на интерфейс 
+пользовательского стиля линии
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_CHOICE_HATCH_LINE.htm
+Синтаксис Automation:
+LPDISPATCH GetCurPar();
+Возвращаемое значение:
+
+" указатель на интерфейс пользовательского стиля линии ksCurveStyleParam.
+
+Init  Инициализировать параметры
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_CHOICE_HATCH_LINE.htm
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+3930
+
+
+
+Примечание:
+Метод обнуляет все параметры линии штриховки.
+
+SetCurPar  Установить указатель на интерфейс 
+пользовательского стиля линии
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_CHOICE_HATCH_LINE.htm
+Синтаксис Automation:
+BOOL SetCurPar (LPDISPATCH curPar);
+Входной параметр:
+
+curPar " указатель на интерфейс пользовательского стиля линии ksCurveStyleParam.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Стиль штриховки (Интерфейс ksHatchStyleParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1104_131_1_Nastrojka_stilja_sht.htm
+Интерфейс параметров стиля штриховки.
+Аналог данных параметров при использовании API экспортных функций "
+HatchStyleParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksHatchStyleParam  свойства
+
+ang  Угол наклона линий штриховки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+ang = iHatchStyleParam.ang Получить свойство (* )
+3931
+
+
+
+iHatchStyleParam.ang = ang Установить свойство (* )
+ang = iHatchStyleParam.GetAng() Получить свойство (**)
+iHatchStyleParam.SetAng(ang) Установить свойство (**)
+
+color  Цвет штриховки
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+color = iHatchStyleParam.color Получить свойство (* )
+iHatchStyleParam.color = color Установить свойство (* )
+color = iHatchStyleParam.GetColor() Получить свойство (**)
+iHatchStyleParam.SetColor(color) Установить свойство (**)
+
+isScalable  Признак изменения расстояния между линиями 
+штриховки
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+1 " по масштабу,
+0 " по шагу.
+
+Синтаксис Automation:
+
+isScalable = iHatchStyleParam.isScalable Получить свойство (* )
+iHatchStyleParam.isScalable = isScalable Установить свойство (* )
+isScalable = iHatchStyleParam.GetIsScalable() Получить свойство (**)
+iHatchStyleParam.SetIsScalable( isScalable ) Установить свойство (**)
+
+Примечание:
+Шаг используется, если штриховка состоит из сплошных линий (например, металл, не"
+металл). Масштаб используется, если штриховка состоит из прерывистых линий (напри"
+мер, жидкость); в этом случае изменяется не только расстояние между линиями, но и
+размер штрихов и расстояние между ними. 
+
+mayChangeAngle  Признак, показывающий, разрешено ли 
+менять угол наклона штриховки
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+3932
+
+
+
+)
+
+1 " угол наклона менять можно,
+0 " угол наклона менять нельзя.
+
+Синтаксис Automation:
+
+mayChangeAngle = iHatchStyleParam.mayChangeAngle Получить свойство (* )
+iHatchStyleParam.mayChangeAngle = mayChangeAngle Установить свойство (* )
+mayChangeAngle = iHatchStyleParam.GetMayChangeAngle() Получить свойство (**)
+iHatchStyleParam.SetMayChangeAngle( mayChangeAngle ) Установить свойство (**)
+
+mayChangeSpace  Признак, показывающий, разрешено ли 
+менять шаг (масштаб) штриховки
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+1 " шаг (масштаб) менять можно,
+0 " шаг (масштаб) менять нельзя.
+
+Синтаксис Automation:
+
+mayChangeSpace = iHatchStyleParam.mayChangeSpace Получить свойство (* )
+iHatchStyleParam.mayChangeSpace = mayChangeSpace Установить свойство (* )
+mayChangeSpace = iHatchStyleParam.GetMayChangeSpace() Получить свойство (**)
+iHatchStyleParam.SetMayChangeSpace( mayChangeSpace ) Установить свойство (**
+
+mayChangeWidth  Признак, показывающий, разрешено ли 
+менять ширину полосы штриховки
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+1 " ширину полосы штриховки менять можно,
+0 " ширину полосы штриховки менять нельзя.
+
+Синтаксис Automation:
+
+mayChangeWidth = iHatchStyleParam. mayChangeWidth Получить свойство (* )
+iHatchStyleParam.mayChangeWidth = mayChangeWidth Установить свойство (* )
+mayChangeWidth = iHatchStyleParam.GetMayChangeWidth() Получить свойство (**)
+iHatchStyleParam.SetMayChangeWidth( mayChangeWidth ) Установить свойство (**)
+3933
+
+
+
+name  Имя стиля штриховки
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+name = iHatchStyleParam.name Получить свойство (* )
+iHatchStyleParam.name = name Установить свойство (* )
+name = iHatchStyleParam.GetName() Получить свойство (**)
+iHatchStyleParam.SetName(name) Установить свойство (**)
+
+step  Шаг штриховки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+step = iHatchStyleParam.step Получить свойство (* )
+iHatchStyleParam.step = step Установить свойство (* )
+step = iHatchStyleParam.GetStep() Получить свойство (**)
+iHatchStyleParam.SetStep(step) Установить свойство (**)
+
+width  Ширина полосы штриховки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+width = iHatchStyleParam.width Получить свойство (* )
+iHatchStyleParam.width = width Установить свойство (* )
+width = iHatchStyleParam.GetWidth() Получить свойство (**)
+iHatchStyleParam.SetWidth(width) Установить свойство (**)
+
+ksHatchStyleParam  методы
+
+GetArrLineParam  Получить указатель на интерфейс 
+динамического массива структур параметров линий 
+штриховки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrLineParam();
+Возвращаемое значение:
+3934
+
+
+
+" указатель на динамический массив ksDynamicArray типа HATCHLINE_ARR.
+
+GetRefPoint  Получить указатель на интерфейс базовой 
+точки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetRefPoint();
+Возвращаемое значение:
+
+" указатель на интерфейс базовой точки
+ksMathPointParam.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры стиля штриховки.
+
+SetArrLineParam  Установить указатель на интерфейс 
+динамического массива структур параметров линий 
+штриховки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetArrLineParam (LPDISPATCH arrLineParam);
+Входной параметр:
+
+arrLineParam " указатель на динамический массив ksDynamicArray типа 
+HATCHLINE_ARR.
+
+Возвращаемое значение:
+3935
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SetRefPoint  Установить указатель на интерфейс базовой 
+точки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetRefPoint (LPDISPATCH refPoint);
+Входной параметр:
+
+refPoint  " указатель на интерфейс базовой точки
+ksMathPointParam.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Стиль текста (Интерфейс ksTextStyleParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_TEXTSTYLE.htm
+Интерфейс параметров стиля текста.
+Аналог данных параметров при использовании API экспортных функций "
+TextStyleParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи методов:
+
+▼ KompasObject::GetParamStruct,
+▼ ksSpcTuningStyleParam::GetSectionTextStyleFirst ,
+▼ ksSpcTuningStyleParam::GetSectionTextStyleNext,
+▼ ksSpcTuningStyleParam::GetObjectTextStyle.
+
+Смотрите также: KompasObject
+
+ksTextStyleParam  свойства
+
+align  Выравнивание абзаца
+Интерфейс...
+Тип данных:short.
+3936
+
+
+
+Значения свойства:
+
+0 " влево,
+1 " по центру,
+2 " вправо,
+3 " по ширине.
+
+Синтаксис Automation:
+
+align = iTextStyleParam.align Получить свойство (* )
+iTextStyleParam.align = align Установить свойство (* )
+align = iTextStyleParam.GetAlign() Получить свойство (**)
+iTextStyleParam.SetAlign( align ) Установить свойство (**)
+
+bold  Толщина символов
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " нормальная,
+1 " утолщенные символы.
+
+Синтаксис Automation:
+
+bold = iTextStyleParam.bold Получить свойство (* )
+iTextStyleParam.bold = bold Установить свойство (* )
+bold = iTextStyleParam.GetBold() Получить свойство (**)
+iTextStyleParam.SetBold( bold ) Установить свойство (**)
+
+color  Цвет шрифта
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+color = iTextStyleParam.color Получить свойство (* )
+iTextStyleParam.color = color Установить свойство (* )
+color = iTextStyleParam.GetСolor() Получить свойство (**)
+iTextStyleParam.SetСolor( color ) Установить свойство (**)
+
+fontName  Имя шрифта
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+3937
+
+
+
+fontName = iTextStyleParam.fontName Получить свойство (* )
+iTextStyleParam.fontName = fontName Установить свойство (* )
+fontName = iTextStyleParam.GetFontName() Получить свойство (**)
+iTextStyleParam.SetFontName( fontName ) Установить свойство (**)
+
+height  Высота шрифта текста
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+height = iTextStyleParam.height Получить свойство (* )
+iTextStyleParam.height = height Установить свойство (* )
+height = iTextStyleParam.GetHeight() Получить свойство (**)
+iTextStyleParam.SetHeight( height ) Установить свойство (**)
+
+italic  Начертание символов
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " прямое,
+1 " наклонное.
+
+Синтаксис Automation:
+
+italic = iTextStyleParam.italic Получить свойство (* )
+iTextStyleParam.italic = italic Установить свойство (* )
+italic = iTextStyleParam.GetItalic() Получить свойство (**)
+iTextStyleParam.SetItalic( italic ) Установить свойство (**)
+
+ksu  Коэффициент сужения символов
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+ksu = iTextStyleParam.ksu Получить свойство (* )
+iTextStyleParam.ksu = ksu Установить свойство (* )
+ksu = iTextStyleParam.GetKsu() Получить свойство (**)
+iTextStyleParam.SetKsu( ksu ) Установить свойство (**)
+3938
+
+
+
+leftEdge  Отступ текста слева
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+leftEdge = iTextStyleParam.leftEdge Получить свойство (* )
+iTextStyleParam.leftEdge = leftEdge Установить свойство (* )
+leftEdge = iTextStyleParam.GetLeftEdge() Получить свойство (**)
+iTextStyleParam.SetLeftEdge( leftEdge ) Установить свойство (**)
+
+name  Имя стиля
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+name = iTextStyleParam.name Получить свойство (* )
+iTextStyleParam.name = name Установить свойство (* )
+name = iTextStyleParam.GetName() Получить свойство (**)
+iTextStyleParam.SetName( name ) Установить свойство (**)
+
+posKS  Отступ красной строки (в миллиметрах)
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+posKS = iTextStyleParam.posKS Получить свойство (* )
+iTextStyleParam.posKS = posKS Установить свойство (* )
+posKS = iTextStyleParam.GetPosKS() Получить свойство (**)
+iTextStyleParam.SetPosKS( posKS ) Установить свойство (**)
+
+rightEdge  Отступ текста справа
+Интерфейс...
+Синтаксис Automation:
+
+rightEdge = iTextStyleParam.rightEdge Получить свойство (* )
+iTextStyleParam.rightEdge = rightEdge Установить свойство (* )
+rightEdge = iTextStyleParam.GetRightEdge() Получить свойство (**)
+iTextStyleParam.SetRightEdge( rightEdge ) Установить свойство (**)
+3939
+
+
+
+step  Шаг строк
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+step = iTextStyleParam.step Получить свойство (* )
+iTextStyleParam.step = step Установить свойство (* )
+step = iTextStyleParam.GetStep() Получить свойство (**)
+iTextStyleParam.SetStep( step ) Установить свойство (**)
+
+stepParPre  Интервал перед текстом (в миллиметрах)
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+stepParPre = iTextStyleParam.stepParPre Получить свойство (* )
+iTextStyleParam.stepParPre = stepParPre Установить свойство (* )
+stepParPre = iTextStyleParam.GetStepParPre() Получить свойство (**)
+iTextStyleParam.SetStepParPre( stepParPre ) Установить свойство (**)
+
+stepParPst  Интервал после текста (в миллиметрах)
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+stepParPst = iTextStyleParam.stepParPst Получить свойство (* )
+iTextStyleParam.stepParPst = stepParPst Установить свойство (* )
+stepParPst = iTextStyleParam.GetStepParPst() Получить свойство (**)
+iTextStyleParam.SetStepParPst( stepParPst ) Установить свойство (**)
+
+underline  Подчеркивание символов
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " подчеркивание отсутствует,
+1 " одинарное подчеркивание.
+
+Синтаксис Automation:
+
+underline = iTextStyleParam.underline Получить свойство (* )
+iTextStyleParam.underline = underline Установить свойство (* )
+3940
+
+
+
+underline = iTextStyleParam.GetUnderline() Получить свойство (**)
+iTextStyleParam.SetUnderline( underline ) Установить свойство (**)
+
+ksTextStyleParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры.
+
+Параметры стиля в библиотеке (Интерфейс 
+ksLibraryStyleParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1087_129_2_2_Obshchij_porjadok_.htm
+Интерфейс параметров стиля в библиотеке стилей.
+Аналог данных параметров при использовании API экспортных функций "
+LibraryStyleParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksLibraryStyleParam  свойства
+
+styleId  Номер стиля в библиотеке
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+styleId = iLibraryStyleParam.styleId Получить свойство (* )
+iLibraryStyleParam.styleId = styleId Установить свойство (* )
+styleId = iLibraryStyleParam.GetStyleId() Получить свойство (**)
+iLibraryStyleParam.SetStyleId( styleId ) Установить свойство (**)
+3941
+
+
+
+styleName  Имя стиля
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+styleName = iLibraryStyleParam.styleName Получить свойство (* )
+iLibraryStyleParam.styleName = styleName Установить свойство (* )
+styleName = iLibraryStyleParam.GetStyleName() Получить свойство (**)
+iLibraryStyleParam.SetStyleName( styleName ) Установить свойство (**)
+
+ksLibraryStyleParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры стиля в библиотеке стилей.
+
+Стиль из библиотеки (Интерфейс ksLibStyle)
+Справка системы КОМПАС...
+KOMPAS.chm::/1090_129_2_4_Nomer_stilja.htm
+Интерфейс параметров для подключения стиля из библиотеки.
+Аналог данных параметров при использовании API экспортных функций " LibStyle.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksLibStyle  свойства
+
+fileName  Имя файла библиотеки
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+3942
+
+
+
+fileName = iLibStyle.fileName Получить свойство (* )
+iLibStyle.fileName = fileName Установить свойство (* )
+fileName = iLibStyle.GetFileName() Получить свойство (**)
+iLibStyle.SetFileName( fileName ) Установить свойство (**)
+
+styleNumber  Hомер стиля в библиотеке
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+styleNumber = iLibStyle. styleNumber Получить свойство (* )
+iLibStyle.styleNumber = styleNumber Установить свойство (* )
+styleNumber = iLibStyle.GetStyleNumber() Получить свойство (**)
+iLibStyle.SetStyleNumber(styleNumber) Установить свойство (**)
+
+typeAllocation  Tип размещения стиля в документе
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+1 " ссылкой на библиотеку,
+0 " "телом" (стиль хранится в документе).
+
+Синтаксис Automation:
+
+typeAllocation = iLibStyle. typeAllocation Получить свойство (* )
+iLibStyle.typeAllocation = typeAllocation Установить свойство (* )
+typeAllocation = iLibStyle.GetTypeAllocation() Получить свойство (**)
+iLibStyle.SetTypeAllocation(typeAllocation) Установить свойство (**)
+
+ksLibStyle  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры для подключения стиля из библиотеки.
+3943
+
+
+
+Интерфейсы параметров размеров
+Настройки размеров (Интерфейс ksDimensionsOptions)
+Справка системы КОМПАС...
+KOMPAS.chm::/186_23_5_Nastrojka_razmerov_v_t.htm
+Интерфейс параметров настроек размеров.
+Аналог данных параметров при использовании API экспортных функций "
+DimensionsOptions.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksDimensionsOptions  свойства
+
+anglePrecisionLevel  Точность углового размера
+Интерфейс...
+Тип данных:long.
+Значения свойства:
+
+0 " градусы,
+1 " минуты,
+2 " секунды.
+
+Синтаксис Automation:
+
+anglePrecisionLevel = iDimensionsOptions.anglePrecisionLevel Получить свойство (* 
+)
+
+iDimensionsOptions.anglePrecisionLevel = anglePrecisionLevel Установить свойство 
+(* )
+
+anglePrecisionLevel = Получить свойство 
+iDimensionsOptions.GetAnglePrecisionLevel() (**)
+iDimensionsOptions.SetAnglePrecisionLevel(anglePrecisionLevel) Установить свойство 
+
+(**)
+
+arrowLength  Длина стрелки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+3944
+
+
+
+ )
+
+)
+
+arrowLength = iDimensionsOptions.arrowLength Получить свойство (* )
+iDimensionsOptions.arrowLength = arrowLength Установить свойство (* )
+arrowLength = iDimensionsOptions.GetArrowLength() Получить свойство (**)
+iDimensionsOptions.SetArrowLength( arrowLength ) Установить свойство (**)
+
+decimalsCount  Количество знаков после запятой (от 0 до 9)
+Интерфейс...
+Тип данных:short.
+Синтаксис Automation:
+
+decimalsCount = iDimensionsOptions.decimalsCount Получить свойство (* )
+iDimensionsOptions.decimalsCount = decimalsCount Установить свойство (* )
+decimalsCount = iDimensionsOptions.GetDecimalsCount() Получить свойство (**)
+iDimensionsOptions.SetDecimalsCount( decimalsCount ) Установить свойство (**)
+
+dimLineExtension  Выход размерной линии за текст
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+dimLineExtension = iDimensionsOptions.dimLineExtension Получить свойство (* )
+iDimensionsOptions.dimLineExtension = dimLineExtension Установить свойство (* )
+dimLineExtension = iDimensionsOptions.GetDimLineExtension() Получить свойство (**)
+iDimensionsOptions.SetDimLineExtension(dimLineExtension) Установить свойство(**)
+
+hiddenToleranceNumber  Квалитет
+Интерфейс...
+Тип данных:long.
+Значения свойства:
+
+"1 " не включен,
+число от 1 до 17 " максимальный номер показываемого квалитета.
+
+Синтаксис Automation:
+
+hiddenToleranceNumber = iDimensionsOptions.hiddenToleranceNumber Получить свойство (* )
+iDimensionsOptions.hiddenToleranceNumber = hiddenToleranceNumber Установить свойство (*
+hiddenToleranceNumber = iDimensionsOptions.GetHiddenToleranceNumber() Получить свойство (**)
+iDimensionsOptions.SetHiddenToleranceNumber(hiddenToleranceNumber) Установить свойство(**
+3945
+
+
+
+proLineExtension  Выход выносных линий за размерную 
+линию
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+proLineExtension = iDimensionsOptions.proLineExtension Получить свойство (* )
+iDimensionsOptions.proLineExtension = proLineExtension Установить свойство (* )
+proLineExtension = iDimensionsOptions.GetProLineExtension() Получить свойство (**)
+iDimensionsOptions.SetProLineExtension(proLineExtension) Установить свойство (**)
+
+textDistanceFromDimLine  Расстояние от размерной линии до 
+текста
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+textDistanceFromDimLine = Получить свойство (* )
+iDimensionsOptions.textDistanceFromDimLine
+iDimensionsOptions.textDistanceFromDimLine = Установить свойство (* )
+textDistanceFromDimLine
+textDistanceFromDimLine = Получить свойство (**)
+iDimensionsOptions.GetTextDistanceFromDimLine()
+iDimensionsOptions.SetTextDistanceFromDimLine(textDistan Установить свойство (**)
+ceFromDimLine)
+
+textDistanceFromProLine  Расстояние от выносных линий до 
+текста
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+textDistanceFromProLine = Получить свойство (* )
+iDimensionsOptions.textDistanceFromProLine
+iDimensionsOptions.textDistanceFromProLine = Установить свойство (* )
+textDistanceFromProLine
+textDistanceFromProLine = Получить свойство (**)
+iDimensionsOptions.GetTextDistanceFromProLine()
+iDimensionsOptions.SetTextDistanceFromProLine(textDist Установить свойство (**)
+anceFromProLine)
+3946
+
+
+
+style  Стиль текста
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+style = iDimensionsOptions.style Получить свойство (* )
+iDimensionsOptions.style = style Установить свойство (* )
+style = iDimensionsOptions.GetStyle() Получить свойство (**)
+iDimensionsOptions.SetStyle( style ) Установить свойство (**)
+
+Системные стили текста...
+
+ksDimensionsOptions  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры настроек размеров.
+
+Объекты, составляющие размер (Интерфейс 
+ksDimensionPartsParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/176_Glava23_Obshchie_svedenija_.htm
+Интерфейс параметров составляющих объектов размера.
+Аналог данных параметров при использовании API экспортных функций "
+DimensionPartsParam.
+Примечания:
+
+1. Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+
+2. Данный интерфейс содержит указатели на все составляющие размера. Для их получения
+"рассыпается" копия размера в памяти. Размер в документе остается единым объектом.
+Смотрите также: KompasObject
+3947
+
+
+
+ksDimensionPartsParam  свойства
+
+curveExt  Указатель на продолжение базовой кривой (у 
+радиального размера дуги) или линию"указатель", 
+проведенную от размерной надписи к дуге (у размера дуги)
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+curveExt = iDimensionPartsParam.curveExt Получить свойство (* )
+iDimensionPartsParam.curveExt = curveExt Установить свойство (* )
+curveExt = iDimensionPartsParam.GetCurveExt() Получить свойство (**)
+iDimensionPartsParam.SetCurveExt( curveExt ) Установить свойство (**)
+
+dimLine  Указатель на размерную линию
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+dimLine = iDimensionPartsParam.dimLine Получить свойство (* )
+iDimensionPartsParam.dimLine = dimLine Установить свойство (* )
+dimLine = iDimensionPartsParam.GetDimLine() Получить свойство (**)
+iDimensionPartsParam.SetDimLine( dimLine ) Установить свойство (**)
+
+dimLine1  Указатель на продолжение размерной линии
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+dimLine1 = iDimensionPartsParam.dimLine1 Получить свойство (* )
+iDimensionPartsParam.dimLine1 = dimLine1 Установить свойство (* )
+dimLine1 = iDimensionPartsParam.GetDimLine1() Получить свойство (**)
+iDimensionPartsParam.SetDimLine1( dimLine1 ) Установить свойство (**)
+
+gr  Указатель на временную группу всех объектов размера, 
+включая тексты
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+3948
+
+
+
+gr = iDimensionPartsParam.gr Получить свойство (* )
+iDimensionPartsParam.gr = gr Установить свойство (* )
+gr = iDimensionPartsParam.GetGr() Получить свойство (**)
+iDimensionPartsParam.SetGr( gr ) Установить свойство (**)
+
+lelg  Указатель на "ножку" выносной полки
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+leg = iDimensionPartsParam.leg Получить свойство (* )
+iDimensionPartsParam.leg = leg Установить свойство (* )
+leg = iDimensionPartsParam.GetLeg() Получить свойство (**)
+iDimensionPartsParam.SetLeg( leg ) Установить свойство (**)
+
+linle1  Указатель на первую выносную линию
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+line1 = iDimensionPartsParam.line1 Получить свойство (* )
+iDimensionPartsParam.line1 = line1 Установить свойство (* )
+line1 = iDimensionPartsParam.GetLine1() Получить свойство (**)
+iDimensionPartsParam.SetLine1( line1 ) Установить свойство (**)
+
+line2  Указатель на вторую выносную линию
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+line2 = iDimensionPartsParam.line2 Получить свойство (* )
+iDimensionPartsParam.line2 = line2 Установить свойство (* )
+line2 = iDimensionPartsParam.GetLine2() Получить свойство (**)
+iDimensionPartsParam.SetLine2( line2 ) Установить свойство (**)
+
+shelf  Указатель на выносную полку
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+3949
+
+
+
+shelf = iDimensionPartsParam.shelf Получить свойство (* )
+iDimensionPartsParam.shelf = shelf Установить свойство (* )
+shelf = iDimensionPartsParam.GetShelf() Получить свойство (**)
+iDimensionPartsParam.SetShelf( shelf ) Установить свойство (**)
+
+ksDimensionPartsParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры объектов размера.
+
+Размерная надпись (Интерфейс ksDimTextParam)
+Интерфейс параметров размерной надписи.
+Аналог данных параметров при использовании API экспортных функций " DimText.
+Примечание:
+
+1. Строки в массив ложатся в следующей последовательности: 
+Префикс. Если он добавлен, в bitFlag взводится признак _PREFIX,
+Номинальное значение зависит от флагов _AUTONOMINAL и _NOMINALOFF.
+Номинальное значение добавляется, если _AUTONOMINAL и _NOMINALOFF выключены.
+Квалитет _TOLERANCE.
+Верхнее и нижнее отклонения _DEVIATION и _DEVIATION_INFORM.
+Единицы измерения _UNIT.
+Текст после _SUFFIX.
+Остальные строки это текст после.
+
+2. Если флаг TOLERANCE включен, то значения отклонений не устанавливаются независи"
+мо от наличия их в массиве. Они воспринимаются как информационные.
+
+3. Перед вызовом GetObjParam нужно установить stringFlag в 0, если нужно получить мас"
+сив строк символов CHAR_STR_ARR, или в 1, если нужно получить массив текстов
+TEXT_LINE_ARR. Для того, чтобы добавить верхнее и нижнее отклонение, нужно рассчи"
+тать индекс с учетом включенных или выключенных флагов _PREFIX, _AUTONOMINAL,
+_NOMINALOFF, и TOLERANCE. Также нужно проверить, включен уже флаг _DEVIATION
+или нет. Если включен TOLERANCE, данный элемент нужно будет удалить.
+
+4. Динамический массив TEXT_LINE_ARR содержит структуру TextLineParam.
+3950
+
+
+
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksDimTextParam  свойства
+
+bitFlag  Признак, определяющий ручное задание размерной 
+надписи или набор битовых полей, задающих признаки 
+размерной надписи
+Интерфейс...
+Тип данных:long.
+Значения свойства:
+
+0 " ручное задание размерной надписи,
+>0 " набор битовых полей, задающих признаки размерной надписи.
+
+Синтаксис Automation:
+
+bitFlag = iDimText.bitFlag Получить свойство (* )
+iDimText.bitFlag = bitFlag Установить свойство (* )
+bitFlag = iDimText.GetBitFlag() Получить свойство (**)
+iDimText.SetBitFlag( bitFlag ) Установить свойство (**)
+
+sign  Тип условного значка перед номиналом размера
+Интерфейс...
+Тип данных:long.
+Значения свойства:
+
+0 " нет значка,
+1 " диаметр,
+2 " квадрат,
+3 " радиус,
+>3 " номер значка из шрифта "Symbol type A",
+4 " М " метрическая резьба,
+210 " символ сферы.
+
+Синтаксис Automation:
+
+sign = iDimText.sign Получить свойство (* )
+iDimText.sign = sign Установить свойство (* )
+sign = iDimText.GetSign() Получить свойство (**)
+iDimText.SetSign( sign ) Установить свойство (**)
+3951
+
+
+
+stringFlag  Тип используемого массива строк
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+FALSE " тип CHAR_STR_ARR " динамический массив строк символов,
+TRUE " тип TEXT_LINE_ARR " динамический массив строк текста.
+
+Синтаксис Automation:
+
+stringFlag = iDimText.stringFlag Получить свойство (* )
+iDimText.stringFlag = stringFlag Установить свойство (* )
+stringFlag = iDimText.GetStringFlag() Получить свойство (**)
+iDimText.SetStringFlag( stringFlag ) Установить свойство (**)
+
+Примечание:
+Для функции ksDocument2D::ksGetObjParam нужно определить свойство stringFlag.
+Смотрите также:
+
+▼ ksDimTextParam::SetTextArr
+▼ ksDimTextParam::GetTextArr
+
+style  Стиль текста размера
+Интерфейс...
+Тип данных:long.
+Значения свойства:
+
+номер системного стиля,
+номер пользовательского стиля.
+
+Синтаксис Automation:
+
+style = iDimText.style Получить свойство (* )
+iDimText.style = style Установить свойство (* )
+style = iDimText.GetStyle() Получить свойство (**)
+iDimText.SetStyle( style ) Установить свойство (**)
+
+Системные стили текста...
+
+ksDimTextParam  методы
+
+GetBitFlagValue  Получить значение одного из флагов 
+признака bitFlag
+Интерфейс...
+3952
+
+
+
+Синтаксис Automation:
+BOOL GetBitFlagValue (long bitFlag);
+Входной параметр:
+
+bitFlag " битовый флаг, характеризующий определенный признак 
+размерной надписи.
+
+Возвращаемое значение:
+
+TRUE " данный битовый флаг включен,
+FALSE " данный битовый флаг выключен.
+
+GetTextArr  Получить указатель на интерфейс 
+динамического массива строк
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetTextArr();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray строк типа CHAR_STR_ARR
+или TEXT_LINE_ARR.
+
+Смотрите также: ksTextLineParam
+
+IniIt  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init(BOOL stringFlag);
+Входной параметр:
+
+stringFlag " признак типа создаваемого массива строк:
+TRUE " создается динамический массив строк текста типа 
+TEXT_LINE_ARR,
+FALSE " создается динамический массив строк текста типа 
+CHAR_STR_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры размерной надписи.
+3953
+
+
+
+SetBitFlagValue  Установить значение одного из флагов 
+признака bitFlag
+Интерфейс...
+Синтаксис Automation:
+BOOL SetBitFlagValue (long bitFlag,
+BOOL state);
+Входные параметры:
+
+bitFlag " битовый флаг, характеризующий определен"
+ный признак размерной надписи,
+
+state " состояние указанного битового флага: 
+TRUE " включен, 
+FALSE " выключен.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+SetTextArr  Установить динамический массив параметров 
+строк
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTextArr (LPDISPATCH pText);
+Входной параметр:
+
+pText " указатель на интерфейс динамического массива ksDynamicArray строк 
+типа CHAR_STR_ARR или TEXT_LINE_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также: ksTextLineParam
+3954
+
+
+
+Квалитеты
+
+Квалитет (Интерфейс ksQualityContensParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/185_23_4_Vybor_kvaliteta.htm
+Интерфейс параметров квалитета.
+Аналог данных параметров при использовании API экспортных функций "
+QualityContensParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruc.
+Смотрите также: KompasObject
+
+ksQualityContensParam  свойства
+
+kindQuality  Тип квалитета
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+1 " предпочтительный,
+2 " основной,
+3 " дополнительный.
+
+Синтаксис Automation:
+
+kindQuality = iQualityContensParam.kindQuality Получить свойство (* )
+iQualityContensParam.kindQuality = kindQuality Установить свойство (* )
+kindQuality = iQualityContensParam.GetKindQuality() Получить свойство (**)
+iQualityContensParam.SetKindQuality(kindQuality ) Установить свойство (**)
+
+name  Поле допуска
+Интерфейс...
+Тип данных:строка.
+Синтаксис Automation:
+
+name = iQualityContensParam.name Получить свойство (* )
+iQualityContensParam.name = name Установить свойство (* )
+name = iQualityContensParam.GetName() Получить свойство (**)
+iQualityContensParam.SetName(name ) Установить свойство (**)
+3955
+
+
+
+systemQuality  Система квалитета
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+1 " система вала,
+2 " система отверстия.
+
+Синтаксис Automation:
+
+systemQuality = iQualityContensParam.systemQuality Получить свойство (* )
+iQualityContensParam.systemQuality = systemQuality Установить свойство (* )
+systemQuality = iQualityContensParam.GetSystemQuality() Получить свойство (**)
+iQualityContensParam.SetSystemQuality( systemQuality ) Установить свойство (**)
+
+ksQualityContensParam  методы
+
+GetpQualityItems  Получить указатель на интерфейс 
+динамического массива структур параметров интервала 
+квалитета типа QUALITYITEM_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetpQualityItems();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического массива ksDynamicArray 
+структур параметров интервала квалитета типа QUALITYITEM_ARR.
+
+Смотрите также: ksQualityItemParam
+
+Init Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры квалитета.
+3956
+
+
+
+SetpQualityItems  Установить указатель на интерфейс 
+динамического массива структур параметров интервала 
+квалитета типа QUALITYITEM_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetpQualityItems (LPDISPATCH pGab);
+Входной параметр:
+
+pGab " указатель на интерфейс динамического массива ksDynamicArray 
+структур параметров интервала квалитета типа QUALITYITEM_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также: ksQualityItemParam
+
+Интервал квалитета (Интерфейс ksQualityItemParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/185_23_4_Vybor_kvaliteta.htm
+Интерфейс параметров интервала квалитета.
+Аналог данных параметров при использовании API экспортных функций "
+QualityItemParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksQualityItemParam  свойства
+
+high  Верхнее отклонение
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+high = iQualityItemParam.high Получить свойство (* )
+iQualityItemParam.high = high Установить свойство (* )
+high = iQualityItemParam.GetHigh() Получить свойство (**)
+iQualityItemParam.SetHigh( high ) Установить свойство (**)
+3957
+
+
+
+low  Нижнее отклонение
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+low = iQualityItemParam.low Получить свойство (* )
+iQualityItemParam.low = low Установить свойство (* )
+low = iQualityItemParam.GetLow() Получить свойство (**)
+iQualityItemParam.SetLow( low ) Установить свойство (**)
+
+maxLimit  Максимальное значение в интервале размеров
+Интерфейс...
+Тип данных:short.
+Синтаксис Automation:
+
+maxLimit = iQualityItemParam.maxLimit Получить свойство (* )
+iQualityItemParam.maxLimit = maxLimit Установить свойство (* )
+maxLimit = iQualityItemParam.GetMaxLimit() Получить свойство (**)
+iQualityItemParam.SetMaxLimit( maxLimit ) Установить свойство (**)
+
+minLimit  Минимальное значение в интервале размеров
+Интерфейс...
+Тип данных:short.
+Синтаксис Automation:
+
+minLimit = iQualityItemParam.minLimit Получить свойство (* )
+iQualityItemParam.minLimit = minLimit Установить свойство (* )
+minLimit = iQualityItemParam.GetMinLimit() Получить свойство (**)
+iQualityItemParam.SetMinLimit( minLimit ) Установить свойство (**)
+
+ksQualityItemParamметоды
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+3958
+
+
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры записи об одном интервале для квалитета.
+
+Линейные и угловые размеры
+
+Отрисовка линейных и угловых размеров (Интерфейс 
+ksDimDrawingParam)
+Справка системы КОМПАС: линейный размер
+KOMPAS.chm::/CM_DIML.htm
+
+Справка системы КОМПАС:угловой размер
+KOMPAS.chm::/CM_DIMA.htm
+Интерфейс параметров отрисовки линейного и углового размеров.
+Аналог данных параметров при использовании API экспортных функций " DimDrawing.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksDimDrawingParam  свойства
+
+ang  Угол наклона "ножки" выносной полки
+Интерфейс...
+Тип данных:double.
+Синтаксис Automation:
+
+ang = iDimDrawing.ang Получить свойство (* )
+iDimDrawing.ang = ang Установить свойство (* )
+ang = iDimDrawing.GetAng() Получить свойство (**)
+iDimDrawing.SetAng( ang ) Установить свойство (**)
+
+lenght  Длина "ножки" выносной полки
+Интерфейс...
+Тип данных:long.
+Синтаксис Automation:
+
+lenght = iDimDrawing.lenght Получить свойство (* )
+iDimDrawing.lenght = lenght Установить свойство (* )
+3959
+
+
+
+lenght = iDimDrawing.GetLenght() Получить свойство (**)
+iDimDrawing.GetLenght( lenght ) Установить свойство (**)
+
+Примечание:
+Данное свойство " аннотационное (не зависит от масштаба, измеряется "по бумаге").
+
+pl1  Признак отрисовки первой выносной линии
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+FALSE " первая выносная линия отрисовывается,
+TRUE " первая выносная линия не отрисовывается.
+
+Синтаксис Automation:
+
+pl1 = iDimDrawing.pl1 Получить свойство (* )
+iDimDrawing.pl1 = pl1 Установить свойство (* )
+pl1 = iDimDrawing.GetPl1() Получить свойство (**)
+iDimDrawing.SetPl1( pl1 ) Установить свойство (**)
+
+pl2  Признак отрисовки второй выносной линии
+Интерфейс...
+Тип данных:BOOL.
+Значения свойства:
+
+FALSE " вторая выносная линия отрисовывается,
+TRUE " вторая выносная линия не отрисовывается.
+
+Синтаксис Automation:
+
+pl2 = iDimDrawing.pl2 Получить свойство (* )
+iDimDrawing.pl2 = pl2 Установить свойство (* )
+pl2 = iDimDrawing.GetPl2() Получить свойство (**)
+iDimDrawing.SetPl2( pl2 ) Установить свойство (**)
+
+pt1  Тип стрелки у первой выносной линии размера
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+0 " стрелки нет,
+3960
+
+
+
+1 " стрелка внутри,
+2 " стрелка снаружи,
+3 " засечка,
+4 " точка.
+
+Синтаксис Automation:
+
+pt1 = iDimDrawing.pt1 Получить свойство (* )
+iDimDrawing.pt1 = pt1 Установить свойство (* )
+pt1 = iDimDrawing.GetPt1() Получить свойство (**)
+iDimDrawing.SetPt1( pt1 ) Установить свойство (**)
+
+pt2  Тип стрелки у второй выносной линии размера
+Интерфейс...
+Тип данных:short.
+Значения свойства:
+
+Типы отрисовки стрелок...
+
+Синтаксис Automation:
+
+pt2 = iDimDrawing.pt2 Получить свойство (* )
+iDimDrawing.pt2 = pt2 Установить свойство (* )
+pt2 = iDimDrawing.GetPt2() Получить свойство (**)
+
+iDimDrawing.SetPt2( Установить свойство
+pt2 ) (**)
+
+shelfDir  Направление выносной полки
+Интерфейс...
+Тип данных:long.
+Значения свойства:
+
+ 0 " нет полки,
+"1 " полка влево,
+ 1 " полка вправо,
+ 2 " полка вверх,
+ 3 " полка вниз.
+
+Синтаксис Automation:
+
+shelfDir = iDimDrawing.shelfDir Получить свойство (* )
+iDimDrawing.shelfDir = shelfDir Установить свойство (* )
+shelfDir = iDimDrawing.GetShelfDir() Получить свойство (**)
+iDimDrawing.SetShelfDir( shelfDir ) Установить свойство (**)
+3961
+
+
+
+textPos  Положение текста размерной надписи
+Интерфейс...
+Тип данных:long.
+Значения свойства:
+
+0 " автоматическое размещение текста,
+> 0 " размещение текста на указанное расстояние в направлении от первой точки 
+
+ко второй,
+< 0 " размещение текста на указанное расстояние в направлении от второй точки к 
+
+первой.
+
+Синтаксис Automation:
+
+textPos = iDimDrawing.textPos Получить свойство (* )
+iDimDrawing.textPos = textPos Установить свойство (* )
+textPos = iDimDrawing.GetTextPos() Получить свойство (**)
+iDimDrawing.SetTextPos( textPos ) Установить свойство (**)
+
+Примечание:
+Значение данного свойства задается в миллиметрах для линейных размеров и в градусах
+" для угловых. Этот параметр " аннотационный (не зависит от масштаба, измеряется "по
+бумаге").
+
+textBase  Параметр отрисовки текста

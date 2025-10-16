@@ -1,0 +1,2533 @@
+
+Text  Текст в ячейке
+Интерфейс...
+Тип данных: Указатель на интерфейс IText.
+Синтаксис Automation:
+
+Text = Object.Text( NRow, Получить свойство(* )
+NCol )
+Text = Object.GetText( Получить свойство (**)
+NRow, NCol )
+
+Синтаксис COM:
+
+Object.get_Text( NRow, Получить свойство
+NCol, &Text )
+428
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IReportParam
+Интерфейс параметров отчета.
+Иерархия:
+IDispatch
+
+IReportTable
+IReportParam является дополнительным для интерфейса таблицы отчетов IReport. Дан"
+ный интерфейс можно получить посредством вызова метода IUnknown::QueryInterface
+(const GUID far& iid, void** pif).
+
+IReportParam  свойства
+
+BuildingType  Способ выбора объектов
+Интерфейс...
+Тип данных: из перечисления ksReportBuildingTypeEnum
+Синтаксис Automation:
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Object.GetBuildingType() Получить свойство (**)
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( &BuildingType ) Получить свойство
+Object.put_BuildingType(  BuildingType ) Установить свойство
+
+LevelsCount  Число уровней
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+LevelsCount = Object.LevelsCount Получить свойство (* )
+Object.LevelsCount = LevelsCount Установить свойство (* )
+LevelsCount = Object.GetLevelsCount() Получить свойство (**)
+Object.SetLevelsCount( LevelsCount ) Установить свойство (**)
+
+Синтаксис COM:
+429
+
+
+
+Object.get_LevelsCount( &LevelsCount ) Получить свойство
+Object.put_LevelsCount(  LevelsCount ) Установить свойство
+
+PagesColumnsCount  Число колонок таблиц при 
+установке таблиц в 2D документ
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+PagesColumnsCount = Object.PagesColumnsCount Получить свойство (* )
+Object.PagesColumnsCount = PagesColumnsCount Установить свойство (* )
+PagesColumnsCount = Object.GetPagesColumnsCount() Получить свойство (**)
+Object.SetPagesColumnsCount( PagesColumnsCount ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PagesColumnsCount( &PagesColumnsCount ) Получить свойство
+Object.put_PagesColumnsCount(  PagesColumnsCount ) Установить свойство
+
+PageLayoutType  Тиn компоновки таблиц отчета
+Интерфейс...
+Тип данных: из перечисления ksPageLayoutTypeEnum
+Синтаксис Automation:
+
+PageLayoutType = Object.PageLayoutType Получить свойство (* )
+Object.PageLayoutType = PageLayoutType Установить свойство (* )
+PageLayoutType = Object.GetPageLayoutType() Получить свойство (**)
+Object.SetPageLayoutType( PageLayoutType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PageLayoutType( &PageLayoutType ) Получить свойство
+Object.put_PageLayoutType(  PageLayoutType ) Установить свойство
+
+PagesRowsCount  Число рядов таблиц при установке 
+таблиц в 2D документ
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+430
+
+
+
+PagesRowsCount = Object.PagesRowsCount Получить свойство (* )
+Object.PagesRowsCount = PagesRowsCount Установить свойство (* )
+PagesRowsCount = Object.GetPagesRowsCount() Получить свойство (**)
+Object.SetPagesRowsCount( PagesRowsCount ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PagesRowsCount( &PagesRowsCount ) Получить свойство
+Object.put_PagesRowsCount(  PagesRowsCount ) Установить свойство
+
+PagesSpace  Зазор между таблицами, мм
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+PagesSpace = Object.PagesSpace Получить свойство (* )
+Object.PagesSpace = PagesSpace Установить свойство (* )
+PagesSpace = Object.GetPagesSpace() Получить свойство (**)
+Object.SetPagesSpace( PagesSpace ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PagesSpace( &PagesSpace ) Получить свойство
+Object.put_PagesSpace(  PagesSpace ) Установить свойство
+
+UseHyperText  Тип формирования текстов (true  
+ссылками, false  обычный текст)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseHyperText = Object.UseHyperText Получить свойство (* )
+Object.UseHyperText = UseHyperText Установить свойство (* )
+UseHyperText = Object.GetUseHyperText() Получить свойство (**)
+Object.SetUseHyperText( UseHyperText ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UseHyperText( &UseHyperText ) Получить свойство
+Object.put_UseHyperText(  UseHyperText ) Установить свойство
+431
+
+
+
+Переменные
+Интерфейс IVariable7
+Справка системы КОМПАС...
+KOMPAS.chm::/490_Glava57_Zadanie_zavisimoste.htm
+Интерфейс параметрической переменной модели.
+Иерархия:
+IKompasAPIObject
+
+IVariable7
+Описание:
+Интерфейс позволяет изменять параметры объектов модели, не прибегая к их прямому
+редактированию. Выражения дают возможность устанавливать зависимости между па"
+раметрами объектов.
+Примечание:
+Интерфейс можно получить с помощью свойств:
+
+▼ IInsertionFragment::Variable,
+▼ IInsertionFragment::Variables,
+▼ IKompasDocument2D1::Variable,
+▼ IKompasDocument2D1::Variables,
+▼ IView::Variable,
+▼ IView::Variables
+
+и метода:
+▼ IKompasDocument2D1::AddVariable.
+
+IVariable7  свойства
+
+DeviationExpression  Выражение для переменной 
+отклонения
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+DeviationExpression = Получить свойство (* )
+Object.DeviationExpression( 
+HighDeviation )
+Object.DeviationExpression( Установить свойство (* )
+HighDeviation ) = DeviationExpression
+DeviationExpression = Получить свойство (**)
+Object.GetDeviationExpression( 
+HighDeviation )
+432
+
+
+
+Object.SetDeviationExpression( Установить свойство (**)
+HighDeviation, DeviationExpression )
+
+Синтаксис COM:
+
+Object.get_DeviationExpression( Получить свойство
+HighDeviation, &DeviationExpression )
+Object.put_DeviationExpression(  Установить свойство
+HighDeviation, DeviationExpression )
+
+Входные параметры:
+
+BOOL " HighDeviation " верхнее (TRUE) или 
+нижнее (FALSE) отклонение.
+
+DeviationOn  Включить отклонения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DeviationOn = Object.DeviationOn Получить свойство (* )
+Object.DeviationOn = DeviationOn Установить свойство (* )
+DeviationOn = Object.GetDeviationOn() Получить свойство (**)
+Object.SetDeviationOn( DeviationOn ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DeviationOn( &DeviationOn ) Получить свойство
+Object.put_DeviationOn(  DeviationOn ) Установить свойство
+
+DeviationType  Тип отклонений
+Интерфейс...
+Тип данных: из перечисления ksDimensionDeviationEnum
+Синтаксис Automation:
+
+DeviationType = Object.DeviationType Получить свойство (* )
+Object.DeviationType = DeviationType Установить свойство (* )
+DeviationType = Object.GetDeviationType() Получить свойство (**)
+Object.SetDeviationType( DeviationType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DeviationType( &DeviationType ) Получить свойство
+Object.put_DeviationType(  DeviationType ) Установить свойство
+433
+
+
+
+DisplayName  Отображаемое имя переменной
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+DisplayName = Получить свойство (* )
+Object.DisplayName
+DisplayName = Получить свойство (**)
+Object.GetDisplayName()
+
+Синтаксис COM:
+
+Object.get_DisplayName( Получить свойство
+&DisplayName )
+
+Свойство позволяет получить отображаемое имя переменной.
+Примечание:
+Свойство доступно только для чтения.
+Отображаемое имя переменной может отличаться от имени переменной IVariable7::Name
+для внешних переменных вставки детали в сборку.
+К имени переменной из источника добавляется префикс, равный имени переменной
+«исключить из расчета». 
+
+Expression  Выражение
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Expression = Получить свойство (* )
+Object.Expression
+Object.Expression = Установить свойство (* )
+Information
+Expression = Получить свойство (**)
+Object.GetExpression()
+Object.SetExpression( Установить свойство (**)
+Expression )
+
+Синтаксис COM:
+
+Object.get_Expression( Получить свойство
+&Expression )
+Object.put_Expression(  Установить свойство
+Expression )
+434
+
+
+
+Свойство позволяет устанавливать и получать выражение.
+
+External  Внешняя переменная
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+External = Object.External Получить свойство (* )
+Object.External = External Установить свойство (* )
+External = Получить свойство (**)
+Object.GetExternal()
+Object.SetExternal( Установить свойство (**)
+External )
+
+Синтаксис COM:
+
+Object.get_External( &External ) Получить свойство
+Object.put_External(  External ) Установить свойство
+
+Свойство позволяет устанавливать и получать признак внешней переменной.
+
+HasTolerance  Отключить допуск
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+HasTolerance = Object.HasTolerance Получить свойство (* )
+Object.HasTolerance = HasTolerance Установить свойство (* )
+HasTolerance = Получить свойство (**)
+Object.GetHasTolerance()
+Object.SetHasTolerance( HasTolerance ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HasTolerance( &HasTolerance ) Получить свойство
+Object.put_HasTolerance(  HasTolerance ) Установить свойство
+
+Свойство позволяет устанавливать и получать признак отключения допуска.
+
+HighDeviation  Верхнее отклонение
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+435
+
+
+
+HighDeviation = Object.HighDeviation Получить свойство (* )
+Object.HighDeviation = HighDeviation Установить свойство (* )
+HighDeviation = Object.GetHighDeviation() Получить свойство (**)
+Object.SetHighDeviation( HighDeviation ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HighDeviation( &HighDeviation ) Получить свойство
+Object.put_HighDeviation(  HighDeviation ) Установить свойство
+
+Information  Информационная переменная
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Information = Получить свойство (* )
+Object.Information
+Object.Information = Установить свойство (* )
+Information
+Information = Получить свойство (**)
+Object.GetInformation()
+Object.SetInformation( Установить свойство (**)
+Information )
+
+Синтаксис COM:
+
+Object.get_Information( Получить свойство
+&Information )
+Object.put_Information(  Установить свойство
+Information )
+
+Свойство позволяет устанавливать и получать признак информационной переменной.
+
+IsAngular  Свойство задано в градусах
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsAngular = Получить свойство (* )
+Object.IsAngular
+IsAngular = Получить свойство (**)
+Object.GetIsAngular()
+
+Синтаксис COM:
+436
+
+
+
+Object.get_IsAngular( Получить свойство
+&IsVariable )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IsCreatedDeviationVariables  Созданы ли переменные 
+для отклонений
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsCreatedDeviationVariables = Получить свойство (* )
+Object.IsCreatedDeviationVariables
+IsCreatedDeviationVariables = Получить свойство (**)
+Object.GetIsCreatedDeviationVariables()
+
+Синтаксис COM:
+
+Object.get_IsCreatedDeviationVar Получить свойство
+iables( 
+&IsCreatedDeviationVariables )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IsVariable  Свойство связано с переменной
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsVariable = Получить свойство (* )
+Object.IsVariable
+IsVariable = Получить свойство (**)
+Object.GetIsVariable()
+
+Синтаксис COM:
+
+Object.get_IsVariable( Получить свойство
+&IsVariable )
+
+Примечание:
+437
+
+
+
+Свойство доступно только для чтения.
+
+LinkDocumentName  Документ, в котором хранится 
+ссылочная переменная
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+LinkDocumentName = Получить свойство (* )
+Object.LinkDocumentName
+LinkDocumentName = Получить свойство (**)
+Object.GetLinkDocumentName()
+
+Синтаксис COM:
+
+Object.get_LinkDocumentName( Получить свойство
+&LinkDocumentName )
+
+Свойство позволяет получать имя документа, в котором хранится ссылочная перемен"
+ная.
+Примечание:
+Свойство доступно только для чтения.
+
+LinkVariableName  Имя переменной, на которую 
+сделана ссылка
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+LinkVariableName = Получить свойство (* )
+Object.LinkVariableName
+LinkVariableName = Получить свойство (**)
+Object.GetLinkVariableName()
+
+Синтаксис COM:
+
+Object.get_LinkVariableName( Получить свойство
+&LinkVariableName )
+
+Свойство позволяет получить имя переменной, на которую сделана ссылка.
+Примечание:
+Свойство доступно только для чтения.
+Переменная может ссылаться на переменную из другого документа.
+438
+
+
+
+Ссылка формируется из имени документа IVariable7::LinkDocumentName и имени пере"
+менной.
+Ссылку можно создать с помощью функции IVariable7::SetLink.
+
+LowDeviation  Нижнее отклонение
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+LowDeviation = Object.LowDeviation Получить свойство (* )
+Object.LowDeviation = LowDeviation Установить свойство (* )
+LowDeviation = Получить свойство (**)
+Object.GetLowDeviation()
+Object.SetLowDeviation( LowDeviation ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LowDeviation( &LowDeviation ) Получить свойство
+Object.put_LowDeviation(  LowDeviation ) Установить свойство
+
+Name  Имя переменной
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = Object.Name Получить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name( &Name ) Получить свойство
+
+Свойство позволяет получить имя переменной.
+Примечание:
+Свойство доступно только для чтения
+
+Note  Комментарий к переменной
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+439
+
+
+
+Note = Object.Note Получить свойство (* )
+Object.Note = Note Установить свойство (* )
+Note = Object.GetNote() Получить свойство (**)
+Object.SetNote( Note ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Note( &Note ) Получить свойство
+Object.put_Note(  Note ) Установить свойство
+
+Свойство позволяет устанавливать и получать комментарий к переменной.
+
+ParameterNote  Имя параметра переменной
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ParameterNote = Object.ParameterNote Получить свойство (* )
+Object.ParameterNote = ParameterNote Установить свойство (* )
+ParameterNote = Object.GetParameterNote() Получить свойство (**)
+Object.SetParameterNote( ParameterNote ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ParameterNote( Получить свойство
+&ParameterNote )
+Object.put_ParameterNote(  Установить свойство
+ParameterNote )
+
+Свойство позволяет устанавливать и получать имя параметра переменной.
+
+Property  Получить интерфейс свойства
+Интерфейс...
+Тип данных: Указатель на интерфейс IProperty
+Синтаксис Automation:
+
+Property = Object.Property Получить свойство (* )
+Property = Получить свойство (**)
+Object.GetProperty()
+
+Синтаксис COM:
+
+Object.get_Property( &Property ) Получить свойство
+
+Примечание:
+440
+
+
+
+Свойство доступно только для чтения.
+
+ReadOnly  Только чтение
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ReadOnly = Получить свойство (* )
+Object.ReadOnly
+Object.ReadOnly = Установить свойство (* )
+ReadOnly
+ReadOnly = Получить свойство (**)
+Object.GetReadOnly()
+Object.SetReadOnly( Установить свойство (**)
+ReadOnly )
+
+Синтаксис COM:
+
+Object.get_ReadOnly( &ReadOnly ) Получить свойство
+Object.put_ReadOnly(  ReadOnly ) Установить свойство
+
+Примечание:
+Свойство задает доступность изменения выражения переменной.
+Свойство используется для переменных документа.
+
+Rectangle  Текст в рамочке
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Rectangle = Object.Rectangle Получить свойство (* )
+Object.Rectangle = Rectangle Установить свойство (* )
+Rectangle = Object.GetRectangle() Получить свойство (**)
+Object.SetRectangle( Rectangle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Rectangle( &Rectangle ) Получить свойство
+Object.put_Rectangle(  Rectangle ) Установить свойство
+
+Tolerance  Квалитет
+Интерфейс...
+Тип данных: BSTR
+441
+
+
+
+Синтаксис Automation:
+
+Tolerance = Получить свойство (* )
+Object.Tolerance
+Object.Tolerance = Установить свойство (* )
+Tolerance
+Tolerance = Получить свойство (**)
+Object.GetTolerance()
+Object.SetTolerance( Установить свойство (**)
+Tolerance )
+
+Синтаксис COM:
+
+Object.get_Tolerance( &Tolerance ) Получить свойство
+Object.put_Tolerance(  Tolerance ) Установить свойство
+
+ToleranceOn  Включить квалитет
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ToleranceOn = Получить свойство (* )
+Object.ToleranceOn
+Object.ToleranceOn = Установить свойство (* )
+ToleranceOn
+ToleranceOn = Получить свойство (**)
+Object.GetToleranceOn()
+Object.SetToleranceOn( Установить свойство (**)
+ToleranceOn )
+
+Синтаксис COM:
+
+Object.get_ToleranceOn( Получить свойство
+&ToleranceOn )
+Object.put_ToleranceOn(  Установить свойство
+Tolerance On)
+
+Value  Значение переменной
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Value = Object.Value Получить свойство (* )
+442
+
+
+
+Object.Value = Value Установить свойство (* )
+Value = Object.GetValue() Получить свойство (**)
+Object.SetValue( Value ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Value( &Value ) Получить свойство
+Object.put_Value(  Value ) Установить свойство
+
+Свойство позволяет устанавливать и получать значение переменной.
+
+IVariable7  методы
+
+AddProperty  Создать свойство переменная
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddProperty();
+Синтаксис COM:
+HRESULT AddProperty( IProperty ** Result );
+Возвращаемое значение:
+
+ " указатель на интерфейс 
+свойства IProperty.
+
+CreateDeviationVariables  Создать переменные для 
+отклонений
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateDeviationVariables();
+Синтаксис COM:
+HRESULT CreateDeviationVariables( BOOL * Result );
+Возвращаемое значение:
+
+TRUE  " в случае удачи,
+FALSE " в случае неудачи.
+
+Delete  Удалить переменную
+Интерфейс...
+Синтаксис Automation:
+443
+
+
+
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Res )
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+SetLink  Установить ссылку на переменную
+Интерфейс...
+Синтаксис Automation:
+BOOL SetLink( BSTR DocumentName, BSTR VariableName )
+Синтаксис COM:
+HRESULT SetLink( BSTR DocumentName, BSTR VariableName, BOOL * Res )
+Входные параметры:
+
+DocumentName  " имя документа,
+VariableName  " имя переменной.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+Интерфейс IVariableTable
+Справка системы КОМПАС...
+kompas.chm::/DLG_EXTRN_VAR_TABLE.htm
+Интерфейс таблицы переменных.
+Иерархия:
+IKompasAPIObject
+
+IVariableTable
+Описание:
+Позволяет считывать, изменять, добавлять параметры таблицы переменных компонен"
+та, применять параметры из таблицы переменных к компоненту.
+Примечание:
+
+1. Данный интерфейс можно получить:
+▼ от интерфейса IPart7, используя свойство IPart7::VariableTable,
+▼ от интерфейса IKompasDocument2D1, используя свойство
+
+IKompasDocument2D1::VariableTable.
+2. Доступно редактирование таблицы переменных только верхнего компонента.
+444
+
+
+
+ IVariableTable  свойства
+
+Cell  Значение в ячейке таблицы переменных
+Интерфейс...
+Тип данных: double.
+Синтаксис Automation:
+
+Cell = iObject.Cell (rIndex,cIndex) Получить свойство (* )
+iObject.Cell (rIndex,cIndex) = Cell Установить свойство (* )
+Cell = iObject.GetCell (rIndex,cIndex) Получить свойство (**)
+iObject.SetCell (rIndex,cIndex,Cell) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Cell(rIndex,cIndex,&Cell) Получить свойство
+iObject">put_Cell (rIndex,cIndex,Cell) Установить свойство
+
+Входные параметры:
+
+long rIndex " индекс строки таблицы переменных,
+long cIndex " индекс колонки таблицы переменных.
+
+Примечание:
+Установка свойства доступна только для верхнего компонента.
+
+ColumnsCount  Количество столбцов в таблице 
+переменных
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ColumnsCount = iObject.ColumnsCount Получить свойство (* )
+ColumnsCount = Получить свойство (**)
+iObject.GetColumnsCount()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ColumnsCount(&ColumnsCount)
+
+Значение свойства:
+
+Количество столбцов в случае успеха,
+"1 в случае неудачи.
+445
+
+
+
+Примечание:
+Свойство только для чтения.
+
+Comment  Комментарий к строке в таблице 
+переменных
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Comment = iObject.Comment Получить свойство (* )
+iObject.Comment = Comment Установить свойство (* )
+Comment = iObject.GetComment() Получить свойство (**)
+iObject.SetComment (Comment) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Comment(&Comment) Получить свойство
+iObject">put_Comment (Comment) Установить свойство
+
+Примечание:
+Установка свойства доступна только для верхнего компонента.
+
+RowsCount  Количество строк в таблице переменных
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+RowsCount = iObject.RowsCount Получить свойство (* )
+RowsCount = iObject.GetRowsCount() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_RowsCount(&RowsCount) Получить свойство
+
+Значение свойства:
+
+Количество строк в случае успеха,
+"1 в случае неудачи.
+
+Примечание:
+Свойство только для чтения.
+446
+
+
+
+TableRow  Строка переменных в таблице переменных
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Row = iObject.TableRow Получить свойство (* )
+iObject.TableRow = Row Установить свойство (* )
+Row = iObject.GetRableRow() Получить свойство (**)
+iObject.SetTableRow (Row) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_TableRow(&TableRow) Получить свойство
+iObject">put_TableRow (Row) Установить свойство
+
+Примечание:
+Массив значений переменных передаётся через массив SAFEARRAY значений типа
+double.
+
+VarName  Имя переменной в колонке таблицы 
+переменных
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+Name = iObject.VarName (column) Получить свойство (* )
+iObject.VarName (column) = Name Установить свойство (* )
+Name = iObject.GetVarName (column) Получить свойство (**)
+iObject.SetVarName (column, Name) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_VarName (column, &Name) Получить свойство
+iObject">put_VarName (column, Name) Установить свойство
+
+Входные параметры:
+
+long column " индекс колонки таблицы переменных.
+
+Примечание:
+Установка свойства доступна только для верхнего компонента.
+447
+
+
+
+VarNames  Массив имен переменных в таблице 
+переменных
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+VarNames = iObject.VarNames Получить свойство (* )
+iObject.VarNames = VarNames Установить свойство (* )
+VarNames = iObject.GetVarNames() Получить свойство (**)
+iObject.SetVarNames (VarNames) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_VarNames(&VarNames) Получить свойство
+iObject">put_VarNames (VarNames) Установить свойство
+
+Примечание:
+
+1. Массив имён переменных передаётся через массив SAFEARRAY значений типа BSTR.
+2. Установка свойства доступна только для верхнего компонента.
+
+VisualTable  Выдать таблицу в визуальном режиме 
+(получить индекс выбранной строки)
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+rIndex = iObject.VisualTable(WinVal,Select) Получить свойство (* )
+rIndex = Получить свойство (**)
+iObject.GetVisualTable(WinVal,Select)
+
+Синтаксис COM:
+
+iObject">get_VisualTable (WinVal, Select, Получить свойство
+rIndex)
+
+Входные параметры:
+
+OLE_HANDLE " дескриптор окна (может быть задан ноль " признак 
+WinVal главного окна),
+BOOL Select " признак открытия окна только для чтения и выбора 
+
+строки из таблицы.
+
+Возвращаемое значение:
+448
+
+
+
+индекс выбранной строки " в случае успеха,
+"1 " в случае неудачи.
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. Если задан признак выбора Select = TRUE, по нажатию ОК в диалоге таблицы перемен"
+
+ных возвращается индекс выбранной строки.
+3. Если задан признак выбора Select = FALSE, доступно редактирование и по нажатию ОК
+
+в диалоге таблицы переменных возвращается "1.
+4. Если задан признак выбора Select = FALSE, доступно редактирование и по нажатию При
+
+своить значения параметрам в диалоге таблицы переменных возвращается индекс
+выбранной строки.
+
+5. Редактирование таблицы переменных доступно только для верхнего компонента.
+
+ IVariableTable  методы
+
+AddColumn  Добавить колонку в таблицу переменных
+Интерфейс...
+Синтаксис Automation:
+long AddColumn (LPCTSTR VarName);
+Синтаксис COM:
+HRESULT AddColumn (BSTR VarName, long * ColumnIndex);
+Входные параметры:
+
+VarName " имя добавляемой переменной.
+
+Возвращаемое значение:
+
+ColumnIndex " индекс добавленной " в случае успеха,
+колонки в таблице переменных
+"1 " в случае неудачи.
+
+Примечание:
+
+1.  Метод доступен только для верхнего компонента.
+2.  Если компонент не имел таблицы переменных, она создается.
+
+AddRow  Добавить строку в таблицу переменных
+Интерфейс...
+Синтаксис Automation:
+long AddRow (LPCTSTR Comment);
+Синтаксис COM:
+449
+
+
+
+HRESULT AddRow (BSTR Comment, long * index);
+Входные параметры:
+
+Comment " комментарий к добавляемой строке.
+
+Возвращаемое значение:
+
+index " индекс добавленной " в случае успеха,
+строки в таблице переменных
+"1 " в случае неудачи.
+
+Примечание:
+
+1. Метод доступен только для верхнего компонента.
+2. Если компонент не имел таблицы переменных, она создается.
+
+ApplyVars  Применить параметры строки к компоненту
+Интерфейс...
+Синтаксис Automation:
+BOOL ApplyVars (VARIANT index);
+Синтаксис COM:
+HRESULT ApplyVars (VARIANT index, VARIANT_BOOL * result);
+Входные параметры:
+
+index " индекс строки типа long или комментарий к строке типа 
+BSTR.
+
+Возвращаемое значение:
+
+TRUE " значения параметров из заданной строки успешно 
+применены к компоненту,
+
+FALSE " значения параметров из заданной строки не применены к 
+компоненту.
+
+Примечание:
+Метод доступен только для верхнего компонента.
+
+Clear  Очистить всю таблицу  удалить все строки и 
+колонки
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+450
+
+
+
+HRESULT Clear (VARIANT_BOOL * result);
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод доступен только для верхнего компонента.
+
+DeleteColumn  Удалить колонку из таблицы 
+переменных
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteColumn (VARIANT Column);
+Синтаксис COM:
+HRESULT DeleteColumn (VARIANT Column, VARIANT_BOOL * result);
+Входные параметры:
+
+Column " индекс колонки типа long или имя переменной типа BSTR.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод доступен только для верхнего компонента.
+
+DeleteRow  Удалить строку из таблицы переменных
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteRow (VARIANT Row);
+Синтаксис COM:
+HRESULT DeleteRow (VARIANT Row, VARIANT_BOOL * result);
+Входные параметры:
+
+Row " индекс строки типа long или комментарий типа BSTR.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+451
+
+
+
+FALSE " в случае неудачи.
+Примечание:
+Метод доступен только для верхнего компонента.
+
+FindColumnIndex  Найти индекс колонки по имени 
+переменной
+Интерфейс...
+Синтаксис Automation:
+long FindColumnIndex (LPCTSTR val);
+Синтаксис COM:
+HRESULT FindColumnIndex ([in] BSTR Val, [out, retval] long * PVal);
+Входные параметры:
+
+val " имя переменной.
+
+Возвращаемое значение:
+
+Индекс колонки " в случае успеха,
+"1 " в случае неудачи.
+
+Свойства
+Интерфейс IProperty
+Справка системы КОМПАС...
+kompas.chm::/812_87_chapter_rabota_so_svoistvami.htm
+Интерфейс «свойства».
+Иерархия
+IKompasAPIObject
+
+IProperty
+Описание:
+Позволяет задавать параметры свойства. Номера системных свойств...
+Примечание:
+
+1. Интерфейс можно получить у менеджера свойств IPropertyMng.
+2. После задания параметров требуется вызвать метод IProperty::Update.
+
+IProperty  свойства
+
+Comment  Комментарий
+Интерфейс...
+452
+
+
+
+Тип данных: BSTR
+Синтаксис Automation:
+
+Comment = Получить свойство (* )
+Object.Comment
+Object.Comment = Установить свойство (* )
+Comment
+Comment = Получить свойство (**)
+Object.GetComment()
+Object.SetComment( Установить свойство (**)
+Comment )
+
+Синтаксис COM:
+
+Object.get_Comment( Получить свойство
+&Comment )
+Object.put_Comment( Установить свойство
+Comment )
+
+Свойство позволяет задавать и получать комментарий к свойству.
+
+DataType  Тип свойства
+Интерфейс...
+Тип данных:ksPropertyTypeEnum
+Синтаксис Automation:
+
+DataType = Получить свойство (* )
+Object.DataType
+Object.DataType = Установить свойство (* )
+DataType
+DataType = Получить свойство (**)
+Object.GetDataType()
+Object.SetDataType( Установить свойство (**)
+DataType )
+
+Синтаксис COM:
+
+Object.get_DataType( Получить свойство
+&DataType )
+Object.put_DataType( Установить свойство
+DataType )
+
+Свойство позволяет устанавливать и получать тип свойства.
+Примечание:
+Свойство можно установить только для вновь создаваемых свойств.
+453
+
+
+
+Id  Уникальный номер свойства
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Id = Object.Id Получить свойство (* )
+Id = Object.GetId() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Id( &Id ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+Свойство позволяет получить уникальный номер свойства. Номера системных свойств...
+
+IsAngular  Свойство задано в градусах
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsAngular = Object.IsAngular Получить свойство (* )
+IsAngular = Object.GetIsAngular() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_IsAngular( &IsAngular ) Получить свойство
+
+Примечание:
+Свойство только для чтения.
+
+IsVariable  Свойство связано с переменной
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsVariable = Object.IsVariable Получить свойство (* )
+IsVariable = Object.GetIsVariable() Получить свойство (**)
+
+Синтаксис COM:
+454
+
+
+
+Object.get_IsVariable( &IsVariable ) Получить свойство
+
+Примечание:
+Свойство только для чтения.
+
+ListVal  Список значений
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ListVal = Object.ListVal Получить свойство (* )
+Object.ListVal = ListVal Установить свойство (* )
+ListVal = Получить свойство (**)
+Object.GetListVal()
+Object.SetListVal( ListVal ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ListVal( &ListVal ) Получить свойство
+Object.put_ListVal( ListVal ) Установить свойство
+
+Свойство позволяет задать и получить список значений свойства.
+Примечание:
+Для свойства с типом данных ksPropertyDataTypeDouble значение должно иметь тип
+VT_ARRAY|VT_R8.
+Для свойства с типом данных ksPropertyDataTypeLong значение должно иметь тип
+VT_ARRAY|VT_I4.
+Для свойства с типом данных ksPropertyDataTypeString значение должно иметь тип
+VT_ARRAY|VT_BSTR.
+
+MaxValue  Максимальное значение
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+MaxValue = Получить свойство (* )
+Object.MaxValue
+MaxValue = Получить свойство (**)
+Object.GetMaxValue()
+
+Синтаксис COM:
+455
+
+
+
+Object.get_MaxValue( Получить свойство
+&MaxValue )
+
+Свойство позволяет получить максимальное значение свойства.
+Примечание:
+Для свойства с типом данных ksPropertyDataTypeDouble значение будет иметь тип VT_R8.
+Для свойства с типом данных ksPropertyDataTypeLong значение будет иметь тип VT_I4.
+Свойство только для чтения.
+
+MinValue  Минимальное значение
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+MinValue = Получить свойство (* )
+Object.MinValue
+MinValue = Получить свойство (**)
+Object.GetMinValue()
+
+Синтаксис COM:
+
+Object.get_MinValue( Получить свойство
+&MinValue )
+
+Свойство позволяет получить минимальное значение свойства.
+Примечание:
+Для свойства с типом данных ksPropertyDataTypeDouble значение будет иметь тип VT_R8.
+Для свойства с типом данных ksPropertyDataTypeLong значение будет иметь тип VT_I4.
+Свойство доступно только для чтения.
+
+Name  Имя свойства
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = Object.Name Получить свойство (* )
+Object.Name = Name Установить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+Object.SetName( Name ) Установить свойство (**)
+
+Синтаксис COM:
+456
+
+
+
+Object.get_Name( &Name ) Получить свойство
+Object.put_Name( Name ) Установить свойство
+
+Свойство позволяет устанавливать и получать имя свойства.
+
+PropertyTypeId  Идентификатор сущности свойства
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+PropertyTypeId = Object.PropertyTypeId Получить свойство (* )
+Object.PropertyTypeId = PropertyTypeId Установить свойство (* )
+PropertyTypeId = Получить свойство (**)
+Object.GetPropertyTypeId()
+Object.SetPropertyTypeId( Установить свойство (**)
+PropertyTypeId )
+
+Синтаксис COM:
+
+Object.get_PropertyTypeId Получить свойство
+( &PropertyTypeId )
+Object.put_PropertyTypeId Установить свойство
+( PropertyTypeId )
+
+Свойство позволяет устанавливать и получать идентификатор сущности свойства.
+
+ReadOnly  Доступность редактирования
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ReadOnly = Получить свойство (* )
+Object.ReadOnly
+Object.ReadOnly = Установить свойство (* )
+ReadOnly
+ReadOnly = Получить свойство (**)
+Object.GetReadOnly()
+Object.SetReadOnly( Установить свойство (**)
+ReadOnly )
+
+Синтаксис COM:
+457
+
+
+
+Object.get_ReadOnly( Получить свойство
+&ReadOnly )
+Object.put_ReadOnly( Установить свойство
+ReadOnly )
+
+Свойство позволяет включать и отключать доступность редактирования свойства.
+
+SignificantDigitsCount  Количество значащих цифр 
+после запятой
+Интерфейс...
+Тип данных:long
+Синтаксис Automation:
+
+SignificantDigitsCount = Получить свойство (* )
+Object.SignificantDigitsCount
+Object.SignificantDigitsCount = Установить свойство (* )
+SignificantDigitsCount
+SignificantDigitsCount = Получить свойство (**)
+Object.GetSignificantDigitsCount()
+Object.SetSignificantDigitsCount( Установить свойство (**)
+SignificantDigitsCount )
+
+Синтаксис COM:
+
+Object.get_SignificantDigitsCount( Получить свойство
+&SignificantDigitsCount )
+Object.put_SignificantDigitsCount( Установить свойство
+SignificantDigitsCount )
+
+Свойство позволяет устанавливать и получать количество значащих цифр после запя"
+той.
+Примечание:
+Установить/получить свойство можно только для ksPropertyDataTypeDouble.
+
+SourceName  Имя источника свойства
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+SourceName = Получить свойство (* )
+Object.SourceName
+SourceName = Получить свойство (**)
+Object.GetSourceName()
+458
+
+
+
+Синтаксис COM:
+
+Object.get_SourceName( Получить свойство
+&SourceName )
+
+Свойство позволяет получить имя источника свойства.
+Примечание:
+Свойство только для чтения.
+
+UnitId  Идентификатор единицы измерения свойства
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+UnitId = Object.UnitId Получить свойство (* )
+Object.UnitId = UnitId Установить свойство (* )
+UnitId = Object.GetUnitId() Получить свойство (**)
+Object.SetUnitId( UnitId ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UnitId( &UnitId ) Получить свойство
+Object.put_UnitId( UnitId ) Установить свойство
+
+Свойство позволяет устанавливать и получать идентификатор единицы измерения свой"
+ства.
+
+UseListVal  Использовать список значений
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseListVal = Получить свойство (* )
+Object.UseListVal
+Object.UseListVal = Установить свойство (* )
+UseListVal
+UseListVal = Получить свойство (**)
+Object.GetUseListVal()
+Object.SetUseListVal( Установить свойство (**)
+UseListVal )
+
+Синтаксис COM:
+
+Object.get_UseListVal( Получить свойство
+&UseListVal )
+459
+
+
+
+Object.put_UseListVal( Установить свойство
+UseListVal )
+
+Свойство позволяет устанавливать и получать признак использования списка значений.
+
+IProperty  методы
+
+Delete  Удалить свойство
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL* PRes );
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+SetValueRange  Установить новые ограничения 
+на значение
+Интерфейс...
+Синтаксис Automation:
+BOOL SetValueRange( VARIANT MinVal, VARIANT MaxVal );
+Синтаксис COM:
+HRESULT SetValueRange( VARIANT MinVal, VARIANT MaxVal, BOOL * PVal);
+Входные параметры:
+
+MinVal  " минимальное значение,
+MaxVal  " максимальное значение.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Примечание:
+Для свойства с типом данных:
+
+▼ ksPropertyDataTypeDouble значение должно иметь тип VT_R8,
+▼ ksPropertyDataTypeLong значение должно иметь тип VT_I4,
+▼ ksPropertyDataTypeString значение должно иметь тип VT_BSTR.
+460
+
+
+
+ViewEdit  Выводится диалог для просмотра
+и редактирования свойства
+Интерфейс...
+Синтаксис Automation:
+BOOL ViewEdit(OLE_HANDLE Parent, BOOL readOnly );
+Синтаксис COM:
+HRESULT ViewEdit( OLE_HANDLE Parent, BOOL ReadOnly, BOOL * Res );
+Синтаксис Automation:
+
+Parent  " дескриптор окна (может быть задан ноль " 
+признак главного окна),
+
+ReadOnly  " диалог только на чтение свойства.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Update  Обновить данные
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL* PRes );
+Возвращаемое значение:
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Интерфейс IPropertyKeeper
+Интерфейс получения/редактирования значения свойств
+Иерархия:
+IDispatch
+
+IPropertyKeeper
+Описание:
+Позволяет получать и редактировать значения свойств объектов.
+Примечание:
+Дополнительный интерфейс. Данный интерфейс можно получить у IPart7, IBody7,
+IEmbodiment, IMacroObject, IInsertionObject или IKompasDocument2D посредством вызо"
+ва метода IUnknown::QueryInterface (const GUID far& iid, void** pif).
+461
+
+
+
+IPropertyKeeper  свойства
+
+Properties  Метаданные объекта
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ Properties = Object.Properties Получить свойство (* )
+Object.Properties = Properties Установить свойство (* )
+Properties = Object.GetProperties() Получить свойство (**)
+Object.SetProperties( Properties ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Properties( &Properties ) Получить свойство
+Object.put_Properties(  Properties ) Установить свойство
+
+UniqueMetaObjectKey  Уникальный идентификатор 
+объекта
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+UniqueMetaObjectKey = Получить свойство(* )
+Object.UniqueMetaObjectKey
+UniqueMetaObjectKey = Получить свойство (**)
+Object.GetUniqueMetaObjectKey()
+
+Синтаксис COM:
+
+Object.get_UniqueMetaObjectKey( Получить свойство
+&UniqueMetaObjectKey )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IPropertyKeeper  методы
+
+IsComplexPropertyValue  Признак комплексного 
+значения свойства
+Интерфейс...
+Синтаксис Automation:
+BOOL IsComplexPropertyValue( IProperty * Property );
+462
+
+
+
+Синтаксис COM:
+HRESULT IsComplexPropertyValue( IProperty * Property, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного 
+завершения.
+
+Входные параметры:
+
+ Property " интерфейс свойства.
+
+GetComplexPropertyValue  Получить значение 
+составного свойства
+Интерфейс...
+Синтаксис Automation:
+BSTR GetComplexPropertyValue( IProperty * Property, BOOL * FromSource );
+Синтаксис COM:
+HRESULT GetComplexPropertyValue( IProperty * Property, BOOL * FromSource, BSTR *
+Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного 
+завершения.
+
+Входные параметры:
+
+ Property " интерфейс свойства.
+
+Выходные параметры:
+
+ FromSource " признак получения значения 
+свойства из источника.
+
+SetComplexPropertyValue  Установить значение 
+составного свойства
+Интерфейс...
+Синтаксис Automation:
+BOOL SetComplexPropertyValue( IProperty * Property, BSTR Value );
+463
+
+
+
+Синтаксис COM:
+HRESULT SetComplexPropertyValue( IProperty * Property, BSTR Value, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного
+завершения.
+
+Входные параметры:
+
+ Property " интерфейс свойства,
+Value " xml"строка с описанием 
+
+структуры значения составного 
+свойства.
+
+GetPropertyAdditionalStorage  Получить 
+дополнительные данные, связанные со свойством
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetPropertyAdditionalStorage( IProperty * Property, 
+BOOL Create, 
+BOOL * FromSource );
+Синтаксис COM:
+HRESULT GetPropertyAdditionalStorage( IProperty * Property, 
+BOOL Create, 
+BOOL * FromSource,
+IUserDataStorage ** Result );
+Возвращаемое значение:
+
+указатель на интерфейс пользовательского хранилища с дополнительными данными для свойства.
+
+Входные параметры:
+
+Property " указатель на интерфейс свойства,
+Create " создавать хранилище, если оно отсутствует.
+
+Выходные параметры:
+
+FromSource " хранилище было получено из источника.
+Примечание:
+При первом изменении значения свойства дополнительные данные очищаются автома"
+тически.
+464
+
+
+
+GetPropertyValue  Получить значение свойства
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPropertyValue( LPDISPATCH Property, VARIANT * Value, BOOL BaseUnit, BOOL *
+FromSource );
+Синтаксис COM:
+HRESULT GetPropertyValue(IProperty* Property,  VARIANT * Value, BOOL BaseUnit,  BOOL *
+FromSource, BOOL * Result );
+Входные параметры:
+
+Property  " интерфейс свойства,
+Value  " значение свойства,
+BaseUnit  " TRUE " значение в базовых единицах 
+
+измерения (СИ),
+ " FALSE " в настроенных единицах измерения,
+
+FromSource  " значения было получено из источника.
+Возвращаемое значение:
+
+TRUE  " в случае успешного 
+завершения,
+
+FALSE  " в случае неудачи.
+
+GetUserDataStoragesManager  Менеджер для работы
+с пользовательским хранилищем данных
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetUserDataStoragesManager( BOOL FromSource );
+Синтаксис COM:
+HRESULT GetUserDataStoragesManager( BOOL FromSource, IUserDataStoragesMng**
+PVal);
+Входные параметры:
+
+FromSource  " TRUE вернуть менеджер из файла источника 
+объекта,
+" FALSE " вернуть менеджер из файла владельца 
+объекта.
+
+Возвращаемое значение:
+
+ " Указатель на интерфейс менеджера пользовательских 
+данных IUserDataStoragesMng,
+465
+
+
+
+InsertHypertextReference  Добавить ссылку в свойство
+Интерфейс...
+Синтаксис Automation:
+ BOOL InsertHypertextReference( IProperty * Property, 
+                                   IKompasAPIObject * Object, 
+                                   ksHypertextTypeEnum Type, 
+                                   BOOL Brackets, 
+                                   long TextLineIndex, 
+                                   long Precision, 
+                                   double PropertyId ;
+Синтаксис COM:
+HRESULT InsertHypertextReference( IProperty * Property, 
+                                      IKompasAPIObject * Object, 
+                                      ksHypertextTypeEnum Type, 
+                                      BOOL Brackets, 
+                                      long TextLineIndex, 
+                                      long Precision, 
+                                      double PropertyId, 
+                                      BOOL * Result );
+Входные параметры:
+
+Property  " свойство, в которое 
+добавляется ссылка,
+
+Object  " объект, на свойство или текст 
+которого ссылаемся,
+
+Type "тип ссылки,
+Brackets " добавлять скобки,
+TextLineIndex " индекс строки в тексте 
+
+объекта,
+Precision " количество знаков после 
+
+запятой,
+PropertyId " идентификатор свойства, на 
+
+которое ссылаемся.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешного 
+завершения,
+
+FALSE  " в случае неудачи.
+466
+
+
+
+SetPropertyValue  Установить значение свойства
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPropertyValue( LPDISPATCH Property, VARIANT Value, BOOL BaseUnit );
+Синтаксис COM:
+HRESULT SetPropertyValue(IProperty* Property, VARIANT Value, BOOL BaseUnit, BOOL *
+Result );
+Входные параметры:
+
+Property  " интерфейс свойства,
+Value  " значение свойства,
+BaseUnit "TRUE " значение в базовых единицах измерения 
+
+(СИ),
+ " FALSE в настроенных единицах измерения.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешно"
+го завершения,
+
+FALSE  " в случае неудачи.
+
+Интерфейс IPropertyMng
+Интерфейс Менеджера свойств.
+Иерархия
+IDispatch
+
+IPropertyMng
+Описание:
+Позволяет управлять свойствами.
+Примечание:
+Дополнительный интерфейс. Данный интерфейс можно получить у IApplication посред"
+ством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif).
+
+IPropertyMng  свойства
+
+PropertyCount  Количество свойств
+Интерфейс...
+Тип данных: long
+
+PropertyCount = Получить свойство (* )
+Object.PropertyCount(Libname)
+467
+
+
+
+PropertyCount = Получить свойство (**)
+Object.GetPropertyCount(Libname)
+
+Синтаксис COM:
+
+Object.get_PropertyCount( Получить свойство
+Libname, &PropertyCount )
+
+Входные параметры:
+
+Libname ( VARIANT)  " полный путь к библиотеке на диске VT_BSTR либо 
+указатель на документ VT_DISPATCH. Текущий документ " 
+VT_EMPTY.
+
+Примечание:
+Свойство только для чтения.
+
+IPropertyMng  методы
+
+AddProperty  Добавить свойство
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddProperty( VARIANT libname, VARIANT val );
+Синтаксис COM:
+HRESULT AddProperty( VARIANT Libname, VARIANT Val, IProperty ** ColVal );
+Входные параметры:
+
+Libname ( VARIANT)  " полный путь к библиотеке на диске VT_BSTR, либо 
+указатель на документ VT_DISPATCH. Текущий документ " 
+VT_EMPTY,
+
+val( VARIANT)  " новое свойство VT_EMPY, создать по прототипу другого 
+свойства " VT_DISPATCH.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс свойства IProperty.
+
+GetProperty  Получить свойство
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetProperty ( VARIANT libname, VARIANT index );
+Синтаксис COM:
+468
+
+
+
+HRESULT GetProperty( VARIANT Libname, VARIANT Index, IProperty ** Res );
+Входные параметры:
+
+Libname (VARIANT)  " полный путь к библиотеке на диске VT_BSTR, либо 
+указатель на документ VT_DISPATCH. Текущий 
+документ " VT_EMPTY,
+
+index(VARIANT)  " индекс в хранилище VT_I4, либо по 
+идентификатору самого свойства " VT_R8.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс 
+свойства IProperty.
+
+Номера системных свойств...
+
+GetProperties  Получить массив свойств
+
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetProperties   ( VARIANT libname );
+Синтаксис COM:
+HRESULT GetProperties( VARIANT Libname, VARIANT * Res );
+Входные параметры:
+
+Libname ( VARIANT)  " полный путь к библиотеке на диске VT_BSTR, либо 
+указатель на документ VT_DISPATCH. Текущий 
+документ " VT_EMPTY.
+
+Возвращаемое значение:
+
+" Массив библиотек VARIANT 
+типа VT_ARRAY | VT_DISPATCH.
+
+Примечание:
+Если возвращается один объект, то тип VARIANT"а будет VT_DISPATCH, если возвраща"
+ется несколько объектов, то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+GetReport  Получить интерфейс таблицы отчета по 
+имени файла или указателю на документ
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetReport( VARIANT Document, ksReportTypeEnum Type );
+469
+
+
+
+Синтаксис COM:
+HRESULT GetReport( VARIANT Document, ksReportTypeEnum Type, IReport ** Result );
+Возвращаемое значение:
+
+" Указатель на интерфейс 
+отчета IReport.
+
+Входные параметры:
+
+Document  " имя файла или указатель на 
+документ.
+
+Выходные параметры:
+
+Type  " тип отчета.
+
+RemoveProperty  Удалить свойство
+Интерфейс...
+Синтаксис Automation:
+BOOL RemoveProperty  ( VARIANT libname, VARIANT val );
+Синтаксис COM:
+HRESULT RemoveProperty( VARIANT Libname, VARIANT Val, BOOL * ColVal );
+Входные параметры:
+
+Libname ( VARIANT)  " полный путь к библиотеке на диске 
+VT_BSTR, либо указатель на документ 
+VT_DISPATCH. Текущий документ " 
+VT_EMPTY,
+
+val( VARIANT)  " по интерфейсу свойства " VT_DISPATCH, по 
+индексу в массиве " VT_I4, по 
+идентификатору свойства VT_R8.
+
+Возвращаемое значение:
+
+TRUE  " в случае успешно"
+го завершения,
+
+FALSE  " в случае неудачи.
+470
+
+
+
+Хранилища
+Интерфейс IUserDataStorage
+Интерфейс пользовательского хранилища.
+Иерархия:
+IKompasAPIObject
+
+IUserDataStorage
+Описание:
+Хранилище представляет собой именованную «закладку» в коллекции. Для хранилища
+могут задаваться версии. Хранилище может быть защищено от изменений паролем. Па"
+рольная защита не препятствует просмотру содержания хранилища. Данные в хранили"
+ще представлены в виде таблицы, состоящей из двух столбцов – данных различных ти"
+пов и комментария.
+Примечание:
+Интерфейс можно получить у коллекции хранилищ, используя свойство
+IUserDataStorages::Item.
+
+IUserDataStorage  свойства
+
+Name  Имя хранилища
+Интерфейс...
+Синтаксис Automation:
+Тип данных: LPSTR
+
+Name = StorageObj.Name(Pass) Получить свойство (* )
+StorageObj.Name(Pass) = Name Установить свойство (* )
+Name = StorageObj.GetName(Pass) Получить свойство (**)
+StorageObj.SetName (Name, Pass) Установить свойство (**)
+
+Входные параметры:
+
+Pass (LPSTR) " пароль хранилища.
+
+Синтаксис COM:
+Тип данных:BSTR.
+
+StorageObj">get_Name (Pass, &Name) Получить свойство
+StorageObj">put_Name (Pass, Name) Установить свойство
+
+Входные параметры:
+
+Pass (BSTR) " пароль хранилища.
+471
+
+
+
+Примечание:
+Если хранилище защищено паролем, то изменить свойство можно, только указав пра"
+вильный пароль.
+
+Version  Версия хранилища
+Интерфейс...
+Синтаксис Automation:
+Тип данных: long
+
+Version = StorageObj.Version(Pass) Получить свойство (* )
+StorageObj.Version(Pass) = Version Установить свойство (* )
+Version = StorageObj.GetVersion(Pass) Получить свойство (**)
+StorageObj.SetVersion (Version, Pass) Установить свойство (**)
+
+Входные параметры:
+
+Pass (LPSTR) " пароль хранилища.
+
+Синтаксис COM:
+Тип данных: long
+
+StorageObj">get_Version (Pass, &Version) Получить свойство
+StorageObj">put_Version (Pass, Version) Установить свойство
+
+Входные параметры:
+
+Pass (BSTR) " пароль хранилища.
+
+Примечание:
+Если хранилище защищено паролем, то изменить свойство можно, только указав па"
+роль.
+
+IUserDataStorage  методы
+
+AddObject  Добавить объект и комментарий 
+в пользовательское хранилище
+Интерфейс...
+Синтаксис Automation:
+long AddObject( LPCTSTR pass,
+const VARIANT & object,
+LPCTSTR comment );
+Синтаксис COM:
+472
+
+
+
+HRESULT AddObject( [in] BSTR Pass,
+[in] VARIANT Object,
+[in] BSTR Comment,
+[out, retval] long* pVal);
+Входные параметры:
+
+Pass " пароль,
+Object " указатель на объект,
+comment " комментарий.
+
+Возвращаемое значение:
+
+" индекс объекта,
+
+Примечание:
+
+1. Объект может быть variant'ом с типом VT_INT, VT_I2, VT_I4, VT_R4, VT_R8, VT_DATE,
+VT_UI1, VT_UINT, VT_BOOL, VT_BSTR, VT_DISPATCH, а также VT_ARRAY с этими типами
+данных. Индекс массива начинается с нуля.
+
+2. Если задан интерфейс VT_DISPATCH и массив объектов VT_ARRAY | VT_DISPATCH, то
+под объектом подразумевается указатель на IDispatch от объектов API. Они также будут
+сохранены вместе с документом и при следующем запросе найдены.
+
+3. Индексация массивов должна начинаться с нуля.
+4. Если хранилище защищено паролем от изменений, то метод будет выполнен только по"
+
+сле указания правильного пароля.
+5. Под объектом API следует понимать объекты:
+
+для 3D хранилища " наследник от IModelObject, 
+для 2D хранилища " наследник от IDrawingObject (кроме ILayer).
+
+Clear  Очистить хранилище, удалив все объекты
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear ( LPCTSTR Pass );
+Синтаксис COM:
+HRESULT Clear( [in] BSTR Pass,
+[out, retval] VARIANT_BOOL* Result);
+Входные параметры:
+
+Pass " пароль.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+473
+
+
+
+Примечание:
+Если хранилище защищено паролем от изменений, то метод будет выполнен только по"
+сле указания правильного пароля.
+
+Delete  Удалить объект, заданный по индексу или по 
+комментарию
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete( LPCTSTR pass,
+const VARIANT & index );
+Синтаксис COM:
+HRESULT Delete( [in] BSTR Pass,
+[in] VARIANT Index,
+[out, retval] VARIANT_BOOL* PVal );
+Входные параметры:
+
+Pass " пароль,
+Index " индекс объекта или комментарий.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. В качестве индекса можно задать число или комментарий к объекту.
+2. Если хранилище защищено паролем от изменений, то метод будет выполнен только по"
+
+сле указания правильного пароля.
+
+GetObject  Получить объект пользовательского 
+хранилища и комментарий к нему по комментарию или 
+индексу
+Интерфейс...
+Синтаксис Automation:
+BSTR GetObject( const VARIANT & index, VARIANT * object, long * numb );
+Синтаксис COM:
+HRESULT GetObject( [in] VARIANT Index,
+[out] VARIANT * Object,
+[out] long* numb,
+[out, retval] BSTR * Comment );
+Входные параметры:
+474
+
+
+
+Index " индекс объекта или комментарий.
+
+Выходные параметры:
+
+Object " указатель на объект хранилища,
+numb " указатель на номер объекта.
+
+Возвращаемое значение:
+
+Comment (BSTR) " комментарий.
+
+Примечание:
+
+1. В качестве индекса можно задать число или комментарий к объекту.
+2. Объект может быть variant'ом с типом VT_INT, VT_I2, VT_I4, VT_R4, VT_R8, VT_DATE,
+
+VT_UI1, VT_UINT, VT_BOOL, VT_BSTR, VT_DISPATCH, а также VT_ARRAY с этими типами
+данных.
+
+3. Если задан интерфейс VT_DISPATCH и массив объектов VT_ARRAY | VT_DISPATCH, то
+под объектом подразумевается указатель на IDispatch от объектов API. Они также будут
+сохранены вместе с документом и при следующем запросе найдены.
+
+SetObject  Установить объект пользовательского 
+хранилища и комментарий к нему по комментарию или 
+индексу
+Интерфейс...
+Синтаксис Automation:
+long SetObject( LPCTSTR pass,
+const VARIANT index,
+const VARIANT & object,
+LPCTSTR comment );
+Синтаксис COM:
+HRESULT SetObject( [in] BSTR Pass,
+[in] VARIANT Index,
+[in] VARIANT Object,
+[in] BSTR Comment,
+[out, retval] long* pVal);
+Входные параметры:
+
+Pass " пароль,
+Index " индекс объекта или комментарий,
+Object " указатель на объект,
+comment " комментарий.
+475
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. В качестве индекса можно задать число или комментарий к объекту.
+2. Объект может быть variant'ом с типом VT_INT, VT_I2, VT_I4, VT_R4, VT_R8, VT_DATE,
+
+VT_UI1, VT_UINT, VT_BOOL, VT_BSTR, VT_DISPATCH, а также VT_ARRAY с этими типами
+данных.
+
+3. Если задан интерфейс VT_DISPATCH и массив объектов VT_ARRAY | VT_DISPATCH, то
+под объектом подразумевается указатель на IDispatch от объектов API. Они также будут
+сохранены вместе с документом и при следующем запросе найдены.
+
+4.  Если хранилище защищено паролем от изменений, то метод будет выполнен только по"
+сле указания правильного пароля.
+
+SetPassword  Установить пароль на изменение данных
+в хранилище
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPassword( LPCTSTR oldPass, LPCTSTR newPass );
+Синтаксис COM:
+HRESULT SetPassword( [in] BSTR OldPass,
+[in] BSTR NewPass,
+[out, retval] VARIANT_BOOL* Result);
+Входные параметры:
+
+OldPass " старый пароль,
+NewPass " новый пароль.
+
+Примечание:
+
+1. Если хранилище защищено паролем от изменений, то изменить пароль можно, только
+указав текущий пароль.
+
+2. По умолчанию пароль представляет собой пустую строку или нулевой указатель.
+
+Интерфейс IUserDataStorages
+Интерфейс коллекции пользовательских хранилищ.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IUserDataStorages
+476
+
+
+
+Описание:
+Коллекция привязана к одному объекту в документе или непосредственно к документу
+(объект NULL).
+Элементы коллекции – хранилища представляют собой «именованные закладки», ка"
+ждая из которых содержит данные различных типов в табличной форме. 
+Примечание:
+Интерфейс можно получить у Менеджера хранилищ, используя метод
+IUserDataStoragesMng::Item.
+
+IUserDataStorages  свойства
+
+Item  Хранилище, заданное по имени или по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IUserDataStorage хранилища
+Синтаксис Automation:
+
+StorageObj = iObject.Item (Index) Получить свойство (* )
+StorageObj = iObject.GetItem (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, &StorageObj) Получить свойство
+
+Входные параметры:
+
+Index " индекс хранилища.
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. В качестве индекса можно задать число или имя хранилища (VT_BSTR).
+
+IUserDataStorages  методы
+
+Add  Создать новое хранилище и добавить его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( LPCTSTR storageName );
+Синтаксис COM:
+HRESULT Add( [in] BSTR StorageName,
+[out, retval] IUserDataStorage ** Result );
+Входные параметры:
+477
+
+
+
+storageName " имя создаваемого хранилища.
+
+Delete  Удалить хранилище из коллекции по имени или 
+по индексу
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete ( LPCTSTR password, const VARIANT index );
+Синтаксис COM:
+HRESULT Delete( [in] BSTR password,
+[in] VARIANT Index,
+[out, retval] VARIANT_BOOL* PVal );
+Входные параметры:
+
+Index " индекс или имя хранилища,
+password " пароль на хранилище.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. В качестве индекса можно задать число или имя хранилища (VT_BSTR).
+2. Если хранилище защищено паролем, то метод работает только в случае указания пра"
+
+вильного пароля.
+
+Интерфейс IUserDataStoragesMng 
+Интерфейс Менеджера пользовательских хранилищ.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IUserDataStoragesMng
+
+Описание:
+Объект документа или непосредственно документ (объект NULL) может быть связан с
+коллекцией хранилищ. Каждое хранилище представляет собой структурированный на"
+бор данных простых типов (Variant) или также указателей на объекты документа. Менед"
+жер пользовательских хранилищ позволяет управлять пользовательскими хранилища"
+ми объектов и их коллекциями. Хранилище может быть использовано для графических
+документов и документов–моделей.
+Примечание:
+478
+
+
+
+Интерфейс можно получить у документа, используя метод
+IKompasDocument::UserDataStoragesMng.
+
+IUserDataStoragesMng  свойства
+
+Item  Объект, заданный по ссылке на объект или по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IUserDataStorages коллекции объектов хранилища.
+Синтаксис Automation:
+
+StorageObj = iObject.Item (Index) Получить свойство (* )
+StorageObj = iObject.GetItem (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, &StorageObj) Получить свойство
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. В качестве индекса можно задать число или объект, к которому привязано хранилище
+
+(тип VT_DISPATCH).
+
+IUserDataStoragesMng  методы
+
+Add  Создать новое хранилища по объекту и добавить 
+его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( LPDISPATCH Object );
+Синтаксис COM:
+HRESULT Add( [in] IKompasAPIObject* Object,
+[out, retval] IUserDataStorages ** Result );
+Входные параметры:
+
+Object " Указатель на интерфейс объекта IKompasAPIObject.
+
+Выходные параметры:
+
+" Указатель на интерфейс коллекции объектов
+хранилища IUserDataStorages.
+479
+
+
+
+Примечание:
+
+1. Метод позволяет добавить массив хранилищ по объекту в коллекцию. Если объект NULL,
+то хранилище добавляется к документу.
+
+2. Если в коллекции было создано хранилище по выбранному объекту, то метод сработает
+как GetItem.
+
+Clear очистить менеджер от всех коллекций
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+HRESULT Clear( [out, retval] VARIANT_BOOL* pVal );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Delete  Удалить коллекцию по ссылке на объект или
+по индексу
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete (const VARIANT & index );
+Синтаксис COM:
+HRESULT Delete( [in] VARIANT Index,
+[out, retval] VARIANT_BOOL* pVal );
+Входные параметры:
+
+Index " Индекс или указатель на интерфейс коллекции объектов 
+хранилища IUserDataStorages.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+В качестве индекса можно задать число или объект, к которому привязано хранилище
+(тип VT_DISPATCH)
+480
+
+
+
+Интерфейс IUserMetadataManager
+Менеджер пользовательских метаданных.
+Иерархия:
+IDispatch
+
+IUserMetadataManager
+Интерфейс можно получить методом QueryInterface у интерфейса IKompasDocument
+
+IUserMetadataManager  свойства
+
+StorageInfo  Получить данные из StorageInfo
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+StorageInfo = Получить свойство (* )
+Object.StorageInfo(ApplicationIID, 
+ParameterName )
+Object.StorageInfo( ApplicationIID, Установить свойство (* )
+ParameterName ) = Visible
+StorageInfo= Object.GetStorageInfo( Получить свойство (**)
+ApplicationIID, ParameterName )
+Object.SetStorageInfo( ApplicationIID, Установить свойство (**)
+ParameterName, StorageInfo )
+
+Синтаксис COM:
+
+Object.get_StorageInfo( ApplicationIID, Получить свойство
+ParameterName, &StorageInfo)
+Object.put_StorageInfo(  ApplicationIID, Установить свойство
+ParameterName, StorageInfo )
+
+Входные параметры:
+
+BSTR   ApplicationIID " GUID приложения,
+BSTR   ParameterName " имя параметр.
+
+Примечание:
+Свойство позволяет устанавливать и получать имя или версию хранилища:
+
+▼ для получения имени ParameterName " "storageInfo.appName",
+▼ для получения версии " "storageInfo.appVersion".
+481
+
+
+
+IUserMetadataManager  методы
+
+AddFile  Добавить файл в хранилище
+Интерфейс...
+Синтаксис Automation:
+BOOL AddFile( BSTR ApplicationIID, BSTR SrcFileName, BSTR DestFileName, BOOL
+AllowReplacement, BOOL Compress );
+Синтаксис COM:
+HRESULT AddFile( BSTR ApplicationIID, BSTR SrcFileName, BSTR DestFileName, BOOL
+AllowReplacement, BOOL Compress, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ApplicationIID " GUID приложения,
+SrcFileName " имя файла в хранилище,
+DestFileName " имя файла на диске,
+AllowReplacement " перезаписывать,
+Compress " добавить со сжатием.
+
+CreateStorage  Создать хранилище файлов приложения
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateStorage( BSTR ApplicationIID, BSTR ApplicationDescription, BSTR Version );
+Синтаксис COM:
+HRESULT CreateStorage( BSTR ApplicationIID, BSTR ApplicationDescription, BSTR Version,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ApplicationIID " GUID приложения,
+ApplicationDescription " имя приложения,
+DestFileName " версия хранилища.
+
+DeleteFile  Удалить файл из хранилища
+Интерфейс...
+482
+
+
+
+Синтаксис Automation:

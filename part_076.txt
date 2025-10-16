@@ -1,0 +1,2532 @@
+Значения свойства:
+
+0 " не удалять геометрию,
+1 " удалять геометрию.
+
+Синтаксис Automation:
+
+geometryDel = iSpcTuningStyleParam.geometryDel Получить свойство (* )
+iSpcTuningStyleParam.geometryDel = geometryDel Установить свойство (* )
+geometryDel = iSpcTuningStyleParam.GetGeometryDel() Получить свойство (**)
+iSpcTuningStyleParam.SetGeometryDel(geometryDel) Установить свойство (**)
+
+grToSP  Признак связи сборочного чертежа со 
+спецификацией
+Интерфейс...
+Тип данных: short
+Значения свойства:
+4136
+
+
+
+0 " нет связи,
+1 " только вставка объектов в спецификации,
+2 " связь с расчетом позиций.
+
+Синтаксис Automation:
+
+grToSP = iSpcTuningStyleParam.grToSP Получить свойство (* )
+iSpcTuningStyleParam.grToSP = grToSP Установить свойство (* )
+grToSP = iSpcTuningStyleParam.GetGrToSP() Получить свойство (**)
+iSpcTuningStyleParam.SetGrToSP(grToSP) Установить свойство (**)
+
+insertDash  Признак автоматически формируемого 
+номера исполнения
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " не вставлять тире перед числом,
+1 " вставлять тире перед числом.
+
+Синтаксис Automation:
+
+insertDash = iSpcTuningStyleParam.insertDash Получить свойство (* )
+iSpcTuningStyleParam.insertDash = insertDash Установить свойство (* )
+insertDash = iSpcTuningStyleParam.GetInsertDash() Получить свойство (**)
+iSpcTuningStyleParam.SetInsertDash(insertDash) Установить свойство (**)
+
+insertNull  Признак автоматически формируемого 
+номера исполнения
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " не вставлять нули перед числом,
+1 " вставлять нули перед числом.
+
+Синтаксис Automation:
+
+insertNull = iSpcTuningStyleParam.insertNull Получить свойство (* )
+iSpcTuningStyleParam.insertNull = insertNull Установить свойство (* )
+insertNull = iSpcTuningStyleParam.GetInsertNull() Получить свойство (**)
+iSpcTuningStyleParam.SetInsertNull(insertNull) Установить свойство (**)
+
+Примечание:
+4137
+
+
+
+Данное свойство предназначено только для чтения.
+
+ispolnMarkFull  Признак отображения номеров 
+исполнений объектов
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " показывать только номер исполнения,
+1 " показывать обозначение исполнения полностью.
+
+Синтаксис Automation:
+
+ispolnMarkFull = iSpcTuningStyleParam.ispolnMarkFull Получить свойство (* )
+iSpcTuningStyleParam.ispolnMarkFull = ispolnMarkFull Установить свойство (* )
+ispolnMarkFull = iSpcTuningStyleParam.GetIspolnMarkFull() Получить свойство (**)
+iSpcTuningStyleParam.SetIspolnMarkFull(ispolnMarkFull) Установить свойство (**)
+
+ispolnOn  Признак создания исполнений объектов в 
+спецификации
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " создание исполнений объектов запрещено,
+1 " создание исполнений объектов разрешено.
+
+Синтаксис Automation:
+
+ispolnOn = iSpcTuningStyleParam.ispolnOn Получить свойство (* )
+iSpcTuningStyleParam.ispolnOn = ispolnOn Установить свойство (* )
+ispolnOn = iSpcTuningStyleParam.GetIspolnOn() Получить свойство (**)
+iSpcTuningStyleParam.SetIspolnOn(ispolnOn) Установить свойство (**)
+
+showInfoByDetBlock  Признак, определяющий порядок 
+представления информации в групповой спецификации
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " выдавать информацию блоками,
+4138
+
+
+
+1 " выдавать информацию по объектам.
+Синтаксис Automation:
+
+showInfoByDetBlock = iSpcTuningStyleParam.showInfoByDetBlock Получить свойство (* )
+iSpcTuningStyleParam.showInfoByDetBlock = showInfoByDetBlock Установить свойство (* )
+showInfoByDetBlock = Получить свойство (**)
+iSpcTuningStyleParam.GetShowInfoByDetBlock() 
+iSpcTuningStyleParam.SetShowInfoByDetBlock(showInfoByDetBlock) Установить свойство (**)
+
+Примечания:
+
+1.  Значение данного свойства учитывается, только если количество исполнений больше,
+чем количество колонок, предназначенных для записи количества на исполнение.
+
+2.  Значение данного свойства используется только для групповой спецификации (вариант
+Б).
+
+showSectionName  Признак показа имен разделов в 
+таблице
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " не показывать имена разделов,
+1 " показывать имена разделов.
+
+Синтаксис Automation:
+
+showSectionName = iSpcTuningStyleParam.showSectionName Получить свойство (* )
+iSpcTuningStyleParam.showSectionName = showSectionName Установить свойство (* )
+showSectionName = iSpcTuningStyleParam.GetShowSectionName() Получить свойство (**)
+iSpcTuningStyleParam.SetShowSectionName(showSectionName) Установить свойство (**)
+
+positionCalc  Признак расчета номеров позиций
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " рассчитывать позиции,
+1 " не рассчитывать позиции.
+
+Синтаксис Automation:
+
+positionCalc = iSpcTuningStyleParam.positionCalc Получить свойство (* )
+4139
+
+
+
+)
+* )
+)
+**)
+iSpcTuningStyleParam.positionCalc = positionCalc Установить свойство (* )
+positionCalc = iSpcTuningStyleParam.GetPositionCalc() Получить свойство (**)
+iSpcTuningStyleParam.SetPositionCalc(positionCalc) Установить свойство (**)
+
+predefinedTextFileName  Имя файла предопределенных 
+текстов, использующегося при заполнении 
+спецификации
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+predefinedTextFileName = iSpcTuningStyleParam.predefinedTextFileName Получить свойство (* 
+iSpcTuningStyleParam.predefinedTextFileName = predefinedTextFileName Установить свойство (
+predefinedTextFileName = iSpcTuningStyleParam.GetPredefinedTextFileName() Получить свойство (**
+iSpcTuningStyleParam.SetPredefinedTextFileName(predefinedTextFileName) Установить свойство (
+
+Примечания:
+Файлы текстовых шаблонов имеют расширение *.tdp.
+
+userTextStyle  Стиль текста объектов спецификации
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " стиль текста из стиля спецификации,
+1 " пользовательский стиль текста.
+
+Синтаксис Automation:
+
+userTextStyle = iSpcTuningStyleParam.userTextStyle Получить свойство (* )
+iSpcTuningStyleParam.userTextStyle = userTextStyle Установить свойство (* )
+userTextStyle = iSpcTuningStyleParam.GetUserTextStyle() Получить свойство (**)
+iSpcTuningStyleParam.SetUserTextStyle(userTextStyle) Установить свойство (**)
+
+zoneCalc  Признак расчета зон
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " не рассчитывать зоны,
+1 " рассчитывать зоны.
+4140
+
+
+
+Синтаксис Automation:
+
+zoneCalc = iSpcTuningStyleParam.zoneCalc Получить свойство (* )
+iSpcTuningStyleParam.zoneCalc = zoneCalc Установить свойство (* )
+zoneCalc = iSpcTuningStyleParam.GetZoneCalc() Получить свойство (**)
+iSpcTuningStyleParam.SetZoneCalc(zoneCalc) Установить свойство (**)
+
+ksSpcTuningStyleParam  методы
+
+copySpcObjOnCopyGeometry  Копировать объекты 
+спецификации при копировании геометрии
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+copySpcObjOnCopyGeometry = Получить свойство (* )
+iSpcTuningStyleParam.copySpcObjOnCopyGeometry
+iSpcTuningStyleParam.copySpcObjOnCopyGeometry = Установить свойство (* )
+copySpcObjOnCopyGeometry
+copySpcObjOnCopyGeometry = Получить свойство (**)
+iSpcTuningStyleParam.GetcopySpcObjOnCopyGeometry() 
+iSpcTuningStyleParam.SetcopySpcObjOnCopyGeometry(copy Установить свойство (**)
+SpcObjOnCopyGeometry)
+
+GetArrSection  Получить указатель на интерфейс 
+динамического массива структур параметров настроек 
+разделов ksDynamicArray типа SPCTUNINGSEC_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrSection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksDynamicArray типа
+SPCTUNINGSEC_ARR.
+
+Смотрите также ksSpcTuningSectionParam
+4141
+
+
+
+GetObjectTextStyle  Получить указатель на интерфейс 
+параметров стиля текста объектов спецификации 
+ksTextStyleParam
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetObjectTextStyle();
+Возвращаемое значение:
+
+" указатель на интерфейс ksTextStyleParam.
+
+GetSectionTextStyleFirst  Получить указатель на 
+интерфейс параметров стиля текста первой строки 
+заголовков разделов ksTextStyleParam
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetSectionTextStyleFirst();
+Возвращаемое значение:
+
+" указатель на интерфейс ksTextStyleParam.
+
+GetSectionTextStyleNext  Получить указатель на 
+интерфейс параметров стиля текста последующих строк 
+заголовков разделов ksTextStyleParam
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetSectionTextStyleNext();
+Возвращаемое значение:
+
+" указатель на интерфейс ksTextStyleParam.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+4142
+
+
+
+Примечания:
+
+1.  Метод обнуляет все параметры.
+2.  Создается динамический массив arrSection типа SPCTUNINGSEC_ARR.
+
+SetArrSection  Изменить массив настроек разделов для 
+спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL SetArrSection(IDispatch* arr);
+Выходной параметр:
+
+arr " указатель на интерфейс параметров
+ksDynamicArray массива настроек разделов
+для спецификации SpcTuningSectionParam.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+SetObjectTextStyle  Изменить стиль текста объекта 
+спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL SetObjectTextStyle(IDispatch* style);
+Выходной параметр:
+
+style " указатель на интерфейс параметров
+ksTextStyleParam структуры параметров сти"
+лей текста заголовка раздела.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+4143
+
+
+
+SetSectionTextStyleFirst  Изменить стиль текста 
+заголовка раздела  первая строка
+Интерфейс...
+Синтаксис Automation:
+BOOL SetSectionTextStyleFirst(IDispatch* style);
+Выходной параметр:
+
+style " указатель на интерфейс параметров
+ksTextStyleParam структуры параметров сти"
+лей текста заголовка раздела.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+SetSectionTextStyleNext  Изменить стиль текста 
+заголовка раздела  следующих строк
+Интерфейс...
+Синтаксис Automation:
+BOOL SetSectionTextStyleNext(IDispatch* style);
+Выходной параметр:
+
+style " указатель на интерфейс параметров
+ksTextStyleParam структуры параметров сти"
+лей текста заголовка раздела.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Описание спецификации (Интерфейс ksSpcDescrParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1156_132_4_Opisanie_specifikaci.htm
+Интерфейс параметров описания спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+SpcDescrParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+ompasObject::GetParamStruct.
+4144
+
+
+
+Смотрите также:
+KompasObject
+
+ksSpcDescrParam  свойства
+
+layoutName  Имя файла библиотеки стилей
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+layoutName = iSpcDescrParam.layoutName Получить свойство (* )
+iSpcDescrParam.layoutName = layoutName Установить свойство (* )
+layoutName = iSpcDescrParam.GetLayoutName() Получить свойство (**)
+iSpcDescrParam.SetLayoutName(layoutName) Установить свойство (**)
+
+spcName  Имя подключенного файла спецификации
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+spcName = iSpcDescrParam.spcName Получить свойство (* )
+iSpcDescrParam.spcName = spcName Установить свойство (* )
+spcName = iSpcDescrParam.GetSpcName() Получить свойство (**)
+iSpcDescrParam.SetSpcName( spcName ) Установить свойство (**)
+
+styleId  Номер стиля в библиотеке
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+styleId = iSpcDescrParam.styleId Получить свойство (* )
+iSpcDescrParam.styleId = styleId Установить свойство (* )
+styleId = iSpcDescrParam.GetStyleId() Получить свойство (**)
+iSpcDescrParam.SetStyleId(styleId) Установить свойство (**)
+
+ksSpcDescrParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+4145
+
+
+
+BOOL Init();
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры описания спецификации.
+
+Колонка спецификации
+Стиль колонки (Интерфейс ksSpcStyleColumnParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_COLUMN_DIALOG.htm
+Интерфейс параметров стиля колонки спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+SpcStyleColumnParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также KompasObject
+
+ksSpcStyleColumnParam  свойства
+
+columnType  Тип колонки спецификации
+Интерфейс...
+Тип данных: long
+Типы колонок спецификации...
+Синтаксис Automation:
+
+columnType = iSpcStyleColumnParam.columnType Получить свойство (* )
+columnType = iSpcStyleColumnParam.GetColumnType() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+createSum  Признак, указывающий, разрешен ли расчет 
+суммы значений в колонке
+Интерфейс...
+Тип данных: short
+Значения свойства:
+4146
+
+
+
+0 " не рассчитывать сумму значений в колонке,
+1 " рассчитывать сумму значений в колонке.
+
+Синтаксис Automation:
+
+createSum = iSpcStyleColumnParam.createSum Получить свойство (* )
+createSum = iSpcStyleColumnParam.GetCreateSum() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+edit  Признак, указывающий, разрешено ли 
+редактирование колонки в данном разделе
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " не редактировать колонку в данном разделе,
+1 " редактировать колонку.
+
+Синтаксис Automation:
+
+edit = iSpcStyleColumnParam.edit Получить свойство (* )
+edit = iSpcStyleColumnParam.GetEdit() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+ispoln  Номер колонки данного типа
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ispoln = iSpcStyleColumnParam.ispoln Получить свойство (* )
+ispoln = iSpcStyleColumnParam.GetIspoln() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+4147
+
+
+
+linkId  Номер ячейки штампа для связи с данной 
+колонкой
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+linkId = iSpcStyleColumnParam.linkId Получить свойство (* )
+linkId = iSpcStyleColumnParam.GetLinkId() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+multiplyToCount  Признак, указывающий, разрешено ли 
+умножение при расчете суммы
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " при расчете суммы не умножать значения в колонке на количество,
+1 " умножать значения в колонке на количество.
+
+Синтаксис Automation:
+
+multiplyToCount = iSpcStyleColumnParam.multiplyToCount Получить свойство (* )
+multiplyToCount = iSpcStyleColumnParam.GetMultiplyToCount() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+nameColumn  Имя колонки
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+nameColumn = iSpcStyleColumnParam.nameColumn Получить свойство (* )
+nameColumn = iSpcStyleColumnParam.GetNameColumn() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+4148
+
+
+
+textDn  Признак выравнивания по вертикали текста в 
+колонке
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " выравнивать текст в колонке по верхней строке объекта спецификации,
+1 " выравнивать текст в колонке по нижней строке.
+
+Синтаксис Automation:
+
+textDn = iSpcStyleColumnParam.textDn Получить свойство (* )
+textDn = iSpcStyleColumnParam.GetTextDn() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+typeVal Тип значения в колонке
+Интерфейс...
+Тип данных: long
+Типы данных в колонках...
+Синтаксис Automation:
+
+typeVal = iSpcStyleColumnParam.typeVal Получить свойство (* )
+typeVal = iSpcStyleColumnParam.GetTypeVal() Получить свойство (**)
+
+Примечание:
+
+1.  Тип данных в колонках спецификации может принимать значения: INT_ATTR_TYPE,
+DOUBLE_ATTR_TYPE, STRING_ATTR_TYPE и RECORD_ATTR_TYPE.
+
+2.  Данное свойство предназначено только для чтения.
+
+useForSectionTitle  Признак размещения имен разделов
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " не использовать данную колонку для показа имени раздела,
+1 " использовать данную колонку для показа имени раздела.
+
+Синтаксис Automation:
+4149
+
+
+
+useForSectionTitle = iSpcStyleColumnParam.useForSectionTitle Получить свойство (* )
+useForSectionTitle = iSpcStyleColumnParam.GetUseForSectionTitle() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+ksSpcStyleColumnParam  методы
+
+GetAdditionalParam  Получить указатель на интерфейс 
+дополнительной информации ksRecordTypeAttrParam 
+или ksNumberTypeAttrParam
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetAdditionalParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksRecordTypeAttrParam или ksNumberTypeAttrParam
+
+Примечание:
+Тип возвращаемого интерфейса зависит от типа значения в колонке
+ksSpcStyleColumnParam::typeVal:
+
+Тип значения Интерфейс
+SPC_RECORD ksRecordTypeAttrParam
+DOUBLE_ATTR_TYPE ksNumberTypeAttrParam
+LINT_ATTR_TYPE ksNumberTypeAttrParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1.  Метод обнуляет все параметры.
+2.  По умолчанию свойство typeVal = RECORD_ATTR_TYPE.
+4150
+
+
+
+Колонка (Интерфейс ksSpcColumnParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_COLUMN_DIALOG.htm
+Интерфейс параметров для колонки спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+SpcColumnParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct с параметром ko_SpcColumnParam.
+Смотрите также KompasObject
+
+ksSpcColumnParam  свойства
+
+block  Номер блока исполнений
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+block = iSpcColumnParam.block Получить свойство (* )
+iSpcColumnParam.block = block Установить свойство (* )
+block = iSpcColumnParam.GetBlock() Получить свойство (**)
+iSpcColumnParam.SetBlock( block ) Установить свойство (**)
+
+columnType Тип колонки
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+style = iSpcColumnParam.style Получить свойство (* )
+iSpcColumnParam.style = style Установить свойство (* )
+style = iSpcColumnParam.GetStyle() Получить свойство (**)
+iSpcColumnParam.SetStyle( style ) Установить свойство (**)
+
+Типы колонок спецификации...
+
+ispoln  Номер исполнения данного типа, начиная с 1
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+4151
+
+
+
+ispoln = iSpcColumnParam.ispoln Получить свойство (* )
+iSpcColumnParam.ispoln = ispoln Установить свойство (* )
+ispoln = iSpcColumnParam.GetIspoln() Получить свойство (**)
+iSpcColumnParam.SetIspoln( ispoln ) Установить свойство (**)
+
+name  Имя колонки
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+name = iSpcColumnParam.name Получить свойство (* )
+iSpcColumnParam.name = name Установить свойство (* )
+name = iSpcColumnParam.GetName() Получить свойство (**)
+iSpcColumnParam.SetName( name ) Установить свойство (**)
+
+typeVal  Тип значений в колонке
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+typeVal = iSpcColumnParam.typeVal Получить свойство (* )
+iSpcColumnParam.typeVal = typeVal Установить свойство (* )
+typeVal = iSpcColumnParam.GetTypeVal() Получить свойство (**)
+iSpcColumnParam.SetTypeVal( typeVal ) Установить свойство (**)
+
+Типы данных в колонках...
+Примечание:
+Тип данных в колонках спецификации может принимать значения: INT_ATTR_TYPE,
+DOUBLE_ATTR_TYPE, STRING_ATTR_TYPE и RECORD_ATTR_TYPE.
+
+ksSpcColumnParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+4152
+
+
+
+Метод обнуляет все параметры.
+
+Шаблон записи в колонке (Интерфейс 
+ksRecordTypeAttrParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_COLUMN_DIALOG.htm
+Интерфейс дополнительных параметров для типа значения
+RECORD_ATTR_TYPE в стиле колонки таблицы спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+RecordTypeAttrParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct
+Смотрите также KompasObject
+
+ksRecordTypeAttrParam  свойства
+
+attrLibName  Имя файла библиотеки типов атрибутов
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+attrLibName = iRecordTypeAttrParam.attrLibName Получить свойство (* )
+attrLibName = iRecordTypeAttrParam.GetAttrLibName() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+key1, key2,key3, key4  Значения ключей атрибутов, 
+служащих шаблонами заполнения колонки 
+спецификации в данном разделе
+Интерфейс...
+Тип данных: long.
+Синтаксис Automation:
+
+key1 = iRecordTypeAttrParam.key1 Получить свойство (* )
+key1 = iRecordTypeAttrParam.GetKey1() Получить свойство (**)
+
+Примечания:
+
+1.  Данные свойства предназначены только для чтения.
+2.  Если значение какого"либо ключа 0, то этот ключ не учитывается.
+4153
+
+
+
+ksRecordTypeAttrParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры.
+
+Диапазон числовых значений в колонке (Интерфейс 
+ksNumberTypeAttrParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SPC_COLUMN_DIALOG.htm
+Интерфейс дополнительных параметров для типов значения
+DOUBLE_ATTR_TYPE и LINT_ATTR_TYPE в стиле колонки таблицы спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+NumberTypeAttrParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также KompasObject
+
+ksNumberTypeAttrParam  свойства
+
+maxValue  Максимальное значение в колонке 
+спецификации
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+maxValue = iNumberTypeAttrParam.maxValue Получить свойство (* )
+maxValue = iNumberTypeAttrParam.GetMaxValue() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+4154
+
+
+
+minValue  Минимальное значение в колонке 
+спецификации
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+minValue = iNumberTypeAttrParam.minValue Получить свойство (* )
+minValue = iNumberTypeAttrParam.GetMinValue() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+ksNumberTypeAttrParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры.
+
+Раздел спецификации
+Стиль раздела (Интерфейс ksSpcStyleSectionParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1143_131_1_Razdely.htm
+Интерфейс параметров стиля разделa спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+SpcStyleSectionParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct
+Смотрите также KompasObject
+4155
+
+
+
+ksSpcStyleSectionParam  свойства
+
+dataType  Способ ввода данных в колонку
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " ручное заполнение колонок,
+1 " ручное заполнение или чтение данных из основной надписи подключенного 
+
+документа.
+
+Синтаксис Automation:
+
+dataType = iSpcStyleSectionParam.dataType Получить свойство (* )
+dataType = iSpcStyleSectionParam.GetDataType() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+number  Номер раздела
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+number = iSpcStyleSectionParam.number Получить свойство
+(* )
+
+number = iSpcStyleSectionParam.GetNumber() Получить свойство
+(**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+sectionName  Имя раздела
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+sectionName = iSpcStyleSectionParam.sectionName Получить свойство (* )
+sectionName = iSpcStyleSectionParam.GetSectionName() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+4156
+
+
+
+sortColumnType  Общий тип колонки, по данным в 
+которой производится сортировка
+Интерфейс...
+Тип данных: long
+Типы колонок спецификации
+Синтаксис Automation:
+
+sortColumnType = iSpcStyleSectionParam.sortColumnType Получить свойство (* )
+sortColumnType = iSpcStyleSectionParam.GetSortColumnType() Получить свойство (**)
+
+Примечания:
+
+1.  Данное свойство предназначено только для чтения.
+2.  Общий тип формируется из типа колонки и номера колонки этого типа в стиле специ"
+
+фикации.
+
+sortIspoln  Номер колонки, по данным в которой 
+производится сортировка
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+sortIspoln = iSpcStyleSectionParam.sortIspoln Получить свойство (* )
+sortIspoln = iSpcStyleSectionParam.GetSortIspoln() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+sortType  Тип сортировки объектов в разделе
+Интерфейс...
+Тип данных: long
+Типы сортировки в разделе спецификации...
+Синтаксис Automation:
+
+sortType = iSpcStyleSectionParam.sortType Получить свойство (* )
+sortType = iSpcStyleSectionParam.GetSortType() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+4157
+
+
+
+ksSpcStyleSectionParam  методы
+
+GetArrColumn  Получить указатель на интерфейс 
+динамического массива параметров стиля колонок 
+ksDynamicArray типа SPCSTYLECOLUMN_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrColumn();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа SPCSTYLECOLUMN_ARR.
+
+Смотрите также ksSpcStyleColumnParam
+
+GetArrAdditionalColumn  Получить указатель на 
+интерфейс динамического массива параметров стиля 
+дополнительных колонок ksDynamicArray типа 
+SPCSTYLECOLUMN_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrAdditionalColumn();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва параметров стиля дополнительных колонок
+ksDynamicArray типа SPCSTYLECOLUMN_ARR.
+
+Смотрите также ksSpcStyleColumnParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры стиля разделa спецификации.
+4158
+
+
+
+Раздел (Интерфейс ksSpcTuningSectionParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1143_131_1_Razdely.htm
+Интерфейс параметров настройки раздела спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+SpcTuningSectionParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также KompasObject
+
+ksSpcTuningSectionParam  свойства
+
+firstOnSheet  Признак размещения раздела
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " начинать раздел после предыдущего раздела,
+1 " начинать раздел с новой страницы.
+
+Синтаксис Automation:
+
+firstOnSheet = iSpcTuningSectionParam.firstOnSheet Получить свойство (* )
+firstOnSheet = iSpcTuningSectionParam.GetFirstOnSheet() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+geometryOn  Признак подключения геометрии к 
+объектам раздела
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " подключение геометрии запрещено,
+1 " подключение геометрии разрешено.
+
+Синтаксис Automation:
+4159
+
+
+
+geometryOn = iSpcTuningSectionParam.geometryOn Получить свойство (* )
+geometryOn = iSpcTuningSectionParam.GetGeometryOn() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+number  Номер раздела
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+number = iSpcTuningSectionParam.number Получить свойство (* )
+number = iSpcTuningSectionParam.GetNumber() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+positionOn  Признак простановки номеров позиций в 
+разделе
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " не проставлять позиции,
+1 " проставлять позиции.
+
+Синтаксис Automation:
+
+positionOn = iSpcTuningSectionParam.positionOn Получить свойство (* )
+positionOn = iSpcTuningSectionParam.GetPositionOn() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+sortOn  Признак наличия сортировки объектов в 
+разделе
+Интерфейс...
+Тип данных: short
+Значения свойства:
+4160
+
+
+
+0 " сортировка выключена,
+1 " сортировка включена.
+
+Синтаксис Automation:
+
+sortOn = iSpcTuningSectionParam.sortOn Получить свойство (* )
+sortOn = iSpcTuningSectionParam.GetSortOn() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+subsectionOn  Признак деления на подразделы
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " деление на подразделы включено,
+1 " деление на подразделы выключено.
+
+Синтаксис Automation:
+
+subsectionOn = iSpcTuningSectionParam.subsectionOn Получить свойство (* )
+subsectionOn = iSpcTuningSectionParam.GetSubsectionOn() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+rezervCount  Количество резервных строк и позиций
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+rezervCount = iSpcTuningSectionParam.rezervCount Получить свойство (* )
+rezervCount = iSpcTuningSectionParam.GetRezervCount() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+ksSpcTuningSectionParam  методы
+
+GetArrSubSection  Получить указатель на интерфейс 
+динамического массива параметров подраздела 
+4161
+
+
+
+спецификации ksDynamicArray типа 
+SPCSUBSECTION_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrSubSection();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа SPCSUBSECTION_ARR.
+
+Смотрите также ksSpcSubSectionParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1.  Метод обнуляет все параметры.
+2.  Создается динамический массив arrSubSection типа SPCSUBSECTION_ARR.
+
+Подраздел (Интерфейс ksSpcSubSectionParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1145_131_2_Podrazdely.htm
+Интерфейс параметров подраздела спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+SpcSubSectionParam
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также KompasObject
+
+ksSpcSubSectionParam  свойства
+
+name  Имя подраздела
+Интерфейс...
+Тип данных: строка
+4162
+
+
+
+Синтаксис Automation:
+
+name = iSpcSubSectionParam.name Получить свойство (* )
+name = iSpcSubSectionParam.GetName() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+number  Номер подраздела
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+number = iSpcSubSectionParam.number Получить свойство (* )
+number = iSpcSubSectionParam.GetNumber() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+ksSpcSubSectionParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры.
+
+Параметры сохранения растра (Интерфейсы 
+ksRasterFormatParam и IRasterFormatParam)
+См.Интерфейсы сохранения растра
+
+Интерфейсы спецификации ksSpecification, 
+ISpecification3D
+См. Интерфейс ksSpecificatio/Интерфейс ISpecification
+4163
+
+
+
+Интерфейс фильтрации объектов документа
+модели (Интерфейс ksObjectsFilter3D)
+Справка системы КОМПАС...
+KOMPAS.chm::/683_82_7_2_Filqtry_obwektov.htm
+Интерфейс фильтрации объектов документамодели.
+
+ksObjectsFilter3D " интерфейс Automation
+IObjectsFilter3D " интерфейс COM
+
+Примечание:
+
+1.  Служит для включения режима, в котором возможен динамический поиск и указание
+курсором объектов модели: осей, плоскостей, граней, ребер и вершин.
+
+2.  Если установить свойство filterAll, то остальные флаги снимаются.
+3.  После установки любого свойства, разрешающего поиск и указание объектов опреде"
+
+ленного типа, свойство Фильтровать все отключается.
+4.  Если выключаются флаги, соответствующие типам объектов, то флаг Фильтровать
+
+все автоматически включается (то есть отключить указание всех типов объектов невоз"
+можно).
+
+5.  Указатель на интерфейс можно получить, используя свойство
+KompasObject::ksGetObjectsFilter3D или экспортную функцию ksGetObjectsFilter3D.
+
+IObjectsFilter3D  свойства
+filterAll  Фильтровать все
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " разрешить фильтрацию для всех типов объектов,
+FALSE " фильтрация разрешена только для конкретных типов объектов.
+
+Синтаксис Automation:
+
+filterAll = iObjFilter3D.filterAll; Получить свойство (* )
+iObjFilter3D.filterAll = filterAll; Установить свойство (* )
+filterAll = iObjFilter3D.GetFilterAll(); Получить свойство (**)
+iObjFilter3D.SetFilterAll(filterAll); Установить свойство (**)
+
+Синтаксис COM:
+
+filterAll = iObjFilter3D.GetFilterAll(); Получить свойство
+iObjFilter3D.SetFilterAll(filterAll); Установить свойство
+4164
+
+
+
+Примечание:
+Напрямую установить свойство равным FALSE нельзя. Свойство устанавливается рав"
+ным FALSE после установки любых флагов для конкретных типов объектов.
+
+filterCAxis  Фильтровать конструктивные оси
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " разрешить фильтрацию конструктивных осей,
+FALSE " запретить фильтрацию конструктивных осей.
+
+Синтаксис Automation:
+
+filterCAxis = iObjFilter3D.filterCAxis; Получить свойство (* )
+iObjFilter3D.filterCAxis = filterCAxis; Установить свойство (* )
+filterCAxis = iObjFilter3D.GetFilterCAxis(); Получить свойство (**)
+iObjFilter3D.SetFilterCAxis(filterCAxis); Установить свойство (**)
+
+Синтаксис COM:
+
+filterCAxis = iObjFilter3D.GetFilterCAxis(); Получить свойство
+iObjFilter3D.SetFilterCAxis(filterCAxis); Установить свойство
+
+Примечание:
+
+1.  После установки свойства равным TRUE флаг Фильтровать все снимается.
+2.  Если после установки флага равным FALSE все флаги для типов объектов окажутся рав"
+
+ными FALSE, то будет включено свойство Фильтровать все.
+
+filterCPlanes  Фильтровать конструктивные 
+плоскости
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " разрешить фильтрацию конструктивных плоскостей,
+FALSE " запретить фильтрацию конструктивных плоскостей.
+
+Синтаксис Automation:
+
+filterCPlanes = iObjFilter3D.filterCPlanes; Получить свойство (* )
+iObjFilter3D.filterVertexs = filterCPlanes; Установить свойство (* )
+filterCPlanes = iObjFilter3D.GetFilterCPlanes(); Получить свойство (**)
+4165
+
+
+
+iObjFilter3D.SetFilterCPlanes(filterCPlanes); Установить свойство (**)
+Синтаксис COM:
+
+filterCPlanes = iObjFilter3D.GetFilterCPlanes(); Получить свойство
+iObjFilter3D.SetFilterCPlanes(filterCPlanes); Установить свойство
+
+Примечание:
+
+1.  После установки свойства равным TRUE флаг Фильтровать все снимается.
+2.  Если после установки флага равным FALSE все флаги для типов объектов окажутся рав"
+
+ными FALSE, то будет включено свойство Фильтровать все.
+
+filterEdges  Фильтровать ребра
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " разрешить фильтрацию ребер,
+FALSE " запретить фильтрацию ребер.
+
+Синтаксис Automation:
+
+filterEdges = iObjFilter3D.filterEdges; Получить свойство (* )
+iObjFilter3D.filterEdges = filterEdges; Установить свойство (* )
+filterEdges = iObjFilter3D.GetFilterEdges(); Получить свойство (**)
+iObjFilter3D.SetFilterEdges(filterEdges); Установить свойство (**)
+
+Синтаксис COM:
+
+filterEdges = iObjFilter3D.GetFilterEdges(); Получить свойство
+iObjFilter3D.SetFilterEdges(filterEdges); Установить свойство
+
+Примечание:
+
+1.  После установки свойства равным TRUE флаг Фильтровать все снимается.
+2.  Если после установки флага равным FALSE все флаги для типов объектов окажутся рав"
+
+ными FALSE, то будет включено свойство Фильтровать все.
+
+filterFaces  Фильтровать грани
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " разрешить фильтрацию граней,
+4166
+
+
+
+FALSE " запретить фильтрацию граней.
+Синтаксис Automation:
+
+filterFaces = iObjFilter3D.filterFaces; Получить свойство (* )
+iObjFilter3D.filterFaces = filterFaces; Установить свойство (* )
+filterFaces = iObjFilter3D.GetFilterFaces(); Получить свойство (**)
+iObjFilter3D.SetFilterFaces(filterFaces); Установить свойство (**)
+
+Синтаксис COM:
+
+filterFaces = iObjFilter3D.GetFilterFaces(); Получить свойство
+iObjFilter3D.SetFilterFaces(filterFaces); Установить свойство
+
+Примечание:
+
+1.  После установки свойства равным TRUE флаг Фильтровать все снимается.
+2.  Если после установки флага равным FALSE все флаги для типов объектов окажутся рав"
+
+ными FALSE, то будет включено свойство Фильтровать все.
+
+filterVertexs  Фильтровать вершины
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " разрешить фильтрацию вершин,
+FALSE " запретить фильтрацию вершин.
+
+Синтаксис Automation:
+
+filterVertexs = iObjFilter3D.filterVertexs; Получить
+свойство (* )
+
+iObjFilter3D.filterVertexs = filterVertexs; Установить
+свойство (* )
+
+filterVertexs = Получить
+iObjFilter3D.GetFilterVertexs(); свойство (**)
+iObjFilter3D.SetFilterVertexs(filterVertexs); Установить
+
+свойство (**)
+
+Синтаксис COM:
+
+filterVertexs = iObjFilter3D.GetFilterVertexs(); Получить свойство
+iObjFilter3D.SetFilterVertexs(filterVertexs); Установить свойство
+
+Примечание:
+4167
+
+
+
+1.  После установки свойства равным TRUE флаг Фильтровать все снимается.
+2.  Если после установки флага равным FALSE все флаги для типов объектов окажутся рав"
+
+ными FALSE, то будет включено свойство Фильтровать все.
+
+Интерфейсы работы с библиотеками
+Библиотека моделей (Интерфейсы ksModelLibrary и 
+IModelLibrary )
+Интерфейс библиотеки трехмерных моделей.
+
+ksModelLibrary " интерфейс Automation
+IModelLibrary " интерфейс COM
+
+Примечания:
+Указатель на этот интерфейс при использовании Automation можно получить при помо"
+щи метода KompasObject::GetModelLibrary.
+При использовании COM интерфейс можно получить при помощи экспортной функции
+ksGetModelLibrary.
+
+ksModelLibrary  методы
+AddD3DocumentToLibrary  Добавить модель с 
+указанным именем файла в указанную библиотеку 
+моделей
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+long AddD3DocumentToLibrary (BSTR libName, 
+BSTR libFile);
+Синтаксис COM:
+long AddD3DocumentToLibrary (LPOLESTR libName, 
+LPOLESTR fileName);
+Входные параметры:
+
+libName " имя файла библиотеки моделей,
+libFile " имя файла модели.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения.
+
+Примечание:
+4168
+
+
+
+Имя файла библиотеки моделей должно содержать путь внутри библиотеки и имя моде"
+ли, например: "c:\gr\lib1.l3d|детали|литье|фланец", 
+где
+c:\gr\lib1.l3d " имя файла библиотеки моделей,
+|детали|литье| " разделы, подразделы внутри библиотеки фрагментов,
+фланец " имя модели.
+
+CheckModelLibrary  Проверить, открыта ли 
+указанная библиотека моделей
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+long CheckModelLibrary (BSTR libName,
+BOOL possibleMessage);
+Синтаксис COM:
+long CheckModelLibrary (LPOLESTR libName,
+BOOL possibleMessage);
+Входные параметры:
+
+libName " имя файла библиотеки моделей,
+possibleMessage " признак, показывающий, нужно ли выдать 
+
+сообщение об открытии библиотеки:
+TRUE " сообщение выдается,
+FALSE " сообщение не выдается.
+
+Возвращаемое значение:
+
+1 " библиотека открыта (успешное завершение),
+0 " библиотека закрыта.
+
+ChoiceModelFromLib  Выбор модели из библиотеки
+Интерфейс...
+Синтаксис Automation:
+BSTR ChoiceModelFromLib (BSTR libFile, 
+long* type);
+Синтаксис COM:
+LPOLESTR ChoiceModelFromLib (LPOLESTR libFile,
+long* type);
+Входной параметр:
+4169
+
+
+
+libFile " путь к файлу в библиотеке моделей.
+
+Выходной параметр:
+
+type " тип возвращаемого пути.
+
+Типы пути в библиотеке моделей...
+Возвращаемое значение:
+
+путь к модели " в случае успешного завершения.
+
+ExistModelInLibrary  Проверить, существует ли в 
+библиотеке указанная модель или папка
+Интерфейс...
+Синтаксис Automation:
+long ExistModelInLibrary (BSTR name);
+Синтаксис COM:
+long ExistModelInLibrary (LPOLESTR name);
+Входной параметр:
+
+name " имя файла библиотеки моделей и модели (или папки) в нем.
+
+Возвращаемое значение:
+
+"1 " указанная библиотека не существует,
+0 " указанная модель или папка не существует,
+1 " модель или папка существует.
+
+Примечание:
+Допускается задание имени файла библиотеки следующего вида: "c:\gr\lib1.l3d|дета"
+ли|литье|фланец", 
+где
+c:\gr\lib1.l3d " имя файла библиотеки моделей,
+|детали|литье| " разделы, подразделы внутри библиотеки фрагментов,
+фланец " имя модели.
+
+ModelLibraryOperation  Действия с библиотекой 
+моделей
+Функция не поддерживается
+Интерфейс...
+4170
+
+
+
+Синтаксис Automation:
+long ModelLibraryOperation (BSTR libName, 
+long type);
+Синтаксис COM:
+long ModelLibraryOperation (LPOLESTR libName, 
+long type);
+Входные параметры:
+
+libName " имя файла библиотеки моделей,
+type " тип действия.
+
+Типы действий с библиотекой моделей...
+Возвращаемое значение:
+
+1 " в случае успешного завершения.
+
+Примечания:
+
+1.  При выполнении операций "1, 0, 1, 4, 5 libName " полное имя файла библиотеки моде"
+лей.
+
+2.  При выполнении операций 2, 3 libName " полное имя файла библиотеки моделей путь
+внутри библиотеки с именем редактируемой модели.
+
+3.  Допускается задание имени файла библиотеки следующего вида: "c:\gr\lib1.l3d|дета"
+ли|литье|фланец", 
+где
+c:\gr\lib1.l3d " имя файла библиотеки моделей,
+|детали|литье| " разделы, подразделы внутри библиотеки моделей,
+фланец " имя модели.
+
+Библиотека фрагментов (Интерфейс 
+ksFragmentLibrary)
+Интерфейс библиотеки фрагментов.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetFragmentLibrary.
+Смотрите также KompasObject
+4171
+
+
+
+ksFragmentLibrary  методы
+ksAddFragmentToLibrary  Добавить фрагмент в 
+библиотеку
+Функция не поддерживается
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksAddFragmentToLibrary.
+Синтаксис Automation:
+long ksAddFragmentToLibrary (BSTR libName, 
+BSTR frwName);
+Входные параметры:
+
+libName " имя фрагмента в библиотеке,
+libFile " имя файла фрагмента.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Допускается задание имени фрагмента следующего вида: "c:\gr\lib1.lfr|детали|ли"
+тье|фланец", 
+где
+c:\gr\lib1.lfr " имя файла библиотеки фрагментов,
+|детали|литье| " разделы, подразделы внутри библиотеки фрагментов,
+фланец " имя фрагмента.
+
+ksCheckFragmentLibrary  Проверить, открыта ли 
+библиотека фрагментов
+Функция не поддерживается
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksCheckFragmentLibrary.
+Синтаксис Automation:
+long ksCheckFragmentLibrary (BSTR libName, 
+BOOL possibleMessage);
+Входные параметры:
+
+libName " имя файла библиотеки фрагментов,
+4172
+
+
+
+possibleMessage " признак выдачи сообщения:
+TRUE " выдать сообщение,
+FALSE " не выдавать сообщение.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+ksChoiceFragmentFromLib  Выбрать имя фрагмента 
+или папки в библиотеке фрагментов
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksChoiceFragmentFromLib.
+Синтаксис Automation:
+BSTR ksChoiceFragmentFromLib (BSTR frwLibFile, 
+long* type);
+Входные параметры:
+
+frwLibFile " имя файла библиотеки фрагментов,
+type " тип возвращаемого значения: 
+
+3 " имя фрагмента, 
+2 " имя папки, 
+1" корень библиотеки фрагментов, 
+0 " ошибка.
+
+Возвращаемое значение:
+
+имя фрагмента.
+
+Примечание:
+Библиотека фрагментов открывается в режиме диалога. 
+Ее редактирование запрещено.
+Enter " выбор имени фрагмента. Esc " отказ.
+
+ksExistFragmentInLibrary  Проверить наличие 
+указанного фрагмента или раздела в библиотеке 
+фрагментов
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksExistFragmentInLibrary.
+4173
+
+
+
+Синтаксис Automation:
+long ksExistFragmentInLibrary (BSTR frwName);
+Входной параметр:
+
+name " имя файла библиотеки моделей.
+
+Возвращаемое значение:
+
+ 1 " указанный фрагмент или папка есть в библиотеке,
+ 0 " указанного фрагмента или папки нет,
+"1 " нет указанной библиотеки.
+
+Примечание:
+Допускается задание имени файла следующего вида: "c:\gr\lib1.lfr|детали|литье|фланец", 
+где
+c:\gr\lib1.lfr " имя файла библиотеки фрагментов,
+|детали|литье| " разделы, подразделы внутри библиотеки фрагментов,
+фланец " имя фрагмента.
+
+ksFragmentLibraryOperation  Открыть библиотеку 
+фрагментов
+Функция не поддерживается
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ksFragmentLibrary.
+Синтаксис Automation:
+long ksFragmentLibraryOperation (LPCTSTR libName, long type);
+Входные параметры:
+
+libName " имя файла библиотеки фрагментов,
+type " тип действия. 
+
+Типы действий с библиотекой фрагментов...
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+При выполнении операций типа "1, 0, 1, 4, 5 libName " полное имя файла библиотеки
+фрагментов.
+При выполнении операций типа 2, 3 libName " полное имя файла библиотеки фрагментов
++ путь внутри библиотеки с именем редактируемого фрагмента.
+4174
+
+
+
+Параметры узла дерева библиотеки (Интерфейс 
+ksTreeNodeParam)
+Интерфейс параметров узла дерева библиотеки документов, библиотеки
+атрибутов.
+Аналог данных параметров при использовании API экспортных функций "
+ksTreeNodeParam.
+Примечание:
+Данный интерфейс может быть получен с использованием метода интерфейса
+KompasObject::ksGetLibraryTreeStruct.
+
+ksTreeNodeParam  свойства
+name  Имя узла
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+name = iTreeNodeParam.name Получить свойство
+(* )
+
+name = Получить свойство
+iTreeNodeParam.GetName() (**)
+
+Возвращаемое значение:
+
+Имя узла.
+
+Примечание:
+Свойство доступно только для чтения.
+
+type  Тип узла: корень, папка, файл
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+type = iTreeNodeParam.type Получить свойство
+(* )
+
+type = iTreeNodeParam.GetType() Получить свойство
+(**)
+
+Возвращаемое значение:
+
+" тип узла: корень, папка, файл из LtNodeType.
+4175
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+ksTreeNodeParam  методы
+GetComment  Получить указатель на интерфейс 
+массива строк комментария
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetComment();
+Возвращаемое значение:
+
+" указатель на интерфейс ksDynamicArray массива строк комментария; тип 
+массива " CHAR_STR_ARR.
+
+GetNodes  Получить указатель на интерфейс 
+ksDynamicArray массива дочерних узлов
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetNodes();
+Возвращаемое значение:
+
+" указатель на интерфейс ksDynamicArray массива дочерних узлов; тип массива 
+" TREENODEPARAM_ARR.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс фантома (Интерфейс ksPhantom)
+см. Интерфейс ksPhantom
+4176
+
+
+
+База данных (Интерфейс ksDataBaseObject)
+Интерфейс базы данных.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::DataBaseObject.
+Смотрите также KompasObject
+
+ksDataBaseObject  методы
+ksCloseTextFile  Закрыть текстовый файл запросов
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " CloseTextFile.
+Синтаксис Automation:
+BOOL ksCloseTextFile (long F);
+Входной параметр:
+
+F " указатель на текстовый файл.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+ksCondition  Задать или изменить условие запроса
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " Condition.
+Синтаксис Automation:
+long ksCondition (long db, 
+long r, 
+BSTR stSQL);
+Входные параметры:
+
+db " указатель на объект БД,
+r " указатель на отношение,
+stSQL " запрос.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+4177
+
+
+
+Примечание:
+При работе с базой данных через ODBC"интерфейс происходит переопределение состав"
+ляющей SQL"запроса, начинающейся с ключевого слова WHERE. Состав обрабатывае"
+мых полей записи, определенный в отношении, не изменяется. 
+При работе с текстовыми файлами использование функции
+ksDataBaseObject::ksCondition является единственной возможностью определения усло"
+вия запроса, так как в функции ksDataBaseObject::ksDoStatement определяется только
+список обрабатываемых полей записи.
+Следует отметить, что при работе с текстовыми базами данных не обрабатывается вло"
+женность условий (например, "where d > 10 and d < 14").
+
+ksConnectDB  Связать объект БД с конкретной базой 
+данных
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ConnectDB.
+Синтаксис Automation:
+long ksConnectDB (long db, 
+BSTR DBName);
+Входные параметры:
+
+db " указатель на объект БД,
+DBName " имя БД (для ODBC " имя БД в администраторе ODBC, для 
+
+текстового файла " имя файла).
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+ksCreateDB  Создать блок заголовка базы данных
+Интерфейс...
+Синтаксис Automation:
+long ksCreateDB (BSTR typeBD);
+Входной параметр:
+
+typeBD " тип базы данных:
+TXT_DB " база данных текстового формата, 
+ODBC_DB " база данных, доступная через интерфейс ODBC.
+
+Возвращаемое значение:
+4178
+
+
+
+указатель на блок заголовка базы данных " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Функция позволяет открыть БД. Одновременно может быть открыто несколько БД.
+
+ksDeleteDB  Удалить блок заголовка базы данных
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " DeleteDB.
+Синтаксис Automation:
+long ksDeleteDB(long db);
+Входной параметр:
+
+db " указатель на объект БД.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Происходит автоматическое отсоединение базы данных и удаление всех созданных ра"
+нее запросов.
+
+ksDisconnectDB  Отключиться от базы данных
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " DisconnectDB.
+Синтаксис Automation:
+long ksDisconnectDB (long db);
+Входной параметр:
+
+db " указатель на объект БД.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Функция отсоединяет блок заголовка с указателем bd от базы данных. 
+4179
+
+
+
+Следует отметить, что при удалении блока заголовка (функция
+ksDataBaseObject::ksDeleteDB) отсоединение выполняется автоматически, поэтому ис"
+пользовать ее рекомендуется только при переопределении базы данных.
+
+ksDoStatement  Установить запрос для объекта БД
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " DoStatement.
+Синтаксис Automation:
+long ksDoStatement (long db, long r, 
+BSTR stSQL);
+Входные параметры:
+
+db " указатель на объект БД,
+r " действительный указатель на отношение,
+stSQL " запрос.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Параметр stSQL при работе через ODBC"интерфейс содержит строку SQL"запроса, а при
+работе с текстовыми файлами " номера полей (колонок) или пустую строку (если обра"
+батываются все поля таблицы). 
+Для текстовых баз данных созданный запрос будет обрабатывать все записи, а непо"
+средственно условие выборки определяется функцией ksDataBaseObject::ksCondition.
+Для ODBC"баз отношение не обязательно в случае вставки, удаления и обновления запи"
+си. Для текстового файла отношение в этих случаях необходимо, чтобы определить име"
+на колонок.
+Примеры:
+Select d, s, p from bolt where d = 10 " пример запроса выборки из БД, 
+где d, s, p " названия колонок или * для всех колонок или номера колонок "2, 4, 7" для
+текстового файла, начиная с единицы слева направо,
+bolt " имя таблицы в БД или пустая строка для всех колонок текстового файла, 
+d " имя колонки в отношении.
+Insert into bolt (d,p,s) values( 10, 1.5, 14 ) " пример запроса для вставки строки в таблицу,
+где bolt " имя таблицы в БД или пустая строка для всех колонок текстового файла.
+Delete from bolt where d = 10 " пример запроса для удаления строки из таблицы bolt.
+Update bolt set p = 2.5, s = 20 where d =10 " пример запроса для замены данных в строке
+таблицы bolt.
+4180
+
+
+
+ksEndRelation  Завершить описание отношения
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " EndRelation.
+Синтаксис Automation:
+BOOL ksEndRelation();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание :
+Описание отношения начинается методом ksDataBaseObject::ksRelation.
+
+ksFreeStatement  Освободить отношения
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " FreeStatement.
+Синтаксис Automation:
+long ksFreeStatement (long db, long r, long fOption);
+Входные параметры:
+
+db " указатель на объект БД,
+r " указатель на отношение,
+fOption " тип освобождения.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Происходит освобождение памяти, отведенной для буфера записи функцией
+ksDataBaseObject::ksRelation.
+Параметр fOption имеет значение при работе через ODBC"интерфейс и означает тип ос"
+вобождения (описан в помощи модуля ODBC).
+
+ksGetColumnName  Считать имя колонки таблицы из 
+базы данных
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " GetColumnName.
+Синтаксис Automation:
+BSTR ksGetColumnName (long db, 
+4181
+
+
+
+BSTR tableName, 
+long* res, 
+BSTR firstOrNext);
+Входные параметры:
+
+db " указатель на объект БД,
+tableName " ODBC " имя таблицы, текстовая БД " имя файла,
+firstOrNext " признак колонки:
+
+F " первая колонка, 
+N " следующая колонка.
+
+Выходной параметр:
+
+res " результат работы:
+1 " если в указанной таблице или базе еще существуют несчитанные имена 
+колонок,
+0 " если все имена колонок считаны.
+
+Возвращаемое значение:
+
+имя колонки.
+
+Примечание:
+Для текстовых БД возвращаются номера колонок.
+
+ksGetTableName  Считать имя таблицы
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " GetTableName.
+Синтаксис Automation:
+BSTR ksGetTableName (long db, 
+long* res, 
+BSTR firstOrNext);
+Входные параметры:
+
+db " указатель на объект БД,
+firstOrNext " признак таблицы:
+
+F " первая таблица, 
+N " следующая таблица.
+
+Выходной параметр:
+4182
+
+
+
+res " результат работы:
+1" если в указанной базе еще существуют несчитанные имена таблиц,
+0 " если все имена таблиц считаны.
+
+Возвращаемое значение:
+
+имя таблицы.
+
+ksIsODBCOkey  Проверить подключение ODBC
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " IsODBCOkey.
+Синтаксис Automation:
+long ksIsODBCOkey();
+Возвращаемое значение:
+
+1 " если соединение с ODBC установлено,
+0 " если соединения нет.
+
+ksOpenTextFile  Открыть текстовый файл запросов
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " OpenTextFile.
+Синтаксис Automation:
+long ksOpenTextFile (BSTR fileName);
+Входной параметр:
+
+fileName " имя файла.
+
+Возвращаемое значение:
+
+указатель на открытый файл " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Открыть текстовый файл запросов, настроенный на базу данных.
+Функция работает по правилам стандартной процедуры WINDOWS OpenFile.
+Реализованные в рамках данного раздела функции работы с текстовыми файлами обес"
+печивают их построчную обработку и позволяют вынести обращения к базе данных во
+4183
+
+
+
+внешний текстовый файл. Это дает возможность работать с разными платформами
+СУБД без изменения выполняемого кода приложения.
+
+ksRChar  Определить в отношении строковое поле
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " RChar.
+Синтаксис Automation:
+long ksRChar (BSTR name, 
+long size, 
+long type);
+Входные параметры:
+
+name " имя колонки таблицы,
+size " размер буфера,
+type " тип данных, хранящихся в БД
+
+(действительно для ODBC"баз).
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Параметр name действителен при работе с текстовой базой данных. 
+Параметр type имеет смысл только для баз данных, связанных через ODBC, и описывает
+действительный тип колонки базы данных, с которой будет связано поле при выполне"
+нии операции ksDataBaseObject::ksDoStatement. Это позволяет получать строковое пред"
+ставление записи произвольного типа. Описания типов для ODBC хранятся в файле
+SQL.h, который поставляется вместе с модулями ODBC.
+
+ksRCharW  Определить в отношении строковое поле
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " RCharW.
+Синтаксис Automation:
+long ksRCharW (BSTR name, 
+long size, 
+long type);
+Входные параметры:
+
+name " имя колонки таблицы,
+4184
+
+
+
+size " размер буфера,
+type " тип данных, хранящихся в БД
+
+(действительно для ODBC"баз).
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Параметр name действителен при работе с текстовой базой данных. 
+Параметр type имеет смысл только для баз данных, связанных через ODBC, и описывает
+действительный тип колонки базы данных, с которой будет связано поле при выполне"
+нии операции ksDataBaseObject::ksDoStatement. Это позволяет получать строковое пред"
+ставление записи произвольного типа. Описания типов для ODBC хранятся в файле
+SQL.h, который поставляется вместе с модулями ODBC.
+
+ksRDouble  Определить в отношении поле типа 
+double
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " RDouble.
+Синтаксис Automation:
+long ksRDouble (BSTR name);
+Входной параметр:
+
+name " имя поля.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Параметр name действителен только при работе с текстовыми базами данных.
+
+ksReadRecord  Получить запись базы данных
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ReadRecord.
+Синтаксис Automation:
+long ksReadRecord (long db, 
+long r, 
+4185
+
+
+
+LPDISPATCH userPars);
+Входные параметры:
+
+db " указатель на объект БД,
+r " указатель на отношение,
+userPars " указатель на интерфейс ksUserParam.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Количество и типы полей в структуре userPars должны соответствовать отношению r.
+
+ksReadStrFrFile  Считать строку из текстового файла 
+запросов
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ReadStrFromTextFile.
+Синтаксис Automation:
+BSTR ksReadStrFrFile (long f, 
+long* res, 
+long numb);
+Входные параметры:
+
+f " указатель на текстовый файл,
+numb " номер строки.
+
+Выходной параметр:
+
+res " результат работы метода:
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Возвращаемое значение:
+
+" строка обращения к базе данных.
+
+Примечание:
+Строка обращения к базе данных начинается с номера, далее после двоеточия идет текст
+обращения, например:
+3:select d,f from Table1 where d=10 and f>d
+4186
+
+
+
+ksRelation  Создать новое отношение
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " Relation.
+Синтаксис Automation:
+long ksRelation (long db);
+Входной параметр:
+
+db " указатель на объект БД.
+
+Возвращаемое значение:
+
+указатель на отношение " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Отношение характеризует один запрос и представляет собой Описание памяти, необхо"
+димой для размещения очередной записи выборки, выполняемого функцией
+ksDataBaseObject::ksReadRecord. Является составным объектом, каждое поле которого
+описывает тип и имя поля (колонки) в таблице базы данных. Имя действительно только
+в случае работы с текстовым файлом, так как при обмене через ODBC"интерфейс имена
+уже описаны в блоке заголовка.
+Количество отношений, определенных для базы данных, не ограничивается.
+
+ksRFloat  Определить в отношении поле типа float
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " RFloat.
+Синтаксис Automation:
+long ksRFloat (BSTR name);
+Входной параметр:
+
+name " имя поля.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Параметр name действителен только при работе с текстовыми базами данных.
+4187
+
+
+
+ksRInt Определить в отношении поле типа Int
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " RInt.
+Синтаксис Automation:
+long ksRInt (BSTR name);
+Входной параметр:
+
+name " имя поля.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Параметр name действителен только при работе с текстовыми базами данных.
+
+ksRLong  Определить в отношении поле типа long
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " RLong.
+Синтаксис Automation:
+long ksRLong (BSTR name);
+Входной параметр:
+
+name " имя поля.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Параметр name действителен только при работе с текстовыми базами данных.
+
+Динамический массив (Интерфейс ksDynamicArray)
+Интерфейс динамического массива.
+Указатель на интерфейс можно получить при помощи методов...
+Типы динамических массивов... 
+См. также...
+4188
+
+
+
+ksDynamicArray  свойства
+reference  Указатель на массив
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ref = iDynamicArray.reference Получить свойство (* )
+iDynamicArray.reference = ref Установить свойство (* )
+ref = iDynamicArray.GetReference() Получить свойство (**)
+iDynamicArray.SetReference(ref) Установить свойство (**)
+
+ksDynamicArray  методы
+ksAddArrayItem  Добавить элемент в массив
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " AddArrayItem.
+Синтаксис Automation:
+long ksAddArrayItem (long index, LPDISPATCH item);
+Входные параметры:
+
+index " индекс элемента, перед которым нужно вставить
+новый элемент, нумерация начинается с 0, при
+index="1 элемент добавляется в конец массива,
+
+item " указатель на интерфейс соответствующего типа.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Смотрите также:
+Типы динамических массивов...
+
+ksClearArray  Очистить массив
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ClearArray.
+Синтаксис Automation:
+long ksClearArray();
+Возвращаемое значение:
+4189
+
+
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Из массива удаляются все элементы, но сам массив не удаляется.
+2.  При удалении пользовательского элемента, автоматические вызывается пользователь"
+
+ская функция удаления элемента, заданная пользователем при создании массива.
+
+ksDeleteArray  Удалить массив
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " DeleteArray.
+Синтаксис Automation:
+long ksDeleteArray();
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Примечание:
+Может быть удален непустой массив, то есть перед вызовом метода
+ksDynamicArray::ksDeleteArray вызывать ksDynamicArray::ksClearArray необязательно.
+
+ksExcludeArrayItem  Удалить элемент массива
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ExcludeArrayItem.
+Синтаксис Automation:
+long ksExcludeArrayItem (long index);
+Входной параметр:
+
+index " индекс элемента в массиве, нумерация начинается с 0.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+ksGetArrayCount  Получить количество элементов в 
+массиве
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " GetArrayCount.
+4190
+
+
+
+Синтаксис Automation:
+long ksGetArrayCount();
+Возвращаемое значение:
+
+" количество элементов в массиве.
+
+ksGetArrayItem  Получить элемент массива
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " GetArrayItem.
+Синтаксис Automation:
+long ksGetArrayItem (long index, 
+LPDISPATCH item);
+Входной параметр:
+
+index " индекс элемента в массиве, нумерация начинается с 0.
+
+Выходной параметр:
+
+item " указатель на интерфейс соответствующего типа.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Смотрите также:
+Типы динамических массивов...
+
+ksGetArrayType  Получить тип массива
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " GetArrayType.
+Синтаксис Automation:
+long ksGetArrayType();
+Возвращаемое значение:
+
+" тип массива.
+
+Типы динамических массивов...
+4191
+
+
+
+ksSetArrayItem  Установить параметры элемента в 
+массиве
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " SetArrayItem.
+Синтаксис Automation:
+long ksSetArrayItem(long index, 
+LPDISPATCH item);
+Входные параметры:
+
+index " индекс элемента в массиве, нумерация начинается с 0,
+item " указатель на интерфейс соответствующего типа.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Смотрите также:
+Типы динамических массивов...
+
+Интерфейсы работы с атрибутами
+Интерфейс работы с атрибутами (ksAttributeObject)
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Интерфейс для работы с атрибутами.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetAttributeObject.
+Смотрите также KompasObject
+
+ksAttributeObject  методы
+ksAddAttrRow  Добавить строку к табличному 
+атрибуту неопределенной длины
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/502_Glava61_Obshchie_svedenija_.htm
+Аналог данного метода при использовании API экспортных функций " ksAddAttrRow.
+Синтаксис Automation:
+4192
+
+
+
+long ksAddAttrRow (reference pAttr, 
+long rowNumb, 
+LPDISPATCH flagVisible,
+LPDISPATCH value, 
+BSTR password);
+Входные параметры:
+
+pAttr " указатель на атрибут,
+rowNumb " номер строки,
+flagVisible " указатель на интерфейс динамического массива типа 
+
+LTVARIANT_ARR ksDynamicArray, указывающего флаги 
+видимости ячеек строки,
+
+value " указатель на интерфейс ksUserParam, откуда 
+копируются данные,
+
+password " пароль атрибута.
+

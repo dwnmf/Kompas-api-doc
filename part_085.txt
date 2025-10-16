@@ -1,0 +1,2532 @@
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Соответствие входных и выходных параметров...
+Примечание:
+Функция позволяет получить настройки текущего документа (в настоящее время фун"
+кция реализована только для настроек размеров) и заполнить ими соответствующую
+структуру.
+
+ksGetDocumentType  Получить тип документа
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksGetDocumentType.
+Синтаксис:
+int ksGetDocumentType (reference doc);
+Входные параметры:
+
+doc " указатель на документ.
+
+Возвращаемое значение:
+
+тип документа " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+4631
+
+
+
+Если указатель doc = 0, возвращается тип активного документа.
+
+ksDrawKompasDocumentByReference  Отрисовать 
+КОМПАСдокумент как слайд в присланном окне
+Аналог данной функции при использовании Automation " метод
+KompasObject::DrawKompasDocumentByReference.
+Синтаксис:
+int ksDrawKompasDocumentByReference (void *HWindow, reference pDoc);
+Входные параметры:
+
+Hwindow " несущее окно,
+pDoc " указатель на документ.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Если указатель pdoc = 0, отрисовывается текущий документ.
+
+ksGetDocumentTypeByName  Получить тип 
+документа
+Аналог данной функции при использовании Automation " метод
+KompasObject::GetDocumentTypeByName.
+Синтаксис:
+int ksGetDocumentTypeByName (char * fileName);
+Входные параметры:
+
+fileName " полное имя файла документа.
+
+Возвращаемое значение:
+
+int " тип документа,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Документ при вызове этой функции не создается.
+2.  Независимо от используемого оформления возвращается:
+
+▼ для чертежа " lt_DocSheetStandart,
+▼ для спецификации " lt_DocSpc,
+▼ для текстового документа " lt_DocTxtStandart.
+4632
+
+
+
+ksGetDocumentTypeByNameW  Получить тип 
+документа (Unicode)
+Аналог данной функции при использовании Automation " метод
+KompasObject::GetDocumentTypeByName.
+Синтаксис:
+int LIB_FUNC ksGetDocumentTypeByNameW (LPWSTR fileName);
+Входные параметры:
+
+fileName " полное имя файла документа.
+
+Возвращаемое значение:
+
+int " тип документа,
+0 " в случае неудачи.
+
+Примечание:
+
+1. Документ при вызове этой функции не создается.
+2. Независимо от используемого оформления возвращается:
+
+▼ для чертежа              " lt_DocSheetStandart,
+▼ для спецификации         " lt_DocSpc,
+▼ для текстового документа " lt_DocTxtStandart.
+
+ksGetDocumentSaveVersion  Текущая версия записи 
+документов
+Синтаксис:
+int LIB_FUNC ksGetDocumentSaveVersion();
+Возвращаемое значение:
+  
+
+" номер версии из перечисления 
+ksSaveDocumentVersionEnum.
+
+Примечание:
+Получать требуется в событии начала записи документа
+
+ksGetDocumentOpenVersion  Версия файла, с 
+которой документ был сохранен
+Синтаксис:
+int LIB_FUNC ksGetDocumentOpenVersion( reference docRef );
+Входные параметры:
+4633
+
+
+
+  
+docRef " reference документа или 0 для активного документа.
+
+Возвращаемое значение:
+  
+
+" номер версии из перечисления 
+ksSaveDocumentVersionEnum.
+
+ksSetMixDlgMaterialParam  Установить параметры 
+материала для диалога МЦХ
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksSetMixDlgMaterialParam.
+Синтаксис:
+int LIB_FUNC ksSetMixDlgMaterialParam( char * material, double density );
+Входные параметры
+
+material " обозначение материала,
+density " плотность.
+
+Возвращаемое значение:
+   
+
+TRUE " в случае удачи.
+
+ksSetMixDlgMaterialParamW  Установить 
+параметры материала для диалога МЦХ (Unicode)
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksSetMixDlgMaterialParam.
+Синтаксис:
+int LIB_FUNC ksSetMixDlgMaterialParamW( LPWSTR material, double density );
+Входные параметры
+
+material " обозначение материала,
+density " плотность.
+
+Возвращаемое значение:
+   
+
+TRUE " в случае удачи.
+4634
+
+
+
+ksDistanceCurveCurve  Расстояние между двумя 
+кривыми
+Аналог данной функции при использовании Automation " метод
+ksMathematic2D::ksDistanceCurveCurve.
+Синтаксис:
+int  LIB_FUNC ksDistanceCurveCurve( reference p1, reference p2, double * distanse, double *
+t1, double * t2 );
+Входные параметры:
+
+ p1 " указатель на первую кривую,
+ p2 " указатель на вторую кривую.
+
+Выходные параметры:
+
+distanse " расстояние,
+ t1 " параметр на кривой 1 в точке с минимальным 
+
+удалением,
+ t2 " параметр на кривой 2 в точке с минимальным 
+
+удалением.
+
+Возвращаемое значение:
+
+1 " успешное завершение,
+0 " построить касательную нельзя (кривые совпадают 
+
+или одна кривая вложена в другую),
+ "1 " первый объект не существует,
+"2 " второй объект не существует,
+"3 " кривые расположены в разных видах,
+"4 " не совпадают СК определения кривых 
+
+(геометрическая и аннотационная),
+"5 " первый объект не является кривой,
+"6 " второй объект не является кривой,
+"7 " ошибка.
+
+ 
+
+ ksSheetSetupDlg  Открыть диалог для задания 
+формата листа
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_FORMAT_SHEET.htm
+Синтаксис:
+int ksSheetSetupDlg (DocumentParam* docPar, void *HWindow);
+Входные параметры:
+4635
+
+
+
+docPar " указатель на структуру параметров документа,
+Hwindow " дескриптор окна.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " при выходе из диалога по отмене.
+
+Примечание:
+
+1. Параметры docPar могут быть только параметрами чертежа, для любого другого типа
+документа функция ничего не сделает. Перед использованием функции необходимо
+правильно проинициализировать структуру docPar.
+
+2. При использовании Unicode следует использовать функцию ksSheetSetupDlgW.
+
+ksSheetSetupDlgW  Открыть диалог для задания 
+формата листа (Unicode)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_FORMAT_SHEET.htm
+Синтаксис:
+int LIB_FUNC ksSheetSetupDlgW (DocumentParamW* docPar, void *HWindow);
+Входные параметры:
+
+docPar " указатель на структуру параметров документа,
+Hwindow " дескриптор окна.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " при выходе из диалога по отмене.
+
+Примечание:
+
+1. Параметры docPar могут быть только параметрами чертежа, для любого другого типа
+документа функция ничего не сделает. Перед использованием функции необходимо
+правильно проинициализировать структуру docPar.
+
+2. При использовании ANSI следует использовать функцию ksSheetSetupDlg.
+
+ksReDrawDocPart  Перерисовать часть 
+графического документа
+Пример...
+Синтаксис:
+int ksReDrawDocPart (RectParam * rect, reference pView);
+4636
+
+
+
+Входные параметры:
+
+rect " указатель на структуру размеров габаритного прямоугольника RectParam,
+pView " указатель на вид.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " при выходе из диалога по отмене.
+
+Примечание:
+Координаты габаритного прямоугольника определяются в виде pView. Функция перери"
+совывает часть вида во всех графических окнах документа, которому принадлежит дан"
+ный вид.
+
+ksReDrawDocPartEx  Перерисовка части 2D 
+документа (Листа)
+Синтаксис:
+int LIB_FUNC ksReDrawDocPart (RectParam * rect, reference pView, int ParamType);
+Входные параметры:
+
+rect " указатель на структуру размеров габаритного прямоугольника 
+RectParam,
+
+pView " указатель на вид,
+ParamType " признак использования системы координат.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Если ParamType == 0, то используются координаты в системе координат текущей СК ви"
+да.
+
+2. Если ParamType == VIEV_ALLPARAM, то используются координаты в системе координат
+вида.
+
+3. Если ParamType == SHEET_ALLPARAM, то используются координаты в системе коорди"
+нат чертежа.
+4637
+
+
+
+Функции вывода на печать
+ksPrintPreviewWindow  Открыть окно 
+предварительного просмотра документа перед 
+печатью
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/1746_199_1_perehod_v_pred_prosmotr.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksPrintPreviewWindow.
+Синтаксис:
+int ksPrintPreviewWindow (reference docsArr, int inquiry);
+Входные параметры:
+
+docsArr " массив типа CHAR_STR_ARR или CHAR_STR_ARR_W полных имен документов, 
+которые нужно распечатать,
+
+inquiry " признак запроса документов:
+1 " если docsArr = NULL или массив пуст, запросить документы у пользователя,
+0 " показать документы без запроса.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+ksPrintKompasDocument  Напечатать КОМПАС
+документ
+Справка системы КОМПАС...
+KOMPAS.chm::/ID_FILE_PRINT.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksPrintKompasDocument.
+Синтаксис:
+int ksPrintKompasDocument(const char * fileName,
+const char * toFile,
+double scale);
+Входные параметры:
+
+fileName " полное имя файла печатаемого документа,
+toFile " имя файла, в который требуется выводить документ (*.prn и т.д.),
+
+или NULL, если нужно вывести сразу на принтер,
+scale " масштаб вывода.
+4638
+
+
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+При использовании Unicode следует использовать функцию ksPrintKompasDocumentW.
+
+ksPrintKompasDocumentW  Напечатать КОМПАС
+документ (Unicode)
+Справка системы КОМПАС...
+KOMPAS.chm::/ID_FILE_PRINT.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksPrintKompasDocument.
+Синтаксис:
+int LIB_FUNC ksPrintKompasDocumentW( LPCWSTR fileName,
+LPCWSTR toFile,
+double scale);
+Входные параметры:
+
+fileName " полное имя файла печатаемого документа,
+toFile " имя файла, в который требуется выводить документ (*.prn и т.д.),
+
+или NULL, если нужно вывести сразу на принтер,
+scale " масштаб вывода.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание.
+При использовании ANSI следует использовать функцию ksPrintKompasDocument.
+
+ ksPrintKompasDocumentEx  Напечатать КОМПАС
+документ
+Справка системы КОМПАС...
+KOMPAS.chm::/ID_FILE_PRINT.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksPrintKompasDocumentEx.
+Синтаксис:
+int ksPrintKompasDocumentEx( const char * fileName,
+const char * toFile,
+4639
+
+
+
+double scale,
+int fKompasPrinter );
+Входные параметры:
+
+fileName " полное имя файла печатаемого документа,
+toFile " имя файла, в который требуется выводить документ (*.prn и т.д.),
+
+или NULL, если нужно вывести сразу на принтер,
+Scale " масштаб вывода,
+fKompasPrint " TRUE" используем принтер Компас,
+
+" FALSE " умолчательный принтер Windows.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание.
+
+1. При использовании Unicode следует использовать функцию
+ksPrintKompasDocumentExW.
+
+2. Функция является развитием ksPrintKompasDocument.
+
+ksPrintKompasDocumentExW  Напечатать КОМПАС
+документ (Unicode)
+Справка системы КОМПАС..
+KOMPAS.chm::/ID_FILE_PRINT.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksPrintKompasDocumentEx.
+Синтаксис:
+int ksPrintKompasDocumentEx( LPCWSTR fileName,
+LPCWSTR toFile,
+double scale,
+int fKompasPrinter );
+Входные параметры:
+
+fileName " полное имя файла печатаемого документа,
+toFile " имя файла, в который требуется выводить документ (*.prn и т.д.),
+
+или NULL, если нужно вывести сразу на принтер,
+Scale " масштаб вывода,
+fKompasPrint " TRUE " используем принтер Компас,
+
+" FALSE " умолчательный принтер Windows.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+4640
+
+
+
+0 " в случае неудачи.
+Примечание.
+
+1. При использовании ANSI следует использовать функцию ksPrintKompasDocumentEx.
+2. Функция является развитием ksPrintKompasDocumentW.
+
+Функции настройки документа и работы со стилями
+Настройки документов
+Соответствие входных и выходных параметров...
+
+ksGetSysOptions  Получить системные настройки
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SET_SAVECONFIG.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksGetSysOptions.
+Синтаксис:
+int ksGetSysOptions (int optionsType, void * param, int sizePar);
+Входной параметр:
+
+optionsType " тип настройки,
+sizePar " размер структуры параметров.
+
+Выходной параметр:
+
+param " указатель на структуру параметров.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Соответствие входных и выходных параметров...
+См. также функции:
+GetDocOptions " Получить настройки документа,
+SetDocOptions " Заменить настройки документа.
+
+ksGetWorkWindowColor  Получить цвет фона рабочего 
+окна КОМПАСГРАФИК
+Пример...
+4641
+
+
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_WINDOWCOLOR_SETUP.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksGetWorkWindowColor.
+Синтаксис:
+unsigned long ksGetWorkWindowColor();
+Возвращаемое значение:
+
+цвет фона рабочего окна.
+
+ksSetSysOptions  Задать системные настройки
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SET_SAVECONFIG.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksSetSysOptions.
+Синтаксис:
+int ksSetSysOptions (int optionsType, void * param, int sizePar);
+Входной параметр:
+
+optionsType " тип настройки (реализовано для привязок),
+sizePar " размер структуры параметров.
+
+Выходной параметр:
+
+param " указатель на структуру параметров.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Стили
+AddStyle  Добавить стиль
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/116_9_1_Stili_geometricheskikh_.htm
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksAddStyle.
+4642
+
+
+
+Синтаксис:
+unsigned short AddStyle (unsigned char type, 
+void *param,
+unsigned int sizePar,
+unsigned char flag);
+Входные параметры:
+
+type " тип стиля,
+param " указатель на структуру параметров стиля,
+flag " признак создания стиля:
+
+0 " создать вручную, 
+1" взять стиль из библиотеки,
+
+sizePar " размер структуры параметров стиля.
+
+Возвращаемое значение:
+
+идентификатор стиля " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечания:
+
+1.  В настоящее время функция реализована для стилей кривых, текстов и штриховок.
+2.  При копировании стиля из библиотеки param " указатель на интерфейс ksLibStyle.
+3.  При создании стиля вручную:
+
+▼ для обыкновенного стиля кривых type равен CURVE_STYLE, param " указатель на струк"
+туру CurveStyleParam.
+
+▼ для стиля кривых, содержащего фрагменты, type равен CURVE_STYLE_EX, param " ука"
+затель на структуру CurveStyleParam.
+
+▼ для стиля текста type равен TEXT_STYLE, param " указатель на структуру TextStyleParam.
+
+GetStyleParam  Получить параметры стиля из 
+документа
+Пример...
+
+Справка системы КОМПАС: стиль текста...
+KOMPAS.chm::/546_65_11_Stili_teksta.htm
+
+Стили геометрических объектов...
+KOMPAS.chm::/116_9_1_Stili_geometricheskikh_.htm
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksGetStyleParam.
+Синтаксис:
+int GetStyleParam (unsigned char type,
+unsigned short styleNumber,
+4643
+
+
+
+void *param,
+unsigned int sizePar);
+Входные параметры:
+
+type " тип стиля,
+styleNumber " номер стиля,
+sizePar " размер структуры параметров.
+
+Выходные параметры:
+
+param " указатель на структуру параметров стиля.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  В случае неудачи структура param заполняется параметрами стиля по умолчанию.
+2.  Функция получает параметры стиля из документа. Различаются стили кривых, штрихо"
+
+вок, текстов, оформления. В настоящее время функция реализована для стилей кривых
+и текстов.
+
+3.  Для обыкновенного стиля кривых type равен CURVE_STYLE, param " указатель на струк"
+туру CurveStyleParam.
+
+4.  Для стиля кривых, содержащего фрагменты, type равен CURVE_STYLE_EX, param " ука"
+затель на структуру CurveStyleParam.
+
+5.  Для стиля текста type равен TEXT_STYLE, param " указатель на структуру TextStyleParam.
+
+ksDeleteStyleFromDocument  Удалить стиль из 
+документа
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_WORK_WITH_COLLECTION_AND_LIB.htm
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksDeleteStyleFromDocument.
+Синтаксис:
+int ksDeleteStyleFromDocument (unsigned char  type,
+void *param,
+unsigned int size,
+unsigned char flag);
+Входные параметры:
+4644
+
+
+
+type " тип стиля,
+flag " признак используемой структуры стиля:
+
+0 " создать вручную, 
+1" взять стиль из библиотеки,
+
+size " размер структуры параметров.
+
+Выходные параметры:
+
+param " указатель на структуру параметров стиля.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  В случае, если стиль задается вручную (flag = 0), требуется указать его параметры:
+▼ для стиля кривой type = CURVE_STYLE, param " указатель на структуру CurveStyleParam,
+▼ для расширенного стиля кривой type = CURVE_STYLE_EX, param " указатель на структуру
+
+CurveStyleParam,
+▼ для стиля текста type = TEXT_STYLE, param " указатель на структуру TextStyleParam.
+2.  В случае, когда стиль берется из библиотеки (flag = 1), требуется задать имя библиотеки
+
+и номер стиля: для стиля кривых и для стиля текста param " указатель на структуру
+LibStyle.
+
+ksGetLibraryStylesArray  Получить указатель на 
+динамический массив стилей
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_WORK_WITH_COLLECTION_AND_LIB.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksGetLibraryStylesArray.
+Синтаксис:
+reference ksGetLibraryStylesArray (char * libraryName,
+unsigned char  libraryType);
+Входные параметры:
+
+libraryName " полное имя библиотеки стилей,
+libraryType " тип библиотеки стиля.
+
+Возвращаемое значение:
+4645
+
+
+
+указатель на динамический массив LIBRARY_STYLE_ARR " в случае успеха,
+стилей заданного типа.
+0 " в случае неудачи.
+
+Примечание.
+При использовании Unicode следует использовать функцию ksGetLibraryStylesArrayW.
+
+ksGetLibraryStylesArrayW  Получить указатель на 
+динамический массив стилей (Unicode)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_WORK_WITH_COLLECTION_AND_LIB.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksGetLibraryStylesArray.
+Синтаксис:
+reference LIB_FUNC ksGetLibraryStylesArrayW (LPWSTR libraryName, 
+unsigned char  libraryType);
+Входные параметры:
+
+libraryName " полное имя библиотеки стилей,
+libraryType " тип библиотеки стиля.
+
+Возвращаемое значение:
+
+указатель на динамический массив LIBRARY_STYLE_ARR " в случае успеха,
+стилей заданного типа.
+0 " в случае неудачи.
+
+Примечание.
+При использовании ANSI следует использовать функцию ksGetLibraryStylesArray.
+
+ksGetObjectStyle  Получить стиль для объекта 2D 
+документа
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksGetObjectStyle.
+Синтаксис:
+int  ksGetObjectStyle( reference obj );
+Входные параметры:
+
+obj " указатель reference объекта 2D.
+
+Примечание:
+Метод позволяет получить стиль для кривых и эквидистанты.
+4646
+
+
+
+ksIsStyleInDocument  Проверить, есть ли данный стиль в 
+текущем документе
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_WORK_WITH_COLLECTION_AND_LIB.htm
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksIsStyleInDocument.
+Синтаксис:
+int ksIsStyleInDocument (unsigned char type,
+void * param,
+unsigned int size,
+unsigned char flag);
+Входные параметры:
+
+type " тип стиля,
+flag " признак используемой структуры стиля:
+
+0 " создать вручную, 
+1" взять стиль из библиотеки,
+
+size " размер структуры параметров.
+
+Выходные параметры:
+
+param " указатель на структуру параметров стиля.
+
+Возвращаемое значение:
+
+1 " стиль в документе есть,
+0 " стиля в документе нет.
+
+Примечание:
+
+1.  В случае, если стиль задается вручную (flag = 0), требуется указать его параметры:
+▼ для стиля кривой type = CURVE_STYLE, param " указатель на структуру CurveStyleParam,
+▼ для расширенного стиля кривой type = CURVE_STYLE_EX, param " указатель на структуру
+
+CurveStyleParam,
+▼ для стиля текста type = TEXT_STYLE, param " указатель на структуру TextStyleParam.
+2.  В случае, когда стиль берется из библиотеки (flag = 1), требуется задать имя библиотеки
+
+и номер стиля: для стиля кривых и для стиля текста param " указатель на структуру
+LibStyle.
+4647
+
+
+
+ksSetObjectStyle  Установить стиль для объекта 2D 
+документа
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksSetObjectStyle.
+Синтаксис:
+int  ksSetObjectStyle( reference obj, unsigned int style );
+Входные параметры:
+
+obj " указатель reference объекта 2D,
+style " номер стиля.
+
+Примечание:
+Метод позволяет установить стиль для кривых и эквидистанты.
+
+Сервисные функции
+Функции данного раздела обеспечивают выполнение системных команд.
+
+EnableTaskAccess  Разрешить/запретить доступ к 
+задаче
+Пример...
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksEnableTaskAccess.
+Синтаксис:
+void EnableTaskAccess (int enable);
+Входной параметр:
+
+enable " признак разрешения доступа к задаче со стороны пользователя:
+1 " доступ разрешен,
+0 " доступ запрещен.
+
+Примечание:
+См. также IsEnableTaskAccess.
+
+IsEnableTaskAccess  Определить, разрешен ли 
+доступ к задаче
+Пример...
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksIsEnableTaskAccess.
+Синтаксис:
+int IsEnableTaskAccess ();
+Возвращаемое значение:
+4648
+
+
+
+0 " доступ к задаче со стороны пользователя запрещен,
+1 " доступ к задаче со стороны пользователя разрешен.
+
+Примечание:
+См. также EnableTaskAccess.
+
+ksEnableUndo  Включить/отключить отмену 
+предыдущих операций
+Аналог данного метода при использовании Automation " ksDocument2D::ksEnableUndo.
+Синтаксис:
+void ksEnableUndo (unsigned char enable);
+Входные параметры:
+
+enable " признак отмены операций:
+0 " отключить,
+1 " включить.
+
+Примечания:
+
+1.  Если enable=0, количество шагов отмены операций устанавливается равным нулю.
+2.  Если enable=1, восстанавливается старое значение количества шагов отмены операций,
+
+измененное вызовом этого метода с параметром enable=0.
+3.  Если метод ранее не вызывался, количество шагов отмены операций будет равно умол"
+
+чательному значению.
+
+ksExecuteKompasCommand  Выполнить команду 
+системы КОМПАС
+Аналог данного метода при использовании Automation –
+KompasObject::ksExecuteKompasCommand.
+Синтаксис:
+int LIB_FUNC ksExecuteKompasCommand (long commandID, int post);
+Входные параметры:
+
+commandID " константа из перечисления ProcessTypeEnum или 
+ksKompasCommandEnum,
+
+post " способ запуска команды:
+1 " запуск команды через PostMessage,
+0 " через SendMessage.
+
+Возвращаемое значение:
+
+1 " в случае успеха,
+0 " в случае неудачи.
+4649
+
+
+
+Примечание:
+
+1.  Проверить доступность команды можно с помощью функции
+ksIsKompasCommandEnable.
+
+2.  Проверить, нажата ли в данный момент кнопка команды, можно с помощью
+ksIsKompasCommandCheck.
+
+ksGetExternalInterface  Получить указатель 
+внешнего интерфейса
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksGetExternalInterface.
+Синтаксис:
+LPDISPATCH ksGetExternalInterface();
+Примечание:
+
+1.  Функция не выполняет Addref на выдаваемый интерфейс.
+2.  Внешний интерфейс можно использовать для обмена данными между двумя приложе"
+
+ниями. Первое приложение передает интерфейс при вызове метода
+KompasObject::ksExecuteKompasLibraryCommandEx.
+
+3.  После выполнения KompasObject::ksExecuteKompasLibraryCommandEx, функция
+ksGetExternalInterface возвращает NULL.
+
+ksGetLookStyle  Получить тип отрисовки визуальной 
+части
+Аналог данной функции при использовании Automation " метод KompasObject::lookStyle.
+Синтаксис:
+long ksGetLookStyle();
+Примечание:
+Функция возвращает значения из ksTypeLookStyle.
+
+ksGetSystemProfileString  Получить строку из INI
+файла системы или из Registry
+Пример...
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksGetSystemProfileString.
+Синтаксис:
+int ksGetSystemProfileString (char *lpSection,
+char *lpKey,
+char *lpReturnedString,
+int bufLen);
+Выходные параметры:
+4650
+
+
+
+lpSection " имя секции,
+lpKey " имя ключа,
+lpReturnedString " буфер для выходной строки,
+bufLen " длина отведенного буфера в символах.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Пример:
+lpSection = "Directories"
+lpKey = "Sys"
+Результат:
+lpReturnedString = "c:\Program Files\Kompas54\Sys"
+iSize = 29
+Примечание:
+
+1.  Если lpReturnedString = 0 или bufLen = 0, то возвращается необходимая длина буфера в
+символах, иначе " возвращается количество переписанных байт (с учетом завершающе"
+го 0).
+
+2.  Если возвращаемое значение = 0, значит секция или ключ не были найдены ни в INI"
+файле, ни в реестре.
+
+ksGetSystemProfileStringW  Получить строку из INI
+файла системы или из Registry (Unicode)
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksGetSystemProfileString.
+Синтаксис:
+int LIB_FUNC ksGetSystemProfileStringW (LPWSTRlpSection,
+LPWSTRlpKey,
+LPWSTRlpReturnedString,
+int iSize);
+Выходные параметры:
+
+lpSection " имя секции,
+lpKey " имя ключа,
+lpReturnedString " буфер для выходной строки,
+iSize " размер буфера.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+4651
+
+
+
+Пример:
+lpSection = "Directories"
+lpKey = "Sys"
+Результат:
+lpReturnedString = "c:\Program Files\Kompas54\Sys"
+iSize = 29
+Примечание:
+
+1.  Если lpReturnedString = 0 или iSize = 0, то возвращается необходимый размер буфера,
+иначе " возвращается количество переписанных байт (с учетом завершающего 0).
+
+2.  Если возвращаемое значение = 0, значит секция или ключ не были найдены ни в INI"
+файле, ни в реестре.
+
+ksGetSystemVersion  Получить версию системы
+Пример...
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksGetSystemVersion.
+Синтаксис:
+void ksGetSystemVersion (int *iMajor, int *iMinor, int *iRelease, int *iBuild);
+Выходные параметры:
+
+iMajor " старшее слово версии,
+iMinor " младшее слово версии,
+iRelease " номер выпуска внутри одной версии,
+iBuild " номер сборки внутри одного выпуска.
+
+Примечание:
+Любой из указателей может быть равен 0, тогда соответствующее ему значение не вы"
+дается.
+
+ksGetLibraryStatus  Получить состояние защиты 
+продукта
+Синтаксис:
+ int LIB_FUNC ksGetLibraryStatus( unsigned int prodNumb );
+Входные параметры:
+  
+
+prodNumb " Номер продукта.
+
+Возвращаемое значение 
+4652
+
+
+
+ "   возвращается значение из перечисления 
+ksProtectProductStatusEnum.
+
+ksIsActiveProcessRunnig  Проверить, запущен ли в 
+текущем графическом документе процесс 
+построения
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksIsActiveProcessRunnig.
+Синтаксис:
+int ksIsActiveProcessRunnig ();
+Возвращаемое значение:
+
+1 " процесс запущен,
+0 " процесс не запущен,
+"1 " в случае ошибки.
+
+ksIsHomeVersion  Проверить, является ли версия 
+домашней
+Синтаксис:
+int LIB_FUNC ksIsHomeVersion()
+Возвращаемое значение:
+
+1 " Если запущена домашняя версия Компас kHome.exe.
+0 " кнопка отжата.
+
+ksIsExportAvailable  Разрешен ли экспорт в другие 
+форматы
+Синтаксис:
+int LIB_FUNC ksIsExportAvailable();
+Возвращаемое значение
+   
+TRUE  " если экспорт в другие форматы разрешен.
+
+Примечание:
+Экспорт в другие форматы может быть запрещен приложением Компас"Защита.
+4653
+
+
+
+ksIsKompasCommandCheck  Проверить нажата ли 
+кнопка команды
+Аналог данного метода при использовании Automation –
+KompasObject::ksIsKompasCommandCheck.
+Синтаксис:
+int LIB_FUNC ksIsKompasCommandCheck (long commandID);
+Входные параметры:
+
+commandID " константа из перечисления ProcessTypeEnum или 
+ksKompasCommandEnum.
+
+Возвращаемое значение:
+
+1 " кнопка нажата,
+0 " кнопка отжата.
+
+ksIsKompasCommandEnable  Проверить доступность 
+выполнения команды
+Аналог данного метода при использовании Automation –
+KompasObject::ksIsKompasCommandEnable.
+Синтаксис:
+int LIB_FUNC ksIsKompasCommandEnable (long commandID);
+Входные параметры:
+
+commandID " константа из перечисления ProcessTypeEnum или 
+ksKompasCommandEnum,
+
+post " способ запуска команды:
+1 " запуск команды через PostMessage,
+0 " через SendMessage.
+
+Возвращаемое значение:
+
+1 " команда доступна,
+0 " команда недоступна.
+
+Примечание:
+
+1.  Проверить доступность команды можно с помощью функции
+ksIsKompasCommandEnable.
+
+2.  Проверить, нажата ли в данный момент кнопка команды, можно с помощью
+ksIsKompasCommandCheck.
+4654
+
+
+
+ksIsModule2DActive  Проверить, разрешена ли 
+работа со модулем 2D
+Синтаксис:
+int ksIsModule2DActive();
+Возвращаемое значение:
+
+1 " работа с модулем 2D разрешена,
+0 " работа с модулем 2D не разрешена.
+
+ksIsLibraryLocal  Признак локальный/сетевой 
+продукт
+Синтаксис:
+int LIB_FUNC ksIsLibraryLocal( unsigned int prodNumb );
+Входные параметры:
+
+prodNumb " номер продукта.
+
+Возвращаемое значение 
+   
+TRUE  " если продукт работает на локальном ключе.
+
+ksIsLibraryProductKeyInfo  Получить информацию о 
+текущей сессии
+Синтаксис:
+int LIB_FUNC ksIsLibraryProductKeyInfo( unsigned int prodNumb, char * keyInfo, int
+keyInfoLen );
+Входные параметры:
+
+prodNumb " номер продукта,
+keyInfoLen " размер буфера.
+
+Выходной параметр:
+  
+
+keyInfo " буфер для информации о текущей сессии.
+
+Возвращаемое значение 
+   
+TRUE  " в случае успешного завершения.
+4655
+
+
+
+ksIsLibraryProductKeyInfoW  Получить информацию 
+о текущей сессии (Unicode)
+Синтаксис:
+int LIB_FUNC ksIsLibraryProductKeyInfoW( unsigned int prodNumb, LPWSTR keyInfo, int
+keyInfoLen );
+Входные параметры:
+
+prodNumb " номер продукта,
+keyInfoLen " размер буфера.
+
+Выходной параметр:
+  
+
+keyInfo " буфер для информации о текущей сессии.
+
+Возвращаемое значение 
+   
+TRUE  " в случае успешного завершения.
+
+ksIsLibraryProductName  Получить название 
+продукта
+Синтаксис:
+int LIB_FUNC ksIsLibraryProductName( unsigned int prodNumb, char * productName, int
+nameLen );
+Входные параметры:
+
+prodNumb " номер продукта,
+nameLen " размер буфера.
+
+Выходной параметр:
+
+productName " буфер для имени продукта.
+
+Возвращаемое значение 
+   
+TRUE  " в случае успешного завершения.
+4656
+
+
+
+ksIsLibraryProductNameW  Получить название 
+продукта (Unicode)
+Синтаксис:
+int LIB_FUNC ksIsLibraryProductNameW( unsigned int prodNumb, LPWSTR productName, int
+nameLen );
+Входные параметры:
+
+prodNumb " номер продукта,
+nameLen " размер буфера.
+
+Выходной параметр:
+
+productName " буфер для имени продукта.
+
+Возвращаемое значение 
+   
+TRUE  " в случае успешного завершения.
+
+ksIsLibraryTrial  Ознакомительный период
+Синтаксис:
+int LIB_FUNC ksIsLibraryTrial( unsigned int prodNumb );
+Входные параметры:
+
+prodNumb " номер продукта.
+
+Возвращаемое значение 
+   
+TRUE  " если для продукта работает ознакомительный период.
+
+ksIsPrintAvailable  Разрешена ли печать
+Синтаксис:
+int LIB_FUNC ksIsPrintAvailable();
+Возвращаемое значение 
+   
+TRUE  " если печать разрешена.
+
+Примечание:
+4657
+
+
+
+Печать может быть запрещена приложением Компас"Защита.
+
+ksRegisterLibraryNumber  Зарегистрировать номер 
+продукта на сервере лицензий Компас
+Синтаксис:
+unsigned int LIB_FUNC ksRegisterLibraryNumber( unsigned int prodNumb );
+Входные параметры:
+
+prodNumb " номер продукта.
+
+Возвращаемое значение
+   
+
+ "   идентификатор продукта.
+
+Примечание 
+Идентификатор продукта используется для разрегистрации функцией
+ksUnRegisterLibraryNumber.
+
+ksUnRegisterLibraryNumber  Разрегистрировать 
+номер продукта на сервере лицензий Компас
+Синтаксис:
+unsigned int LIB_FUNC ksUnRegisterLibraryNumber( unsigned int prodNumbUnicueId );
+Входные параметры:
+
+prodNumbUnicueId " идентификатор продукта.
+
+Возвращаемое значение
+    
+TRUE  " в случае успешного завершения.
+
+Примечание 
+Функция используется для разрегистрации продукта, зарегистрированного функцией
+ksRegisterLibraryNumber.
+
+ksIsModule3DActive  Проверить, разрешена ли 
+работа со модулем 3D
+Аналог данного метода при использовании Automation "
+KompasObject::ksIsModule3DActive.
+Синтаксис:
+int ksIsModule3DActive();
+Возвращаемое значение:
+4658
+
+
+
+1 " работа с модулем 3D разрешена,
+0 " работа с модулем 3D не разрешена.
+
+ksIsSpdsVersion — проверить, используется ли версия 
+Компас  Строитель
+Синтаксис:
+int LIB_FUNC ksIsSpdsVersion();
+Возвращаемое значение:
+
+1 " Если запущен Компас"строитель kSPDS.exe.
+
+Экспортный номер " 1039.
+
+ksIsStudyVersion – Проверить, является ли версия 
+учебной
+Синтаксис:
+int LIB_FUNC ksIsStudyVersion();
+Возвращаемое значение:
+
+1 " Если запущена учебная версия Компас kStudy.exe.
+
+ksKompasVariant – вернуть версию приложения 
+Компас: Компас  Строитель, Компас  Студент, 
+Иностранная версия и т.д.
+Синтаксис:
+int LIB_FUNC ksKompasVariant();
+Возвращаемое значение:
+
+Возвращается значение, состоящее из битовых флагов, заданных в перечислении 
+ksKompasVariantEnum. В возвращаемом значении может быть взведено несколько 
+флагов одновременно. Например, ksKompasSpds (Компас"строитель) и 
+ksKompasGraphic (КОМПАС"График " Без 3D). Дополнительно может быть взведен 
+флаг ksKompasLatin, если запущена локализованная иностранная версия.
+
+ksModule3D  Подключить 3D модуль для режима 
+сетевой работы системы
+Аналог данного метода при использовании Automation " KompasObject::ksModule3D.
+Синтаксис:
+4659
+
+
+
+int ksModule3D (unsigned char attach);
+Входные параметры:
+
+attach 1 " включить работу с 3D модулем,
+0 " отключить.
+
+Возвращаемое значение:
+
+1 " если был инициирован процесс подключения или 
+отключения 3D модуля,
+
+0 " в случае неудачи.
+
+ksSetCriticalProcess  Установить критический 
+процесс
+Пример...
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksSetCriticalProcess.
+Синтаксис:
+int ksSetCriticalProcess ();
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Работа процесса, вызванного прикладной библиотекой (например, Cursor или
+Placement), может быть принудительно прервана переходом к другому действию (коман"
+де). Чтобы запретить возможность принудительного прерывания такого процесса, перед
+его активизацией требуется вызвать данную функцию. Она сделает следующий за ней
+процесс "критическим", и при попытке его принудительного завершения будет выдано
+сообщение о необходимости корректного завершения процесса. После штатного завер"
+шения процесса признак "критического" процесса снимается, и для следующих процес"
+сов (при необходимости) функцию требуется вызывать заново.
+
+ksSetLibraryEnable  Запретить/разрешить продукт 
+(занять лицензию)
+Синтаксис:
+ int LIB_FUNC ksSetLibraryEnable( unsigned int  prodNumb,
+                                   unsigned char enable );
+Входные параметры:
+4660
+
+
+
+  
+prodNumb " Номер продукта.
+enable "  TRUE " Занять лицензию
+
+            FALSE " Отпустить лицензию
+
+Возвращаемое значение
+
+TRUE " если попытка получить 
+лицензию выполнялась.
+
+ksSetLookStyle  Задать тип отрисовки визуальной 
+части
+Справка системы КОМПАС...
+KOMPAS.chm::/1163_Glava133_Integracija_s_pri.htm
+Аналог данной функции при использовании Automation " метод KompasObject::lookStyle.
+Синтаксис:
+long ksSetLookStyle (long style);
+Примечание:
+Функция принимает значения из ksTypeLookStyle.
+
+ksSetProgressBar  Установить текущее значение 
+индикатора прогресса
+Аналог данного метода при использовании Automation –
+IProgressBarIndicator::SetProgress.
+Синтаксис:
+void LIB_FUNC ksSetProgressBar (long currentVal, char * newText, int resetText);
+Входные параметры:
+
+currentVal " текущее значение значение индикатора,
+newText " текст в строке состояния,
+resetText 1 " обновить текст в строке состояния,
+
+0 " не обновлять.
+
+Примечание:
+
+1.  Метод выполняется, если индикатор прогресса запущен командой ksStartProgressBar.
+2.  При использовании Unicode следует использовать функцию ksSetProgressBarW.
+4661
+
+
+
+ksSetProgressBarW  Установить текущее значение 
+индикатора прогресса (Unicode)
+Аналог данного метода при использовании Automation –
+IProgressBarIndicator::SetProgress.
+Синтаксис:
+void LIB_FUNC ksSetProgressBarW (long currentVal, LPWSTR newText, int resetText);
+Входные параметры:
+
+currentVal " текущее значение значение индикатора,
+newText " текст в строке состояния,
+resetText 1 " обновить текст в строке состояния,
+
+0 " не обновлять.
+
+Примечание:
+
+1.  Метод выполняется, если индикатор прогресса запущен командой ksStartProgressBarW.
+2.  При использовании ANSI следует использовать функцию ksSetProgressBar.
+
+ksSetProgressText  Установить текст в строке 
+состояния индикатора прогресса
+Аналог данного метода при использовании Automation – IProgressBarIndicator::SetText.
+Синтаксис:
+void LIB_FUNC ksSetProgressText (char * newText);
+Входные параметры:
+
+newText " текст в строке состояния.
+
+Примечание:
+
+1.  Метод выполняется как при запущенном индикаторе прогресса командой
+ksStartProgressBar, так и при остановленном.
+
+2.  Если команда выполняется при запущенном индикаторе прогресса, устанавливаемый
+текст запоминается как последний текст перед запуском индикатора, и после остановки
+индикатора командой ksStopProgressBar в строке состояния будет отображаться текст
+newText.
+
+3.  При использовании Unicode следует использовать функцию ksSetProgressTextW.
+
+ksSetProgressTextW  Установить текст в строке 
+состояния индикатора прогресса (Unicode)
+Аналог данного метода при использовании Automation – IProgressBarIndicator::SetText.
+Синтаксис:
+void LIB_FUNC ksSetProgressTextW (LPWSTR newText);
+Входные параметры:
+4662
+
+
+
+newText " текст в строке состояния.
+
+Примечание:
+
+1.  Метод выполняется как при запущенном индикаторе прогресса командой
+ksStartProgressBar, так и при остановленном.
+
+2.  Если команда выполняется при запущенном индикаторе прогресса, устанавливаемый
+текст запоминается как последний текст перед запуском индикатора, и после остановки
+индикатора командой ksStopProgressBar в строке состояния будет отображаться текст
+newText.
+
+3.  При использовании ANSI следует использовать функцию ksSetProgressText.
+
+ksStartProgressBar  Запустить индикатор прогресса
+Аналог данного метода при использовании Automation – IProgressBarIndicator::Start.
+Синтаксис:
+void LIB_FUNC ksStartProgressBar (long minVal, long maxVal, char * newText, int resetText);
+Входные параметры:
+
+minVal " минимальное значение шкалы,
+maxVal " максимальное значение шкалы,
+newText " текст в строке состояния,
+resetText 1 " обновить текст в строке состояния,
+
+0 " не обновлять.
+
+Примечание:
+
+1.  После завершения работы индикатор процесса должен быть остановлен командой
+ksStopProgressBar.
+
+2.  При использовании Unicode следует использовать функцию ksStartProgressBarW.
+
+ksStartProgressBarW  Запустить индикатор 
+прогресса (Unicode)
+Аналог данного метода при использовании Automation – IProgressBarIndicator::Start.
+Синтаксис:
+void LIB_FUNC ksStartProgressBar (long minVal, long maxVal, LPWSTR newText, int
+resetText);
+Входные параметры:
+
+minVal " минимальное значение шкалы,
+maxVal " максимальное значение шкалы,
+newText " текст в строке состояния,
+resetText 1 " обновить текст в строке состояния,
+
+0 " не обновлять.
+4663
+
+
+
+Примечание:
+
+1.  После завершения работы индикатор процесса должен быть остановлен командой
+ksStopProgressBar.
+
+2.  При использовании ANSI следует использовать функцию ksStartProgressBar.
+
+ksStopProgressBar  Остановить индикатор прогресса
+Аналог данного метода при использовании Automation – IProgressBarIndicator::Stop.
+Синтаксис:
+void LIB_FUNC ksStopProgressBar (char * newText, int resetTxt);
+Входные параметры:
+
+newText " текст в строке состояния,
+resetText 1 " обновить текст в строке состояния,
+
+0 " не обновлять.
+
+Примечание:
+Метод выполняется, если индикатор прогресса запущен командой ksStartProgressBar.
+
+ksStopProgressBarW  Остановить индикатор 
+прогресса (Unicode)
+Аналог данного метода при использовании Automation – IProgressBarIndicator::Stop.
+Синтаксис:
+void LIB_FUNC ksStopProgressBar (LPWSTR newText, int resetTxt);
+Входные параметры:
+
+newText " текст в строке состояния,
+resetText 1 " обновить текст в строке состояния,
+
+0 " не обновлять.
+
+Примечание:
+Метод выполняется, если индикатор прогресса запущен командой ksStartProgressBar.
+
+ksSystemPath  Получить системный путь 
+установленного типа
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SET_PATHVIEW.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksSystemPath.
+Синтаксис:
+4664
+
+
+
+int ksSystemPath (char *buff, int bufLen, int pathType);
+Типы системных путей...
+Входные параметры:
+
+bufLen  " длина отведенного буфера для строки пути в символах,
+pathType  " тип системной папки.
+
+Выходные параметры:
+
+*buff  " строка полного пути (включая завершающий 0).
+
+Возвращаемое значение:
+
+длина строки полного пути.
+
+Примечание:
+
+1.  Строка пути не должна завершаться символом '\' (за исключением случая корневой пап"
+ки устройства " "<drive>:\").
+
+2.  При использовании Unicode следует использовать функцию ksSystemPathW.
+
+ksSystemPathW  Получить системный путь 
+установленного типа (Unicode)
+Справка системы КОМПАС...
+KOMPAS.chm::/DLG_SET_PATHVIEW.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksSystemPath.
+Синтаксис:
+int LIB_FUNC ksSystemPathW (LPWSTR buff, int bufLen, int pathType);
+Типы системных путей...
+Входные параметры:
+
+bufLen  " длина отведенного буфера для строки пути в символах,
+pathType " тип системной папки.
+
+Выходные параметры:
+
+*buff  " строка полного пути (включая завершающий 0).
+
+Возвращаемое значение:
+
+длина строки полного пути.
+
+Примечание:
+4665
+
+
+
+1.  Строка пути не должна завершаться символом '\' (за исключением случая корневой пап"
+ки устройства " "<drive>:\").
+
+2.  При использовании ANSI следует использовать функцию ksSystemPath.
+
+ksTransferInterface  Преобразовать интерфейсный 
+объект одного типа API в интерфейсный объект API 
+другого типа
+Аналог данного метода при использовании Automation " API5 "
+KompasObject::TransferInterface.
+Синтаксис:
+LPUNKNOWN LIB_FUNC ksTransferInterface(LPUNKNOWN obj, long newApiType, long
+objNewType );
+Входные параметры:
+
+obj " интерфейс 3D COM, API5 Auto или API7,
+apiNewType " тип API, к которому преобразуется исходный интерфейс, может принимать 
+
+значения из ksAPITypeEnum,
+objNewType " тип объекта в интерфейсе, к которому преобразуется исходный объект 
+
+(может быть задан 0).
+
+Возвращаемое значение:
+
+" указатель на интерфейс объекта в API заданного типа.
+
+Описание:
+Метод позволяет получить интерфейс объекта заданного типа objNewType в API задан"
+ного типа apiNewType по присланному объекту obj.
+Примечание:
+
+1.  Исходным объектом может быть интерфейс 3D COM, API5 Auto или API7.
+2.  Если новый тип API совпадает с API присланного объекта, возвращается присланный
+
+объект.
+3.  Если задан новый тип API как неопределенный (0), возвращается присланный объект.
+4.  Если задан новый тип API значением вне допустимого множества значений, возвраща"
+
+ется NULL.
+5.  Если задан новый тип объекта значением вне допустимого множества значений, возвра"
+
+щается NULL.
+6.  Если задан новый тип объекта неопределенным значением (0), возвращается интерфейс
+
+базового объекта, совпадающий по типу с требуемым объектом, либо требуемый объект
+может быть получен от базового через QueryInterface; рекомендуется явно указывать
+требуемый тип объекта.
+4666
+
+
+
+ksTransferReference  Преобразовать объект по 
+reference из API5 в интерфейсный объект API7
+Аналог данного метода при использовании Automation –
+KompasObject::TransferReference.
+Синтаксис:
+LPUNKNOWN ksTransferReference( reference obj, reference doc );
+Входные параметры:
+
+obj " указатель на объект в API5,
+doc " указатель на документ, где находится объект.
+
+Возвращаемое значение:
+
+" указатель на интерфейс объекта в API7 (Тип данных:LPUNKNOWN).
+
+Описание:
+Функция позволяет получить интерфейс объекта в API7 по присланному указателю obj в
+API5.
+Примечание:
+
+1.  Функция реализована для документов и объектов вида графического документа. В
+остальных случаях возвращается NULL.
+
+2.  Если obj " указатель на документ, параметр doc игнорируется.
+3.  Если параметр doc = 0, берется текущий документ.
+
+PumpWaitingMessages  Обработать список 
+сообщений
+Пример...
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksPumpWaitingMessages.
+Синтаксис:
+void PumpWaitingMessages();
+Описание:
+Обработать все сообщения, имеющиеся в очереди сообщений задачи.
+
+Функции работы с калькулятором
+Функции данного раздела позволяют использовать калькулятор системы КОМПАС.
+
+ksCalculate  Подсчитать значение выражения
+Пример...
+4667
+
+
+
+Справка системы КОМПАС...
+KOMPAS.chm::/490_Glava57_Zadanie_zavisimoste.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksCalculate.
+Синтаксис:
+int ksCalculate (char *s, double * rez);
+Входные параметры:
+
+s " строка с выражением.
+
+Выходные параметры:
+
+rez " результат расчета.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+1.  Поддерживаются функции и переменные:
+
+SIN, COS, TAN, ATAN " тригонометрические функции (аргумент в радианах),
+SIND, COSD, TAND, ATAND " тригонометрические функции (аргумент в градусах),
+SQRT, EXP, LN, ABS " корень квадратный, экспонента, натуральный логарифм, абсолют"
+ное значение.
+
+2.  Наименования функций можно писать в любом регистре (например, как COS, так и cos)
+3.  Если s = "A1 = 100 ", будет заведена переменная A1 c значением 100.
+4.  В именах переменных различается регистр букв (например, А1 и а1 " разные перемен"
+
+ные).
+5.  Количество переменных не ограничено.
+6.  При использовании Unicode следует использовать функцию ksCalculateW.
+
+ksCalculateW  Подсчитать значение выражения 
+(Unicode)
+Справка системы КОМПАС...
+KOMPAS.chm::/490_Glava57_Zadanie_zavisimoste.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksCalculate.
+Синтаксис:
+int ksCalculateW (LPWSTR s, double * rez);
+4668
+
+
+
+Входные параметры:
+
+s " строка с выражением,
+
+Выходные параметры:
+
+rez " результат расчета.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Поддерживаются функции и переменные:
+SIN, COS, TAN, ATAN " тригонометрические функции (аргумент в радианах),
+SIND, COSD, TAND, ATAND " тригонометрические функции (аргумент в градусах),
+SQRT, EXP, LN, ABS " корень квадратный, экспонента, натуральный логарифм, абсолют"
+ное значение.
+
+2.  Наименования функций можно писать в любом регистре (например, как COS, так и cos)
+3.  Если s = "A1 = 100 ", будет заведена переменная A1 c значением 100.
+4.  В именах переменных различается регистр букв (например, А1 и а1 " разные перемен"
+
+ные).
+5.  Количество переменных не ограничено.
+6.  При использовании ANSI следует использовать функцию ksCalculate.
+
+ksCalculateReset  Очистить массив переменных 
+калькулятора
+Пример..
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksCalculateReset.
+Синтаксис:
+int ksCalculateReset();
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Функции экспорта документов
+Функции данного раздела обеспечивают сохранение КОМПАС"документов в растровых 
+форматах.
+4669
+
+
+
+ksSaveAsToRasterFormat  Сохранить документ в 
+растровом формате
+Справка системы КОМПАС...
+KOMPAS.chm::/645_79_3_Sokhranenie_v_rastrovy.htm
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::SaveAsToRasterFormat.
+Синтаксис:
+int ksSaveAsToRasterFormat (reference sheet,
+char * fileName,
+RasterFormatParam * par);
+Входные параметры:
+
+sheet " указатель на документ,
+fileName " полное имя файла документа,
+par " структура параметров записи в растровый формат.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечания:
+
+1.  Метод позволяет сохранить присланный документ в растровом формате (BMP, GIF, JPG,
+PNG, TIF, TGA, PCX, EMF и WMF) с заданными свойствами. 
+Cохранение в WMF формат не поддерживается. При сохранении в WMF формате файл
+записывается в формате EMF.
+
+2.  Метод используется для чертежей, фрагментов, спецификаций, деталей и сборок.
+3.  Для трехмерной модели предварительно нужно получить reference, используя функцию
+
+ksGetReferenceFrom3dDocument для COM или свойство ksDocument3D::reference для
+Automation. 
+
+4.  Если параметр sheet=0, сохраняется текущий документ.
+5.  При использовании Unicode следует использовать функцию ksSaveAsToRasterFormatW.
+
+ksSaveAsToRasterFormatW  Сохранить документ в 
+растровом формате (Unicode)
+Справка системы КОМПАС...
+KOMPAS.chm::/645_79_3_Sokhranenie_v_rastrovy.htm
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::SaveAsToRasterFormat.
+Синтаксис:
+int LIB_FUNC ksSaveAsToRasterFormatW (reference sheet,
+4670
+
+
+
+LPWSTR fileName,
+RasterFormatParamW * par);
+Входные параметры:
+
+sheet " указатель на документ,
+fileName " полное имя файла документа,
+par " структура параметров записи в растровый формат.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечания:
+
+1.  Метод позволяет сохранить присланный документ в растровом формате (BMP, GIF, JPG,
+PNG, TIF, TGA, PCX, EMF и WMF) с заданными свойствами. Cохранение в WMF формат не
+поддерживается. При сохранении в WMF формате файл записывается в формате EMF.
+
+2.  Метод используется для чертежей, фрагментов, спецификаций, деталей и сборок.
+3.  Для трехмерной модели предварительно нужно получить reference, используя функцию
+
+ksGetReferenceFrom3dDocument для COM или свойство ksDocument3D::reference для
+Automation. 
+
+4.  Если параметр sheet=0, сохраняется текущий документ.
+5.  При использовании ANSI следует использовать функцию ksSaveAsToRasterFormat.
+
+ksSaveAsToUncompressedRasterFormat  Сохранить 
+документ в растровом формате без сжатия
+Справка системы КОМПАС...
+KOMPAS.chm::/645_79_3_Sokhranenie_v_rastrovy.htm
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::SaveAsToUncompressedRasterFormat.
+Синтаксис:
+int ksSaveAsToUncompressedRasterFormat (reference pDoc,
+char * fileName,
+RasterFormatParam * par);
+Входные параметры:
+
+pDoc " указатель на документ,
+fileName " имя файла документа, должно быть задано полное имя файла,
+par " структура параметров для конвертации в растровый формат.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+4671
+
+
+
+0 " в случае неудачи.
+Примечание:
+
+1.  Функция позволяет сохранить документ в растровом формате без сжатия, с заданными
+свойствами: цветом, форматом (BMP, GIF, JPG, PNG, TIF, TGA, PCX, EMF и WMF) и т.п.
+Подробнее см. описание RasterFormatParam.
+Сохранение в WMF формат не поддерживается. При сохранении в WMF формате файл
+записывается в формате EMF.
+
+2.  Функция используется для графических документов (чертеж, фрагмент), документов
+деталей и сборок, для спецификаций и текстовых документов. Для документов деталей
+и сборок предварительно нужно получить reference, используя функцию
+ksGetReferenceFrom3dDocument для COM или свойство ksDocument3D::reference для
+Automation.
+
+3.  При использовании Unicode следует использовать функцию
+ksSaveAsToUncompressedRasterFormatW.
+
+ksSaveAsToUncompressedRasterFormatW  Сохранить 
+документ в растровом формате без сжатия (Unicode)
+Справка системы КОМПАС...
+KOMPAS.chm::/645_79_3_Sokhranenie_v_rastrovy.htm
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::SaveAsToUncompressedRasterFormat.
+Синтаксис:
+int LIB_FUNC ksSaveAsToUncompressedRasterFormatW (reference pDoc,
+char * fileName,
+RasterFormatParamW * par);
+Входные параметры:
+
+pDoc " указатель на документ,
+fileName " имя файла документа, должно быть задано полное имя файла,
+par " структура параметров для конвертации в растровый формат.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Функция позволяет сохранить документ в растровом формате без сжатия, с заданными
+свойствами: цветом, форматом (BMP, GIF, JPG, PNG, TIF, TGA, PCX, EMF и WMF) и т.п.
+Подробнее см. описание RasterFormatParamW.
+4672
+
+
+
+Сохранение в WMF формат не поддерживается. При сохранении в WMF формате файл
+записывается в формате EMF.
+
+2.  Функция используется для графических документов (чертеж, фрагмент), документов
+деталей и сборок, для спецификаций и текстовых документов. Для документов деталей
+и сборок предварительно нужно получить reference, используя функцию
+ksGetReferenceFrom3dDocument для COM или свойство ksDocument3D::reference для
+Automation.
+
+3.  При использовании ANSI следует использовать функцию
+ksSaveAsToUncompressedRasterFormat.
+
+Функции работы с прикладной библиотекой
+Функции работы с меню
+CommandWindow  Запрос к системе на создание 
+окна с деревом команд
+Пример...
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksCommandWindow.
+Синтаксис:
+int CommandWindow(RequestInfo *info);
+Входные параметры:
+
+Info " указатель на структуру параметров запроса к системе RequestInfo,
+Возвращаемое значение:
+
+" идентификатор выбранной команды, определенный " в случае успешного завершения,
+в файле ресурсов,
+" порядковый номер в строке команд.
+"1 " если команда не выбрана.
+
+Описание.
+Функция создает окно с деревом команд, определяемых строкой команд в структуре info
+или идентификатором меню из файла ресурсов. Команды в строке разделены пробелом
+или восклицательным знаком. Функции обратной связи управление передается после
+выбора команды или отказа.
+В качестве функции обратной связи передается указатель на функцию типа
+CommandWindowCallBack. Если в качестве функции обратной связи задан NULL, то
+управление из CommandWindow возвращается немедленно, как только пользователь
+выберет команду в дереве команд. При этом возвращается идентификатор выбранной
+команды. В противном случае управление вернется, если пользователь закроет окно или
+функция обратной связи вернет FALSE. При этом возвращается "1.
+4673
+
+
+
+Если в качестве commands задана строка в формате Компас 4.X, например "!Команда_1
+!Команда_2 ...", то идентификатором команды является ее позиция в строке (начиная с
+1), то есть идентификатором команды "Команда_1" является 1. Если в качестве
+commands задан идентификатор меню, то идентификатором команды является иденти"
+фикатор соответствующего пункта меню.
+Функция возвращает идентификатор выбранной команды, определенный в файле ре"
+сурсов, или порядковый номер в строке команд.
+Примечание.
+При использовании Unicode следует использовать функцию CommandWindowW.
+
+CommandWindowW  Запрос к системе на создание 
+окна с деревом команд (Unicode)
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksCommandWindow.
+Синтаксис:
+int LIB_FUNC CommandWindow(RequestInfoW *info);
+Входные параметры:
+
+Info "указатель на структуру параметров запроса к системе RequestInfo,
+
+Возвращаемое значение:
+
+" идентификатор выбранной команды, определенный " в случае успешного 
+в файле ресурсов, завершения,
+" порядковый номер в строке команд.
+"1 " если команда не 
+
+выбрана.
+Описание.
+Функция создает окно с деревом команд, определяемых строкой команд в структуре info
+или идентификатором меню из файла ресурсов. Команды в строке разделены пробелом
+или восклицательным знаком. Функции обратной связи управление передается после
+выбора команды или отказа.
+В качестве функции обратной связи передается указатель на функцию типа
+CommandWindowCallBack. Если в качестве функции обратной связи задан NULL, то
+управление из CommandWindow возвращается немедленно, как только пользователь
+выберет команду в дереве команд. При этом возвращается идентификатор выбранной
+команды. В противном случае управление вернется, если пользователь закроет окно,
+или функция обратной связи вернет FALSE. При этом возвращается "1.
+Если в качестве commands задана строка в формате Компас 4.X, например "!Команда_1
+!Команда_2 ...", то идентификатором команды является ее позиция в строке (начиная с
+1), то есть идентификатором команды "Команда_1" является 1. Если в качестве
+commands задан идентификатор меню, то идентификатором команды является иденти"
+фикатор соответствующего пункта меню.
+4674
+
+
+
+ 
+
+Функция возвращает идентификатор выбранной команды, определенный в файле ре"
+сурсов, или порядковый номер в строке команд.
+Примечание.
+При использовании ANSI следует использовать функцию CommandWindow.
+
+Функции ввода параметров
+Функции данного раздела обеспечивает ввод параметров (целых, действительных, стро"
+ковых), указание точек и вариантов действия. Функции указания точек в КОМПАС"ГРА"
+ФИК реализованы таким образом, что вместо ожидаемой точки пользователь может за"
+дать другой вариант построения объекта. Список вариантов указывается в строке
+приглашения.
+
+Cursor  Указать положение объекта или определить 
+вариант действия
+Пример...
+Аналог данной функции при использовании Automation " метод ksDocument2D::ksCursor.
+Синтаксис:
+int Cursor (RequestInfo *info, double *x, double *y, void * phantom);
+Входные параметры:
+
+Info " указатель на структуру параметров запроса к системе,
+x,y " координаты введенной точки,
+Phantom " указатель на структуру управления фантомом, определяющую тип движения
+
+курсора.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Возможные варианты (команды) задаются в строке commands структуры info и разделя"
+ются  восклицательными знаками или пробелами. Если вместо строки в качестве пара"
+метра передать идентификатор меню из файла ресурсов, то соответствующее меню бу"
+дет выдано в окне приглашений. Если в качестве адреса _callBack передается NULL, то
+действие функции прекращается после первого шага.
+
+GetValidator  Получить валидатор
+Пример...
+Синтаксис:
+void* GetValidator( void *min, void *max, unsigned char type);
+Входные параметры:
+4675
+
+
+
+min, max " границы интервала,
+type " тип данных.
+
+Возвращаемое значение:
+
+указатель на Tvalidator " в случае удачного завершения,
+0 " в случае неудачи или если курсор находится не на поле чертежа.
+
+Примечание:
+Функция работает только в OWL.
+
+ksExecDialPredefinedText  Получить 
+предопределенный текст из файла текстовых 
+шаблонов
+Справка системы КОМПАС...
+KOMPAS.chm::/538_65_9_6_Tekstovye_shablony.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksExecDialPredefinedText.
+Синтаксис:
+int ksExecDialPredefinedText (void *HWindow, char * str, int sizeStr);
+Входные параметры:
+
+HWindow " несущее окно,
+sizeStr " размер строки str.
+
+Выходной параметр:
+
+str " строка"буфер, в которую будет помещен текст.
+
+Возвращаемое значение:
+
+1 " в случае успеха,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Все строки складываются в одну строку str с переводом строки "\n".
+2.  При использовании Unicode следует использовать функцию ksExecDialPredefinedTextW.
+4676
+
+
+
+ksExecDialPredefinedTextW  Получить 
+предопределенный текст из файла текстовых 
+шаблонов (Unicode)
+Справка системы КОМПАС...
+KOMPAS.chm::/538_65_9_6_Tekstovye_shablony.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksExecDialPredefinedText.
+Синтаксис:
+int LIB_FUNC ksExecDialPredefinedTextW (void *HWindow, LPWSTR str, int sizeStr);
+Входные параметры:
+
+HWindow " несущее окно,
+sizeStr " размер строки str.
+
+Выходной параметр:
+
+str " строка"буфер, в которую будет помещен текст.
+
+Возвращаемое значение:
+
+1 " в случае успеха,
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Все строки складываются в одну строку str с переводом строки "\n".
+2.  При использовании ANSI следует использовать функцию ksExecDialPredefinedText.
+
+ksExecDialPredefinedTextEx  Получить 
+предопределенный текст из файла текстовых 
+шаблонов
+Справка системы КОМПАС...
+KOMPAS.chm::/538_65_9_6_Tekstovye_shablony.htm
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksExecDialPredefinedText.
+Синтаксис:
+reference ksExecDialPredefinedTextEx (void *HWindow);
+Входные параметры:
+
+HWindow " дескриптор окна.
+
+Возвращаемое значение:
+4677
+
+
+
+указатель на интерфейс ksDynamicArray массива строк, тип массива " " в случае успеха,
+TEXT_LINE_ARR.
+NULL " в случае 
+
+неудачи.
+
+ksExecDialSymbol Вызов диалога "Вставка символа"
+Синтаксис:
+int LIB_FUNC ksExecDialSymbol( void *HWindow, int * symb, LPSTR font, unsigned int len );
+Входные параметры:
+
+HWindow " дескриптор окна,
+symb " номер символа на котором будет стоять курсор,
+font " имя шрифта в диалоге,
+len " размер буфера для имени шрифта.
+
+Выходные параметры:
+
+symb " номер выбранного символа,
+font " имя выбранного шрифта.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+"1 " в случае неудачи или закрытии диалога по отмене.
+
+ksExecDialSymbolW  Вызов диалога "Вставка 
+символа" (Unicode)
+Синтаксис:
+int LIB_FUNC ksExecDialSymbol( void *HWindow, int * symb, LPSTR font, unsigned int len );
+Входные параметры:
+
+HWindow " дескриптор окна,
+symb " номер символа на котором будет стоять курсор,
+font " имя шрифта в диалоге,
+len " размер буфера для имени шрифта.
+
+Выходные параметры:
+
+symb " номер выбранного символа,
+font " имя выбранного шрифта.
+
+Возвращаемое значение:
+4678
+
+
+
+1 " в случае удачного завершения,
+"1 " в случае неудачи или закрытия диалога по отмене.
+
+См. также функцию ksGetSnapInfo " Получить текущую информацию о привязках.
+
+ksExecDialSpecialSymbol  Вызов диалога "Вставка 
+спецзнака"
+Синтаксис:
+int LIB_FUNC ksExecDialSpecialSymbol( void * HWindow );
+Входные параметры:
+
+HWindow " дескриптор окна.
+
+Возвращаемое значение:
+
+Номер спецзнака " в случае удачного завершения,
+"1 " в случае неудачи или закрытии диалога по отмене.
+
+ksGetCursorPosition  Получить координаты курсора
+Пример...
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksGetCursorPosition
+Синтаксис:
+int ksGetCursorPosition (double *x, 
+double *y,
+int type);
+Входные параметры:
+
+x,y " координаты курсора в миллиметрах,
+type " признак способа определения координат:
+
+0 " без учета привязок,
+1 " с учетом привязок.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи или если курсор находится не на поле чертежа.
+4679
+
+
+
+ksGetCursorLimit  Получить радиус окружности, 
+вписанной в "ловушку" курсора
+Пример...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/SET_SNAP_CURSOR_DIALOG.htm
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksGetCursorLimit.
+Синтаксис:
+double ksGetCursorLimit();
+Возвращаемое значение:
+
+" радиус окружности, вписанной в "ловушку" курсора.
+
+ksIsCursorOrPlacementDocument  Проверить, 
+запущен ли в текущем графическом документе 
+процесс Cursor или Placement
+Пример...
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksIsCursorOrPlacementDocument.
+Синтаксис:
+int ksIsCursorOrPlacementDocument ();
+Возвращаемое значение:
+
+1 " процесс запущен,
+0 " процесс не запущен.
+
+ksMaterialDlg  Получить материал и его плотность из 
+справочника материалов
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksMaterialDlg.
+Синтаксис:
+int ksMaterialDlg(void *HWindow,
+char * material, 
+int sizeStr, 
+double* plt, 
+double* kod_size, 
+char *kod_tip);
+Входные параметры:
+4680
+
+
+
+Hwindow " дескриптор окна,
+sizeStr " размер строки.
+
+Выходные параметры:
+
+material " строка"буфер, в которую будет помещено обозначение выбранного 
+материала,
+
+plt " плотность материала (г/куб.мм),
+kod_size " четыре элемента:
+
+kod_size[0] " код вида типоразмера:
+1 " толщина,
+2 " диаметр,
+0 " вид не определен,
+kod_size[1] " значение размера вида толщина, диаметр, диаметр вписанной 
+окружности, значение А типоразмеров вида АхВ или АхВхС,
+kod_size[2] " значение В типоразмеров вида АхВ или АхВхС,
+kod_size[3] " значение С типоразмеров вида АхВхС,
+
+kod_tip " строка кодов типов сортаментов для отображения, через запятую; если 0 
+" отображается все.
+
+Возвращаемое значение:
+
+"1 " справочник материалов не подключился,
+0 " при выходе из диалога справочника материалов по отмене,
+1 " в случае удачного завершения.
+
+Примечание:
+Функция устарела и не используется. Предназначалась для работы со справочником ма"
+териалов, который в настоящее время не входит в комплект поставки.
+
+ksPhantomShowHide  Включить или выключить 
+отображение фантома на экране
+Пример...
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksPhantomShowHide.
+Синтаксис:
+int ksPhantomShowHide (unsigned char type);
+Входные параметры:
+
+type " признак отрисовки фантома:
+1 " включить,
+0 " выключить.
+
+Возвращаемое значение:
+4681
+
+
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Placement  Задать точку и угол
+Пример...
+Аналог данной функции при использовании Automation " метод
+ksDocument2D::ksPlacement.
+Синтаксис:
+int Placement (RequestInfo *info, double *x, double *y, double *angle, void *phantom);
+Входные параметры:
+
+info " структуру параметров запроса к системе,
+x,y " координаты введенной точки,
+phantom " указатель на структуру управления фантомом, определяющую тип движения 
+
+курсора,
+angle " введенный угол.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Возможные варианты (команды) задаются в строке commands структуры info и разделя"
+ются восклицательными знаками или пробелами. Если вместо строки в качестве параме"
+тра передать идентификатор меню из файла ресурсов, то соответствующее меню будет
+выдано в окне приглашений. Если в качестве адреса _callBack передается NULL, то дей"
+ствие функции прекращается после первого шага.
+
+ReadDouble  Ввести вещественное число с 
+контролем попадания значения в заданный 
+интервал
+Пример...
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksReadDouble.
+Синтаксис:
+int ReadDouble (char *smess, double def, double min, double max, double *value);
+Входные параметры:
+
+smess " строка приглашения,
+def " значение, предлагаемое по умолчанию,
+min,max " интервал возможных значений,
+4682
+
+
+
+value " результат ввода.
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание.
+При использовании Unicode следует использовать функцию ReadDoubleW.
+
+ReadDoubleW  Ввести вещественное число с 
+контролем попадания значения в заданный 
+интервал (Unicode)
+Аналог данной функции при использовании Automation " метод
+KompasObject::ksReadDouble.
+Синтаксис:
+int LIB_FUNC ReadDoubleW (LPWSTR smess, double def, double min, double max, double
+*value);
+Входные параметры:
+
+smess " строка приглашения,
+def " значение, предлагаемое по умолчанию,
+min,max " интервал возможных значений,
+value " результат ввода.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание.
+При использовании ANSI следует использовать функцию ReadDouble.
+
+ReadInt  Ввести целое число с контролем попадания 
+значения в заданный интервал
+Пример...
+Аналог данной функции при использовании Automation " метод KompasObject::ksReadInt.
+Синтаксис:
+int ReadInt (char *smess, int def, int min, int max, int *value);
+Входные параметры:
+
+smess " строка приглашения,
+def " значение, предлагаемое по умолчанию,
+min,max " интервал возможных значений,
+4683
+
+
+
+value " результат ввода.
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание.
+При использовании Unicode следует использовать функцию ReadIntW.
+
+ReadIntW  Ввести целое число с контролем 
+попадания значения в заданный интервал (Unicode)
+Аналог данной функции при использовании Automation " метод KompasObject::ksReadInt.
+Синтаксис:
+int LIB_FUNC ReadIntW (LPWSTR smess, int def, int min, int max, int *value);
+Входные параметры:
+
+smess " строка приглашения,
+def " значение, предлагаемое по умолчанию,
+min,max " интервал возможных значений,
+value " результат ввода.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание.
+При использовании ANSI следует использовать функцию ReadInt.
+
+ReadLong  Ввести длинное целое число с контролем 
+попадания значения в заданный интервал
+Пример...
+Синтаксис:
+int ReadLong (char *smess, long def, long min, long max, long *value);
+Входные параметры:
+
+smess " строка приглашения,
+def " предлагаемое значение по умолчанию,
+min,max " интервал возможных значений,
+R " результат ввода.
+
+Возвращаемое значение:
+4684
+
+
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+Примечание.
+При использовании Unicode следует использовать функцию ReadLongW.
+
+ReadLongW  Ввести длинное целое число с 
+контролем попадания значения в заданный 
+интервал (Unicode)
+Синтаксис:
+int LIB_FUNC ReadLongW (LPWSTR smess, long def, long min, long max, long *value);
+Входные параметры:

@@ -1,0 +1,2532 @@
+  }
+  else
+   Error("Это не контур");
+ }
+
+ksTanCurvCurv  пример использования 
+double x = 0, y = 0;
+  if ( Cursor( NULL, &x, &y, NULL) )
+  {
+   reference obj1 = FindObj( x, y, ::ksGetCursorLimit() );
+   if ( obj1 )
+   {
+5003
+
+
+
+    if ( Cursor( NULL, &x, &y, NULL) )
+    {
+     reference obj2 = FindObj( x, y, ::ksGetCursorLimit() );
+     if ( obj2 && obj2 != obj1 )
+     {
+      reference pointArr1 = CreateArray( POINT_ARR, NULL );
+      reference pointArr2 = CreateArray( POINT_ARR, NULL );
+      if ( pointArr1 && pointArr2 )
+      {
+       int res = ksTanCurvCurv( obj1, obj2, pointArr1, pointArr2 );
+       if ( res == 1 )
+       {
+        int count = GetArrayCount( pointArr1 );
+        for ( int i = 0; i < count; i )
+        {
+         MathPointParam point1;
+         MathPointParam point2;
+         GetArrayItem( pointArr1, i, &point1, sizeof(MathPointParam) );
+         GetArrayItem( pointArr2, i, &point2, sizeof(MathPointParam) );
+         LineSeg( point1.x, point1.y, point2.x, point2.y, 1 );
+        }
+       }
+      }
+      DeleteArray( pointArr1 );
+      DeleteArray( pointArr2 );
+     }
+    }
+   }
+  }
+
+GetViewNumber, SheetToView, ViewToSheet пример использования 
+//перенесем отрезки из текущего вида в вид номер 2
+//получим номер текущего вида
+int currentViewNumb = GetViewNumber(0);
+reference obj;
+
+//в текущем документе и виде создадим итератор для хождения по отрезкам
+5004
+
+
+
+reference itObj = CreateIterator (LINESEG_OBJ,//тип поиска объекта
+0);//указатель на объект
+//(для движения по группе и внутри макро)
+if (itObj)
+{
+if (ExistObj (obj = MoveIterator (itObj, 'F')))
+{
+do
+{
+LineSegParam par;
+//берем параметры отрезка в системе координат текущего вида
+GetObjParam (obj, &par, sizeof (LineSegParam), ALLPARAM);
+//переводим координаты отрезка из вида в лист
+ViewToSheet (par.x1, par.y1, &par.x1, &par.y1);
+ViewToSheet(par.x2, par.y2, &par.x2, &par.y2);
+
+//открываем  вид 2
+OpenView (2);
+
+//переводим координаты отрезка из  листа в вид 2
+SheetToView (par.x1, par.y1, &par.x1, &par.y1);
+SheetToView (par.x2, par.y2, &par.x2, &par.y2);
+
+//создаем отрезок в виде 2
+LineSeg (par.x1, par.y1, par.x2, par.y2, par.style);
+
+//возвращаемся назад в вид currentViewNumb
+OpenView (currentViewNumb);
+
+//удаляем отрезок в текущем виде
+DeleteObj (obj);
+}
+while (ExistObj (obj = MoveIterator (itObj, 'N')));
+}
+}
+
+5005
+
+
+
+IntersectLinLin  пример использования
+
+void IntersectLinLin_Example (void) {
+
+double x, y; 
+int k;
+
+Line ( 20, 20,  45); 
+Line ( 80, 20, 120); 
+
+IntersectLinLine (20, 20, 45, 80, 20, 120, &k, &x, &y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) Point (x, y, 1); /* точка пересечения */
+
+}; /* IntersectLinLin_Example */
+
+IntersectLinSLine  пример использования 
+void IntersectLinSLine_Example (void) {
+
+double x, y; 
+int k;
+
+LineSeg ( 20, 20,  100, 100, 1); 
+Line ( 80, 20, 120); 
+
+IntersectLinSLine (20, 20, 100, 100, 80, 20, 120, &k, &x, &y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) Point (x, y, 1); /* точка пересечения */
+5006
+
+
+
+};
+
+IntersectCirLin  пример использования 
+void IntersectCirLin_Example (void) {
+
+double x, y; 
+int k;
+
+Circle ( 60, 60, 30, 1); 
+Line ( 20, 20, 45); 
+
+IntersectCirLine (60, 60, 30, 20, 20, 45, &k, &x, &y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) Point (x, y, 1); /* точка пересечения */
+
+};
+
+IntersectArcLine  пример использования 
+void IntersectArcLin_Example (void) {
+
+double x[2], y[2]; 
+int k, i;
+
+Arc ( 60, 60,  30, 0, 90, 1, 1); 
+Line ( 20, 20, 45); 
+
+IntersectArcLin (60, 60, 30, 0, 90, 1, 20, 20, 45, &k, x, y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) 
+for (I=0; i<k; I) Point (x[i], y[i], 1); /* точки пересечения */
+};
+5007
+
+
+
+IntersectLinSLinS  пример использования 
+
+void IntersectLinSLinS_Example (void) {
+
+double x, y; 
+int k;
+
+LineSeg ( 20, 20,  100, 100, 1); 
+LineSeg ( 80, 20,  0, 50, 1); 
+
+IntersectLinSLinS (20, 20, 100, 100, 80, 20, 0, 50, &k, &x, &y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) Point (x, y, 1); /* точка пересечения */
+
+};
+
+IntersectLinSCir  пример использования 
+
+void IntersectLinSCir_Example (void) {
+
+double x, y; 
+int k;
+
+Circle ( 60, 60,  30, 1); 
+LineSeg ( 20, 20,  100, 100, 1); 
+
+IntersectLinSCir (20, 20, 100, 100, 60, 60, 30, &k, &x, &y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) Point (x, y, 1); /* точка пересечения */
+5008
+
+
+
+};
+
+IntersectLinSArc  пример использования 
+void IntersectLinSArc_Example (void) {
+
+double x, y; 
+int k;
+
+Arc ( 60, 60, 30, 0, 90, 1, 1); 
+LineSeg ( 20, 20, 100, 100, 1); 
+
+IntersectArcLin (20, 20, 100, 100, 60, 60,  30, 0, 90, 1, &k, x, y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) Point (x, y, 1); /* точка пересечения */
+
+};
+
+IntersectCirCir  пример использования 
+void IntersectCirCir_Example (void) {
+
+double x[2], y[2]; 
+int k, i;
+
+Circle  ( 60, 60,   30,  1); 
+Circle  ( 75, 60,   30,  1); 
+
+IntersectCirCir (60, 60, 30, 75, 60, 30, &k, x, y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) 
+5009
+
+
+
+for (I=0; i<k; I) Point (x[i], y[i], 1); /* точки пересечения */
+
+};
+
+IntersectArcArc  пример использования 
+void IntersectArcArc_Example (void) {
+
+double x[2], y[2]; 
+int k, i;
+
+Arc  ( 60, 60,   30,  "90, 90,  1, 1); 
+Arc  ( 75, 60,   30,  "90, 90, "1, 1); 
+
+IntersectArcArc (60, 60, 30, "90, 90, 1, 75, 60, 30, "90, 90, "1, &k, x, y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) 
+for (I=0; i<k; I) Point (x[i], y[i], 1); /* точки пересечения */
+
+};
+
+IntersectCirArc  пример использования 
+void IntersectCirArc_Example (void) {
+
+double x[2], y[2]; 
+int k, i;
+
+Circle ( 60, 60,   30,  1); 
+Arc  ( 75, 60,   30,  "90, 90, "1, 1); 
+
+IntersectCirArc (60, 60, 30, 75, 60, 30, "90, 90, "1, &k, x, y);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+5010
+
+
+
+  ::Message(buf);
+if (k) 
+for (I=0; i<k; I) Point (x[i], y[i], 1); /* точки пересечения */
+
+};
+
+IntersectCurvCurv  пример использования 
+void IntersectCurvCurv_Example (void) {
+
+double x[8], y[8]; 
+int k, I;
+reference p1, p2;
+
+p1 = Circle ( 60, 60,   30,  1); 
+
+p2 = Bezier ( 0, 2);
+Point ( 20, 20, 0);
+Point ( 40, 50, 0);
+Point ( 50, 30, 0);
+Point ( 70, 90, 0);
+Point (100, 20, 0);
+EndObj();
+
+IntersectCurvCurv (p1, p2, &k, x, y, 99);
+
+  char buf[128];
+  sprintf(buf, "Количество пересечений = %i", k);
+  ::Message(buf);
+if (k) 
+for (I=0; i<k; I) Point (x[i], y[i], 1); /* точки пересечения */
+
+};
+
+ksIntersectCurvCurv  пример использования 
+reference line = ::LineSeg("100, "100, 100, 100, 1); // отрезок
+reference cir = ::Circle (20,  20,  35,    1); // окружность
+5011
+
+
+
+reference array = ::CreateArray(POINT_ARR, 0);    // создать пустой массив точек пересече"
+ния
+if (::ksIntersectCurvCurv(line, cir, array) > 0) {  // найти точки пересечения кривых
+ int count = ::GetArrayCount(array);        // количество элементов в массиве
+  char buf[128];
+  ::sprintf(buf, "кол"во элементов = %i", ::GetArrayCount(arr));
+  ::Message(buf);
+  MathPointParam par;
+  for (int i = 0; i < count; i) {
+ if (::GetArrayItem(array, i, &par, sizeof(MathPointParam))) {
+  ::sprintf(buf, "координаты %i"й точки : %g ; %g", i, par.x, par.y);
+  ::Message(buf);
+  }
+ }
+}
+
+Perpendicular  пример использования 
+{
+double xp, yp;
+Perpendicular ("10, 10, "50, "50,
+               50, 50, &xp, &yp);
+}
+
+TanLinePointCircle пример использования 
+void TanLinePointCircle_Example (void) {
+
+double x[2], y[2]; 
+int k, i;
+
+Circle  ( 60, 60,   30,  1); 
+Point   ( 20, 50,   1); 
+
+TanLinePointCircle (20, 50, 60, 60, 30, &k, x, y);
+
+gprintf(Количество касаний = %2d, k);
+5012
+
+
+
+if (k) 
+for (I=0; i<k; I) {
+LineSeg (20, 50, x[i], y[i], 1); /* линия касания */
+Point (x[i], y[i], 1); /* точка касания */
+}
+
+}; /* TanLinePointCircle_Example */
+
+TanLineAngCircle  пример использования 
+void TanLineAngCircle_Example (void) {
+
+double x[2], y[2]; 
+int k, i;
+
+Circle  ( 60, 60,   30,  1); 
+
+TanLineAngCircle (60, 60, 30, 45, &k, x, y);
+
+gprintf(Количество касаний = %2d, k);
+
+}; /* TanLineAngCircle_Example */
+
+TanCircleCircle  пример использования 
+void TanCircleCircle_Example (void)
+{
+TAN Tang[4]; 
+int k, i;
+
+Circle(60,60,30,1); 
+Circle (0, 0, 50, 1); 
+
+TanCircleCircle (60, 60, 30, 0, 0, 50, &tang[]);
+
+gprintf(Количество касаний = %2d, k);
+if (k) 
+for (I=0; i<k; I)
+5013
+
+
+
+{
+LineSeg (tang.x1[i], tang.y1[i], tang.x2[i], tang.y2[i], 1); /* линия касания */
+Point (tang.x1[i], tang.y1[i], 1); /* точка касания */
+}
+};
+
+CouplingLineLine  пример использования 
+{
+CON con[4];
+
+Line(0, 0, 45);
+Line(50, 50, 175);
+
+CouplingLineLine (0, 0, 45, 50, 50, 175, 30, &kp, &con);
+}
+
+ksCouplingLineLine  пример использования 
+{
+CON con[4];
+
+Line(0, 0, 45);
+Line(50, 50, 175);
+
+ksCouplingLineLine (0, 0, 45, 50, 50, 175, 30, &kp, &con);
+}
+
+ksCouplingCircleCircle  пример использования 
+//поиск окружностей сопряжения для двух окружностей
+   double rad = 20;
+   int kp;
+   CON con[8];
+   Circle(100, 100, 100, 1);
+   Circle(100, 150, 100, 1);
+   ksCouplingCircleCircle(100, 100, 100, //параметры первой окружности
+               100, 150, 100, //параметры второй окружности
+               rad, &kp, con);
+5014
+
+
+
+   //отрисуем окружности и точки сопряжения
+   for (short i = 0 ; i<8; i) {
+    Circle(con[i].xc, con[i].yc, rad,2);
+    Point(con[i].x1,con[i].y1,i);
+    Point(con[i].x2,con[i].y2,i);
+   }
+
+ksCouplingLineCircle  пример использования 
+//поиск окружностей сопряжения для прямой и окружности
+   double rad = 20;
+   int kp;
+   CON con[8];
+   Circle(100, 100, 100, 1);
+   Line(100, 100, 45);
+   ksCouplingLineCircle(100, 100, 100, //параметры окружности
+              100, 100, 45,  //параметры линии
+              rad, &kp, con);
+   //отрисуем окружности и точки сопряжения
+   for (short i = 0 ; i<8; i) {
+    Circle(con[i].xc, con[i].yc, rad,2);
+    Point(con[i].x1,con[i].y1,i);
+    Point(con[i].x2,con[i].y2,i);
+   }
+
+ksTanLinePointCurve  пример использования 
+//поиск окружностей сопряжения для прямой и окружности
+ RequestInfo info;
+ ::memset(&info, 0, sizeof(info));
+ info.commands = "Укажите объект";
+ double x, y;
+ int j;
+ reference pArray = ::CreateArray(POINT_ARR, 0);
+
+ do { //найдем объект
+  j = ::Cursor(&info, &x ,&y, 0);
+  if (j) {
+5015
+
+
+
+   reference pObj = ::FindObj(x, y, 1e6);
+   if(::ExistObj(pObj)){
+    info.commands = "Укажите точку";
+    if (::Cursor(&info, &x ,&y, 0)) {
+     ::ksTanLinePointCurve(x, y,   // координаты точки
+                 pObj,   // указатель на кривую
+                 pArray); // массив точек касания
+     MathPointParam par;       // Структура параметров математической точки
+     ::memset(&par, 0, sizeof(MathPointParam));
+     for(int i = 0, count = ::GetArrayCount(pArray); i < count; i) {
+      ::GetArrayItem(pArray, i, &par, sizeof(MathPointParam));
+      ::LineSeg(x, y, par.x, par.y, 1);
+     }
+     ::ClearArray(pArray);
+    }
+   }
+   else
+    ::Error("объект не найден");
+  }
+ } while(j);
+
+DistancePntPnt  пример использования 
+{
+double len;
+len = DistancePntPnt (10, 10, 50, 50);
+}
+
+ksDistancePntLineSeg  пример использования 
+Point (10, 10, 1);
+ LineSeg(20,15,20,25,1);
+ double len = ksDistancePntLineSeg (10, 10, //координаты точки
+                     20, 15,   //первая точка отрезка
+                     20, 25); //вторая точка отрезка
+ char buf[128];
+ sprintf(buf, "len = %5.1f", len);
+ Message(buf);
+5016
+
+
+
+ksDistancePntLineForPoint  пример использования 
+reference pObj;
+RequestInfo info;
+double x, y;
+memset (&info, 0, sizeof(info));
+info.prompt = "Укажите отрезок";
+reference g;
+int j = Cursor (&info, &x ,&y, 0);
+if (j)
+{
+//найдем объект и убедимся, что это отрезок
+if (ExistObj(pObj = FindObj (x, y, 1e6)) && GetObjParam (pObj, 0, 0, 0) == LINESEG_OBJ)
+{
+info.prompt = "Укажите точку";
+//получим точку
+j = Cursor (&info, &x ,&y, 0);
+if (j)
+{
+LineSegParam par;
+//берем параметры отрезка
+GetObjParam (pObj, &par, sizeof (LineSegParam), ALLPARAM);
+//получаем расстояние от точки до отрезка
+double len = ksDistancePntLineForPoint (x, y,//координаты точки
+par.x1, par.y1,//координаты точки на прямой
+par.x2, par.y2);//координаты точки на прямой
+char buf[TEXT_LENGTH];
+sprintf (buf, "расстояние = %f ", len);
+Message (buf);
+}
+}
+else
+Error("Это не отрезок");
+}
+
+5017
+
+
+
+ksDistancePntPntOnCurve  пример использования 
+double x, y;
+if (::Cursor(NULL, &x, &y, NULL)) {     // указываем кривую
+reference curve = ::FindObj(x, y, 1000);  // найти ближайшую кривую
+ double x1, y1;
+ if (::ExistObj(curve) && ::Cursor(NULL, &x, &y, NULL) // проверим, существует ли кривая
+   && ::Cursor(NULL, &x1, &y1, NULL)) {  // и укажем две точки на кривой
+double len = ::ksDistancePntPntOnCurve(curve, x, y, x1, y1); // расстояние между точками
+  char buf[128];
+  ::sprintf(buf, "Расстояние между точками = %g", len);
+  ::Message(buf);             // выведем результат
+ }
+}
+
+ksGetCurvePointProjection  пример использования 
+reference curve = ::LineSeg (300, 100, "400, "200, 1);
+double x = 100;
+double y = 50;
+::ksGetCurvePointProjection (curve, x, y, &x, &y); // проецируем точку на кривую
+char buf[128];
+::sprintf (buf, "координаты проекции точки на кривой: (%g, %g)", x, y);
+::Message(buf); 
+
+Angle  пример использования 
+void Angle_Example (void)
+{
+double Ang; 
+
+//Вычисление угла отрезка 0,0; 60,40
+LineSeg ( 0, 0, 60, 40, 1); 
+Ang = Angle (0, 0, 60, 40);
+gprintf(Угол = %6.2f, Ang);
+};
+5018
+
+
+
+ksGetCurvePerimeter, ksCalcInertiaProperties, ksCalcMassInertiaProperties 
+ пример использования 
+reference pObj;
+ RequestInfo info;
+ double x, y;
+ memset(&info, 0, sizeof(info));
+ info.prompt = "Укажите кривую";
+ int j = Cursor(&info, &x ,&y, 0);
+ if (j) {
+  if(ExistObj(pObj = FindObj(x, y, 1e6))){
+   //узнаем тип объекта
+   int type = GetObjParam( pObj,0,0,0); //указатель на графический объект
+   if (type == CIRCLE_OBJ    ||  //окружность
+      type == ARC_OBJ      ||  //дуга
+      type == NURBS_OBJ     ||  //nurbs
+      type == LINESEG_OBJ    ||  //отрезок
+      type == BEZIER_OBJ    ||  //bezier
+      type == CONTOUR_OBJ    ||  //контур
+      type == POLYLINE_OBJ   ||  //полилиния
+      type == ELLIPSE_OBJ    ||  //эллипс
+      type == ELLIPSE_ARC_OBJ  ||  //дуга эллипса
+      type == RECTANGLE_OBJ   ||  //прямоугольник
+      type == REGULARPOLYGON_OBJ   //многоугольник
+     ) {
+    //периметр кривой
+    double perimeter = ksGetCurvePerimeter(pObj, ST_MIX_MM); //указатель на кривую
+    char buf[255];
+    sprintf(buf, "Периметр = %f", perimeter);
+    Message(buf);
+
+    InertiaParam inertiaPar;
+    //рассчитаем плоские моментно " центровочные характеристики кривой
+    int rez = ksCalcInertiaProperties(pObj,    //указатель на кривую или группу кривых
+                      &inertiaPar, //указатель на структуру моментно"центровочных характеристик
+                      ST_MIX_MM); //размерность в интервале [ST_MIX_SM..ST_MIX__M]
+    if (rez) {
+     sprintf(buf, "Центр xc = %f yc = %f площадь = %f", inertiaPar.xc, inertiaPar.yc, inertiaPar.f);
+     Message(buf);
+5019
+
+
+
+     sprintf(buf, "Моменты инерции относительно исходных осей x и y\nlx = %f ly = %f lxy =
+%f", inertiaPar.lx, inertiaPar.ly, inertiaPar.lxy);
+     Message(buf);
+     sprintf(buf, "Центральные моменты инерции\nmx = %f my = %f mxy = %f", inertiaPar.mx,
+inertiaPar.my, inertiaPar.mxy);
+     Message(buf);
+     sprintf(buf, "Главные центральные моменты инерции\njx = %f jy = %f угол = %f",
+inertiaPar.jx, inertiaPar.jy, inertiaPar.a);
+     Message(buf);
+     MassInertiaParam mInertiaPar;
+     //для тела выдавливания моментно"центровочные характеристики
+     rez = ksCalcMassInertiaProperties(pObj,     // указатель на кривую или группу кривых
+                    &mInertiaPar, // указатель на структуру массово"центровочных характеристик
+                    ST_MIX_MM|ST_MIX_GR|ST_MIX_EXT , // набор флагов
+                    2.7,  // плотность (г/мм3)
+                    100);  // если тело вращения"угол раствора в градусах, тело выдавливания "
+толщина
+     if (rez) {
+      sprintf(buf, "плотность = %f масса = %f объем = %f", mInertiaPar.r, mInertiaPar.m,
+mInertiaPar.v);
+      Message(buf);
+      sprintf(buf, "координаты центра тяжести\n xc= %f yc = %f zc = %f", mInertiaPar.xc,
+mInertiaPar.yc, mInertiaPar.zc);
+      Message(buf);
+      sprintf(buf, "центробежные моменты инерции\n lxy= %f lxz = %f lyz = %f",
+mInertiaPar.lxy, mInertiaPar.lxz, mInertiaPar.lyz);
+      Message(buf);
+      sprintf(buf, "осевые моменты инерции\n lx= %f ly = %f lz = %f", mInertiaPar.lx,
+mInertiaPar.ly, mInertiaPar.lz);
+      Message(buf);
+      sprintf(buf, "плоскостные моменты инерции\n jy0z= %f jx0z = %f lx0y = %f",
+mInertiaPar.jy0z, mInertiaPar.jx0z, mInertiaPar.jx0y);
+      Message(buf);
+      sprintf(buf, "Главные центробежные моменты инерции\n jxy= %f jxz = %f jyz = %f",
+mInertiaPar.jxy, mInertiaPar.jxz, mInertiaPar.jyz);
+      Message(buf);
+      sprintf(buf, "Главные осевые моменты инерции \n jx= %f jy = %f jz = %f", mInertiaPar.jx,
+mInertiaPar.jy, mInertiaPar.jz);
+      Message(buf);
+     }
+5020
+
+
+
+    }
+    else
+     Error ("Ошибка");
+   }
+   else
+    Error("Выбранный объект не кривая");
+  }
+ }
+
+ksViewGetDensity  пример использования 
+char buf[128];
+ 
+//вызываем диалог выбора плотности
+ double density = ksViewGetDensity(0); // дескриптор окна родителя или NULL
+ sprintf(buf, " densyty = %f г/мм3", density);
+
+ Message(buf);
+
+Пример использования функций работы с фрагментами 
+void ReadFragment_Example (void) {
+
+PlacementParam  par;
+
+par.xBase = 30;  par.yBase = 40;
+par.ang   = 0;  par.scale = 1 ;
+
+ReadFragment("c:\\kompas5\\1.frw", 0, &par);
+
+//Пример вставки фрагмента  внешней ссылкой
+//определим фрагмент для вставки
+
+pDefFrg = FragmentDefinition("c:\\kompas5\\1.frw", "frw1", 1);
+if(pDefFrg) {
+PlacementParam  par;
+par.xBase = 80;  par.yBase = 70;
+5021
+
+
+
+par.ang   = 45;   par.scale = 2 ;
+reference  pInsFrg =  InsertFragment(pDefFrg, 0, &par);
+LightObj (pInsFrg, 1);
+Message("вставка фрагмента внешней ссылкой");
+LightObj (pInsFrg, 0);
+}
+
+// Пример вставки локального фрагмента
+// определим фрагмент для вставки
+
+reference pDefFrg = 0;
+
+//определим локальный фрагмент
+ if(LocalFragmentDefinition("local")) {
+LineSeg(0, 0,  10, 0,  1);
+LineSeg(0, 0,   0, 10, 1);
+ArcByPoint(0, 0, 10, 10, 0, 0,10, "1, 1);
+pDefFrg =  CloseLocalFragmentDefinition();
+}
+
+if(pDefFrg) {
+PlacementParam  par;
+par.xBase = 100; par.yBase = 40;
+par.ang   = 45;  par.scale = 1 ;
+reference  p =  InsertFragment(pDefFrg, 0, &par);
+LightObj (p, 1);
+Message("вставка локального фрагмента");
+LightObj (p, 0);
+}
+
+}; /* ReadFragment */
+
+WriteFragment  Пример использования 
+//Пример использования WriteFragment
+
+     double x, y, x1,y1;
+     RequestInfo info;
+5022
+
+
+
+     memset(&info, 0, sizeof(info));
+     info.prompt = "Укажите начальную точку окна";
+     if (Cursor(&info, &x, &y, 0)) 
+     {
+     info.prompt = "Укажите конечную точку окна";
+ if (Cursor(&info, &x1, &y1, 0)) 
+{
+//создадим рабочую группу
+reference gr = NewGroup(0);
+         EndGroup();
+         if (SelectGroup(gr, 1 ,x, y,  x1, y1)) 
+{
+            LightObj(gr, 1);//подсветим выделенную группу
+            char name[128];
+            //запросить имя файла фрагмента
+            if(SaveFile("*.frw",0,0, name,128))
+{
+              info.prompt = "Укажите точку привязки фрагмента";
+              if (Cursor(&info, &x, &y, 0)) 
+{
+//записать содержимое группы во фрагмент
+WriteFragment(gr,  name, "фрагмент из рабочей группы" ,x, y);
+                Message("Фрагмент записан");
+              }
+            }
+            LightObj(gr, 0);//снять подсветку выделенной группы
+         }
+       }
+     }
+
+ksReadFragmentToGroup, ksChoiceFile  Пример использования 
+char frwName[250];
+int j1;
+do
+{
+//выберем  фрагмент
+5023
+
+
+
+if ((j1 = ksChoiceFile ("*.frw","фрагменты(*.frw)|*.frw|Все файлы (*.*)|*.*|",
+frwName,128,1))!=0)
+{
+double x, y;
+
+//подготовим структуры фантома и запросов для Placement
+struct Phantom  rub;
+rub.type1.xBase = 0;
+rub.type1.yBase = 0;
+rub.type1.scale = 1;
+rub.phType = 1;
+
+//во временную группу положим вставку фрагмента, 
+//взятую из библиотеки фрагментов
+PlacementParam  par;
+par.xBase = 0;
+par.yBase = 0;
+par.ang = 0;
+par.scale = 1 ;
+int j;
+do
+{
+//если нужно вставить несколько фрагментов,
+//группу лучше порождать новую,
+//так как вместе с геометрией могут прийти атрибуты,
+//объекты спецификации, стили, которые связаны с геометрией. 
+//При простом копировании группы эта связь будет потеряна.
+
+rub.type1.gr  = ksReadFragmentToGroup (frwName,// имя фрагмента
+0,// на свои слои,
+&par);//параметры привязки
+
+if (rub.type1.gr && (j = Placement(NULL, &x, &y, &rub.type1.ang, &rub))!=0) 
+{
+//сдвигаем группу
+MoveObj(rub.type1.gr, x, y);
+//поворачиваем группу
+if (fabs(rub.type1.ang) > 0.001)
+5024
+
+
+
+RotateObj (rub.type1.gr, x, y, rub.type1.ang);
+//ставим группу в модель
+StoreTmpGroup (rub.type1.gr);
+ClearGroup (rub.type1.gr);
+DeleteObj (rub.type1.gr);
+}
+else
+{
+if (rub.type1.gr)
+DeleteObj(rub.type1.gr);
+j = 0;
+}
+}
+while (j);
+}
+}
+while(j1);
+
+ksChoiceFragmentFromLib  Пример использования
+char libName[250];
+int j1;
+
+//выберем библиотеку фрагментов
+if (ChoiceFile ("*.lfr","Библиотеки фрагментов(*.lfr)|*.lfr|Все файлы (*.*)|*.*|", libName,
+128))
+{
+char buf[250];
+do
+{
+//выбрать фрагмент в библиотеке фрагментов
+if ((j1 = ksChoiceFragmentFromLib(libName, buf, 250))!=0)
+{
+//выделим имя вставки 
+char * insertName = strrchr (buf, '|');
+if (insertName)
+{
+double x, y;
+5025
+
+
+
+//подготовим структуры фантома и запросов для Placement
+struct Phantom rub;
+rub.type1.xBase = 0;
+rub.type1.yBase = 0;
+rub.type1.scale = 1;
+rub.phType   = 1;
+
+reference pDefFrg;
+
+// создадим описание вставки фрагментов
+pDefFrg = FragmentDefinition (buf,//имя файла фрагмента
+insertName1,//имя вставки
+1);// внешней ссылкой
+
+if (pDefFrg)
+{
+//во временную группу положим вставку фрагмента, 
+//взятую из библиотеки фрагментов
+rub.type1.gr = NewGroup (1);// временная группа
+
+PlacementParam par;
+par.xBase = 0;
+par.yBase = 0;
+par.ang  = 0;
+par.scale = 1 ;
+//создаем объект "вставка фрагмента"
+reference p = InsertFragment (pDefFrg,// Указатель 
+//определения фрагмента
+0,// на свои слои 
+&par);//параметры привязки
+EndGroup();
+int j;
+do 
+{
+rub.type1.ang = 0;
+//запрос точки и угла поворота фрагмента
+if ((j = Placement (NULL, &x, &y, &rub.type1.ang, &rub))!=0)
+{
+
+5026
+
+
+
+CopyObj (p,// указатель на графический объект
+0,0,// базовая точка объекта
+x, y,// точка, в которую копировать
+1,// масштаб
+rub.type1.ang );// угол поворота а градусах
+}
+} 
+while (j);
+DeleteObj (rub.type1.gr);
+}
+else
+Error ("ошибка создания описания вставки фрагмента");
+}
+else
+Error("имя вставки не определено");
+}
+}
+while(j1);
+}
+
+ksExistFragmentInLibrary  Пример использования
+char frwName [250];
+ strcpy (frwName, "C:\\0\\Детали.lfr|Фланцы|Исполнение 1");
+ if (ReadString ("Введите имя фрагмента или папки",  // строка приглашения
+         frwName, 250)) {
+
+  int j = ksExistFragmentInLibrary(frwName);
+  char buf [250];
+
+  sprintf (buf, "%s\n%s",frwName, j==0 ? "нет фрагмента или папки" : j=="1 ? "нет библиоте"
+ки" : "фрагмент или папка есть");
+  Message(buf);
+ }
+
+ksFragmentLibrary  Пример использования
+char libName[250];
+5027
+
+
+
+int j1;
+//выберем библиотеку фрагментов
+if (ChoiceFile ("*.lfr","Библиотеки фрагментов(*.lfr)|*.lfr|Все файлы (*.*)|*.*|", libName,
+128))
+{
+char buf[250]; 
+do
+{
+//выбрать фрагмент в библиотеке фрагментов
+if ((j1 = ksChoiceFragmentFromLib(libName, buf, 250))!=0)
+{
+//выделим имя вставки 
+char * insertName = strrchr (buf, '|');
+if (insertName)
+{
+double x, y;
+//подготовим структуры фантома и запросов для Placement
+struct Phantom rub;
+rub.type1.xBase = 0;
+rub.type1.yBase = 0;
+rub.type1.scale = 1;
+rub.phType = 1;
+reference pDefFrg;
+// создадим описание вставки фрагментов
+pDefFrg = FragmentDefinition (buf,//имя файла фрагмента
+insertName1,//имя вставки
+1);// внешней ссылкой
+if (pDefFrg)
+{
+//во временную группу положим вставку фрагмента,
+//взятую из библиотеки фрагментов 
+rub.type1.gr = NewGroup (1);// временная группа
+PlacementParam par;
+par.xBase = 0;
+par.yBase = 0;
+par.ang  = 0;
+par.scale = 1 ;
+//создаем объект "вставка фрагмента"
+5028
+
+
+
+reference p = InsertFragment (pDefFrg,// указатель определения
+//фрагмента
+0,//на свои слои
+&par);//параметры привязки
+EndGroup();
+int j;
+do
+{
+rub.type1.ang = 0;
+//запрос точки и угла поворота фрагмента
+if ((j = Placement(NULL, &x, &y, &rub.type1.ang, &rub))!=0) 
+{
+CopyObj (p,// указатель на графический объект
+0,0,// базовая точка объекта
+x, y,//точка, куда копировать
+1,// масштаб
+rub.type1.ang);// угол поворота а градусах
+}
+}
+while (j);
+DeleteObj (rub.type1.gr);
+}
+else
+Error ("Ошибка создания описания вставки фрагмента");
+}
+else
+Error("Имя вставки не определено");
+}
+}
+while (j1);
+}
+
+ksAddFragmentToLibrary  Пример использования 
+char libName[250];
+char buf [250];
+//выберем библиотеку фрагментов
+5029
+
+
+
+if (ChoiceFile("*.lfr","Библиотеки фрагментов(*.lfr)|*.lfr|Все файлы (*.*)|*.*|", libName,
+128))
+{
+RequestInfo info;
+memset(&info, 0, sizeof(info));
+info.commands = "!Новый_фрагмент !Редактировать_фрагмент !Удалить_фрагмент ";
+int j;
+int typeEdit;
+string nameFrg;
+do
+{
+j = CommandWindow(&info);
+switch (j)
+{
+case 1://!Новый_фрагмент
+
+if (ReadString("Введите имя нового фрагмента",// строка приглашения
+buf,//возвращаемая строка
+250))// допустимая длина
+// строки
+{
+nameFrg = libName;
+if (buf[0] != '|')
+nameFrg = "|";
+nameFrg = buf; 
+typeEdit = 2;//запустить на редактирование
+}
+else
+typeEdit = 0;
+break;
+
+case 2://Редактировать_фрагмент
+
+case 3://Удалить_фрагмент
+
+//выберем имя файла фрагмента
+if ((j == 2 || j == 3) && ksChoiceFragmentFromLib(libName, buf, 250)!=0)
+{
+
+5030
+
+
+
+nameFrg = buf;
+typeEdit = j;// 2" запустить на редактирование, 3"удалить
+}
+else
+typeEdit = 0;
+
+break;
+}
+if (j > 0 && typeEdit)
+{
+if (::ksFragmentLibrary((char*)nameFrg.c_str(), typeEdit))
+{
+if (typeEdit == 2) 
+{
+::ksFragmentLibrary ((char *)nameFrg.c_str(), 4);
+//минимизировать окно библиотекаря
+//редактируем фрагмент из библиотеки
+Text (0, 100,//точка привязки текста
+0,//угол наклона текста
+5,//высота текста
+1,//сужение текста
+0,//свойства строки
+"Редактируем фрагмент из библиотеки");//строка символов
+
+LineSeg (0, 100, 110, 100, 1);
+//редактируем фрагмент в интерактивном режиме 
+//после выбора в меню "Сервис" команды 
+//"Закончить редактирование фрагмента", 
+//возвращаемся в библиотеку
+::SystemControlStart("Закончить редактирование фрагмента");
+::ksFragmentLibrary((char *)nameFrg.c_str(), 0); //закрыть 
+//c сохранением
+}
+}
+else
+MessageBoxResult();
+}
+}
+
+5031
+
+
+
+while (j != "1);
+}
+
+ksCheckFragmentLibrary  Пример использования 
+
+if (!ksCheckFragmentLibrary ("1.lfr",// имя файла библиотеки фрагментов
+1))// сообщать, если файл уже открыт
+Message ("Библиотека 1.lfr из текущей папки не загружена");
+
+Point  Пример использования 
+void Point_Example (void)
+{
+// задание точек 
+Point (10, 10, 1); 
+Point (20, 10, 2); 
+};
+
+PointArraw  Пример использования 
+{
+Macro (0);
+LineSeg (50, 100, 100, 100, 2);
+PointArraw (50,100,0 /*ang*/,1 /* стрелка изнутри*/);
+PointArraw (100,100,180/*ang*/,1 /* стрелка изнутри*/);
+reference pMacro = EndObj();
+LightObj (pMacro, 1);
+Message ("Имитация размерной линии");
+LightObj (pMacro, 0);
+}
+
+ksPointsOnCurveByStep  Пример использования  
+double x = 100, y = 100, step = 10.5;
+      // указанная кривая
+      reference pObj = ::FindObj(x, y, 1000);
+
+      if (::ExistObj(pObj)) {       // проверим существование объекта
+5032
+
+
+
+          reference arr = ::ksPointsOnCurveByStep(pObj, step); // массив точек
+          uint count    = ::GetArrayCount(arr);                // количество полученных точек
+
+MathPointParam point;
+// нарисуем точки
+          for (uint i = 0; i < count; i++)
+            if (::GetArrayItem(arr, i, &point, sizeof(MathPointParam)))
+              ::Point(point.x, point.y, 4);
+      }
+
+Line  Пример использования 
+void Line_Example (void)
+{
+reference l1, l2, l3, l4 ;
+double B=100, H=40; 
+
+// задание четырех прямых прямоугольника длиной B и высотой H
+l1 = Line (0, 0, 90); 
+l2 = Line (0, H,  0);
+l3 = Line (B, H, 90);
+l4 = Line (B, 0,  0);
+};
+
+LineSeg  Пример использования 
+void LineSeg_Example (void)
+{
+int t = 1;//сплошная основная
+reference l1, l2, l3, l4 ;
+double B=100, H=40; 
+
+//задание 4"х отрезков прямоугольника
+//длиной B и высотой H
+l1 = LineSeg (0, 0, 0, H, t); 
+l2 = LineSeg (0, H, B, H, t);
+l3 = LineSeg (B, H, B, 0, t);
+5033
+
+
+
+l4 = LineSeg (B, 0, 0, 0, t);
+};
+
+Circle  Пример использования 
+void Circle_Example (void)
+{
+int tc = 1;/сплошная основная
+int tl = 3;/осевая линия
+reference l1, l2, c1, c2 ;
+double x=30, y=20;
+
+double rad1=5; //радиус внутренней окружности
+double rad2=8; //радиус внешней окружности
+
+//задание осевых линий
+l1 = LineSeg (x"rad2"5, y,x+rad2+5, y, tl); 
+l2 = LineSeg (x, y"rad2"5, x, y+rad2+5, tl);
+
+//задание окружностей
+c1 = Circle (x, y, rad1, tc);
+c2 = Circle (x, y, rad2, tc);
+};
+
+Arc  Пример использования 
+void Arc_Example (void) 
+{
+int t1 = 1;// сплошная основная 
+int t2 = 2; // сплошная тонкая
+
+//задание дуги
+ArcByAngle (50, 50, 40, 0, 90, 1, t1);
+
+//задание дуги по трем точкам
+ArcBy3Points (80, 50, 50, 80, 50, 50, t2);
+
+// задание дуги по центру, радиусу и 2"м точкам
+5034
+
+
+
+ArcByPoint (50, 50, 100, 50, 50, 100, 1, t2);
+};
+
+ksConicArc  Пример использования 
+ConicArcParam par;
+//заполним структуру канонического уравнения для конического сечения" дуги эллипса
+// A*x*x B*x*y C*y*y D*x E*y F = 0;
+par.A = 16.;
+par.B = 0;
+par.C = 9.;
+par.D = 0;
+par.E = 0;
+par.F = "144.;
+par.x1 = 3; par.y1 =0;
+par.x2 = "3; par.y2 = 0;
+par.style = 2;
+reference p = ksConicArc(& par);
+//подсветим объект
+LightObj (p, 1); 
+Message ("Коническое сечение");
+//выключим подсветку объекта
+LightObj (p, 0);
+
+ksEllipseArc  Пример использования 
+EllipseArcParam par;
+  memset(&info, 0, sizeof(info));
+  par.xc  = 20;
+  par.yc  = 20;    //координаты центра
+  par.a   = 30;
+  par.b   = 10;             //полуоси эллипса
+  par.ang = 45;              //угол наклона эллипса к оси X
+  par.angFirst = 10;         //начальный угол дуги
+  par.angSecond =300;        //конечный угол  дуги
+  par.dir = 1;               //направление
+  par.style = 1;    //тип линии
+  reference p = KsEllipseArc(&par);
+5035
+
+
+
+  LightObj (p, 1);  ConicArcParam par;
+
+ksRectangle  Пример использования 
+RectangleParam par; // структура параметров прямоугольника
+
+  ::memset(&par, 0, sizeof(RectangleParam));
+
+  par.x       = "73.55; // базовая точка 1
+  par.y       = 39.95;  //
+  par.ang     = 0.00; // угол вектора направления от 1"ой точки ко 2"ой
+  par.height  = "66.68; // высота
+  par.weight  = 79.90; // ширина
+  par.pCorner = ::CreateArray(CORNER_ARR, 0);  // Создание массива параметров углов
+  par.style = 1; // стиль линии
+  ::ksRectangle(&par, 0); // создать прямоугольник
+
+ksColouring  Пример использования 
+//заливка цветом
+Mtr(30,20,0,0.5);
+char buf [128];
+
+//построить заштрихованный квадрат
+LineSeg (20, 30, 70, 30, 2);
+LineSeg (70, 30, 70, 80, 2);
+LineSeg (70, 80, 20, 80, 2);
+LineSeg (20, 80, 20, 30, 2);
+
+// залить квадрат цветом 
+if(ksColouring(RGB(168,0,168))) {
+  LineSeg (20, 30, 70, 30, 2);
+  LineSeg (70, 30, 70, 80, 2);
+  LineSeg (70, 80, 20, 80, 2);
+  LineSeg (20, 80, 20, 30, 2);
+  reference p = EndObj();
+
+  //взять параметры заливки "  цвет
+5036
+
+
+
+  unsigned long   col;
+  int t = GetObjParam(p, &col, sizeof(col), ALLPARAM);
+  sprintf(buf, " t = %d, color=%d ", t, col);
+  Message(buf);
+  DeleteMtr();
+
+  Mtr(0,0,0,2);
+
+  col =  RGB(0, 255, 255);
+  //изменить параметры заливки " цвет
+  if(SetObjParam(p, &col, sizeof(col), ALLPARAM))
+    Message(" Изменили объект");
+  else
+    MessageBoxResult();
+  DeleteMtr();
+}
+else
+  MessageBoxResult();
+
+ksColouringEx  Пример использования 
+double x = 0; double y = 0;
+// Указать точку в замкнутой области
+if ( Cursor( NULL, &x, &y, NULL ) ) {
+  // Создать контур из объектов окружающих данную точку
+    reference group = ksMakeEncloseContours( 0, x, y );
+    if ( group ) {
+  // Создать заливку для группы
+      ksColouringEx( RGB(255, 0, 0), group );
+      // Удалить временную группу
+DeleteObj( group );
+    }
+  }
+
+ksEllipse  Пример использования 
+  EllipseParam  par;
+  par.xc  = 20;
+  par.yc  = 20;    //координаты центра
+5037
+
+
+
+  par.a   = 30;
+  par.b   = 10;             //полуоси эллипса
+  par.ang = 45;         //угол наклона эллипса к оси X
+  par.style = 1;    //тип линии
+
+  reference p = ksEllipse(&par);
+  LightObj (p, 1);
+
+Equidistant  Пример использования 
+reference pContour;
+RequestInfo  info;
+//обнулить структуру  info;
+memset (&info, 0, sizeof(info));
+double x, y;
+info.prompt = "Укажите контур";
+int j = Cursor (&info, &x ,&y, 0);
+if (j)
+{
+if (ExistObj (pContour = FindObj (x, y, 1e6)) && 
+GetObjParam (pContour,  0, 0, 0) == CONTOUR_OBJ) {
+      
+//если нашли объект и этот объект " контур, строим эквидистанту
+
+      EquidistantParam  equidParam; 
+      //обнулить структуру  info;
+      memset(&equidParam, 0, sizeof(equidParam));
+      equidParam.geoObj   = pContour; // геометрический объект 
+//"базовая кривая эквидистанты
+      equidParam.side     = 0 ;     // признак, с какой стороны строить эквидистанту
+      equidParam.cutMode  = 1;  // тип обхода углов контура: 0"обход срезом, 1" обход дугой
+      equidParam.degState = 0; // флаг разрешения вырожденных сегментов эквидистанты:
+// 0"вырожденные сегменты запрещены, 
+//1"вырожденные сегменты разрешены
+      equidParam.radRight = 1; // радиус эквидистанты справа по направлению кривой
+      equidParam.radLeft  = 1;  // радиус эквидистанты слева
+      equidParam.style    = 1;    // тип линии
+5038
+
+
+
+      for (int i = 0; i < 4; i++) {
+        equidParam.radRight += i;
+        equidParam.radLeft += i;
+        Equidistant(&equidParam); //параметры эквидистанты
+      }
+    }
+  }
+
+ksRegularPolygon  Пример использования 
+  RegularPolygonParam par;
+  par.count= 8;                              // количество вершин многоугольника
+  par.xc= 100;                            // центр окружности
+  par.yc= 100;
+  par.ang= 35;                             // угол первой вершины
+  par.radius= 40;                             // радиус окружности
+  par.describe= 1;                              // признак описанного многоугольника.
+  par.style= 1;                              // стиль линии
+  par.pCorner= ::CreateArray (CORNER_ARR, 0); // динамический массив 
+// структур параметров углов CORNER_ARR
+
+  CornerParam cpar;                              // структура параметров угла
+  cpar.index = 5;                                // индекс угла
+  cpar.fillet = 0;                               // признак фаски
+  cpar.l1 = 40;                                  // длина фаски 1 сегмента
+  cpar.l2 = 45;                                  // длина фаски 2 сегмента
+  ::AddArrayItem(par.pCorner, "1, &cpar, sizeof(CornerParam)); // добавить угол в массив
+
+  cpar.index = 2;                                // индекс угла
+  cpar.fillet = 1;                               // признак скругления
+  cpar.l1 = 20;                                  // радиус
+  cpar.l2 = 20;                                  // радиус
+  ::AddArrayItem(par.pCorner, "1, &cpar, sizeof(CornerParam)); // добавить угол в массив
+
+  ::ksRegularPolygon(&par, 3);// создаётся многоугольник с осями
+5039
+
+
+
+AnnLineSeg, AnnArcByPoint  Пример использования 
+//аннотационные отрезок и дуга
+
+//аннотационный отрезок c большими стрелками изнутри (7мм)
+reference p = AnnLineSeg(10, 10, 20,20, 6, 6,  1);
+Message("аннотационный отрезок");
+//трансформируем объект
+Mtr("10,"10,0, 2);
+TransformObj(p);
+DeleteMtr();
+Message("удалим");
+DeleteObj(p);
+
+//аннотационная дуга c большими стрелками изнутри (7мм)
+reference p = AnnArcByPoint (30, 40, 20,  30, 20, 50, 40, "1, 6, 6, 1);
+Message ("аннотационная дуга");
+//трансформируем объект
+Mtr ("10,"10,0, 2);
+TransformObj (p);
+
+DeleteMtr ();
+Message ("удалим");
+DeleteObj (p);
+
+ksInsertRaster  Пример использования 
+RasterParam par;// параметры растрового обекта
+      par.place.xBase = 100;// точка привязки
+      par.place.yBase = 100;
+      par.place.ang   = "20;// угол наклона
+      par.place.scale = 0.5;// масштаб
+      ::strcpy (par.fileName, "C:\\BROWNBEAR.jpg");// имя файла растра
+      ::ksInsertRaster (&par);// вставка растрового объекта
+      reference iter = ::CreateIterator (RASTER_OBJ, 0);// создать итератор по растровым объ"
+ектам
+      if (iter) {
+        reference obj = ::MoveIterator (iter, 'F');// смещаемся на первый объект
+        if (::ExistObj(obj)) {// если объект существует
+5040
+
+
+
+          Message("Меняем файл");// сообщение
+          ::GetObjParam(obj, &par, sizeof(RasterParam), ALLPARAM); 
+// считываем параметры объекта
+          ::strcpy(par.fileName, "C:\\WHITEBEAR.jpg");// имя нового файла растра
+          par.place.ang   = 0;// угол наклона
+          par.place.scale = 0;// масштаб
+          ::SetObjParam (obj, &par, sizeof(RasterParam), ALLPARAM); 
+// изменяем параметры объекта
+        }
+        ::DeleteIterator (iter);                     // удаляем итератор
+      }
+
+Hatch  Пример использования 
+void Hatch_Example (void) {
+
+reference p;
+
+LineSeg (10,  10,  10,  20,  1);
+LineSeg (10,  20,   40, 20,  1); 
+LineSeg (40,  20,   40, 30,  1);
+LineSeg (40,  30,   70, 30,  1);
+LineSeg (70,  30,   70, 10,  1);
+LineSeg (70,  10,   10, 10,  1);
+
+Hatch(1, 45, 3, 0, 0,0); /* определение штриховки */
+
+LineSeg (10,  10,  10,  20,  1);
+LineSeg (10,  20,   40, 20,  1); 
+LineSeg (40,  20,   40, 30,  1);
+LineSeg (40,  30,   70, 30,  1);
+LineSeg (70,  30,   70, 10,  1);
+LineSeg (70,  10,   10, 10,  1);
+
+p = EndObj();   /* закончить формирование штриховки */
+
+}; /* Hatch_Example */
+5041
+
+
+
+ksCreateViewObject, ksEditViewObject  Пример использования 
+//  создать объект в интерактивном режиме (позиционная линия выноски)
+  reference posLeader = ksCreateViewObject(POSLEADER_OBJ );
+  if (posLeader){
+    LightObj(posLeader, 1);
+    Message("Позиционная линия выноски");
+    LightObj(posLeader, 0);
+    if (ksEditViewObject(posLeader)) {
+      LightObj(posLeader, 1);
+      Message("Отредактированная позиционная линия выноски");
+      LightObj(posLeader, 0);
+    }
+  }
+
+Bezier, _Bezier  пример использования 
+void Bezier_Example (void)
+{
+double x[5]={15, 35, 55, 75, 95 };
+double y[5]={15, 75, 25, 95, 15 };
+
+Bezier (1, 0);// определение кривой
+
+Point (10, 10, 1);
+Point (30, 70, 1);
+Point (50, 20, 1);
+Point (70, 90, 1);
+Point (90, 10, 1);
+
+EndObj ();// закончить формирование кривой
+
+// задание производных в узлах
+BezierPointParam par;
+double x[]  = { 0, 20, 50, 70, 100, 50 };
+double y[]  = { 0, 20, 10, 20, 0, "50 };
+double ang[] = { 0, 30, 40, 45, "45, "30 };
+double left[] = { 1, 1, 2, 3, 1, 1 };
+double right[]= { 2, 2, 1, 1, 3, 4 };
+5042
+
+
+
+reference p = Bezier (0, 1);
+for (int i=0; i<5; i)
+{
+par.x = x[i]; par.y = y[i];
+par.ang = ang[i];
+par.left = left[i]; par.right = right[i];
+BezierPoint(&par);
+}
+EndObj();// закончить формирование кривой
+
+_Bezier (&par, 6, 0, 1);
+}; 
+
+Nurbs, NurbsPoint  пример использования 
+void Nurbs_Example (void) {
+
+static NurbsPointParam par[]={{ 0,0,1}, {20,20,1}, {50,10,1}, {70,20,1}, {100,0,1}, {50,"50,1}};
+
+//построить Nurbs"кривую
+if (Nurbs(3, 0, 1))
+for (int i=0; i<6; i) {
+NurbsPoint(&par[i]);
+}
+reference p = EndObj();
+
+LightObj(p, 1);
+Message(NURBS);
+LightObj(p, 0);
+}
+}; /* Nurbs_Example */ 
+
+ksNurbsKnot  пример использования 
+static NurbsPointParam par[]= {{ 0,0,1}, {20,20,1}, {50,10,1}, {70,20,1} };
+static double   knotArr []= { 0, 0 ,0 ,1 ,2 ,2 ,2 };
+5043
+
+
+
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+// Создать Nurbs " сплайн
+//"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+void DrawNurbs() {
+ //построить Nurbs сплайн как составной объект
+ Nurbs(3, 0, 1);
+  //ввод точек
+  for (int i=0; i<4; i) {
+   NurbsPoint(&par[i]);
+  }
+  //ввод узлов " для разомкнутого сплайна и степени 3 должно быть 7 узлов
+  for (int i=0; i<7; i) {
+   ksNurbsKnot(knotArr[i]);
+  }
+
+ reference p = EndObj();
+ LightObj(p, 1);
+ Message("NURBS");
+ LightObj(p, 0);
+} 
+
+NurbsForConicCurve  пример использования 
+// построить дугу эллипса (параметры эллипса: центр " 0,0, a = 20, b= 10);
+double x[4], y[4];
+x[0] = "19.3202; y[0] = 2.5850;// начальная точка эллиптической дуги (1)
+x[1] = "10.0;  y[1] = 20.0;  // пересечение касательных к дуге из точкек 1 и 2
+x[2] = 14.6144; y[2] = 6.8268; // конечная точка эллиптической дуги (2)
+x[3] = 0.0;  y[3] = 10.0;  // точка на дуге
+reference p = NurbsForConicCurve (x, y, 1);
+if (p)
+{
+LightObj (p, 1);
+Message ("Эллиптическая дуга построена");
+LightObj(p, 0);
+}
+else
+Error ("Неверно заданы характерные точки");
+5044
+
+
+
+ksPolyline, _ksPolyline  пример использования 
+void ksPolyline_Example (void) {
+
+static MathPointParam  pr1[] = { {10,10}, {20,20}, {30, 10}, {40,20} };
+static MathPointParam  pr2[] = { {10,15}, {20,25}, {30, 15}, {40,25} };
+reference p;
+
+if(ksPolyline(1)) {
+for(int i = 0; i < 4; i)
+Point(pr1[i].x, pr1[i].y, 1);
+p = EndObj();
+
+LightObj(p, 1);
+Message(Полилиния);
+LightObj(p, 0);
+}
+PolylineParam par;
+//создадим массив неопределенной длины для математических точек
+par.pMathPoint = CreateArray(POINT_ARR , 0);
+//наполним массив
+for(int i = 0; i < 4; i)
+AddArrayItem(pMathPoint, "1, &pr2[i], sizeof(MathPointParam));
+
+par.style = 2;
+//создадим полилинию (тип линии " тонкая)
+reference p = _ksPolyline(&par);
+
+LightObj(p, 1);
+Message(Полилиния);
+LightObj(p, 0);
+
+ }; /* ksPolyline_Example */
+
+ksPolylineEx  пример использования 
+  PolylineParamEx par;
+5045
+
+
+
+   ::memset(&par, 0, sizeof(PolylineParamEx));
+   par.pMathPoint = ::CreateArray(POINT_ARR, 0);
+   MathPointParam p;
+   p.x = 0;
+   p.y = 0;
+   ::AddArrayItem(par.pMathPoint, "1, &p, sizeof(p));
+   p.x = 100;
+   p.y = 0;
+   ::AddArrayItem(par.pMathPoint, "1, &p, sizeof(p));
+   p.x = 150;
+   p.y = 100;
+   ::AddArrayItem(par.pMathPoint, "1, &p, sizeof(p));
+   p.x = 0;
+   p.y = 100;
+   ::AddArrayItem(par.pMathPoint, "1, &p, sizeof(p));
+
+   par.style   = 1;
+   par.closed   = 1;
+   reference line = ::ksPolylineEx(&par);
+   if (line) {
+   ::Message("Изменим стиль");
+   ::memset(&par, 0, sizeof(PolylineParamEx));
+    ::GetObjParam(line, &par, sizeof(par), ALLPARAM);
+   par.style = 3;
+    ::SetObjParam(line, &par, sizeof(par), ALLPARAM);
+   }
+
+Mtr, DeleteMtr  Пример использования 
+void Mtr_Example (void) {
+int t = 1;   /*сплошная основная */
+reference l1, l2, l3, l4 ;
+double B=100, H=40; 
+
+        /* задание 4"х отрезков прямоугольника */
+        /* длиной B и высотой H                        */
+        /* в системе координат с началом 50,50, */
+        /* и поворотом 45 градусов                    */
+5046
+
+
+
+Mtr (50, 50, 45, 1);
+
+l1 = LineSeg (0, 0, 0, H, t); 
+l2 = LineSeg (0, H, B, H, t);
+l3 = LineSeg (B, H, B, 0, t);
+l4 = LineSeg (B, 0, 0, 0, t);
+
+DeleteMtr ();
+
+}; /* Mtr_Example */
+
+ksMtr  пример использования 
+reference gr = NewGroup (0);
+LineSeg (50, 50, 100, 100, 1);
+LineSeg (100, 100, 150, 50, 1);
+Circle (50, 50, 10, 1);
+Circle (150, 50, 10, 1);
+EndGroup ();
+//масштаб по оси Х " 2 и по оси Y " 1
+ksMtr (0, 0, 0, 2, 1);
+TransformObj (gr);
+DeleteMtr();
+
+MtrForIGES  Пример использования 
+double commonArray[2][2]; // матрица 2*2 поворота, 
+                                        //умноженная предварительно на масштаб
+  double moveArray[2];      // матрица сдвига умноженная предварительно на масштаб
+// заполним матрицы
+  commonArray[0][0] = 2.0;   
+  commonArray[0][1] = 0.0;   
+  commonArray[1][0] = 0.0;   
+  commonArray[1][1] = "2.0;  
+  moveArray[0] = 20.0;   // сдвиг по X
+  moveArray[1] = 0.0;   // сдвиг по Y
+  LineSeg(0, 0, 10, 10, 1);
+5047
+
+
+
+//создание матрицы трансформации " симметрия по Х и с масштабом 2 и сдвиг на 10мм
+
+  if (::MtrForIGES(commonArray,  moveArray)) {
+    LineSeg(0, 0, 10, 10, 1);
+    DeleteMtr();
+  }
+
+IsGeomObject  Пример использования 
+reference itAllObj = CreateIterator( ALL_OBJ,   //тип поиска объекта
+                                      0  );      //указатель на объект (для движения по группе и внутри макро)
+ if ( itAllObj )  {
+   reference obj;
+   if ( ExistObj( obj = MoveIterator( itAllObj, 'F' )) ){
+     do {
+       // проверим геометрический объект или нет
+       if ( IsGeomObject(obj) )
+         Message( "геометрический объект" );
+
+       // проверим кому принадлежит объект
+       if ( IsObjFromAssociativeView(obj) )
+         Message( "Объект из ассоциативного вида" );
+
+       // подсветим все объекты имеющие видимые и невидимые участки
+       if ( IsVisibleOrHiddenArraysInObject(obj) )
+         LightObj( obj, 1 );
+
+     } while( ExistObj ( obj = MoveIterator( itAllObj, 'N' )) );
+   }
+ }
+
+Text, TextLine, Paragraph  Пример использования 
+void Text_Example (void) {
+reference p;
+
+// Простой текст
+5048
+
+
+
+Text (30 , 90, 0, 5, 1, 0, ”Простой текст”);
+Text (30 , 80, 0, 5, 1, 0,”Пример... дроби$dЧислитель;Знаменатель$”);
+Text (30 , 70, 0, 5, 1, 0, ”Пример... отклонений 20$0.5;"0.3$”);
+Text (30 , 60, 0, 5, 1, 0, ”Пример... спецсимвола &32”);
+
+// Структурированный текст
+
+ParagraphParam par;
+par.x = 30; par.y = 40; par.ang = 0;
+par.hFormat = 0; par.vFormat = 0;
+par.height = 25; par.width = 20;
+int j=2;
+
+p = Paragraph (&par);
+
+TextLine (NEW_LINE ,0,0 , ”Первая строка”); 
+
+//числитель, наклон, высота дроби в 1.5 раза меньше высоты текста
+TextLine (NUMERATOR|ITALIC_ON,FRACTION_TYPE ,&j , ”Числитель”);
+//знаменатель, утолщение
+TextLine (DENOMINATOR|BOLD_ON,0 ,0 , ”Знаменатель”); 
+//конец дроби, снятие утолщения,снятие наклона
+TextLine (END_FRACTION|BOLD_OFF | ITALIC_OFF, 0, 0 , ”4444”);
+
+ TextLine (NEW_LINE ,0,0 , ”Вторая строка”); 
+int tip = 65;
+//спецзнак шероховатость
+TextLine (SPECIAL_SYMBOL ,SPECIAL, &tip , ”Rz80”); 
+//конец спецзнака
+TextLine (SPECIAL_SYMBOL_END ,0, 0 , ”222”); 
+
+ EndObj();
+
+}; /* Text_Example */
+5049
+
+
+
+GetTextLength  Пример использования 
+
+/*GetTextLenght_example*/
+{
+reference pText;
+double   len1, len2;
+
+len1 = GetTextLenght(« Пример... текста», 1);  // Пример... функции GetTextLenght
+
+pText = Text (30 , 90, 0, 5, 1, 0,Простой текст);
+len2 = GetTextLenghtFromReference(pText);   // Пример... функции
+GetTextLenghtFromReference
+
+}
+
+ksConvertTextToCurve  Пример использования 
+reference pText;
+   RequestInfo info;
+   //обнулить структуру info;
+   memset (&info, 0, sizeof (info));
+   double x, y;
+   info.prompt = "Укажите текст";
+   int j = Cursor (&info, &x ,&y, 0);
+   if (j) {
+    if (ExistObj (pText = FindObj (x, y, 1e6)) &&
+     GetObjParam (pText, 0, 0, 0) == TEXT_OBJ) {
+     reference gr = ksConvertTextToCurve (pText);
+     if (gr) {
+      Phantom phantom;   // ltdefine.h
+      memset (&phantom, 0, sizeof (phantom));
+      phantom.type1.gr = gr; //временная группа
+      phantom.phType = 1; //сдвиг группы
+      phantom.type1.scale = 1; //сдвиг группы
+      j = Cursor (&info, &x ,&y, &phantom);
+      if (j == "1) { //поставить в модель
+       MoveObj (phantom.type1.gr, x, y); //смещаем группу в новый  цетр
+       StoreTmpGroup (phantom.type1.gr);//временную группу делаем постоянной
+5050
+
+
+
+       ClearGroup (phantom.type1.gr);
+       DeleteObj (phantom.type1.gr);
+      }
+     }
+    }
+    else
+     Error ("Это не текст");
+   }
+
+Table  Пример использования 
+void Table_Example (void)
+{
+reference p;
+p = Table ();
+LineSeg(50, 50, 90, 50, 1);
+LineSeg(50, 40, 90, 40, 1);
+LineSeg(50, 30, 90, 30, 1);
+LineSeg(50, 50, 50, 30, 1);
+LineSeg(70, 50, 70, 30, 1);
+LineSeg(90, 50, 90, 30, 1);
+
+Text(52, 48, 0, 5, 1,0, Простой текст);//первая ячейка по точке привязки
+
+ParagraphParam par;
+par.x = 72; par.y = 48;//вторая ячейка
+par.ang = 0; par.hToleranceat = 0; par.vToleranceat = 0;
+par.height = 20;//высота блока форматирования
+par.width = 20;//ширина блока форматирования
+
+Paragraph (&par);
+int j=2;
+TextLine (NEW_LINE, 0, 0, Сложный);
+TextLine (NEW_LINE|BOLD_ON, 0, 0, структурированный);
+TextLine (NEW_LINE|BOLD_OFF | ITALIC_ON, 0, 0, текст);
+EndObj();
+EndObj();
+};
+5051
+
+
+
+ksSetTableColumnText  Пример использования 
+// редактирование таблицы
+reference pObj;
+
+RequestInfo info;
+double x, y;
+memset(&info, 0, sizeof(info));
+info.prompt = "Укажите таблицу";
+
+// взять таблицу на чертеже
+int j = Cursor(&info, &x ,&y, 0);
+if (j)
+{
+if (ExistObj (pObj = FindObj (x, y, 100000)))
+{
+//узнаем тип объекта
+int type =GetObjParam (pObj,0,0,0);//указатель на графический объект
+//проверить, таблица ли полученный объект
+if (type == TABLE_OBJ)
+{
+unsigned int numb;
+reference p;
+//открыть таблицу для редактирования
+ksOpenTable (pObj);
+
+TextParam par;
+//в цикле будем брать все существующие ячейки
+while ((ksGetTableColumnText (&numb, &par))!=0)
+{
+p=par.pTextLine;
+TextLineParam linePar;
+for (int i=0; i < GetArrayCount(p); i)
+{
+GetArrayItem(p , i, &linePar, sizeof(TextLineParam));
+TextItemParam itemPar;
+for (int j=0; j< GetArrayCount(linePar.pTextItem); j) 
+5052
+
+
+
+{
+GetArrayItem (linePar.pTextItem, j, &itemPar, 
+sizeof (TextItemParam));
+if (strlen(itemPar.s))
+{
+strcat(itemPar.s, "!!!");
+SetArrayItem (linePar.pTextItem, j, &itemPar,
+sizeof(TextItemParam));
+}
+}
+SetArrayItem(p , i, &linePar, sizeof(TextLineParam));
+}
+//очистим массив текстовых строк
+ksSetTableColumnText(numb, &par);
+}
+
+EndObj();//закрыли объект "таблица"
+}
+else
+Error("Указанный объект " не таблица");
+}
+else
+Error("нет объекта");
+}
+
+ksReadTableFromFile  Пример использования 
+char tabName[250];
+ int j1;
+ do {
+  
+   //выберем файл таблицы
+  if((j1 = ksChoiceFile("*.tbl","таблицы(*.tbl)|*.tbl|Все файлы (*.*)|*.*|", tabName, 250, 0)) !=
+0){
+   double x, y;
+
+   //подготовим структуры фантома и запросов для Placement
+   struct Phantom rub;
+5053
+
+
+
+   rub.type1.xBase = 0;
+   rub.type1.yBase = 0;
+   rub.type1.scale = 1;
+   rub.phType   = 1;
+
+   //во временную группу положим вставку фрагмента, взятую из библиотеки фрагментов
+   PlacementParam par;
+   par.xBase = 0;
+   par.yBase = 0;
+   par.ang  = 0;
+   par.scale = 1 ;
+   //создаем временную группу
+   rub.type1.gr = NewGroup (1);
+   reference pTab = ksReadTableFromFile(tabName); //полное имя к файлу таблицы
+   EndGroup();
+
+   if (pTab && Cursor(NULL, &x, &y, &rub)) {
+    //сдвигаем группу
+    MoveObj(rub.type1.gr, x, y);
+    //ставим группу в модель
+    StoreTmpGroup(rub.type1.gr);
+    ClearGroup(rub.type1.gr);
+    DeleteObj(rub.type1.gr);
+   }
+   else {
+    if (pTab)
+     Error("Ошибка при считывании таблицы");
+    DeleteObj(rub.type1.gr);
+   }
+
+  }
+ } while(j1);
+
+ksGetTextAlign, ksSetTextAlign  Пример использования
+  reference iter = ::CreateIterator(TEXT_OBJ, 0); // итератор по всем текстам документа
+   if (iter) {
+   reference txt = ::MoveIterator(iter, 'F');  // первый текст
+5054
+
+
+
+    while (::ExistObj(txt)) {           // пройдем по всем текстам
+if (::ksGetTextAlign(txt) == txta_Left)   // если точка привязки текста слева
+     ::ksSetTextAlign(txt, txta_Right);    // установим ее справа
+    txt = ::MoveIterator(iter, 'N');      // следующий текст
+    }
+   }
+   ::DeleteIterator(iter);             // удалим итератор
+
+ksSetTextLineAlign  Пример использования
+ if (::OpenStamp()) {
+  ::ColumnNumber(2); // 2"справа
+  ::ksSetTextLineAlign(0);
+  ::TextLine(NEW_LINE, 0, 0 , "1111111");
+  ::CloseStamp();
+ }
+
+Пример использования функций для редактирования таблицы 
+// редактирование таблицы
+reference pObj;
+
+RequestInfo info;
+double x, y;
+memset(&info, 0, sizeof(info));
+info.prompt = "Укажите таблицу";
+
+// взять таблицу на чертеже
+int j = Cursor(&info, &x ,&y, 0);
+if (j)
+{
+if (ExistObj (pObj = FindObj (x, y, MAXDOUBLE)))
+{
+//узнаем тип объекта
+int type =GetObjParam( pObj,0,0,0);//указатель на графический объект
+//проверить, таблица ли полученный объект
+if (type == TABLE_OBJ)
+{
+
+5055
+
+
+
+unsigned int numb;
+reference p;
+char buf[128];
+//открыть таблицу для редактирования
+ksOpenTable(pObj);
+
+TextParam par;
+//в цикле будем брать все существующие ячейки
+while ((ksGetTableColumnText(&numb, &par))!=0)
+{
+sprintf(buf, "numb =%d  ", numb);
+Message(buf);
+p=par.pTextLine;
+TextLineParam par2;
+for (int i=0; i < GetArrayCount(p); i)
+{
+GetArrayItem (p, i, &par2, sizeof(TextLineParam));
+sprintf(buf, "i =%d style=%d  ", i, par2.style);
+Message(buf);
+TextItemParam par3;
+for (int j=0; j< GetArrayCount(par2.pTextItem); j)
+{
+GetArrayItem (par2.pTextItem, j, &par3,
+sizeof(TextItemParam));
+if (!par3.tip)
+sprintf(buf, "компонента=%d 
+h=%5.1f\ns=%s\n fontName=%s\nбитвектор =%d ",j, par3.font.height, par3.s,
+par3.font.fontName, par3.font.bitVector);
+else
+sprintf (buf, "компонента=%d тип = %d 
+номер спецзнака=%d ",j,par3.tip,par3.iSNumb);
+Message(buf);
+}
+//очистим массив компонент
+DeleteArray(par2.pTextItem); 
+}
+//очистим массив текстовых строк
+DeleteArray(p);
+5056
+
+
+
+}
+//берем ячейку 2
+ColumnNumber(2);
+Text(0, 0, 0, 5, 1 ,0,"вторая ячейка");
+
+ksDivideTableItem(3, 1, 2);
+ColumnNumber(4);
+Text(0, 0, 0, 5, 1 ,0,"4");
+
+EndObj();//закрыли объект "таблица"
+}
+else
+Error("это не таблица");
+}
+else
+Error("нет объекта");
+}
+
+Пример редактирования допуска формы
+
+// редактирование допуска формы
+reference pObj;
+
+RequestInfo info;
+double x, y;
+memset(&info, 0, sizeof(info));
+info.prompt = "Укажите допуск формы";
+//взять допуск формы на чертеже
+int j = Cursor(&info, &x ,&y, 0);
+if (j)
+{
+if (ExistObj(pObj = FindObj(x, y, MAXDOUBLE)))
+{
+//узнаем тип объекта
+int type =GetObjParam( pObj,0,0,0);//указатель на графический объект
+//проверим,является ли пришедший объект допуском фомы
+if (type == TOLERANCE_OBJ)
+{
+
+5057
+
+
+
+unsigned int numb;
+reference p;
+char buf[128];
+//открыть допуск формы для редактирования
+ksOpenTolerance(pObj);
+
+ToleranceParam par;
+//возьмем параметры допуска формы
+GetObjParam (pObj,//указатель на графический объект
+&par,//указатель на структуру параметров
+sizeof (ToleranceParam),//размер 
+//структуры параметров
+ALLPARAM);//тип считывания параметров
+
+sprintf (buf, "базовая точка=%d стиль=%d 
+расположение"%s\nx=%5.1f y=%5.1f",
+par.tBase, par.style, par.type ? 
+"вертикальное":"горизонтальное", par.x, par.y);
+Message(buf);
+
+//в цикле будем брать все существующие ячейки
+while ((p=ksGetToleranceColumnText(&numb))!=0)
+{
+sprintf(buf, "numb =%d  ", numb);
+Message(buf);
+
+TextLineParam par2;
+for (int i=0; i < GetArrayCount(p); i) 
+{
+GetArrayItem(p , i, &par2, sizeof(TextLineParam));
+sprintf(buf, "i =%d style=%d  ", i, par2.style);
+Message(buf);
+TextItemParam par3;
+for (int j=0; j< GetArrayCount(par2.pTextItem); j) 
+{
+GetArrayItem (par2.pTextItem, j, &par3,
+sizeof(TextItemParam));
+if (!par3.tip)
+5058
+
+
+
+sprintf (buf, "компонента=%d h=%5.1f\ns=%s\n 
+fontName=%s\nбитвектор =%d
+",j,par3.font.height,par3.s
+par3.font.fontName, par3.font.bitVector);
+else
+sprintf (buf, "компонента=%d тип = %d номер 
+спецзнака=%d ",j,par3.tip,par3.iSNumb);
+Message(buf);
+}
+DeleteArray(par2.pTextItem);//очистим массив компонент
+}
+//очистим массив текстовых строк
+DeleteArray(p);
+}
+//заменим параметры допуска формы
+par.x = 10;
+par.y = 10;
+int rez = SetObjParam (pObj,//указатель на графический объект
+&par,//указатель на структуру параметров
+sizeof(ToleranceParam),//размер структуры параметров
+ALLPARAM); //тип считывания параметров
+
+// заменим текст в ячейке 2
+ColumnNumber(2);
+TextLine (NEW_LINE ,0,0 ,"вторая ячейка");
+//разделим ячейку 3 вертикальным ребром с типом " тонкая"
+ksDivideTableItem(3, 1, 2);
+//перестроим виртуальную сетку
+ksRebuildTableVirtualGrid();
+// введем текст в ячейку 4
+ColumnNumber(4);
+TextLine (NEW_LINE ,0,0 ,"4");
+
+EndObj();//закрыли объект "допуск формы"
+}
+else
+Error("это не допуск формы");
+}
+
+5059
+
+
+
+else
+Error("нет объекта");
+}
+
+Пример использования функций для редактирования допуска формы 
+// редактирование допуска формы
+ reference pObj;
+
+ RequestInfo info;
+ double x, y;
+ memset(&info, 0, sizeof(info));
+ info.prompt = "Укажите допуск формы";
+ int j = Cursor(&info, &x ,&y, 0);
+ if (j) {
+  if(ExistObj(pObj = FindObj(x, y, MAXDOUBLE))){
+   //узнаем тип объекта
+   int type =GetObjParam( pObj,0,0,0);  //указатель на графический
+объект
+   if (type == TOLERANCE_OBJ) {
+    unsigned int numb;
+    char buf[128];
+    //открыть допуск формы для редактирования
+    ksOpenTolerance(pObj);
+
+    ToleranceParam par;
+    //параметры допуска формы
+    GetObjParam( pObj,  //указатель на графический объект
+          &par, //указатель на структуру параметров
+          sizeof(ToleranceParam),  //размер структуры
+параметров
+          ALLPARAM); //тип считывания параметров
+
+    sprintf(buf, "базовая точка=%d стиль=%d расположение"%s\nx=%5.1f
+y=%5.1f ",
+             par.tBase, par.style, par.type ?
+"вертикальное":"горизонтальное", par.x, par.y);
+    Message(buf);
+5060
+
+
+
+    TextLineParam par1;
+    //в цикле будем брать все существующие ячейки
+    while (ksGetToleranceColumnText(&numb, &par1)!=0) {
+     sprintf(buf, "numb =%d  ", numb);
+     Message(buf);
+
+     sprintf(buf, "style=%d ", par1.style);
+     Message(buf);
+     TextItemParam par3;
+     for (int j=0; j< GetArrayCount(par1.pTextItem); j) {
+      GetArrayItem(par1.pTextItem, j, &par3, sizeof(TextItemParam));
+      if (!par3.tip)
+       sprintf(buf, "компонента=%d h=%5.1f\ns=%s\n
+fontName=%s\nбитвектор =%d ",j,par3.font.height,par3.s,
+            par3.font.fontName, par3.font.bitVector);
+      else
+       sprintf(buf, "компонента=%d тип = %d номер спецзнака=%d
+",j,par3.tip,par3.iSNumb);
+      Message(buf);
+     }
+     DeleteArray(par1.pTextItem); //очистим массив компонент
+    }
+   //заменим параметры
+    par.x = 10;
+    par.y = 10;
+    SetObjParam( pObj,  //указатель на графический объект
+           &par, //указатель на структуру параметров
+           sizeof(ToleranceParam ),  //размер структуры
+параметров
+           ALLPARAM); //тип считывания параметров
+
+    ColumnNumber(2);
+    TextLine (NEW_LINE ,0,0 ,"вторая ячейка");
+    ksDivideTableItem(3, 1, 2);
+    ColumnNumber(4);
+    TextLine (NEW_LINE ,0,0 ,"4");
+5061
+
+
+
+//      ksSetTableBorderStyle(1,2,1);
+//      ksClearTableColumnText(0);
+    EndObj();//закрыли объект "допуск формы"
+   }
+   else
+    Error("это не допуск формы");
+  }
+  else
+   Error("нет объекта");
+ }
+
+ksGetPointOnToleranceTable  пример использования
+reference pObj;
+
+RequestInfo info;
+double x, y;
+memset(&info, 0, sizeof(info));
+info.prompt = "Укажите допуск формы";
+int j = Cursor(&info, &x ,&y, 0);
+if (j) {
+ if(ExistObj(pObj = FindObj(x, y, 1e6))){
+  //узнаем тип объекта
+  int type =GetObjParam( pObj,0,0,0);  //указатель на графический объект
+  if (type == TOLERANCE_OBJ) {
+   for(unsigned char i = 1; i < 9 ; i) {
+    MathPointParam parPoint;
+    if (ksGetPointOnToleranceTable(pObj,     // указатель на допуск формы
+                     i,   // тип точки на таблице допуска формы
+                     &parPoint)) // координаты точки
+      Point(parPoint.x, parPoint.y,  //координаты точки
+         (unsigned short)(i"1)); //стиль отрисовки точки
+   }
+  }
+  else
+   Error("это не допуск формы");
+ }
+ else
+5062
+
+
+
+  Error("нет объекта");
+}
+
+ksSetToleranceColumnText  пример использования 
+// редактирование допуска формы
+reference pObj;
+
+RequestInfo  info;
+double x, y;
+memset(&info, 0, sizeof(info));
+info.prompt = "Укажите допуск формы";
+int j = Cursor(&info, &x ,&y, 0);
+if (j)
+{
+if (ExistObj(pObj = FindObj (x,y, 1000000.)))
+{
+//узнаем тип объекта
+int type =GetObjParam (pObj,0,0,0);//указатель на графический объект
+if (type == TOLERANCE_OBJ)
+{
+unsigned int numb;
+//открыть допуск формы для редактирования
+ksOpenTolerance(pObj);
+TextLineParam linePar;
+//в цикле будем брать все существующие ячейки
+while (ksGetToleranceColumnText(&numb, &linePar)!=0)
+{
+TextItemParam itemPar;
+for (int j=0; j< GetArrayCount(linePar.pTextItem); j++)
+{
+GetArrayItem (linePar.pTextItem, j, &itemPar,
+sizeof (TextItemParam));
+if (strlen (itemPar.s))
+{
+strcat (itemPar.s, "!!!");
+SetArrayItem (linePar.pTextItem,
+ j, &itemPar,
+sizeof(TextItemParam));
+5063
+
+
+
+}
+}
+ksSetToleranceColumnText(numb, &linePar);
+}
+
+EndObj();//закрыли объект "допуск формы"
+}
+else
+Error ("Указанный объект " не допуск формы");
+}
+else
+Error("нет объекта");
+}
+
+Пример задания штампа 
+void Stamp_Example (void)
+{
+if (OpenStamp())
+{
+ColumnNumber(2);
+TextLine (NEW_LINE, 0, 0, 1К11.00.00.021);
+
+ColumnNumber(1);
+TextLine (NEW_LINE, 0, 0, Крестовина);
+
+CloseStamp();
+}
+ClearStamp(2);  //очистить вторую графу
+};
+
+SetStampColumnText, GetStampColumnText пример использования
+if (OpenStamp())
+{
+unsigned int numb;
+reference p;
+5064
+
+
+
+//в цикле будем брать все существующие графы
+while ((p=GetStampColumnText (&numb))!=0)
+{
+// p " текст текущей графы
+char buf[128];
+sprintf (buf, "numb =%d   ", numb);
+Message(buf);
+
+TextLineParam parLine;
+for (int i=0, count = GetArrayCount(p); i < count; i++)
+{
+//берем текущую строку графы
+GetArrayItem (p , i, &parLine, sizeof(TextLineParam));
+sprintf (buf, "i =%d style=%d   ", i, parLine.style);
+Message(buf);
+TextItemParam parItem;
+for (int j=0, count1 = GetArrayCount(parLine.pTextItem); j < count1; j++)
+{
+//берем текущую компоненту строки
+GetArrayItem (parLine.pTextItem, j,
+&parItem, sizeof (TextItemParam));
+sprintf (buf, "компонента=%d h=%5.1f\ns=%s\n fontName=%s ",j,
+parItem.font.height,parItem.s, parItem.font.fontName);
+strcat (parItem.s, "!!!");
+//меняем текущую компоненту строки
+SetArrayItem (parLine.pTextItem, j, &parItem, sizeof (TextItemParam));
+Message(buf);
+}
+DeleteArray (parLine.pTextItem); //очистим массив компонент
+}
+//меняем текущую строку в массиве
+SetArrayItem (p , i, &parLine, sizeof(TextLineParam));
+//меняем текущую графу
+SetStampColumnText (numb, p);
+//очистим массив текстовых строк
+DeleteArray (p);
+}
+CloseStamp();
+5065
+
+
+
+}
+else
+Error ("Штамп не найден");
+
+GetReferenceDocumentPart пример использования 
+if (ksGetCurrentDocument (1))// документ должен быть графическим
+{ 
+//получим указатель на технические требования
+reference pTT = GetReferenceDocumentPart (1);
+if (pTT)

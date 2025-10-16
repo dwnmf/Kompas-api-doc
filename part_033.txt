@@ -1,0 +1,2532 @@
+Тип данных: Указатель на интерфейс ISheetMetalClosedCorner. 
+Синтаксис Automation:
+
+SheetMetalClosedCorner = Получить свойство (* )
+Object.SheetMetalClosedCorner(
+Index )
+SheetMetalClosedCorner = Получить свойство (**)
+Object.GetSheetMetalClosedCorner(
+Index )
+
+Синтаксис COM:
+
+Object.get_SheetMetalClosedCorner( Получить свойство
+Index, &SheetMetalClosedCorner )
+
+Входные параметры:
+
+ VARIANT Index  " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ISheetMetalClosedCorners  методы
+
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ISheetMetalClosedCorner ** Result );
+Возвращаемое значение: 
+
+ " указатель на интерфейс 
+ISheetMetalClosedCorner.
+1735
+
+
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс операции Замыкание углов.
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс ISheetMetalClosedCorner
+Интерфейс операции Замыкание углов.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ISheetMetalClosedCorner
+КОМПАС версия v18
+
+ISheetMetalClosedCorner  свойства
+
+ClosingClosedType  Способ замыкания углов
+Интерфейс...
+Тип данных: Значение из перечисления ksClosingClosedTypeEnum.
+Синтаксис Automation:
+
+ClosingClosedType = Получить свойство (* )
+Object.ClosingClosedType(
+Index );
+Object.ClosingClosedType( Установить свойство (* )
+Index ) = ClosingClosedType;
+ClosingClosedType = Получить свойство (**)
+Object.GetClosingClosedType(
+Index );
+Object.SetClosingClosedType( Установить свойство (**)
+Index, ClosingClosedType );
+
+Синтаксис COM:
+
+Object.get_ClosingClosedType Получить свойство
+( Index, &ClosingClosedType );
+Object.put_ClosingClosedType Установить свойство
+(  Index, ClosingClosedType );
+
+Входные параметры:
+
+ long Index  " индекс сгиба.
+1736
+
+
+
+ClosingContinue  Продолжать замыкание прилегающих 
+парных сгибов
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClosingContinue = Получить свойство (* )
+Object.ClosingContinue( Index
+);
+Object.ClosingContinue( Index Установить свойство (* )
+) = ClosingContinue;
+ClosingContinue = Получить свойство (**)
+Object.GetClosingContinue(
+Index );
+Object.SetClosingContinue( Установить свойство (**)
+Index, ClosingContinue );
+
+Синтаксис COM:
+
+Object.get_ClosingContinue( Получить
+Index, &ClosingContinue ); свойство
+Object.put_ClosingContinue( Установить
+Index, ClosingContinue ); свойство
+
+Входные параметры:
+
+ long Index  " индекс сгиба.
+
+ClosingCorneringType  Обработка угла при замыкании
+Интерфейс...
+Тип данных: Значение из перечисления ksClosingCorneringEnum.
+Синтаксис Automation:
+
+ClosingCorneringType = Получить свойство (* )
+Object.ClosingCorneringType(
+Index );
+Object.ClosingCorneringType( Установить свойство (* )
+Index ) =
+ClosingCorneringType;
+ClosingCorneringType = Получить свойство (**)
+Object.GetClosingCorneringTy
+pe( Index);
+1737
+
+
+
+Object.SetClosingCorneringTy Установить свойство (**)
+pe( Index,
+ClosingCorneringType );
+
+Синтаксис COM:
+
+Object.get_ClosingCorneringType( Получить
+Index, &ClosingCorneringType ); свойство
+Object.put_ClosingCorneringType( Установить
+Index, ClosingCorneringType ); свойство
+
+Входные параметры:
+
+ long Index  " индекс сгиба.
+
+ClosingDirection  Направление. Переставить сторону
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClosingDirection = Получить свойство (* )
+Object.ClosingDirection( Index
+);
+Object.ClosingDirection( Index Установить свойство (* )
+) = ClosingDirection;
+ClosingDirection = Получить свойство (**)
+Object.GetClosingDirection(
+Index );
+Object.SetClosingDirection( Установить свойство (**)
+Index, ClosingDirection );
+
+Синтаксис COM:
+
+Object.get_ClosingDirection( Получить
+Index, &ClosingDirection ); свойство
+Object.put_ClosingDirection( Установить
+Index, ClosingDirection ); свойство
+
+Входные параметры:
+
+ long Index  " индекс сгиба.
+1738
+
+
+
+ClosingGapValue  Значение зазора при замыкании углов
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ClosingGapValue = Object.ClosingGapValue( Получить свойство (* )
+Index );
+Object.ClosingGapValue( Index ) = Установить свойство (* )
+ClosingGapValue;
+ClosingGapValue = Получить свойство (**)
+Object.GetClosingGapValue( Index );
+Object.SetClosingGapValue( Index, Установить свойство (**)
+ClosingGapValue );
+
+Синтаксис COM:
+
+Object.get_ClosingGapValue( Получить
+Index, &ClosingGapValue ); свойство
+Object.put_ClosingGapValue( Установить
+Index, ClosingGapValue ); свойство
+
+Входные параметры:
+
+ long Index  " индекс сгиба.
+
+ClosingHoleDiameter  Диаметр отверстия при 
+замыкании угла
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ClosingHoleDiameter = Получить свойство (* )
+Object.ClosingHoleDiameter(
+Index );
+Object.ClosingHoleDiameter( Установить свойство (* )
+Index ) = ClosingHoleDiameter;
+ClosingHoleDiameter = Получить свойство (**)
+Object.GetClosingHoleDiamete
+r( Index );
+Object.SetClosingHoleDiamete Установить свойство (**)
+r( Index, ClosingHoleDiameter
+);
+1739
+
+
+
+Синтаксис COM:
+
+Object.get_ClosingHoleDiamet Получить
+er( Index, свойство
+&ClosingHoleDiameter );
+Object.put_ClosingHoleDiamet Установить
+er(  Index, свойство
+ClosingHoleDiameter );
+
+Входные параметры:
+
+ long Index  " индекс сгиба.
+
+ClosingHoleOffset  Смещение отверстия при замыкании 
+угла
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ClosingHoleOffset = Получить свойство (* )
+Object.ClosingHoleOffset(
+Index );
+Object.ClosingHoleOffset( Установить свойство (* )
+Index ) = ClosingHoleOffset;
+ClosingHoleOffset = Получить свойство (**)
+Object.GetClosingHoleOffset(
+Index );
+Object.SetClosingHoleOffset( Установить свойство (**)
+Index, ClosingHoleOffset );
+
+Синтаксис COM:
+
+Object.get_ClosingHoleOffset( Получить
+Index, &ClosingHoleOffset ); свойство
+Object.put_ClosingHoleOffset( Установить
+Index, ClosingHoleOffset ); свойство
+
+Входные параметры:
+
+ long Index  " индекс сгиба.
+
+ClosingHolePlacement  Размещение отверстия при 
+круговой обработке угла
+Интерфейс...
+1740
+
+
+
+Тип данных: Значение из перечисления ksClosingHolePlacementEnum.
+Синтаксис Automation:
+
+ClosingHolePlacement = Получить свойство (* )
+Object.ClosingHolePlacement(
+Index );
+Object.ClosingHolePlacement( Установить свойство (* )
+Index ) =
+ClosingHolePlacement;
+ClosingHolePlacement = Получить свойство (**)
+Object.GetClosingHolePlacem
+ent( Index );
+Object.SetClosingHolePlacem Установить свойство (**)
+ent( Index,
+ClosingHolePlacement );
+
+Синтаксис COM:
+
+Object.get_ClosingHolePlace Получить
+ment( Index, свойство
+&ClosingHolePlacement );
+Object.put_ClosingHolePlace Установить
+ment(  Index, свойство
+ClosingHolePlacement );
+
+Входные параметры:
+
+ long Index  " индекс сгиба.
+
+CornersCount  Количество углов
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+CornersCount = Object.CornersCount Получить свойство (* )
+CornersCount = Получить свойство (**)
+Object.GetCornersCount()
+
+Синтаксис COM:
+
+Object.get_CornersCount( Получить свойство
+&CornersCount )
+
+Примечание:
+1741
+
+
+
+ Свойство доступно только для чтения.
+
+CornerObject  Угол. Объект (ребро или грань), 
+задающий угол листового тела
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+CornerObject = Object.CornerObject( Получить свойство (* )
+Index )
+CornerObject = Получить свойство (**)
+Object.GetCornerObject( Index )
+
+Синтаксис COM:
+
+Object.get_CornerObject( Index, Получить свойство
+&CornerObject ) 
+
+Входные параметры:
+
+ long Index  " индекс сгиба.
+
+Примечание:
+Свойство доступно только для чтения.
+
+CornersObjects  Углы. Массив объектов в виде 
+SAFEARRAY DISPATCH  VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+CornersObjects = Получить свойство (* )
+Object.CornersObjects;
+Object.CornersObjects = Установить свойство (* )
+CornersObjects;
+CornersObjects = Получить свойство (**)
+Object.GetCornersObjects();
+Object.SetCornersObjects( Установить свойство (**)
+CornersObjects );
+
+Синтаксис COM:
+1742
+
+
+
+Object.get_CornersObjects( Получить
+&CornersObjects ); свойство
+Object.put_CornersObjects( Установить
+CornersObjects ); свойство
+
+DefailtParametersIndex  Единые параметры. Индекс 
+угла, задающий общие параметры
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+DefailtParametersIndex = Получить свойство (* )
+Object.DefailtParametersIndex
+;
+Object.DefailtParametersIndex Установить свойство (* )
+= DefailtParametersIndex ;
+DefailtParametersIndex = Получить свойство (**)
+Object.GetDefailtParametersIn
+dex();
+Object.SetDefailtParametersIn Установить свойство (**)
+dex( DefailtParametersIndex );
+
+Синтаксис COM:
+
+Object.get_DefailtParametersIndex( Получить
+&DefailtParametersIndex ); свойство
+Object.put_DefailtParametersIndex( Установить
+DefailtParametersIndex ); свойство
+
+ISheetMetalClosedCorner  методы
+
+AddCornerObject  Добавить угол сгиба
+Интерфейс...
+Синтаксис Automation:
+BOOL AddCornerObject( IModelObject * NewVal );
+Синтаксис COM:
+HRESULT AddCornerObject( IModelObject * NewVal, BOOL * Result );
+Возвращаемое значение: 
+1743
+
+
+
+  
+ TRUE  " в случае успешного
+
+завершения.
+
+Входные параметры:
+    
+
+NewVal  " указатель на объект,
+задающий угол сгиба.
+
+ClearCornerObjects  Удалить все углы
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearCornerObjects();
+Синтаксис COM:
+HRESULT ClearCornerObjects( BOOL * Result );
+Возвращаемое значение: 
+  
+
+ TRUE  " в случае успешного
+завершения.
+
+DeleteCornerObject  Удалить угол сгиба
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteCornerObject( long Index );
+Синтаксис COM:
+HRESULT DeleteCornerObject( long Index, BOOL * Result );
+Возвращаемое значение:
+  
+
+ TRUE  " в случае успешного
+завершения.
+
+Входные параметры:
+    
+
+ Index  " индекс сгиба.
+1744
+
+
+
+Интерфейс ISheetMetalCut
+Справка системы КОМПАС...
+kompas.chm::/CM_SHMT_CUT.htm
+Интерфейс параметров элемента листового тела "Вырез".
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ISheetMetalCut
+Примечание:
+Интерфейс можно получить с помощью метода коллекции элементов "Вырез"
+ISheetMetalCuts::Add или свойства ISheetMetalCuts::SheetMetalCut.
+
+ISheetMetalCut  свойства
+
+Body  Тело для операции
+Интерфейс...
+Тип данных: указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+
+Body = iObject.Body Получить свойство (* )
+iObject.Body = Body Установить свойство (* )
+Body = iObject.GetBody() Получить свойство (**)
+iObject.SetBody( Body ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Body( &Body ) Получить свойство
+iObject">put_Body( Body ) Установить свойство
+
+Примечание.
+В качестве тела можно передавать листовое тело ISheetMetalBody, или примитив, при"
+надлежащий листовому телу.
+
+Cut  Результат операции
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Cut = iObject.Cut; Получить свойство (* )
+iObject.Cut = Cut; Установить свойство (* )
+Cut = iObject.GetCut(); Получить свойство (**)
+1745
+
+
+
+iObject.SetCut( Cut ); Установить свойство (**)
+Синтаксис COM:
+
+iObject">get_Cut( &Cut ); Получить свойство
+iObject">put_Cut( Cut ); Установить свойство
+
+Значения свойства:
+
+TRUE " вычитание элемента,
+FALSE " пересечение элементов.
+
+Примечание.
+Позволяет считывать и устанавливать результат операции.
+
+CutType  Тип построения выреза
+Интерфейс...
+Тип данных: из перечисления ksHoleCutTypeEnum
+Синтаксис Automation:
+
+CutType = iObject.CutType; Получить свойство (* )
+iObject.CutType = CutType; Установить свойство (* )
+CutType = Получить свойство (**)
+iObject.GetCutType();
+iObject.SetCutType( Установить свойство (**)
+CutType );
+
+Синтаксис COM:
+
+iObject">get_CutType( &CutType ); Получить свойство
+iObject">put_CutType( CutType ); Установить свойство
+
+Примечание.
+Позволяет считывать и устанавливать тип построения отверстия.
+
+Depth  Глубина выреза
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Depth = iObject.Depth; Получить свойство (* )
+iObject.Depth = Depth; Установить свойство (* )
+Depth = Получить свойство (**)
+iObject.GetDepth();
+1746
+
+
+
+iObject.SetDepth( Depth ); Установить свойство (**)
+Синтаксис COM:
+
+iObject">get_Depth( &Depth ); Получить свойство
+iObject">put_Depth( Depth ); Установить свойство
+
+Примечание.
+
+1.  Свойство доступно при типе построения отверстия "на глубину", см.ksHoleCutTypeEnum.
+2.  Позволяет считывать и устанавливать глубину отверстия.
+
+DepthObject  Объект, задающий глубину вырезания
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+DepthObject = Получить свойство (* )
+iObject.DepthObject;
+iObject.DepthObject = Установить свойство (* )
+DepthObject;
+DepthObject = Получить свойство (**)
+iObject.GetDepthObject();
+iObject.SetDepthObject( Установить свойство (**)
+DepthObject );
+
+Синтаксис COM:
+
+iObject">get_DepthObject( Получить свойство
+&DepthObject );
+iObject">put_DepthObject( Установить свойство
+DepthObject );
+
+Примечание.
+
+1.  Свойство доступно при типе построения отверстия "до грани", см.ksHoleCutTypeEnum.
+2.  Позволяет получать указатель на интерфейс объекта и устанавливать грань, задающую
+
+глубину выдавливания.
+
+Sketch  Эскиз выреза
+Интерфейс...
+Тип данных: указатель на интерфейс ISketch
+Синтаксис Automation:
+
+Sketch = iObject.Sketch; Получить свойство (* )
+iObject.Sketch = Sketch; Установить свойство (* )
+1747
+
+
+
+Sketch = iObject.GetSketch(); Получить свойство (**)
+iObject.SetSketch( Sketch ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Sketch( Получить свойство
+&Sketch );
+iObject">put_Sketch( Установить свойство
+Sketch );
+
+Примечание.
+Позволяет получать указатель на интерфейс эскиза выреза и устанавливать новый
+эскиз.
+
+Интерфейс ISheetMetalHole
+Справка системы КОМПАС...
+kompas.chm::/CM_SHMT_HOLE.htm
+Интерфейс параметров элемента листового тела "Отверстие".
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ISheetMetalHole
+Примечание:
+Интерфейс можно получить с помощью метода коллекции элементов "отверстие"
+ISheetMetalHoles::Add или свойства ISheetMetalHoles::SheetMetalHole.
+
+ISheetMetalHole  свойства
+
+AssociationVertex  Точечный объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject 
+Синтаксис Automation:
+
+AssociationVertex = Получить свойство (* )
+Object.AssociationVertex;
+Object.AssociationVertex = Установить свойство (* )
+AssociationVertex;
+AssociationVertex = Получить свойство (**)
+Object.GetAssociationVertex();
+Object.SetAssociationVertex( Установить свойство (**)
+AssociationVertex );
+1748
+
+
+
+Синтаксис COM:
+
+Object.get_AssociationVer Получить свойство
+tex( &AssociationVertex );
+Object.put_AssociationVer Установить свойство
+tex(  AssociationVertex );
+
+Axis  Создавать ось
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ Axis = Object. Axis; Получить свойство (* )
+Object. Axis =  Axis; Установить свойство (* )
+ Axis = Object.Get Axis(); Получить свойство (**)
+Object.Set Axis(  Axis ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ Axis( & Axis ); Получить свойство
+Object.put_ Axis(   Axis ); Установить свойство
+
+BasePlane  Опорная грань
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+BasePlane = Получить свойство (* )
+iObject.BasePlane;
+iObject.BasePlane = Установить свойство (* )
+BasePlane;
+BasePlane = Получить свойство (**)
+iObject.GetBasePlane();
+iObject.SetBasePlane( Установить свойство (**)
+BasePlane );
+
+Синтаксис COM:
+1749
+
+
+
+iObject">get_BasePlane( Получить свойство
+&BasePlane );
+iObject">put_BasePlane( Установить свойство
+BasePlane );
+
+Примечание.
+Позволяет устанавливать и получать указатель на интерфейс грани, на которой будет
+располагаться эскиз отверстия.
+
+Body  Тело для операции
+Интерфейс...
+Тип данных: Указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+
+Body = Object.Body; Получить свойство (* )
+Object.Body = Body; Установить свойство (* )
+Body = Object.GetBody(); Получить свойство (**)
+Object.SetBody( Body ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Body( &Body ); Получить свойство
+Object.put_Body(  Body ); Установить свойство
+
+CutType  Тип построения отверстия
+Интерфейс...
+Тип данных: из перечисления ksHoleCutTypeEnum
+Синтаксис Automation:
+
+CutType = iObject.CutType; Получить свойство (* )
+iObject.CutType = CutType; Установить свойство (* )
+CutType = Получить свойство (**)
+iObject.GetCutType();
+iObject.SetCutType( Установить свойство (**)
+CutType );
+
+Синтаксис COM:
+
+iObject">get_CutType( Получить свойство
+&CutType );
+iObject">put_CutType( Установить свойство
+CutType );
+1750
+
+
+
+Примечание.
+Позволяет считывать и устанавливать тип построения отверстия.
+
+Depth  Глубина отверстия
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Depth = iObject.Depth; Получить свойство (* )
+iObject.Depth = Depth; Установить свойство (* )
+Depth = Получить свойство (**)
+iObject.GetDepth();
+iObject.SetDepth( Depth ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Depth( Получить свойство
+&Depth );
+iObject">put_Depth( Depth Установить свойство
+);
+
+Примечание.
+
+1.  Свойство доступно при типе построения отверстия "на глубину", см.ksHoleCutTypeEnum.
+2.  Позволяет считывать и устанавливать глубину отверстия.
+
+DepthObject  Объект, задающий глубину вырезания
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+DepthObject = Получить свойство (* )
+iObject.DepthObject;
+iObject.DepthObject = Установить свойство (* )
+DepthObject;
+DepthObject = Получить свойство (**)
+iObject.GetDepthObject();
+iObject.SetDepthObject( Установить свойство (**)
+DepthObject );
+
+Синтаксис COM:
+
+iObject">get_DepthObject( Получить свойство
+&DepthObject );
+1751
+
+
+
+iObject">put_DepthObject( Установить свойство
+DepthObject );
+
+Примечание.
+
+1.  Свойство доступно при типе построения отверстия "до грани", см.ksHoleCutTypeEnum.
+2.  Позволяет получать указатель на интерфейс объекта и устанавливать объект, задающий
+
+глубину выдавливания.
+
+Diameter  Диаметр отверстия
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Diameter = Получить свойство (* )
+iObject.Diameter;
+iObject.Diameter = Установить свойство (* )
+Diameter;
+Diameter = Получить свойство (**)
+iObject.GetDiameter();
+iObject.SetDiameter( Установить свойство (**)
+Diameter );
+
+Синтаксис COM:
+
+iObject">get_Diameter( Получить свойство
+&Diameter );
+iObject">put_Diameter( Установить свойство
+Diameter );
+
+Примечание.
+Позволяет считывать и устанавливать диаметр отверстия.
+
+Point3DParamSurface  Параметры пространственной 
+точки на поверхности
+Интерфейс...
+Тип данных: Указатель на интерфейс IKompasAPIObject 
+Синтаксис Automation:
+
+Point3DParamSurface = Получить свойство(* ) 
+Object.Point3DParamSurface
+Point3DParamSurface = Получить свойство(**)
+Object.GetPoint3DParamSurface()
+
+Синтаксис COM:
+1752
+
+
+
+Object.get_Point3DParamSurface( Получить свойство.
+&Point3DParamSurface )
+
+Примечание:
+Свойство доступно только для чтения.
+Свойство позволяет получить/установить параметры точки привязки отверстия на по"
+верхности, используя интерфейс параметров точки на поверхности
+IPoint3DParamSurface.
+
+Sketch  Эскиз
+Интерфейс...
+Тип данных: указатель на интерфейс эскиза ISketch
+Синтаксис Automation:
+
+Sketch = iObject.Sketch; Получить свойство (* )
+Sketch = Получить свойство (**)
+iObject.GetSketch();
+
+Синтаксис COM:
+
+iObject">get_Sketch( Получить свойство
+&Sketch )
+
+Примечание.
+
+1.  Свойство позволяет получать эскиз для отверстия.
+2.  Свойство доступно только для чтения.
+3.  Эскиз создается при создании.
+
+X  Координата центра отверстия по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = iObject.X; Получить свойство (* )
+iObject.X = X; Установить свойство (* )
+X = iObject.GetX(); Получить свойство (**)
+iObject.SetX( X ); Установить свойство (**)
+
+Синтаксис COM:
+1753
+
+
+
+iObject">get_X( &X ); Получить свойство
+iObject">put_X( X ); Установить свойство
+
+Примечание.
+Позволяет считывать и устанавливать координату центра отверстия по X.
+
+Y  Координата центра отверстия по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = iObject.Y; Получить свойство (* )
+iObject.Y = Y; Установить свойство (* )
+Y = iObject.GetY(); Получить свойство (**)
+iObject.SetY( Y ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Y( &Y ); Получить свойство
+iObject">put_Y( Y ); Установить свойство
+
+Примечание.
+Позволяет считывать и устанавливать координату центра отверстия по Y.
+
+Интерфейс ISheetMetalJalousies
+Интерфейс коллекции элементов Жалюзи.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ ISheetMetalJalousies
+
+КОМПАС версия v18
+
+ISheetMetalJalousies  свойства
+
+SheetMetalJalousie  Возвращает элемент, заданный по 
+индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс ISheetMetalJalousie.
+Синтаксис Automation:
+1754
+
+
+
+SheetMetalJalousie = Получить свойство (* )
+Object.SheetMetalJalousie( Index );
+SheetMetalJalousie = Получить свойство (**)
+Object.GetSheetMetalJalousie( Index );
+
+Синтаксис COM:
+
+Object.get_SheetMetalJalousie( Index, Получить свойство
+&SheetMetalJalousie );
+
+Входные параметры:
+ 
+
+VARIANT Index  " индекс или имя 
+элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ISheetMetalJalousies  методы
+
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ISheetMetalJalousie * * Result );
+Возвращаемое значение: 
+
+ " указатель на интерфейс 
+ISheetMetalJalousie.
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс операции Жалюзи.
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс ISheetMetalJalousie
+Интерфейс операции Жалюзи.
+Иерархия:
+1755
+
+
+
+IDispatch
+IKompasAPIObject
+
+IModelObject
+ ISheetMetalJalousie
+
+Данный интерфейс можно получить с помощью метода коллекции операций пластина
+ISheetMetalJalousies::Add или свойства ISheetMetalJalousies::SheetMetalJalousie.
+КОМПАС версия v18
+
+ISheetMetalJalousie  свойства
+
+BuildingType  Способ построения
+Интерфейс...
+Тип данных: Значение из перечисления ksJalousieBuildingTypeEnum.
+Синтаксис Automation:
+
+BuildingType = Object.BuildingType; Получить свойство (* )
+Object.BuildingType = BuildingType; Установить свойство (* )
+BuildingType = Object.GetBuildingType(); Получить свойство (**)
+Object.SetBuildingType( BuildingType ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( &BuildingType ); Получить свойство
+Object.put_BuildingType(  BuildingType ); Установить свойство
+
+Direction  Направление построения: TRUE  Прямое, 
+FALSE  Обратное
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство (* )
+Object.Direction = Direction; Установить свойство (* )
+Direction = Object.GetDirection(); Получить свойство (**)
+Object.SetDirection( Direction ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ); Получить свойство
+Object.put_Direction(  Direction ); Установить свойство
+1756
+
+
+
+FormEnd  Форма торца
+Интерфейс...
+Тип данных: Значение из перечисления ksJalousieFormEndEnum.
+Синтаксис Automation:
+
+FormEnd = Object.FormEnd; Получить свойство (* )
+FormEnd = Object.GetFormEnd(); Установить свойство (* )
+FormEnd = Object.GetFormEnd(); Получить свойство (**)
+Object.SetFormEnd( FormEnd ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FormEnd( &FormEnd ); Получить свойство
+Object.put_FormEnd(  FormEnd ); Установить свойство
+
+Height  Высота
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Height = Object.Height; Получить свойство (* )
+Object.Height = Height; Установить свойство (* )
+Height = Object.GetHeight(); Получить свойство (**)
+Object.SetHeight( Height ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Height( &Height ); Получить свойство
+Object.put_Height(  Height ); Установить свойство
+
+HeightType  Способ задания высоты
+Интерфейс...
+Тип данных: Значение из перечисления ksJalousieHeightTypeEnum.
+Синтаксис Automation:
+
+HeightType = Object.HeightType; Получить свойство (* )
+Object.HeightType = HeightType; Установить свойство (* )
+HeightType = Object.GetHeightType(); Получить свойство (**)
+Object.SetHeightType( HeightType ); Установить свойство (**)
+
+Синтаксис COM:
+1757
+
+
+
+Object.get_HeightType( &HeightType ); Получить свойство
+Object.put_HeightType(  HeightType ); Установить свойство
+
+Radius  Радиус скругления основания
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = Object.Radius; Получить свойство (* )
+Object.Radius = Radius; Установить свойство (* )
+Radius = Object.GetRadius(); Получить свойство (**)
+Object.SetRadius( Radius ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Radius( &Radius ); Получить свойство
+Object.put_Radius(  Radius ); Установить свойство
+
+Round  Скругление основания
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Round = Object.Round; Получить свойство (* )
+Object.Round = Round; Установить свойство (* )
+Round = Object.GetRound(); Получить свойство (**)
+Object.SetRound( Round ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Round( &Round ); Получить свойство
+Object.put_Round(  Round ); Установить свойство
+
+Side  Положение
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Side = Object.Side; Получить свойство (* )
+1758
+
+
+
+Object.Side = Side; Установить свойство (* )
+Side = Object.GetSide(); Получить свойство (**)
+Object.SetSide( Side ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Side( &Side ); Получить свойство
+Object.put_Side(  Side ); Установить свойство
+
+Значение свойства:
+
+TRUE  " справа
+FALSE " слева.
+
+Sketch  Эскиз
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+
+Синтаксис Automation:
+
+Sketch = Object.Sketch; Получить свойство (* )
+Object.Sketch = Sketch; Установить свойство (* )
+Sketch = Object.GetSketch(); Получить свойство (**)
+Object.SetSketch( Sketch ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sketch( &Sketch ); Получить свойство
+Object.put_Sketch(  Sketch ); Установить свойство
+
+Width  Ширина
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Width = Object.Width; Получить свойство (* )
+Object.Width = Width; Установить свойство (* )
+Width = Object.GetWidth(); Получить свойство (**)
+Object.SetWidth( Width ); Установить свойство (**)
+
+Синтаксис COM:
+1759
+
+
+
+Object.get_Width( &Width ); Получить свойство
+Object.put_Width(  Width ); Установить свойство
+
+Интерфейс ISheetMetalLineBend
+Справка системы КОМПАС...
+kompas.chm::/808_94_5_Sgib_po_linii.htm
+Интерфейс параметров Сгиба по линии.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ISheetMetalLineBend
+Примечание:
+Интерфейс можно получить с помощью метода коллекции сгибов
+ISheetMetalLineBends::Add или свойства ISheetMetalLineBends::SheetMetalLineBend.
+
+ISheetMetalLineBend  свойства
+
+Angle  Угол сгиба
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = iObject.Angle; Получить свойство (* )
+iObject.Angle = Angle; Установить свойство (* )
+Angle = iObject.GetAngle; Получить свойство (**)
+iObject.SetAngle( Angle ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Angle( &Angle ); Получить свойство
+iObject">put_Angle( Angle ); Установить свойство
+
+Примечание.
+Позволяет считывать и устанавливать угол сгиба.
+1760
+
+
+
+AngleType  Способ задания угла  угол сгиба / 
+дополняющий угол
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AngleType = Получить свойство (* )
+iObject.AngleType;
+iObject.AngleType = Установить свойство (* )
+AngleType;
+AngleType = Получить свойство (**)
+iObject.GetAngleType;
+iObject.SetAngleType( Установить свойство (**)
+AngleType );
+
+Синтаксис COM:
+
+iObject">get_AngleType( Получить свойство
+&AngleType );
+iObject">put_AngleType( Установить свойство
+AngleType );
+
+Значения свойства:
+
+TRUE " угол интерпретируется как угол сгиба,
+FALSE " угол интерпретируется как дополняющий угол.
+
+Примечание.
+Позволяет считывать и устанавливать способ задания угла.
+
+BendCoefficient  Коэффициент нейтрального слоя
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BendCoefficient = Получить свойство (* )
+iObject.BendCoefficient;
+iObject.BendCoefficient = Установить свойство (* )
+BendCoefficient;
+BendCoefficient = Получить свойство (**)
+iObject.GetBendCoefficient;
+iObject.SetBendCoefficient( Установить свойство (**)
+BendCoefficient );
+
+Синтаксис COM:
+1761
+
+
+
+iObject">get_BendCoefficient( Получить свойство
+&BendCoefficient );
+iObject">put_BendCoefficient( Установить свойство
+BendCoefficient );
+
+Примечание.
+Чтобы свойство было доступно, необходимо установить тип расчета длины развёртки "
+коэффициент нейтрального слоя. Позволяет считывать и устанавливать коэффициент
+нейтрального слоя. Get " cвойство будет возвращать коэффициент нейтрального слоя
+базового листового тела, пока не будет установлен коэффициент нейтрального слоя для
+сгиба по линии.
+
+BendLeftSideFixed  Признак фиксации левой стороны
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BendLeftSideFixed = Получить свойство (* )
+iObject.BendLeftSideFixed;
+iObject.BendLeftSideFixed = Установить свойство (* )
+BendLeftSideFixed;
+BendLeftSideFixed = Получить свойство (**)
+iObject.GetBendLeftSideFixed;
+iObject.SetBendLeftSideFixed( Установить свойство (**)
+BendLeftSideFixed );
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_BendLeftSideFixed( 
+&BendLeftSideFixed );
+iObject" Установить свойство
+>put_BendLeftSideFixed( 
+BendLeftSideFixed );
+
+Значения свойства:
+
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Примечание.
+Позволяет установить и получить признак фиксации левой стороны.
+1762
+
+
+
+BendReduction  Уменьшение сгиба
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BendReduction = Получить свойство (* )
+iObject.BendReduction;
+iObject.BendReduction = Установить свойство (* )
+BendReduction;
+BendReduction = Получить свойство (**)
+iObject.GetBendReduction;
+iObject.SetBendReduction( Установить свойство (**)
+BendReduction );
+
+Синтаксис COM:
+
+iObject">get_BendReduction( Получить свойство
+&BendReduction );
+iObject">put_BendValue( Установить свойство
+BendValue );
+
+Примечание.
+Чтобы свойство было доступно, необходимо установить тип расчета длины развёртки "
+величина сгиба. Позволяет считывать и устанавливать величину сгиба. Get " cвойство бу"
+дет возвращать величину сгиба базового листового тела, пока не будет установлена "ве"
+личина сгиба" для сгиба по линии.
+
+BendTablePath  Уменьшение сгиба
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+BendTablePath = Получить свойство (* )
+iObject.BendTablePath;
+BendTablePath = Получить свойство (**)
+iObject.GetBendTablePath;
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_BendTablePath( 
+&BendTablePath );
+
+Примечание.
+1763
+
+
+
+Свойство доступно только для чтения. Таблица сгибов одна на документ. Путь к таблице
+сгибов выбирается у базового листового тела.
+
+BendType  Cпособ формирования сгиба
+Интерфейс...
+Тип данных: из перечисления ksBendTypeEnum
+Синтаксис Automation:
+
+BendType = Получить свойство (* )
+iObject.BendType;
+iObject.BendType = Установить свойство (* )
+BendType;
+BendType = Получить свойство (**)
+iObject.GetBendType;
+iObject.SetBendType( Установить свойство (**)
+BendType );
+
+Синтаксис COM:
+
+iObject">get_BendType( Получить свойство
+&BendType );
+iObject">put_BendType( Установить свойство
+BendType );
+
+Примечание.
+Позволяет считывать и устанавливать способ формирования сгиба.
+
+BendValue  Величина сгиба
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BendValue = iObject.BendValue; Получить свойство (* )
+iObject.BendValue = BendValue; Установить свойство (* )
+BendValue = iObject.GetBendValue; Получить свойство (**)
+iObject.SetBendValue( BendValue ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_BendValue( Получить свойство
+&BendValue );
+iObject">put_BendValue( Установить свойство
+BendValue );
+1764
+
+
+
+Примечание.
+Чтобы свойство было доступно, необходимо установить тип расчета длины развёртки "
+величина сгиба. Позволяет считывать и устанавливать величину сгиба. Get " cвойство бу"
+дет возвращать величину сгиба базового листового тела, пока не будет установлена "ве"
+личина сгиба" для сгиба по линии.
+
+Direction  Направление построения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = iObject.Direction; Получить свойство (* )
+iObject.Direction = Direction; Установить свойство (* )
+Direction = iObject.GetDirection; Получить свойство (**)
+iObject.SetDirection( Direction ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Direction( &Direction ); Получить свойство
+iObject">put_Direction( Direction ); Установить свойство
+
+Значения свойства:
+
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Примечание.
+Позволяет установить и получить направление построения сгиба.
+
+DismissalAngleType  Способ освобождения угла cгиба
+Интерфейс...
+Тип данных: из перечисления ksBendAngleReleaseTypeEnum
+Синтаксис Automation:
+
+DismissalAngleType = iObject.DismissalAngleType; Получить свойство (* )
+iObject.DismissalAngleType = DismissalAngleType; Установить свойство (* )
+DismissalAngleType = Получить свойство (**)
+iObject.GetDismissalAngleType;
+iObject.SetDismissalAngleType( Установить свойство (**)
+DismissalAngleType );
+
+Синтаксис COM:
+1765
+
+
+
+iObject">get_DismissalAngleType( Получить свойство
+&DismissalAngleType );
+iObject">put_DismissalAngleType( Установить свойство
+DismissalAngleType );
+
+Примечание.
+Позволяет считывать и устанавливать способ освобождения угла cгиба.
+
+Faces  Массив граней (SAFEARRAY)
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Faces = iObject.Faces; Получить свойство (* )
+iObject.Faces = Faces; Установить свойство (* )
+Faces = iObject.GetFaces; Получить свойство (**)
+iObject.SetFaces( Faces ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Faces( &Faces ); Получить свойство
+iObject">put_Faces( Faces ); Установить свойство
+
+Примечание.
+Позволяет получать и устанавливать грань или массив граней, участвующих в операции
+Сгиб по линии. Массив граней возвращается в виде массива SAFEARRAY граней
+LPDISPATCH (VT_ARRAY | VT_DISPATCH).
+
+InternalRadius  Внутренний радиус
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+InternalRadius = Получить свойство (* )
+iObject.InternalRadius;
+iObject.InternalRadius = Установить свойство (* )
+InternalRadius;
+InternalRadius = Получить свойство (**)
+iObject.GetInternalRadius;
+iObject.SetInternalRadius( Установить свойство (**)
+InternalRadius );
+
+Синтаксис COM:
+1766
+
+
+
+iObject" Получить свойство
+>get_InternalRadius( 
+&InternalRadius );
+iObject" Установить свойство
+>put_InternalRadius( 
+InternalRadius );
+
+Значения свойства:
+
+TRUE " внутренний радиус,
+FALSE " наружный радиус.
+
+Примечание.
+Позволяет получать и устанавливать признак "внутренний радиус".
+
+Line  Прямолинейный объект (отрезок эскиза или 
+ломаной, ребро или ось) 
+Интерфейс...
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+Line = iObject.Line; Получить свойство (* )
+iObject.Line = Line; Установить свойство (* )
+Line = iObject.GetLine; Получить свойство (**)
+iObject.SetLine( Line ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Line( &Line ); Получить свойство
+iObject">put_Line( Line ); Установить свойство
+
+Примечание.
+Позволяет получать и устанавливать прямолинейный объект (отрезок эскиза или ломан"
+ной, ребро или ось), относительно которого сгибается листовое тело. Прямолинейный
+объект и грань (массив граней), участвующие в операции "сгиб по линии", должны рас"
+полагаться в одной плоскости.
+
+Radius  Радиус сгиба
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+1767
+
+
+
+Radius = iObject.Radius; Получить свойство (* )
+iObject.Radius = Radius; Установить свойство (* )
+Radius = iObject.GetRadius; Получить свойство (**)
+iObject.SetRadius( Radius ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Radius( Получить свойство
+&Radius );
+iObject">put_Radius( Установить свойство
+Radius );
+
+Примечание.
+Позволяет получать и устанавливать радиус сгиба.
+
+Straighten  Разогнуть сгиб
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Straighten = iObject.Straighten; Получить свойство (* )
+iObject.Straighten = Straighten; Установить свойство (* )
+Straighten = iObject.GetStraighten; Получить свойство (**)
+iObject.SetStraighten( Straighten ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Straighten( &Straighten ); Получить свойство
+iObject">put_Straighten( Straighten ); Установить свойство
+
+Значения свойства:
+
+TRUE " угол разогнут,
+FALSE " угол согнут.
+
+Примечание.
+Позволяет считывать и устанавливать способ формирования сгиба.
+
+UnfoldType  Способ определения длины развертки
+Интерфейс...
+Тип данных: из перечисления ksUnfoldTypeEnum
+Синтаксис Automation:
+1768
+
+
+
+UnfoldType = iObject.UnfoldType; Получить свойство (* )
+iObject.UnfoldType = UnfoldType; Установить свойство (* )
+UnfoldType = iObject.GetUnfoldType; Получить свойство (**)
+iObject.SetUnfoldType( UnfoldType ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_UnfoldType( Получить свойство
+&UnfoldType );
+iObject">put_UnfoldType( Установить свойство
+UnfoldType );
+
+Примечание.
+Позволяет считывать и устанавливать способ определения длины развертки. Если задан
+способ определения длины развертки " из таблицы, то будут недоступны свойства уста"
+новки (Set) для коэффициента нейтрального слоя, величины сгиба и уменьшения сгиба,
+т.к они будут браться из таблицы.
+
+Интерфейс ISheetMetalRibs
+Интерфейс коллекции элементов Ребро усиления.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ISheetMetalRibs
+
+КОМПАС версия v18
+
+ISheetMetalRibs  свойства
+
+SheetMetalRib  Возвращает элемент, заданный по 
+индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс ISheetMetalRib. 
+Синтаксис Automation:
+
+SheetMetalRib = Object.SheetMetalRib( Index ); Получить свойство (* )
+SheetMetalRib = Object.GetSheetMetalRib( Index ); Получить свойство (**)
+
+Синтаксис COM:
+1769
+
+
+
+Object.get_SheetMetalRib( Получить свойство
+Index, &SheetMetalRib );
+
+Входные параметры:
+
+VARIANT Index  " индекс или имя 
+элемента.
+
+Примечание:
+ Свойство доступно только для чтения.
+
+ISheetMetalRibs  методы
+
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ISheetMetalRib ** Result );
+Возвращаемое значение: 
+
+ " указатель на интерфейс 
+ISheetMetalRib.
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс операции Пластина.
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс ISheetMetalRuledShell
+Интерфейс операции Обечайка.
+Иерархия:
+IDispatch
+
+ISheetMetalRuledShell
+Данный интерфейс можно получить из коллекции обечаек, полученной с помощью свой"
+ства ISheetMetalContainer::SheetMetalRuledShells, с помощью метода
+ISheetMetalBodies::Add или свойства ISheetMetalBodies::SheetMetalBody.
+Интерфейс является дополнительным для ISheetMetalBody.
+1770
+
+
+
+Версия Компас v18.1
+
+ISheetMetalRuledShell  свойства
+
+DraftOutward  Признак уклона наружу
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DraftOutward = Object.DraftOutward( Normal ) Получить свойство (* )
+Object.DraftOutward( Normal ) = DraftOutward Установить свойство (* )
+DraftOutward = Object.GetDraftOutward( Normal ) Получить свойство (**)
+Object.SetDraftOutward( Normal, DraftOutward ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DraftOutward( Normal, &DraftOutward ) Получить свойство
+Object.put_DraftOutward(  Normal, DraftOutward ) Установить свойство
+
+ Входные параметры:
+
+normal TRUE  " угол наклона в прямом направлении.
+FALSE " угол наклона в обратном направлении.
+
+DraftValue  Угол уклона
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+DraftValue = Object.DraftValue( Normal ) Получить свойство (* )
+Object.DraftValue( Normal ) = DraftValue Установить свойство (* )
+DraftValue = Object.GetDraftValue( Normal ) Получить свойство (**)
+Object.SetDraftValue( Normal, DraftValue ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DraftValue( Normal, &DraftValue ) Получить свойство
+Object.put_DraftValue(  Normal, DraftValue ) Установить свойство
+
+ Входные параметры:
+
+normal TRUE  " угол наклона в прямом направлении.
+1771
+
+
+
+FALSE " угол наклона в обратном направлении.
+
+GapDraftPosition  Угловое смещение зазора вдоль 
+кривой
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+GapDraftPosition = Object.GapDraftPosition Получить свойство (* )
+Object.GapDraftPosition = GapDraftPosition Установить свойство (* )
+GapDraftPosition = Object.GetGapDraftPosition() Получить свойство (**)
+Object.SetGapDraftPosition( GapDraftPosition ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_GapDraftPosition( &GapDraftPosition Получить свойство
+)
+Object.put_GapDraftPosition(  GapDraftPosition ) Установить свойство
+
+GapOffsetLength  Величина смещения зазора вдоль 
+кривой
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+GapOffsetLength = Object.GapOffsetLength Получить свойство (* )
+Object.GapOffsetLength = GapOffsetLength Установить свойство (* )
+GapOffsetLength = Object.GetGapOffsetLength() Получить свойство (**)
+Object.SetGapOffsetLength( GapOffsetLength ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_GapOffsetLength( Получить
+&GapOffsetLength ) свойство
+Object.put_GapOffsetLength( Установить
+GapOffsetLength ) свойство
+
+GapOffsetU  Смещение зазора в % от длины кривой
+Интерфейс...
+1772
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+GapOffsetU = Object.GapOffsetU Получить свойство (* )
+Object.GapOffsetU = GapOffsetU Установить свойство (* )
+GapOffsetU = Object.GetGapOffsetU() Получить свойство (**)
+Object.SetGapOffsetU( GapOffsetU ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_GapOffsetU( &GapOffsetU ) Получить свойство
+Object.put_GapOffsetU(  GapOffsetU ) Установить свойство
+
+GapValue  Зазор
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+GapValue = Object.GapValue Получить свойство (* )
+Object.GapValue = GapValue Установить свойство (* )
+GapValue = Object.GetGapValue() Получить свойство (**)
+Object.SetGapValue( GapValue ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_GapValue( &GapValue ) Получить свойство
+Object.put_GapValue(  GapValue ) Установить свойство
+
+KeepRadius  Постоянный радиус
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+KeepRadius = Object.KeepRadius Получить свойство (* )
+Object.KeepRadius = KeepRadius Установить свойство (* )
+KeepRadius = Object.GetKeepRadius() Получить свойство (**)
+Object.SetKeepRadius( KeepRadius ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_KeepRadius( &KeepRadius ) Получить свойство
+Object.put_KeepRadius(  KeepRadius ) Установить свойство
+1773
+
+
+
+OffsetGapType  Тип смещения зазора
+Интерфейс...
+Тип данных: Значение из перечисления ksOffsetGapType.
+Синтаксис Automation:
+
+OffsetGapType = Object.OffsetGapType Получить свойство (* )
+Object.OffsetGapType = OffsetGapType Установить свойство (* )
+OffsetGapType = Object.GetOffsetGapType() Получить свойство (**)
+Object.SetOffsetGapType( OffsetGapType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OffsetGapType( &OffsetGapType ) Получить свойство
+Object.put_OffsetGapType(  OffsetGapType ) Установить свойство
+
+RuledBorder  Тип кромки оснований
+Интерфейс...
+Тип данных: из перечисления ksRuledBorderEnum.
+Синтаксис Automation:
+
+RuledBorder = Object.RuledBorder Получить свойство (* )
+Object.RuledBorder = RuledBorder Установить свойство (* )
+RuledBorder = Object.GetRuledBorder() Получить свойство (**)
+Object.SetRuledBorder( RuledBorder ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_RuledBorder( &RuledBorder ) Получить свойство
+Object.put_RuledBorder(  RuledBorder ) Установить свойство
+
+RuledJoint  Тип кромки стыка
+Интерфейс...
+Тип данных: из перечисления ksRuledJointEnum.
+Синтаксис Automation:
+
+RuledJoint = Object.RuledJoint Получить свойство (* )
+Object.RuledJoint = RuledJoint Установить свойство (* )
+RuledJoint = Object.GetRuledJoint() Получить свойство (**)
+Object.SetRuledJoint( RuledJoint ) Установить свойство (**)
+1774
+
+
+
+Синтаксис COM:
+
+Object.get_RuledJoint( &RuledJoint ) Получить свойство
+Object.put_RuledJoint(  RuledJoint ) Установить свойство
+
+SegmentationMethod  Способ сегментации эскиза
+Интерфейс...
+Тип данных: из перечисления ksSegmentationMethodEnum
+Синтаксис Automation:
+
+SegmentationMethod = Получить свойство (* )
+Object.SegmentationMethod
+Object.SegmentationMethod = Установить свойство (* )
+SegmentationMethod
+SegmentationMethod = Получить свойство (**)
+Object.GetSegmentationMethod()
+Object.SetSegmentationMethod( Установить свойство (**)
+SegmentationMethod )
+
+Синтаксис COM:
+
+Object.get_SegmentationMethod( Получить
+&SegmentationMethod ) свойство
+Object.put_SegmentationMethod( Установить
+SegmentationMethod ) свойство
+
+SegmentationSplitValue  Величина, определяющая 
+разбиения, интерпретация зависит от типа разбиения: 
+это либо количество сегментов, либо длина сегмента
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+SegmentationSplitValue = Получить свойство (* )
+Object.SegmentationSplitValue
+Object.SegmentationSplitValue = Установить свойство (* )
+SegmentationSplitValue
+SegmentationSplitValue = Получить свойство (**)
+Object.GetSegmentationSplitValue()
+1775
+
+
+
+Object.SetSegmentationSplitValue( Установить свойство (**)
+SegmentationSplitValue )
+
+Синтаксис COM:
+
+Object.get_SegmentationSplitValue( Получить
+&SegmentationSplitValue ) свойство
+Object.put_SegmentationSplitValue( Установить
+SegmentationSplitValue ) свойство
+
+UseSegmentation  Сегментация
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseSegmentation = Получить свойство (* )
+Object.UseSegmentation
+Object.UseSegmentation = Установить свойство (* )
+UseSegmentation
+UseSegmentation = Получить свойство (**)
+Object.GetUseSegmentation()
+Object.SetUseSegmentation( Установить свойство (**)
+UseSegmentation )
+
+Синтаксис COM:
+
+Object.get_UseSegmentation( Получить
+&UseSegmentation ) свойство
+Object.put_UseSegmentation( Установить
+UseSegmentation ) свойство
+
+Интерфейс ISheetMetalLinearRuledShell
+Интерфейс операции Линейчатая обечайка.
+Иерархия:
+IDispatch
+
+ISheetMetalLinearRuledShell
+Данный интерфейс можно получить из коллекции обечаек, полученной с помощью свой"
+ства ISheetMetalContainer::SheetMetalLinearRuledShells, с помощью метода
+ISheetMetalBodies::Add или свойства ISheetMetalBodies::SheetMetalBody.
+Интерфейс является дополнительным для ISheetMetalBody, ISheetMetalRuledShell.
+Версия Компас v18.1
+1776
+
+
+
+ISheetMetalLinearRuledShell свойства
+
+AutoSegmentation  Автоматическое разбиение
+Интерфейс...
+Тип данных: BOOL
+Интерфейс...
+Синтаксис Automation:
+
+AutoSegmentation = Получить свойство (* )
+Object.AutoSegmentation 
+Object.AutoSegmentation = Установить свойство (* )
+AutoSegmentation
+AutoSegmentation = Получить свойство (**)
+Object.GetAutoSegmentation()
+Object.SetAutoSegmentation( Установить свойство (**)
+AutoSegmentation )
+
+Синтаксис COM:
+
+Object.get_AutoSegmentation( Получить
+&AutoSegmentation ) свойство
+Object.put_AutoSegmentation( Установить
+AutoSegmentation ) свойство
+
+CurvesCount  Количество кривых в сегментации
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+CurvesCount = Object.CurvesCount Получить свойство (* )
+CurvesCount = Получить свойство (**)
+Object.GetCurvesCount()
+
+Синтаксис COM:
+
+Object.get_CurvesCount( Получить свойство
+&CurvesCount )
+
+Примечание:
+Свойство доступно только для чтения.
+1777
+
+
+
+CurveSegmentationMethod  Способ сегментации эскиза
+Интерфейс...
+Тип данных: из перечисления ksSegmentationMethodEnum
+Синтаксис Automation:
+
+CurveSegmentationMethod = Получить свойство (* )
+Object.CurveSegmentationMethod(
+CurveIndex 
+Object.CurveSegmentationMethod( Установить свойство (* )
+CurveIndex ) =
+CurveSegmentationMethod
+CurveSegmentationMethod = Получить свойство (**)
+Object.GetCurveSegmentationMethod
+( CurveIndex )
+Object.SetCurveSegmentationMethod Установить свойство (**)
+( CurveIndex,
+CurveSegmentationMethod )
+
+Синтаксис COM:
+
+Object.get_CurveSegmentationMethod( Получить свойство
+CurveIndex, &CurveSegmentationMethod )
+Object.put_CurveSegmentationMethod(  Установить свойство
+CurveIndex, CurveSegmentationMethod )
+
+Входные параметры:
+
+long CurveIndex  " индекс кривой.
+
+CurveSegmentationSplitValue  Величина, определяющая 
+разбиения, интерпретация зависит от типа разбиения: 
+количество сегментов либо длина сегмента
+Интерфейс...
+Тип данных: double
+
+Синтаксис Automation:
+1778
+
+
+
+CurveSegmentationSplitValue = Получить свойство (* )
+Object.CurveSegmentationSplitValue(
+CurveIndex ) 
+Object.CurveSegmentationSplitValue( Установить свойство (* )
+CurveIndex ) =
+CurveSegmentationSplitValue
+CurveSegmentationSplitValue = Получить свойство (**)
+Object.GetCurveSegmentationSplitVal
+ue( CurveIndex )
+Object.SetCurveSegmentationSplitVal Установить свойство (**)
+ue( CurveIndex,
+CurveSegmentationSplitValue )
+
+Синтаксис COM:
+
+Object.get_CurveSegmentationSplitVa Получить свойство
+lue( CurveIndex,
+&CurveSegmentationSplitValue )
+Object.put_CurveSegmentationSplitVa Установить свойство
+lue(  CurveIndex,
+CurveSegmentationSplitValue )
+
+Входные параметры:
+
+long  " индекс кривой.
+CurveIndex 
+
+CurveUseSegmentation  Сегментация
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CurveUseSegmentation = Получить свойство (* )
+Object.CurveUseSegmentation(
+CurveIndex )
+Object.CurveUseSegmentation( Установить свойство (* )
+CurveIndex ) = CurveUseSegmentation 
+CurveUseSegmentation = Получить свойство (**)
+Object.GetCurveUseSegmentation(
+CurveIndex )
+Object.SetCurveUseSegmentation( Установить свойство (**)
+CurveIndex, CurveUseSegmentation )
+
+Синтаксис COM:
+1779
+
+
+
+Object.get_CurveUseSegmentation( Получить свойство
+CurveIndex, &CurveUseSegmentation
+)
+Object.put_CurveUseSegmentation( Установить свойство
+CurveIndex, CurveUseSegmentation )
+
+Входные параметры:
+
+long  " индекс кривой.
+CurveIndex 
+
+EdgesCount  Количество ребер
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+EdgesCount = Object.EdgesCount Получить свойство (* )
+EdgesCount = Object.GetEdgesCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EdgesCount( Получить
+&EdgesCount ) свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Sketch2  Основание 2
+Интерфейс...
+Тип данных: Указатель на интерфейс ISketch 
+
+Синтаксис Automation:
+
+Sketch2 = Object.Sketch2 Получить свойство (* )
+Object.Sketch2 = Sketch2 Установить свойство (* )
+Sketch2 = Object.GetSketch2() Получить свойство (**)
+Object.SetSketch2( Sketch2 ) Установить свойство (**)
+
+Синтаксис COM:
+1780
+
+
+
+Object.get_Sketch2( &Sketch2 ) Получить
+свойство
+
+Object.put_Sketch2(  Sketch2 ) Установить
+свойство
+
+UseCommonSegmentationParameters  Единые 
+параметры сегментации
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseCommonSegmentationParameters = Получить свойство (* )
+Object.UseCommonSegmentationParameters
+Object.UseCommonSegmentationParameters = Установить свойство (* )
+UseCommonSegmentationParameters  
+UseCommonSegmentationParameters = Получить свойство (**)
+Object.GetUseCommonSegmentationParameter
+s()
+Object.SetUseCommonSegmentationParameter Установить свойство (**)
+s( UseCommonSegmentationParameters ) 
+
+Синтаксис COM:
+
+Object.get_UseCommonSegmentationParameter Получить свойство
+s( &UseCommonSegmentationParameters )
+Object.put_UseCommonSegmentationParameter Установить свойство
+s(  UseCommonSegmentationParameters )
+
+ISheetMetalLinearRuledShell  методы
+
+AddNewEdge  Добавление ребра после указанного 
+индексом
+Интерфейс...
+Синтаксис Automation:
+BOOL AddNewEdge( long IndexAt );
+Синтаксис COM:
+HRESULT AddNewEdge( long IndexAt, BOOL * Result );
+Возвращаемое значение: 
+1781
+
+
+
+ TRUE  " в случае успешного завершения.
+
+Входные параметры:
+
+IndexAt  " индекс.
+
+DeleteEdge  Удаление ребра
+Интерфейс...
+Синтаксис Automation :
+BOOL DeleteEdge( long Index );
+Синтаксис COM :
+HRESULT DeleteEdge( long Index, BOOL * Result );
+Возвращаемое значение: 
+
+ TRUE  " в случае успешного завершения.
+
+Входные параметры:
+
+Index  " индекс.
+
+GetEdgePointParam  Получение параметров точки ребра
+Интерфейс...
+Синтаксис Automation:
+BOOL GetEdgePointParam( long EdgeIndex, BOOL StartPoint, double * X, double * Y, double
+* Z, double * T, IModelObject * * AssociateVertex );
+Синтаксис COM:
+HRESULT GetEdgePointParam( long EdgeIndex, BOOL StartPoint, double * X, double * Y,
+double * Z, double * T, IModelObject * * AssociateVertex, BOOL * Result );
+Возвращаемое значение: 
+
+ TRUE  " в случае успешного завершения.
+
+Входные параметры:
+
+EdgeIndex  " индекс ребра.
+StartPoint " TRUE " начальная точка,
+
+" FALSE " конечная точка.
+1782
+
+
+
+Выходные параметры:
+
+X, Y, Z " координаты.
+T " параметр кривой.
+AssociateVertex " ассоциативный объект
+
+GetEdgePointParams  Получение параметров ребер
+Интерфейс...
+Синтаксис Automation:
+BOOL GetEdgePointParams( VARIANT * Points1, VARIANT * T1, VARIANT *
+AssociateVertexes1, VARIANT * Points2, VARIANT * T2, VARIANT * AssociateVertexes2 );
+Синтаксис COM :
+HRESULT GetEdgePointParams( VARIANT * Points1, VARIANT * T1, VARIANT *
+AssociateVertexes1, VARIANT * Points2, VARIANT * T2, VARIANT * AssociateVertexes2,
+BOOL * Result );
+Возвращаемое значение: 
+
+ TRUE  " в случае успешного завершения.
+
+Выходные параметры:
+
+Points1  " массив SAFEARRAY VT_R8 " VT_ARRAY | 
+VT_R8 начальных координат вершин.
+
+T1 " массив SAFEARRAY VT_R8 " VT_ARRAY | 
+VT_R8 параметров вершин.
+
+AssociateVertexes1 " массив SAFEARRAY DISPATCH " VT_ARRAY | 
+VT_DISPATCH вершин первой направляющей, 
+связанных с вершинами.
+
+Points2 " массив SAFEARRAY VT_R8 " VT_ARRAY | 
+VT_R8 координат вершин ребер на второй 
+направляющей.
+
+T2 "  массив SAFEARRAY VT_R8 " VT_ARRAY | 
+VT_R8 параметров вершин ребер на первой 
+направляющей.
+
+AssociateVertexes2 массив SAFEARRAY DISPATCH " VT_ARRAY | 
+VT_DISPATCH вершин второй направляющей, 
+связанных с вершинами.
+
+SetEdgePointParam  Изменение положения точки ребра
+Интерфейс...
+1783
+
+
+
+Синтаксис Automation :
+BOOL SetEdgePointParam( long EdgeIndex, BOOL StartPoint, double X, double Y, double Z,
+double * T, IModelObject * AssociateVertex );
+Синтаксис COM :
+HRESULT SetEdgePointParam( long EdgeIndex, BOOL StartPoint, double X, double Y, double
+Z, double * T, IModelObject * AssociateVertex, BOOL * Result );
+Возвращаемое значение: 
+
+ TRUE  " в случае успешного завершения.
+
+Входные параметры:
+
+EdgeIndex  " индекс ребра.
+StartPoint " TRUE " начальная точка,
+
+" FALSE " конечная точка.
+X, Y, Z " координаты.
+T " параметр кривой.
+AssociateVertex " ассоциативный объект
+
+Интерфейс ISheetMetalRib 
+Интерфейс операции Ребро усиления.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ ISheetMetalRib
+КОМПАС версия v18
+
+ISheetMetalRib  свойства
+
+ArchCoefficient  Относительная глубина прогиба в%
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ArchCoefficient = Получить свойство (* )
+Object.ArchCoefficient
+1784
+
+
+
+Object.ArchCoefficient = Установить свойство (* )
+ArchCoefficient
+ArchAngle = Получить свойство (**)
+Object.GetArchCoefficient()
+Object.SetArchCoefficient( Установить свойство (**)
+ArchCoefficient )
+
+Синтаксис COM:
+
+Object.get_Arc Получить
+hCoefficient( свойство
+&ArchCoefficie
+nt )
+Object.put_Arc Установить
+hCoefficient( свойство
+ArchCoefficient
+)
+
+Версия Компас v18.1
+
+ArchCreate  Создавать прогиб
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ArchCreate = Получить свойство (* )
+Object.ArchCreate
+Object.ArchCreate = Установить свойство (* )
+ArchCreate
+ArchCreate = Получить свойство (**)
+Object.GetArchCreate()
+Object.SetArchCreate( Установить свойство (**)
+ArchCreate )
+
+Синтаксис COM:
+
+Object.get_ArchCreate( &ArchCreate ) Получить свойство
+Object.put_ArchCreate(  ArchCreate ) Установить свойство
+
+Версия Компас v18.1
+
+ArchMeasure  Способ задания глубины прогиба
+Интерфейс...
+Тип данных: из перечисления ksArchMeasureEnum
+Синтаксис Automation:
+1785
+
+
+
+ArchMeasure = Получить свойство (* )
+Object.ArchMeasure
+Object.ArchMeasure = Установить свойство (* )
+ArchMeasure
+ArchMeasure = Получить свойство (**)
+Object.GetArchMeasure()
+Object.SetArchMeasure( Установить свойство (**)
+ArchMeasure )
+
+Синтаксис COM:
+
+Object.get_ArchMeasure( Получить свойство
+&ArchMeasure )
+Object.put_ArchMeasure(  Установить свойство
+ArchMeasure )
+
+ArchLength  Глубина прогиба
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ArchLength = Получить свойство (* )
+Object.ArchLength
+Object.ArchLength = Установить свойство (* )
+ArchLength
+ArchLength = Получить свойство (**)
+Object.GetArchLength()
+Object.SetArchLength( Установить свойство (**)
+ArchLength )
+
+Синтаксис COM:
+
+Object.get_ArchLength( Получить
+&ArchLength ) свойство
+Object.put_ArchLength( Установить
+ArchLength ) свойство
+
+ArchRadius  Радиус прогиба
+Интерфейс...
+1786
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+ArchRadius = Object.ArchRadius Получить свойство (* )
+Object.ArchRadius = ArchRadius Установить свойство (* )
+ArchRadius = Object.GetArchRadius() Получить свойство (**)
+Object.SetArchRadius( ArchRadius ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ArchRadius( Получить свойство
+&ArchRadius )
+Object.put_ArchRadius(  Установить свойство
+ArchRadius )
+
+Версия Компас v18.1
+
+Angle1  Угол наклона профиля или угол ребра
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle1 = Object.Angle1; Получить свойство (* )
+Object.Angle1 = Angle1; Установить свойство (* )
+Angle1 = Object.GetAngle1(); Получить свойство (**)
+Object.SetAngle1( Angle1 ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Ang Получить
+le1( &Angle1 ); свойство
+Object.put_Ang Установить
+le1(  Angle1 ); свойство
+
+Angle2  Угол наклона сечения
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle2 = Object.Angle2; Получить свойство (* )
+Object.Angle2 = Angle2; Установить свойство (* )
+Angle2 = Object.GetAngle2(); Получить свойство (**)
+Object.SetAngle2( Angle2 ); Установить свойство (**)
+1787
+
+
+
+Синтаксис COM:
+
+Object.get_Angle2( &Angle2 Получить свойство
+);
+Object.put_Angle2(  Angle2 ); Установить свойство
+
+BendEdge  Ребро сгиба
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+BendEdge = Object.BendEdge( NewVal ); Получить свойство (* )
+BendEdge = Object.GetBendEdge( NewVal ); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BendEdge( Получить свойство
+NewVal, &BendEdge );
+
+Примечание:
+Свойство доступно только для чтения.
+
+BendFace  Грань сгиба
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+BendFace = Object.BendFace( NewVal ); Получить свойство (* )
+BendFace = Object.GetBendFace( NewVal ); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BendFace( Получить свойство
+NewVal, &BendFace );
+
+Примечание:
+Свойство доступно только для чтения.
+
+BendObject  Сгиб
+Интерфейс...
+1788
+
+
+
+Тип данных: Указатель на интерфейс IModelObject. 
+Синтаксис Automation:
+
+BendObject = Получить свойство (* )
+Object.BendObject;
+BendObject = Получить свойство (**)
+Object.GetBendObject();
+
+Синтаксис COM:
+
+Object.get_BendObject( Получить свойство
+&BendObject );
+
+Примечание:
+Свойство доступно только для чтения.
+
+BuildingType  Способ построения
+Интерфейс...
+Тип данных: Значение из перечисления ksSHRibBuildingTypeEnum.
+Синтаксис Automation:
+
+BuildingType = Получить свойство (* )
+Object.BuildingType;
+Object.BuildingType = Установить свойство (* )
+BuildingType;
+BuildingType = Получить свойство (**)
+Object.GetBuildingType();
+Object.SetBuildingType( Установить свойство (**)
+BuildingType );
+
+Синтаксис COM:
+
+Object.get_BuildingType( Получить свойство
+&BuildingType );
+Object.put_BuildingType(  Установить свойство
+BuildingType );
+
+CutingType  Форма сечения
+Интерфейс...
+Тип данных: Значение из перечисления ksSHRibCutingTypeEnum.
+Синтаксис Automation:
+
+CutingType = Object.CutingType; Получить свойство (* )
+Object.CutingType = CutingType; Установить свойство (* )
+1789
+
+
+
+CutingType = Object.GetCutingType(); Получить свойство (**)
+Object.SetCutingType( CutingType ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CutingType( Получить свойство
+&CutingType ));
+Object.put_CutingType(  Установить свойство
+CutingType );
+
+Direction  Направление смещения вдоль кривой сгиба
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = Object.Direction; Получить свойство (* )
+Object.Direction = Direction; Установить свойство (* )
+Direction = Object.GetDirection(); Получить свойство (**)
+Object.SetDirection( Direction ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ); Получить свойство
+Object.put_Direction(  Direction ); Установить свойство
+

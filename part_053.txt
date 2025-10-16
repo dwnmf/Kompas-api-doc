@@ -1,0 +1,2532 @@
+
+ProcessTypeEnum  Типы процессов КОМПАС API
+
+prUnknown 0 Неизвестный процесс
+prPoint 10000 Точка
+prPointAlong 10001 Точки по кривой
+prIntersectPoint 10002 Точки пересечения 2"х кривых
+prAllIntersectPoint 10003 Все точки пересечения кривой
+prPointOnDistance 10004 Точка на кривой на заданном расстоянии 
+
+от другой точки
+prLineSeg 10005 Отрезок
+prParallelLineSeg 10006 Параллельный отрезок
+2829
+
+
+
+prPerpendLineSeg 10007 Перпендикулярный отрезок
+prTanLineSegByOutsidePnt 10008 Касательный отрезок через внешнюю 
+
+точку
+prTanLineSegByPntOn 10009 Касательный отрезок через точку кривой
+prTangent2LineSeg 10010 Отрезок, касательный к 2 кривым
+prContourLineSeg 10011 Отрезок в контуре
+prContourParallelLineSeg 10012 Параллельный отрезок в контуре
+prContourPerpendLineSeg 10013 Перпендикулярный отрезок в контуре
+prContourTanLineSegByOutsidePnt 10014 Касательный отрезок через внешнюю 
+
+точку в контуре
+prLine 10015 Вспомогательная прямая
+prVerticalLine 10016 Вертикальная прямая
+prHorizontalLine 10017 Горизонтальная прямая
+prPerpendLine 10018 Перпендикулярная прямая
+prParallelLine 10019 Параллельная прямая
+prTangent2Line 10020 Прямая, касательная к 2 кривым
+prTanLineByPntOn 10021 Касательная прямая через точку кривой
+prTanLineByOutsidePnt 10022 Касательная прямая через внешнюю 
+
+точку
+prBisectorLine 10023 Биссектриса
+prCircle 10024 Окружность
+prCircle3Points 10025 Окружность по 3 точкам
+prCircleCentreOnEl 10026 Окружность с центром на объекте
+prCircleTangent 10027 Окружность, касательная к 1 кривой
+prCircleTangent2 10028 Окружность, касательная к 2 кривым
+prCircleTangent3 10029 Окружность, касательная к 3 кривым
+prCircle2Points 10030 Окружность по 2 точкам
+prCircleArc 10031 Дуга
+prArc3Points 10032 Дуга по 3 точкам
+prArc2PointsAngle 10033 Дуга по 2 точкам и углу раствора
+prArc2Points 10034 Дуга по 2 точкам
+prArcTangent 10035 Дуга, касательная к кривой
+prContourArc 10036 Дуга по трем точкам в контуре
+prContourConArc 10037 Сопряженная дуга в контуре
+prEllipse 10038 Эллипс
+prEllipseGabDiagonal 10039 Эллипс по диагонали прямоугольника
+prEllipseTangent2 10040 Эллипс, касательный к 2 кривым
+prEllipseCentre3Points 10041 Эллипс по центру и 3 точкам
+prEllipseParallel3Points 10042 Эллипс по 3 вершинам параллелограмма
+prEllipseParallelCentre2Points 10043 Эллипс по центру, середине стороны и 
+
+вершине параллелограмма
+prEllipseGabCentrePoint 10044 Эллипс по центру и вершине 
+
+прямоугольника
+prBezier 10045 Кривая Безье
+prContourBezier 10046 Сплайн в контуре
+prPolyline 10047 Ломаная
+prNurbs 10048 NURBS"кривая
+prContourNurbs 10049 NURBS"кривая в контуре
+prRectangle 10050 Прямоугольник
+prRectangleCentrePoint 10051 Прямоугольник по центру и вершине
+prPolygon 10052 Многоугольник
+prEquidToObj 10053 Эквидистанта кривой
+prAssemblyEquid 10054 Эквидистанта по стрелке
+prLineDimension 10055 Линейный размер
+prCommonBaseLineDim 10056 Линейный размер от общей базы
+2830
+
+
+
+prChainLineDim 10057 Линейный цепной размер
+prCommonLineLineDim 10058 Линейный размер с общей размерной 
+
+линией
+pr2ObjectsLineDim 10059 Линейный размер от отрезка до точки
+prCutLineDimension 10060 Линейный размер с обрывом
+prAngleDimension 10061 Угловой размер
+prCommonBaseAngleDim 10062 Угловой размер от общей базы
+prChainAngleDim 10063 Угловой цепной размер
+prCommonLineAngleDim 10064 Угловой размер с общей размерной 
+
+линией
+prCutAngleDimension 10065 Угловой размер с обрывом
+prRadialDimension 10066 Радиальный размер
+prDiametralDimension 10068 Диаметральный размер
+prArcDimension 10069 Размер дуги окружности
+prOrdinateDimension 10070 Размер высоты
+prLeader 10071 Линия"выноска
+prBrandLeader 10072 Знак клеймения
+prMarkLeader 10073 Знак маркировки
+prPositionLeader 10074 Обозначение позиций
+prChangeLeader 10075 Знак изменения
+prHatch 10076 Штриховка
+prText 10077 Ввод текста
+prTable 10078 Ввод таблицы
+prRough 10079 Шероховатость
+prBase 10080 База
+prCutLine 10081 Линия разреза
+prViewPointer 10082 Стрелка взгляда
+prRemoteElement 10083 Выносной элемент
+prAxedLineSegment 10084 Осевая линия по двум точкам
+prCentreMarker 10085 Обозначение центра
+prAssemblyContour 10086 Собрать контур
+prFormTolerance 10087 Допуск формы
+prInsertRaster 10088 Вставить растровый объект
+prMakeMacro 10089 Объединить в макроэлемент
+prInsertFragment 10090 Вставить внешний фрагмент
+prCreateSheetView 10091 Создать вид
+prInsertOLEObject 10092 Вставить OLE"объект
+prCreateStandartSheetView 10093 Создать стандартные виды
+prCreateSectionSheetView 10094 Создать вид разрез/сечение
+prCreateArbitrarySheetView 10095 Создать произвольный вид
+prCreateProjectionSheetView 10096 Создать проекционный вид
+prCreateArrowSheetView 10097 Создать вид по стрелке
+prCreateRemoteSheetView 10098 Создать вид " выносной элемент
+prCreateLocalSheetView 10099 Создать местный вид
+prCreateLocalSectionSheetView 10100 Создать местный вид"разрез
+prCreateBrokenSheetView 10101 Создать вид с разрывом
+prContour 10102 Непрерывный ввод объектов
+prChamfer 10103 Фаска между пересекающимися 
+
+объектами
+prChamferPolyContour 10104 Фаска на углах объекта
+prFillet 10105 Скругление между пересекающимися 
+
+объектами
+prFilletPolyContour 10106 Скругление на углах объекта
+prProjectionObject 10107 Спроецировать объект на плоскость 
+
+эскиза
+2831
+
+
+
+prSmartDimension 10108 Авторазмер
+prSmartAxedLineSegment 10109 Автоосевая
+prMeasurePointProperties 10110 Измерить координаты точки в локальной 
+
+системе координат
+prMeasureDistance2Points 10111 Измерить расстояние между двумя 
+
+точками
+prMeasureDistance2PointsByCurve 10112 Измерить расстояние между двумя 
+
+точками на кривой
+prMeasureDistancePointObject 10113 Измерить расстояние от кривой до точки
+prMeasureDistance2Curves 10114 Измерить расстояние между двумя 
+
+кривыми
+prMeasureAngle2Lines 10115 Измерить угол между двумя прямыми/
+
+отрезками
+prMeasureAngle3Points 10116 Измерить угол, заданный 3 точками
+prPerimeter 10117 Измерить длину кривой и суммарную 
+
+длину
+prMeasureArea 10118 Измерить площадь
+prMix 10119 Расчет массово"центровочных 
+
+характеристик плоских фигур
+prMix3DRevolution 10120 Расчет массово"центровочных 
+
+характеристик тел вращения
+prMix3DExtrision 10121 Расчет массово"центровочных 
+
+характеристик тел выдавливания
+prObjectShift 10122 Сдвиг выделенных объектов
+prObjectShiftAngleLen 10123 Сдвиг с заданием угла и расстояния
+prObjectRotate 10124 Поворот выделенных объектов
+prObjectScale 10125 Масштабирование выделенных объектов
+prObjectSymmetry 10126 Симметричное отображение выделенных 
+
+объектов
+prObjectMultiply 10127 Копирование выделенных объектов
+prObjectMultiplyByCurve 10128 Копирование выделенных объектов по 
+
+кривой
+prObjectMultiplyByCircle 10129 Копирование выделенных объектов по 
+
+окружности
+prObjectMultiplyByRing 10130 Копирование выделенных объектов по 
+
+концентрической сетке
+prObjectMultiplyByMesh 10131 Копирование выделенных объектов по 
+
+сетке
+prMoveDeformation 10132 Деформация сдвигом
+prRotateDeformation 10133 Деформация поворотом
+prScaleDeformation 10134 Деформация масштабированием
+prCutObjectPart 10135 Усечь кривую
+prCutObjectPartBy2Points 10136 Усечь кривую двумя точками
+prJustify 10137 Выровнять кривую по границе
+prRemoveChamfer 10138 Удалить фаску или скругление
+prBreakCurve 10139 Разбить кривую на две части
+prBreakCurveNParts 10140 Разбить кривую на N равных частей
+prBlackBox 10141 Очистить заданную область
+prConvertToNurbs 10142 Преобразовать геометрический объект 
+
+или текст в NURBS"кривые
+prParametricHorizontal 10143 Установить горизонтальность отрезка или 
+
+прямой
+2832
+
+
+
+prParametricVertical 10144 Установить вертикальность отрезка или 
+прямой
+
+prParametricXAlign 10145 Выровнять по горизонтали две 
+характерные точки объектов
+
+prParametricYAlign 10146 Выровнять по вертикали две характерные 
+точки объектов
+
+prParametricMergePoints 10147 Объединить две точки
+prParametricPointOnCurve 10148 Задать размещение точки на кривой
+prParametricPointSymmetry 10149 Симметрия 2 точек относительно оси
+prParametricParallel 10150 Установить параллельность двух прямых 
+
+и/или отрезков
+prParametricNormal 10151 Установить перпендикулярность двух 
+
+прямых и/или отрезков
+prParametricColinear 10152 Установить коллинеарность двух прямых 
+
+и/или отрезков
+prParametricTangent 10153 Установить касание двух кривых
+prParametricFixPoint 10154 Зафиксировать координаты точки
+prParametricEqualRadiuses 10155 Установить равенство радиусов двух дуг 
+
+и/или окружностей
+prParametricEqualLength 10156 Установить равенство длин двух отрезков
+prParametricFixDimension 10157 Зафиксировать значение размера
+prParametricChangeDimension 10158 Установить значение размера
+prParametricSelected 10159 Параметризовать выделенные объекты
+prParametricDeleteObjConstraints 10160 Показать/удалить ограничения
+prParametricDeleteAllConstraints 10161 Удалить все ограничения
+prSelectObject 10162 Выделить отдельный объект
+prSelectLayer 10163 Выделить слой указанием лежащего на 
+
+этом слое объекта
+prSelectSheetView 10164 Выделить вид указанием точки внутри 
+
+этого вида
+prSelectWithRect 10165 Выделить объекты внутри прямоугольной 
+
+рамки
+prSelectOutSideRect 10166 Выделить объекты снаружи от 
+
+прямоугольной рамки
+prSelectWithCutRect 10167 Выделить объекты, пересекающиеся с 
+
+прямоугольной рамкой
+prSelectWithCutPolyline 10168 Выделить объекты, пересекающиеся с 
+
+ломаной
+prExcludeObject 10169 Исключить отдельный объект
+prExcludeLayer 10170 Исключить слой указанием лежащего на 
+
+этом слое объекта
+prExcludeSheetView 10171 Исключить вид указанием точки внутри 
+
+этого вида
+prExcludeWithRect 10172 Исключить объекты внутри 
+
+прямоугольной рамки
+prExcludeOutSideRect 10173 Исключить объекты снаружи от 
+
+прямоугольной рамки
+prExcludeWithCutRect 10174 Исключить объекты, пересекающиеся с 
+
+прямоугольной рамкой
+prExcludeWithCutPolyline 10175 Исключить объекты, пересекающиеся с 
+
+ломаной
+prSmartLine 10176 Автолиния
+2833
+
+
+
+prBrace 10177 Фигурная скобка
+prAutoDimL 10178 Авторазмер " ввод линейного размера
+prAutoDimA 10179 Авторазмер " ввод углового размера
+prAutoDimD 10180 Авторазмер " ввод диаметрального 
+
+размера
+prAutoDimR 10181 Авторазмер " ввод радиального размера
+prAutoDimLToPoint 10182 Авторазмер " ввод линейного размера от 
+
+отрезка до точки
+prAutoDimLBreak 10183 Авторазмер " ввод линейного размера с 
+
+обрывом от отрезка до отрезка осевой 
+линией
+
+prAutoDimABreak 10184 Авторазмер " ввод углового размера с 
+обрывом от отрезка до отрезка осевой 
+линией
+
+prTechnicalDemandPlacement 10185 Технические требования"размещение
+prDirectAxis 10186 Прямая координационная ось
+prArcAxis 10187 Дуговая координационная ось
+prCircleAxis 10188 Круговая координационная ось
+prWaveLine 10189 Волнистая линия
+prMarkOnLDRPosNum 10190 Марка/Позиционное обозначение на 
+
+линии выноске
+prMarkWoLDRPosNum 10191 Марка/Позиционное обозначение без 
+
+линии выноски
+prKnotNumber 10192 Номер узла
+prUnitMarking 10193 Обозначение узла
+prCutUnitMarking 10194 Обозначение узла в сечении
+prMultiTextLeader 10195 Выносная надпись к многослойным 
+
+конструкциям
+prColouring 10196 Заливка
+prMultiLine 10197 Мультилиния
+prBuildingCutLine 10198 Линия разреза/сечения для СПДС
+prBrokenLine 10199 Линия обрыва с изломами
+prCreateReport 10200 Создать отчет
+prCreateAttachedLeaders 10201 Редактировать оформление составного 
+
+объекта
+prEditProperties 10202 Процесс редактирования свойств объекта 
+
+или документа
+prParametricBisector 10203 Создание ограничения биссектриса
+prParametricFixedLenght 10204 Фиксировать длину
+prParametricFixedAngle 10205 Фиксировать угол
+prParametricPointOnCurveMiddle 10206 Точка на середине кривой
+prTechnicalDemand 10207 Ввод\Редактирование технических 
+
+требований
+prSpecRough 10208 Ввод\Редактирование неуказанной 
+
+шероховатости
+prMoveSpecRough 10209 Ручное размещение неуказанной 
+
+шероховатости
+prDeleteHistory 10210 Удаление истории построения
+prUndo 10211 Undo
+prRedo 10212 Redo
+prEmbodimentsReport 10213 Создать таблицу исполнений
+prArrayParamReport 10214 Создать таблицу параметров массива
+prConicCurve 10215 Коническая кривая
+2834
+
+
+
+prConicCurve4Or5Point 10216 Коническая кривая по 4 или 5 точкам
+prMarkOnLeader 10217 Марка/позиционное обозначение с 
+
+линией"выноской
+prCutLineMultiple 10218 Линия сложного разреза/сечения
+prBuildingCutLineMultiple 10219 Линия сложного разреза/сечения для 
+
+СПДС
+prCircularCentres 10220 Круговая сетка центров
+prLinearCentres 10221 Линейная сетка центров
+prBaseExtrusion 20000 Базовая операция выдавливания
+prBossExtrusion 20001 Приклеивание выдавливанием
+prCutExtrusion 20002 Вырезать выдавливанием
+prExtrusionSurface 20003 Поверхность выдавливания
+prBaseRotated 20004 Базовая операция вращения
+prBossRotated 20005 Приклеивание вращением
+prCutRotated 20006 Вырезать вращением
+prRotatedSurface 20007 Поверхность вращения
+prBaseEvolution 20008 Кинематическая операция
+prBossEvolution 20009 Приклеить кинематически
+prCutEvolution 20010 Вырезать кинематически
+prEvolutionSurface 20011 Кинематическая поверхность
+prBaseLoft 20012 Базовая операция по сечениям
+prBossLoft 20013 Приклеивание по сечениям
+prCutLoft 20014 Вырезать по сечениям
+prLoftSurface 20015 Поверхность по сечениям
+prFillet3D 20016 Операция "фаска"
+prChamfer3D 20017 Операция "скругление"
+prCutByPlane 20018 Операция "сечение поверхностью"
+prCutBySketch 20019 Операция "сечение эскизом"
+prMeshCopy 20020 Операция копирования по сетке
+prCircularCopy 20021 Операция копирования по 
+
+концентрической сетке
+prCurveCopy 20022 Операция копирования по кривой
+prMirrorCopy 20023 Операция "зеркальный массив"
+prMirrorAllCopy 20024 Операция "зеркально отразить все"
+prDerivativePartArray 20025 Операция массив по образцу для сборки
+prMeshPartArray 20026 Операция массив по сетке для сборки
+prCircularPartArray 20027 Операция массив по концентрической 
+
+сетке для сборки
+prCurvePartArray 20028 Операция массив по кривой для сборки
+prIncline 20029 Операция "уклон"
+prShell 20030 Операция "оболочка"
+prRib 20031 Операция "ребро жесткости"
+prHole 20032 Отверстие
+prThread 20033 Условное изображение резьбы
+prCPlaneOffset 20034 Смещенная плоскость
+prCPlane3Points 20035 Плоскость по 3"м точкам
+prCPlaneAngle 20036 Плоскость под углом
+prCPlaneEdgePoint 20037 Плоскость через ребро и вершину
+prCPlaneParallel 20038 Плоскость через вершину параллельно 
+
+другой плоскости
+prCPlanePerpendicular 20039 Плоскость через вершину 
+
+перпендикулярно ребру
+prCPlaneNormalToSurface 20040 Нормальная плоскость
+prCPlaneTangentToSurface 20041 Касательная плоскость
+2835
+
+
+
+prCPlaneLineToEdge 20042 Плоскость через ребро параллельно/
+перпендикулярно другому ребру
+
+prCPlaneLineToFlat 20042 Плоскость через ребро параллельно/
+перпендикулярно грани
+
+prCAxis2Points 20043 Ось по двум точкам
+prCAxis2Planes 20044 Ось по двум плоскостям
+prCAxisConeface 20045 Ось конической грани
+prCAxisEdge 20046 Ось, проходящая через ребро
+prCAxisOperation 20047 Ось операции
+prPolyline3D 20048 Ломаная
+prSpline3D 20049 Сплайн
+prCylindricSpiral 20050 Цилиндрическая спираль
+prConicSpiral 20051 Коническая спираль
+prImportedSurface 20052 Импортированная поверхность
+prInsertScetch 20053 Эскиз из библиотеки
+prEditScetch 20054 Редактировать эскиз
+prOrientationScetch 20055 Разместить эскиз на плоскости
+prInPlacePartEdit 20056 Редактировать компонент на месте
+prOutPlacePartEdit 20057 Редактировать компонент в своем окне
+prAddDetail 20058 Вставить деталь в сборку
+prAddAssembly 20059 Вставить сборку в сборку
+prMateCoincident 20060 Сопряжения компонентов " Совпадение
+prMateConcentric 20061 Сопряжения компонентов " Соосность
+prMateParallel 20062 Сопряжения компонентов " 
+
+Параллельность
+prMatePerpendicular 20063 Сопряжения компонентов " 
+
+Перпендикулярность
+prMateOnDistance 20064 Сопряжения компонентов " На расстоянии
+prMateOnAngle 20065 Сопряжения компонентов " Под углом
+prMateTangent 20066 Сопряжения компонентов " Касание
+prPartVariables 20067 Просмотр и редактирование переменных
+prCopyBilletPart 20068 Создание детали путем копирования 
+
+детали из другого файла
+prMakeMoldCavity 20069 Вычесть компоненты
+prMakeUnionComps 20070 Объединить компоненты
+prAddPartFromFile 20071 Добавить компонент из файла
+prMovePart 20072 Переместить компонент
+prRotatePartWC 20073 Повернуть компонент вокруг центральной 
+
+точки
+prRotatePartAxis 20074 Повернуть компонент вокруг оси
+prRotatePartPoint 20075 Повернуть компонент вокруг точки
+prMakeSplitLine 20076 Построение линии разъема
+prMeasureDistance3D 20077 Измерить расстояние и угол
+prMeasurePerimeter3D 20078 Измерить длину ребра
+prMeasureArea3D 20079 Измерить площадь
+prMeasureMix3D 20080 Вычисление массово"центровочных 
+
+характеристик
+prMeasureInterferenceVolumes 20081 Проверка коллизий
+prBaseShMtSolid 20082 Листовое тело
+prShMtBend 20083 Построение сгиба вдоль ребра листового 
+
+тела
+prShMtCombinedBend 20084 Построение сгибов вдоль ребер листового 
+
+тела по эскизу
+2836
+
+
+
+prShMtBendLine 20085 Создание сгиба в листовом теле по 
+прямолинейному объекту
+
+prShMtBendHook 20086 Создание подсечки в листовом теле по 
+прямолинейному объекту
+
+prShMtHole 20087 Построение круглого отверстия на грани 
+листового тела
+
+prShMtCut 20088 Построение выреза на грани листового 
+тела
+
+prBaseShMtPlate 20089 Добавление пластины к листовому телу
+prShMtClosedCorner 20090 Замыкание углов двух смежных 
+
+элементов листового тела
+prShMtBendStraighten 20091 Разгибание элементов листового тела
+prShMtBendBended 20092 Сгибание элементов листового тела
+prShMtBendParamUnfold 20093 Настроить параметры развертки 
+
+листового тела
+prPatchSurface 20094 Создание поверхности по замкнутому 
+
+контуру
+prSewSurface 20095 Сшивка поверхностей
+prMakeFaceRemover 20096 Удалить грани
+prCPlaneMiddle 20097 Средняя плоскость
+prCPointControl 20098 Контрольная точка
+prCPointConjunctive 20099 Присоединительная точка
+prCAggregateOper 20100 Булева операция
+prCPlaneLineToFlat 20101 Плоскость через ребро параллельно/
+
+перпендикулярно грани
+prPoint3D 20103 Конструктивная 3D точка
+prLocalCoordinateSystem 20104 Локальная система координат
+prLineDimention3DPlane 20105 Размер по двум объектам и планару.
+prLineDimention3D 20106 Размер по ребру и точке
+prAngleDimention3D 20107 Угловой размер
+prRough3D 20108 Шероховатость
+prTolerance3D 20109 Допуск формы и расположения 
+
+поверхностей
+prBrandLeader3D 20110 Клеймение
+prMarkerLeader3D 20111 Маркировка
+prPositionLeader3D 20112 Обозначение позиции
+prBase3D 20113 База
+prLeader3D 20114 Линия"выноска
+prSaveBody 20115 Процесс сохранения тела в деталь
+prCreateSketch 20116 Процесс создания\редактирования эскиза
+prMeasureInformation 20117 Информация об объекте
+prEquidistant3D 20118 Эквидистанта 3D
+prChoiceOperationResult 20119 Выбор результата 3D операции
+prChoiceBodyUnit 20120 Выбор частей тела
+prSelectCurrentCS 20121 Выбрать текущую СК в модели
+prShmtRuledOperation 20122 Обечайка
+prArc3D 20123 Дуга в пространстве
+prConnectCurve 20124 Cопряжения пространственных кривых – 
+
+соединение
+prTrimCurve 20125 Cопряжения пространственных кривых – 
+
+обрезка
+prFilletCurve 20126 Cопряжения пространственных кривых – 
+
+скругление
+prSwithOwnCS 20127 Перенести в СК модели
+2837
+
+
+
+prScalingOperation 20128 Маштабирование тела или поверхности 
+prPointDrivenPattern 20129 Массив пространственных объектов по 
+
+точкам
+prNurbs3DByObjects 20130 3D сплайн по объектам
+prCurveOperationCrossing 20131 Кривая пересечения пространственных 
+
+объектов
+prConvertToNurbsSurface3D 20133 NURBS"поверхность по объектам
+prNurbsSurface3DByPoints 20134 NURBS"поверхность по точкам
+prNurbsSurface3DByCurves 20135 NURBS"поверхность по сети кривых
+prArrayPointsFromFile 20136 Массив пространственных точек из файла
+prArrayPointsOnCurve 20137 Массив пространственных точек вдоль 
+
+кривой
+prArrayPointsByCloud 20138 NURBS"поверхность по облаку точек
+prOffsetSurface 20139 Эквидистанта поверхности
+prAuxObjectMultiplyByMesh 20140 Копирование вспомогательной геометрии 
+
+в пространстве по плоской 
+параллелограмной сетке
+
+prAuxObjectMultiplyByRing 20141 Копирование вспомогательной геометрии 
+в пространстве по плоской 
+концентрической сетке
+
+prAuxObjectMultiplyByCurve 20142 Копирование вспомогательной геометрии 
+в пространстве вдоль кривой
+
+prTrimmedSurface 20143 Усечение поверхности по объекту
+prSurfaceToBody 20144 Создание тела из поверхности приданием 
+
+ей толщины
+prAxisByDirection 20145 Ось через вершину по объекту
+prRuledSurface 20146 Линейчатая поверхность
+prExtensionSurface 20147 Продление поверхности
+prCPlaneTangentAtPoint 20148 Плоскость, касательная к грани в точке
+prCPlaneAtCurve 20149 Плоскость через плоскую кривую
+prArrayPintsOnSyrface 20150 Группа точек по поверхности
+prAuxObjectMultiplyMirror 20151 Зеркальная копия вспомогательной 
+
+геометрии в пространстве 
+prOutlineCurve 20152 Построение линии очерка поверхности
+prSplineOnSurface 20153 Сплайн на поверхности
+prPartsPointDrivenPattern 20154 Массив компонентов по точкам
+prChooseLinearPattern 20155 Процесс выбора трехмерных объектов 
+
+для копирования По сетке
+prChooseCircularPattern 20156 Процесс выбора трехмерных объектов 
+
+для копирования По концентрической 
+сетке
+
+prChooseCurvePattern 20157 Процесс выбора трехмерных объектов 
+для копирования По кривой
+
+prChoosePointDrivenPattern 20158 Процесс выбора трехмерных объектов 
+для копирования По точкам
+
+prChooseTablePattern 20159 Процесс выбора трехмерных объектов 
+для копирования По таблице
+
+prChooseMirrorPattern 20160 Процесс выбора трехмерных объектов 
+для построении симметричной копии
+
+prTablePattern 20161 Массив операций по таблице
+prAuxTablePattern 20162 Массив вспомогательной геометрии по 
+
+таблице
+prPartsTablePattern 20163 Массив компонентов по таблице
+2838
+
+
+
+prAuxPointDrivenPattern 20164 Массив вспомогательной геометрии по 
+точкам
+
+prBodiesLinearPattern 20165 Массив тел по сетке
+prBodiesCircularPattern 20166 Массив тел по концентрической сетке
+prBodiesCurvePattern 20167 Массив тел по кривой
+prBodiesPointDrivenPattern 20168 Массив тел по точкам
+prBodiesTablePattern 20169 Массив тел по таблице
+prContour3D 20170 Контур 3D
+prCurveOper2Projection 20171 Пространственная кривая по 2 проекциям
+prCurveByLaw 20172 Пространственная кривая по закону
+prBodyReposition 20173 Изменить положение тела или 
+
+поверхности
+prIsoparamCurve 20174 Изопараметрическая пространственная 
+
+кривая
+prIsoparamCurveArr 20175 Группа изопараметрических кривых на 
+
+поверхности
+prBindingMesh 20176 Редактировать как сплайн по сетке
+prSaveBodyAs 20177 Сохранение тела в деталь
+prBlendSurface 20178 Поверхность соединения
+prLineSegment3D 20179 Отрезок 3D
+prEmbodiment 20180 Создание исполнения
+prCreateSpecificationObjects 20181 Создать объекты спецификации
+prDeleteSpecificationObjects 20182 Удалить объекты спецификации
+prCreateSpecificationFromAssembly 20183 Создать спецификацию по сборке
+prSpecRough3D 20184 Ввод\Редактирование неуказанной 
+
+шероховатости 3D
+prShmtRuledCowling 20185 Линейчатая обечайка
+prAddLocalPartFromFile 20187 Добавить локальную деталь из файла
+prAddLayoutGeometryFromFile 20188 Добавить компоновочную геометрию
+prAddBilletPartFromFile 20189 Добавить деталь заготовку
+prMateSymmetry 20190 Сопряжения компонентов " Симметрия
+prMateDependent 20191  Сопряжения компонентов " Зависимое 
+
+положение
+prMateCamGear 20192 Сопряжения компонентов " Кулачковый 
+
+механизм. Кулачек"толкатель
+prMateRotation 20193 Сопряжения компонентов " Вращение"
+
+Вращение
+prMateRotationTransfer 20194 Сопряжения компонентов " Вращение"
+
+Перемещение
+prTechnicalDemand3D 20195 Ввод\Редактирование технических 
+
+требований 3D
+prHoleSimple 20196 Отверстие простое
+prHoleCounterbore 20197 Отверстие с цековкой
+prHoleCountersinking 20198 Отверстие с зенковкой
+prHoleCounterdrill 20199 Отверстие с зенковкой и цековкой
+prHoleConic 20200 Отверстие коническое
+prPoint3DCoord 20201 Конструктивная 3D точка. Точка по 
+
+координатам
+prPoint3DDisplace 20202 Конструктивная 3D точка. Точка 
+
+переносом
+prPoint3DIntersect 20203 Конструктивная 3D точка. Точка на 
+
+пересечении
+prPoint3DCurve 20204 Конструктивная 3D точка. Точка на кривой
+2839
+
+
+
+prPoint3DSurface 20205 Конструктивная 3D точка. Точка на 
+поверхности
+
+prPoint3DCenter 20206 Конструктивная 3D точка.Точка в центре
+prPoint3DProjection 20207 Конструктивная 3D точка. Точка в центре
+prPoint3DCylindrCoord 20208 Конструктивная 3D точка. 
+
+Цилиндрические координаты
+prPoint3DSphericCoord 20209 Конструктивная 3D точка. Сферические 
+
+координаты
+prShMtBendObject 20210 Листовой металл, сгибы листовых 
+
+операций
+prShMtClocingPressForming 20211 Листовой металл, закрытая штамповка
+prShMtOpeningPressForming 20212 Листовой металл, открытая штамповка
+prShMtShoulder 20213 Листовой металл, буртик
+prShMtJalousie 20214 Листовой металл, жалюзи
+prShMtRib 20215 Ребро усиления
+prAxis3D 20216 Осевая линия
+prFullFillet 20217 Полное скругление
+prRestoredSurface 20218 Восстановленная поверхность
+prCurvatureGraph 20219 График кривизны
+prContinuityCheck 20220 Проверка непрерывности
+prZoomWindow 32411 Увеличить масштаб окном
+prMoveView 32418 Сдвинуть изображение
+prPanoramaView 32419 Приблизить/отдалить изображение
+prRotateView 32420 Повернуть изображение (для 3D"окна)
+prEditSelectedObject 35736 Редактировать выделенный объект
+prEditCopy 0xE122 Копировать в буфер обмена
+prEditCut 0xE123 Вырезать в буфер обмена
+prEditPaste 0xE125 Вставить из буфера обмена
+
+ksProjectionOptionEnum  Опции проецирования
+
+ksPOUndefined "1 Неопределенное состояние
+ksPODisable 0 Не проецировать
+ksPOEnable 1 Проецировать
+ksPOByLayer 2 По слою
+
+ksPropertyTypeEnum  Типы свойств
+
+ksPropertyDataTypeUnknown 0 Неизвестный
+ksPropertyDataTypeLong 1 Целый
+ksPropertyDataTypeDouble 2 Вещественный
+ksPropertyDataTypeString 3 Строка
+ksPropertyDataTypeBoolean 4 Логический
+ksPropertyDataTypeColorRGB 5 Цвет RGB
+ksPropertyDataTypeHatchStyle 6 Стиль штриховки
+ksPropertyDataTypeGroup 7 Группа свойств
+2840
+
+
+
+ksRedrawDocumentModeEnum  Режим перерисовки 
+окон документа
+
+ksRedrawFull 0 Полная перерисовка
+ksRedrawAnimation 1 Выполнение анима"
+
+ции сцены
+ksRedrawSelection 2 Селектирование или
+
+подсветка
+ksRedrawOperationPhantom 3 Операционные фанто"
+
+мы
+ksRedrawDimensions 4 Операционные разме"
+
+ры
+ksRedrawPhantomObjects 5 Фантомные объекты
+ksRedrawHighlightObjects 6 Подсветка объектов
+
+под курсором
+ksRedrawWidgets 7 Манипуляторы, 3D
+
+хот"точки и т.п
+
+ 
+
+ksRecoverErrorEnum  Признак ошибок при открытии 
+документа с восстановлением
+
+ksRNoError 0 Проверка завершена. Ошибок не найде"
+но
+
+ksRecover 1 Проверка завершена. Найденные ошиб"
+ки исправлены
+
+ksRNoOpen 2 Проверка завершена. Открыть доку"
+мент не удалось
+
+ksRAlreadyOpe 3 Файл уже открыт в одном из окон. Про"
+n верка невозможна
+ksRProtected 4 Файл защищен с помощью приложения
+
+КОМПАС"Защита. Проверка невозмож"
+на
+
+ksRegionTypeEnum  Тип региона
+
+ksRTInside 1 Полностью внутри
+ksRTOutside 2 Cнаружи
+ksRTCutFrame 3 Секущей рамкой
+2841
+
+
+
+ksRelativeProjectionTypeEnum  Тип проекции 
+стандартного вида относительно главного вида
+
+ksPtNone "1 Не определена
+ksPtFront 1 Спереди " Фронтальная
+
+плоскость
+ksPtRear 2 Сзади
+ksPtUp 3 Сверху " Горизонталь"
+
+ная плоскость
+ksPtDown 4 Снизу
+ksPtLeft 5 Слева " Профильная
+
+плоскость
+ksPtRight 6 Справа
+ksPtIsoXYZ 7 Изометрия XYZ
+
+ksRelationTypeEnum  Тип родственных отношений
+
+ksRTUnknown 0 Не определен
+ksRTIndifferent 1 Все отношения
+ksRTStrong 2 Сильные отношения
+
+ksReportFiltersTypeEnum  Типы фильтров в команде 
+Создать отчет
+
+ksFilterConditionUnknown 0 Неизвестный
+ksFilterConditionEqual 1 =
+ksFilterConditionSmaller 2 <
+ksFilterConditionLarger 3 >
+ksFilterConditionEqualOrSmaller 4 =<
+ksFilterConditionEqualOrLarger 5 =>
+ksFilterConditionContain 6 содержит
+ksFilterConditionNotContain 7 не содержит
+
+ksRequestFilesTypeEnum  Тип процесса, 
+запрашивающего файл или список файлов
+
+Допустимые Множест"
+расширения венный 
+
+выбор
+ksRFUnknown 0 Неизвестный тип
+ksRFSaveBody 1 Cохранение тела в модель m3d "
+2842
+
+
+
+koRFUnitParts 2 Объединение вставок в a3d "
+подсборку
+
+koRFCopyBilletPart 3 Вставка детали заготовки m3d "
+koRFSavePartAs 4 Сохранение вставки в m3d, a3d "
+
+файл
+koRFAddDetail 5 Вставка детали в сборку m3d "
+koRFAddAssembly 6 Вставка подсборки в a3d "
+
+сборку
+koRFAddPartFromFile 7 Добавить компонент из m3d, a3d "
+
+файла
+koRFChangeDetailFile 8 Заменить файл источник m3d "
+
+для вставки детали
+koRFChangeAssemblyFile 9 Заменить файл источник a3d "
+
+для вставки сборки
+koRFChangeBilletPartFile 10 Заменить файл источник a3d "
+
+для детали заготовки
+koRFSpcObjAddDocument 11 Подключение документов frw,cdw,m3d,a3d, +
+
+КОМПАС к объекту kdw
+спецификации
+
+koRFSpcAssemblyAddDoc 12 Подключение документов cdw,a3d +
+ument КОМПАС к спецификации " 
+
+Управление сборкой
+koRFAddLocalDetail 13 Добавить локальную m3d
+
+деталь
+koRFAddLayoutGeometry 14 Добавить компоновочную m3d, a3d
+
+геометрию
+
+ksRibSideEnum  Положение ребра жесткости
+
+ksRibSideLeft 0 Прямое направление в плоскости эскиза.    Ре"
+ бро выдавливается в левую сторону от кривой
+
+вдоль плоскости
+ksRibSideRight 1 Обратное направление в плоскости эскиза.
+
+Ребро выдавливается в правую сторону от
+кривой вдоль плоскости
+
+ksRibSideUp 2 Прямое направление ортогонально эскизу.
+Ребро выдавливается в сторону нормали пло"
+скости
+
+ksRibSideDown 3 Обратное направление ортогонально эскизу.
+Ребро выдавливается в сторону против нор"
+мали плоскости
+2843
+
+
+
+ksRotatedTypeEnum  Способы определения угла 
+вращения
+
+ksRTAngle 0 Угол
+ksRTVertex 1 До вершины
+ksRTSurface 2 До поверхности
+
+ksRoughSignEnum  Тип значка шероховатости
+
+ksNoProcessingType 0 Без указания типа об"
+работки
+
+ksDeleteMaterial 1 С удалением слоя ма"
+териала
+
+ksWithoutDeleteMaterial 2 Без удаления слоя ма"
+териала
+
+ksSemiAxisTypeEnum  Тип полуоси для обозначения 
+центра
+
+ksAxisUnknown "1 Неизвестный
+ksAxisXPlus 0 Полуось по оси X
+ksAxisXMinus 1 Полуось против оси X
+ksAxisYPlus 2 Полуось по оси Y
+ksAxisYMinus 3 Полуось против оси Y
+
+ksSheetsRangeEnum  Тип диапазона страниц
+
+ksAllSheets 0 Все страницы
+ksUnevenSheets 1 Нечетные страницы
+ksEvenSheets 2 Четные страницы
+
+ksShelfDirectionEnum – Направление полки
+
+ksLSLeft "1 Влево
+ksLSNone 0 Нет полки
+ksLSRight 1 Вправо
+ksLSUp 2 Вверх
+ksLSDown 3 Вниз
+2844
+
+
+
+ksSketchBendBuildingTypeEnum  Способы построения 
+сгиба по эскизу
+
+ksSBFromSketch 1 От эскиза
+ksSBSomeEdges 2 Вдоль всего ребра
+
+ksShoulderBuildingTypeEnum  Способ построения 
+буртика
+
+ksShoulderUnknown 0 Не определено
+ksShoulderWidth1 1 Использовать при расчете ширину основания
+ksShoulderHeight 2 Использовать при расчете высоту
+ksShoulderAngle 4 Использовать при расчете угол
+ksShoulderWidth2 8 Использовать при расчете ширину дна
+ksShoulderRadius2 16 Использовать при расчете радиус буртика
+ksShoulderWidth1Off "1 Не использовать при расчете ширину основания
+ksShoulderHeightOff "2 Не использовать при расчете высоту
+ksShoulderAngleOff "4 Не использовать при расчете угол
+ksShoulderWidth2Off "8 Не использовать при расчете ширину дна
+ksShoulderRadius2Off "16 Не использовать при расчете радиус буртика
+ksShoulderCircleByHeightWidth1 3 Круговая по высоте и ширине основания
+ ksShoulderCircleByHeightRadius2 18 Круговая по высоте и радиусу буртика
+ksShoulderCircleByRadiusWidth1 17 Круговая по радиусу буртика и ширине основания
+ksShoulderUByHeighAngleWidth1 7 U"образная по высоте, углу и ширине основания
+ksShoulderUByHeighAngleWidthR 23 U"образная по высоте, углу и ширине основания 
+adius2 со скруглением дна
+ksShoulderUByHeighWidth1Width 11 U"образная по высоте, ширине основания и 
+2 ширине дна (две ширины)
+ksShoulderUByHeighWidth1Width 27 U"образная по высоте, ширине основания и 
+2Radius2 ширине дна (две ширины) со скруглением дна
+ksShoulderUByAngleWidth1Width 13 U"образная по углу, ширине основания и ширине 
+2 дна (две ширины)
+ksShoulderUByAngleWidth1Width 29 U"образная по углу, ширине основания и ширине 
+2Radius2 дна (две ширины) со скруглением дна
+ksShoulderUByHeighAngleWidth2 14 U"образная по высоте, углу и ширине дна
+ksShoulderUByHeighAngleWidth2 30 U"образная по высоте, углу и ширине дна со 
+Radius2 скруглением дна
+ksShoulderVByHeighAngleWidth1 7 V"образная по высоте, углу и ширине основания
+ksShoulderVByHeighAngleRadius2 22 V"образная по высоте, углу и радиусу буртика
+ksShoulderVByRadius2AngleWidth 21 V"образная по радиусу буртика, углу и ширине 
+1 основания
+ksShoulderVByHeighRadius2Width 19 V"образная по высоте, радиусу буртика и ширине 
+1 основания
+2845
+
+
+
+ksShoulderCutingTypeEnum  Форма сечения буртика
+
+ksShoulderCutingCircle 0 Круговая
+ksShoulderCutingU 1 U"образная
+ksShoulderCutingV 2 V"образная
+
+ksShoulderTypeEnum  Тип буртика. Способ обработки 
+концов буртика
+
+ksShoulderClosed 0 Закрытый
+ksShoulderOpened 1 Открытый
+ksShoulderChopped 2 Рубленый
+
+ 
+
+ksSlaveDocumentTypeEnum Типы подчиненных 
+режимов редактирования документов КОМПАС
+
+ksSDSketchMode 1000 Режим редактирования эскиза
+ksSDSpecificationSlave 1001 Слейв режим редактирования 
+
+спецификации
+
+ksSnapTypeEnum  Тип привязки к объектам
+
+ksSTUnknown "1 Информация отсутствует
+ksSTUndefine 0 Нет привязки
+ksSTNearestPoin 1 Ближайшая точка
+t
+ksSTNearestMid 2 Ближайшая середина
+dle
+ksSTObjectCentr 3 Центр объекта
+e
+ksSTIntersect 4 Пересечение
+ksSTGrid 5 Привязка по сетке
+ksSTXYAlign 6 Выравнивание по X Y
+ksSTAngleSnap 7 Угловая привязка
+ksSTPointOnCur 8 Точка на кривой
+ve
+2846
+
+
+
+ksSTNormalToCu 9 По нормали на кривую
+rve
+ksSTTangentToC 10 По касательной на кривую
+urve
+
+ksSortTypeEnum  Типы сортировки
+
+ksSortTypeNone 0 Нет сортировки
+ksSortTypeCompositeUp 1 Составная сортировка по возра"
+
+станию колонок
+ksSortTypeUp 3 Сортировка по возрастанию ко"
+
+лонок
+ksSortTypeDocument 4 Сортировка раздела документа"
+
+ция
+ksSortTypeDown 5 Сортировка по убыванию коло"
+
+нок
+ksSortTypeCompositeDown 6 Составная сортировка по убыва"
+
+нию колонок
+
+ksSpecificationColumnTypeEnum  Типы колонок 
+спецификации
+
+ksSColumnUnknown 0 Неизвестный тип
+ksSColumnFormat 1 Формат
+ksSColumnZone 2 Зона
+ksSColumnPosition 3 Позиция
+ksSColumnMark 4 Обозначение
+ksSColumnName 5 Наименование
+ksSColumnCount 6 Количество
+ksSColumnNote 7 Примечание
+ksSColumnMass 8 Масса
+ksSColumnMaterial 9 Материал
+ksSColumnUser 10 Пользовательская
+ksSColumnCode 11 Код
+ksSColumnFactory 12 Завод изготови"
+
+тель
+ksSColumnDocumentNumber 13 Номер документа
+ksSColumnDocumentName 14 Наименование до"
+
+кумента
+ksSColumnDocumentCode 15 Код документа
+ksSColumnCodeOKP 16 Код ОКП
+2847
+
+
+
+ksSpecificationObjectStateEnum  Состояние объекта 
+спецификации
+
+ksObjectStateIndependent 0 Самостоятельный объект
+ksObjectStateFromInsert 1 Объект из вставки
+ksObjectStateEdit 2 Объект редактировался в
+
+документе
+ksObjectStateUserSetNotEdit 3 Пользователь снял при"
+
+знак редактирования.
+
+ksSpecificationObjectTypeEnum  Типы объектов для 
+спецификации
+В API5 соответствует Типам объектов спецификации...
+
+ksSpecificationUnknownObject 0 Неизвестный тип
+ksSpecificationBaseObject 1 Базовый объект
+ksSpecificationComment 2 Комментарий
+ksSpecificationSectionName 3 Имя раздела
+ksSpecificationBlock 4 Начало блока
+ksSpecificationReserveString 5 Резервная строка
+ksSpecificationEmptyString 6 Пустая строка
+
+ksSpecificationVariantEnum  Варианты оформления 
+спецификации
+
+ksSpecificationSimple 0 Простая
+ksSpecificationVariantA 1 Вариант А
+ksSpecificationVariantB 2 Вариант Б
+ksSpecificationVariantV 3 Вариант В
+ksSpecificationVariantG 4 Вариант Г
+
+ksSpecRoughPlacementEnum  Размещение неуказанной 
+шероховатости
+
+ksRPTopLeft 0 Вверху слева
+ksRPTopRight 1 Вверху справа
+ksRPBottomRight 2 Внизу справа
+2848
+
+
+
+ksSpiral3DHeightTypeEnum  Способ задания высоты 
+спирали 3D
+
+ksSHTByValue 0 По заданному значению высоты
+ksSHTByObject 1 По объекту
+ksSHTByCurve 2 По длине плоской кривой
+
+ksSplineTangentEnum  Тип направления касательной
+
+ksSTNone 0 Не задано
+ksSTByDirection 1 По направлению
+ksSTCurveU 2 К изопараметрической кривой по направлению U
+ksSTCurveV 3 К изопараметрической кривой по направлению V
+ksSTSurfaceCurve 4 К кривой на поверхности
+
+ksSpline3DBuildingTypeEnum  Способ построения 
+спирали 3D
+
+ksSBTByStepAndTurnCount 0 По шагу и количеству витков
+ksSBTByStepAndHeight 1 По шагу и высоте
+ksSBTByTurnCountAndHeight 2 По количеству витков и высоте
+
+ksSpline3DDiameterTypeEnum  Способ построения 
+спирали 3D
+
+ksSDTByValue 0 По заданному значению диаметра
+ksSDTByObject 1 По объекту
+ksSDTByGeneratrixTiltAngle 2 По углу наклона образующей
+
+ksStepTypeEnum  Способы вычисления приращения 
+параметра по объекту
+
+ksSpaceStep 0x01 Шаг по стрелке прогиба 
+ksDeviationStep 0x02 Шаг по углу отклонения
+ksMetricStep 0x04 Шаг по длине
+ksParamStep 0x08 Шаг для для привязки объектов к 
+
+параметрам поверхности
+ksCollisionStep 0x10 Шаг для определения столкновений 
+
+элементов модели
+2849
+
+
+
+ksMipStep 0x20 Шаг для расчета инерционных 
+характеристик
+
+ksSystemControlStartEnum  Результаты передачи 
+управления системе КОМПАС
+
+ksSCStoppedByMenuCommand 1 Выполнена команда меню Остановить работу 
+библиотеки
+
+ksSCCloseApplication 0 Идет закрытие системы КОМПАС/Не запущен 
+SystemControlStart.
+
+ksSCStopItself "1 Вызов функции SystemControlStop из"под 
+библиотеки
+
+ksSCAlreadyStarted "2 Управление системе КОМПАС уже передано той 
+же библиотекой
+
+ksSCStartedByAnotherLibrary "3 Управление системе КОМПАС уже передано 
+другой библиотекой
+
+ksSCError "4 Ошибка
+
+ksTablePointEnum  Тип расположения точки на таблице
+
+ksTPLeftBottom 1 Левый нижний угол
+ksTPLeftCenter 2 Середина левой стороны
+ksTPLeftUp 3 Левый верхний угол
+ksTPUpCenter 4 Середина верхней стороны
+ksTPRightUp 5 Правый верхний угол
+ksTPRightCenter 6 Середина правой стороны
+ksTPRightBottom 7 Правый нижний угол
+ksTPBottomCenter 8 Середина нижней стороны
+ksTPCenter 9 Середина точка для контрола
+
+Базовая точка
+ksTPUndefined 0 Не задано
+
+ksTableTileLayoutEnum  Расположение заголовка 
+таблицы
+
+ksTTLFirstRow 0 В первой строке
+ksTTLFirstColumn 1 В первом столбце
+ksTTLNotCreate 2 Не создавать
+
+ksTabulatorFillingEnum  Заполнение табулятора
+
+ksTabulatorFillingNone 0 Без заполнения
+ksTabulatorFillingNone 1 Базовая линия
+2850
+
+
+
+ие
+ksTabulatorFillingCenterLine 2 Средняя линия
+ksTabulatorFillingBaseDot 3 Базовые точки
+ksTabulatorFillingCenterDot 4 Средние точки
+ksTabulatorFillingBaseDash 5 Базовый пунктир
+ksTabulatorFillingCenterDash 6 Средний пунктир
+
+ksTextAlignEnum  Выравнивание текста для внешнего 
+объекта GDI
+
+ksTALeft 0 Cлева
+ksTARight 2 Справа
+ksTAHCenter 6 Центр горизонтали
+ksTATop 0 Вверху
+ksTABottom 8 Внизу
+ksTABaseline 24 Базовая линия
+ksTAVCenter 56 Центр вертикали
+
+ksTextHorizontalFormatEnum – Признак горизонтального 
+форматирования
+текста на чертеже
+
+ksHFormatNot 0 Перенос правой границы (нет 
+форматирования)
+
+ksHFormatStrNarrowing 1 Сужение текста
+ksHFormatDivision 2 Перенос на другую строку
+
+ksTextExportFormEnum  Представление текста при 
+экспорте
+
+ksTEFTextOnly 1 Только текст
+ksTEFGeometryOnly 2 Геометрическое представлен
+
+текста
+
+ksTextItemEnum – Тип компонента текста
+
+ksTItString 0 Строка.
+ksTItNumerator 0x1 Числитель.
+ksTItDenominator 0x2 Знаменатель.
+ksTItFractionEnd 0x3 Конец дроби.
+ksTItUpperDeviation 0x4 Верхнее отклонение.
+2851
+
+
+
+ksTItLowerDeviation 0x5 Нижнее отклонение.
+ksTItDeviationEnd 0x6 Конец отклонений.
+ksTItSBase 0x7 Основание выражения типа суммы.
+ksTItSUpperIndex 0x8 Верхний индекс выражения типа суммы.
+ksTItSLowerIndex 0x9 Нижний индекс выражения типа суммы.
+ksTItSEnd 0x10 Конец выражения типа суммы.
+ksTItSpecialSymbol 0x11 Спецзнак.
+ksTItSpecialSymbolEnd 0x12 Конец спецзнаков с текстом.
+ksTItSpecialSymbolNext 0x13 Начало для ввода следующих строк в 
+
+спецзнаке с текстом.
+ksTItSpecialSymbolDown 0x14 Для ввода строк снизу в спецзнаке с текстом.
+ksTItSpecialSymbolRight 0x15 Для ввода строк справа в спецзнаке с текстом.
+ksTItTab 0x16 Табуляция по текущему стилю.
+ksTItFontSymbol 0x17 Символ шрифта.
+ksTItHyperText 0x2000 Cсылка на текст или положение объекта
+ksTItFontSymbolW 0x2017 Символ шрифта Unicode
+
+ksTextLineType  Тип строки текста
+
+ksTLError Ошибка
+ksTLText Простой текст
+ksTLVerticalText Вертикальный текст
+ksTLFragment Вставка фрагмента
+ksTLRaster Вставка рисунка
+ksTLTable Вставка таблицы
+
+ksTextNumberingEnum – Тип нумерации абзаца
+
+ksTNumbUnknown "1 Тип не определенный.
+ksTNumbNoNumber 0 Cрока без нумерации.
+ksTNumbNumber 1 Cтрока с нумерацией
+
+уровня level.
+ksTNumbNewNumber 2 На строке начинается
+
+новая нумерация пун"
+ктов.
+
+ksTNumbDisableNumber 3 Cтрока не должна ну"
+мероваться никогда.
+
+ksTextSizeEnum – Размерный коэффициент текста
+
+ksTextDefault 0 Умолчательной высоты.
+ksTextNormal 1 Нормальной высоты.
+ksTextMiddle 2 Средней высоты.
+2852
+
+
+
+ksTextSmall 3 Малой высоты.
+ksTextBig 2 Большой высоты.
+
+ksTextStyleEnum – Системные стили текста
+
+ksTSDefault 0 Умолчательный стиль  для данного типа объекта.
+ksTSDrawingAnnotation 1 Текст на чертеже.
+ksTSSpecifications 2 Текст для технических требований.
+ksTSDimensionText 3 Текст для размерной надписи.
+ksTSSurfaceFinish 4 Текст для шероховатости.
+ksTSLeader1 5 Текст для линии выноски (позиционной .
+ksTSLeader2 6 Текст для линии выноски (над/под полкой ).
+ksTSLeader3 7 Текст для линии выноски (сбоку).
+ksTSShapeDeviations 8 Текст для отклонений формы и базы.
+ksTSTableHeader 9 Текст для таблицы (заголовок).
+ksTSTableCell 10 Текст для таблицы (ячейка).
+ksTSSectionLine 11 Текст для линии разреза/сечения.
+ksTSDirectionArrow 12 Текст для стрелки вида.
+ksTSUnspecifiedSurfaceFinish 13 Текст для неуказанной шероховатости.
+ksTSModificationSymbol 14 Текст для обозначения изменения.
+ksTSBrace 15 Текст для фигурной скобки.
+ksTSUnitNumber 16 Текст для номера узла.
+ksTSMultiTextLeader 17 Текст для выносной надписи.
+ksTSUnitMarking 18 Текст для обозначения узла.
+ksTSAxisMark 19 Текст для марки координационной оси.
+ksTSMarkOnLeader 20 Текст для МПО (марка/позиционное обозначение 
+
+с линией"выноской).
+ksTSMarkOnLine 21 Текст для МПО (марка/позиционное 
+
+обозначение) на линии.
+ksTSMarkInsideForm 22 Текст для МПО (марка/позиционное 
+
+обозначение) без линии выноски.
+ksTSBOMTableName 23 Текст для заголовков спецификации.
+ksTSBuildingCutLine 24 Текст для линия разреза/сечения для СПДС.
+ksTSRprtTableHeader 25 Текст для таблицы отчета (заголовок).
+ksTSRprtTableCell 26 Текст для таблицы отчета (ячейка).
+ksTSRprtTableName 27 Текст для таблицы отчета (наименование )
+ksTSTableName 28 Текст для таблицы ( наименование )
+ksTSTextMark 29 Текст текстовой метки
+
+ksThemeEnum  Темы Компас
+
+ksThemeLight 0 Светлая
+ksThemeDark 2 Темная
+
+ksTolerancePrefixSignEnum  Знак в обозначении допуска
+
+ksTPSNone 0 Нет
+ksTPSRadius 1 Радиус
+ksTPSDiametr 2 Диаметр
+2853
+
+
+
+ksTPSToleranseT 3 Допуск в диаметраль"
+ном выражении
+
+ksTPSToleranseT2 4 Допуск в радиусном
+выражении
+
+ksToleranceRecalcsEnum  Способ пересчета размера
+
+ksTRUnknown 0 Неопределенное состоя"
+ние
+
+ksTRLowerLimit 1 По нижнему пределу
+ksTRTopLimit 2 По верхнему пределу
+ksTRMiddle 3 В середину поля допуска
+ksTRCoefficient 4 С коэффициентом
+ksTRUser 5 Пользовательский вари"
+
+ант пересчета (Для встав"
+ки)
+
+ksToleranceSuffixSignEnum  Знак в обозначении базы 
+допуска
+
+ksTSNone 0 Нет
+ksTSToleranseM 1 Зависимый допуск
+ksTSToleranseS 2 Независимый допуск
+ksTSToleranseP 3 Выступающее поле допуска
+
+ksUndercutDistanceTypeEnum  Способ задания размера
+
+ksUCDictanceOut 0 Снаружи
+ksUCDictanceIn 1 Внутри
+ksUCDictanceAll 2 Полный
+
+ksUnfoldTypeEnum  Способы определения длины 
+развертки
+
+ksCoefficient 0 Коэффициент нейтрального слоя
+ksValueBend 1 Величина сгиба
+ksDecreaseBend 2 Уменьшение сгиба
+ksTableBends 3 Таблица сгибов
+2854
+
+
+
+ksValueTypeEnum  Типы значения атрибута, его колонок 
+и колонок спецификации
+
+ksValueTypeUnknown 0 Неизвестный
+ksValueTypeInteger 1 Целое со знаком
+ksValueTypeFloat 2 Вещественное
+ksValueTypeString 3 Строка
+ksValueTypeRecord 4 Запись
+
+ksVector3DParametersTypeEnum  Типы параметров 
+вектора
+
+ksVector3DUnknown 0 Не определен
+ksVector3D2Vertex 1 По двум вершинам
+ksVector3DCSAngle 2 Угол в плоскости СК (Плоскости XY YZ XZ)
+ksVector3DAxis 3 По оси СК
+ksVector3DCoefficients 4 По коэффициентам
+ksVector3D2Angles 5 По двум углам
+ksVector3DEdge 6 По прямолинейному ребру, оси или перпендикулярно 
+
+плоскости кривой
+ksVector3DPlane 7 По оси цилиндра или перпендикулярно плоской грани, 
+
+плоскости
+ksVector3DSurface 8 Перпендикулярно грани в указанной точке
+ksVector3DCurve 9 По базисному вектору в точке кривой (кроме 
+
+прямолинейных объектов)
+ksVector3DScreen 10 Перпендикулярно плоскости экрана
+
+ksViewProjectionType  Тип проекции
+
+ksVPNone "1 Не определена
+ksVPNormalTo 0 Нормально к
+ksVPFront 1 Спереди " Фронтальная плоскость
+ksVPRear 2 Сзади
+ksVPUp 3 Сверху " Горизонтальная плоскость
+ksVPDown 4 Снизу
+ksVPLeft 5 Слева " Профильная плоскость
+ksVPRight 6 Справа
+ksVPIsometric 7 Изометрия
+ksVPDimetric 8 Диметрия
+ksVPUnfold 9 Развертка
+ksVPUser 10 Пользовательская проекция
+2855
+
+
+
+ksVisibleStateEnum  Состояние видимости объекта
+
+ksVSUndefined "1 Неопределенное состояние
+ksVSVisible 0 Видимый
+ksVSHidden 1 Невидимый
+ksVSByLayer 2 По слою
+
+ksZoneDivisionTypeEnum  Способ разбиения зоны
+
+ksZoneDivisionRegular 0 Равномерно по осям
+ksZoneDivisionByPlanes 1 По набору плоскостей
+
+ksZoneTypeEnum  Способ создания зоны
+
+ksZoneFree 0 Зона без параметров (Результат 
+операции разбиение зон).
+
+ksZoneByPoints 1 По координатам габаритного 
+прямоугольника
+
+ksZoneByObjects 2 По суммарному габариту объектов
+
+ks3DLineStyle  Стили 3D линий для отрисовки с 
+помощью OpenGL
+
+ksCS3DNoDrawing 0 Линия не отрисовывается.
+ksCS3DSolid 1 Сплошная линия.
+ksCS3DDashed 2 Штриховая линия.
+ksCS3DDotted 3 Пунктирная линия.
+ksCS3DDashDot 4 Штрихпунктирная линия.
+ksCS3DDashDotLDash2Dots 5 Штрихпунктирная линия (штрих и 2 точки).
+
+LayersGroupWayEnum  Способ группировки слоев
+
+wgLayers 0 Группировать слои
+wgLayersCharacteristics 1 Группировать свойства
+
+слоев
+2856
+
+
+
+MateConstraintDirection  Направления сопряжений
+
+"1 объекты разнонаправленные,
+0 не учитывать направление,
+1 объекты однонаправленные.
+
+MateConstraintFixed  Типы фиксации
+
+0 нет фиксации,
+1 фиксировать деталь 1,
+2 фиксировать деталь 2.
+
+paramType  Тип редактирования макроэлемента
+
+MP_DBL_CLICK_OFF 0x01 " редактирование по двойному нажатию 
+выключено,
+
+MP_HOTPOINTS 0x02 " интерфейс hot точек включен,
+MP_EXTERN_EDIT 0x04 " интерфейс внешнего управления,
+ MP_PROPERTY_OBJECT 0x08 //>0 " интерфейс внешних свойств объекта.
+
+PropertyControlNameVisibility  Видимость имени 
+элемента управления на Панели свойств
+
+ksNameAlwaysVisible 0 Всегда показывать имя элемента 
+управления на Панели свойств.
+
+ksNameHorizontalVisible 1 Показывать имя элемента управления на 
+горизонтальной Панели.
+
+ksNameVerticalVisible 2 Показывать имя элемента управления на 
+вертикальной Панели.
+
+ksNameNoVisible 3 Не показывать имя элемента управления.
+
+PropertyManagerLayout  Положение панели свойств
+
+pmAlignRight 3 Панель прикреплена справа
+pmAlignLeft 4 Панель прикреплена слева
+pmAlignRightInGroup 5 Панель прикреплена справа в группе
+pmAlignLeftInGroup 6 Панель прикреплена слева в группе
+2857
+
+
+
+SaveDocumentVersion  Способ записи документа
+
+sdv_Prev "1 Предыдущую версию
+sdv_Current 0 Текущую версию (обычный ре"
+
+жим)
+sdv_Kompas_5_11_R03 1 Версия
+
+KOMPAS_5_11_R03_VERSION
+sdv_Last 1 Последняя версия
+sdv_Kompas_6_0 2 Версия KOMPAS_6_0_VERSION
+sdv_Kompas_6_Plus 3 Версия
+
+KOMPAS_6_PLUS_VERSION
+sdv_Kompas_7_0 4 Версия KOMPAS_7_0_VERSION
+sdv_Kompas_7_Plus 5 Версия
+
+KOMPAS_7_PLUS_VERSION
+sdv_Kompas_8_0 6 Версия KOMPAS_8_0
+
+SeparatorTypeEnum  Типы элемента управления Панели 
+свойств  "разделитель" (сепаратор)
+
+ksSeparatorDownName 0 Вывод имени снизу под 
+сепаратором.
+
+ksSeparatorUpName 1 Вывод имени сверху над 
+сепаратором.
+
+ksSeparatorWithoutLine 2 Вывод только имени; сепаратор 
+отсутствует.
+
+ksSeparatorBMPLeftName 3 Вывод значка с именем слева.
+ksSeparatorBMPRightName 4 Вывод значка с именем справа.
+
+SlideTypeEnum  Тип отображения слайда в окне
+
+ksSlide "1 Отображение слайда
+ksBitmap 1 Отображение растрового изображения
+ksGroup 2 Отображение группы
+ksKompasDocument 3 Отображение документа КОМПАС
+ksKompasText 4 Отображение текста в формате КОМПАС
+
+SpecificationLinkTypeEnum  Режимы связи сборки или 
+чертежа со спецификацией
+
+ksLinkNone 0 Нет.
+ksLinkOnlyObjects 1 Только вставка объектов
+
+спецификации.
+ksLinkWithPositionCalculate 2 Связь с расчетом позиций.
+2858
+
+
+
+SpecPropertyButtonEnum  Предопределенные кнопки 
+панели свойств
+
+pbEnter 1 Ввод
+pbEsc 2 Отказ
+pbAutoCreate 3 Автосоздание
+pbSaveState 4 Запомнить состояние
+pbNewSearc 5 Новый поиск
+h
+pbPrevObj 6 Предыдущий объект
+pbNextObj 7 Следующий объект
+pbHelp 8 Справка
+pbCopyProps 9 Копировать свойства
+
+SpecPropertyToolBarEnum  Предопределенные 
+спецпанели для Панели свойств
+
+pnUnknown 0 Неизвестная панель
+pnEmpty 1 Пустая панель
+pnEscHelp 2 Панель (pbEsc pbHelp)
+pnEnterEscHelp 3 Панель (pbEnter pbEsc pbHelp)
+pnEnterEscCreateHelp 4 Панель (pbEnter pbEsc pbAutoCreate pbHelp)
+pnEnterEscCreateSaveHelp 5 Панель (pbEnter pbEsc pbAutoCreate SaveState 
+
+pbHelp)
+pnEnterEscCreateSaveSearchHelp 6 Панель (pbEnter pbEsc pbAutoCreate SaveState 
+
+pbNewSearch pbHelp)
+pnEnterEscSaveSearchPrevNextHelp 7 Панель (pbEnter pbEsc SaveState pbNewSearch 
+
+pbPrevObj pbNextObj pbHelp)
+pnEnterEscSearchHelp 8 Панель (pbEnter pbEsc pbNewSearch pbHelp)
+pnEscSaveSearchHelp 9 Панель (pbEsc SaveState pbNewSearch pbHelp)
+pnEnterEscCreateSearchHelp 10 Панель (pbEnter pbEsc pbAutoCreate 
+
+pbNewSearch pbHelp)
+pnEnterEscSaveSearchHelp 11 Панель (pbEnter pbEsc SaveState pbNewSearch 
+
+pbHelp)
+pnEscSaveStateHelp 12 Панель (pbEsc SaveState pbHelp)
+pnEnterEscSearchPrevNextHelp 13 Панель (pbEnter pbEsc pbNewSearch pbPrevObj 
+
+pbNextObj pbHelp)
+
+ZoomTypeEnum  Тип изменения масштаба отображения 
+документа в окне
+
+ksZoomNext 0 Следующий масштаб
+ksZoomPrevious 1 Предыдущий масштаб
+ksZoomAll 2 Показать весь документ
+2859
+
+
+
+Перечисления событий
+
+ksDocumentFileNotifyEnum
+ksObject2DNotifyEnum
+ksKompasObjectNotifyEnum
+ksNotifyTypeEnum 
+
+ksDocumentFrameNotifyEnum  События для окна 
+документа: клавиатура, мышь, события по отрисовке 
+документа
+
+frBeginPaint 1 Начало отрисовки документа
+frClosePaint 2 Конец отрисовки документа
+frMouseDown 3 Нажатие кнопки мыши
+frMouseUp 4 Отпускание кнопки мыши
+frMouseDblClick 5 Двойной щелчок мыши
+frBeginPaintGL 6 Начало создания листа в контексте OpenGL
+frClosePaintGL 7 Окончание создания листа в контексте OpenGL
+frAddGabarit 8 Определение габаритов документа
+frActivate 9 Окно активизировалось
+frDeactivate 10 Окно деактивизировалось
+frCloseFrame 11 Закрытие окна
+frMouseMove 12 Перемещение мыши
+frShowOcxTree 13 Активизация закладки дерева документа
+frBeginPaintTmpObjects 14 Начало отрисовки временных объектов 
+
+(фантомов)
+frClosePaintTmpObjects 15 Конец отрисовки временных объектов (фантомов)
+
+ksPropertyManagerNotifyEnum  События Панели свойств 
+или процессных параметров
+
+prButtonClick 1 Нажата кнопка спецпанели
+prChangeControlValue 2 Изменено значение элемента управления
+prControlCommand 3 Нажата кнопка элемента управления
+prButtonUpdate 4 Задано состояние кнопки спецпанели
+prProcessActivate 5 Активизирован процесс
+prProcessDeactivate 6 Деактивирован процесс
+prCommandHelp 7 Вызвана справка
+prSelectItem 8 Выделен элемент списка
+prCheckItem 9 Выбран элемент списка
+prEditFocus 11 Установка/снятие фокуса на редакторе ввода
+prUserMenuCommand 12 Нажатие пункта пользовательского меню
+2860
+
+
+
+prLayoutChanged 13 Изменение размещения панели свойств
+prGetContextMenuType 14 CLLBACK для получения типа контекстного меню
+prFillContextPanel 15 CLLBACK для накачки контекстной панели 
+prFillContextIconMenu 16 CLLBACK для накачки меню с иконками
+prEndEditItem 17 Завершение редактирования элемента
+prChangeTabExpanded 18 Сворачивание/Разворачивание закладки панели 
+
+свойств
+
+ksPropertyUserControlNotifyEnum  События 
+пользовательского элемента управления
+
+puCreateOCX 1 Создан элемент управления 
+OCX
+
+puDestroyOCX 2 Удален элемент управления 
+OCX
+
+ksViewsAndLayersManagerNotifyEnum  События для 
+менеджера видов и слоев
+
+vmBeginEdit 1 Начато редактирование
+vmEndEdit 2 Завершено редактирование
+
+SystemPropertyType  Номера системных свойств
+
+4 Обозначение
+5 Наименование
+6 Количество
+8 Масса
+9 Материал
+10 Плотность
+11 Автор
+12 Организация
+13 Комментарий
+14 Тип объекта в дереве построения модели
+15 Позиция
+16 Полное имя файла
+17 Короткое имя файла
+18 Дата создания
+19 Дата последнего изменения
+20 Раздел спецификации
+21 Разработал
+22 Проверил
+23 Утвердил
+24 Т. контр.
+25 Н. контр
+26 Класс точности
+37 Знак неуказанной шероховатости
+38 Параметр неуказанной шероховатости
+2861
+
+
+
+50 Рассекать на разрезах
+
+ksViewProjectionScheme  Схема ориентаций модели
+
+ksVPSUnknown "1 Не определена
+ksVPSUser 0 Пользовательская
+ksVPSZAxonometric 1 Z"аксонометрия
+ksVPSYAxonometric 2 Y"аксонометрия
+ksVPSXAxonometric 3 X"аксонометрия
+ksVPSZ90AxonometricISO 4 Z"аксонометрия (ISO 90)
+ksVPSY90AxonometricISO 5 Y"аксонометрия (ISO 90)
+ksVPSX90AxonometricISO 6 X"аксонометрия (ISO 90)
+2862
+
+
+
+API интерфейсов. Версия 5
+KompasObject  Интерфейс API КОМПАС
+Интерфейс событий...
+Примечание:
+Получить интерфейс KompasObject можно:
+
+▼ для обычных *.rtw библиотек " применив экспортную функцию IDispatch*
+CreateKompasObject();
+
+▼ для ActiveX библиотек " после вызова команды библиотеки и выполнения функции
+ExternalRunCommand;
+
+▼ при работе под управлением внешнего приложения (контроллера) " после вызова стан"
+дартной системной функции.
+
+KompasObject  свойства
+currentDirectory  Текущий каталог
+Интерфейс...
+Тип данных: BOOL
+Синтаксис:
+  
+
+currentDirectory = Получить
+Object.currentDirectoryVisible свойство (* )
+Object.currentDirectory = Установить
+currentDirectory свойство (* )
+currentDirectory = Получить
+Object.GetСurrentDirectory() свойство (**)
+Object.SetСurrentDirectory( Установить
+currentDirectory ) свойство (**)
+
+lookStyle  Тип отрисовки визуальной части приложения 
+КОМПАС
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+lookStyle = Получить свойство (* )
+iKompasObject.lookStyle
+iKompasObject.lookStyle = Установить свойство (* )
+lookStyle
+2863
+
+
+
+lookStyle = Получить свойство (**)
+iKompasObject.GetLookStyle()
+iKompasObject.SetLookStyle( Установить свойство (**)
+lookStyle )
+
+Примечание:
+Свойство lookStyle может принимать или возвращать значения из ksTypeLookStyle.
+
+visible  Свойство видимости приложения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+visible = Получить свойство (* )
+iKompasObject.Visible
+iKompasObject.Visible = Установить свойство (* )
+visible
+visible = Получить свойство (**)
+iKompasObject.GetVisible(
+)
+iKompasObject.SetVisible Установить свойство (**)
+(visible)
+
+Примечание:
+Позволяет получить и установить свойство видимости приложения КОМПАС"3D.
+
+KompasObject  методы
+ActiveDocument3D  Получить указатель на интерфейс 
+текущего документа трехмерной модели
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksGetActive3dDocument.
+Синтаксис Automation:
+LPDISPATCH ActiveDocument3D();
+Возвращаемое значение:
+
+" указатель на интерфейс документа 
+трехмерной модели ksDocument3D.
+
+Синтаксис COM:
+Чтобы получить интерфейс текущего документа трехмерной модели при программиро"
+вании на COM, нужно использовать экспортную функцию LPDOCUMENT3D
+ksGetActive3dDocument();
+2864
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс 
+документа трехмерной 
+модели IDocument3D.
+
+Примечание:
+Если документ трехмерной модели не активен, функция возвращает NULL.
+
+ActiveDocument2D  Получить указатель на интерфейс 
+текущего графического документа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH ActiveDocument2D();
+Возвращаемое значение:
+
+" указатель на интерфейс 
+графического документа 
+ksDocument2D.
+
+Примечание:
+Если документ не активен, функция возвращает NULL.
+
+ActiveDocumentTxt  Получить указатель на интерфейс 
+текущего текстового документа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH ActiveDocumentTxt();
+Входные параметры:
+
+" Указатель на интерфейс 
+текстового документа 
+ksDocumentTxt
+
+Примечание:
+Если документ не активен, функция возвращает NULL.
+
+DataBaseObject  Получить указатель на интерфейс 
+ksDataBaseObject для работы с базами данных
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH DataBaseObject();
+2865
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс 
+ksDataBaseObjec для 
+работы с базами данных.
+
+Document2D  Получить указатель на интерфейс 
+графического документа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Document2D();
+Возвращаемое значение:
+
+" указатель на интерфейс 
+графического документа 
+ksDocument2D.
+
+Document3D - Получить указатель на интерфейс 
+документа трехмерной модели
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Document3D();
+Возвращаемое значение:
+
+" указатель на интерфейс 
+документа трехмерной 
+модели   ksDocument3D.
+
+Синтаксис COM:
+Чтобы получить интерфейс документа трехмерной модели при программировании на
+COM, нужно использовать экспортную функцию ksGet3dDocument.
+Возвращаемое значение:
+
+" указатель на интерфейс 
+документа трехмерной 
+модели IIDocument3D.
+2866
+
+
+
+DocumentTxt  Получить указатель на интерфейс 
+текстового документа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH DocumentTxt();
+Входные параметры:
+
+" Указатель на интерфейс 
+текстового документа 
+ksDocumentTxt
+
+GetAttributeObject  Получить указатель на интерфейс 
+для работы с атрибутами
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetAttributeObject();
+Возвращаемое значение:
+
+" указатель на интерфейс 
+ksAttributeObject.
+
+GetDynamicArray  Получить указатель на интерфейс 
+динамического массива ksDynamicArray
+Интерфейс..
+Синтаксис Automation:
+LPDISPATCH GetDynamicArray (long type);
+Входной параметр:
+
+type " тип динамического 
+массива.
+
+Возвращаемое значение:
+
+" указатель на интерфейс 
+динамического массива 
+ksDynamicArray.
+
+BOOL preview, 
+long typeDir);
+2867
+
+
+
+Входные параметры:
+
+ext " расширение имени 
+файла,
+
+filter " фильтр поиска (0 " 
+фильтр формируется 
+автоматически),
+
+preview " признак подключения 
+окна предварительного 
+просмотра:
+1 " с подключением окна,
+0 " без подключения 
+окна,
+
+typeDir " стартовая папка.
+
+Возвращаемое значение:
+
+" строка с именем файла.
+
+Примечание:
+Параметр typeDir может иметь значения sptSYSTEM_FILES и sptLIBS_FILES; во всех
+остальных случаях открывается текущая папка.
+
+GetFragmentLibrary  Получить указатель на интерфейс 
+библиотеки фрагментов
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetFragmentLibrary();
+Возвращаемое значение:
+
+" указатель на интерфейс 
+ksFragmentLibrary.
+
+GetIterator  Получить указатель на интерфейс ksIterator 
+для навигации по объектам
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetIterator();
+Возвращаемое значение:
+2868
+
+
+
+" указатель на интерфейс 
+ksIterator.
+
+GetMathematic2D  Получить указатель на интерфейс 
+для работы с математическими функциями
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetMathematic2D();
+Возвращаемое значение:
+
+" указатель на интерфейс 
+ksMathematic2D.
+
+GetModelLibrary  Получить указатель на интерфейс 
+библиотеки моделей
+Интерфейс..
+Аналог данного метода при использовании API экспортных функций " ksGetModelLibrary.
+Синтаксис Automation:
+LPDISPATCH GetModelLibrary();
+Возвращаемое значение:
+
+" указатель на интерфейс ksModelLibrary.
+
+GetParamStruct  Получить указатель на интерфейс 
+структуры параметров объекта нужного типа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetParamStruct (short structType);
+Входной параметр:
+
+structType " тип интерфейса параметров 
+
+Возвращаемое значение:
+
+" указатель на интерфейс 
+указанного типа из 
+StructType2D.
+2869
+
+
+
+ksAttachKompasLibrary  Подключить библиотеку
+Интерфейс...
+Синтаксис Automation:
+long ksAttachKompasLibrary (BSTR libname);
+Входные параметры:
+
+libname " полное имя файла 
+библиотеки.
+
+Возвращаемое значение:
+
+уникальный номер " в случае успешного 
+библиотеки завершения,
+0 " в случае неудачи.
+
+Примечание:
+После успешного выполнения метода имя библиотеки появится в меню "Библиотеки".
+
+ksCalculate  Подсчитать значение выражения
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/490_Glava57_Zadanie_zavisimoste.htm
+Аналог данного метода при использовании API экспортных функций " ksCalculate.
+Синтаксис Automation:
+long ksCalculate (BSTR s, double* res);
+Входные параметры:
+
+s " строка с выражением,
+res " результат расчета.
+
+Возвращаемое значение:
+
+1 " в случае удачного 
+завершения,
+
+0 " в случае неудачи.
+
+Примечание:
+
+1.  Поддерживаются функции и переменные:
+▼ SIN, COS, TAN, ATAN " тригонометрические функции (аргумент в радианах),
+▼ SIND, COSD, TAND, ATAND " тригонометрические функции (аргумент в градусах),
+2870
+
+
+
+▼ SQRT, EXP, LN, ABS " корень квадратный, экспонента, натуральный логарифм, абсолют"
+ное значение.
+
+2.  Если s = "A1 = 100", то будет заведена переменная A1 cо значением 100; переменных мо"
+жет быть неограниченное количество.
+
+ksCalculateReset  Очистить массив переменных 
+калькулятора
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ksCalculateReset.
+Синтаксис Automation:
+long ksCalculateReset();
+Возвращаемое значение:
+
+1 " в случае удачного 
+завершения,
+
+0 " в случае неудачи.
+
+ksClearFileCache  Очистить кеш поиска файлов
+Интерфейс...
+Синтаксис Automation:
+BOOL ksClearFileCache();
+
+ksConvertLangMenu  Конвертировать меню в 
+соответствии с текущим словарем
+Интерфейс...
+Аналог данного метода при использовании экспортных функций ksConvertLangMenu.
+Синтаксис Automation:
+long ksConvertLangMenu (long hMenu);
+Входной параметр:
+
+hMenu " дескриптор исходного 
+меню.
+
+Возвращаемое значение:
+
+" дескриптор 
+переведённого меню.
+2871
+
+
+
+ksConvertLangStr  Конвертировать строку src в dst в 
+соответствии с текущим словарем
+Интерфейс...
+Аналог данного метода при использовании экспортных функций ksConvertLangStr.
+Синтаксис Automation:
+BSTR ksConvertLangStr (BSTR src);
+Входной параметр:
+
+src " исходная строка.
+
+Возвращаемое значение:
+
+" переведенная строка.
+
+Примечание.
+Словарь сохраняется в файле с расширением dic. Строки файла должны иметь следую"
+щий формат:
+"Вращение"="Rotation"
+"Параметры"="Parameters"
+...
+...
+"Перемещение"="Moving"
+Строки файла должны быть отсортированы по алфавиту.
+
+ksConvertLangStrEx  Конвертировать строку с 
+идентификатором в соответствии с текущим словарем
+Интерфейс...
+Аналог данного метода при использовании экспортных функций ksConvertLangStrEx.
+Синтаксис Automation:
+BSTR ksConvertLangStrEx (long hInstance, long strID);
+Входной параметр:
+
+hInstance " HINSTANCE модуля, в 
+котором находится 
+переводимая строка,
+
+strID " идентификатор строки.
+
+Возвращаемое значение:
+
+" переведенная строка.
+2872
+
+
+
+ksConvertLangStrEx2  Конвертировать строку в 
+соответствии с текущим словарем
+Интерфейс...
+Аналог данного метода при использовании экспортных функций ksConvertLangStrEx.
+Синтаксис Automation:
+BSTR ksConvertLangStrEx2( VARIANT hInstance, long strID );
+Входные параметры:
+
+hInstance " HINSTANCE модуля, в 
+котором находится 
+переводимая строка,
+
+strID " идентификатор строки.
+
+Возвращаемое значение:
+
+" переведенная строка.
+
+Примечание:
+HINSTANCE библиотеки нужно передать через VARIANT, как VT_I4 в Win32 и VT_I8 в x64
+Для правильного формирования _variant_t HINSTANCE нужно передавать через приведе"
+ние к (LONG_PTR).
+В библиотеках, использующих автоматизацию, рекомендуется использовать данную
+функцию вместо KompasObject::ksConvertLangStrEx.
+
+ksConvertLangWindow  Конвертировать окно с 
+входящими дочерними окнами в соответствии с 
+текущим словарем
+Интерфейс...
+Аналог данного метода при использовании экспортных функций ksConvertLangWindow.
+Синтаксис Automation:
+BOOL ksConvertLangWindow (long hWnd);
+Входной параметр:
+
+hWnd " дескриптор окна,
+
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+2873
+
+
+
+ksConvertLangWindowEx  Конвертировать окно с 
+входящими дочерними окнами в соответствии с 
+текущим словарем
+Интерфейс...
+Аналог данного метода при использовании экспортных функций
+ksConvertLangWindowEx.
+Синтаксис Automation:
+BOOL ksConvertLangWindowEx (long hWnd, 
+long hInstance, 
+BSTR dlgID);
+Входной параметр:
+
+hWnd " дескриптор окна,
+hInstance " HINSTANCE модуля, в 
+
+котором находится 
+переводимый диалог,
+
+dlgID " имя ресурса диалога.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Примечание:
+Функция устарела. Использование данной функции может привести к ошибке в библио"
+теке, собранной с конфигурацией x64. Рекомендуется использовать функцию
+KompasObject::ksConvertLangWindowEx2.
+
+ksConvertLangWindowEx2  Конвертировать окно в 
+соответствии с текущим словарем
+Интерфейс...
+Аналог данного метода при использовании экспортных функций
+ksConvertLangWindowEx.
+Синтаксис Automation:
+ BOOL ksConvertLangWindowEx2(long hWnd, VARIANT hInstance, BSTR dlgID);
+Входной параметр:
+
+hWnd " дескриптор окна,
+2874
+
+
+
+hInstance " HINSTANCE модуля, в 
+котором находится 
+переводимый диалог,
+
+dlgID " имя ресурса диалога.
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Примечание: 
+HINSTANCE библиотеки нужно передать через VARIANT, как VT_I4 в Win32 и VT_I8 в x64.
+Для правильного формирования _variant_t HINSTANCE нужно передавать через приведе"
+ние к (LONG_PTR).
+В библиотеках, использующих автоматизацию, рекомендуется использовать данную
+функцию вместо KompasObject::ksConvertLangWindowEx.
+
+ksCreateInsertionFragment  Создать вставку фрагмента
+Интерфейс...
+Синтаксис Automation:
+int LIB_FUNC ksCreateInsertionFragment( char * fileName );
+Входные параметры:
+
+fileName " полное имя файла 
+фрагмента.
+
+Возвращаемое значение:
+
+1 " в случае удачи.
+
+Примечание:
+Допускается fileName следующего вида: "c:\_f\gr\lib1.lfr|детали|литье|фланец" где:
+
+▼ c:\_f\gr\lib1.lfr " имя файла библиотеки фрагментов,
+▼  |детали|литье|" разделы, подразделы внутри библиотеки фрагментов,
+▼  фланец " имя фрагмента. 
+
+Функция запускает процесс вставки фрагмента из файла.   Функция не ждет завершения
+процесса вставки.
+
+ksDetachKompasLibrary  Отключить библиотеку
+Интерфейс...
+Синтаксис Automation:
+long ksDetachKompasLibrary (long libId);
+2875
+
+
+
+Входные параметры:
+
+libId " уникальный номер 
+библиотеки, полученный 
+при выполнении 
+ksAttachKompasLibrary.
+
+Возвращаемое значение:
+
+1 " в случае успешного 
+завершения,
+
+0 " в случае неудачи.
+
+ksDrawBitmapEx2  Отрисовать BMP с идентификатором 
+bmpID в заданном окне(hWindow)
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ksDrawBitmapEx.
+Синтаксис Automation:
+long ksDrawBitmapEx2(long HWindow, long bmpID, VARIANT hInst);
+Входные параметры:
+
+Hwindow " дескриптор окна, в 
+котором нужно 
+отрисовать BITMAP"
+слайд,
+
+sldID " идентификатор 
+BITMAP"слайда в файле 
+ресурсов,
+
+hInst " hInstance библиотеки, в 
+которой расположен 
+слайд.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+HINSTANCE библиотеки нужно передать через VARIANT, как VT_I4 в Win32 и VT_I8 в x64.
+Для правильного формирования _variant_t HINSTANCE нужно передавать его через при"
+ведение к (LONG_PTR).
+В библиотеках, использующих автоматизацию, рекомендуется использовать данную
+функцию вместо KompasObject::ksDrawBitmapEx.
+2876
+
+
+
+ksDrawKompasDocument  Отрисовать документ 
+системы КОМПАС как слайд в присланном окне
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksDrawKompasDocument.
+Синтаксис Automation:
+long ksDrawKompasDocument (long HWindow, 
+BSTR docFileName);
+Входные параметры:
+
+Hwindow " несущее окно,
+docFileName  " полное имя файла 
+
+документа.
+
+Возвращаемое значение:
+
+1 " в случае успешного 
+завершения,
+
+0 " в случае неудачи.
+
+Примечание:
+Действие метода распространяется также на фрагменты и модели из библиотек. При
+этом имя файла должно иметь вид "c:\gr\lib1.l3d|детали|литье|фланец", 
+где
+c:\gr\lib1.l3d " имя файла библиотеки,
+|детали|литье| " разделы, подразделы внутри библиотеки,
+фланец " имя фрагмента или модели.
+
+ksDrawKompasDocumentByReference  Отрисовать 
+КОМПАСдокумент как слайд в присланном окне
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksDrawKompasDocumentByReference.
+Синтаксис Automation:
+long ksDrawKompasDocumentByReference (long HWindow, long pDoc);
+Входной параметр:
+
+Hwindow " несущее окно,
+pDoc " указатель на документ.
+2877
+
+
+
+Возвращаемое значение:
+
+1 " в случае удачного 
+завершения,
+
+0 " в случае неудачи.
+
+Примечание:
+Если pDoc = 0, отрисовывается текущий документ.
+
+ksDrawKompasText  Отрисовать текст в формате 
+КОМПАС в присланном окне
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksDrawKompasText.
+Синтаксис Automation:
+long ksDrawKompasText(long HWindow, BSTR text);
+Входные параметры:
+
+HWindow " дескриптор окна для 
+отрисовки слайда,
+
+text " текст.
+
+ksEditTextLine  Вызвать диалог редактирования 
+сложноструктурированного текста
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ksEditTextLine.
+Синтаксис Automation:
+BSTR ksEditTextLine (long HWindow, long* res, BSTR str);
+Входные параметры:
+
+Hwindow " дескриптор окна,
+str " входная строка текста.
+
+Выходные параметры:
+
+res " строка текста.
+
+Возвращаемое значение:
+2878

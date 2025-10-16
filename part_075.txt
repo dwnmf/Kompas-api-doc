@@ -1,0 +1,2532 @@
+при записи параметров. При работе с базой данных при создании отношения с помощью
+функции ksDataBaseObject::ksRChar требуется в массив добавить ksLtVariant с типом
+ltv_Str. При использовании функции ksDataBaseObject::ksRCharW требуется добавить
+ksLtVariant с типом ltv_WStr.
+
+11. Одновременное использование методов ksUserParam::userParams и
+ksUserParam::GetUserArray и ksUserParam::SetUserArray не допускается.
+Смотрите также: KompasObject
+
+ksUserParam  свойства
+fileName  Имя файла библиотеки, в которой находится 
+функция редактирования макроэлемента
+Пример...
+Интерфейс…
+Тип данных: строка
+Синтаксис Automation:
+
+fileName = iUserParam.fileName Получить свойство (* )
+iUserParam.fileName = fileName Установить свойство (* )
+fileName = iUserParam.GetFileName() Получить свойство (**)
+iUserParam.SetFileName( fileName ) Установить свойство (**)
+
+Примечание:
+Свойство используется для сохранения/получения пользовательских параметров макро"
+элемента.
+Смотрите также: 
+ksDocument2D::ksSetMacroParam
+ksDocument2D::ksGetMacroParam
+
+libName  Имя библиотеки, в которой находится 
+функция редактирования макроэлемента
+Пример...
+Интерфейс…
+Тип данных: строка
+Синтаксис Automation:
+
+libName = iUserParam.libName Получить свойство (* )
+4079
+
+
+
+iUserParam.libName = libName Установить свойство (* )
+libName = iUserParam.GetLibName() Получить свойство (**)
+iUserParam.SetLibName( libName ) Установить свойство (**)
+
+Примечание:
+Свойство используется для сохранения/получения пользовательских параметров макро"
+элемента.
+Смотрите также: 
+ksDocument2D::ksSetMacroParam
+ksDocument2D::ksGetMacroParam
+
+number  Номер функции редактирования
+Пример...
+Интерфейс…
+Тип данных: long
+Синтаксис Automation:
+
+number = iUserParam.number Получить свойство (* )
+iUserParam.number = number Установить свойство (* )
+number = iUserParam.GetNumber() Получить свойство (**)
+iUserParam.SetNumber( number ) Установить свойство (**)
+
+Примечание:
+Свойство используется для сохранения/получения пользовательских параметров макро"
+элемента.
+Смотрите также: 
+ksDocument2D::ksSetMacroParam
+ksDocument2D::ksGetMacroParam
+
+userParams  Безопасный массив SAFEARRAY байтов 
+пользовательских параметров объекта
+Интерфейс…
+Тип данных: VARIANT
+Синтаксис Automation:
+
+userParams = iUserParam.UserParams Получить свойство (* )
+iUserParam.UserParams = userParams Установить свойство (* )
+userParams = iUserParam.GetUserParams() Получить свойство (**)
+iUserParam.SetUserParams Установить свойство (**)
+
+Значение свойства:
+
+Принимает\возвращает безопасный массив SAFEARRAY типа VT_ARRAY | 
+VT_UI1.
+4080
+
+
+
+Примечание:
+Свойство используется для сохранения/получения пользовательских параметров макро"
+элемента в виде безопасного массива SAFEARRAY байтов.
+Смотрите также
+ksUserParam::GetUserArray
+ksUserParam::SetUserArray
+
+ksUserParam  методы
+GetUserArray  Получить указатель на интерфейс 
+динамического массива ksDynamicArray типа 
+LTVARIANT_ARR
+Интерфейс…
+Синтаксис Automation:
+LPDISPATCH GetUserArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа LTVARIANT_ARR.
+
+Примечание.
+Для поддержки Unicode в интерфейс ksLtVariant добавлено свойство ksLtVariant::wstrVal.
+В динамический массив для строковых данных требуется добавлять однотипные типы
+строковых параметров. Они должны быть или все типа ltv_WStr, или все типа ltv_Str. Это
+критично при работе с атрибутами.
+При получении пользовательских параметров требуется использовать тот же тип, что и
+при записи параметров. При работе с базой данных при создании отношения с помощью
+функции ksDataBaseObject::ksRChar требуется в массив добавить ksLtVariant с типом
+ltv_Str. При использовании функции ksDataBaseObject::ksRCharW требуется добавить
+ksLtVariant с типом ltv_WStr.
+Смотрите также: ksLtVariant
+
+Init  Инициализировать параметры
+Интерфейс…
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+4081
+
+
+
+1. Метод обнуляет все пользовательские параметры.
+2. Динамический массив не создается.
+
+SetUserArray  Установить динамический массив 
+ksDynamicArray типа LTVARIANT_ARR
+Интерфейс…
+Синтаксис Automation:
+BOOL SetUserArray (LPDISPATCH Array);
+Входной параметр:
+
+Array " указатель на интерфейс динамического массива 
+ksDynamicArray типа LTVARIANT_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание.
+Для поддержки Unicode в интерфейс ksLtVariant добавлено свойство ksLtVariant::wstrVal.
+В динамический массив для строковых данных требуется добавлять однотипные типы
+строковых параметров. Они должны быть или все типа ltv_WStr, или все типа ltv_Str. Это
+критично при работе с атрибутами.
+При получении пользовательских параметров требуется использовать тот же тип, что и
+при записи параметров. При работе с базой данных при создании отношения с помощью
+функции ksDataBaseObject::ksRChar требуется в массив добавить ksLtVariant с типом
+ltv_Str. При использовании функции ksDataBaseObject::ksRCharW требуется добавить
+ksLtVariant с типом ltv_WStr.
+Смотрите также: ksLtVariant
+
+Данные типа DOUBLE (Интерфейс ksDoubleValue)
+Интерфейс для типа double.
+Примечания:
+
+1. Данный интерфейс используется в качестве параметров узла NURBS и в динамическом
+массиве ksDynamicArray типа DOUBLE_ARR.
+
+2. Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+4082
+
+
+
+ksDoubleValue  свойства
+value  Значение
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+value = iDoubleValue.value Получить свойство (* )
+iDoubleValue.value = value Установить свойство (* )
+value = iDoubleValue.GetValue() Получить свойство (**)
+iDoubleValue.SetValue( value ) Установить свойство (**)
+
+ksDoubleValue  методы
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры узла NURBS.
+
+Строка до 255 символов (Интерфейс ksChar255)
+Интерфейс строки в 255 символов для массива ksDynamicArray типа
+CHAR_STR_ARR.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksChar25  свойства
+str  Строка
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+str = iChar255.str Получить свойство (* )
+4083
+
+
+
+iChar255.str = str Установить свойство (* )
+str = iChar255.GetStr() Получить свойство (**)
+iChar255.SetStr( str ) Установить свойство (**)
+
+ksChar25  методы
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет строку.
+
+Интерфейс параметров параметризации группы 
+объектов (Интерфейсы ksParametrizationParam, 
+IParametrizationParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/476_Glava55_Nalozhenie_svjazej_.htm
+Интерфейс параметров параметризации группы объектов.
+
+ksParametrizationParam " интерфейс Automation
+IParametrizationParam " интерфейс COM
+
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+
+ksParametrizationParam  свойства
+angleLimit  Угловой допуск, градусов
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+angleLimit = iParametrizationParam.angleLimit Получить свойство (* )
+iParametrizationParam.angleLimit = angleLimit Установить свойство (* )
+angleLimit = iParametrizationParam.GetAngleLimit() Получить свойство (**)
+iParametrizationParam.SetAngleLimit (angleLimit) Установить свойство (**)
+4084
+
+
+
+Примечание:
+Значение должно быть в интервале [0...10] градусов.
+
+horizontal  Горизонтальность
+Интерфейс...
+Тип данных: VARIANT_BOOL
+Синтаксис Automation:
+
+horizontal = iParametrizationParam.horizontal Получить свойство (* )
+iParametrizationParam.horizontal = horizontal Установить свойство (* )
+horizontal = iParametrizationParam.GetHorizontal() Получить свойство (**)
+iParametrizationParam.SetHorizontal (horizontal) Установить свойство (**)
+
+Примечание:
+
+1.  Если horizontal = TRUE, то на горизонтальные отрезки в группе накладывается ограниче"
+ния на горизонтальность.
+
+2. Отклонение от горизонтали angleLimit должно быть в интервале [0..10] градусов.
+
+nearestPoints  Совпадение точек
+Интерфейс...
+Тип данных: VARIANT_BOOL
+Синтаксис Automation:
+
+nearestPoints = Получить свойство (* )
+iParametrizationParam.nearestPoints
+iParametrizationParam.nearestPoints = Установить свойство (* )
+nearestPoints
+nearestPoints = Получить свойство (**)
+iParametrizationParam.GetNearestPoints()
+iParametrizationParam.SetNearestPoints( Установить свойство (**)
+nearestPoints )
+
+Примечание:
+
+1. Если nearestPoints = TRUE, то при совпадении точек у объектов в параметризуемой груп"
+пе на объекты накладывается ограничения на совпадение точек.
+
+2. Параметр используется совместно с pointsLimit.
+
+parallel  Параллельность
+Интерфейс...
+Тип данных: VARIANT_BOOL
+4085
+
+
+
+Синтаксис Automation:
+
+parallel = iParametrizationParam.parallel Получить свойство (* )
+iParametrizationParam.parallel = parallel Установить свойство (* )
+parallel = iParametrizationParam.GetParallel() Получить свойство (**)
+iParametrizationParam.SetParallel (parallel) Установить свойство (**)
+
+Примечание:
+
+1. Если parallel = TRUE, то на параллельные отрезки в группе накладывается ограничения
+на параллельность.
+
+2. Допуск на отклонение от параллельности angleLimit должно быть в интервале [0..10] гра"
+дусов.
+
+perpendicular  Перпендикулярность
+Интерфейс...
+Тип данных: VARIANT_BOOL
+Синтаксис Automation:
+
+perpendicular = iParametrizationParam.perpendicular Получить свойство (* )
+iParametrizationParam.perpendicular = perpendicular Установить свойство (* )
+perpendicular = iParametrizationParam.GetPerpendicular() Получить свойство (**)
+iParametrizationParam.SetPerpendicular (perpendicular) Установить свойство (**)
+
+Примечание:
+
+1. Если perpendicular = TRUE, то на параллельные отрезки в группе накладывается ограни"
+чения на перпендикулярность.
+
+2. Допуск на отклонение от перпендикулярности angleLimit должно быть в интервале
+[0...10] градусов.
+
+pointsLimit  Допуск на совпадение точек, мм
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+pointsLimit = iParametrizationParam.pointsLimit Получить свойство (* )
+iParametrizationParam.pointsLimit = pointsLimit Установить свойство (* )
+pointsLimit = iParametrizationParam.GetPointsLimit() Получить свойство (**)
+iParametrizationParam.SetPointsLimit (pointsLimit) Установить свойство (**)
+
+Примечание:
+4086
+
+
+
+1. Значение должно быть в интервале [0...10] мм.
+2. Параметр используется совместно с nearestPoints. Если nearestPoints = TRUE, то при сов"
+
+падении точек у объектов в параметризуемой группе на объекты накладываются ограни"
+чения на совпадение точек.
+
+vertical  Вертикальность
+Интерфейс...
+Тип данных: VARIANT_BOOL
+Синтаксис Automation:
+
+vertical = iParametrizationParam.vertical Получить свойство (* )
+iParametrizationParam.vertical = vertical Установить свойство (* )
+vertical = iParametrizationParam.GetVertical() Получить свойство (**)
+iParametrizationParam.SetVertical (vertical) Установить свойство (**)
+
+Примечание:
+
+1. Если vertical = TRUE, то на вертикальные отрезки в группе накладываются ограничения
+на горизонтальность.
+
+2. Отклонение от вертикали angleLimit должно быть в интервале [0..10] градусов.
+
+ksParametrizationParam  методы
+InIit  Инициализировать параметры
+Интерфейс...
+Синтаксис:
+VARIANT_BOOL Init();
+
+ИнIтерфейс информации о текущей привязке 
+(Интерфейс ISnapInfo)
+Интерфейс информации о текущей привязке.
+Примечание.
+Интерфейс позволяет получить информацию о привязке к объектам документа, сетке
+документа и о других типах привязки в процессах CursorEx, PlacementEx.
+Типы возможных привязок см. в перечислении ksSnapTypeEnum.
+Получить указатель на интерфейс можно с помощью функции ksGetSnapInfo.
+
+ISnapInfo  методы
+GetObject1  Первый объект
+Интерфейс...
+Синтаксис COM:
+4087
+
+
+
+long Get Object1();
+Возвращаемое значение:
+
+" Указатель (reference) первого объекта, для которого сработала привязка.
+
+GetObject2  Второй объект
+Интерфейс...
+Синтаксис COM:
+long Get Object2();
+Возвращаемое значение:
+
+" Указатель (reference) второго объекта, для которого сработала привязка. Например, 
+для типа пересечение.
+
+GetPoint  Точка привязки
+Интерфейс...
+Синтаксис COM:
+BOOL GetPoint( double * x, double * y );
+Выходные параметры:
+
+x, y " координаты точки привязки.
+
+GetSnapType1  Тип привязки на первом объекте
+Интерфейс...
+Синтаксис COM:
+long GetSnapType1();
+Возвращаемое значение:
+
+" Тип привязки из перечисления ksSnapTypeEnum.
+
+GetSnapType2  Тип привязки на втором объекте
+Интерфейс...
+Синтаксис COM:
+long GetSnapType2();
+Возвращаемое значение:
+
+" Тип привязки из перечисления ksSnapTypeEnum.
+4088
+
+
+
+Параметрические связи и ограничения (Интерфейс 
+ksConstraintParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/466_54_1_Chto_takoe_parametrich.htm
+Интерфейс параметрических связей и ограничений.
+Аналог данных параметров при использовании API экспортных функций "
+ConstraintParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также: KompasObject
+
+ksConstraintParam  свойства
+constrType  Тип параметрического ограничения
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+constrType = iConstraintParam.constrType Получить свойство (* )
+iConstraintParam.constrType = constrType Установить свойство (* )
+constrType = iConstraintParam.GetConstrType() Получить свойство (**)
+iConstraintParam.SetConstrType( constrType ) Установить свойство (**)
+
+Типы параметрических ограничений...
+
+index  Индекс точки на объекте
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+index = iConstraintParam.index Получить свойство (* )
+iConstraintParam.index = index Установить свойство (* )
+index = iConstraintParam.GetIndex() Получить свойство (**)
+iConstraintParam.SetIndex( index ) Установить свойство (**)
+
+Примечание:
+Индексирование точек начинается с 0, у дуги и окружности 0 " центр.
+
+partner  Указатель на второй объект
+Интерфейс...
+Тип данных: long
+4089
+
+
+
+Синтаксис Automation:
+
+partner = iConstraintParam.partner Получить свойство (* )
+iConstraintParam.partner = partner Установить свойство (* )
+partner = iConstraintParam.GetPartner() Получить свойство (**)
+iConstraintParam.SetPartner( partner ) Установить свойство (**)
+
+partnerIndex  Индекс точки на втором объекте
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+partnerIndex = iConstraintParam.partnerIndex Получить свойство (* )
+iConstraintParam.partnerIndex = partnerIndex Установить свойство (* )
+partnerIndex = iConstraintParam.GetPartnerIndex() Получить свойство (**)
+iConstraintParam.SetPartnerIndex( partnerIndex ) Установить свойство (**)
+
+Примечание:
+Индексирование точек начинается с 0, у дуги и окружности 0 " центр.
+
+ksConstraintParam  методы
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры.
+
+Параметры сохранения растра (Интерфейсы 
+ksRasterFormatParam, IRasterFormatParam)
+См. раздел...
+
+Интерфейсы спецификации 
+Интерфейс ksSpecification
+Интерфейс ISpecification3D
+4090
+
+
+
+Текстовый документ (Интерфейс ksDocumentTxt)
+События...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/48_2_1_3_Tekstovye_dokumenty.htm
+Интерфейс текстового документа.
+
+ksDocumentTxt " интерфейс Automation
+
+Примечание:
+Данный интерфейс в автоматизации может быть получен от интерфейса API Kompas
+KompasObject с помощью методов KompasObject::DocumentTxt,
+KompasObject::ActiveDocumentTxt; 
+
+ksDocumentTxt  свойства
+reference  Указатель на текстовый документ 
+системы КОМПАС
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ref = iDocumentTXT.reference Получить свойство (* )
+iDocumentTXT.reference = ref Установить свойство (* )
+ref = iDocumentTXT.GetReference() Получить свойство (**)
+iDocumentTXT.SetReference(ref) Установить свойство (**)
+
+ksDocumentTxt  методы
+GetStamp  Получить указатель на интерфейс 
+основной надписи
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/574_68_2_Osnovnaja_nadpisq_i_fo.htm
+Синтаксис Automation:
+LPDISPATCH GetStamp();
+Возвращаемое значение:
+
+" указатель на интерфейс основной надписи ksStamp.
+4091
+
+
+
+GetStampEx  Получить указатель на интерфейс 
+основной надписи чертежа
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/574_68_2_Osnovnaja_nadpisq_i_fo.htm
+Синтаксис Automation:
+LPDISPATCH GetStampEx (long sheetNumb);
+Входные параметры:
+
+sheetNumb " номер листа, начиная с 1.
+
+Возвращаемое значение:
+
+" указатель на интерфейс основной надписи ksStamp.
+
+GetTxtDocumentPagesCount  Получить количество 
+листов текстового документа
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksGetTxtDocumentPagesCount.
+Синтаксис Automation:
+long ksGetTxtDocumentPagesCount();
+Возвращаемое значение:
+
+Количество листов
+
+ksCloseDocument  Закрыть документ
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " CloseDocument.
+Синтаксис Automation:
+BOOL ksCloseDocument();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+ksCreateDocument  Создать текстовый документ
+Интерфейс...
+4092
+
+
+
+Аналог данного метода при использовании API экспортных функций "
+CreateTextDocument.
+Синтаксис Automation:
+BOOL ksCreateDocument (LPDISPATCH par);
+Входные параметры:
+
+par " указатель на интерфейс параметров текстового документа 
+ksTextDocumentParam.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Созданный документ становится текущим.
+
+ksGetDocumentPagesCount  Получить количество 
+листов документа
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksGetDocumentPagesCount.
+Синтаксис Automation:
+long ksGetDocumentPagesCount();
+Возвращаемое значение:
+
+Количество листов документа.
+
+ksGetObjParam  Получить параметры объекта
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " GetObjParam.
+Синтаксис Automation:
+long ksGetObjParam (long reference, LPDISPATCH param, long paramType);
+Входные параметры:
+
+reference " указатель на объект,
+paramType " тип параметров объекта.
+
+Выходные параметры:
+4093
+
+
+
+param " указатель на интерфейс параметров.
+
+Типы объектов и интерфейсы...
+Возвращаемое значение:
+
+тип объекта " в случае успеха,
+0 " в случае неудачи.
+
+Примечания:
+
+1. Параметр paramType может принимать значения ALLPARAM, SHEET_ALLPARAM,
+DOCUMENT_STATE.
+
+2.  Возвращаемым значением может быть TXT_DOCUMENT_OBJ.
+3.  Перед применением метода указатель param должен быть задан, например, с помощью
+
+метода KompasObject::GetParamStruct.
+4.  Вызов метода с нулевыми значениями параметров param и parType позволяет получить
+
+тип объекта по его reference.
+
+ksOpenDocument  Открыть документ
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " OpenDocument.
+Синтаксис Automation:
+BOOL ksOpenDocument (BSTR nameDoc, BOOL regim);
+Входные параметры:
+
+nameDoc " имя документа,
+regim " режим работы с документом:
+
+0 " видимый,
+1 " невидимый ("слепой").
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+
+1.  Невидимый режим применяется при пакетном (скрытом) формировании документа.
+2.  Открытый документ автоматически становится текущим.
+
+ksSaveDocument  Сохранить документ
+Интерфейс...
+4094
+
+
+
+Аналог данного метода при использовании API экспортных функций " SaveDocument.
+Синтаксис Automation:
+BOOL ksSaveDocument (BSTR fileName);
+Входные параметры:
+
+fileName " полное имя файла.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+ksSaveDocumentEx  Сохранить документ в 
+выбранной версии
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " SaveDocumentEx.
+Синтаксис Automation:
+BOOL ksSaveDocumentEx (BSTR fileName, long saveMode);
+Входные параметры:
+
+fileName " полное имя файла,
+saveMode " версия для сохранения:
+
+ "1 " в предыдущую версию,
+ 0 " в текущую версию,
+ 1 " в версию 5.11.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+Если fileName = NULL, то используется имя файла из документа. Если же и в документе
+отсутствует имя файла, то взводится ошибка.
+
+ksSetObjParam  Установить параметры объекта
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " SetObjParam.
+Синтаксис Automation:
+long ksSetObjParam (long reference, LPDISPATCH param, long paramType);
+4095
+
+
+
+Входные параметры:
+
+reference " указатель на объект,
+paramType " тип параметров объекта,
+param " указатель на интерфейс параметров.
+
+Типы объектов и интерфейсы...
+Возвращаемое значение:
+
+1 " в случае успеха,
+0 " в случае неудачи.
+
+Примечания:
+
+1.  Параметр paramType может принимать значения ALLPARAM, SHEET_ALLPARAM,
+DOCUMENT_STATE.
+
+2.  Типом объекта может быть TXT_DOCUMENT_OBJ.
+3.  Перед применением метода указатель param должен быть задан, например, с помощью
+
+метода KompasObject::GetParamStruct.
+
+RasterFormatParam  Получить указатель на 
+интерфейс параметров сохранения документа в 
+растровом формате
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/645_79_3_Sokhranenie_v_rastrovy.htm
+Синтаксис Automation:
+LPDISPATCH RasterFormatParam();
+Синтаксис COM:
+LPRASTERFORMATPARAM RasterFormatParam();
+Возвращаемое значение:
+
+указатель на интерфейс ksRasterFormatParam " в случае успеха,
+NULL " в случае неудачи.
+
+SaveAsToRasterFormat  Сохранить документ в 
+растровом формате
+Интерфейс...
+4096
+
+
+
+Справка системы КОМПАС...
+KOMPAS.chm::/645_79_3_Sokhranenie_v_rastrovy.htm
+Аналог данного метода при использовании API экспортных функций "
+ksSaveAsToRasterFormat.
+Синтаксис Automation:
+BOOL SaveAsToRasterFormat (BSTR fileName, LPDISPATCH rasterPar);
+Входные параметры:
+
+fileName " полное имя файла документа,
+rasterPar " указатель на интерфейс ksRasterFormatParam, определяющий параметры 
+
+записи в растровый формат.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+Метод позволяет сохранить присланный документ в растровом формате (BMP, GIF, JPG,
+PNG, TIF, TGA, PCX, EMF и WMF) с заданными свойствами. 
+Сохранение в WMF формат не поддерживается. При сохранении в WMF формате файл
+записывается в формате EMF.
+
+SaveAsToUncompressedRasterFormat  Сохранить 
+документ в растровый формат без сжатия
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/645_79_3_Sokhranenie_v_rastrovy.htm
+Аналог данного метода при использовании API экспортных функций "
+ksSaveAsToUncompressedRasterFormat.
+Синтаксис Automation:
+BOOL SaveAsToUncompressedRasterFormat (BSTR fileName, LPDISPATCH rasterPar);
+Входные параметры:
+
+fileName " полное имя файла документа,
+rasterPar " Указатель на интерфейс ksRasterFormatParam, определяющий параметры 
+
+записи в растровый формат.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+4097
+
+
+
+FALSE " в случае неудачи.
+Примечания:
+Метод позволяет сохранить присланный документ в растровом формате (BMP, GIF, JPG,
+PNG, TIF, TGA, PCX, EMF и WMF) с заданными свойствами. 
+Сохранение в WMF формат не поддерживается. При сохранении в WMF формате файл
+записывается в формате EMF.
+
+Основная надпись Интерфейс ksStamp
+См. Интерфейс ksStamp
+
+Параметры сохранения растра (Интерфейсы 
+ksRasterFormatParam и IRasterFormatParam)
+См. Интерфейс ksRasterFormatParam и IRasterFormatParam
+
+Параметры текстового документа (Интерфейс 
+ksTextDocumentParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/562_Glava67_Tekst_v_grafichesko.htm
+Интерфейс параметров текстового документа.
+Аналог данных параметров при использовании API экспортных функций "
+TextDocumentParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+ompasObject::GetParamStruct.
+
+ksTextDocumentParam  свойства
+author  Имя автора документа
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+author = iTextDocumentParam.author Получить свойство (* )
+iTextDocumentParam.author = author Установить свойство (* )
+author = iTextDocumentParam.GetAuthor() Получить свойство (**)
+iTextDocumentParam.SetAuthor(author) Установить свойство (**)
+4098
+
+
+
+comment  Комментарий документа
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+comment = iTextDocumentParam.comment Получить свойство (* )
+iTextDocumentParam.comment = comment Установить свойство (* )
+comment = iTextDocumentParam.GetСomment() Получить свойство (**)
+iTextDocumentParam.SetСomment(comment) Установить свойство (**)
+
+fileName  Полный путь к файлу с растровым 
+изображением
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+fileName = iTextDocumentParam.fileName Получить свойство (* )
+iTextDocumentParam.fileName = fileName Установить свойство (* )
+fileName = iTextDocumentParam.GetFileName() Получить свойство (**)
+iTextDocumentParam.SetFileName( fileName ) Установить свойство (**)
+
+regime  Режим редактирования документа
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " видимый,
+1 " "слепой".
+
+Синтаксис Automation:
+
+regime = iTextDocumentParam.regime Получить свойство (* )
+iTextDocumentParam.regime = regime Установить свойство (* )
+regime = iTextDocumentParam.GetRegime() Получить свойство (**)
+iTextDocumentParam.SetRegime(regime) Установить свойство (**)
+
+type  Тип документа
+Интерфейс...
+Тип данных: short
+4099
+
+
+
+Синтаксис Automation:
+
+type = iTextDocumentParam.type Получить свойство (* )
+iTextDocumentParam.type = type Установить свойство (* )
+type = iTextDocumentParam.GetType() Получить свойство (**)
+iTextDocumentParam.SetType(type) Установить свойство (**)
+
+ksTextDocumentParam  методы
+GetArrTailSheet  Получить указатель на интерфейс 
+массива оформлений листов заключительной части
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrTailSheet();
+Возвращаемое значение:
+
+" указатель на интерфейс ksDynamicArray. Тип массива " LIBRARY_STYLE_ARR.
+
+GetArrTitleSheet  Получить указатель на интерфейс 
+массива оформлений титульных листов
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrTitleSheet();
+Возвращаемое значение:
+
+" указатель на интерфейс ksDynamicArray. Тип
+массива " LIBRARY_STYLE_ARR.
+
+GetEvenSheet  Получить указатель на интерфейс 
+оформления четных листов (имя библиотеки стилей, 
+номер стиля в библиотеке)
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetEvenSheet();
+Возвращаемое значение:
+
+" указатель на интерфейс ksLibraryStyleParam.
+4100
+
+
+
+GetFirstSheet  Получить указатель на интерфейс 
+оформления первого листа (имя библиотеки стилей, 
+номер стиля в библиотеке)
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetFirstSheet();
+Возвращаемое значение:
+
+" указатель на интерфейс ksLibraryStyleParam.
+
+GetOddSheet  Получить указатель на интерфейс 
+оформления нечетных листов (имя библиотеки стилей, 
+номер стиля в библиотеке)
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetOddSheet();
+Возвращаемое значение:
+
+" указатель на интерфейс ksLibraryStyleParam.
+
+GetSheetParam  Получить указатель на интерфейс 
+параметров пользовательского или стандартного листа
+Интерфейс...
+Синтаксис Automation:
+GetSheetParam()
+Возвращаемое значение:
+
+" возвращаемое значение: указатель на интер"
+фейс ksSheetSize параметров пользовательско"
+го или ksStandartSheet стандартного листа.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+4101
+
+
+
+FALSE " в случае неудачи.
+
+Интерфейсы параметров элементов текста
+Интерфейс ksTextParam
+Интерфейс параметров текста.
+Аналог данных параметров при использовании API экспортных функций " TextParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также KompasObject
+
+ksTextParam  методы
+
+GetParagraphParam  Получить указатель на интерфейс 
+параметров параграфа ksParagraphParam
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetParagraphParam();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров параграфа
+ksParagraphParam.
+
+GetTextLineArr  Получить указатель на интерфейс 
+динамического массива ksDynamicArray строк текста 
+типа TEXT_LINE_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetTextLineArr();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа TEXT_LINE_ARR.
+
+Смотрите также ksTextLineParam
+
+Init  Инициализировать параметры
+Интерфейс...
+4102
+
+
+
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры текста.
+
+SetParagraphParam  Установить параметры параграфа 
+ksParagraphParam
+Интерфейс...
+Синтаксис Automation:
+BOOL SetParagraphParam(LPDISPATCH par);
+Входной параметр:
+
+par " указатель на интерфейс параметров параграфа ksParagraphParam.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+SetTextLineArr  Заменить динамический массив 
+ksDynamicArray строк текста типа TEXT_LINE_ARR
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTextLineArr (LPDISPATCH pLineItem);
+Входной параметр:
+
+pLineItem " указатель на интерфейс динамического массива 
+ksDynamicArray типа TEXT_LINE_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также ksTextLineParam
+
+Интерфейс ksTextLineParam
+Интерфейс параметров строки текста.
+4103
+
+
+
+Аналог данных параметров при использовании API экспортных функций " TextLineParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+ompasObject::GetParamStruct.
+Смотрите также KompasObject
+
+ksTextLineParam  свойства
+
+style  Стиль строки текста
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+номер системного стиля,  
+номер пользовательского стиля.
+
+Синтаксис Automation:
+
+style = iTextLineParam.style Получить свойство (* )
+iTextLineParam.style = style Установить свойство (* )
+style = iTextLineParam.GetStyle() Получить свойство (**)
+iTextLineParam.SetStyle( style ) Установить свойство (**)
+
+Системные стили текстов...
+
+ksTextLineParam  методы
+
+GetTextItemArr  Получить указатель на интерфейс 
+динамического массива компонент строки текста
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetTextItemArr();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа TEXT_ITEM_ARR.
+
+Смотрите также ksTextItemParam
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+4104
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры параграфа текста.
+
+SetTextItemArr  Установить указатель на интерфейс 
+динамического массива компонент строки текста
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTextItemArr (LPDISPATCH pTextItem);
+Входной параметр:
+
+pTextItem " указатель на интерфейс динамического массива 
+ksDynamicArray типа TEXT_ITEM_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Смотрите также ksTextItemParam
+
+Интерфейс ksParagraphParam
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_TEXT.htm
+Интерфейс параметров параграфа текста.
+Аналог данных параметров при использовании API экспортных функций "
+ParagraphParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также KompasObject
+
+ksParagraphParam  свойства
+
+ang  Угол наклона текста
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+4105
+
+
+
+ang = iParagraphParam.ang Получить свойство (* )
+iParagraphParam.ang = ang Установить свойство (* )
+ang = iParagraphParam.GetAng() Получить свойство (**)
+iParagraphParam.SetAng( ang ) Установить свойство (**)
+
+height  Высота блока форматирования
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+height = iParagraphParam.height Получить свойство (* )
+iParagraphParam.height = height Установить свойство (* )
+height = iParagraphParam.GetHeight() Получить свойство (**)
+iParagraphParam.SetHeight( height ) Установить свойство (**)
+
+hFormat  Признак форматирования по горизонтали
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+0 " нет форматирования,
+1 " сужение текста,
+2 " перенос на другую строку.
+
+Синтаксис Automation:
+
+hFormat = iParagraphParam.hFormat Получить свойство (* )
+iParagraphParam.hFormat = hFormat Установить свойство (* )
+hFormat = iParagraphParam.GetHFormat() Получить свойство (**)
+iParagraphParam.SetHFormat(hFormat ) Установить свойство (**)
+
+style  Стиль текста
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+style = iParagraphParam.style Получить свойство (* )
+iParagraphParam.style = style Установить свойство (* )
+style = iParagraphParam.GetStyle() Получить свойство (**)
+iParagraphParam.SetStyle( style ) Установить свойство (**)
+4106
+
+
+
+Системные стили текстов...
+
+vFormat  Признак форматирования по вертикали
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+ 0 " нет форматирования,
+"1 " изменение шага строк.
+
+Синтаксис Automation:
+
+vFormat = iParagraphParam.vFormat Получить свойство (* )
+iParagraphParam.vFormat = vFormat Установить свойство (* )
+vFormat = iParagraphParam.GetVFormat() Получить свойство (**)
+iParagraphParam.SetVFormat( vFormat ) Установить свойство (**)
+
+width  Ширина блока форматирования
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+width = iParagraphParam.width Получить свойство (* )
+iParagraphParam.width = width Установить свойство (* )
+width = iParagraphParam.GetWidth() Получить свойство (**)
+iParagraphParam.SetWidth(width ) Установить свойство (**)
+
+x, y  Координаты точки привязки текста
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+x = iParagraphParam.x Получить свойство (* )
+iParagraphParam.x = x Установить свойство (* )
+x = iParagraphParam.GetX() Получить свойство (**)
+iParagraphParam.SetX( x ) Установить свойство (**)
+4107
+
+
+
+ksParagraphParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры параграфа текста.
+
+Интерфейс ksTextItemFont
+Справка системы КОМПАС...
+KOMPAS.chm::/562_Glava67_Tekst_v_grafichesko.htm
+Интерфейс параметров шрифта компоненты строки текста.
+Аналог данных параметров при использовании API экспортных функций " TextItemFont.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также
+KompasObject
+
+ksTextItemFont  свойства
+
+bitvector  Битовый вектор, определяющий начертание 
+символов (наклон, толщину, подчеркивание, тип 
+составной части  дробь, отклонение и т.д.)
+Тип данных: long
+Синтаксис Automation:
+
+bitvector = iTextItemFont.bitvector Получить свойство (* )
+iTextItemFont.bitvector = bitvector Установить свойство (* )
+bitvector = iTextItemFont.GetBitVector() Получить свойство (**)
+iTextItemFont.SetBitVector( bitvector ) Установить свойство (**)
+
+Признаки начертания текста...
+4108
+
+
+
+color  Цвет символов
+Тип данных: long
+Синтаксис Automation:
+
+color = iTextItemFont.color Получить свойство (* )
+iTextItemFont.color = color Установить свойство (* )
+color = iTextItemFont.GetColor() Получить свойство (**)
+iTextItemFont.SetColor( color ) Установить свойство (**)
+
+fontName  Имя шрифта
+Тип данных: строка
+Синтаксис Automation:
+
+fontName = iTextItemFont.fontName Получить свойство (* )
+iTextItemFont.fontName = fontName Установить свойство (* )
+fontName = iTextItemFont.GetFontName() Получить свойство (**)
+iTextItemFont.SetFontName( fontName ) Установить свойство (**)
+
+height  Высота шрифта (в миллиметрах)
+Тип данных: double
+Синтаксис Automation:
+
+height = iTextItemFont.height Получить свойство (* )
+iTextItemFont.height = height Установить свойство (* )
+height = iTextItemFont.GetHeight() Получить свойство (**)
+iTextItemFont.SetHeight( height ) Установить свойство (**)
+
+ksu  Коэффициент сужения символов
+Тип данных: double
+Синтаксис Automation:
+
+ksu = iTextItemFont.ksu Получить свойство (* )
+iTextItemFont.ksu = ksu Установить свойство (* )
+ksu = iTextItemFont.GetKsu() Получить свойство (**)
+iTextItemFont.SetKsu( ksu ) Установить свойство (**)
+
+ksTextItemFont  методы
+
+GetBitVectorValue  Получить значение битового 
+вектора, определяющего начертание символов
+Синтаксис Automation:
+4109
+
+
+
+BOOL GetBitVectorValue (long bitVector);
+Выходной параметр:
+
+bitVector " значение битового флага.
+
+Признаки начертания текста...
+Возвращаемое значение:
+
+TRUE " если флаги "взведены",
+FALSE " если флаги "сброшены".
+
+Примечание:
+В отличие от GetBitVector этот метод позволяет получить значение конкретного флага.
+
+Init  Инициализировать параметры
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+Метод обнуляет все параметры шрифта компоненты строки текста. 
+
+SetBitVectorValue  "Взвести" или "сбросить" значение 
+битового вектора
+Синтаксис Automation:
+BOOL SetBitVectorValue (long bitVector, BOOL state);
+Входные параметры:
+
+bitVector " значение битового вектора,
+state " состояние вектора:
+
+TRUE " включить, 
+FALSE " выключить.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+В отличие от SetBitVector этот метод позволяет установить значение конкретного флага.
+4110
+
+
+
+Интерфейс ksTextItemParam
+Справка системы КОМПАС...
+KOMPAS.chm::/534_65_9_Specialqnye_vstavki.htm
+Интерфейс параметров компоненты строки текста.
+Аналог данных параметров при использовании API экспортных функций "
+TextItemParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+ompasObject::GetParamStruct.
+Смотрите также KompasObject
+
+ksTextItemParam  свойства
+
+iSNumb  Номер спецсимвола, символа из 
+произвольного шрифта или тип отрисовки дроби, или 
+выражения типа суммы, или 0
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+iSNumb = iTextItemParam.iSNumb Получить свойство (* )
+iTextItemParam.iSNumb = iSNumb Установить свойство (* )
+iSNumb = iTextItemParam.GetISNumb() Получить свойство (**)
+iTextItemParam.SetISNumb(iSNumb) Установить свойство (**)
+
+Примечание.
+Таблица спецсимволов размещена в файле SDK\NumbSymb.frw.
+
+s  Массив символов для компоненты текста
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+s = iTextItemParam.s Получить свойство (* )
+iTextItemParam.s = s Установить свойство (* )
+s = iTextItemParam.GetS() Получить свойство (**)
+iTextItemParam.SetS(s) Установить свойство (**)
+
+type  Тип символа
+Интерфейс...
+4111
+
+
+
+Тип данных: long
+Синтаксис Automation:
+
+type = iTextItemParam.type Получить свойство (* )
+iTextItemParam.type = type Установить свойство (* )
+type = iTextItemParam.GetType() Получить свойство (**)
+iTextItemParam.SetType(type) Установить свойство (**)
+
+ksTextItemParam  методы
+
+GetItemFont  Получить указатель на интерфейс свойств 
+шрифта компоненты строки текста
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetItemFont();
+Возвращаемое значение:
+
+" указатель на интерфейс ksTextItemFont.
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры компоненты строки текста.
+
+SetItemFont  Установить указатель на интерфейс 
+свойств шрифта компоненты строки текста
+Интерфейс...
+Синтаксис Automation:
+BOOL SetItemFont(LPDISPATCH font);
+Входной параметр:
+4112
+
+
+
+font " указатель на интерфейс свойств шрифта ком"
+поненты строки текста ksTextItemFont.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Документ спецификация (Интерфейс 
+ksSpcDocument)
+События...
+
+Справка системы КОМПАС...
+kompas.chm::/1168_Glava135_Rabota_s_dokument.htm
+Интерфейс документаспецификации.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::SpcDocument, KompasObject::SpcActiveDocument
+Смотрите также KompasObject
+
+ksSpcDocument  свойства
+reference  Указатель на спецификацию
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ref = iSpcDocument.reference Получить свойство (* )
+iSpcDocument.reference = ref Установить свойство (* )
+ref = iSpcDocument.GetReference() Получить свойство (**)
+iSpcDocument.SetReference(ref) Установить свойство (**)
+
+ksSpcDocument  методы
+GetSpecification  Получить указатель на интерфейс 
+для работы с объектами спецификации 
+ksSpecification
+Интерфейс...
+Синтаксис Automation
+LPDISPATCH GetSpecification();
+Возвращаемое значение:
+4113
+
+
+
+" указатель на интерфейс для работы с объекта"
+ми спецификации ksSpecification.
+
+GetSpcDocumentNotify  Получить источник событий 
+для документа спецификации
+Интерфейс...
+Синтаксис Automation:
+SpcDocumentNotify* GetSpcDocumentNotify();
+Возвращаемое значение:
+
+" указатель на интерфейс источника событий SpcDocumentNotify.
+
+GetStamp  Получить указатель на интерфейс 
+основной надписи ksStamp
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetStamp();
+Возвращаемое значение:
+
+" указатель на интерфейс основной надписи ksStamp.
+
+GetStampEx  Получить указатель на интерфейс 
+основной надписи
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetStampEx (long sheetNumb);
+Входные параметры:
+
+sheetNumb " номер листа, начиная с 1.
+
+Возвращаемое значение:
+
+" указатель на интерфейс основной надписи ksStamp.
+
+ksCloseDocument  Закрыть документ
+Интерфейс...
+4114
+
+
+
+Аналог данного метода при использовании API экспортных функций " CloseDocument.
+Синтаксис Automation:
+BOOL ksCloseDocument();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Если документ не сохранен, взводится соответствующая ошибка.
+
+ksCreateDocument  Создать документ
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " CreateDocument.
+Синтаксис Automation:
+BOOL ksCreateDocument (LPDISPATCH par);
+Входной параметр:
+
+par " указатель на интерфейс ksDocumentParam параметров документа.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Документ становится текущим (видимым или не видимым).
+
+ksDeleteObj  Удалить объект спецификации
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " DeleteObj.
+Синтаксис Automation:
+long ksDeleteObj (long ref);
+Входной параметр:
+
+ref " указатель на удаляемый объект.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+4115
+
+
+
+ksExistObj  Проверить, существует ли в 
+спецификации указанный объект
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ExistObj.
+Синтаксис Automation:
+long ksExistObj (long ref);
+Входной параметр:
+
+ref " указатель на объект.
+
+Возвращаемое значение:
+
+1 " объект существует,
+0 " объект не существует.
+
+ksGetObjParam  Получить параметры объекта 
+спецификации
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " GetObjParam.
+Синтаксис Automation:
+long ksGetObjParam (long reference, 
+LPDISPATCH param, 
+long paramType);
+Входные параметры:
+
+reference " указатель на объект,
+paramType " тип параметров,
+param " указатель на интерфейс параметров
+
+ksUserParam.
+
+Типы параметров объектов...
+Возвращаемое значение:
+
+тип объекта " в случае удачного завершения,
+0 " в случае неудачи.
+
+Типы объектов и интерфейсы...
+Примечания:
+4116
+
+
+
+1.  Параметр paramType может принимать значения ALLPARAM, SHEET_ALLPARAM,
+DOCUMENT_STATE, SPC_TUNING_PARAM.
+
+2.  Возвращаемым значением может быть SPC_OBJ или SPC_DOCUMENT_OBJ.
+3.  Вызов метода с нулевыми значениями параметров param и parType позволяет получить
+
+тип объекта по его reference.
+
+ksGetSpcDocumentPagesCount  Получить количество 
+листов спецификации
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksGetSpcDocumentPagesCount.
+Синтаксис Automation:
+long ksGetSpcDocumentPagesCount();
+Возвращаемое значение:
+
+" количество листов спецификации.
+
+ksGetSpcSheetSB  Получить указатель на интерфейс 
+динамического массива листов сборочного чертежа, 
+подключенных к спецификации,  ksDynamicArray 
+типа CHAR_STR_ARR
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ksGetSpcSheetSB.
+Синтаксис Automation:
+LPDISPATCH ksGetSpcSheetSB();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа CHAR_STR_ARR.
+
+ksOpenDocument  Открыть документ
+спецификацию
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " OpenDocument.
+Синтаксис Automation:
+BOOL ksOpenDocument (BSTR nameDoc, short regim);
+4117
+
+
+
+Входные параметры:
+
+name " полное имя файла открываемого документа,
+regim " режим открытия:
+
+0 " видимый,
+1 " "слепой",
+3 " видимый без синхронизации со сборочным
+чертежом,
+4 " "слепой" без синхронизации со сборочным
+чертежом.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Открытый документ становится текущим.
+
+ksSaveDocument  Сохранить документ
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " SaveDocument.
+Синтаксис Automation:
+BOOL ksSaveDocument (BSTR fileName);
+Входной параметр:
+
+fileName " полное имя файла, 
+(NULL " используется имя существующего файла из документа).
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+fileName определяет имя файла при сохранении в режиме Save As...
+Если и в документе имя файла NULL " взводится соответствующая ошибка.
+
+ksSaveDocumentEx  Сохранить документ с новым 
+именем файла
+Интерфейс...
+Синтаксис Automation:
+BOOL ksSaveDocumentEx( BSTR FileName, long SaveMode );
+Синтаксис COM:
+BOOL ksSaveDocumentEx( LPOLESTR FileName, long SaveMode );
+4118
+
+
+
+Входные параметры:
+
+FileName " новое имя файла документа,
+SaveMode " версия для сохранения:
+
+"1 " в предыдущую версию,
+0 " в текущую версию,
+1 " в версию 5.11.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Если FileName = NULL, то используется имя файла из документа. Если же и в документе
+отсутствует имя файла, то взводится ошибка.
+
+ksSaveToDXF  Сохранить документ в формате DXF
+Интерфейс...
+Синтаксис Automation:
+BOOL ksSaveToDXF (LPCTSTR DXFFileName);
+Входные параметры:
+
+DXFFileName " имя файла для записи в формате DXF.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Если FileName = NULL, то используется имя файла из документа. Если же и в документе
+отсутствует имя файла, то взводится ошибка.
+
+ksSetObjParam  Установить параметры объекта
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " SetObjParam.
+Синтаксис Automation:
+long ksSetObjParam (long reference, 
+LPDISPATCH param, 
+long paramType);
+Входные параметры:
+4119
+
+
+
+reference " указатель на объект,
+paramType " тип параметров,
+param " указатель на интерфейс параметров ksUserParam.
+
+Типы параметров объектов...
+Типы объектов и интерфейсы...
+Возвращаемое значение:
+
+1 " в случае удачного завершения.
+
+Примечания:
+
+1.  Параметр paramType может принимать значения ALLPARAM, SHEET_ALLPARAM,
+DOCUMENT_STATE, SPC_TUNING_PARAM.
+
+2.  Типом объекта может быть SPC_OBJ или SPC_DOCUMENT_OBJ.
+
+ksSetSpcSheetSB  Установить указатель на 
+интерфейс динамического массива листов 
+сборочного чертежа, подключенных к 
+спецификации
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций " ksSetSpcSheetSB.
+Синтаксис Automation:
+long ksSetSpcSheetSB (LPDISPATCH arr);
+Входной параметр:
+
+arr " указатель на интерфейс динамического масси"
+ва ksDynamicArray типа CHAR_STR_ARR.
+
+Возвращаемое значение:
+
+1 " в случае удачного завершения,
+0 " в случае неудачи.
+
+RasterFormatParam  Получить указатель на 
+интерфейс, определяющий параметры записи в 
+растровый формат
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH RasterFormatParam();
+Возвращаемое значение:
+4120
+
+
+
+указатель на интерфейс " в случае успешного завершения,
+ksRasterFormatParam
+NULL " в случае неудачи.
+
+SaveAsToRasterFormat  Сохранить документ в 
+растровом формате
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksSaveAsToRasterFormat.
+Синтаксис Automation:
+BOOL SaveAsToRasterFormat (BSTR fileName,
+LPDISPATCH rasterPar);
+Входные параметры:
+
+fileName " полное имя файла документа,
+rasterPar " указатель на интерфейс
+
+ksRasterFormatParam, определяющий пара"
+метры записи в растровый формат.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод позволяет сохранить присланный документ в растровом формате (BMP, GIF, JPG,
+PNG, TIF, TGA, PCX, EMF и WMF) с заданными свойствами. 
+Сохранение в WMF формат не поддерживается. При сохранении в WMF формате файл
+записывается в формате EMF.
+
+SaveAsToUncompressedRasterFormat  Сохранить 
+документ в растровый формат без сжатия
+Интерфейс...
+Аналог данного метода при использовании API экспортных функций "
+ksSaveAsToUncompressedRasterFormat.
+Синтаксис Automation:
+BOOL SaveAsToUncompressedRasterFormat(BSTR fileName, IDispatch* rasterPar));
+Входные параметры:
+
+fileName " полное имя файла документа,
+4121
+
+
+
+rasterPar " указатель на интерфейс ksRasterFormatParam, определяющий параметры 
+записи в растровый формат.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод позволяет сохранить документ спецификации в растровом формате без сжатия,
+с заданными свойствами: цветом, форматом (BMP, GIF, JPG, PNG, TIF, TGA, PCX, EMF и
+WMF) и т.п. Сохранение в WMF формат не поддерживается. При сохранении в WMF фор"
+мате файл записывается в формате EMF.
+Подробнее см. описание ksRasterFormatParam.
+
+Источник событий для документаспецификации 
+(Интерфейс SpcDocumentNotify)
+В Automation источник событий для документа"спецификации SpcDocumentNotify можно
+получить при помощи метода ksSpcDocument::GetSpcDocumentNotify.
+В COM источником для подписки является документ"спецификация. См.Интерфейс
+SpcDocumentNotify
+
+Источник событий для объекта спецификации 
+(Интерфейс ksSpcObjectNotify)
+См. Интерфейс ksSpcObjectNotify
+
+Параметры объектов спецификации
+Объект спецификации (Интерфейс ksSpcObjParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1138_130_1_Obwekt_specifikacii_.htm
+Интерфейс параметров объекта спецификации.
+Аналог данных параметров при использовании API экспортных функций " SpcObjParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также:
+KompasObject
+
+ksSpcObjParam  свойства
+
+blockNumber  Номер блока
+Интерфейс...
+4122
+
+
+
+Тип данных: long
+Синтаксис Automation:
+
+blockNumber = iSpcObjParam.blockNumber Получить свойство (* )
+iSpcObjParam.blockNumber = blockNumber Установить свойство (* )
+blockNumber = iSpcObjParam.GetBlockNumber() Получить свойство (**)
+iSpcObjParam.SetBlockNumber( blockNumber ) Установить свойство (**)
+
+Примечание:
+Нумерация блоков начинается с 0.
+
+draw  Признак отображения объекта в таблице 
+спецификации
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+1 " показывать объект,
+0 " не показывать объект (обычно применяется для по"
+
+следующих одинаковых объектов).
+
+Синтаксис Automation:
+
+draw = iSpcObjParam.draw Получить свойство (* )
+iSpcObjParam.draw = draw Установить свойство (* )
+draw = iSpcObjParam.GetDraw() Получить свойство (**)
+iSpcObjParam.SetDraw(draw) Установить свойство (**)
+
+first  Признак одинаковых объектов спецификации
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+1 " первый из одинаковых объектов,
+0 " последующие одинаковые объекты.
+
+Синтаксис Automation:
+
+first = iSpcObjParam.first Получить свойство (* )
+first = iSpcObjParam.GetFirst() Получить свойство (**)
+
+Примечание:
+Свойство только для чтения.
+4123
+
+
+
+firstOnShee0t  Признак объекта, с которого всегда 
+начинается страница
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+1 " данный объект всегда первый на странице (перед ним вставляется "разрыв 
+страницы"),
+
+0 " объект располагается на странице сразу за предыдущим объектом.
+
+Синтаксис Automation:
+
+firstOnSheet = iSpcObjParam.firstOnSheet Получить свойство (* )
+iSpcObjParam.firstOnSheet = firstOnSheet Установить свойство (* )
+firstOnSheet = iSpcObjParam.GetFirstOnSheet() Получить свойство (**)
+iSpcObjParam.SetFirstOnSheet (firstOnSheet) Установить свойство (**)
+
+GetDocArr  Получить указатель на интерфейс 
+динамического массива структур параметров 
+документов, подключенных к объекту спецификации
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetDocArr();
+Возвращаемое значение:
+
+" указатель на динамический массив
+ksDynamicArray типа DOC_SPCOBJ_ARR.
+
+insFrgType  Признак связи объекта с внешним 
+фрагментом
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " объект создан непосредственно в документе,
+1 " объект "пришел" в документ из вставки фрагмента,
+2 " объект, полученный из вставки фрагмента, редакти"
+
+ровался пользователем вручную.
+4124
+
+
+
+Синтаксис Automation:
+
+insFrgType = iSpcObjParam.insFrgType Получить свойство (*
+)
+
+insFrgType = iSpcObjParam.GetInsFrgType() Получить свойство
+(**)
+
+Примечание:
+Свойство только для чтения.
+
+ispoln  Признак объекта  "исполнения"
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+1 " объект является "исполнением",
+0 " обычный объект.
+
+Синтаксис Automation:
+
+ispoln = iSpcObjParam. ispoln Получить свойство (* )
+iSpcObjParam. ispoln = ispoln Установить свойство (* )
+numbSubSection = iSpcObjParam.GetIspoln() Получить свойство (**)
+iSpcObjParam.SetIspoln (ispoln) Установить свойство (**)
+
+numbSection  Номер раздела
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+numbSection = iSpcObjParam.numbSection Получить свойство (* )
+numbSection = iSpcObjParam.GetNumbSection() Получить свойство (**)
+
+Примечание:
+Свойство только для чтения.
+
+numbSubSection  Номер подраздела
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+4125
+
+
+
+numbSubSection = iSpcObjParam.numbSubSection Получить свойство (* )
+iSpcObjParam.numbSubSection = numbSubSection Установить свойство (* )
+numbSubSection = iSpcObjParam.GetNumbSubSection() Получить свойство (**)
+iSpcObjParam.SetNumbSubSection(numbSubSection) Установить свойство (**)
+
+posInc  Признак возрастания номера позиции объекта
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+1 " номер позиции объекта возрастает,
+0 " номер позиции объекта не возрастает (остается та"
+
+ким же, как номер позиции предыдущего объекта).
+
+Синтаксис Automation:
+
+posInc = iSpcObjParam.posInc Получить свойство (* )
+iSpcObjParam.posInc = posInc Установить свойство (* )
+posInc = iSpcObjParam.GetPosInc() Получить свойство (**)
+iSpcObjParam.SetPosInc(posInc) Установить свойство (**)
+
+posNotDraw  Признак отображения номера позиции 
+объекта в таблице спецификации
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+1 " не показывать номер позиции,
+0 " показывать номер позиции.
+
+Синтаксис Automation:
+
+posNotDraw = iSpcObjParam.posNotDraw Получить свойство (* )
+iSpcObjParam.posNotDraw = posNotDraw Установить свойство (* )
+posNotDraw = iSpcObjParam.GetPosNotDraw() Получить свойство (**)
+iSpcObjParam.SetPosNotDraw (posNotDraw) Установить свойство (**)
+
+subSectionName  Имя подраздела
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+4126
+
+
+
+subSectionName = iSpcObjParam.subSectionName Получить свойство (* )
+subSectionName = iSpcObjParam.GetSubSectionName() Получить свойство (**)
+
+Примечание:
+Свойство только для чтения.
+
+typeObj  Тип строки спецификации
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+typeObj = iSpcObjParam.typeObj Получить свойство (* )
+iSpcObjParam.typeObj = typeObj Установить свойство (* )
+typeObj = iSpcObjParam.GetTypeObj() Получить свойство (**)
+iSpcObjParam.GetTypeObj(typeObj) Установить свойство (**)
+
+Типы строк спецификации...
+
+ksSpcObjParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры объекта спецификации.
+
+SetDocArr  Установить указатель на интерфейс 
+динамического массива структур параметров 
+документов, подключенных к объекту спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL SetDocArr (LPDISPATCH docArr);
+Входной параметр:
+4127
+
+
+
+docArr " указатель на динамический массив ksDynamicArray типа 
+DOC_SPCOBJ_ARR.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Документ, подключенный к объекту спецификации 
+(Интерфейс ksDocAttachedSpcParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1189_135_6_3_Podkljuchenie_doku.htm
+Интерфейс параметров документа, подключенного к объекту спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+DocAttachedSpcParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+KompasObject::GetParamStruct.
+Смотрите также:KompasObject
+
+ksDocAttachedSpcParam  свойства
+
+comment  Комментарий к подключенному документу
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+comment = iDocAttachedSpcParam. comment Получить свойство (* )
+iDocAttachedSpcParam. comment = comment Установить свойство (* )
+comment = iDocAttachedSpcParam.GetComment() Получить свойство (**)
+iDocAttachedSpcParam.SetComment(comment) Установить свойство (**)
+
+fileName  Имя файла подключенного документа
+Интерфейс...
+Тип данных: строка.
+Синтаксис Automation:
+
+fileName = iDocAttachedSpcParam.fileName Получить свойство (* )
+iDocAttachedSpcParam.fileName = fileName Установить свойство (* )
+4128
+
+
+
+fileName = iDocAttachedSpcParam.GetFileName() Получить свойство (**)
+iDocAttachedSpcParam.SetFileName( fileName ) Установить свойство (**)
+
+transmit  Признак передачи изменений объекта 
+спецификации в подключенный к нему документ
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+1 " передавать изменения,
+0 " не передавать изменения.
+
+Синтаксис Automation:
+
+transmit = iDocAttachedSpcParam.transmit Получить свойство (* )
+iDocAttachedSpcParam.transmit = transmit Установить свойство (* )
+transmit = iDocAttachedSpcParam.GetTransmit() Получить свойство (**)
+iDocAttachedSpcParam.SetTransmit(transmit) Установить свойство (**)
+
+ksDocAttachedSpcParam  методы
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечание:
+Метод обнуляет все параметры документа, подключенного к объекту спецификации.
+
+Стиль спецификации (Интерфейс ksSpcStyleParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1300_Glava145_Stilq_specifikaci.htm
+Интерфейс параметров стиля спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+SpcStyleParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи метода
+ompasObject::GetParamStruct.
+Смотрите также
+4129
+
+
+
+KompasObject
+
+ksSpcStyleParam  свойства
+
+layoutName1  Имя файла библиотеки, в которой 
+хранится оформление для первого листа спецификации
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+layoutName1 = iSpcStyleParam.layoutName1 Получить свойство (* )
+layoutName1 = iSpcStyleParam.GetLayoutName1() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+layoutName2  Имя файла библиотеки, в которой 
+хранится оформление для последующих листов 
+спецификации
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+layoutName2 = iSpcStyleParam.layoutName2 Получить свойство (* )
+layoutName2 = iSpcStyleParam.GetLayoutName2() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+sectionOn  Признак деления на разделы
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " выключено,
+1 " включено.
+
+Синтаксис Automation:
+
+sectionOn = iSpcStyleParam.sectionOn Получить свойство (* )
+sectionOn = iSpcStyleParam.GetSectionOn() Получить свойство (**)
+
+Примечание:
+4130
+
+
+
+Данное свойство предназначено только для чтения.
+
+type  Признак формата листа
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " стандартный,
+1 " пользовательский.
+
+Синтаксис Automation:
+
+type = iSpcStyleParam.type Получить свойство (* )
+type = iSpcStyleParam.GetType() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+shtType1  Номер оформления из библиотеки для 
+первого листа спецификации
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+shtType1 = iSpcStyleParam.shtType1 Получить свойство (* )
+shtType1 = iSpcStyleParam.GetShtType1() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+shtType2  Номер оформления из библиотеки для 
+последующих листов спецификации
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+shtType2 = iSpcStyleParam.shtType2 Получить свойство (* )
+shtType2 = iSpcStyleParam.GetShtType2() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+4131
+
+
+
+variant  Вариант оформления спецификации
+Интерфейс...
+Тип данных: short
+Варианты оформления спецификации...
+Синтаксис Automation:
+
+variant = iSpcStyleParam.variant Получить свойство (* )
+variant = iSpcStyleParam.GetVariant() Получить свойство (**)
+
+Примечание:
+Данное свойство предназначено только для чтения.
+
+ksSpcStyleParam  методы
+
+GetArrAdditionalColumn  Получить указатель на 
+интерфейс динамического массива дополнительных 
+колонок ksDynamicArray типа SPCSTYLECOLUMN_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrAdditionalColumn();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа SPCSTYLECOLUMN_ARR.
+
+Смотрите также ksSpcStyleColumnParam
+
+GetArrColumn  Получить указатель на интерфейс 
+динамического массива колонок ksDynamicArray типа 
+SPCSTYLECOLUMN_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrColumn();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа SPCSTYLECOLUMN_ARR.
+
+Смотрите также ksSpcStyleColumnParam
+4132
+
+
+
+GetArrSection Получить указатель на интерфейс 
+динамического массива разделов спецификации 
+ksDynamicArray типа SPCSTYLESEC_ARR
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetArrSection();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва ksDynamicArray типа SPCSTYLESEC_ARR.
+
+Смотрите также ksSpcStyleSectionParam
+
+GetSheetParam  Получить указатель на интерфейс 
+параметров листа документа ksStandartSheet или 
+ksSheetSize
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetSheetParam();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров листа до"
+кумента ksStandartSheet или ksSheetSize.
+
+Примечание:
+Тип возвращаемого интерфейса определяется свойством ksSpcStyleParam::type.
+
+GetTuning  Получить умолчательные настройки, 
+считанные из библиотеки стилей спецификации
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetTuning();
+Возвращаемое значение:
+
+" указатель на интерфейс параметров стиля на"
+строек спецификации ksSpcTuningStyleParam.
+4133
+
+
+
+Init  Инициализировать параметры
+Интерфейс...
+Синтаксис Automation:
+BOOL Init();
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Примечания:
+
+1.  Метод обнуляет все параметры.
+2.  Создается динамический массив arrColumn типа SPCSTYLECOLUMN_ARR.
+3.  Создается динамический массив arrAdditionalColumn типа SPCSTYLECOLUMN_ARR.
+4.  Создается динамический массив arrSection типа SPCSTYLESEC_ARR.
+
+Настройки спецификации (Интерфейс 
+ksSpcTuningStyleParam)
+Справка системы КОМПАС...
+KOMPAS.chm::/1305_Glava146_Nastrojka_sushche.htm
+Интерфейс параметров настроек стиля спецификации.
+Аналог данных параметров при использовании API экспортных функций "
+SpcTuningStyleParam.
+Примечание:
+Указатель на интерфейс можно получить при помощи методов
+KompasObject::GetParamStruct, ksSpcStyleParam::GetTuning
+Смотрите также KompasObject
+
+ksSpcTuningStyleParam  свойства
+
+blocOnNewPage  Признак размещения блоков
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " начинать блоки после предыдущих блоков,
+1 " начинать блоки с новой страницы.
+
+Синтаксис Automation:
+
+blocOnNewPage = iSpcTuningStyleParam.blocOnNewPage Получить свойство (* )
+iSpcTuningStyleParam.blocOnNewPage = blocOnNewPage Установить свойство (* )
+4134
+
+
+
+blocOnNewPage = iSpcTuningStyleParam.GetBlocOnNewPage() Получить свойство (**)
+iSpcTuningStyleParam.SetBlocOnNewPage(blocOnNewPage) Установить свойство (**)
+
+countBlock  Количество блоков (в групповой 
+спецификации)
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+countBlock = iSpcTuningStyleParam.countBlock Получить свойство (* )
+iSpcTuningStyleParam.countBlock = countBlock Установить свойство (* )
+countBlock = iSpcTuningStyleParam.GetCountBlock() Получить свойство (**)
+iSpcTuningStyleParam.SetCountBlock(countBlock) Установить свойство (**)
+
+countIspoln  Количество исполнений (в групповой 
+спецификации)
+Интерфейс...
+Тип данных: short
+Синтаксис Automation:
+
+countIspoln = iSpcTuningStyleParam.countIspoln Получить свойство (* )
+iSpcTuningStyleParam.countIspoln = countIspoln Установить свойство (* )
+countIspoln = iSpcTuningStyleParam.GetCountIspoln() Получить свойство (**)
+iSpcTuningStyleParam.SetCountIspoln(countIspoln) Установить свойство 
+
+(**)
+
+disableEmptyStr  Признак наличия пустых строк вокруг 
+заголовка раздела
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " пустые строки есть,
+1 " пустых строк нет.
+
+Синтаксис Automation:
+
+disableEmptyStr = iSpcTuningStyleParam.disableEmptyStr Получить свойство (* )
+iSpcTuningStyleParam.disableEmptyStr = disableEmptyStr Установить свойство (* )
+disableEmptyStr = iSpcTuningStyleParam.GetDisableEmptyStr() Получить свойство (**)
+iSpcTuningStyleParam.SetDisableEmptyStr(disableEmptyStr) Установить свойство (**)
+4135
+
+
+
+disableEmptyBlockStr  Признак наличия пустых строк 
+вокруг заголовка блока
+Интерфейс...
+Тип данных: short
+Значения свойства:
+
+0 " пустые строки есть,
+1 " пустых строк нет.
+
+Синтаксис Automation:
+
+disableEmptyBlockStr = iSpcTuningStyleParam.disableEmptyBlockStr Получить свойство (* )
+iSpcTuningStyleParam.disableEmptyBlockStr = disableEmptyBlockStr Установить свойство (* )
+disableEmptyBlockStr = Получить свойство (**)
+iSpcTuningStyleParam.GetDisableEmptyBlockStr() 
+iSpcTuningStyleParam.SetDisableEmptyBlockStr(disableEmptyBlockStr Установить свойство (**)
+)
+
+geometryDel  Признак удаления геометрии удаленного 
+объекта спецификации
+Интерфейс...
+Тип данных: short

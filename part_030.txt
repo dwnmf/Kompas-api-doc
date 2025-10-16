@@ -1,0 +1,2532 @@
+Object.ChoosePartsType = Установить свойство (* )
+ChoosePartsType
+ChoosePartsType = Получить свойство (**)
+Object.GetChoosePartsType()
+Object.SetChoosePartsType( Установить свойство (**)
+ChoosePartsType )
+
+ Синтаксис COM:
+
+Object.get_ChoosePartsType( Получить свойство
+&ChoosePartsType )
+Object.put_ChoosePartsType( Установить свойство
+ChoosePartsType )
+
+ChooseType  Область применения. Группы объектов
+Интерфейс...
+Тип данных: Значение из перечисления ksChooseType.
+1570
+
+
+
+Синтаксис Automation:
+
+ChooseType = Object.ChooseType Получить свойство (* )
+Object.ChooseType = ChooseType Установить свойство (* )
+ChooseType = Object.GetChooseType() Получить свойство (**)
+Object.SetChooseType( ChooseType ) Установить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_ChooseType( &ChooseType Получить свойство
+)
+Object.put_ChooseType(  ChooseType ) Установить свойство
+
+Интерфейс IParts7
+Интерфейс коллекции компонентов 3D документа.
+Иерархия:
+IKompasAPIObject
+
+IModelObjects
+IParts7
+
+Примечание:
+
+1.  Данный интерфейс можно получить от интерфейса IPart7, используя свойство
+IPart7::Parts.
+
+2.  Данный интерфейс можно получить от интерфейса IModelObjects, используя метод
+IUnknown QueryInterface.
+
+3.  От интерфейса 3D"документа IKompasDocument3D может быть получен верхний компо"
+нент IKompasDocument3D::TopPart, а от полученного верхнего компонента IPart7 может
+быть получена коллекция компонентов IParts7 с помощью свойства IPart7::Parts. Эле"
+менты коллекции"компоненты могут быть получены у коллекции с помощью свойства
+IParts7::Part. Либо с помощью свойства IModelObjects::Item как объекты типа
+IModelObject с последующим приведением к типу IPart7 через QueryInterface. От каждого
+элемента коллекции"компонента может быть получена вложенная коллекция компонен"
+тов c помощью свойства IPart7::Parts. И так далее, пока имеются вложенные коллекции
+компонентов.
+
+IParts7  свойства
+Part  Компонент, заданный по индексу или по имени
+Интерфейс...
+Тип данных: указатель на интерфейс IPart7
+Синтаксис Automation:
+1571
+
+
+
+Part = iObject.Part (Index) Получить свойство (* )
+Part = iObject.GetPart (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Part( index, &Part ) Получить свойство
+
+Входные параметры:
+
+Index (Variant) VT_BSTR " имя компонента,
+VT_I4 " индекс компонента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IParts7  методы
+Add  Создать новый компонент и добавить его в 
+документ и коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( LPCTSTR FileName, LPDISPATCH plane );
+Синтаксис COM:
+HRESULT Add([in] BSTR FileName, [in] IModelObject * Plane, [out, retval] IPart7 ** Result);
+Входные параметры:
+
+FileName " имя файла детали, создаваемой в сборке,
+Plane " указатель на интерфейс плоского объекта, к
+
+которому приклеивается деталь.
+
+Возвращаемое значение:
+
+указатель на интер" " в случае успешного завершения,
+фейс IPart7
+NULL " в случае неудачи.
+
+AddFromFile  Добавить существующий компонент из 
+файла или из библиотеки моделей в документ и в 
+коллекцию
+Интерфейс...
+1572
+
+
+
+Синтаксис Automation:
+LPDISPATCH AddFromFile (LPCTSTR FileName, BOOL ExternalFile, BOOL Redraw);
+Синтаксис COM:
+HRESULT AddFromFile ([in] BSTR FileName, [in, defaultvalue(FALSE)] VARIANT_BOOL
+ExternalFile, [in, defaultvalue(TRUE)] VARIANT_BOOL Redraw, [out, retval] IPart7 ** Result);
+Входные параметры:
+
+FileName " имя файла, из которого будет вставлен компонент,
+ExternalFile " признак сохранения связи с файлом"источником:
+
+TRUE " вставка со ссылкой на внешний файл,
+FALSE " вставка "телом", (без сохранения ссылки на 
+источник),
+
+Redraw " признак перестроения документа после вставки 
+компонента:
+TRUE " перестроить документ,
+FALSE " не перестраивать.
+
+Возвращаемое значение:
+
+указатель " в случае успешного завершения,
+на интер"
+фейс IPart7
+NULL " в случае неудачи.
+
+Примечания:
+При вставке из файла указывается полный путь к файлу. При вставке из библиотеки мо"
+делей указывается полный путь к файлу библиотеки и путь внутри библиотеки моделей,
+например, "C:\\standard.l3d|Крепежные элементы|Болты|Болт_1".
+
+CreateDocument  Создать локальную деталь и добавить 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH CreateDocument( DocumentTypeEnum Type, BOOL Local, BOOL Redraw );
+Синтаксис COM:
+HRESULT CreateDocument( DocumentTypeEnum Type, BOOL Local, BOOL Redraw, IPart7 * *
+Result );
+Возвращаемое значение: 
+
+" указатель на интерфейс вставки IPart7.
+
+Входные параметры:
+1573
+
+
+
+Type " тип документа вставки,
+Local " признак локальной детали,
+Redraw " TRUE для обновления окна документа.
+
+CreateDocumentEx  Создать локальную деталь и 
+добавить в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH CreateDocumentEx( BSTR StartFileName, DocumentTypeEnum Type, BOOL
+Local, BOOL Redraw );
+Синтаксис COM:
+HRESULT CreateDocumentEx( BSTR StartFileName, DocumentTypeEnum Type, BOOL Local,
+BOOL Redraw, IPart7 * * Result );
+Возвращаемое значение: 
+
+" указатель на интерфейс вставки IPart7.
+
+Входные параметры:
+
+StartFileName " имя файла по умолчанию,
+Type " тип документа вставки,
+Local " признак локальной детали,
+Redraw " TRUE для обновления окна документа.
+
+Интерфейс IPart7
+Интерфейс компонента 3D документа.
+Иерархия:
+IKompasAPIObject
+
+IModelObject
+ IPart7
+IFeature7
+ISourcePart7Params
+ISheetMetalContainer
+IModelContainer
+IMassInertiaParam7
+ISymbols3DContainer
+1574
+
+
+
+IAuxiliaryGeomContainer
+IModelObjectNotifyResult
+IPropertyKeeper
+ISurfaceContainer
+
+Описание:
+Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) у
+данного интерфейса можно получить дополнительные интерфейсы компонента:
+
+▼ интерфейс объекта Дерева построения IFeature7,
+▼ интерфейс параметров компонента в источнике ISourcePart7Params.
+▼ интерфейс контейнера объектов гибки ISheetMetalContainer,
+▼ интерфейс контейнера трехмерных объектов IModelContainer,
+▼ интерфейс массово"центровочных характеристик IMassInertiaParam7.
+▼ интерфейс контейнера условных обозначений в 3D ISymbols3DContainer,
+▼ интерфейс контейнера объектов вспомогательной геометрии IAuxiliaryGeomContainer,
+▼ интерфейс контейнера поверхностей ISurfaceContainer,
+▼ интерфейс результатов редактирования 3D объекта IModelObjectNotifyResult,
+▼ интерфейс получения/редактирования значения свойств IPropertyKeeper,
+▼ интерфейс контейнера объектов измерений и диагностики IMeasurementContainer.
+
+Примечание.
+
+1.  Компонент может быть получен от интерфейса коллекции компонентов IParts7.
+2.  Компонент может быть получен от интерфейса IModelObject или IFeature7,используя ме"
+
+тод IUnknown QueryInterface.
+3.  Верхний компонент может быть получен от интерфейса 3D"документа
+
+IKompasDocument3D с помощью свойства IKompasDocument3D::TopPart.
+4.  От интерфейса 3D"документа IKompasDocument3D может быть получен верхний компо"
+
+нент IKompasDocument3D::TopPart, а от полученного верхнего компонента IPart7 может
+быть получена коллекция компонентов IParts7 с помощью свойства IPart7::Parts. Эле"
+менты коллекции"компоненты могут быть получены у коллекции с помощью свойства
+IParts7::Part. Либо с помощью свойства IModelObjects::Item как объекты типа
+IModelObject с последующим приведением к типу IPart7 через QueryInterface. От каждого
+элемента коллекции"компонента может быть получена вложенная коллекция компонен"
+тов c помощью свойства IPart7::Parts. И так далее, пока имеются вложенные коллекции
+компонентов.
+
+IPart7  свойства
+CreateSpcObjects  Создавать объекты спецификации
+Справка системы КОМПАС... Дополнительные параметры вставки компонента
+kompas.chm::/ADD_COMPONENT_FROM_FILE.htm
+Интерфейс...
+1575
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+CreateSpcObjects = Получить свойство (* )
+Object.CreateSpcObjects
+Object.CreateSpcObjects = Установить свойство (* )
+CreateSpcObjects
+CreateSpcObjects = Получить свойство (**)
+Object.GetCreateSpcObjects()
+Object.SetCreateSpcObjects( Установить свойство (**)
+CreateSpcObjects )
+
+Синтаксис COM:
+
+Object.get_CreateSpcObje Получить свойство
+cts( &CreateSpcObjects )
+Object.put_CreateSpcObje Установить свойство
+cts(  CreateSpcObjects )
+
+Примечание:
+Объекты удаляются при перестроении спецификации, если у компонента выключен дан"
+ный флаг. 
+
+DefaultObject  Получить предопределенные элементы 
+(плоскости, ось и СК)
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+DefaultObject = Получить свойство (* )
+Object.DefaultObject( Type )
+DefaultObject = Получить свойство (**)
+Object.GetDefaultObject( Type )
+
+Синтаксис COM:
+
+Object.get_DefaultObject( &Type ) Получить свойство
+
+Входной параметр:
+
+Type " тип объекта " константа из пе"
+речисления ksObj3dTypeEnum.
+
+Типы объектов (Type):
+1576
+
+
+
+o3d_planeXOY 1 плоскость XOY,
+o3d_planeXOZ 2 плоскость XOZ,
+o3d_planeYOZ 3 плоскость YOZ,
+o3d_pointCS 4 точка начала системы координат,
+o3d_axisOX 71 ось OX,
+o3d_axisOY 72 ось OY,
+o3d_axisOZ 73 ось OZ.
+
+Density  Плотность компонента
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Density = iObject.Density Получить свойство (* )
+Density = Получить свойство (**)
+iObject.GetDensity()
+
+Синтаксис COM:
+
+iObject">get_Density(  Получить свойство
+&Density )
+
+Значения свойства:
+
+Плотность компонента (г/куб.мм).
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Для установки плотности необходимо использовать метод IPart7::SetMaterial.
+
+Detail  Является ли компонент деталью
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Detail = iObject.Detail Получить свойство (* )
+Detail = iObject.GetDetail() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Detail ( Получить свойство
+&Detail)
+1577
+
+
+
+Значения свойства:
+
+TRUE " компонент является деталью,
+FALSE " компонент является сборкой.
+
+Примечание:
+Свойство доступно только для чтения.
+
+DummyEmbodimentIndex  Индекс текущего исполнения 
+для макета
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+DummyEmbodimentIndex = Получить
+Object.DummyEmbodimentIndex свойство (* )
+DummyEmbodimentIndex = Получить
+Object.GetDummyEmbodimentIndex() свойство (**)
+
+Синтаксис COM:
+
+Object.get_DummyEmbodimentIndex( Получить
+&DummyEmbodimentIndex ) свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+DummyFileName  Имя файла для макета
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+DummyFileName = Object.DummyFileName Получить свойство(* )
+Object.DummyFileName = DummyFileName Установить свойство (* )
+DummyFileName = Object.GetDummyFileName() Получить свойство (**)
+Object.SetDummyFileName( DummyFileName ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DummyFileName( &DummyFileName ) Получить свойство
+Object.put_DummyFileName(  DummyFileName ) Установить свойство
+1578
+
+
+
+FileName  Имя файла компонента
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+FileName = iObject.FileName Получить свойство (* )
+iObject.FileName = FileName Установить свойство (* )
+FileName = iObject.GetFileName() Получить свойство (**)
+iObject.SetFileName ( FileName) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_FileName ( &FileName) Получить свойство
+iObject">put_FileName ( FileName) Установить свойство
+
+Примечание:
+
+1.  Имя файла можно установить только у компонента, вставленного в сборку.
+2.  Свойство вступает в силу после вызова метода IModelObject::Update.
+
+Fixed  Состояние фиксации компонента
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Fixed = iObject.Fixed Получить свойство (* )
+iObject.Fixed = Fixed Установить свойство (* )
+Fixed = iObject.GetFixed() Получить свойство (**)
+iObject.SetFixed(  Fixed ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Fixed(  &Fixed ) Получить свойство
+iObject">put_Fixed(   Fixed ) Установить свойство
+
+Значения свойства:
+
+TRUE " компонент зафиксирован,
+FALSE " компонент не зафиксирован.
+
+Примечание:
+Свойство вступает в силу после вызова метода IModelObject::Update.
+1579
+
+
+
+HatchParam  Параметры штриховки
+Интерфейс...
+Тип данных: Указатель на интерфейс IHatchParam
+Синтаксис Automation:
+
+HatchParam = Object.HatchParam Получить свойство (* )
+HatchParam = Object.GetHatchParam() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HatchParam( &HatchParam ) Получить свойство
+
+Свойство позволяет получать интерфейс параметров штриховки компонента.
+Примечание:
+Свойство доступно только для чтения.
+
+InheritExclude  Признак исключения из расчета задан в 
+файлеисточнике. TRUEЗадан в источнике, FALSE
+Переопределен у вставки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+InheritExclude = Получить свойство (* )
+Object.InheritExclude
+Object.InheritExclude = Установить свойство (* )
+InheritExclude
+InheritExclude = Получить свойство (**)
+Object.GetInheritExclude()
+Object.SetInheritExclude( Установить свойство (**)
+InheritExclude )
+
+Синтаксис COM:
+
+Object.get_InheritExclude( Получить свойство
+&InheritExclude )
+Object.put_InheritExclude(  Установить свойство
+InheritExclude )
+
+InstanceCount  Количество вставок компонента
+Интерфейс...
+1580
+
+
+
+Пример...
+Тип данных: long
+Синтаксис Automation:
+
+Count = iObject.InstanceCount(  Получить свойство (* )
+iPart7 )
+Count = Получить свойство (**)
+iObject.GetInstanceCount(  
+iPart7 )
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_InstanceCount(  
+iPart7, &Count )
+
+Входные параметры:
+
+iPart7 " указатель на компонент 
+или NULL.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Метод работает для верхнего компонента сборки и для вставок подсборок. Если iPart7
+
+== NULL, то возвращается общее количество компонентов, вставленных в данную под"
+сборку.
+
+IsBillet  Признак вставки заготовки детали
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsBillet = iObject.IsBillet Получить свойство (* )
+iObject.IsBillet = IsBillet Установить свойство (* )
+IsBillet = iObject.GetIsBillet() Получить свойство (**)
+iObject.SetIsBillet(  IsBillet ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_IsBillet(  &IsBillet ) Получить свойство
+iObject">put_IsBillet(   IsBillet ) Установить свойство
+1581
+
+
+
+IsLayoutGeometry  Признак компоновочной геометрии
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Fixed = iObject.Fixed Получить свойство (* )
+iObject.Fixed = Fixed Установить свойство (* )
+Fixed = iObject.GetFixed() Получить свойство (**)
+iObject.SetFixed(  Fixed ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Fixed(  Получить свойство
+&Fixed )
+iObject">put_Fixed(   Fixed Установить свойство
+)
+
+IsLocal  Локальная деталь
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsLocal = Object.IsLocal Получить свойство (* )
+Object.IsLocal = IsLocal Установить свойство (* )
+IsLocal = Object.GetIsLocal() Получить свойство (**)
+Object.SetIsLocal( IsLocal ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_IsLocal( &IsLocal ) Получить свойство
+Object.put_IsLocal(  IsLocal ) Установить свойство
+
+LeftHandedCS  Признак левосторонней системы 
+координат
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+LeftHandedCS = Получить свойство (* )
+Object.LeftHandedCS
+Object.LeftHandedCS = Установить свойство (* )
+LeftHandedCS
+1582
+
+
+
+LeftHandedCS = Получить свойство (**)
+Object.GetLeftHandedCS()
+Object.SetLeftHandedCS( Установить свойство (**)
+LeftHandedCS )
+
+Синтаксис COM:
+
+Object.get_LeftHandedCS( Получить свойство
+&LeftHandedCS )
+Object.put_LeftHandedCS( Установить свойство
+LeftHandedCS )
+
+LoadState  Тип загрузки компонента
+Интерфейс...
+Тип данных: из перечисления ksLoadStateEnum
+Синтаксис Automation:
+
+LoadState = Получить свойство (* )
+iObject.LoadState
+LoadState = Получить свойство (**)
+iObject.GetLoadState()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_LoadState(&LoadState)
+
+Примечание:
+Свойство позволяет получить тип загрузки компонента ksLoadStateEnum.
+
+Marking  Обозначение компонента
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+Marking = iObject.Marking Получить свойство (* )
+iObject.Marking = Marking Установить свойство (* )
+Marking = iObject.GetMarking() Получить свойство (**)
+iObject.SetMarking ( Marking) Установить свойство (**)
+
+Синтаксис COM:
+1583
+
+
+
+iObject">get_Marking ( &Marking) Получить свойство
+iObject">put_Marking ( Marking) Установить свойство
+
+Примечание:
+Свойство вступает в силу после вызова метода IModelObject::Update.
+
+Mass  Масса компонента
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Mass = iObject.Mass Получить свойство (* )
+Mass = iObject.GetMass() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Mass ( Получить свойство
+&Mass)
+
+Значения свойства:
+
+Масса компонента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+MateConstraints  Коллекция сопряжений
+Интерфейс...
+Тип данных: Указатель на интерфейс IMateConstraints3D 
+Синтаксис Automation:
+
+MateConstraints = Получить свойство (* )
+Object.MateConstraints
+MateConstraints = Получить свойство (**)
+Object.GetMateConstraints
+()
+
+Синтаксис COM:
+
+Object.get_MateConstraint Получить свойство
+s( &MateConstraints )
+1584
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+Material  Материал компонента
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+Material = iObject.Material Получить свойство (* )
+Material = Получить свойство (**)
+iObject.GetMaterial()
+
+Синтаксис COM:
+
+iObject">get_Material ( Получить свойство
+&Material)
+
+Значения свойства:
+
+Материал компонента.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Для установки плотности необходимо использовать метод IPart7::SetMaterial.
+
+Parts  Коллекция компонентов
+Интерфейс...
+Тип данных: указатель на интерфейс IParts7
+Синтаксис Automation:
+
+Parts = iObject.Parts Получить свойство (* )
+Parts = iObject.GetParts() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Parts ( Получить свойство
+&Parts)
+
+Значения свойства:
+
+" Указатель на интерфейс 
+коллекции компонентов.
+1585
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+PartsEx  Массив SAFEARRAY компонентов
+Интерфейс...
+Пример...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Objects = iObject.PartsEx(  ObjType ) Получить свойство (* )
+Objects = iObject.GetPartsEx(  ObjType ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_PartsEx(  Получить свойство
+&Objects )
+
+Входные параметры:
+
+ObjType ( VARIANT) " Тип коллекции. В 
+настоящее время может 
+принимать значение 
+константы из 
+перечисления 
+ksPart7CollectionTypeEnu
+m.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Коллекция объектов возвращается в виде массива SAFEARRAY объектов LPDISPATCH (
+
+VT_ARRAY | VT_DISPATCH). Если возвращается один объект, то тип VARIANT"а будет
+VT_DISPATCH, если возвращается несколько объектов, то тип VARIANT"а будет
+VT_ARRAY | VT_DISPATCH.
+
+Placement  Получить локальную систему координат 
+компонента
+Интерфейс...
+Тип данных: Указатель на интерфейс IPlacement3D
+Синтаксис Automation:
+1586
+
+
+
+Placement = Получить свойство (* )
+iObject.Placement
+Placement = Получить свойство (**)
+iObject.GetPlacement()
+
+Синтаксис COM:
+
+iObject">get_Placement ( Получить свойство
+&Placement)
+
+Примечание:
+Свойство доступно только для чтения.
+
+ReadOnly  Тип доступа к компоненту
+Интерфейс...
+Тип данных: из перечисления ksPartAccessTypeEnum
+Синтаксис Automation:
+
+ReadOnly = Object.ReadOnly Получить свойство (* )
+Object.ReadOnly = ReadOnly Установить свойство (* )
+ReadOnly = Object.GetReadOnly() Получить свойство (**)
+Object.SetReadOnly( ReadOnly ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ReadOnly( &ReadOnly ) Получить свойство
+Object.put_ReadOnly(  ReadOnly ) Установить свойство
+
+Свойство позволяет устанавливать и получать тип доступа к компоненту.
+Примечание:
+Тип ksATDisable установить нельзя. Он возвращается в том случае, если смена доступа
+защищена паролем.
+
+SpecRough  Неуказанная шероховатость 3D
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecRough3D
+Синтаксис Automation:
+
+SpecRough = Object.SpecRough Получить свойство (* )
+SpecRough = Object.GetSpecRough() Получить свойство (**)
+
+Синтаксис COM:
+1587
+
+
+
+Object.get_SpecRough( Получить свойство
+&SpecRough )
+
+Примечание:
+Свойство доступно только для чтения.
+
+StaffVisible  Управление видимостью состава
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+StaffVisible = Object.StaffVisible Получить свойство (* )
+Object.StaffVisible = StaffVisible Установить свойство (* )
+StaffVisible = Object.GetStaffVisible() Получить свойство (**)
+Object.SetStaffVisible( StaffVisible ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_StaffVisible( &StaffVisible ) Получить свойство
+Object.put_StaffVisible(  StaffVisible ) Установить свойство
+
+Свойство позволяет устанавливать и получать видимость состава у компонента, взятого
+в документ.
+
+Standard  Признак стандартного компонента
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Standard = iObject.Standard Получить свойство (* )
+iObject.Standard = Standard Установить свойство (* )
+Standard = iObject.GetStandard() Получить свойство (**)
+iObject.SetStandard ( Standard) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Standard ( &Standard) Получить свойство
+iObject">put_Standard ( Standard) Установить свойство
+
+Примечание:
+Свойство вступает в силу после вызова метода IModelObject::Update.
+1588
+
+
+
+ToleranceRecalcType  Способ пересчета
+Интерфейс...
+Тип данных: Значение из перечисления ksToleranceRecalcsEnum.
+Синтаксис Automation:
+
+ToleranceRecalcType = Object.ToleranceRecalcType Получить свойство (* )
+Object.ToleranceRecalcType = ToleranceRecalcType Установить свойство (* )
+ToleranceRecalcType = Object.GetToleranceRecalcType() Получить свойство (**)
+Object.SetToleranceRecalcType( ToleranceRecalcType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ToleranceRecalcType( &ToleranceRecalcType Получить свойство
+)
+Object.put_ToleranceRecalcType(  ToleranceRecalcType Установить свойство
+)
+
+VariableTable  Интерфейс таблицы переменных
+Интерфейс...
+Тип данных: указатель на интерфейс IVariableTable
+Синтаксис Automation:
+
+IVariableTable * Получить свойство (* )
+VariableTable = 
+Part7.VariableTable
+IVariableTable * Получить свойство (**)
+VariableTable = 
+Part7.GetVariableTable()
+
+Синтаксис COM:
+
+HRESULT Получить свойство
+get_VariableTable ( 
+IVariableTable ** pRes)
+
+Примечание:
+Свойство доступно только для чтения.
+
+UniqueNum  Уникальный номер объекта типа
+Интерфейс...
+Тип данных: long
+1589
+
+
+
+Синтаксис Automation:
+
+UniqueNum = Object.UniqueNum( OType ) Получить свойство (* )
+Object.UniqueNum( OType ) = UniqueNum Установить свойство (* )
+UniqueNum = Object.GetUniqueNum( OType ) Получить свойство (**)
+Object.SetUniqueNum( OType, UniqueNum ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UniqueNum( OType, &UniqueNum ) Получить свойство
+Object.put_UniqueNum( OType, UniqueNum) Установить свойство
+
+Входные параметры:
+
+ksObj3dTypeEnum  " OType " тип объекта.
+
+UseDummy  Использовать макет
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ UseDummy = Object. UseDummy Получить свойство (* )
+Object. UseDummy =  UseDummy Установить свойство (* )
+ UseDummy = Object.Get UseDummy() Получить свойство (**)
+Object.Set UseDummy(  UseDummy ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ UseDummy( & UseDummy ) Получить свойство
+Object.put_ UseDummy(   UseDummy ) Установить свойство
+
+UserFolders  Коллекция пользовательских директорий
+Интерфейс...
+Тип данных: Указатель на интерфейс IUserFolders. 
+Синтаксис Automation:
+
+UserFolders = Object.UserFolders Получить свойство (* )
+UserFolders = Object.GetUserFolders() Получить свойство (**)
+
+Синтаксис COM:
+1590
+
+
+
+Object.get_UserFolders( &UserFolders ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+UserToleranceRecalcId  Идентификатор 
+пользовательского пересчета
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+UserToleranceRecalcId = Object. UserToleranceRecalcId Получить свойство (* )
+Object. UserToleranceRecalcId =  UserToleranceRecalcId Установить свойство (* )
+UserToleranceRecalcId = Object.Get Получить свойство (**)
+UserToleranceRecalcId()
+Object.Set UserToleranceRecalcId(  Установить свойство (**)
+UserToleranceRecalcId )
+
+Синтаксис COM:
+
+Object.get_ UserToleranceRecalcId( & Получить
+UserToleranceRecalcId ) свойство
+Object.put_ UserToleranceRecalcId( Установить
+UserToleranceRecalcId ) свойство
+
+UserToleranceRecalcName  Имя для пользовательского 
+способа пересчета
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ UserToleranceRecalcName = Object. Получить свойство (* )
+UserToleranceRecalcName
+Object. UserToleranceRecalcName = Установить свойство (* )
+UserToleranceRecalcName
+ UserToleranceRecalcName = Object.Get Получить свойство (**)
+UserToleranceRecalcName()
+Object.Set UserToleranceRecalcName( Установить свойство (**)
+UserToleranceRecalcName )
+
+Синтаксис COM:
+1591
+
+
+
+Object.get_ UserToleranceRecalcName( & Получить свойство
+UserToleranceRecalcName )
+Object.put_ UserToleranceRecalcName( Установить свойство
+UserToleranceRecalcName )
+
+ZonesManager  Менеджер зон
+Интерфейс...
+Тип данных: Указатель на интерфейс IZonesManager. 
+Синтаксис Automation:
+
+ZonesManager = Object.ZonesManager Получить
+свойство (* )
+
+ZonesManager = Object.GetZonesManager() Получить
+свойство (**)
+
+Синтаксис COM:
+
+Object.get_ZonesManager( &ZonesManager ) Получить
+свойство
+
+Примечание:
+Свойство доступно только для чтения.
+Версия Компас v18.1
+
+IPart7  методы
+AddVariable  Создать переменную
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddVariable( BSTR Name, double Value, BSTR Note );
+Синтаксис COM:
+HRESULT AddVariable( BSTR Name, double Value, BSTR Note, IVariable7 ** Result );
+Входные параметры:
+
+Name " имя переменной,
+Value " значение переменной,
+Note " примечание.
+1592
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс переменной
+IVariable7.
+
+Метод позволяет добавить переменную в массив переменных и документ.
+
+BeginEdit  Войти в режим редактирования компонента 
+сборки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH BeginEdit( IOpenDocumentParam * Param );
+Синтаксис COM:
+HRESULT BeginEdit( IOpenDocumentParam * Param, IKompasDocument3D ** Result );
+Возвращаемое значение:
+Указатель на документ 3D IKompasDocument3D
+Входные параметры:
+Param " указатель на интерфейс параметров открытия документа IOpenDocumentParam.
+
+ChangeObjectLinks  Заменить ссылки на объекты по 
+всем операциям
+Интерфейс...
+Синтаксис Automation:
+ BOOL ChangeObjectLinks( VARIANT SourceObjs,
+                                  VARIANT DestObjs,
+                                  BOOL RebuildAll );
+Синтаксис COM:
+HRESULT ChangeObjectLinks( VARIANT SourceObjs,
+                               VARIANT DestObjs,
+                               BOOL RebuildAll,
+                               BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+SourceObjs  " массив исходных примитивов,
+1593
+
+
+
+DestObjs " массив новых примитивов,
+RebuildAll " перестроить объекты. 
+
+Метод позволяет заменить ссылки в объектах 3D модели с одних опорных примитивов
+на другие.
+
+DestroySubassembly  Разрушить подсборку
+Интерфейс...
+Синтаксис Automation:
+BOOL DestroySubassembly();
+Синтаксис COM:
+HRESULT DestroySubassembly( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+EndEdit  Завершить процесс редактирования 
+компонента сборки
+Интерфейс...
+Синтаксис Automation:
+BOOL EndEdit();
+Синтаксис COM:
+HRESULT EndEdit( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetBodyById  Возвращает тело, заданное по 
+идентификатору
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetBodyById( long BodyId );
+Синтаксис COM:
+HRESULT GetBodyById( long BodyId, IBody7 ** Result );
+Возвращаемое значение: 
+1594
+
+
+
+" указатель на интерфейс IBody7.
+
+Входные параметры:
+
+BodyId " идентификатор тела. 
+
+GetDummyEmbodimentMarking  Обозначение 
+исполнения для макета
+Интерфейс...
+Синтаксис Automation:
+BSTR GetDummyEmbodimentMarking( ksVariantMarkingTypeEnum MarkingType, BOOL
+AddSystemDelimer );
+Синтаксис COM:
+HRESULT GetDummyEmbodimentMarking( ksVariantMarkingTypeEnum MarkingType, BOOL
+AddSystemDelimer, BSTR * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+
+Входные параметры:
+
+MarkingType  " индекс части обозначения из перечи"
+сления ksVariantMarkingTypeEnum,
+
+AddSystemDeli " добавлять системные разделители.
+mer
+
+GetMaxSag  Максимально допустимый прогиб кривой 
+или поверхности в соседних точках на расстоянии шага
+Интерфейс...
+Синтаксис Automation:
+double GetMaxSag();
+Синтаксис COM:
+HRESULT GetMaxSag( double * Result );
+Возвращаемое значение: 
+
+"   значение максимально допустимо"
+го прогиба кривой.
+1595
+
+
+
+FindObject  Найти объект в текущем документе по 
+объекту из другого документа
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH FindObject( LPDISPATCH Obj, LPDISPATCH SourcePart );
+Синтаксис COM:
+HRESULT FindObject( IModelObject * Obj, IPart7 * SourcePart, IModelObject ** Result );
+Входные параметры:
+
+Obj " указатель на объект,
+Sourc " владелец объекта.
+ePart
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+FindObjectsByPoint  Найти объекты по точке
+Интерфейс...
+Синтаксис Automation:
+VARIANT FindObjectsByPoint( double X, double Y, double Z, BOOL FirstLevel );
+Синтаксис COM:
+HRESULT FindObjectsByPoint( double X, double Y, double Z, BOOL FirstLevel, VARIANT *
+Result );
+Возвращаемое значение:
+
+" массив объектов, содержащих заданную точку, в виде
+SAFEARRAY DISPATCH " VT_ARRAY | VT_DISPATCH.
+
+Входные параметры:
+
+X ,Y, Z  " координаты точки,
+FirstLevel " искать только в текущей модели.
+
+GetOpenDocumentParam  Получить интерфейс 
+параметров открытия документа для редактирования 
+компонента сборки
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetOpenDocumentParam();
+1596
+
+
+
+Синтаксис COM:
+HRESULT GetOpenDocumentParam( IOpenDocumentParam ** Result );
+Возвращаемое значение:
+Указатель на интерфейс параметров открытия документа IOpenDocumentParam.
+
+IsVariableNameValid  Проверить допустимость создания 
+новой переменной с данным именем
+Интерфейс...
+Синтаксис Automation:
+BOOL IsVariableNameValid( BSTR Name );
+Синтаксис COM:
+BOOL IsVariableNameValid( BSTR Name );
+Входные параметры:
+
+Name " имя перемен"
+ной.
+
+Возвращаемое значение:
+
+TRUE " имя допустимо,
+FALSE " имя недопустимо.
+
+Load  Загрузить компонент
+Интерфейс...
+Синтаксис Automation:
+BOOL Load( BOOL full );
+Синтаксис COM:
+HRESULT Load( BOOL full, BOOL * result );
+Входные параметры:
+
+full " резерв.
+
+Возвращаемое значение:
+
+TRUE " компонент успешно загружен,
+FALSE " компонент не загружен.
+1597
+
+
+
+MirroringPlacement  Изменить систему координат 
+детали на зеркальную
+Интерфейс...
+Синтаксис Automation:
+BOOL MirroringPlacement( ksObj3dTypeEnum Axis );
+Синтаксис COM:
+HRESULT MirroringPlacement( ksObj3dTypeEnum Axis, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Axis " ось, относительно которой 
+делается симметрия.
+
+OpenSourceDocument  Открытие документаисточника 
+на редактирование
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH OpenSourceDocument( IOpenDocumentParam * Param );
+Синтаксис COM:
+HRESULT OpenSourceDocument( IOpenDocumentParam * Param, IKompasDocument3D * *
+Result );
+Возвращаемое значение:
+
+Указатель на интерфейс документа
+IKompasDocument3D.
+
+Входные параметры:
+
+Param  " Указатель на 
+интерфейс параметров 
+открытия документа 
+IOpenDocumentParam.
+
+Версия Компас v18.1
+1598
+
+
+
+RebuildModel  Перестроить модель
+Интерфейс...
+Синтаксис Automation:
+BOOL RebuildModel( BOOL Redraw );
+Синтаксис COM:
+HRESULT RebuildModel( BOOL Redraw, BOOL * Result );
+Входные параметры:
+
+Redraw  " признак перестроения документа:
+TRUE " перестроить документ,
+FALSE " не перестраивать.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SaveAs  Сохранить файл компонента под другим 
+именем
+Интерфейс...
+Синтаксис Automation:
+BOOL SaveAs( BSTR PathName );
+Синтаксис COM:
+HRESULT SaveAs( [in] BSTR PathName, [out, retval] VARIANT_BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+SelectByPoint  Выделить объекты, содержащие точку
+Интерфейс...
+Синтаксис Automation:
+VARIANT SelectByPoint( VARIANT Objects,
+double X,
+double Y,
+double Z );
+Синтаксис COM:
+HRESULT SelectByPoint( VARIANT Objects,
+double X,
+1599
+
+
+
+double Y,
+double Z,
+VARIANT * Result );
+Входные параметры:
+
+Objects " массив SafeArray объектов типа 
+VT_ARRAY | VT_DISPATCH,
+
+x, y, z " координаты точки.
+
+Возвращаемое значение:
+
+Массив SafeArray объектов типа VT_ARRAY
+| VT_DISPATCH.
+
+Примечание
+Если возвращается один объект, то тип VARIANT"а будет VT_DISPATCH, если возвраща"
+ется несколько объектов, то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+SetDummyEmbodiment  Установить текущее 
+исполнение для макета по имени или индексу
+Интерфейс...
+Синтаксис Automation:
+ BOOL SetDummyEmbodiment( VARIANT Index );
+Синтаксис COM:
+HRESULT SetDummyEmbodiment( VARIANT Index, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного 
+завершения.
+
+Входные параметры:
+   
+
+ Index " имя или индекс.
+
+SetMaterial  Установить материал и плотность 
+компонента
+Интерфейс...
+Синтаксис Automation:
+BOOL SetMaterial(  LPCTSTR Name, double density);
+Синтаксис COM:
+1600
+
+
+
+HRESULT SetMaterial( [in] BSTR Name, [in] double Density, [out, retval] VARIANT_BOOL*
+PVal);
+Входные параметры:
+
+Name " наименование материала,
+Density " плотность материала (г/куб.мм).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+
+1.  Компонент, у которого меняется материал, должен быть деталью.
+2.  Компонент не должен быть деталью из библиотеки моделей или стандартным элемен"
+
+том.
+3.  Метод используется в детали для верхнего компонента, в сборках " для вставленных де"
+
+талей, открытых на редактирование.
+4.  Изменение материала и плотности вступает в силу после вызова метода
+
+IModelObject::Update.
+
+TransferObjects  Перенести в СК
+Интерфейс...
+Синтаксис Automation:
+BOOL TransferObjects( VARIANT objects,
+LPDISPATCH Lcs,
+BOOL holdPosition );
+Синтаксис COM:
+HRESULT TransferObjects( VARIANT objects,
+ILocalCoordinateSystem * Lcs,
+VARIANT_BOOL  holdPosition,
+BOOL * Result );
+Входные параметры:
+
+objects " объект или список SafeArray объектов которые 
+требуется перенести в другую систему координат,
+
+Lcs " указатель на интерфейс локальной системы 
+координат ILocalCoordinateSystem,
+
+holdPosition " сохранять положение.
+
+Возвращаемое значение:
+1601
+
+
+
+TRUE " в случае успеха.
+
+Примечание:
+
+1.  Метод позволяет перенести следующие объекты модели IModelObject:
+▼ 3D точка,
+▼ ломаная,
+▼ сплайн,
+▼ эскиз,
+▼ импортированная поверхность,
+▼ операция без истории,
+▼ деталь заготовка,
+▼ локальная система координат.
+2.  Если объекты нужно перенести в систему координат детали, нужно в качестве параметра
+
+Lcs передать NULL.
+3.  Если нужно перенести один объект, его можно передать в VARIANT"е как указатель на
+
+DISPATCH, тип VARIANT"а VT_DISPATCH.
+4.  Если нужно перенести несколько объектов, нужно передать в VARIANT"е как указатель
+
+на массив SafeArray тип VARIANT"а VT_ARRAY | VT_DISPATCH.
+5.  Если параметр holdPosition == TRUE, то положение объекта в документе не изменяется.
+6.  Если параметр holdPosition == FALSE, то положение объекта будет задано относительно
+
+новой системы координат.
+7.  Значение флага holdPosition может не учитываться при наличии ассоциативных связей
+
+объектов или особенностей создания объекта.
+
+Unload  Выгрузить компонент
+Интерфейс...
+Синтаксис Automation:
+BOOL Unload( BOOL full )
+Синтаксис COM:
+HRESULT Unload( BOOL full, BOOL * result );
+Входные параметры:
+
+full TRUE " выгрузить 
+полностью,
+FALSE " выгрузить 
+частично.
+
+Возвращаемое значение:
+1602
+
+
+
+TRUE " компонент успешно 
+загружен,
+
+FALSE " компонент не загружен.
+
+Примечание:
+Метод позволяет осуществить выгрузку компонента. Для верхнего компонента не ис"
+пользуется.
+
+UnloadEx  Выгрузить
+Интерфейс...
+Синтаксис Automation:
+BOOL UnloadEx( ksLoadStateEnum Type );
+Синтаксис COM:
+HRESULT UnloadEx( ksLoadStateEnum Type, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного 
+завершения.
+
+Входные параметры:
+   
+
+Type " тип загрузки документа 
+из перечисления 
+ksLoadStateEnum.
+
+UpdatePlacement  Установить локальную систему 
+координат детали
+Интерфейс...
+Синтаксис Automation:
+BOOL UpdatePlacement( BOOL Redraw );
+Синтаксис COM:
+HRESULT UpdatePlacement( BOOL Redraw, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+1603
+
+
+
+Redraw  " требуется перерисовка.
+
+Интерфейс IEmbodiment
+Интерфейс исполнений.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IEmbodiment
+
+Описание:
+Интерфейс можно получить помощью свойств IEmbodimentsManager::Embodiment,
+IEmbodimentsManager::TopEmbodiment, IEmbodimentsManager::CurrentEmbodiment,
+IEmbodiment::Embodiment, IEmbodiment::Owner.
+Имеет дополнительные интерфейсы:
+
+▼  IPropertyKeeper,
+▼  IColorParam7.
+▼  IMassInertiaParam7,
+
+которые можно получить с помощью метода IUnknown::QueryInterfaceI.
+
+Embodiment  свойства
+Density  Плотность
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Density = Object.Density Получить свойство (* )
+Density = Object.GetDensity() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Density( &Density ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Задать плотность можно с помощью метода IEmbodiment::SetMaterial.
+1604
+
+
+
+Embodiment  Зависимое исполнение
+Интерфейс...
+Тип данных: Указатель на интерфейс IEmbodiment
+Синтаксис Automation:
+
+Embodiment = Object.Embodiment( Index ) Получить свойство (* )
+Embodiment = Object.GetEmbodiment( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Embodiment( Index, &Embodiment ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+EmbodimentsCount  Количество исполнений
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+EmbodimentsCount = Object.EmbodimentsCount Получить свойство (* )
+EmbodimentsCount = Object.GetEmbodimentsCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EmbodimentsCount( &EmbodimentsCount ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IsCurrent  Текущее исполнение
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsCurrent = Object.IsCurrent Получить свойство (* )
+Object.IsCurrent = IsCurrent Установить свойство (* )
+IsCurrent = Object.GetIsCurrent() Получить свойство (**)
+Object.SetIsCurrent( IsCurrent ) Установить свойство (**)
+
+Синтаксис COM:
+1605
+
+
+
+Object.get_IsCurrent( &IsCurrent ) Получить свойство
+Object.put_IsCurrent(  IsCurrent ) Установить свойство
+
+Примечание:
+Свойство позволяет узнать, является ли исполнение текущим.
+
+LeftHandedCS  Признак левосторонней системы 
+координат
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+LeftHandedCS = Object.LeftHandedCS Получить свойство (* )
+Object.LeftHandedCS = LeftHandedCS Установить свойство (* )
+LeftHandedCS = Получить свойство (**)
+Object.GetLeftHandedCS()
+Object.SetLeftHandedCS( Установить свойство (**)
+LeftHandedCS )
+
+Синтаксис COM:
+
+Object.get_LeftHandedCS( Получить свойство
+&LeftHandedCS 
+Object.put_LeftHandedCS( Установить свойство
+LeftHandedCS )
+
+Mass  Масса компонента
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Mass = Object.Mass Получить свойство (* )
+Mass = Object.GetMass() Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Mass( &Mass ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+1606
+
+
+
+Material  Материал
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Material = Object.Material Получить свойство (* )
+Material = Object.GetMaterial() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Material(&Material) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Задать материал можно с помощью метода IEmbodiment::SetMaterial.
+
+Name  Имя
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = Object.Name Получить свойство (* )
+Object.Name = Name Установить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+Object.SetName(Name ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name( &Name ) Получить свойство
+Object. put_Name( Name ) Установить свойство
+
+Owner  Объект, породивший этот объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IEmbodiment
+Синтаксис Automation:
+
+Owner = Object.Owner Получить свойство (* )
+Owner = Object.GetOwner() Получить свойство (**)
+
+Синтаксис COM:
+1607
+
+
+
+Object.get_Owner( &Owner ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Part  Компонент исполнения
+Тип данных: Указатель на интерфейс IPart7
+Синтаксис Automation:
+
+ Part = Object.Part Получить свойство (* )
+Part = Object.GetPart() Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_Part( &Part ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+SpecRough  Неуказанная шероховатость 3D
+Интерфейс...
+Тип данных: Указатель на интерфейс ISpecRough3D
+Синтаксис Automation:
+
+ SpecRough = Object.SpecRough Получить свойство (* )
+SpecRough = Object.GetSpecRough() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SpecRough( &SpecRough Получить свойство
+)
+
+Примечание:
+Свойство доступно только для чтения.
+
+IEmbodiment  методы
+Delete  Удаление
+Интерфейс...
+Синтаксис Automation:
+1608
+
+
+
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+GetMarking  Обозначение исполнения
+Интерфейс...
+Синтаксис Automation:
+BSTR GetMarking( ksVariantMarkingTypeEnum MarkingType, BOOL AddSystemDelimer );
+Синтаксис COM:
+HRESULT GetMarking( ksVariantMarkingTypeEnum MarkingType, BOOL AddSystemDelimer,
+BSTR * Result );
+Возвращаемое значение:
+
+" обозначение исполнения.
+
+Входные параметры:
+
+MarkingType " какую часть обозначения надо вернуть,
+AddSystemDelimer " с разделителями.
+
+Метод возвращает обозначение исполнения.
+
+SetMarking  Обозначение исполнения
+Интерфейс...
+Синтаксис Automation:
+BOOL SetMarking( ksVariantMarkingTypeEnum MarkingType, BSTR Marking );
+Синтаксис COM:
+HRESULT SetMarking( ksVariantMarkingTypeEnum MarkingType, BSTR Marking, BOOL *
+Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+1609
+
+
+
+MarkingType " какую часть обозначения надо установить,
+Marking " обозначение.
+
+Метод устанавливает обозначение исполнения.
+
+SetMaterial  Установить материал
+Интерфейс...
+Синтаксис Automation:
+BOOL SetMaterial( BSTR Name, double Density );
+Синтаксис COM:
+HRESULT SetMaterial( BSTR Name, double Density, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Name " наименование материала,
+Density " плотность материала.
+
+Update  Изменить свойства объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IFeature7
+Справка системы КОМПАС...
+kompas.chm::/659_81_3_Derevo_modeli.htm
+Интерфейс объекта Дерева построения.
+Иерархия:
+1610
+
+
+
+IDispatch
+IFeature7
+
+Примечание:
+
+1.  Данный интерфейс можно получить от интерфейса IModelObject как свойство
+IModelObject::Owner.
+
+2.  Данный интерфейс можно получить от интерфейса IModelObject или IPart7 с помощью
+метода IUnknown::QueryInterface (const GUID far& iid, void** pif).
+
+IFeature7  свойства
+Excluded  Исключен из расчета
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Excluded = iObject.Excluded Получить свойство (* )
+iObject.Excluded = Excluded Установить свойство (* )
+Excluded = iObject.GetExcluded() Получить свойство (**)
+iObject.SetExcluded (Excluded) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Excluded(&Excluded) Получить свойство
+iObject">put_Excluded( Excluded ) Установить свойство
+
+FeatureType  Тип объекта
+Интерфейс...
+Тип данных: из перечисления ksObj3dTypeEnum
+Синтаксис Automation:
+
+FeatureType = iObject.FeatureType Получить свойство (* )
+FeatureType = Получить свойство (**)
+iObject.GetFeatureType()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_FeatureType(&FeatureType)
+
+Возвращаемое значение:
+
+" тип объектов из перечисления ksObj3dTypeEnum.
+1611
+
+
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Тип возвращаемого объекта может принимать значения:
+
+o3d_part " деталь,
+o3d_entity " объект,
+o3d_mateConstraint " сопряжение.
+
+ModelObjects  Объекты входящие в состав данного 
+объекта (грани, ребра, вершины)
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ModelObjects = iObject.ModelObjects Получить свойство (* )
+(ObjType)
+ModelObjects = Получить свойство (**)
+iObject.GetModelObjects (ObjType)
+
+Синтаксис COM:
+
+iObject">get_ModelObjects (ObjType, Получить свойство
+&ModelObjects)
+
+Входные параметры:
+
+VARIANT " тип объектов из перечисления
+ObjType KompasAPIObjectTypeEnum.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  По типу объекта o3d_unknown возвращается коллекция всех объектов.
+3.  Коллекция объектов возвращается в виде массива SAFEARRAY объектов LPDISPATCH
+
+(VT_ARRAY | VT_DISPATCH). Если возвращается один объект, то тип VARIANT"а будет
+VT_DISPATCH, если возвращается несколько объектов, то тип VARIANT"а будет
+VT_ARRAY | VT_DISPATCH.
+
+Name  Имя объекта
+Интерфейс...
+Тип данных: BSTR (строка)
+1612
+
+
+
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+
+Синтаксис COM:
+
+get_Name(&Name) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ObjectError  Получить номер ошибки
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ObjectError = Object.ObjectError Получить свойство (* )
+ObjectError = Object.GetObjectError() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ObjectError( &ObjectError Получить свойство
+)
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. Если на объекте взведено несколько ошибок, возвращается номер первой.
+3. Номера ошибок соответствуют перечислению ErrorType3d.
+
+OwnerFeature  Объектвладелец
+Интерфейс...
+Тип данных: Указатель на интерфейс IFeature7
+Синтаксис Automation:
+
+OwnerFeature = iObject.OwnerFeature Получить свойство (* )
+OwnerFeature = iObject.GetOwnerFeature() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_OwnerFeature(&OwnerFeature)
+
+Примечание:
+1613
+
+
+
+Свойство доступно только для чтения.
+
+ResultBodies  Массив тел (SAFEARRAY)
+Интерфейс...
+Тип данных: VARIANT
+Значения свойства:
+
+Массив SafeArray типа VT_ARRAY | VT_DISPATCH.
+
+Синтаксис Automation:
+
+ResultBodies = iObject.ResultBodies; Получить свойство (* )
+ResultBodies = Получить свойство (**)
+iObject.GetResultBodies();
+
+Синтаксис COM:
+
+iObject">get_ResultBodies( &ResultBodies Получить свой"
+) ство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получить массив SAFEARRAY всех тел, входящих в дерево. Если
+
+возвращается один объект, то тип VARIANT"а будет VT_DISPATCH, если возвращается не"
+сколько объектов, то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+State  Возвращает комбинацию флагов состояния 
+объекта
+Интерфейс...
+Тип данных: из перечисления ksFeatureStateEnum
+Синтаксис Automation:
+
+State = Object.State; Получить свойство (* )
+ResultBodies = State = Object.GetState(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_State( &State ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+1614
+
+
+
+(* )
+
+(**)
+SubFeatures  Коллекция элементов дерева заданного 
+типа в виде массива SAFEARRAY DISPATCH  VT_ARRAY | 
+VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+SubFeatures = Object.SubFeatures( treeType, through, Получить свойство 
+libObject )
+SubFeatures = Object. GetSubFeatures ( treeType, through, Получить свойство 
+libObject )
+
+Синтаксис COM:
+
+Object.get_SubFeatures( treeType, through, libObject, Получить свойство
+&SubFeatures )
+
+Параметры:
+
+treeType " тип дерева из перечисления ksTreeTypeEnum,
+through " TRUE " выдавать все объекты, даже скрытые,
+libObject " TRUE " выдавать содержимое для библиотечного элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+UpdateStamp  Значение, определяющее время 
+изменения геометрии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+UpdateStamp = iObject.UpdateStamp Получить свойство (* )
+UpdateStamp = Получить свойство (**)
+iObject.GetUpdateStamp()
+
+Синтаксис COM:
+
+iObject">get_UpdateStamp(&UpdateStamp) Получить
+свойство
+
+Примечание:
+Свойство доступно только для чтения.
+1615
+
+
+
+Valid  Признак невырожденности объекта
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Valid = iObject.Valid Получить свойство (* )
+Valid = iObject.GetValid() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Valid(&Valid) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Variable  Получить параметрическую переменную по 
+имени, индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IVariable7
+Синтаксис Automation:
+
+Variable = Object.Variables( External, InSource, Index ) Получить свойство (* )
+Variable = Object.GetVariables( External, InSource, Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Variable = Object.GetVariables( External, InSource, Index ) Получить свойство
+Входные параметры:
+
+BOOL " только внешние,
+ExternalOnly
+BOOL InSource " из источника,
+VARIANT Index " имя или индекс переменной.
+
+Примечание:
+Свойство доступно только для чтения.
+
+Variables  Получить массив параметрических 
+переменных в виде SAFEARRAY VT_DISPATCH
+Интерфейс...
+1616
+
+
+
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Variables = Object.Variables( ExternalOnly, InSource ) Получить свойство (* )
+Variables = Object.GetVariables( ExternalOnly, InSource ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Variables( ExternalOnly, InSource, &Variables ) Получить свойство
+
+Входные параметры:
+
+BOOL ExternalOnly " только внешние,
+BOOL InSource " из источника.
+
+Примечание:
+Свойство доступно только для чтения.
+
+VariablesCount  Получить количество параметрических 
+переменных
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+VariablesCount = Object.VariablesCount( External, InSource ) Получить свойство (* )
+VariablesCount = Object.GetVariablesCount( External, InSource ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VariablesCount( External, InSource, &VariablesCount ) Получить свойство
+
+Входные параметры:
+
+BOOL ExternalOnly " только внешние,
+BOOL InSource " из источника.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IFeature7  методы
+Delete  Удалить компонент
+Интерфейс...
+Синтаксис Automation:
+1617
+
+
+
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete (VARIANT_BOOL * Result);
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Интерфейс IMassInertiaParam7
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_MEASURE_MIX3D.htm
+Интерфейс массовоцентровочных характеристик.
+Иерархия:
+IDispatch
+
+IMassInertiaParam7
+Примечание:
+
+1.  Интерфейс контейнера является дополнительным к интерфейсу IPart7 и IEmbodiment.
+Данный интерфейс можно получить от IPart7 и от IEmbodiment посредством вызова ме"
+тода IUnknown::QueryInterface (const GUID far& iid, void** pif);
+
+2.  Интерфейс позволяет получить доступ к массово"центровочным характеристикам дета"
+ли и сборки. С помощью интерфейса можно получить и отредактировать массово"цен"
+тровочные характеристики объекта.
+
+3.  Новые характеристики вступают в силу после вызова метода ImodelObject::Update.
+
+IMassInertiaParam7  свойства
+Actual  Актуальность расчета
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/Z_INFO_WIN.htm
+Тип данных: BOOL
+Синтаксис Automation:
+
+Actual = iObject.Actual Получить свойство (* )
+Actual = iObject.GetActual( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Actual( &Actual ) Получить свойство
+1618
+
+
+
+Значения свойства:
+
+TRUE " информация актуальна,
+FALSE " не актуальна.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получить сведения об актуальности информации.
+
+Area  Значение площади
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Area = iObject.Area Получить свойство (* )
+Area = iObject.GetArea( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Area( &Area ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получить значение площади.
+
+CalculateMass  Расчетное значение массы
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/PR_IDS_COMPONENT_PROPERTIES_CAPTION.htm
+Тип данных: double
+Синтаксис Automation:
+
+CalculateMass = iObject.CalculateMass( ) Получить свойство (* )
+CalculateMass = iObject.GetCalculateMass( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_CalculateMass( &CalculateMass ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получить единицы измерения массы.
+1619
+
+
+
+Density  Плотность
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Density = iObject.Density Получить свойство (* )
+Density = iObject.GetDensity() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Density(  &Density ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получить плотность тела (г/куб.мм).
+2.  Свойство доступно только для чтения.
+3.  Для установки плотности необходимо использовать метод
+
+IMassInertiaParam7::SetMaterial.
+
+DensityMode  Режим задания плотности
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DensityMode = iObject.DensityMode Получить свойство (* )
+iObject.DensityMode = DensityMode Установить свойство (* )
+DensityMode = iObject.GetDensityMode( ) Получить свойство (**)
+iObject.SetDensityMode( DensityMode ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_DensityMode( &DensityMode ) Получить свойство
+iObject">put_DensityMode( DensityMode ) Установить свойство
+
+Значения свойства:
+
+TRUE " ручное задание плотности,
+FALSE " значение плотности из Справочника.
+
+Примечание:
+Свойство позволяет установить и получить режим задания плотности.
+
+HandBookDensity  Значение плотности из Справочника
+Интерфейс...
+1620
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+HandBookDensity = Получить свойство (* )
+iObject.HandBookDensity
+HandBookDensity = Получить свойство (**)
+iObject.GetHandBookDensity( )
+
+Синтаксис COM:
+
+iObject">get_HandBookDensity( Получить свойство
+&HandBookDensity )
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получить значение плотности из Справочника.
+
+Jx  Осевой момент инерции в центральной системе 
+координат относительно центральной оси координат X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Jx = iObject.Jx Получить свойство (* )
+Jx = iObject.GetJx( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Jx( &Jx ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Позволяет получить значение осевого момента инерции относительно относительно
+
+центральной оси координат X.
+
+Jy  Осевой момент инерции в центральной системе 
+координат относительно центральной оси координат Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+1621
+
+
+
+Jy = iObject.Jy Получить свойство (* )
+Jy = iObject.GetJy( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Jy( &Jy ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Позволяет получить значение осевого момента инерции относительно относительно
+
+центральной оси координат Y.
+
+Jz  Осевой момент инерции в центральной системе 
+координат относительно центральной оси координат Z
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Jz = iObject.Jz Получить свойство (* )
+Jz = iObject.GetJz( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Jz( Получить свойство
+&Jz )
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Позволяет получить значение осевого момента инерции относительно относительно
+
+центральной оси координат Z.
+
+Jxy  Центробежный момент инерции в центральной 
+системе координат относительно центральных осей 
+координат X и Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Jxy = iObject.Jxy Получить свойство (* )
+Jxy = iObject.GetJxy( ) Получить свойство (**)
+
+Синтаксис COM:
+1622
+
+
+
+iObject">get_Jxy( &Jxy ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Позволяет получить значение центробежного момента инерции относительно централь"
+
+ных осей координат X и Y.
+
+Jxz  Центробежный момент инерции центральной 
+системе координат относительно центральных осей 
+координат X и Z
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Jxz = iObject.Jxz Получить свойство (* )
+Jxz = iObject.GetJxz( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Jxz( &Jxz ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Позволяет получить значение центробежного момента инерции относительно централь"
+
+ных осей координат X и Z.
+
+Jyz  Центробежный момент инерции в центральной 
+системе координат относительно центральных осей 
+координат Y и Z
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Jyz = iObject.Jyz Получить свойство (* )
+Jyz = iObject.GetJyz( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Jyz( &Jyz ) Получить свойство
+
+Примечание:
+1623
+
+
+
+1.  Свойство доступно только для чтения.
+2.  Позволяет получить значение центробежного момента инерции относительно централь"
+
+ных осей координат Y и Z.
+
+Jx0  Осевой момент инерции в главной центральной 
+системе координат относительно оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Jx0 = iObject.Jx0 Получить свойство (* )
+Jx0 = iObject.GetJx0( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Jx0( &Jx0 ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Jy0  Осевой момент инерции в главной центральной 
+системе координат относительно оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Jy0 = iObject.Jy0 Получить свойство (* )
+Jy0 = iObject.GetJy0( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Jy0( &Jy0 ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Jz0  Осевой момент инерции в главной центральной 
+системе координат относительно оси Z
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+1624
+
+
+
+Jz0 = iObject.Jz0 Получить свойство (* )
+Jz0 = iObject.GetJz0( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Jz0( &Jz0 ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+LengthUnits  Единицы измерения длины
+Интерфейс...
+Тип данных: из перечисления ksLengthUnitEnum
+Синтаксис Automation:
+
+LengthUnits = iObject.LengthUnits Получить свойство (* )
+iObject.LengthUnits = LengthUnits Установить свойство (* )
+LengthUnits = iObject.GetLengthUnits( ) Получить свойство (**)
+iObject.SetLengthUnits( LengthUnits ) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_LengthUnits( &LengthUnits ) Получить свойство
+iObject">put_LengthUnits( LengthUnits ) Установить свойство
+
+Примечание:
+Свойство позволяет установить и получить единицы измерения длины.
+
+Lx  Осевой момент инерции относительно глобальной 
+(исходной) оси координат X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Lx = iObject.Lx Получить свойство (* )
+Lx = iObject.GetLx( ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Lx( &Lx ) Получить свойство
+
+Примечание:
+1625
+
+
+
+1.  Свойство доступно только для чтения.
+2.  Позволяет получить значение осевого момента инерции относительно исходной оси ко"
+

@@ -1,0 +1,2532 @@
+
+Интерфейс ILocalCSObject
+Интерфейс подчиненного объекта ЛСК.
+Иерархия:
+IDispatch
+
+ILocalCSObject
+Описание
+Интерфейс является дополнительным для следующих объектов:
+
+▼ IPoint3D " Точка 3D,
+▼ IControlPoint " Контрольная точка,
+▼ IConjunctivePoint " Присоединительная точка,
+▼ ILocalCoordinateSystem " ЛСК,
+▼ ISketch" Эскиз,
+▼ ITablePattern " Массив по таблице,
+▼ IMeshPointsSurface " Поверхность по сети точек,
+▼ ICloudPointsSurface " Поверхность по пласту (облаку) точек,
+▼ IImportedSurface " Импортированная поверхность,
+▼ IArc3D " 3D дуга,
+1294
+
+
+
+▼ IPolyLine " Пространственная ломаная,
+▼ ISpline3D " Сплайн.
+
+Данный интерфейс можно получить от интерфейсов перечисленных объектов посредст"
+вом вызова метода IUnknown::QueryInterface. 
+Интерфейс позволяет получать и изменять параметры объектов в удобной для этого си"
+стеме координат. По умолчанию используется СК компонента.
+
+ILocalCSObject  свойства
+
+ModelObjectParamType  Тип параметров объекта
+Интерфейс...
+Тип данных: из перечисления ksModelObjectParamTypeEnum
+Синтаксис Automation:
+
+ModelObjectParamType = Получить свойство (* )
+Object.ModelObjectParamType
+Object.ModelObjectParamType = Установить свойство (* )
+ModelObjectParamType
+ModelObjectParamType = Получить свойство (**)
+Object.GetModelObjectParamType()
+Object.SetModelObjectParamType( Установить свойство (**)
+ModelObjectParamType )
+
+Синтаксис COM:
+
+Object.get_ModelObjectParamType( Получить свойство
+&ModelObjectParamType )
+Object.put_ModelObjectParamType( Установить свойство
+ModelObjectParamType )
+
+Примечание:
+Свойство позволяет установить тип параметров объекта.
+После установки данного свойства параметры объекта будут выдаваться пересчитанны"
+ми в установленную систему координат. При установке параметров также будет произ"
+водиться пересчет параметров. Для правильной работы библиотек требуется установить
+нужный тип параметров, получить или изменить параметры и вернуть тип параметров
+ksMOPartAllParam"Параметры в системе координат детали (см.
+ksModelObjectParamTypeEnum"Тип параметров объекта).
+
+LocalCoordinateSystem  Тип параметров объекта
+Интерфейс...
+Тип данных: из перечисления ksModelObjectParamTypeEnum
+Синтаксис Automation:
+1295
+
+
+
+LocalCoordinateSystem = Получить свойство (* )
+Object.LocalCoordinateSystem
+LocalCoordinateSystem = Получить свойство (**)
+Object.GetLocalCoordinateSystem(
+)
+
+Синтаксис COM:
+
+Object.get_LocalCoordinateSystem( Получить свойство
+&LocalCoordinateSystem )
+
+Примечание:
+Свойство позволяет получить локальную систему координат объекта.
+Если свойство возвращает NULL, объект создан в базовой СК объекта. Для переноса объ"
+екта в другую СК используется метод IPart7::TransferObjects.
+
+Интерфейс IPlacement3D
+Интерфейс локальной системы координат (положение объекта).
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPlacement3D
+
+IPlacement3D  методы
+
+GetMatrix3D  Получить матрицу системы координат в 
+виде массива. SAFEARRAY double (VT_ARRAY | VT_R8)
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetMatrix3D();
+Синтаксис COM:
+HRESULT GetMatrix3D( VARIANT * Result );
+Возвращаемое значение:
+
+ " массив координат SAFEARRAY double (VT_ARRAY | VT_R8).
+
+GetOrigin  Получить координаты начала локальной 
+системы координат
+Интерфейс...
+1296
+
+
+
+Синтаксис Automation:
+BOOL GetOrigin( double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetOrigin( double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Выходные параметры
+
+X " координата точки по X,
+Y " координата точки по Y,
+Z " координата точки по Z.
+
+GetVector  Получить вектор для указанной оси
+Интерфейс...
+Синтаксис Automation:
+BOOL GetVector( ksObj3dTypeEnum Axis, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetVector( ksObj3dTypeEnum Axis, double * X, double * Y, double * Z, BOOL *
+Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры
+
+Axis " ось.
+
+Выходные параметры
+
+X " координата точки по X,
+Y " координата точки по Y,
+Z " координата точки по Z.
+
+GetPoint3D  Получить пространственную точку по точке 
+на плоскости xy
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPoint3D( double XIn, double YIn, double * XOut, double * YOut, double * ZOut );
+1297
+
+
+
+Синтаксис COM:
+HRESULT GetPoint3D( double XIn, double YIn, double * XOut, double * YOut, double * ZOut,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры
+
+XIn " координата по X на плоскости XY,
+YIn " координата по Y на плоскости XY.
+
+Выходные параметры
+
+YIn " координата по X в пространстве,
+YOut " координата по Y в пространстве,
+ZOut " координата по Z в пространстве.
+
+GetPointProjectionToXY  Проекция точки на плоскость xy
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPointProjectionToXY( double XIn, double YIn, double ZIn, double * XOut, double *
+YOut );
+Синтаксис COM:
+HRESULT GetPointProjectionToXY( double XIn, double YIn, double ZIn, double * XOut, double
+* YOut, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры
+
+X " координата точки по X,
+Y " координата точки по Y,
+Z " координата точки по Z.
+
+Выходные параметры
+
+XOut " координата по X на плоскости XY,
+YOut " координата по Y на плоскости XY.
+1298
+
+
+
+InitByMatrix3D  Установить систему координат по 
+матрице. SAFEARRAY double (VT_ARRAY | VT_R8)
+Интерфейс...
+Синтаксис Automation:
+BOOL InitByMatrix3D( VARIANT mtr );
+Синтаксис COM:
+HRESULT InitByMatrix3D( VARIANT mtr, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры
+
+mtr " массив координат SAFEARRAY double (VT_ARRAY | VT_R8).
+
+Rotate  Повернуть систему координат на угол вокруг оси
+Интерфейс...
+Синтаксис Automation:
+BOOL Rotate( double X0, double Y0, double Z0, double AxisZX, double AxisZXY, double
+AxisZZ, double Angle );
+Синтаксис COM :
+HRESULT Rotate( double X0, double Y0, double Z0, double AxisZX, double AxisZXY, double
+AxisZZ, double Angle, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Входные параметры:
+
+X0 " первая координата точки,
+Y0 " вторая координата точки,
+Z0 " третья координата точки,
+ AxisZX " вектор "X" стандартного базиса,
+AxisZX " вектор "Y" стандартного базиса,
+Y
+AxisZZ " вектор "Z" стандартного базиса,
+Angle " угол поворота.
+1299
+
+
+
+SetOrigin  Получить координаты начала локальной 
+системы координат
+Интерфейс...
+Синтаксис Automation:
+BOOL SetOrigin( double X, double Y, double Z );
+Синтаксис COM:
+HRESULT SetOrigin( double X, double Y, double Z, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры
+
+X " координата точки по X,
+Y " координата точки по Y,
+Z " координата точки по Z.
+
+SetVector  Задать вектор для указанной оси
+Интерфейс...
+Синтаксис Automation:
+BOOL SetVector( ksObj3dTypeEnum Axis, double X, double Y, double Z );
+Синтаксис COM:
+HRESULT SetVector( ksObj3dTypeEnum Axis, double X, double Y, double Z, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры
+
+Axis " ось,
+X " координата точки по X,
+Y " координата точки по Y,
+Z " координата точки по Z.
+1300
+
+
+
+3D кривые и элементы тела
+Интерфейс IModelObjects
+Базовый интерфейс для всех коллекций модельных объектов.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IModelObjects
+
+Примечание:
+
+1.  Данный интерфейс является базовым для коллекций модельных объектов.
+2.  Интерфейс может быть получен с помощью метода IUnknown QueryInterface от коллек"
+
+ций модельных объектов, например, IParts7.
+
+IModelObjects  свойства
+
+Item  Объект, заданный по индексу или по имени
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Item = Получить свойство (* )
+iObject.Item (
+Index)
+Item = Получить свойство (**)
+iObject.GetItem
+( Index)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_Item(
+Index, &Item )
+
+Входные параметры:
+
+Index ( Variant) " VT_BSTR " имя объекта,
+VT_I4 " индекс объекта.
+
+Примечание:
+Свойство доступно только для чтения.
+1301
+
+
+
+Интерфейс IArcs3D
+Справка системы КОМПАС...
+kompas.chm::/1031_110_2_Duga_okr.htm
+Коллекция дуг 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IArcs3D
+
+Интерфейс позволяет получать и создавать дуги 3D.
+Интерфейс можно получить в контейнере вспомогательной геометрии с помощью мето"
+да IAuxiliaryGeomContainer::Arcs3D.
+
+IArcs3D  свойства
+
+Arc3D  Возвращает элемент, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IArc3D
+Синтаксис Automation:
+
+Arc3D = Object.Arc3D( Index ) Получить свойство (* )
+Arc3D = Object.GetArc3D( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Arc3D( Index, &Arc3D ) Получить свойство
+
+Свойство позволяет получить указатель на интерфейс дуги 3D.
+Примечание:
+Свойство доступно только для чтения.
+
+IArcs3D  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IArc3D ** Result );
+1302
+
+
+
+Возвращаемое значение:
+Указатель на интерфейс дуги 3D IArc3D
+
+Интерфейс IAxes3D
+Коллекция вспомогательных осей 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IAxes3D
+
+IAxes3D  свойства
+
+Axis3D  Возвращает элемент, заданный по ссылке или 
+индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IAxis3D
+Синтаксис Automation:
+
+Axis3D = Object.Axis3D( Index ) Получить свойство(* )
+Axis3D = Object.GetAxis3D( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Axis3D( Index, Получить свойство
+&Axis3D )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IAxes3D  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( ksObj3dTypeEnum Type );
+Синтаксис COM:
+HRESULT Add( ksObj3dTypeEnum Type, IAxis3D ** Result );
+Входные параметры:
+1303
+
+
+
+Type " тип оси.
+
+Интерфейс IBilletsObsoletes
+Коллекция деталей заготовок и зеркальных деталей.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IBilletsObsoletes
+
+IBilletsObsoletes – свойства
+
+BilletObsolete  Возвращает элемент, заданный по ссылке или 
+индексу
+Интерфейс...
+Тип данных: указатель указатель на интерфейс IBilletObsolete
+Синтаксис Automation:
+
+BilletObsolete = Object.BilletObsolete( Index ) Получить свойство (* )
+BilletObsolete = Object.GetBilletObsolete( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BilletObsolete( Index, &BilletObsolete ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IBilletsObsoletes – методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( BSTR FileName, BOOL Mirror );
+Синтаксис COM:
+HRESULT Add( BSTR FileName, BOOL Mirror, IBilletObsolete ** Result );
+1304
+
+
+
+Возвращаемое значение: 
+Указатель на интерфейс IBilletObsolete
+Входные параметры:
+
+FileName  " имя файла детали,
+Mirror " признак зеркальной симметрии.
+
+Интерфейс IBooleans
+Интерфейс коллекции булевых операций.
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ IBooleans
+
+Данный интерфейс можно получить, используя свойство контейнера трехмерных объек"
+тов IModelContainer::Booleans.
+КОМПАС версия v18
+
+IBooleans  свойства
+
+Boolean  Возвращает элемент, заданный по индексу или по 
+имени
+Интерфейс...
+Тип данных: Указатель на интерфейс IBoolean 
+Синтаксис Automation:
+
+Boolean = Object.Boolean( Index ) Получить свойство(* )
+Boolean = Object.GetBoolean( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Boolean( Index, &Boolean ) Получить свойство
+
+Входные параметры:
+
+VARIANT Index  " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+1305
+
+
+
+IBooleans  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IBoolean ** Result );
+Возвращаемое значение: 
+
+ " указатель на интерфейс IBoolean.
+
+Примечания:
+Метод позволяет создать новый интерфейс булевой операции.
+После получения нового интерфейса нужно задать параметры операции и вызвать метод
+IModelObject::Update.
+
+Интерфейс IChamfers
+Интерфейс коллекции операций Фаска.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IChamfers
+
+Получить интерфейс коллекции операций фаска можно, используя свойство контейнера
+трехмерных объектов IModelContainer::Chamfers.
+КОМПАС версия v18
+
+IChamfers  свойства
+
+Chamfer  Возвращает элемент, заданный по индексу или по 
+имени
+Интерфейс...
+Тип данных: Указатель на интерфейс IChamfer
+Синтаксис Automation:
+
+Chamfer = Object.Chamfer( Index ) Получить свойство (* )
+Chamfer = Object.GetChamfer( Index ) Получить свойство (**)
+1306
+
+
+
+Синтаксис COM:
+
+Object.get_Chamfer( Index, &Chamfer ) Получить свойство
+
+Входные параметры:
+ 
+
+VARIANT Index " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IChamfers  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IChamfer ** Result );
+Возвращаемое значение:
+ 
+
+ " указатель на интерфейс IChamfer.
+
+Примечание:
+
+1. Метод позволяет создать новый интерфейс операции фаска.
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс IFullFillets 
+Интерфейс коллекции операций полного скругления.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IFullFillets
+
+Данный интерфейс можно получить, используя свойство контейнера трехмерных объек"
+тов IModelContainer::FullFillets.
+Версия Компас v18.1
+1307
+
+
+
+IFullFillets  свойства
+
+FullFillet  Возвращает элемент, заданный по индексу или по 
+имени
+Интерфейс...
+Тип данных: Указатель на интерфейс IFullFillet 
+Синтаксис Automation:
+
+FullFillet = Object.FullFillet( Index ) Получить свойство (* )
+FullFillet = Object.GetFullFillet( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FullFillet( Index, &FullFillet ) Получить свойство
+
+Входные параметры:
+ 
+
+VARIANT Index " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IFullFillets  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IFullFillet * * Result );
+Возвращаемое значение: 
+ 
+
+"   Указатель на интерфейс IFullFillet.
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс операции полного скругления.
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+1308
+
+
+
+Интерфейс ICollectionsGeometry
+Коллекции геометрии.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ICollectionsGeometry
+
+Интерфейс можно получить у интерфейса контейнера 3D объектов IModelContainer с по"
+мощью свойства IModelContainer::CollectionsGeometry.
+
+ICollectionsGeometry  свойства
+
+CollectionGeometry  Возвращает элемент, заданный по 
+индексу или по имени
+Интерфейс...
+Тип данных: указатель указатель на интерфейс ICollectionGeometry
+Синтаксис Automation:
+
+CollectionGeometry = Object.CollectionGeometry( Получить свойство (* )
+Index )
+CollectionGeometry = Получить свойство (**)
+Object.GetCollectionGeometry( Index )
+
+Синтаксис COM:
+
+Object.get_CollectionGeometry( Index, Получить свойство
+&CollectionGeometry )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ICollectionsGeometry  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ICollectionGeometry ** Result );
+1309
+
+
+
+Возвращаемое значение: 
+Указатель на интерфейс ICollectionGeometry
+
+Интерфейс IConnectCurves
+Справка системы КОМПАС...
+kompas.chm::/1008_108_11_Soedinenie_curves.htm
+Коллекция операций соединения кривых
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IConnectCurves
+
+Интерфейс позволяет получать и создавать операции соединения кривых.
+Интерфейс можно получить в контейнере вспомогательной геометрии с помощью мето"
+да IAuxiliaryGeomContainer::ConnectCurves.
+
+IConnectCurves  свойства
+
+ConnectCurve  Возвращает элемент, заданный по индексу
+Интерфейс...
+Тип данных: указатель указатель на интерфейс IConnectCurve
+Синтаксис Automation:
+
+ConnectCurve = Object.ConnectCurve( Index ) Получить свойство (* )
+ConnectCurve = Object.GetConnectCurve( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ConnectCurve( Index, &ConnectCurve ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IConnectCurves  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+1310
+
+
+
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IConnectCurve * * Result );
+Возвращаемое значение:
+Указатель на интерфейс операции соединения кривых IConnectCurve
+
+Интерфейс IContours3D
+Справка системы КОМПАС...
+kompas.chm::/604_Glava59_Kontur.htm
+Коллекция контуров 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IContours3D
+
+Интерфейс позволяет получать и создавать контуры в трехмерном пространстве.
+Интерфейс можно получить в контейнере вспомогательной геометрии с помощью свой"
+ства IAuxiliaryGeomContainer::Contours3D
+
+IContours3D  свойства
+
+Contour3D  Возвращает элемент, заданный по ссылке или 
+индексу
+Интерфейс...
+Тип данных: указатель указатель на интерфейс IContour3D
+Синтаксис Automation:
+
+Contour3D = Object.Contour3D( Index ) Получить свойство (* )
+Contour3D = Object.GetContour3D( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Contour3D( Index, &Contour3D ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+1311
+
+
+
+IContours3D  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IContour3D ** Result );
+Возвращаемое значение:
+Указатель на интерфейс контура IContour3D
+
+Интерфейс ICopiesGeometry
+Коллекция копий геометрии
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ICopiesGeometry
+
+Интерфейс можно получить у интерфейса контейнера 3D объектов IModelContainer с по"
+мощью свойства IModelContainer::CopiesGeometry.
+
+ICopiesGeometry  свойства
+
+CopyGeometry  Возвращает элемент, заданный по индексу 
+или по имени
+Интерфейс...
+Тип данных: указатель указатель на интерфейс ICopyGeometry
+Синтаксис Automation:
+
+CopyGeometry = Object.CopyGeometry( Index ) Получить свойство (* )
+CopyGeometry = Object.GetCopyGeometry( Index Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CopyGeometry( Index, &CopyGeometry Получить свойство
+)
+
+Примечание:
+1312
+
+
+
+Свойство доступно только для чтения.
+
+ICopiesGeometry  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ICopyGeometry ** Result );
+Возвращаемое значение:
+Указатель на интерфейс ICopyGeometry.
+
+Интерфейс ICurveByLaws
+Справка системы КОМПАС...
+kompas.chm::/582_46_10_Krivay_po_zakonu.htm
+Коллекция кривых по закону.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ICurveByLaws
+
+Примечание:
+Интерфейс можно получить у контейнера объектов вспомогательной геометрии с помо"
+щью свойства IAuxiliaryGeomContainer::CurveByLaws.
+
+ICurveByLaws  свойства
+
+CurveByLaw  Возвращает элемент, заданный по ссылке или 
+индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс ICurveByLaw
+Синтаксис Automation:
+
+CurveByLaw = Object.CurveByLaw( Index ) Получить свойство (* )
+CurveByLaw = Object.GetCurveByLaw( Index ) Получить свойство (**)
+1313
+
+
+
+Синтаксис COM:
+
+Object.get_CurveByLaw( Index, &CurveByLaw ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ICurveByLaws  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ICurveByLaw ** Result );
+Возвращаемое значение: 
+Указатель на интерфейс кривой по закону ICurveByLaw
+
+Интерфейс ICurvesBy2Projectionses
+Коллекция кривых по двум проекциям
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ICurvesBy2Projectionses
+
+Примечание:
+Интерфейс можно получить с помощью свойства
+IAuxiliaryGeomContainer::CurvesBy2Projectionses.
+
+ICurvesBy2Projectionses  свойства
+
+CurveBy2Projections  Возвращает элемент, заданный по 
+ссылке или индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс ICurveBy2Projections
+Синтаксис Automation:
+
+CurveBy2Projections = Object.CurveBy2Projections( Index Получить свойство (* )
+)
+
+1314
+
+
+
+CurveBy2Projections = Object.GetCurveBy2Projections( Получить свойство (**)
+Index )
+
+Синтаксис COM:
+
+Object.get_CurveBy2Projections( Получить свойство
+Index, &CurveBy2Projections )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ICurvesBy2Projectionses  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию.
+Интерфейс...
+Синтаксис Automation:
+    LPDISPATCH Add();
+Синтаксис COM:
+    HRESULT Add( ICurveBy2Projections ** Result );
+Возвращаемое значение: 
+ Указатель на интерфейс ICurveBy2Projections
+
+Интерфейс ICurveOutLines
+Справка системы КОМПАС...
+kompas.chm::/516_43_12_Liniy_ocherka.htm
+Коллекция линий очерка.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ICurveOutLines
+
+Примечание:
+Интерфейс можно получить у контейнера объектов вспомогательной геометрии с помо"
+щью свойства IAuxiliaryGeomContainer::CurveOutLines.
+
+ICurveOutLines  свойства
+
+CurveOutLine  Возвращает элемент, заданный по ссылке или 
+индексу
+Интерфейс...
+1315
+
+
+
+Тип данных: Указатель на интерфейс ICurveOutLine
+Синтаксис Automation:
+
+CurveOutLine = Object.CurveOutLine( Index ) Получить свойство (* )
+CurveOutLine = Object.GetCurveOutLine( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CurveOutLine( Index, &CurveOutLine ) oПолучить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ICurveOutLines  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ICurveOutLine ** Result );
+Возвращаемое значение: 
+Указатель на интерфейс линии очерка ICurveOutLine
+
+Интерфейс ICuts
+Интерфейс коллекции операций Сечение.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ICuts
+
+ Данный интерфейс можно получить, используя свойство контейнера трехмерных объ"
+ектов IModelContainer::Cuts.
+КОМПАС версияv18
+
+ICuts  свойства
+
+Cut  Возвращает элемент, заданный по индексу или по 
+имени
+Интерфейс...
+1316
+
+
+
+Тип данных: Указатель на интерфейс ICut. 
+Синтаксис Automation:
+
+Cut = Object.Cut( Index ) Получить свойство (* )
+Cut = Object.GetCut( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Cut( Index, &Cut ) Получить свойство
+
+Входные параметры:
+
+VARIANT Index  " индекс в коллекции или имя объекта.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ICuts  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ICut ** Result );
+Возвращаемое значение: 
+ 
+
+ " указатель на интерфейс ICut.
+
+Примечания:
+Метод позволяет создать новый интерфейс операции сечения.
+После получения нового интерфейса нужно задать параметры операции и вызвать метод
+IModelObject::Update.
+
+Интерфейс IEquidistants3D
+Коллекция 3Dэквидистант.
+Иерархия
+IKompasAPIObject
+
+IKompasCollection
+IModelObjects
+
+IEquidistants3D
+1317
+
+
+
+Описание:
+Позволяет создавать и получать эквидистанты в 3D документе.
+Примечание:
+Данный интерфейс можно получить у контейнера вспомогательной геометрии
+IAuxiliaryGeomContainer::Equidistants3D.
+
+IEquidistants3D  свойства
+
+Equidistant3D  Возвращает 3Dэквидистанту, заданную по 
+индексу или имени
+Интерфейс...
+Тип данных: указатель на интерфейс 3D"эквидистанты IEquidistant3D
+Синтаксис Automation:
+
+Equidistant3D = Получить свойство (* )
+iObject.Equidistant3D( Index )
+Equidistant3D = Получить свойство (**)
+iObject.GetEquidistant3D( Index )
+
+Синтаксис COM:
+
+iObject">get_Equidistant3D( Получить свойство
+Index, &Equidistant3D )
+
+Входные параметры:
+
+Index  " индекс в коллекции или имя объекта.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IEquidistants3D  методы
+
+Add  Создать новый элемент и добавить в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IEquidistant3D ** Result);
+Возвращаемое значение:
+
+" указатель на интерфейс 3D"эквидистанты IEquidistant3D.
+1318
+
+
+
+Интерфейс IEvolutions
+Интерфейс коллекции кинематических операций.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IEvolutions
+
+Данный интерфейс можно получить, используя свойство контейнера трехмерных объек"
+тов IModelContainer::Evolutions.
+Интерфейс также используется для коллекции кинематических поверхностей
+ISurfaceContainer::EvolutionSurfaces.
+КОМПАС версия v18
+
+IEvolutions  свойства
+
+Evolution  Возвращает элемент, заданный по индексу или по 
+имени
+Интерфейс...
+Тип данных: Указатель на интерфейс IEvolution.
+Синтаксис Automation:
+
+Evolution = Object.Evolution( Получить свойство (* )
+Index )
+Evolution = Object.GetEvolution( Получить свойство (**)
+Index )
+
+Синтаксис COM:
+
+Object.get_Evolution( Index, Получить свойство
+&Evolution )
+
+Входные параметры:
+
+VARIANT Index  " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+1319
+
+
+
+IEvolutions  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( ksObj3dTypeEnum EvolutionType );
+Синтаксис COM:
+HRESULT Add( ksObj3dTypeEnum EvolutionType, IEvolution ** Result );
+Возвращаемое значение: 
+
+ " указатель на интерфейс IEvolution.
+
+Входные параметры:
+
+EvolutionType  " тип объекта из перечисления 
+ksObj3dTypeEnum.
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс кинематической операции.
+2. Допустимыми значениями EvolutionType являются:
+
+▼ o3d_bossEvolution, o3d_cutEvolution для коллекции операций IModelContainer::Evolutions
+▼ o3d_EvolutionSurface для коллекции поверхностей ISurfaceContainer::EvolutionSurfaces.
+3. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс IFillets
+Интерфейс коллекции операций скруглений.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IFillets
+
+Получить интерфейс коллекции операций скруглений можно, используя свойство кон"
+тейнера трехмерных объектов IModelContainer::Fillets.
+КОМПАС версия v18
+1320
+
+
+
+IFillets  cвойства
+
+Fillet  Возвращает элемент, заданный по индексу или по 
+имени
+Интерфейс...
+Тип данных: Указатель на интерфейс IFillet. 
+Синтаксис Automation:
+
+Fillet = Object.Fillet( Index ) Получить свойство (* )
+Fillet = Object.GetFillet( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Fillet( Index, &Fillet ) Получить свойство
+
+Входные параметры:
+
+VARIANT Index " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IFillets  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IFillet ** Result );
+Возвращаемое значение: 
+ 
+
+" указатель на интерфейс IFillet.
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс операции скругления.
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+1321
+
+
+
+Интерфейс IFilletCurves
+Справка системы КОМПАС...
+kompas.chm::/CM_CURVEOPER_CORNER.htm
+Коллекция операций скругления кривых.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IFilletCurves
+
+Данный интерфейс можно получить у контейнера вспомогательной геометрии с помо"
+щью свойства IAuxiliaryGeomContainer::FilletCurves.
+
+IFilletCurves  свойства
+
+FilletCurve  Возвращает элемент, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IFilletCurve
+Синтаксис Automation:
+
+FilletCurve = Object.FilletCurve( Index ) Получить свойство (* )
+FilletCurve = Object.GetFilletCurve( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FilletCurve( Index, &FilletCurve ) Получить свойство
+
+Свойство позволяет получить указатель на интерфейс операции скругления кривых.
+Примечание:
+Свойство доступно только для чтения.
+
+IFilletCurves  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IFilletCurve * * Result );
+Возвращаемое значение:
+1322
+
+
+
+Указатель на интерфейс операции скругления кривых IFilletCurve.
+
+Интерфейс IHoles3D
+Интерфейс коллекции отверстий.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IHoles3D
+
+Примечание:
+Интерфейс можно получить с помощью метода 
+IModelContainer::Holes3D
+
+IHoles3D  свойства
+
+Hole3D  Возвращает элемент, заданный по индексу или по 
+имени
+Интерфейс...
+Тип данных: Указатель на интерфейс IHole3D 
+Синтаксис Automation:
+
+Hole3D = Object.Hole3D( Index ) Получить свойство (* )
+Hole3D = Object.GetHole3D( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Hole3D( Index, &Hole3D ) Получить свойство,
+
+Примечание:
+ Свойство доступно только для чтения.
+
+IHoles3D  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IHole3D ** Result );
+1323
+
+
+
+Возвращаемое значение: 
+
+" Указатель на интерфейс IHole3D
+
+Интерфейс IInclines 
+Интерфейс коллекции операций Уклон.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IInclines
+
+Получить интерфейс коллекции операций уклон можно, используя свойство контейнера
+трехмерных объектов IModelContainer::Inclines.
+КОМПАС версия v18
+
+IInclines  свойства
+
+Incline  Возвращает элемент, заданный по индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IIncline.
+ Синтаксис Automation:
+
+Incline = Object.Incline( Index ) Получить свойство (* )
+Incline = Object.GetIncline( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Incline( Index, &Incline ) Получить свойство
+
+Входные параметры:
+  
+
+VARIANT Index " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+1324
+
+
+
+IInclines  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IIncline ** Result );
+Возвращаемое значение: 
+ 
+
+" указатель на интерфейс IIncline.
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс операции Уклон.
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс IIsoparametricCurves
+Справка системы КОМПАС...
+kompas.chm::/462_Isoparametricheskie_krivye.htm#izoparam_curve
+Коллекция изопараметрических кривых.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IIsoparametricCurves
+
+Примечание:
+Интерфейс можно получить у контейнера объектов вспомогательной геометрии с помо"
+щью свойства IAuxiliaryGeomContainer::IsoparametricCurves.
+
+IIsoparametricCurves  свойства
+
+IsoparametricCurve  Возвращает элемент, заданный по 
+ссылке или индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IIsoparametricCurve
+Синтаксис Automation:
+1325
+
+
+
+IsoparametricCurve = Object.IsoparametricCurve( Index ) Получить свойство (* )
+IsoparametricCurve = Object.GetIsoparametricCurve( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_IsoparametricCurve( Index, &IsoparametricCurve ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IIsoparametricCurves  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IIsoparametricCurve ** Result );
+Возвращаемое значение: 
+Указатель на интерфейс изопараметрической кривой IIsoparametricCurve
+
+Интерфейс IIsoparametricCurvesSets
+Справка системы КОМПАС...
+kompas.chm::/462_Isoparametricheskie_krivye.htm#set_izo_curves
+Коллекция групп изопараметрических кривых.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IIsoparametricCurvesSets
+
+Примечание:
+Интерфейс можно получить у контейнера объектов вспомогательной геометрии с помо"
+щью свойства IAuxiliaryGeomContainer::IsoparametricCurvesSets.
+1326
+
+
+
+IIsoparametricCurvesSets  свойства
+
+IsoparametricCurvesSet  Возвращает элемент, заданный по 
+ссылке или индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IIsoparametricCurvesSet
+Синтаксис Automation:
+
+IsoparametricCurvesSet = Получить свойство (* )
+Object.IsoparametricCurvesSet( Index )
+IsoparametricCurvesSet = Получить свойство (**)
+Object.GetIsoparametricCurvesSet(
+Index )
+
+Синтаксис COM:
+
+Object.get_IsoparametricCurvesSet( Index, Получить свойство
+&IsoparametricCurvesSet )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IIsoparametricCurvesSets  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IIsoparametricCurvesSet ** Result );
+Возвращаемое значение: 
+Указатель на интерфейс группы изопараметрических кривых IIsoparametricCurvesSet
+
+Интерфейс IJointSurfaces
+Интерфейс коллекции поверхностей соединения.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IJointSurfaces
+1327
+
+
+
+КОМПАС версия v18
+
+IJointSurfaces  свойства
+
+JointSurface  Возвращает элемент, заданный по индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IJointSurface. 
+Синтаксис Automation:
+
+JointSurface = Object.JointSurface( Index ) Получить свойство (* )
+JointSurface = Object.GetJointSurface( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_JointSurface( Index, &JointSurface ) Получить свойство
+
+Входные параметры:
+
+ VARIANT Index " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IJointSurfaces  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IJointSurface * * Result );
+Возвращаемое значение: 
+
+" указатель на интерфейс IJointSurface.
+
+Примечания:
+
+1.  Метод позволяет создать новый интерфейс операции Поверхность соединения.
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+1328
+
+
+
+Интерфейс IJointSurface
+Интерфейс операции Поверхность соединения.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IJointSurface
+
+IJointSurface свойства
+
+Curves1  Кривая границы 1
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Curves1 = Object.Curves1 Получить свойство (* )
+Object.Curves1 = Curves1 Установить свойство (* )
+Curves1 = Object.GetCurves1() Получить свойство (**)
+Object.SetCurves1( Curves1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Curves1( Получить свойство
+&Curves1 )
+Object.put_ModelObjec Установить свойство
+Object.put_Curves1(
+Curves1 )
+
+Curves2  Кривая границы 2
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Curves2 = Object.Curves2 Получить свойство (* )
+Object.Curves2 = Curves2 Установить свойство (* )
+Curves2 = Object.GetCurves2() Получить свойство (**)
+Object.SetCurves2( Curves2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Curves2( Получить свойство
+&Curves2 )
+1329
+
+
+
+Object.put_ModelObjec Установить свойство
+Object.put_Curves2(
+Curves2 )
+
+Face1  Грань границы 1
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject. 
+Синтаксис Automation:
+
+Face1 = Object.Face1 Получить свойство (* )
+Object.Face1 = Face1 Установить свойство (* )
+Face1 = Object.GetFace1() Получить свойство (**)
+Object.SetFace1( Face1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Face1( Получить свойство
+&Face1 )
+Object.put_Face1( Установить свойство
+Face1 )
+
+Face2  Грань границы 2
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+Face2 = Object.Face2 Получить свойство (* )
+Object.Face2 = Face2 Установить свойство (* )
+Face2 = Object.GetFace2() Получить свойство (**)
+Object.SetFace2( Face2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Face2( Получить свойство
+&Face2 )
+Object.put_Face2( Установить свойство
+Face2 )
+1330
+
+
+
+Face1ConnectType  Условие сопряжения соединяющей 
+поверхности с поверхностью сопряжения 1
+Интерфейс...
+Тип данных: Значение из перечисления ksConnectTypeEnum.
+Синтаксис Automation:
+
+Face1ConnectType = Получить свойство (* )
+Object.Face1ConnectType 
+Object.Face1ConnectType = Установить свойство (* )
+Face1ConnectType
+Face1ConnectType = Получить свойство (**)
+Object.GetFace1ConnectType()
+Object.SetFace1ConnectType( Установить свойство (**)
+Face1ConnectType )
+
+Синтаксис COM:
+
+Object.get_Face1ConnectType( Получить свойство
+&Face1ConnectType )
+Object.put_Face1ConnectType( Установить свойство
+Face1ConnectType )
+
+Face2ConnectType  Условие сопряжения соединяющей 
+поверхности с поверхностью сопряжения 2
+Интерфейс...
+Тип данных: Значение из перечисления ksConnectTypeEnum.
+Синтаксис Automation:
+
+Face2ConnectType = Получить свойство (* )
+Object.Face2ConnectType 
+Object.Face2ConnectType = Установить свойство (* )
+Face2ConnectType
+Face2ConnectType = Получить свойство (**)
+Object.GetFace2ConnectType()
+Object.SetFace2ConnectType( Установить свойство (**)
+Face2ConnectType )
+
+Синтаксис COM:
+
+Object.get_Face2ConnectType( Получить свойство
+&Face2ConnectType )
+Object.put_Face2ConnectType( Установить свойство
+Face2ConnectType )
+1331
+
+
+
+Sense1  Сменить направление сопряжения вдоль границы 1
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Sense1 = Object.Sense1 Получить свойство (* )
+Object.Sense1 = Sense1 Установить свойство (* )
+Sense1 = Object.GetSense1() Получить свойство (**)
+Object.SetSense1( Sense1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sense1( Получить свойство
+&Sense1 )
+Object.put_Sense1( Установить свойство
+Sense1 )
+
+Sense2  Сменить направление сопряжения вдоль границы 2
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Sense2 = Object.Sense2 Получить свойство (* )
+Object.Sense2 = Sense2 Установить свойство (* )
+Sense2 = Object.GetSense2() Получить свойство (**)
+Object.SetSense2( Sense2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sense2( Получить свойство
+&Sense2 )
+Object.put_Sense2( Установить свойство
+Sense2 )
+
+Tension1  Натяжение поверхности вдоль границы 1 %
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+1332
+
+
+
+Tension1 = Object.Tension1 Получить свойство (* )
+Object.Tension1 = Tension1 Установить свойство (* )
+Tension1 = Object.GetTension1() Получить свойство (**)
+Object.SetTension1( Tension1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Tension1( Получить свойство
+&Tension1 )
+Object.put_Tension1( Установить свойство
+Tension1 )
+
+Tension2  Натяжение поверхности вдоль границы 2 %
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Tension2 = Object.Tension2 Получить свойство (* )
+Object.Tension2 = Tension2 Установить свойство (* )
+Tension2 = Object.GetTension2() Получить свойство (**)
+Object.SetTension2( Tension2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Tension2( Получить свойство
+&Tension2 )
+Object.put_Tension2( Установить свойство
+Tension2 )
+
+Интерфейс ILineSegments3D
+Справка системы КОМПАС...
+kompas.chm::/454_48_3_otrezok.htm
+Коллекция контуров 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+1333
+
+
+
+ILineSegments3D
+Интерфейс позволяет получать и создавать отрезки в трехмерном пространстве.
+Интерфейс можно получить в контейнере вспомогательной геометрии с помощью свой"
+ства IAuxiliaryGeomContainer::LineSegments3D.
+
+ILineSegments3D  свойства
+
+LineSegment3D  Возвращает элемент, заданный по индексу
+Интерфейс...
+Тип данных: указатель указатель на интерфейс ILineSegment3D
+Синтаксис Automation:
+
+LineSegment3D = Object.LineSegment3D( Index ) Получить свойство (* )
+LineSegment3D = Object.GetLineSegment3D( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LineSegment3D( Index, &LineSegment3D ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ILineSegments3D  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ILineSegment3D * * Result );
+Возвращаемое значение:
+Указатель на интерфейс отрезка ILineSegment3D
+
+Интерфейс ILofts
+Интерфейс коллекции операций По сечениям.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ ILofts
+1334
+
+
+
+Данный интерфейс можно получить, используя свойство контейнера трехмерных объек"
+тов IModelContainer::Lofts.
+Интерфейс также используется для коллекции поверхностей по сечениям
+ISurfaceContainer::LoftSurfaces. 
+КОМПАС версия v18
+
+ILofts  свойства
+
+Loft  Возвращает элемент, заданный по индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс ILoft. 
+Синтаксис Automation:
+
+Loft = Object.Loft( Index ); Получить свойство (* )
+Loft = Object.GetLoft( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Loft( Index, &Loft ) Получить свойство
+
+Входные параметры:
+
+VARIANT Index " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ILofts  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( ksObj3dTypeEnum LoftType );
+Синтаксис COM:
+HRESULT Add( ksObj3dTypeEnum LoftType, ILoft ** Result );
+Возвращаемое значение: 
+
+" Указатель на интерфейс ILoft.
+
+Входные параметры:
+1335
+
+
+
+ 
+LoftType " тип объекта из перечисления 
+
+ksObj3dTypeEnum.
+Примечания:
+
+1. Метод позволяет создать новый интерфейс операции по сечениям.
+2. Допустимыми значениями LoftType являются:
+
+▼ o3d_bossLoft, o3d_cutLoft для коллекции операций IModelContainer::Lofts ,                                
+▼ o3d_LoftSurface для коллекции поверхностей ISurfaceContainer::LoftSurfaces.
+3. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс INurbsSurfacesByCurvesMeshs
+Интерфейс коллекции сплайновых поверхностей по сетке кривых.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+INurbsSurfacesByCurvesMeshs
+
+Данный интерфейс можно получить, используя свойство контейнера поверхностей
+ISurfaceContainer::NurbsSurfacesByCurvesMeshs
+КОМПАС версия v18
+
+INurbsSurfacesByCurvesMeshs  свойства
+
+NurbsSurfaceByCurvesMesh  Возвращает элемент, заданный 
+по индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс INurbsSurfaceByCurvesMesh.
+Синтаксис Automation:
+
+NurbsSurfaceByCurvesMesh = Получить свойство (* )
+Object.NurbsSurfaceByCurvesMesh( Index )    Получить
+свойство (*);
+NurbsSurfaceByCurvesMesh = Получить свойство (**)
+Object.GetNurbsSurfaceByCurvesMesh( Index ) Получить
+свойство (**);
+
+Синтаксис COM:
+1336
+
+
+
+Object.get_NurbsSurfaceByCurvesMesh( Index, Получить свойство
+&NurbsSurfaceByCurvesMesh )
+
+Примечание:
+Свойство доступно только для чтения.
+
+INurbsSurfacesByCurvesMeshs  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( INurbsSurfaceByCurvesMesh * * Result );
+Возвращаемое значение: 
+    
+
+" указатель на интерфейс 
+INurbsSurfaceByCurvesMesh
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс сплайновой поверхности по сетке кривых.
+2. После получения нового интерфейса нужно задать параметры поверхности и вызвать
+
+метод IModelObject::Update.
+
+Интерфейс INurbsSurfaceByCurvesMesh
+Интерфейс операции Сплайновая поверхность по сетке кривых.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+INurbsSurfaceByCurvesMesh
+Данный интерфейс можно получить с помощью метода коллекции операций пластина
+INurbsSurfacesByCurvesMeshs::Add или свойства
+INurbsSurfacesByCurvesMeshs::NurbsSurfaceByCurvesMesh
+КОМПАС версия v18
+
+INurbsSurfaceByCurvesMesh  свойства
+1337
+
+
+
+CheckSelfIntersection  Проверка самопересечения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CheckSelfIntersection = Получить свойство (* )
+Object.CheckSelfIntersection
+Object.CheckSelfIntersection = Установить свойство (* )
+CheckSelfIntersection
+CheckSelfIntersection = Получить свойство (**)
+Object.GetCheckSelfIntersection()
+Object.SetCheckSelfIntersection( Установить свойство (**)
+CheckSelfIntersection )
+
+Синтаксис COM:
+
+Object.get_CheckSelfIntersection( Получить свойство
+&CheckSelfIntersection )
+Object.put_CheckSelfIntersection( Установить свойство
+CheckSelfIntersection )
+
+ConnectSurface  Поверхность сопряжения
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject. 
+Синтаксис Automation:
+
+ConnectSurface = Получить свойство (* )
+Object.ConnectSurface( Index )
+Object.ConnectSurface( Index ) = Установить свойство (* )
+ConnectSurface
+ConnectSurface = Получить свойство (**)
+Object.GetConnectSurface( Index )
+Object.SetConnectSurface( Index, Установить свойство (**)
+ConnectSurface )
+
+Синтаксис COM:
+
+Object.get_ConnectSurface( Index, Получить свойство
+&ConnectSurface )
+Object.put_ConnectSurface(  Index, Установить свойство
+ConnectSurface )
+
+Входные параметры:
+1338
+
+
+
+long     Index " индекс.
+
+ConnectType  Условие сопряжения
+Интерфейс...
+Тип данных: из перечисления ksConnectTypeEnum
+Синтаксис Automation:
+
+ConnectType = Получить свойство (* )
+Object.ConnectType( Index )
+Object.ConnectType( Index ) = Установить свойство (* )
+ConnectType
+ConnectType = Получить свойство (**)
+Object.GetConnectType( Index )
+Object.SetConnectType( Index, Установить свойство (**)
+ConnectType )
+
+Синтаксис COM:
+
+Object.get_ConnectType( Index, Получить свойство
+&ConnectType )
+Object.put_ConnectType( Установить свойство
+Index, ConnectType )
+
+Входные параметры:
+
+long     Index " индекс.
+
+UClosed  Замкнутость по направлении U
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UClosed = Object.UClosed Получить свойство (* )
+Object.UClosed = UClosed Установить свойство (* )
+UClosed = Object.GetUClosed() Получить свойство (**)
+Object.SetUClosed( UClosed ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UClosed( &UClosed ) Получить свойство
+1339
+
+
+
+Object.put_UClosed(  UClosed ) Установить свойство
+
+VClosed  Замкнутость по направлении V
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+VClosed = Object.VClosed Получить свойство (* )
+Object.VClosed = VClosed Установить свойство (* )
+VClosed = Object.GetVClosed() Получить свойство (**)
+Object.SetVClosed( VClosed ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VClosed( &VClosed ) Получить свойство
+Object.put_VClosed(  VClosed ) Установить свойство
+
+UCurves  Список кривых в направлении U SAFEARRAY 
+DISPATCH  VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+UCurves = Object.UCurves Получить свойство (* )
+Object.UCurves = UCurves Установить свойство (* )
+UCurves = Object.GetUCurves() Получить свойство (**)
+Object.SetUCurves( UCurves ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UCurves( &UCurves ) Получить свойство
+Object.put_UCurves(  UCurves ) Установить свойство
+
+VCurves  Список кривых в направлении V SAFEARRAY 
+DISPATCH  VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+1340
+
+
+
+VCurves = Object.VCurves Получить свойство (* )
+Object.VCurves = VCurves Установить свойство (* )
+VCurves = Object.GetVCurves() Получить свойство (**)
+Object.SetVCurves( VCurves ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VCurves( &VCurves ) Получить свойство
+Object.put_VCurves(  VCurves ) Установить свойство
+
+Интерфейс IPointsArrsOnSurfaces
+Коллекция групп точек по поверхностям.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IPointsArrsOnSurfaces
+
+Примечание:
+Интерфейс можно получить с помощью свойства
+IAuxiliaryGeomContainer::PointsArrsOnSurfaces.
+
+IPointsArrsOnSurfaces  свойства
+
+PointsArrOnSurface  Возвращает элемент, заданный по 
+ссылке или индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IPointsArrOnSurface
+Синтаксис Automation:
+
+PointsArrOnSurface = Object.PointsArrOnSurface( Index ); Получить свойство (* )
+PointsArrOnSurface = Object.GetPointsArrOnSurface( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointsArrOnSurface( Index, &PointsArrOnSurface ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+1341
+
+
+
+IPointsArrsOnSurfaces  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IPointsArrOnSurface ** Result );
+Возвращаемое значение:
+
+" указатель на интерфейс IPointsArrOnSurface.
+
+Интерфейс IPointsArrsOnCurves
+Коллекция групп точек по кривым.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IPointsArrsOnCurves
+
+Примечание:
+Интерфейс можно получить с помощью свойства
+IAuxiliaryGeomContainer::PointsArrsOnCurves.
+
+IPointsArrsOnCurves  свойства
+
+PointsArrOnCurve  Возвращает элемент, заданный по ссылке 
+или индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IPointsArrOnCurve
+Синтаксис Automation:
+
+PointsArrOnCurve = Object.PointsArrOnCurve( Index ); Получить свойство (* )
+PointsArrOnCurve = Object.GetPointsArrOnCurve( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointsArrOnCurve( Index, &PointsArrOnCurve ) Получить свойство
+
+Примечание:
+1342
+
+
+
+Свойство доступно только для чтения.
+
+IPointsArrsOnCurves  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IPointsArrOnCurve ** Result );
+Возвращаемое значение:
+
+" указатель на интерфейс IPointsArrOnCurve.
+
+Интерфейс IPointsArrsFromFiles
+Коллекция групп точек из файла.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IPointsArrsFromFiles
+
+Примечание:
+Интерфейс можно получить с помощью свойства
+IAuxiliaryGeomContainer::PointsArrsFromFiles.
+
+IPointsArrsFromFiles  свойства
+
+PointsArrFromFile  Возвращает элемент, заданный по ссылке 
+или индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IPointsArrFromFile
+Синтаксис Automation:
+
+PointsArrFromFile = Object.PointsArrFromFile( Index ); Получить свойство (* )
+PointsArrFromFile = Object.GetPointsArrFromFile( Index ); Получить свойство (**)
+
+Синтаксис COM:
+1343
+
+
+
+Object.get_PointsArrFromFile( Index, &PointsArrFromFile ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IPointsArrsFromFiles  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IPointsArrFromFile * * Result );
+Возвращаемое значение:
+
+" указатель на интерфейс IPointsArrFromFile.
+
+Интерфейс IPolyLines
+Справка системы КОМПАС: Команда Ломаная
+kompas.chm::/CM_CCURVE_POLYLINE_BY_VERTEX.htm
+Интерфейс коллекции элементов "пространственная ломаная".
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IModelObjects
+
+IPolyLines
+Описание:
+Интерфейс позволяет получить коллекции элементов "пространственная ломаная".
+Примечание:
+Получить интерфейс коллекции можно, используя свойство контейнера объектов вспо"
+могательной геометрии IAuxiliaryGeomContainer::PolyLines.
+
+IPolyLines  свойства
+
+PolyLine  Пространственная ломаная, заданная по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IPolyLine
+Синтаксис Automation:
+1344
+
+
+
+PolyLine = iObject.PolyLine( Index ); Получить свойство (* )
+PolyLine = iObject.GetPolyLine( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_PolyLine( Index, Получить свойство
+&PolyLine )
+
+Входные параметры:
+
+Index " VT_BSTR " имя объекта,
+   VT_I4 " индекс объекта.
+
+Примечание:
+
+1.  В качестве индекса может использоваться индекс в коллекции и reference объекта.
+2. Свойство доступно только для чтения.
+
+IPolyLines  методы
+
+Add  Создать новый элемент и добавить его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add;
+Синтаксис COM:
+HRESULT Add( IPolyLine ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс пространственной ломаной IPolyLine.
+
+Интерфейс IProjectionCurves
+Интерфейс коллекции проекционных кривых.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IProjectionCurves
+
+Примечание:
+Интерфейс можно получить с помощью свойства
+IAuxiliaryGeomContainer::ProjectionCurves.
+1345
+
+
+
+IProjectionCurves  свойства
+
+ProjectionCurve  Возвращает элемент, заданный по ссылке 
+или индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IProjectionCurve
+Синтаксис Automation:
+
+ProjectionCurve = Получить свойство (* )
+Object.ProjectionCurve( index )
+ProjectionCurve = Получить свойство (**)
+Object.GetProjectionCurve(
+index )
+
+Синтаксис COM:
+
+Object">get_ProjectionCurve( Получить свойство
+index, &ProjectionCurve )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IProjectionCurves  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IProjectionCurve** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс IProjectionCurve.
+
+Интерфейс IRibs
+Интерфейс коллекции ребер жесткости.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+1346
+
+
+
+IModelObjects
+ IRibs
+
+Данный интерфейс можно получить, используя свойство контейнера трехмерных объек"
+тов IModelContainer::Ribs.
+КОМПАС версия v18
+
+ IRibs  свойства
+
+Rib  Возвращает элемент, заданный по индексу или имени
+Интерфейс...
+Тип данных: Указатель на интерфейс IRib.
+Синтаксис Automation:
+
+Rib = Object.Rib( Index ) Получить свойство (* )
+Rib = Object.GetRib( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Rib( Index, &Rib ) Получить свойство
+
+Входные параметры:
+
+VARIANT " индекс или имя элемента.
+Index
+
+Примечание:
+Свойство доступно только для чтения.
+
+IRibs  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IRib ** Result );
+Возвращаемое значение: 
+
+" указатель на интерфейс IRib.
+
+Примечания:
+Метод позволяет создать новый интерфейс операции ребро жесткости.
+1347
+
+
+
+После получения нового интерфейса нужно задать параметры операции и вызвать метод
+IModelObject::Update.
+
+Интерфейс IShells
+Интерфейс коллекции операций Оболочка.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ IShells
+
+Данный интерфейс можно получить, используя свойство контейнера трехмерных объек"
+тов IModelContainer::Shells.
+КОМПАС версия v18
+
+IShells  cвойства
+
+Shell  Возвращает элемент, заданный по ссылке или индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IShell. 
+Синтаксис Automation:
+
+Shell = Object.Shell( Index ) Получить свойство (* )
+Shell = Object.GetShell( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Shell( Index, &Shell ) Получить свойство
+
+Входные параметры:
+
+VARIANT " индекс или имя элемента.
+Index
+
+Примечание:
+Свойство доступно только для чтения.
+
+IShells  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+1348
+
+
+
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IShell ** Result );
+Возвращаемое значение: 
+
+" указатель на интерфейс IShell.
+
+Примечания:
+Метод позволяет создать новый интерфейс операции оболочка.
+После получения нового интерфейса нужно задать параметры операции и вызвать метод
+IModelObject::Update.
+
+Интерфейс ISplines3D
+Справка системы КОМПАС
+kompas.chm::/1091_116_6_Splajn.htm
+Интерфейс коллекции элементов "сплайн".
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IModelObjects
+
+ISplines3D
+Описание:
+Интерфейс позволяет получить элементы "сплайн".
+Примечание:
+Получить интерфейс коллекции можно, используя свойство контейнера вспомогатель"
+ной геометрии IAuxiliaryGeomContainer::Splines3D.
+
+ISplines3D  свойства
+
+Spline3D  Сплайн, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ISpline3D
+Синтаксис Automation:
+
+Spline3D = Object.Spline3D( Получить свойство (* )
+index )
+Spline3D = Object.GetSpline3D( Получить свойство (**)
+index )

@@ -1,0 +1,2532 @@
+iObject">get_Item (Index, Получить свойство
+&Section)
+
+Примечание:
+Свойство доступно только для чтения.
+2554
+
+
+
+Интерфейсы событий
+Интерфейс IModelObjectNotifyResult
+Интерфейс результатов редактирования 3d объекта.
+Иерархия:
+IDispatch
+
+IModelObjectNotifyResult
+Описание:
+Позволяет контролировать редактирование объектов документа"модели. Источником
+событий для подписки является указатель на интерфейс IModelObject.
+Примечание:
+Получить интерфейс можно с помощью метода IUnknown::QueryInterface у интерфейса
+компонента IPart7.
+
+IModelObjectNotifyResult  свойства
+
+IsRedoMode  Признак работы команды Redo
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsRedoMode = Object.IsRedoMode; Получить свойство (* )
+IsRedoMode = Object.GetIsRedoMode(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_IsRedoMode( &IsRedoMode ) Получить свойство
+
+Примечание.
+Свойство доступно только для чтения.
+
+IsUndoMode  Признак работы команды Undo
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsUndoMode = Object.IsUndoMode; Получить свойство (* )
+IsUndoMode = Object.GetIsUndoMode(); Получить свойство (**)
+
+Синтаксис COM:
+2555
+
+
+
+Object.get_IsUndoMode( &IsUndoMode ) Получить
+свойство
+
+Примечание.
+Свойство доступно только для чтения.
+
+NotifyObjects  Массив SafeArray удаляемых объектов
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+NotifyObjects = Object.NotifyObjects; Получить свойство (* )
+NotifyObjects = Object.GetNotifyObjects(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_NotifyObjects( &NotifyObjects ) Получить свойство
+
+Примечание.
+Свойство доступно только для чтения.
+
+NotifyType  Тип события
+Интерфейс...
+Тип данных: из перечисления KsObject3DNotifyEnum
+Синтаксис Automation:
+
+NotifyType = Object.NotifyType; Получить свойство (* )
+NotifyType = Object.GetNotifyType(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_NotifyType( &NotifyType ) Получить свойство
+
+Примечание.
+Свойство доступно только для чтения.
+
+ProcessType  Тип процесса
+Интерфейс...
+Тип данных: из перечисления ProcessTypeEnum
+Синтаксис Automation:
+2556
+
+
+
+ProcessType = Object.ProcessType; Получить свойство (* )
+ProcessType = Object.GetProcessType(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProcessType( &ProcessType ) Получить свойство
+
+Примечание.
+Свойство доступно только для чтения.
+
+Интерфейс IKompasDocument3DNotifyResult
+Интерфейс дополнительных параметров для событий документамодели.
+Примечание:
+
+1.  Интерфейс позволяет получить указатель на объект, для которого посылается данное
+событие. Например, выбор материала и обозначения доступны для верхнего компонен"
+та, вставки и тела.
+
+2.  Интерфейс является дополнительным для IKompasDocument3D. 
+3.  Интерфейс можно получить с помощью метода IUnknown::QueryInterface у
+
+IKompasDocument3D.
+
+IKompasDocument3DNotifyResul  свойства
+
+NotifyType  Тип события
+Интерфейс...
+Тип данных: из перечисления ksDocument3DNotifyEnum
+Синтаксис Automation:
+
+NotifyType = Object.NotifyType Получить свойство (* )
+NotifyType = Object.GetNotifyType() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NotifyType( &NotifyType ) Получить свойство
+
+Примечание.
+Свойство доступно только для чтения.
+
+NotifyObjectType  Тип объекта
+Интерфейс...
+Тип данных: из перечисления ksObj3dTypeEnum
+Синтаксис Automation:
+2557
+
+
+
+N
+N
+
+NotifyObjectType = Object.NotifyObjectType Получить свойство (* )
+NotifyObjectType = Object.GetNotifyObjectType() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NotifyObjectType( &NotifyObjectType ) Получить свойство
+
+Возвращаемое значение:
+
+" Тип объекта из перечисления ksObj3dTypeEnum.
+Допустимыми значениями являются o3d_part, o3d_body или o3d_uknown.
+
+Примечание.
+Свойство доступно только для чтения.
+
+NotifyObject  Тип объекта
+Интерфейс...
+Тип данных: указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+
+otifyObject = Object.NotifyObject Получить свойство (* )
+otifyObject = Object.GetNotifyObject() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_NotifyObject( &NotifyObject ) Получить свойство
+
+Возвращаемое значение:
+В зависимости от типа объекта, возвращаемого методом NotifyObjectType возвращается:
+
+тип объекта Интерфейс
+o3d_part " IPart7
+o3d_body " IBody7
+o3d_uknown " NULL
+
+Примечание.
+Свойство доступно только для чтения.
+
+RequestFilesType  Тип процесса, запрашивающего файл
+Интерфейс...
+Тип данных: из перечисления ksRequestFilesTypeEnum
+2558
+
+
+
+R
+O
+R
+O
+
+Синтаксис Automation:
+
+equestFilesType = Получить свойство (* )
+bject.RequestFilesType
+equestFilesType = Получить свойство (**)
+bject.GetRequestFilesType()
+
+Синтаксис COM:
+
+Object.get_RequestFilesType( Получить
+&RequestFilesType ) свойство
+
+Возвращаемое значение:
+Возвращает идентификатор процесса, запрашивающего файл.
+Примечание.
+Свойство доступно только для чтения.
+
+Интерфейс ksDocument3DNotify7
+Интерфейс событий документамодели в API7 (dispинтерфейс).
+Позволяет контролировать редактирование документа"модели.
+Источником для подписки является документ"модель.
+
+ksDocument3DNotify7  события
+
+BeginChoiceMarking  Начало выбора обозначения
+Интерфейс...
+Синтаксис Automation:
+VARIANT_BOOL BeginChoiceMarking();
+Возвращаемое значение:
+
+TRUE " выбрать обозначение,
+FALSE " выбор обозначения запрещен.
+
+BeginChoiceMaterial  Начало выбора материала
+Интерфейс...
+Синтаксис:
+VARIANT_BOOL BeginChoiceMaterial();
+Возвращаемое значение:
+
+TRUE " выбрать материал,
+2559
+
+
+
+FALSE " выбор материала запрещен.
+
+BeginCreatePartFromFile  Начало создания компонента в 
+сборке (до диалога выбора имени)
+Интерфейс...
+Синтаксис:
+VARIANT_BOOL BeginCreatePartFromFile (VARIANT_BOOL typeDoc, LPDISPATCH * plane);
+Входные параметры:
+
+typeDoc TRUE " вставить деталь,
+FALSE " вставить сборку,
+
+plane " плоскость типа IModelObject, на которой создается 
+компонент.
+
+Возвращаемое значение:
+
+TRUE " установить компонент в сборку,
+FALSE " установка компонента в сборку запрещена.
+
+BeginRebuild  Начало перестроения модели
+Интерфейс...
+Синтаксис:
+VARIANT_BOOL BeginRebuild();
+Возвращаемое значение:
+
+TRUE " перестроить модель,
+FALSE " перестройка модели запрещена.
+
+BeginSetPartFromFile  Начало установки компонента в 
+сборку (до диалога выбора имени)
+Интерфейс...
+Синтаксис:
+VARIANT_BOOL BeginSetPartFromFile();
+Возвращаемое значение:
+
+TRUE " установить компонент в сборку,
+FALSE " установка компонента в сборку запрещена.
+2560
+
+
+
+ChoiceMarking  Закончен выбор обозначения
+Интерфейс...
+Синтаксис:
+VARIANT_BOOL ChoiceMarking( BSTR marking );
+Входные параметры:
+
+marking " обозначение.
+
+Возвращаемое значение:
+
+TRUE " выбрано обозначение,
+FALSE " выбор обозначения запрещен.
+
+СhoiceMaterial  Закончен выбор материала
+Интерфейс...
+Синтаксис:
+VARIANT_BOOL ChoiceMaterial (BSTR material, double density);
+Возвращаемое значение:
+
+TRUE " выбран материал,
+FALSE " выбор материала запрещен.
+
+Rebuild  Модель перестроена
+Интерфейс...
+Синтаксис:
+VARIANT_BOOL Rebuild();
+Возвращаемое значение:
+
+TRUE " модель перестроена,
+FALSE " перестройка модели запрещена.
+
+Интерфейс ksDocumentFrameNotify/
+IDocumentFrameNotify
+
+ksDocumentFrameNotify " интерфейс Automation,
+IdocumentFrameNotify " интерфейс COM
+
+Интерфейс событий для окна документа (клавиатура, мышь, события по отри
+совке документа)
+Позволяют контролировать состояние окна документа.
+2561
+
+
+
+Источником событий для подписки на данный интерфейс является объект
+IDocumentFrame " интерфейс окна документа.
+В COM источником для подписки является указатель на документ. Дополнительный па"
+раметр при подписке задает интерфейс окна IDocumentFrame, для которого предназна"
+чен данный интерфейс событий.
+
+ksDocumentFrameNotify, IDocumentFrameNotify  
+события
+
+ Activate  Активизация окна
+Интерфейс...
+BOOL Activate();
+Синтаксис COM:
+BOOL Activate();
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+
+AddGabarit  Рассчитывается общий габарит окна
+Интерфейс...
+Синтаксис Automation:
+BOOL AddGabarit (IGabaritObject * gabObj);
+Синтаксис COM:
+BOOL AddGabarit (IUnknown* gabObj);
+Входные параметры:
+
+gabObj  " указатель на интерфейс IGabaritObject 
+вспомогательных данных для изменения габарита 
+документа.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+2562
+
+
+
+1. Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+
+2. Если на данное событие подписалось несколько библиотек, то заданные ими прямоу"
+гольники суммируются.
+
+BeginPaintTmpObjects  Начало отрисовки временных 
+объектов(фантомов)
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginPaintTmpObjects();
+Синтаксис COM:
+BOOL BeginPaintTmpObjects();
+Возвращаемое значение:
+
+FALSE " запретить отрисовку 
+временных объектов.
+
+Примечание:
+Событие можно получить в 2D документе и использовать для самостоятельной отрисов"
+ки временных объектов функциями OpenGL 
+
+BeginPaint  Начало отрисовки документа
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginPaint (IPaintObject* paintObj);
+Синтаксис COM:
+BOOL BeginPaint (IUnknown* paintObj);
+Входные параметры:
+
+paintObj " указатель на интерфейс IPaintObject вспомогательных 
+данных для отрисовки документа.
+
+Возвращаемое значение:
+
+FALSE " запретить отрисовку документа.
+
+Примечание:
+2563
+
+
+
+1. Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+
+2. Если событие вернет значение FALSE, то КОМПАС"3D не будет отрисовывать документ;
+библиотека в этом случае должна сама выполнить всю отрисовку, событие ClosePaint по"
+сылаться не будет.
+
+ BeginPaintGL  Начало создания листа в контексте 
+OpenGL
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginCreateGLList (ksGLObject* glObj, long drawMode);
+Синтаксис COM:
+BOOL BeginCreateGLList (long drawMode);
+Входные параметры:
+
+glObj  " указатель на интерфейс ksGLObject вспомогательных данных 
+для создания листа в контексте OpenGL;
+используется при работе под управлением внешнего 
+контроллера,
+
+drawMode " режим отображения документа"модели 
+KDocument3DDrawMode.
+
+Возвращаемое значение:
+
+TRUE " модель продолжает отрисовываться,
+FALSE " запретить перерисовывать модель.
+
+Примечание:
+Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+
+CloseFrame  Закрытие окна
+Интерфейс...
+Синтаксис Automation:
+BOOL CloseFrame();
+Синтаксис COM:
+BOOL CloseFrame();
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+2564
+
+
+
+Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+
+ClosePaint  Конец отрисовки документа
+Интерфейс...
+Синтаксис Automation:
+BOOL ClosePaint (IPaintObject* paintObj);
+Синтаксис COM:
+BOOL ClosePaint (IUnknown* paintObj);
+Входные параметры:
+
+paintObj " указатель на интерфейс IPaintObject 
+вспомогательных данных для отрисовки документа.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+
+ClosePaintGL  Окончание создания листа в контексте 
+OpenGL
+Интерфейс...
+Синтаксис Automation:
+BOOL CloseCreateGLList (ksGLObject* glObj, long drawMode);
+Синтаксис COM:
+BOOL CloseCreateGLList (long drawMode);
+Входные параметры:
+
+glObj  " указатель на интерфейс ksGLObject 
+вспомогательных данных для создания листа в 
+контексте OpenGL;
+используется при работе под управлением внешнего 
+контроллера,
+
+drawMode " режим отображения документа"модели 
+KDocument3DDrawMode.
+
+Возвращаемое значение:
+2565
+
+
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+
+ClosePaintTmpObjects  Конец отрисовки временных 
+объектов(фантомов)
+Интерфейс...
+Синтаксис Automation:
+BOOL ClosePaintTmpObjects();
+Синтаксис COM:
+BOOL ClosePaintTmpObjects();
+Возвращаемое значение:
+
+"    не используется.
+
+Примечание:
+Событие можно получить в 2D документе и использовать для дорисовки временных объ"
+ектов функциями OpenGL 
+
+Deactivate  Деактивация окна
+Интерфейс...
+Синтаксис Automation:
+BOOL Deactivate();
+Синтаксис COM:
+BOOL Deactivate();
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+
+MouseDblClick  Двойной щелчок кнопкой мыши
+Интерфейс...
+Синтаксис Automation:
+2566
+
+
+
+BOOL MouseDblClick (short nButton, short nShiftState, long x, long y);
+Синтаксис COM:
+BOOL MouseDblClick (short nButton, short nShiftState, long x, long y);
+Входные параметры:
+
+nButton " тип кнопки (LEFT_BUTTON, RIGHT_BUTTON или 
+MIDDLE_BUTTON),
+
+nShiftState " комбинация нажатых системных кнопок клавиатуры 
+(SHIFT_MASK, CTRL_MASK, ALT_MASK),
+
+х,у " координаты в экранных пикселах.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+Значения системных кнопок, допустимых в комбинации параметра nShiftState:
+
+SHIFT_MASK 0x01
+CTRL_MASK 0x02
+ALT_MASK 0x04
+
+Значения типов кнопок мыши для параметра nButton:
+
+LEFT_BUTTON 0x01
+RIGHT_BUTTON 0x02
+MIDDLE_BUTTON 0x04
+
+MouseDown  Нажатие кнопки мыши
+Интерфейс...
+Синтаксис Automation:
+BOOL MouseDown (short nButton, short nShiftState, long x, long y);
+Синтаксис COM:
+BOOL MouseDown (short nButton, short nShiftState, long x, long y);
+Входные параметры:
+
+nButton " тип кнопки (LEFT_BUTTON, RIGHT_BUTTON или 
+MIDDLE_BUTTON),
+
+nShiftState " комбинация нажатых системных кнопок клавиатуры 
+(SHIFT_MASK, CTRL_MASK, ALT_MASK),
+2567
+
+
+
+х,у " координаты в экранных пикселах.
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+Значения системных кнопок, допустимых в комбинации параметра nShiftState:
+
+SHIFT_MASK 0x01
+CTRL_MASK 0x02
+ALT_MASK 0x04
+
+Значения типов кнопок мыши для параметра nButton:
+
+LEFT_BUTTON 0x01
+RIGHT_BUTTON 0x02
+MIDDLE_BUTTON 0x04
+
+MouseMove  Перемещение мыши
+Интерфейс...
+Синтаксис Automation:
+BOOL MouseDown (short nShiftState, long x, long y);
+Синтаксис COM:
+BOOL MouseMove (short nShiftState, long x, long y);
+Входные параметры:
+
+nShiftState " комбинация нажатых системных клавиш 
+(SHIFT_MASK, CTRL_MASK, ALT_MASK),
+
+х,у " координаты в экранных пикселах.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+
+2. Значения системных кнопок допустимых в комбинации параметра nShiftState:
+
+SHIFT_MASK 0x01
+CTRL_MASK 0x02
+2568
+
+
+
+ALT_MASK 0x04
+
+ MouseUp  Отпускание кнопки мыши
+Интерфейс...
+Синтаксис Automation:
+BOOL MouseUp (short nButton, short nShiftState, long x, long y);
+Синтаксис COM:
+BOOL MouseUp (short nButton, short nShiftState, long x, long y);
+Входные параметры:
+
+nButton " тип кнопки (LEFT_BUTTON, RIGHT_BUTTON или 
+MIDDLE_BUTTON),
+
+nShiftState " комбинация нажатых системных кнопок клавиатуры 
+(SHIFT_MASK, CTRL_MASK, ALT_MASK),
+
+х,у " координаты в экранных пикселах.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий окна документа
+ksDocumentFrameNotifyEnum.
+Значения системных кнопок, допустимых в комбинации параметра nShiftState:
+
+SHIFT_MASK 0x01
+CTRL_MASK 0x02
+ALT_MASK 0x04
+
+Значения типов кнопок мыши для параметра nButton:
+
+LEFT_BUTTON 0x01
+RIGHT_BUTTON 0x02
+MIDDLE_BUTTON 0x04
+
+ ShowOcxTree  Активизация закладки дерева 
+документа
+Интерфейс...
+Синтаксис COM:
+BOOL ShowOcxTree( [in]IUnknown * tree, boolean show );
+2569
+
+
+
+Интерфейс ksDrawingObjectNotify/IDrawingObjectNotify
+
+ksDrawingObjectNotify " интерфейс Automation
+Интерфейс событий для графического объекта.
+Позволяет контролировать состояние объектов графического документа.
+В Automation источником событий для подписки на данный интерфейс являются объек"
+ты IDrawingObject " базового интерфейса для графических объектов (события генериру"
+ются только для этого объекта) или коллекции объектов 2D IDrawingObjects (события ге"
+нерируются для всех объектов данной коллекции).
+Для получения указателей на документ и объект можно использовать свойство
+IKompasAPIObject::Reference.
+В API5 аналогом является интерфейс событий объектов графических документов
+ksObject2DNotify, поэтому перечисления событий совпадают с перечислением событий
+для объектов графических документов KsObject2DNotifyEnum.
+В процессе обработки события можно получить дополнительную информацию о редак"
+тировании объекта при помощи интерфейса ksObject2DNotifyResult, который можно по"
+лучить при помощи метода IKompasDocument2D::GetDrawingObjectNotifyResult.
+
+ksDrawingObjectNotify  события
+
+BeginCopy  Начало копирования объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL BeginCopy ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " копировать объект,
+FALSE " запрещает копирование объекта.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+2570
+
+
+
+BeginDelete  Начало удаления объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL BeginDelete ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " удалить объект,
+FALSE " запрещает удаление объекта.
+
+Примечание:
+1. Индекс метода задан в перечислении событий объектов графических документов
+
+ksObject2DNotifyEnum.
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+3. Для обеспечения корректной обработки события удаления вида, нужно учитывать сле"
+
+дующее:
+▼ при удалении системного вида собственно сам системный вид не удаляется: удаляются
+
+только все объекты в нем;
+▼ номер 0 может иметь служебный вид, создаваемый КОМПАС для режима визуального
+
+редактирования макроэлементов, это можно проверить по свойству
+IView1::EditMacroVisibleRegime.
+
+BeginDestroyObject  Начало разрушения объекта
+Интерфейс..
+Синтаксис Automation:
+VARIANT_BOOL BeginDestroyObject(VARIANT Objects );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+2571
+
+
+
+TRU " разрушить объект,
+E
+FAL " запрещает разрушение объекта.
+SE
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects
+
+BeginMove  Начало сдвига объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL BeginMove ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " сдвинуть объект,
+FALSE " запрещает сдвиг объекта.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+
+BeginProcess  Начало редактирования\создания 
+объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL BeginProcess (long pType, IDrawingObject* iObj);
+Входные параметры:
+2572
+
+
+
+pType " тип объекта из перечисления DrawingObjectTypeEnum,
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " редактировать\создать объект,
+FALSE " запрещает редактирование\создание объекта объекта.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects
+
+BeginPropertyChanged  Начало изменения свойств 
+объекта
+Интерфейс..
+Синтаксис :
+BOOL  BeginPropertyChanged( VARIANT Objects );
+Входной параметр:
+
+Objects " указатель на объект VT_DISPATCH и/или массив объектов 
+VT_ARRAY | VT_DISPATCH.
+
+Возвращаемое значение:
+
+TRUE " Разрешить изменение свойств объекта,
+FALSE " Запретить изменение свойств объекта.
+
+BeginRotate  Начало поворота объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL BeginRotate ( VARIANT Obj );
+Входные параметры:
+2573
+
+
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " повернуть объект,
+FALSE " запрещает поворот объекта.
+
+Примечание:
+1. Индекс метода задан в перечислении событий объектов графических документов
+
+ksObject2DNotifyEnum.
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+
+BeginScale  Начало масштабирования объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL BeginScale ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " масштабировать объект,
+FALSE " запрещает масштабирование объекта.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+
+BeginSymmetry  Начало симметрии объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL BeginSymmetry ( VARIANT Obj );
+2574
+
+
+
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " симметрия объекта,
+FALSE " запрещает симметрию объекта.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects
+
+BeginTransform  Начало трансформации объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL BeginTransform ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " трансформировать объект,
+FALSE " запрещает трансформацию объекта.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects
+2575
+
+
+
+ChangeActive  Переключена активность объекта (вид, 
+слой)
+Интерфейс...
+Синтаксис Automation:
+BOOL ChangeActive ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+1. Индекс метода задан в перечислении событий объектов графических документов
+
+ksObject2DNotifyEnum.
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+
+Copy  Объект скопирован
+Интерфейс..
+Синтаксис Automation:
+BOOL Copy ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+2576
+
+
+
+CreateObject  Создание объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateObject ( VARIANT Obj );
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+
+Delete  Объект удален
+Интерфейс..
+Синтаксис Automation:
+BOOL Delete ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+2577
+
+
+
+3. Для обеспечения корректной обработки события удаления вида, нужно учитывать сле"
+дующее:
+
+▼ при удалении системного вида собственно сам системный вид не удаляется: удаляются
+только все объекты в нем;
+
+▼ номер 0 может иметь служебный вид, создаваемый КОМПАС для режима визуального
+редактирования макроэлементов, это можно проверить по свойству
+IView1::EditMacroVisibleRegime.
+
+DestroyObject  Разрушение объекта
+Интерфейс..
+Синтаксис Automation:
+VARIANT_BOOL DestroyObject(VARIANT Objects);
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects
+
+EndProcess  Конец редактирования\создания объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL EndProcess ( long pType );
+
+pType "тип объекта из перечисления DrawingObjectTypeEnum.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+2578
+
+
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+
+ Move  Объект сдвинут
+Интерфейс..
+Синтаксис Automation:
+BOOL Move ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+
+PropertyChanged  Изменения свойств объекта
+Интерфейс..
+Синтаксис :
+BOOL PropertyChanged( VARIANT Objects );
+Входной параметр:
+
+Objects " указатель на объект VT_DISPATCH и/или массив объектов 
+VT_ARRAY | VT_DISPATCH.
+
+Возвращаемое значение:
+
+" Не использу"
+ется.
+2579
+
+
+
+Rotate  Объект повернут
+Интерфейс..
+Синтаксис Automation:
+BOOL Rotate ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects
+
+Scale  Завершение масштабирования объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL Scale ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов если событие генерируется для 
+более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+2580
+
+
+
+Symmetry  Симметрия объекта
+Интерфейс..
+Синтаксис Automation:
+BOOL Symmetry ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects/
+
+Transform  Объект трансформирован
+Интерфейс..
+Синтаксис Automation:
+BOOL Transform ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс метода задан в перечислении событий объектов графических документов
+ksObject2DNotifyEnum.
+
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+2581
+
+
+
+UpdateObject  Редактирование объекта
+Интерфейс..
+
+Синтаксис Automation:
+BOOL EndProcess ( VARIANT Obj );
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+1. Индекс метода задан в перечислении событий объектов графических документов
+
+ksObject2DNotifyEnum.
+2. Контейнером событий ksDrawingObjectNotify может использоваться объект графическо"
+
+го документа IDrawingObject и коллекция объектов IDrawingObjects.
+
+Интерфейс ksKompasObjectNotify/IKompasObjectNotify
+
+ksKompasObjectNotify " интерфейс Automation
+IKompasObjectNotify " интерфейс COM
+
+Интерфейс событий приложения.
+Позволяют контролировать состояние приложения.
+В Automation источником событий для подписки являются:
+
+▼ для API интерфейсов версии 5 " объект KompasObject.
+▼ для API интерфейсов версии 7 " объект IApplication.
+
+В СOM источника нет.
+
+ksKompasObjectNotify, IKompasObjectNotify  события 
+приложения
+
+ApplicationDestroy  Закрытие приложения
+Интерфейс...
+Синтаксис Automation:
+BOOL ApplicationDestroy();
+2582
+
+
+
+Возвращаемое значение:
+
+" Не используется.
+
+Синтаксис COM:
+BOOL ApplicationDestroy();
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+3. При обработке данного события необходимо отписаться от всех событий. Библиотека
+
+должна сама следить за отпиской событий.
+
+BeginCloseAllDocument  Начало закрытия всех 
+открытых документов
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginCloseAllDocument();
+Синтаксис COM:
+BOOL BeginCloseAllDocument();
+Возвращаемое значение:
+
+TRUE " закрытие всех открытых документов,
+FALSE " закрытие всех открытых документов запрещено.
+
+Примечание:
+Индекс события задан в перечислении событий приложения....
+
+BeginConvertToSavePrevious  Начало конвертации 
+документа перед записью в предыдущую версию
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginConvertToSavePrevious( long pDoc, int docType, long saveVersion, LPDISPATCH
+saveToPreviusParam );
+Синтаксис COM:
+BOOL BeginConvertToSavePrevious( long pDoc, int docType, long saveVersion, LPUNKNOWN
+saveToPreviusParam );
+2583
+
+
+
+Возвращаемое значение:
+ 
+
+" Не используется.
+
+Входные параметры: 
+  
+
+pDoc " документ,
+docType " тип документа.
+saveVersion  " версия сохранения документа из перечисления 
+
+ksSaveDocumentVersionEnum,
+saveToPreviusParam " параметры конвертации при сохранении в предыдущую 
+
+версию ISaveToPreviusParam\ksSaveToPreviusParam.
+
+BeginCreate  Начало создания документа (до диалога 
+выбора типа)
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginCreate (long docType);
+Синтаксис COM:
+BOOL BeginCreate (long docType);
+Входные параметры:
+
+docName " тип документа,
+0 " если пользователь запросил диалог создания документа.
+
+Возвращаемое значение:
+
+TRUE " создать документ,
+FALSE " создание документа запрещено.
+
+Примечание:
+Источником события является интерфейс KompasObject.
+
+BeginOpenDocument  Начало открытия документа
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginOpenDocument (BSTR docName);
+Входные параметры:
+
+docName " имя файла документа.
+
+Возвращаемое значение:
+2584
+
+
+
+TRUE " открыть документ,
+FALSE " не открывать документ.
+
+Синтаксис COM:
+BOOL BeginOpenDocument (char * docName);
+Входные параметры:
+
+docName " имя файла документа.
+
+Возвращаемое значение:
+
+TRUE " открыть документ,
+FALSE " не открывать документ.
+
+Примечание:
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+
+BeginOpenFile  Начало открытия документа (до диалога 
+выбора имени)
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginOpenFile();
+Синтаксис COM:
+BOOL BeginOpenFile();
+Возвращаемое значение:
+
+TRUE " вызвать диалог открытия документа,
+FALSE " вызов диалога открытия документа запрещен.
+
+Примечание:
+Индекс события задан в перечислении событий приложения....
+
+BeginRequestFiles  Запрос имен файлов
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginRequestFiles( long requestID, VARIANT * files );
+Синтаксис COM:
+BOOL BeginRequestFiles( long requestID, VARIANT * files );
+Входные параметры:
+2585
+
+
+
+requestID " тип запроса файлов из перечисления 
+ksRequestFilesTypeEnum.
+
+Выходные параметры:
+
+files " имя файла или список SafeArray файлов.
+
+Возвращаемое значение:
+
+TRUE " использовать стандартный диалог выбора файлов,
+FALSE " если список файлов задан " использовать файл или 
+
+файлы из списка, если список файлов не задан " отмена 
+выбора файлов.
+
+Примечание:
+
+1. Если выбран один файл, то в VARIANT его имя можно положить как строку, тип VARIANT"
+а " VT_BSTR. Если выбрано несколько файлов, то их имена в VARIANT нужно положить
+как массив строк тип VARIANT"а " VT_ARRAY | VT_BSTR.
+
+2. Возможность множественного выбора и допустимые расширения файлов зависят от ти"
+па запроса файлов.
+
+3. В данных событиях, в отличие от других событий начала какого либо действия, требуется
+обработка трех состояний:
+
+▼ отказ пользователя или обработка события выполнена полностью на стороне библиоте"
+ки " событие возвращает FALSE;
+
+▼ событие возвращает TRUE и имя файла для продолжения выполнения команды " про"
+цесс продолжается без запуска диалога выбора файла или файлов;
+
+▼ событие возвращает TRUE, но имя файла не возвращается " запускается стандартный
+диалог выбора файла из системы КОМПАС.
+
+ChangeActiveDocument  Переключение на другой 
+активный документ
+Интерфейс...
+Синтаксис Automation:
+BOOL ChangeActiveDocument (LPDISPATCH pDoc, long docType);
+Входные параметры:
+
+pDoc " указатель на интерфейс IDispatch открытого документа,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+2586
+
+
+
+" Не используется.
+
+Синтаксис COM:
+BOOL ChangeActiveDocument(long pDoc, int docType);
+Входные параметры:
+
+pDoc " указатель на открытый документ,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+
+CreateDocument  Документ создан
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateDocument (LPDISPATCH pDoc, long docType);
+Входные параметры:
+
+pDoc " указатель на интерфейс IDispatch созданного документа,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Синтаксис COM:
+BOOL CreateDocument (long pDoc, int docType);
+Входные параметры:
+
+pDoc " указатель на созданный документ,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+2587
+
+
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+
+ChangeTheme  Событие изменения темы
+Версия: КОМПАС v18
+Интерфейс...
+Синтаксис Automation:
+BOOL ChangeTheme( long newTheme );
+Синтаксис COM:
+BOOL ChangeTheme( long newTheme );
+Возвращаемое значение:
+
+" Не используется.
+
+Входные параметры 
+  
+
+newTheme " новая тема из перечисления ksThemeEnum.
+
+EndConvertToSavePrevious  Завершение конвертации 
+документа перед записью в предыдущую верcию
+Интерфейс...
+Синтаксис Automation:
+BOOL EndConvertToSavePrevious( long pDoc, int docType, long saveVersion, LPDISPATCH
+saveToPreviusParam );
+Синтаксис COM:
+BOOL EndConvertToSavePrevious( long pDoc, int docType, long saveVersion, LPUNKNOWN
+saveToPreviusParam );
+Возвращаемое значение:
+
+" Не используется.
+
+Входные параметры 
+    
+
+pDoc " документ,
+docType " тип документа,
+saveVersion  " версия сохранения документа из перечисления 
+
+ksSaveDocumentVersionEnum,
+saveToPreviusParam " параметры конвертации при сохранении в предыдущую 
+
+версию ISaveToPreviusParam\ksSaveToPreviusParam.
+2588
+
+
+
+IsNeedConvertToSavePrevious  Начало сохранения 
+документа в предыдущую верcию
+Интерфейс...
+Синтаксис Automation:
+BOOL IsNeedConvertToSavePrevious( long pDoc, int docType, long saveVersion,
+LPDISPATCH saveToPreviusParam, BOOL * needConvert );
+Синтаксис COM:
+BOOL IsNeedConvertToSavePrevious( long pDoc, int docType, long saveVersion,
+LPUNKNOWN saveToPreviusParam, BOOL * needConvert );
+ Возвращаемое значение:
+
+" Не используется.
+
+Входные параметры 
+    
+
+pDoc " документ,
+docType " тип документа,
+saveVersion  " версия сохранения документа из перечисления 
+
+ksSaveDocumentVersionEnum,
+saveToPreviusParam "параметры конвертации при сохранении в предыдущую 
+
+версию ISaveToPreviusParam\ksSaveToPreviusParam.
+
+Выходной параметр:
+    
+
+needConvert " требуется вернуть TRUE, если для сохранения в 
+предыдущую версию требуется конвертация документа.
+
+KeyDown  Клавиша нажата и удерживается нажатой
+Интерфейс...
+Синтаксис Automation:
+BOOL KeyDown (long * key, long flags, BOOL sysKey);
+Синтаксис COM:
+BOOL KeyDown( long * key, long flags, BOOL sysKey);
+Входные параметры:
+
+key " код нажатой клавиши,
+flags " флаг клавиатуры,
+sysKey " признак нажатия системной клавиши.
+2589
+
+
+
+Выходные параметры:
+
+key " измененный код нажатой клавиши.
+
+Возвращаемое значение:
+
+TRUE " разрешить обработку нажатой клавиши,
+FALSE " запретить обработку нажатой клавиши.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий приложения...
+2. Благодаря автоматическому повторению кода клавиши при удержанию ее нажатой, до
+
+появления события wm_keyup может выдаваться несколько событий wm_keydown. Зна"
+чение разряда 30 параметра flags позволяет определить, было ли событие wm_keydown
+первым или является повторным во время удержания клавиши нажатой.
+
+3. Если библиотека обработала событие нажатия клавиши и нужно запретить обработку со"
+бытия другими подписчиками, то нужно обнулить код клавиши т.е. *key = 0 и вернуть
+FALSE, если нужно запретить обработку события системой КОМПАС.
+
+KeyPress  Одиночное нажатие клавиши
+Интерфейс...
+Синтаксис Automation:
+BOOL KeyPress (long * key, BOOL sysKey);
+Синтаксис COM:
+BOOL KeyPress (long * key, BOOL sysKey);
+Входные параметры:
+
+key " код нажатой клавиши,
+flags " флаг клавиатуры,
+sysKey " признак нажатия системной клавиши.
+
+Выходные параметры:
+
+key " измененный код клавиши.
+
+Возвращаемое значение:
+
+TRUE " разрешить обработку нажатой клавиши,
+FALSE " запретить обработку нажатой клавиши.
+
+Примечание:
+2590
+
+
+
+1. Индекс события задан в перечислении событий приложения....
+2. Если syskey = false, была нажата обычная клавиша, что соответствует событию
+
+WM_KEYUP, если SYSKEY = true, была нажата системная клавиша, что соответствует со"
+бытию WM_SYSKEYUP.
+
+3. Если библиотека обработала событие нажатия клавиши и нужно запретить обработку со"
+бытия другими подписчиками, то нужно обнулить код клавиши т.е. *key = 0 и вернуть
+FALSE, если нужно запретить обработку события системой КОМПАС.
+
+KeyUp  Клавиша отпущена
+Интерфейс...
+Синтаксис Automation:
+BOOL KeyUp (long * key, long flags, BOOL sysKey);
+Синтаксис COM:
+BOOL KeyUp (long * key, long flags, BOOL sysKey);
+Входные параметры:
+
+key " код нажатой клавиши,
+flags " флаг клавиатуры,
+sysKey " признак нажатия системной клавиши.
+
+Выходные параметры:
+
+key " измененный код нажатой клавиши.
+
+Возвращаемое значение:
+
+TRUE " разрешить обработку нажатой клавиши,
+FALSE " запретить обработку нажатой клавиши.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий приложения....
+2. Если syskey = false, была нажата обычная клавиша, что соответствует событию
+
+wm_keyup, если syskey = true, была нажата системная клавиша, что соответствует собы"
+тию WM_KEYUP, если SYSKEY = true, была нажата системная клавиша, что соответствует
+событию WM_SYSKEYUP.
+
+3. Если библиотека обработала событие нажатия клавиши и нужно запретить обработку со"
+бытия другими подписчиками, то нужно обнулить код клавиши т.е. *key = 0 и вернуть
+FALSE, если нужно запретить обработку события системой КОМПАС.
+
+OpenDocument  Документ открыт
+Интерфейс...
+2591
+
+
+
+Синтаксис Automation:
+BOOL OpenDocument (LPDISPATCH pDoc, long docType);
+Входные параметры:
+
+pDoc " указатель на интерфейс IDispatch открытого документа,
+docType " тип документа  DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Синтаксис COM:
+BOOL OpenDocument(long pDoc, int docType);
+Входные параметры:
+
+pDoc " указатель на открытый документ,
+docType " тип документа DocType.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Источником события является интерфейс KompasObject.
+2. Индекс события задан в перечислении событий приложения....
+
+Интерфейс ksLayoutSheetsNotify
+Интерфейс событий для листов оформления.
+Позволяют контролировать состояние листов оформления.
+Источником событий для подписки на данный интерфейс являются объекты
+ILayoutSheets " Интерфейс коллекции листов оформления.
+
+ksLayoutSheetsNotify  события
+
+Add  Добавлен лист оформления
+Интерфейс...
+Синтаксис Automation:
+BOOL Add (ILayoutSheet * PSheet);
+Входные параметры:
+
+PSheet " указатель на интерфейс ILayoutSheet добавленного листа 
+оформления.
+2592
+
+
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для листов оформления
+ksLayoutSheetsNotifyEnum.
+
+Delete  Удален лист оформления
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete (ILayoutSheet * PSheet);
+Входные параметры:
+
+PSheet " указатель на интерфейс ILayoutSheet удаляемого листа 
+оформления.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для листов оформления
+ksLayoutSheetsNotifyEnum.
+
+Update  Изменены параметры листа оформления
+Интерфейс...
+Синтаксис Automation:
+BOOL Update (ILayoutSheet * PSheet);
+Входные параметры:
+
+PSheet " указатель на интерфейс ILayoutSheet листа оформления, 
+у которого изменились параметры.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для листов оформления
+ksLayoutSheetsNotifyEnum.
+2593
+
+
+
+Интерфейс ksLibraryManagerNotify
+Интерфейс событий Менеджера библиотек.
+Позволяют следить и при необходимости управлять основными событиями менеджера
+библиотек.
+Источником событий для подписки на данный интерфейс является объект
+ILibraryManager.
+
+ksLibraryManagerNotify  события
+
+AddInsert  Добавлен документ в библиотеку 
+документов
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+BOOL AddInsert (IInsert * PInsert, BOOL create);
+Синтаксис COM:
+BOOL AddInsert (IUnknown * PInsert, BOOL create);
+Входные параметры:
+
+PInsert " интерфейс вставки документа,
+create " TRUE " создали новый,
+
+" FALSE " добавили с диска.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+AddLibraryDescription  Добавлено описание библиотеки
+Интерфейс...
+Синтаксис Automation:
+BOOL AddLibraryDescription (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL AddLibraryDescription (IUnknown * PLibrary);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки.
+2594
+
+
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+Attach  Библиотека подключена
+Интерфейс...
+Синтаксис Automation:
+BOOL Attach (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL Attach (IUnknown * PLibrary);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+BeginAttach  Подключить библиотеку
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginAttach (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL BeginAttach (IUnknown * PLibrary);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки.
+
+Возвращаемое значение:
+
+TRUE " можно подключить библиотеку,
+FALSE " библиотеку подключать нельзя.
+2595
+
+
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+BeginDetach  Отключить библиотеку
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginDetach (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL BeginDetach (IUnknown * PLibrary);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки.
+
+Возвращаемое значение:
+
+TRUE " можно отключить библиотеку,
+FALSE " библиотеку отключить нельзя.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+BeginExecute  Запуск выполнения команды библиотеки
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginExecute (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL BeginExecute (IUnknown * PLibrary);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки.
+
+Возвращаемое значение:
+
+TRUE " можно выполнять команду библиотеки,
+FALSE " выполнять команду библиотеки нельзя.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+2596
+
+
+
+BeginInsertDocument  Запуск вставки документа из 
+библиотеки
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginInsertDocument( LPDISPATCH PLibrary, long InsertionType, BSTR Insertion );
+Синтаксис COM:
+BOOL BeginInsertDocument( LPUNKNOWN PLibrary, long InsertionType, BSTR Insertion );
+Возвращаемое значение:
+
+TRUE " запретить запуск стандартного процесса вставки,
+FALSE " разрешить запуск стандартного процесса вставки.
+
+    
+
+DeleteInsert  Удален документ из библиотеки 
+документов
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteInsert (IInsert * PInsert);
+Синтаксис COM:
+BOOL DeleteInsert (IUnknown * PInsert);
+Входные параметры:
+
+PInsert " интерфейс вставки документа.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+DeleteLibraryDescription  Удалено описание библиотеки
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteLibraryDescription (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL DeleteLibraryDescription (IUnknown * PLibrary);
+Входные параметры:
+2597
+
+
+
+PLibrary " интерфейс библиотеки.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+Detach  Библиотека отключена
+Интерфейс...
+Синтаксис Automation:
+BOOL Detach (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL Detach (IUnknown * PLibrary);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+EditInsert  Редактирование документа из библиотеки 
+документов
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+BOOL EditInsert (ILibrary * PLibrary, IKompasDocument * pDoc, BOOL newFrw);
+Синтаксис COM:
+BOOL DeleteInsert (IUnknown * PInsert);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки,
+pDoc " интерфейс редактируемого документа,
+2598
+
+
+
+newFrw " TRUE " редактирование нового документа,
+" FALSE " редактирование существующего документа.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+EndExecute  Завершение выполнения команды 
+библиотеки
+Интерфейс...
+Синтаксис Automation:
+BOOL EndExecute (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL EndExecute (IUnknown * PLibrary);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+SystemControlStart  Передача управления системе
+Интерфейс...
+Синтаксис Automation:
+BOOL SystemControlStart (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL SystemControlStart (IUnknown * PLibrary);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки.
+
+Возвращаемое значение:
+2599
+
+
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+SystemControlStop  Передача управления библиотеке
+Интерфейс...
+Синтаксис Automation:
+BOOL SystemControlStop (ILibrary * PLibrary);
+Синтаксис COM:
+BOOL SystemControlStop (IUnknown * PLibrary);
+Входные параметры:
+
+PLibrary " интерфейс библиотеки.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksLibraryManagerNotifyEnum.
+
+TryExecute  Попытка выполнения команды библиотеки
+Интерфейс...
+Синтаксис Automation:
+BOOL TryExecute( ILibrary * PLibrary, long CommandID );
+Синтаксис COM
+HRESULT TryExecute( ILibrary * PLibrary, long CommandID, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " если нужно разрешить запуск команды.
+
+Входные параметры:
+
+PLibrary " указатель на интерфейс библиотеки,
+CommandID " номер команды.
+2600
+
+
+
+Интерфейс ksModelObjectNotify
+Интерфейс событий для объектов документамодели.
+Описание:
+Позволяют контролировать состояние объектов документа " модели.
+В Automation источником событий для подписки на данный интерфейс являются объек"
+ты IModelObject (события генерируются только для этого объекта) или коллекции объек"
+тов 3D IModelObjects (события генерируются для всех объектов данной коллекции).
+В процессе обработки события можно получить дополнительную информацию о редак"
+тировании объекта при помощи интерфейса IModelObjectNotifyResult.
+В API 5 аналогом является Интерфейс событий объектов документа"модели
+ksObject3DNotify, поэтому перечисления событий совпадают с перечислением событий
+для объектов документа"модели KsObject3DNotifyEnum.
+
+ksModelObjectNotify  события
+
+BeginDelete  Начало удаления объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginDelete ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " удалить объект,
+FALSE " запрещает удаление объекта.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+BeginPlacementChanged  Начало изменения положения 
+объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginPlacementChanged(VARIANT obj);
+2601
+
+
+
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов если событие генерируется для 
+более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+BeginProcess  Начало редактирования\создания 
+объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginProcess (long pType, VARIANT Obj);
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта,
+
+pType "тип объекта из перечисления ksObj3dTypeEnum.
+
+Возвращаемое значение:
+
+TRUE " редактировать\создать объект,
+FALSE " запрещает редактирование\создание объекта объекта.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+2602
+
+
+
+BeginPropertyChanged  Начало изменения свойств 
+объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginPropertyChanged(VARIANT obj);
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+CreateObject  Создание объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateObject ( VARIANT Obj );
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+2603
+
+
+
+Delete  Объект удален
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete ( VARIANT Obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+EndProcess  Конец редактирования\создания объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL EndProcess ( long pType );
+
+pType "тип объекта из перечисления ksObj3dTypeEnum.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+Excluded  Oбъект исключен/включен в расчет
+Интерфейс...
+Синтаксис Automation:
+2604
+
+
+
+BOOL Excluded(VARIANT obj, VARIANT_BOOL excluded);
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " объект исключен из расчета,
+FALSE " объект включен в расчет.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+Hidden  Oбъект скрыт/показан
+Интерфейс...
+Синтаксис Automation:
+BOOL Hidden(VARIANT obj, VARIANT_BOOL _hidden);
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+TRUE " объект скрыт,
+FALSE " объект показан.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+PlacementChanged  Изменено положения объекта
+Интерфейс...
+2605
+
+
+
+Синтаксис Automation:
+BOOL PlacementChanged( VARIANT obj );
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+PropertyChanged  Изменены свойства объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL PropertyChanged(VARIANT obj);
+Входные параметры:
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+UpdateObject Редактирование объекта
+Интерфейс...
+2606
+
+
+
+Синтаксис Automation:
+BOOL EndProcess ( VARIANT Obj );
+
+iObj " VARIANT с типом VT_DISPATCH, если событие 
+генерируется для одного объекта,
+" массив SafeArray объектов, если событие генерируется 
+для более чем одного объекта.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1.  Индекс события задан в перечислении событий для объектов документов"моделей
+KsObject3DNotifyEnum.
+
+2.  Контейнером событий ksModelObjectNotify может использоваться объект документа"мо"
+дели IModelObject и коллекция объектов IModelObjects.
+
+Интерфейс 
+IProcess3DManipulatorsNotify\ksProcess3DManipulatorsN
+otify
+Интерфейс событий манипуляторов.
+Примечание:
+Источником событий манипуляторов является коллекция манипуляторов IManipulators.
+Версия: KOMPAS v19
+
+ksProcess3DManipulatorsNotify  методы
+
+RotateManipulator  Вращение манипулятора 
+относительно оси на угол
+Интерфейс...
+Синтаксис Automation :
+BOOL RotateManipulator( long ManipulatorId, double X0, double Y0, double Z0, double
+AxisZX, double AxisZXY, double AxisZZ, double Angle, BOOL FromEdit );
+Синтаксис COM:
+HRESULT RotateManipulator( long ManipulatorId, double X0, double Y0, double Z0, double
+AxisZX, double AxisZXY, double AxisZZ, double Angle, BOOL FromEdit, BOOL * Result );
+Возвращаемое значение: 
+ 
+
+TRUE " если библиотека обработала событие,
+2607
+
+
+
+FALSE " библиотека не обработала событие, требуется 
+использовать встроенную обработку событий 
+манипулятора
+(при этом положение фантома процесса не изменится).
+
+Входные параметры:
+
+ManipulatorId " идентификатор манипулятора,
+X0 " первая координата точки,
+Y0 " вторая координата точки,
+Z0 " третья координата точки,
+AxisZX " ось X,
+AxisZXY " ось Y,
+AxisZZ " ось Z,
+Angle " угол поворота.
+FromEdit " признак поворота с помощью редактора.
+
+MoveManipulator  Перемещение манипулятора
+Интерфейс...
+Синтаксис Automation:
+BOOL MoveManipulator( long ManipulatorId, double VX, double VY, double VZ, double Delta,
+BOOL FromEdit );
+Синтаксис COM:
+HRESULT MoveManipulator( long ManipulatorId, double VX, double VY, double VZ, double
+Delta, BOOL FromEdit, BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " если библиотека обработала событие,
+FALSE " библиотека не обработала событие, требуется 
+
+использовать встроенную обработку событий 
+манипулятора
+(при этом положение фантома процесса не изменится).
+
+Входные параметры:
+
+ManipulatorId " идентификатор манипулятора,
+VX " первая компонента вектора движения,
+VY " вторая компонента вектора движения,

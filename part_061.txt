@@ -1,0 +1,2532 @@
+4. Начальная и конечная грань применяются для определения длины резьбы при включен"
+ной опции автоматически определения длины. Кроме того, начальная грань указывает,
+откуда откладывается резьба.
+
+5. Если включено автоопределение диаметра, то номинальный диаметр резьбы не зависит
+от значения указанного пользователем. Если включено автоопределение длины резьбы,
+длина не будет зависеть от значения указанного пользователем.
+
+6. Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IThreadDefinition  свойства
+
+allLength  Полная длина
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " длина резьбы length не зависит от значения
+указанного пользователем,
+
+FALSE " длина резьбы задается пользователем.
+
+Синтаксис Automation:
+
+allLength = iThreadDefinition.allLength Получить свойство (* )
+iThreadDefinition.allLength = allLength Установить свойство (* )
+allLength = iThreadDefinition.GetAllLength() Получить свойство (**)
+iThreadDefinition.SetAllLength(allLength) Установить свойство (**)
+
+autoDefinDr  Автоопределение диаметра
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " номинальный диаметр резьбы dr не зависит от
+значения указанного пользователем,
+3282
+
+
+
+FALSE " номинальный диаметр резьбы задается поль"
+зователем.
+
+Синтаксис Automation:
+
+autoDefinDr = iThreadDefinition.autoDefinDr Получить свойство (* )
+iThreadDefinition.autoDefinDr = autoDefinDr Установить свойство (* )
+iThreadDefinition.GetAutoDefinDr() Получить свойство (**)
+iThreadDefinition.SetAutoDefinDr(autoDefinD Установить свойство (**)
+r)
+
+dr  Номинальный диаметр резьбы
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+dr = iThreadDefinition.dr Получить свойство (* )
+iThreadDefinition.dr = dr Установить свойство (* )
+dr = iThreadDefinition.GetDr() Получить свойство (**)
+iThreadDefinition.SetDr(dr) Установить свойство (**)
+
+Примечание:
+Если свойство автоопределения диаметра autoDefinDrимеет значение TRUE, номиналь"
+ный диаметр резьбы не будет зависеть от значения указанного пользователем.
+
+faceValue Направление построения резьбы
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+faceValue = iThreadDefinition.faceValue Получить свойство (* )
+iThreadDefinition.faceValue = faceValue Установить свойство (* )
+iThreadDefinition.GetFaceValue() Получить свойство (**)
+iThreadDefinition.SetFaceValue(faceValue) Установить свойство (**)
+
+Примечание:
+Если базовое ребро изменено, то при вызове методов Update или Create автоматически
+будет произведена проверка направления резьбы. В случае ошибки направление изме"
+нится.
+3283
+
+
+
+length  Длина резьбы
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+
+length = iThreadDefinition.length Получить свойство (* )
+iThreadDefinition.length = length Установить свойство (* )
+length = iThreadDefinition.GetLength() Получить свойство (**)
+iThreadDefinition.SetLength(length) Установить свойство (**)
+
+Примечание:
+Если свойство автоопределения длины резьбы allLength имеет значение TRUE, длина
+резьбы не будет зависеть от значения указанного пользователем.
+
+outside  Тип резьбы
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " резьба внешняя,
+FALSE " резьба внутренняя.
+
+Синтаксис Automation:
+
+outside = iThreadDefinition.outside Получить свойство (* )
+outside = iThreadDefinition.GetOutside() Получить свойство (**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+p  Шаг резьбы
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+p = iThreadDefinition.p Получить свойство (* )
+iThreadDefinition.p = p Установить свойство (* )
+p = iThreadDefinition.GetP() Получить свойство (**)
+iThreadDefinition.SetP(p) Установить свойство (**)
+3284
+
+
+
+IThreadDefinition  методы
+
+GetBaseObject  Получить указатель на интерфейс базового 
+объекта (ребра или грани), по которому строится резьба
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetBaseObject();
+Синтаксис COM:
+LPENTITY GetBaseObject();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+Примечание:
+
+1. Базовый объект может быть как ребром, так и гранью. Тип базового объекта определя"
+ется методами интерфейсов ksEntity или IEntity.
+
+2. Если базовым объектом является ребро, то базовая грань определяется автоматически.
+При этом задание начальной и конечной грани не обязательно, хотя возможно. Если ба"
+зовым объектом является грань, то указывать начальную и конечную грани необходимо.
+Базовая грань должна быть цилиндрической либо конической, начальная и конечная
+грань " любые грани, ограничивающие резьбу. Базовое ребро должно быть окружно"
+стью, принадлежащей цилиндру.
+
+GetFaceBegin  Получить указатель на интерфейс базового 
+объекта (ребра или грани), от которого строится резьба
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetFaceBegin();
+Синтаксис COM:
+LPENTITY GetFaceBegin();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+Примечание:
+Начальная и конечная грань " любые грани, ограничивающие резьбу. Начальная и конеч"
+ная грань применяются для определения длины резьбы при включенной опции автома"
+3285
+
+
+
+тически определения длины. Кроме того, начальная грань указывает, откуда откладыва"
+ется резьба.
+
+GetFaceEnd  Получить указатель на интерфейс базового объекта 
+(ребра или грани), до которого строится резьба
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetFaceEnd();
+Синтаксис COM:
+LPENTITY GetFaceEnd();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или IEntity.
+
+Примечание:
+Начальная и конечная грань " любые грани, ограничивающие резьбу. Начальная и конеч"
+ная грань применяются для определения длины резьбы при включенной опции автома"
+тического определения длины. Кроме того, начальная грань указывает, откуда отклады"
+вается резьба.
+
+SetBaseObject  Установить ребро или грань, по которой строится 
+резьба
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetBaseObject(LPDISPATCH obj);
+Синтаксис COM:
+BOOL SetBaseObject(LPENTITY obj);
+Входной параметр:
+
+obj " указатель на интерфейс ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+3286
+
+
+
+1. Базовый объект может быть как ребром, так и гранью. Тип базового объекта определя"
+ется методами интерфейсов ksEntity или IEntity.
+
+2. Если базовым объектом является ребро, то базовая грань определяется автоматически.
+При этом задание начальной и конечной грани не обязательно, хотя возможно. Если ба"
+зовым объектом является грань, то указывать начальную и конечную грани необходимо.
+Базовая грань должна быть цилиндрической либо конической, начальная и конечная
+грань " любые грани, ограничивающие резьбу. Базовое ребро должно быть окружно"
+стью, принадлежащей цилиндру.
+
+3. Если базовое ребро изменено, то при вызове методов Update или Create автоматически
+будет произведена проверка направления резьбы. В случае ошибки направление изме"
+нится.
+
+SetFaceBegin  Установить грань, от которой строится резьба
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetFaceBegin(LPDISPATCH face);
+Синтаксис COM:
+BOOL SetFaceBegin(LPENTITY face);
+Входной параметр:
+
+face " указатель на интерфейс ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Начальная и конечная грань " любые грани, ограничивающие резьбу. Начальная и конеч"
+ная грань применяются для определения длины резьбы при включенной опции автома"
+тического определения длины. Кроме того, начальная грань указывает, откуда отклады"
+вается резьба.
+
+SetFaceEnd  Установить грань, до которой строится резьба
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetFaceEnd (LPDISPATCH face);
+Синтаксис COM:
+3287
+
+
+
+BOOL SetFaceEnd (LPENTITY face);
+Входной параметр:
+
+face " указатель на интерфейс объекта ksEntity или
+IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Начальная и конечная грань " любые грани, ограничивающие резьбу. Начальная и конеч"
+ная грань применяются для определения длины резьбы при включенной опции автома"
+тического определения длины. Кроме того, начальная грань указывает, откуда отклады"
+вается резьба.
+
+Массив циклов грани (Интерфейсы ksLoopCollection, 
+ILoopCollection)
+Интерфейс массива циклов.
+
+ksLoopCollection " интерфейс Automation
+ILoopCollection " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить от интерфейса свойств грани ksFaceDefinition или
+IFaceDefinition.
+
+ILoopCollection  методы
+
+GetByIndex  Получить указатель на интерфейс объекта в массиве 
+по индексу
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetByIndex (long index);
+Синтаксис COM:
+LPLOOP GetByIndex (long index);
+Входной параметр:
+
+index " номер объекта в массиве.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksLoop или ILoop.
+3288
+
+
+
+GetCount  Получить количество элементов в массиве
+Интерфейс...Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+long GetCount();
+Возвращаемое значение:
+
+" количество элементов массива.
+
+FindIt  Получить индекс элемента в массиве
+Интерфейс...Синтаксис Automation:
+long FindIt (LPDISPATCH entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+"1 " если элемент не найден.
+
+Синтаксис COM:
+unsigned long FindIt (LPLOOP entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве.
+SYS_MAX_UINT " если элемент не найден.
+
+Входные параметры:
+
+entity " указатель на интерфейс компонента ksLoop или ILoop.
+
+First  Получить указатель на интерфейс первого объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPLOOP First();
+Возвращаемое значение:
+
+" указатель на интерфейс ksLoop или ILoop.
+3289
+
+
+
+Last  Получить указатель на интерфейс последнего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Last();
+Синтаксис COM:
+LPLOOP Last();
+Возвращаемое значение:
+
+" указатель на интерфейс ksLoop или ILoop.
+
+Next  Получить указатель на интерфейс следующего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Next();
+Синтаксис COM:
+LPLOOP Next();
+Возвращаемое значение:
+
+" указатель на интерфейс ksLoop или ILoop.
+
+Prev  Получить указатель на интерфейс предыдущего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Prev();
+Синтаксис COM:
+LPLOOP Prev();
+Возвращаемое значение:
+
+" указатель на интерфейс ksLoop или ILoop.
+
+Refresh  Обновить массив
+Интерфейс...Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+3290
+
+
+
+FALSE " в случае неудачи.
+Примечание:
+После вызова данной функции возникает полное соответствие массива с массивом ци"
+клов грани и удаляются все предыдущие изменения в массиве.
+
+Цикл грани(Интерфейсы ksLoop, ILoop)
+Интерфейс цикла грани.
+
+ksLoop " интерфейс Automation
+ILoop " интерфейс COM
+
+Описание:
+Цикл " это объект топологии. Содержит информацию о ребрах и связях грани с другими
+гранями. Грань может содержать несколько циклов, например, если в ней есть отвер"
+стия.
+Примечание:
+Данный интерфейс можно получить от интерфейса массива циклов ksLoopCollection или
+ILoopCollection.
+
+ILoop  методы
+
+EdgeCollection  Получить массив ребер, ограничивающих грань
+Интерфейс..Синтаксис Automation:
+LPDISPATCH EdgeCollection();
+Синтаксис COM:
+LPEDGECOLLECTION EdgeCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEdgeCollection или
+IEdgeCollection.
+
+GetLength  Получить общую длину ребер
+Интерфейс..Синтаксис Automation:
+double GetLength (unsigned long bitVector);
+Синтаксис COM:
+double GetLength (unsigned long bitVector );
+Входные параметры:
+
+bitVector " единицы измерения в интервале [ST_MIX_MM..ST_MIX_M].
+3291
+
+
+
+Возвращаемое значение:
+
+общая длина ребер " в случае успеха,
+0 " в случае неудачи.
+
+IsOuter  Определить, является ли цикл внешним
+Интерфейс..Синтаксис Automation:
+BOOL IsOuter();
+Синтаксис COM:
+BOOL IsOuter();
+Возвращаемое значение:
+
+TRUE " цикл является внешним,
+FALSE " цикл не является внешним.
+
+OrientedEdgeCollection  Получить массив ориентированных ребер
+Интерфейс..Получить массив ориентированных ребер.
+Синтаксис Automation:
+LPDISPATCH OrientedEdgeCollection (LPDISPATCH edge);
+Синтаксис COM:
+LPORIENTEDEDGECOLLECTION OrientedEdgeCollection (LPEDGEDEFINITION edge);
+Входные параметры:
+
+edge " указатель на интерфейс ksEdgeDefinition или
+IEdgeDefinition.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksOrientedEdgeCollection
+или IOrientedEdgeCollection.
+
+Примечание:
+Если параметр edge = NULL, то метод вернет весь массив. Если edge <> NULL, то будет
+возвращен массив ориентированных ребер, которые содержат данное ребро.
+3292
+
+
+
+Интерфейсы вспомогательной геометрии
+
+Интерфейсы объекта “Контрольная точка”  
+ksControlPointDefinition, IControlPointDefinition
+Справка системы КОМПАС...
+
+Интерфейс параметров объекта "Контрольная точка"
+
+ksControlPointDefinition " интерфейс Automation
+IControlPointDefinition " интерфейс COM
+
+Описание:
+Объект "Контрольная точка" создается в детали или сборке и используется для размеще"
+ния этой детали или сборки в указанной вершине траектории трассы.
+"Контрольная точка" может указываться в качестве вершины при создании или редакти"
+ровании траектории.
+В детали (или сборке) может находиться любое количество объектов "Контрольная точ"
+ка".
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IControlPointDefinition  методы
+
+GetPoint  Получить координаты точки
+Интерфейс...Синтаксис Automation:
+VARIANT_BOOL GetPoint (double * X, double * Y, double * Z);
+Синтаксис COM:
+BOOL GetPoint (double * X, double * Y, double * Z);
+Выходные параметры:
+
+X, Y, Z " координаты точки.
+
+GetVertex  Получить указатель на интерфейс опорной вершины
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetVertex();
+Синтаксис COM:
+LPENTITY GetVertex();
+3293
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс плоскости ksEntity или
+IEntity.
+
+Примечание:
+Возвращает указатель на интерфейс опорной вершины, на которой построена контроль"
+ная точка. Опорной вершиной может быть объект "вершина" (тип o3d_vertex).
+
+SetVertex  Установить указатель на интерфейс опорной вершины
+Интерфейс...Синтаксис Automation:
+VARIANT_BOOL SetVertex (LPDISPATCH Val);
+Синтаксис COM:
+BOOL SetVertex (LPENTITY Val);
+Входной параметр:
+
+Val " указатель на интерфейс опорной вершины
+ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Позволяет задать опорную вершину, на которой будет построена контрольная точка.
+Опорной вершиной может быть объект "вершина" (тип o3d_vertex).
+
+Интерфейсы объекта “Присоединительная 
+точка”ksConjunctivePointDefinition, 
+IConjunctivePointDefinition
+Справка системы КОМПАС...
+Postroenye_kontr_tochek.htm#connecting_point
+Интерфейс параметров объекта "Присоединительная точка".
+
+ksConjunctivePointDefinition " интерфейс Automation
+IConjunctivePointDefinition " интерфейс COM
+
+Описание::
+Объект "Присоединительная точка" создается в детали (или сборке) и используется для
+связывания элементов между собой и с траекторией трассы. "Присоединительная точка"
+может указываться в качестве вершины при создании или редактировании траектории.
+3294
+
+
+
+В детали (или сборке) может находиться любое количество объектов "Присоединитель"
+ная точка".
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IConjunctivePointDefinition  свойства
+
+Direction  Направление
+Интерфейс...Справка системы КОМПАС...
+Postroenye_kontr_tochek.htm#connecting_point
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = Получить
+iObject.Directio свойство(* )
+n
+iObject.Directio Установить
+n = Direction свойство (* )
+Direction = Получить
+iObject.GetDire свойство (**)
+ction()
+iObject.SetDire Установить
+ction свойство (**)
+(Direction)
+
+Значения свойства:
+
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Примечание:
+Позволяет задать конкретное направление вектора. Направление вектора в присоедини"
+тельной точке зависит от выбора опорного объекта SetEdge.
+
+IConjunctivePointDefinition  методы
+
+GetVertex  Получить указатель на интерфейс опорной вершины
+Интерфейс...Справка системы КОМПАС...
+Postroenye_kontr_tochek.htm#connecting_point
+Синтаксис Automation:
+LPDISPATCH GetVertex();
+Синтаксис COM:
+3295
+
+
+
+LPENTITY GetVertex();
+Возвращаемое значение:
+
+" Указатель на интерфейс IEntity или ksEntity опорной вершины.
+
+Примечания.
+Возвращает указатель на интерфейс опорной вершины, на которой построена присоеди"
+нительная точка. Опорной вершиной может быть объект "вершина" (тип o3d_vertex).
+
+GetEdge  Получить указатель на интерфейс опорного объекта для 
+определения вектора направления
+Интерфейс...Справка системы КОМПАС...
+Postroenye_kontr_tochek.htm#connecting_point
+Синтаксис Automation:
+LPDISPATCH GetEdge();
+Синтаксис COM:
+LPENTITY GetEdge();
+Входные параметры:
+
+Указатель на интерфейс ksEntity или IEntity опорного объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечания.
+Возвращает указатель на интерфейс опорного объекта, для определения вектора на"
+правления. Опорными объектами могут быть:
+
+▼ грани,
+▼ конструктивные плоскости,
+▼ ребра,
+▼ вспомогательные оси.
+
+GetPoint  Получить указатель на интерфейс опорного объекта для 
+определения вектора направления
+Интерфейс...Справка системы КОМПАС...
+Postroenye_kontr_tochek.htm#connecting_point
+Синтаксис Automation:
+VARIANT_BOOL GetPoint (double * X, double * Y, double * Z);
+3296
+
+
+
+Синтаксис COM:
+BOOL GetPoint (double * X, double * Y, double * Z);
+Выходные параметры:
+
+X, Y, Z " координаты точки.
+
+SetEdge  Установить указатель на интерфейс опорного объекта 
+для определения вектора направления
+Интерфейс...Справка системы КОМПАС...
+Postroenye_kontr_tochek.htm#connecting_point
+Синтаксис Automation:
+VARIANT_BOOL SetEdge (LPDISPATCH Val);
+Синтаксис COM:
+BOOL SetEdge (LPENTITY Val);
+Входные параметры:
+
+Val " Указатель на интерфейс ksEntity или IEntity опорного объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечания.
+Позволяет задать опорный объект, по которому будет определяться вектор направления.
+Опорными объектами могут быть:
+
+▼ грани,
+▼ конструктивные плоскости,
+▼ ребра,
+▼ вспомогательные оси.
+
+Если в качестве опорного объекта выбрана грань или конструктивная плоскость, то век"
+тор будет перпендикулярен опорному объекту. Если в качестве опорного объекта выбра"
+но ребро или вспомогательная ось, то вектор будет параллелен опорному объекту. Что"
+бы задать конкретное (прямое или обратное) направление вектора относительно
+опорного объекта, необходимо установить соответствующее значение свойству
+Direction.
+3297
+
+
+
+SetVertex  Установить указатель на интерфейс опорной вершины
+Интерфейс...Справка системы КОМПАС...
+Postroenye_kontr_tochek.htm#connecting_point
+Синтаксис Automation:
+VARIANT_BOOL SetVertex (LPDISPATCH Val);
+Синтаксис COM:
+BOOL SetVertex (LPENTITY Val);
+Входные параметры:
+
+Val " Указатель на интерфейс IEntity или ksEntity опорной вершины.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечания.
+Позволяет задать опорную вершину, на которой будет построена присоединительная
+точка. Опорной вершиной может быть объект "вершина" (тип o3d_vertex).
+
+Плоскость через ребро и вершину (Интерфейсы 
+ksPlaneEdgePointDefinition,IPlaneEdgePointDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_edge_point
+Интерфейс параметров плоскости, проходящей через ребро и вершину.
+
+ksPlaneEdgePointDefinition " интерфейс Automation
+IPlaneEdgePointDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+3298
+
+
+
+IPlaneEdgePointDefinition  методы
+
+GetEdge  Получить указатель на интерфейс ребра, через которое 
+требуется построить плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_edge_point
+Синтаксис Automation:
+LPDISPATCH GetEdge();
+Синтаксис COM:
+LPENTITY GetEdge();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+GetPoint  Получить указатель на интерфейс вершины, через 
+которую требуется построить плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_edge_point
+Синтаксис Automation:
+LPDISPATCH GetPoint();
+Синтаксис COM:
+LPENTITY GetPoint();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_edge_point
+Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPENTITY GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс ksSurface или ISurface.
+3299
+
+
+
+SetEdge  Установить указатель на интерфейс ребра, через 
+которое требуется построить плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_edge_point
+Синтаксис Automation:
+BOOL SetEdge (LPDISPATCH edge);
+Синтаксис COM:
+BOOL SetEdge (LPENTITY edge);
+Входной параметр:
+
+edge " указатель на интерфейс ребра ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPoint  Установить указатель на интерфейс вершины, через 
+которую требуется построить плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_edge_point
+Синтаксис Automation:
+BOOL SetPoint (LPDISPATCH point);
+Синтаксис COM:
+BOOL SetPoint (LPENTITY point);
+Входной параметр:
+
+point " указатель на интерфейс вершины ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3300
+
+
+
+Средняя плоскость (Интерфейсы ksPlaneMiddleDefinition, 
+IPlaneMiddleDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_sredn
+Интерфейс параметров конструктивной плоскости "Средняя плоскость".
+
+ksPlaneMiddleDefinition " интерфейс Automation
+IPlaneMiddleDefinition " интерфейс COM
+
+Описание::
+Плоскость проходит через биссектрису для двух плоских или прямолинейных объектов.
+Может быть построена для двух прямолинейных или плоских объектов типа Ребро, Кон
+структивная ось, Грань (плоская), Конструктивная плоскость.
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition
+
+IPlaneMiddleDefinition  свойства
+
+position  Положение плоскости
+Интерфейс...Тип данных: BOOL
+Значения свойства:
+
+TRUE " положение 1: позволяет построить биссекторную плоскость,
+FALSE " положение 2: позволяет построить плоскость, перпендикулярную 
+
+биссекторной и проходящую через прямую или точку пересечения 
+опорных объектов.
+
+Синтаксис Automation:
+
+position = Получить
+iDocument3D.position свойство(* )
+iDocument3D.position Установить
+= position свойство (* )
+position = Получить
+iDocument3D.GetPositi свойство (**)
+on()
+iDocument3D.SetPositi Установить
+on (position) свойство (**)
+3301
+
+
+
+IPlaneMiddleDefinition методы
+
+GetObject Получить указатель на интерфейс опорного объекта с 
+указанным номером
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetObject (long Number);
+Синтаксис COM:
+LPENTITY GetObject (long Number);
+Входные параметры:
+
+Number " номер объекта (1 или 2).
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity опорного объекта.
+
+Примечание:
+Возвращает указатель на интерфейс опорного объекта, на котором построена средняя
+плоскость. Опорным объектом может быть Ребро, Конструктивная ось, Грань (плоская),
+Конструктивная плоскость.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPSURFACE GetSurface();
+Возвращаемое значение:
+
+указатель на интерфейс ksSurface или ISurface.
+
+SetObject  Установить указатель на интерфейс опорного объекта 
+с указанным номером
+Интерфейс...Синтаксис Automation:
+VARIANT_BOOL SetObject (long Number, LPDISPATCH Val);
+Синтаксис COM:
+BOOL SetObject (long Number, LPENTITY Val);
+Входные параметры:
+3302
+
+
+
+Number " номер объекта (1 или 2).
+Val " указатель на интерфейс ksEntity или IEntity опорного объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Позволяет задать опорный объект, на котором будет построена средняя плоскость.
+Опорным объектом может быть Ребро, Конструктивная ось, Грань (плоская), Конструк
+тивная плоскость.
+
+Смещенная плоскость (Интерфейсы ksPlaneOffsetDefinition, 
+IPlaneOffsetDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#smeshchennaja_ploskost
+Интерфейс параметров смещенной плоскости.
+
+ksPlaneOffsetDefinition " интерфейс Automation
+IPlaneOffsetDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IPlaneOffsetDefinition  свойства
+
+direction Направление смещения от базовой плоскости
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#smeshchennaja_ploskost
+Тип данных: BOOL
+Синтаксис Automation:
+
+direction = iPlaneOffset.direction Получить
+свойство(* )
+
+iPlaneOffset.direction = direction Установить
+свойство (* )
+
+direction = iPlaneOffset.GetDirection() Получить
+свойство (**)
+
+iPlaneOffset.SetDirection(direction) Установить
+свойство (**)
+3303
+
+
+
+Значения свойства:
+
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Примечание:
+Прямое направление совпадает с направлением нормали к базовой плоскости.
+
+offset  Смещение (расстояние) от базовой плоскости
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#smeshchennaja_ploskost
+Тип данных: double
+Синтаксис Automation:
+
+offset = iPlaneOffset.offset Получить
+свойство(* )
+
+iPlaneOffset.offset = offset Установить
+свойство (* )
+
+offset = iPlaneOffset.GetOffset() Получить
+свойство (**)
+
+iPlaneOffset.SetOffset(offset) Установить
+свойство (**)
+
+IPlaneOffsetDefinition  методы
+
+GetPlane  Получить указатель на интерфейс базовой плоскости
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#smeshchennaja_ploskost
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс плоскости ksEntity или IEntity.
+3304
+
+
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#smeshchennaja_ploskost
+Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPSURFACE GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс математической по"
+верхности ksSurface или ISurface.
+
+SetPlane  Изменить указатель на интерфейс базовой плоскости
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#smeshchennaja_ploskost
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс плоскости ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Плоскость через ребро параллельно/перпендикулярно 
+грани (Интерфейсы ksPlaneLineToPlaneDefinition, 
+IPlaneLineToPlaneDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_rebro_i_gran
+Интерфейс параметров плоскости, проходящей через ребро параллельно или
+перпендикулярно грани.
+3305
+
+
+
+ksPlaneLineToPlaneDefinition " интерфейс Automation
+IPlaneLineToPlaneDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IPlaneLineToPlaneDefinition  свойства
+
+parallel  Признак положения плоскости
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_rebro_i_gran
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " параллельно грани,
+FALSE " перпендикулярно грани.
+
+Синтаксис Automation:
+
+parallel = iPlaneLineToPlane.parallel Получить
+свойство(* )
+
+iPlaneLineToPlane.parallel = parallel Установить
+свойство (* )
+
+parallel = Получить
+iPlaneLineToPlane.GetParallel() свойство (**)
+iPlaneLineToPlane.SetParallel(parallel) Установить
+
+свойство (**)
+
+IPlaneLineToPlaneDefinition  методы
+
+GetEdge  Получить указатель на интерфейс ребра, через которое 
+будет проходить новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_rebro_i_gran
+Синтаксис Automation:
+LPDISPATCH GetEdge();
+Синтаксис COM:
+LPDISPATCH GetEdge();
+Возвращаемое значение:
+3306
+
+
+
+" указатель на интерфейс ребра ksEntity или IEntity.
+
+GetPlane  Получить указатель на интерфейс плоского объекта, 
+параллельно или перпендикулярно которому будет проходить 
+новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_rebro_i_gran
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_rebro_i_gran
+Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPENTITY GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс ksSurface или ISurface.
+
+SetEdge  Установить указатель на интерфейс ребра, через 
+которое будет проходить новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_rebro_i_gran
+Синтаксис Automation:
+BOOL SetEdge (LPDISPATCH edge);
+Синтаксис COM:
+BOOL SetEdge (LPENTITY edge);
+3307
+
+
+
+Входной параметр:
+
+edge " указатель на интерфейс ребра ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPlane  Установить указатель на интерфейс плоского объекта, 
+параллельно или перпендикулярно которому будет проходить 
+новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_rebro_i_gran
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Плоскость через три вершины (Интерфейсы 
+ksPlane3PointsDefinition, IPlane3PointsDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_3points
+Интерфейс параметров вспомогательной плоскости, проходящей через три
+точки.
+
+ksPlane3PointsDefinition " интерфейс Automation
+IPlane3PointsDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+3308
+
+
+
+ksPlane3PointsDefinition  методы
+
+GetPoint  Получить указатель на интерфейс точки с указанным 
+номеромt
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_3points
+Синтаксис Automation:
+LPDISPATCH GetPoint (long number);
+Синтаксис COM:
+LPENTITY GetPoint (long number);
+Входной параметр:
+
+number " номер точки (от 1 до 3).
+
+Возвращаемое значение:
+
+" указатель на интерфейс точки ksEntity или IEntity.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPSURFACE GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс ksSurface или ISurface.
+
+SetPoint  Изменить указатель на интерфейс точки с указанным 
+номером
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_3points
+Синтаксис Automation:
+BOOL SetPoint (long number, LPDISPATCH point);
+Синтаксис COM:
+BOOL SetPoint (long number, LPENTITY point);
+Входные параметры:
+3309
+
+
+
+point " указатель на интерфейс точки ksEntity или IEntity,
+number " номер точки (от 1 до 3).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Нормальная плоскость (Интерфейсы 
+ksPlaneNormalToSurfaceDefinition, 
+IPlaneNormalToSurfaceDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_norm
+Интерфейс параметров нормальной плоскости.
+
+ksPlaneNormalToSurfaceDefinition " интерфейс Automation
+IPlaneNormalToSurfaceDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IPlaneNormalToSurfaceDefinition  свойства
+
+ang  Угол между плоскостью и опорным плоским объектом
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_norm
+Тип данных: double
+Синтаксис Automation:
+
+ang = iPlaneNormalToSurface.ang Получить
+свойство(* )
+
+iPlaneNormalToSurface.ang = ang Установить
+свойство (* )
+
+ang = Получить
+iPlaneNormalToSurface.GetAngle() свойство (**)
+iPlaneNormalToSurface.SetAngle(ang) Установить
+
+свойство (**)
+3310
+
+
+
+IPlaneNormalToSurfaceDefinition методы
+
+GetFace  Получить указатель на интерфейс цилиндрической или 
+конической грани, к которой требуется построить нормальную 
+плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_norm
+Синтаксис Automation:
+LPDISPATCH GetFace();
+Синтаксис COM:
+LPENTITY GetFace();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+GetPlane  Получить указатель на интерфейс плоского объекта, 
+параллельно которому должна пройти новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_norm
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или IEntity.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_norm
+Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPSURFACE GetSurface();
+Возвращаемое значение:
+3311
+
+
+
+" указатель на интерфейс ksSurface или ISurface.
+
+SetFace  Установить указатель на интерфейс цилиндрической или 
+конической грани, к которой требуется построить нормальную 
+плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_norm
+Синтаксис Automation:
+BOOL SetFace (LPDISPATCH face);
+Синтаксис COM:
+BOOL SetFace (LPENTITY face);
+Входной параметр:
+
+plane " указатель на интерфейс цилиндрической или
+конической грани ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPlane  Установить указатель на интерфейс плоского объекта, 
+параллельно которому должна пройти новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_norm
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс объекта ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3312
+
+
+
+Плоскость перпендикулярная ребру (Интерфейсы 
+ksPlanePerpendicularDefinition, IPlanePerpendicularDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Интерфейс параметров плоскости, проходящей через вершину перпендику
+лярно ребру.
+
+ksPlanePerpendicularDefinition " интерфейс Automation
+IPlanePerpendicularDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IPlanePerpendicularDefinition  методы
+
+GetEdge  Получить указатель на интерфейс ребра, 
+перпендикулярно которому будет проходить новая плоскость
+Интерфейс..Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+LPDISPATCH GetEdge();
+Синтаксис COM:
+LPENTITY GetEdge();
+Возвращаемое значение:
+
+" указатель на интерфейс ребра ksEntity или IEntity.
+
+GetPoint  Получить указатель на интерфейс вершины, через 
+которую будет проходить новая плоскость
+Интерфейс..Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+LPDISPATCH GetPoint();
+Синтаксис COM:
+LPENTITY GetPoint();
+Возвращаемое значение:
+3313
+
+
+
+" указатель на интерфейс вершины ksEntity или IEntity.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс..Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPENTITY GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс ksSurface или ISurface.
+
+SetEdge  Установить указатель на интерфейс ребра, 
+перпендикулярно которому будет проходить новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+BOOL SetEdge (LPDISPATCH edge);
+Синтаксис COM:
+BOOL SetEdge (LPENTITY edge);
+Входной параметр:
+
+edge " указатель на интерфейс ребра ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPoint  Установить указатель на интерфейс вершины, через 
+которую будет проходить новая плоскость
+Интерфейс..Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+3314
+
+
+
+BOOL SetPoint (LPDISPATCH point);
+Синтаксис COM:
+BOOL SetPoint (LPENTITY point);
+Входной параметр:
+
+point " указатель на интерфейс вершины ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Плоскость через ребро параллельно/перпендикулярно 
+другому ребру (Интерфейсы ksPlaneLineToEdgeDefinition, 
+IPlaneLineToEdgeDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_parall_rebru
+Интерфейс параметров плоскости, проходящей через ребро параллельно или
+перпендикулярно другому ребру.
+
+ksPlaneLineToEdgeDefinition " интерфейс Automation
+IPlaneLineToEdgeDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksPlaneLineToEdgeDefinition  свойства
+
+parallel  Признак положения плоскости
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_parall_rebru
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " параллельно второму ребру,
+FALSE " перпендикулярно второму ребру.
+
+Синтаксис Automation:
+
+parallel = iPlaneLineToEdge.parallel Получить
+свойство(* )
+3315
+
+
+
+iPlaneLineToEdge.parallel = parallel Установить
+свойство (* )
+
+parallel = Получить
+iPlaneLineToEdge.GetParallel() свойство (**)
+iPlaneLineToEdge.SetParallel(parallel) Установить
+
+свойство (**)
+
+ksPlaneLineToEdgeDefinition  методы
+
+GetEdgeFirst  Получить указатель на интерфейс первого ребра, 
+через которое будет проходить новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_parall_rebru
+Синтаксис Automation:
+LPDISPATCH GetEdgeFirst();
+Синтаксис COM:
+LPENTITY GetEdgeFirst();
+Возвращаемое значение:
+
+ " указатель на интерфейс ребра ksEntity или IEntity.
+
+GetEdgeSecond  Получить указатель на интерфейс второго ребра, 
+параллельно или перпендикулярно которому будет проходить 
+новая плоскость
+Интерфейс...Справка системы КОМПАС...
+::/Postroenie_ploskostey.htm#ploskost_parall_rebru
+Синтаксис Automation:
+LPDISPATCH GetEdgeSecond();
+Синтаксис COM:
+LPENTITY GetEdgeSecond();
+Возвращаемое значение:
+
+" указатель на интерфейс ребра ksEntity или IEntity.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Справка системы КОМПАС...
+::/Postroenie_ploskostey.htm#ploskost_parall_rebru
+Синтаксис Automation:
+3316
+
+
+
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPENTITY GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс ksSurface или ISurface.
+
+SetEdgeFirst  Установить указатель на интерфейс первого ребра, 
+через которое будет проходить новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_parall_rebru
+Синтаксис Automation:
+BOOL SetEdgeFirst (LPDISPATCH edge1);
+Синтаксис COM:
+BOOL SetEdgeFirst (LPENTITY edge1);
+Входной параметр:
+
+edge1 " указатель на интерфейс ребра ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetEdgeSecond  Установить указатель на интерфейс второго 
+ребра, параллельно или перпендикулярно которому будет 
+проходить новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_parall_rebru
+Синтаксис Automation:
+BOOL SetEdgeSecond (LPDISPATCH edge2);
+Синтаксис COM:
+BOOL SetEdgeSecond (LPENTITY edge2);
+Входной параметр:
+
+edge2 " указатель на интерфейс ребра ksEntity или IEntity.
+3317
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Плоскость под углом к другой плоскости (Интерфейсы 
+ksPlaneAngleDefinition, IPlaneAngleDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_angle
+Интерфейс параметров вспомогательной плоскости, построенной под углом к
+другой плоскости и проходящей через заданную ось или ребро.
+
+ksPlaneAngleDefinition " интерфейс Automation
+IPlaneAngleDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksPlaneAngleDefinition  свойства
+
+angle  Угол наклона плоскости относительно базовой плоскости
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_angle
+Тип данных: double
+Синтаксис Automation:
+
+angle = iPlaneAngle.angle Получить
+свойство(* )
+
+iPlaneAngle.angle = angle Установить
+свойство (* )
+
+angle = iPlaneAngle.GetAngle() Получить
+свойство (**)
+
+iPlaneAngle.SetAngle(angle) Установить
+свойство (**)
+3318
+
+
+
+ksPlaneAngleDefinition  методы
+
+GetAxis  Получить указатель на интерфейс базовой прямой (оси 
+или ребра)
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_angle
+Синтаксис Automation:
+LPDISPATCH GetAxis();
+Синтаксис COM:
+LPENTITY GetAxis();
+Возвращаемое значение:
+
+" указатель на интерфейс прямой ksEntity или IEntity.
+
+GetPlane  Получить указатель на интерфейс базовой плоскости
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_angle
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс плоскости ksEntity или IEntity.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_angle
+Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPSURFACE GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс ksSurface или ISurface.
+3319
+
+
+
+SetAxis  Изменить указатель на интерфейс базовой прямой (оси 
+или ребра)
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_angle
+Синтаксис Automation:
+BOOL SetAxis (LPDISPATCH axis);
+Синтаксис COM:
+BOOL SetAxis (LPENTITY axis);
+Входной параметр:
+
+axis " указатель на интерфейс прямой ksEntity или
+IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPlane  Изменить указатель на интерфейс базовой плоскости
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_angle
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс плоскости ksEntity или
+IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3320
+
+
+
+Параллельная плоскость (Интерфейсы 
+ksPlaneParallelDefinition, IPlaneParallelDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_tochky
+Интерфейс параметров плоскости, проходящей через вершину параллельно
+другой плоскости.
+
+ksPlaneParallelDefinition " интерфейс Automation
+IPlaneParallelDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IPlaneParallelDefinition  методы
+
+GetPlane  Получить указатель на интерфейс плоскости, 
+параллельно которой будет проходить новая плоскость
+Интерфейс..Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_tochky
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс плоскости ksEntity или IEntity.
+
+GetPoint  Получить указатель на интерфейс вершины, через 
+которую будет проходить новая плоскость
+Интерфейс..Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_tochky
+Синтаксис Automation:
+LPDISPATCH GetPoint();
+Синтаксис COM:
+LPENTITY GetPoint();
+Возвращаемое значение:
+3321
+
+
+
+" указатель на интерфейс вершины ksEntity или IEntity.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_tochky
+Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPENTITY GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс ksSurface или ISurface.
+
+SetPlane  Установить указатель на интерфейс плоскости, 
+параллельно которой будет проходить новая плоскость
+Интерфейс..Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_tochky
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс плоскости ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPoint  Установить указатель на интерфейс вершины, через 
+которую будет проходить новая плоскость
+Интерфейс..Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_cherez_tochky
+Синтаксис Automation:
+3322
+
+
+
+BOOL SetPoint (LPDISPATCH point);
+Синтаксис COM:
+BOOL SetPoint (LPENTITY point);
+Входной параметр:
+
+point " указатель на интерфейс вершины ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Касательная плоскость (Интерфейсы 
+ksPlaneTangentToSurfaceDefinition, 
+IPlaneTangentToSurfaceDefinition)
+Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Интерфейс параметров касательной плоскости.
+
+ksPlaneTangentToSurfaceDefinition " интерфейс Automation
+IPlaneTangentToSurfaceDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IPlaneTangentToSurfaceDefinition  свойства
+
+angle  Угол между плоскостью и плоскостью, перпендикулярной 
+опорному объекту
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Тип данных: double
+Синтаксис Automation:
+
+angle = iPlaneTangent.angle Получить
+свойство(* )
+
+iPlaneTangent.angle = angle Установить
+свойство (* )
+
+angle = iPlaneTangent.GetAngle() Получить
+свойство (**)
+3323
+
+
+
+iPlaneTangent.SetAngle (angle) Установить
+свойство (**)
+
+choosePlane  Изменение положения касательной плоскости 
+относительно выбранной цилиндрической или конической грани
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Тип данных: long
+Значения свойства:
+
+1 " положение, предложенное по умолчанию,
+0 " положение, противоположное предложенному
+
+по умолчанию.
+
+Синтаксис Automation:
+
+choosePlane = iPlaneTangentToSurface.choosePlane Получить
+свойство(* )
+
+iPlaneTangentToSurface.choosePlane = choosePlane Установить
+свойство (* )
+
+choosePlane = iPlaneTangentToSurface.GetChoosePlane() Получить
+свойство (**)
+
+iPlaneTangentToSurface.SetChoosePlane(choosePlane) Установить
+свойство (**)
+
+IPlaneTangentToSurfaceDefinition  методы
+
+GetFace  Получить указатель на интерфейс цилиндрической или 
+конической грани, к которой требуется построить касательную 
+плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+LPDISPATCH GetFace();
+Синтаксис COM:
+LPENTITY GetFace();
+Возвращаемое значение:
+
+" указатель на интерфейс грани ksEntity или IEntity.
+3324
+
+
+
+GetPlane  Получить указатель на интерфейс плоского объекта, 
+параллельно которому должна пройти новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс плоской грани или плоскости ksEntity или 
+IEntity.
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPSURFACE GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс плоской грани или
+плоскости ksSurface или ISurface.
+
+SetFace  Установить указатель на интерфейс цилиндрической или 
+конической грани, к которой требуется построить касательную 
+плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+BOOL SetFace (LPDISPATCH face);
+Синтаксис COM:
+BOOL SetFace (LPENTITY face);
+Входной параметр:
+3325
+
+
+
+plane " указатель на интерфейс грани ksEntity или
+IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPlane  Установить указатель на интерфейс плоского объекта, 
+параллельно которому должна пройти новая плоскость
+Интерфейс...Справка системы КОМПАС...
+Postroenie_ploskostey.htm#ploskost_perpend_rebru
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс плоской грани или
+плоскости ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Ось через ребро (Интерфейсы ksAxisEdgeDefinition, 
+IAxisEdgeDefinition)
+Справка системы КОМПАС...
+Postroenie_osei.htm#osq_cherez_rebro
+Интерфейс параметров вспомогательной оси, проходящей через прямолиней
+ное ребро.
+
+ksAxisEdgeDefinition " интерфейс Automation
+IAxisEdgeDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+3326
+
+
+
+ksAxisEdgeDefinition  методы
+
+GetCurve3D  Получить указатель на интерфейс математической 
+кривой
+Интерфейс...Справка системы КОМПАС...
+::/Postroenie_osei.htm#osq_cherez_rebro
+Синтаксис Automation:
+LPDISPATCH GetCurve3D();
+Синтаксис COM:
+LPCURVE3D GetCurve3D();
+Возвращаемое значение:
+
+" указатель на интерфейс ksCurve3D или iCurve3D.
+
+GetEdge  Получить указатель на интерфейс базового ребра
+Интерфейс..Справка системы КОМПАС...
+::/Postroenie_osei.htm#osq_cherez_rebro
+Синтаксис Automation:
+LPDISPATCH GetEdge();
+Синтаксис COM:
+LPENTITY GetEdge();
+Возвращаемое значение:
+
+" указатель на интерфейс ребра ksEntity или IEntity.
+
+SetEdge  Изменить указатель на интерфейс базового ребра
+Интерфейс..Справка системы КОМПАС...
+::/Postroenie_osei.htm#osq_cherez_rebro
+Синтаксис Automation:
+BOOL SetEdge (LPDISPATCH edge);
+Синтаксис COM:
+BOOL SetEdge (LPENTITY edge);
+Входной параметр:
+
+edge " указатель на интерфейс ребра ksEntity или IEntity.
+
+Возвращаемое значение:
+3327
+
+
+
+TRUE " в случае успешного завершения.
+
+Ось через две точки (Интерфейсы 
+ksAxis2PointsDefinition,IAxis2PointsDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров вспомогательной оси, проходящей через две точки.
+
+ksAxis2PointsDefinition " интерфейс Automation
+IAxis2PointsDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksAxis2PointsDefinition  методы
+
+GetCurve3D  Получить указатель на интерфейс математической 
+кривой
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetCurve3D();
+Синтаксис COM:
+LPCURVE3D GetCurve3D();
+Возвращаемое значение:
+
+" указатель на интерфейс ksCurve3D или iCurve3D.
+
+GetPoint  Получить указатель на интерфейс точки с указанным 
+номером
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetPoint (long number);
+Синтаксис COM:
+3328
+
+
+
+LPENTITY GetPoint (long number);
+Входной параметр:
+
+number " номер точки (1 или 2).
+
+Возвращаемое значение:
+
+" указатель на интерфейс точки ksEntity или
+IEntity.
+
+SetPoint  Изменить указатель на интерфейс точки с указанным 
+номером
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetPoint (long number, LPDISPATCH point);
+Синтаксис COM:
+BOOL SetPoint (long number, LPENTITY point);
+Входные параметры:
+
+point " указатель на интерфейс точки ksEntity или IEntity,
+number " номер точки (1 или 2).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Ось на пересечении плоскостей (Интерфейсы 
+ksAxis2PlanesDefinition, IAxis2PlanesDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров вспомогательной оси на пересечении двух плоскостей.
+
+ksAxis2PlanesDefinition " интерфейс Automation
+IAxis2PlanesDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+3329
+
+
+
+ksAxis2PlanesDefinition  методы
+
+GetCurve3D  Получить указатель на интерфейс математической 
+кривой
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetCurve3D();
+Синтаксис COM:
+LPCURVE3D GetCurve3D();
+Возвращаемое значение:
+
+" указатель на интерфейс ksCurve3D или iCurve3D.
+
+GetPlane  Получить указатель на интерфейс базовой плоскости с 
+указанным номером
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetPlane (long number);
+Синтаксис COM:
+LPENTITY GetPlane (long number);
+Входной параметр:
+
+number " номер плоскости (1 или 2).
+
+Возвращаемое значение:
+
+" указатель на интерфейс плоскости ksEntity или IEntity.
+
+SetPlane  Изменить указатель на интерфейс базовой плоскости с 
+указанным номером
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetPlane(long number, LPDISPATCH plane);
+Синтаксис COM:
+3330
+
+
+
+BOOL SetPlane(long number, LPENTITY plane);
+Входные параметры:
+
+plane " указатель на интерфейс плоскости ksEntity или IEntity,
+number " номер плоскости (1 или 2).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Ось формообразующего элемента (Интерфейсы 
+ksAxisOperationsDefinition, IAxisOperationsDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров оси формообразующего элемента.
+
+ksAxisOperationsDefinition " интерфейс Automation
+IAxisOperationsDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksAxisOperationsDefinition  методы
+
+GetCurve3D  Получить указатель на интерфейс математической 
+кривой
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetCurve3D();
+Синтаксис COM:
+LPCURVE3D GetCurve3D();
+Возвращаемое значение:
+
+" указатель на интерфейс ksCurve3D или iCurve3D.
+3331
+
+
+
+GetOperation  Получить базовый формообразующий элемент
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetOperation();
+Синтаксис COM:
+LPENTITY GetOperation();
+Возвращаемое значение:
+
+" указатель на интерфейс элемента ksEntity или IEntity.
+
+SetOperation  Задать базовый формообразующий элемент
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetOperation (LPDISPATCH operation);
+Синтаксис COM:
+BOOL SetOperation (LPENTITY operation);
+Входной параметр:
+
+operation " указатель на интерфейс базового формообра"
+зующего элемента ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Ось конической грани (Интерфейсы ksAxisConefaceDefinition, 
+IAxisConefaceDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров конструктивной оси конической грани.
+
+ksAxisConefaceDefinition " интерфейс Automation
+IAxisConefaceDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+3332
+
+
+
+ksAxisConefaceDefinition  методы
+
+GetCurve3D Получить указатель на интерфейс математической 
+кривой
+Интерфейс..Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetCurve3D();
+Синтаксис COM:
+LPCURVE3D GetCurve3D();
+Возвращаемое значение:
+
+" указатель на интерфейс ksCurve3D или
+iCurve3D.
+
+GetFace  Получить указатель на базовую коническую поверхность
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:Postroenie_osei.htm#osq_konicheskoj_grani
+LPDISPATCH GetFace();
+Синтаксис COM:
+LPENTITY GetFace();
+Возвращаемое значение:
+
+" указатель на интерфейс поверхности ksEntity или IEntity.
+
+SetFace  Установить указатель на базовую коническую 
+поверхность
+Интерфейс..Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetFace (LPDISPATCH face);
+Синтаксис COM:
+BOOL SetFace (LPENTITY face);
+Входной параметр:
+3333
+
+
+
+face " указатель на интерфейс поверхности ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Массив ориентированных ребер (Интерфейсы 
+ksOrientedEdgeCollection, IOrientedEdgeCollection)
+Интерфейс массива ориентированных ребер.
+
+ksOrientedEdgeCollection " интерфейс Automation
+IOrientedEdgeCollection " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить от следующих интерфейсов:
+
+▼ Интерфейс свойств ребра ksEdgeDefinition или IEdgeDefinition.
+▼ Интерфейс цикла грани ksLoop или ILoop.
+
+IOrientedEdgeCollection  методы
+
+GetByIndex  Получить указатель на интерфейс объекта в массиве 
+по индексу
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetByIndex (long index);
+Синтаксис COM:
+LPORIENTEDEDGE GetByIndex (long index );
+Входной параметр:
+
+index " номер объекта в массиве.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksOrientedEdge или IOrientedEdge.
+
+GetCount  Получить количество элементов в массиве
+Интерфейс...Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+3334
+
+
+
+long GetCount();
+Возвращаемое значение:
+
+" количество элементов массива.
+
+FindIt  Получить индекс элемента в массиве
+Интерфейс...Синтаксис Automation:
+long FindIt (LPDISPATCH entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+"1 " если элемент не найден.
+
+Синтаксис COM:
+unsigned long FindIt (LPORIENTEDEDGE entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+SYS_MAX_UINT " если элемент не найден.
+
+Входные параметры:
+
+entity " указатель на интерфейс компонента ksOrientedEdge или 
+IOrientedEdge.
+
+First  Получить указатель на интерфейс первого объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPORIENTEDEDGE First();
+Возвращаемое значение:
+
+" указатель на интерфейс ksOrientedEdge или IOrientedEdge.
+
+Last  Получить указатель на интерфейс последнего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Last();
+3335
+
+
+
+Синтаксис COM:
+LPORIENTEDEDGE Last();
+Возвращаемое значение:
+
+" указатель на интерфейс ksOrientedEdge или IOrientedEdge.
+
+Next  Получить указатель на интерфейс следующего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Next();
+Синтаксис COM:
+LPORIENTEDEDGE Next();
+Возвращаемое значение:
+
+" указатель на интерфейс ksOrientedEdge или IOrientedEdge.
+
+Prev  Получить указатель на интерфейс предыдущего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Prev();
+Синтаксис COM:
+LPORIENTEDEDGE Prev();
+Возвращаемое значение:
+
+" указатель на интерфейс ksOrientedEdge или IOrientedEdge.
+
+Refresh  Обновить массив
+Интерфейс...Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+После вызова данной функции возникает полное соответствие массива с массивом ори"
+ентированных ребер и удаляются все предыдущие изменения в массиве.
+3336
+
+
+
+Ориентированное ребро (Интерфейсы ksOrientedEdge, 
+IOrientedEdge)
+Интерфейс ориентированного ребра.
+
+ksOrientedEdge " интерфейс Automation
+IOrientedEdge " интерфейс COM
+
+Описание:
+Ориентированное ребро является объектом топологии. Содержит информацию о ребре
+и направлении относительно ребра.
+Примечание:
+Данный интерфейс можно получить от следующих интерфейсов:
+Интерфейс массива ориентированных ребер ksOrientedEdgeCollection или
+IOrientedEdgeCollection.
+
+IOrientedEdge  методы
+
+GetAdjacentFace  Получить указатель на интерфейс грани, в цикл 
+которой входит ребро
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetAdjacentFace (BOOL facePlus);
+Синтаксис COM:
+LPFACEDEFINITION GetAdjacentFace (BOOL facePlus);
+Входные параметры:
+
+facePlus " TRUE " ориентация грани относительно отрезка положительная,
+" FALSE " ориентация грани относительно отрезка отрицательная.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksFaceDefinition или IFaceDefinition.
+
+GetEdge  Получить указатель на интерфейс базового ребра
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetEdge();
+Синтаксис COM:
+LPEDGEDEFINITION GetEdge();
+3337
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksEdgeDefinition или IEdgeDefinition.
+
+GetNext  Получить указатель на интерфейс следующего 
+ориентированного ребра
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetNext();
+Синтаксис COM:
+LPORIENTEDEDGE GetNext();
+Возвращаемое значение:
+
+" указатель на интерфейс ksOrientedEdge или IOrientedEdge.
+
+GetOrientation  Получить направление относительно базового 
+ребра
+Интерфейс...Синтаксис Automation:
+BOOL GetOrientation();
+Синтаксис COM:
+BOOL GetOrientation();
+Возвращаемое значение:
+
+TRUE " направления совпадают,
+FALSE " направления не совпадают.
+
+GetOwnerEntity  Получить указатель на интерфейс ребра
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetOwnerEntity();
+Синтаксис COM:
+LPENTITY GetOwnerEntity();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity.
+
+GetSameSense  Получить направление относительно кривой
+Интерфейс...Синтаксис Automation:
+BOOL GetSameSense();
+3338
+
+
+
+Синтаксис COM:
+BOOL GetSameSense();
+Возвращаемое значение:
+
+TRUE " направления совпадают,
+FALSE " направления не совпадают.
+
+IsPole  Является ли ребро полюсным
+Интерфейс...Синтаксис:
+BOOL IsPole();
+
+IsSeam  Является ли ребро швом
+Интерфейс...Синтаксис:
+BOOL IsSeam();
+
+IsStraight  Является ли ребро прямым
+Интерфейс...Синтаксис:
+BOOL IsStraight();
+
+Трехмерное тело (Интерфейсы ksBody, Body)
+Интерфейс трехмерного тела.
+
+ksBody " интерфейс Automation
+IBody " интерфейс COM
+
+Примечание:
+
+1. Твердое тело состоит из массива граней.
+2. Данный интерфейс может быть получен от интерфейса коллекции тел ksBodyCollection,
+
+IBodyCollection или от интерфейса компонента ksPart, IPart с помощью метода
+ksPart::GetMainBody, IPart::GetMainBody.
+
+IBody  свойства
+
+MultiBodyParts  Признак того, что компонент состоит из 
+нескольких частей
+Интерфейс...
+Тип данных: BOOL
+3339
+
+
+
+Значения свойства:
+
+TRUE " компонент состоит из нескольких частей,
+FALSE " компонент не состоит из нескольких частей.
+
+Синтаксис Automation:
+
+MultiBodyParts = iBody.MultiBodyParts Получить
+свойство (* )
+
+MultiBodyParts = Получить
+iBody.GetMultiBodyParts() свойство
+
+(**)
+
+Примечания:
+Свойство позволяет узнать состоит ли компонент их нескольких частей.
+В результате работы свойства можно получить компонент (деталь), состоящую из не"
+скольких частей. С точки зрения конструктора, деталь должна представлять нечто целое.
+Частей быть не должно. Следовательно, нужно отыскать в компоненте операции, поро"
+ждающие несколько частей, и выключить из расчета не нужные, чтобы образовалось це"
+лое тело.
+
+IBody  методы
+
+CheckIntersectionWithBody  Проверить наличия пересечений с 
+другим телом
+Интерфейс..Синтаксис Automation:
+LPDISPATCH CheckIntersectionWithBody (LPDISPATCH otherBody,
+BOOL checkTangent);
+Синтаксис COM:
+LPINTERSECTIONRESULT CheckIntersectionWithBody (LPBODY otherBody,
+BOOL checkTangent);
+Входные параметры:
+
+otherBody  " тело, с которым проверяется пересечение,
+checkTangent  " считать касания пересечениями.
+
+Возвращаемое значение:
+
+Интерфейс ksIntersectionResult " в случае успеха,
+NULL " если пересечений нет.
+3340
+
+
+
+.
+
+CurveIntersection  Рассчитать пересечения с кривой
+Интерфейс..Automation:
+BOOL CurveIntersection (LPDISPATCH curve,
+LPDISPATCH fases,
+LPDISPATCH points);
+Синтаксис COM:
+BOOL CurveIntersection (LPCURVE3D curve,
+LPFACECOLLECTION faces,
+LPCOORDINATE3DCOLLECTION points);
+Входные параметры:
+
+curve " Указатель на интерфейс 3D кривой ksCurve3D.
+
+Выходные параметры:
+
+faces " Коллекция граней пересекаемых кривой ksFaceCollection,
+points " Коллекция координат точек пересечений ksCoordinate3dCollection
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Координаты точек сортируются по параметру кривой t.
+2. Параметры faсes, points являются необязательными.
+3. Заполняются только присланные коллекции.
+4. Интерфейсы коллекций для заполнения нужно получить с помощью функций:
+
+▼ ksFaceCollection, ksD ocument3D::GetInterface с параметром o3dType = o3d_faceCollection;
+▼ ksCoordinate3dCollection, ksDocument3D::GetInterface с параметром o3dType =
+
+o3d_coordinate3dCollection.
+
+FaceCollection  Получить указатель на интерфейс массива граней, 
+образующих тело
+Интерфейс..Синтаксис Automation:
+LPDISPATCH FaceCollection();
+Синтаксис COM:
+LPFACECOLLECTION FaceCollection();
+Возвращаемое значение:
+3341

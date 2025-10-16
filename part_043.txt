@@ -1,0 +1,2532 @@
+Синтаксис COM:
+
+Object.get_Hidden( &Hidden ) Получить свойство
+Object.put_Hidden(  Hidden ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать обозначение компонента.
+
+HiddenEx  Состояние видимости объекта
+Интерфейс...
+Тип данных: из перечисления ksVisibleStateEnum
+Синтаксис Automation:
+
+HiddenEx = Object.HiddenEx Получить свойство (* )
+Object.HiddenEx = HiddenEx Установить свойство (* )
+HiddenEx = Получить свойство (**)
+Object.GetHiddenEx()
+Object.SetHiddenEx( HiddenEx ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HiddenEx( &HiddenEx ) Получить свойство
+Object.put_HiddenEx(  HiddenEx ) Установить свойство
+
+LayerNumber  Номер слоя
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+2283
+
+
+
+LayerNumber = Получить свойство (* )
+Object.LayerNumber
+Object.LayerNumber = Установить свойство (* )
+LayerNumber
+LayerNumber = Получить свойство (**)
+Object.GetLayerNumber()
+Object.SetLayerNumber( Установить свойство (**)
+LayerNumber )
+
+Синтаксис COM:
+
+Object.get_LayerNumber( Получить свойство
+&LayerNumber )
+Object.put_LayerNumber( Установить свойство
+LayerNumber )
+
+Marking  Обозначение компонента
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+Marking = iObject.Marking Получить свойство (* )
+iObject.Marking = Marking Установить свойство (* )
+Marking = iObject.GetMarking() Получить свойство (**)
+iObject.SetMarking ( Marking) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Marking ( Получить свойство
+&Marking)
+iObject">put_Marking ( Marking) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать обозначение компонента.
+
+Name  Имя тела
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+iObject.Name = Name Установить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+2284
+
+
+
+iObject.SetName (Name) Установить свойство (**)
+Синтаксис COM:
+
+iObject">get_Name (&Name) Получить свойство
+iObject">put_Name (Name) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать имя трехмерной модели.
+
+OwnerBodyId  Идентификатор тела, которое поглотило 
+это тело
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+OwnerBodyId = Object. OwnerBodyId Получить свойство (* )
+OwnerBodyId = Object.GetOwnerBodyId() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OwnerBodyId( &OwnerBodyId ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Projected  Признак проецирования
+Интерфейс...
+Тип данных: из перечисления ksProjectionOptionEnum
+Синтаксис Automation:
+
+Projected = Object.Projected Получить свойство (* )
+Object.Projected = Projected Установить свойство (* )
+Projected = Получить свойство (**)
+Object.GetProjected()
+Object.SetProjected( Projected ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Projected( &Projected ) Получить свойство
+Object.put_Projected(  Projected ) Установить свойство
+2285
+
+
+
+Threads  Коллекция условных обозначений резьбы
+Интерфейс...
+Тип данных: Указатель на интерфейс IThreads 
+Синтаксис Automation:
+
+Threads = Object.Threads Получить свойство(* )
+Threads = Object.GetThreads() Получить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_Threads( Получить свойство
+&Threads )
+
+UserParameters  Получить интерфейс параметров
+Интерфейс...
+Тип данных: Указатель на интерфейс IUnknown
+Синтаксис Automation:
+
+UserParameters = Получить свойство(* )
+Object.UserParameters( Val ) 
+UserParameters = Получить свойство (**)
+Object.GetUserParameters( Val )
+
+Синтаксис COM:
+
+Object.get_UserParameter Получить свойство
+s( Val, &UserParameters )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IBody7  методы
+GetGabarit  Получить габарит
+Интерфейс...
+Синтаксис Automation:
+BOOL GetGabarit( double * X1,
+double * Y1,
+double * Z1,
+double * X2,
+double * Y2,
+double * Z2 );
+2286
+
+
+
+Синтаксис COM:
+HRESULT GetGabarit( double * X1,
+double * Y1,
+double * Z1,
+double * X2,
+double * Y2,
+double * Z2
+BOOL * Result );
+Входные параметры:
+
+X1, Y1, Z1, " координаты габаритного прямоугольника.
+X2, Y2, Z2
+
+Возвращаемое значение:
+
+TRUE " успешное завершение,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить габаритный прямоугольник Панели свойств. Точки задают"
+ся в относительных координатах окна КОМПАС.
+
+Update  Изменить свойства объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL Update( );
+Синтаксис COM:
+HRESULT Update ( VARIANT_BOOL* PVal );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+После вызова метода вступают в силу измененные свойства тела: имя, обозначение,
+свойства массово"центровочных характеристик.
+
+Свойства цвета объекта
+Интерфейс IColorParam7
+Свойства цвета объекта.
+Иерархия:
+IDispatch
+2287
+
+
+
+IColorParam7
+Примечание:
+
+1.  Интерфейс является дополнительным для IModelObject, IBody7 и IEmbodiment.
+2.  Оптические свойства используются для верхнего компонента, вставки, тела, операций,
+
+поверхностей, грани. Для остальных объектов используется только цвет и свойство
+UseColor. 
+
+3.  Оптические свойства задаются в относительных единицах 0...1.
+
+IColorParam7  свойства
+Ambient  Общий свет
+Интерфейс...
+Тип данных: double
+Значения свойства:
+
+" Общий свет (от 0 до 1).
+
+Синтаксис Automation:
+
+Ambient = Object.Ambient Получить свойство (* )
+Object.Ambient = Ambient Установить свойство (* )
+Ambient = Object.GetAmbient() Получить свойство (**)
+Object.SetAmbient (Ambient) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Ambient( &Ambient ) Получить свойство
+Object.put_Ambient(  Ambient ) Установить свойство
+
+Color  Цвет
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Color = Object.Color Получить свойство (* )
+Object.Color = Color Установить свойство (* )
+Color = Object.GetColor() Получить свойство (**)
+Object.SetColor( Color ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Color( &Color ) Получить свойство
+2288
+
+
+
+Object.put_Color(  Color ) Установить свойство
+
+Diffuse  Диффузия
+Интерфейс...
+Тип данных: double
+Значения свойства:
+
+" Диффузия (от 0 до 1).
+
+Синтаксис Automation:
+
+Diffuse = Object.diffuse Получить свойство (* )
+Object.diffuse = diffuse Установить свойство (* )
+Diffuse = Object.GetDiffuse() Получить свойство (**)
+Object.SetDiffuse (diffuse) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Diffuse( &Diffuse ) Получить свойство
+Object.put_Diffuse(  Diffuse ) Установить свойство
+
+Emission  Излучение
+Интерфейс...
+Тип данных: double
+Значения свойства:
+
+" Излучение (от 0 до 1).
+
+Синтаксис Automation:
+
+Emission = Object.Emission Получить свойство (* )
+Object.Emission = Emission Установить свойство (* )
+Emission = Object.GetEmission() Получить свойство (**)
+Object.SetEmission(Emission) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Emission( &Emission ) Получить свойство
+Object.put_Emission(  Emission ) Установить свойство
+
+Shininess  Блеск
+Интерфейс...
+Тип данных: double
+2289
+
+
+
+Значения свойства:
+
+" Блеск (от 0 до 1).
+
+Синтаксис Automation:
+
+Shininess = Object.Shininess Получить свойство (* )
+Object.Shininess = Shininess Установить свойство (* )
+Shininess = Object.GetShininess() Получить свойство (**)
+Object.SetShininess (Shininess) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Shininess( &Shininess ) Получить свойство
+Object.put_Shininess(  Shininess ) Установить свойство
+
+Specularity  Зеркальность
+Интерфейс...
+Тип данных: double
+Значения свойства:
+
+" Зеркальность (от 0 до 1).
+
+Синтаксис Automation:
+
+specularity = Object.specularity Получить свойство (* )
+Object.specularity = specularity Установить свойство (* )
+specularity = Object.GetSpecularity() Получить свойство (**)
+Object.SetSpecularity (specularity) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Specularity( &Specularity ) Получить свойство
+Object.put_Specularity(  Specularity ) Установить свойство
+
+Transparency  Прозрачность
+Интерфейс...
+Тип данных: double
+Значения свойства:
+
+" Прозрачность (от 0 до 1).
+
+Синтаксис Automation:
+2290
+
+
+
+Transparency = Object.Transparency Получить свойство (* )
+Object.Transparency = Transparency Установить свойство (* )
+Transparency = Object.GetTransparency() Получить свойство (**)
+Object.SetTransparency (Transparency) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Transparency( Получить свойство
+&Transparency )
+Object.get_Transparency( Установить свойство
+&Transparency )
+
+Примечание:
+Этот параметр характеризует способность поверхности пропускать падающий на нее
+свет. Если значение этого параметра равно 1 (или 100%), то поверхность совершенно не"
+прозрачная. При моделировании деталей из стекла, органического стекла, слюды, бес"
+цветного полиэтилена и подобных материалов значение прозрачности выбирают из ди"
+апазона между 0 и 1. 
+Если значение этого параметра равно 0,5 (или 50%), то поверхность полупрозрачная.
+Если значение этого параметра равно 0, то поверхность полностью прозрачная. Такая
+поверхность невидима.
+
+UseColor  Используемый цвет
+Интерфейс...
+Тип данных: из перечисления UseColor
+Синтаксис Automation:
+
+UseColor = Object.UseColor Получить свойство (* )
+Object.UseColor = UseColor Установить свойство (* )
+UseColor = Object.GetUseColor() Получить свойство (**)
+Object.SetUseColor( UseColor ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UseColor( &UseColor ) Получить свойство
+Object.put_UseColor(  UseColor ) Установить свойство
+
+Использование свойства для объектов:
+
+Верхний компонент
+useColorOur 0 собственный цвет
+Вставка в сборку
+useColorOur 0 собственный цвет
+useColorOwner 1 цвет сборки
+useColorSource 2 цвет источника
+Грань, операции, объекты детали
+2291
+
+
+
+useColorOur 0 собственный цвет
+useColorSource 2 цвет источника
+Операции: вырезать выдавливанием, скругление, фаска, отверстие,
+оболочка, сечение плоскостью, сечение эскизом, удалить грань
+useColorOur 0 собственный цвет
+useColorOwner 1 цвет сборки
+useColorSource 2 цвет источника
+Тело
+useColorOur 0 собственный цвет
+useColorSource 2 цвет источника
+
+Примечание:
+В случае ошибки возвращается useColorUnknown.
+
+IColorParam7  методы
+GetAdvancedColor  Получить параметры цвета объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL GetAdvancedColor( long* Color,
+double* Ambient,
+double* Diffuse,
+double* Specularity,
+double* Shininess,
+double* Transparency,
+double* Emission );
+Синтаксис COM:
+HRESULT GetAdvancedColor( long* Color,
+double* Ambient,
+double* Diffuse,
+double* Specularity,
+double* Shininess,
+double* Transparency,
+double* Emission,
+BOOL * Result );
+Выходные параметры:
+
+color цвет,
+ambient Общий свет,
+diffuse Диффузия,
+specularity Зеркальность,
+shininess Блеск,
+transparency Прозрачность,
+emission Излучение.
+
+Возвращаемое значение:
+2292
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Оптические свойства задаются в относительных единицах от 0..1.
+
+SetAdvancedColor  Установить параметры цвета 
+объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL SetAdvancedColor( long* Color,
+double* Ambient,
+double* Diffuse,
+double* Specularity,
+double* Shininess,
+double* Transparency,
+double* Emission );
+Синтаксис COM:
+HRESULT SetAdvancedColor( long* Color,
+double* Ambient,
+double* Diffuse,
+double* Specularity,
+double* Shininess,
+double* Transparency,
+double* Emission,
+BOOL * Result );
+Выходные параметры:
+
+color цвет,
+ambient Общий свет,
+diffuse Диффузия,
+specularity Зеркальность,
+shininess Блеск,
+transparency Прозрачность,
+emission Излучение.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Оптические свойства задаются в относительных единицах от 0..1.
+2293
+
+
+
+Интерфейс ITexturesParam
+Интерфейс параметров наложения текстур.
+Иерархия:
+IDispatch
+
+ITexturesParam
+Интерфейс является дополнительным для интерфейса IColorParam7 объектов
+IModelObject. IPart7, IBody7,ILayer3D.
+Для установки параметров отображения текстур для объектов модели требуется, чтобы
+у объекта был установлен признак использования собственного цвета,
+т.е. свойство IColorParam7::UseColor требуется установить равным useColorOur.
+Версия: KOMPAS v19
+
+ITexturesParam  свойства
+TextureFileName  Имя файла текстуры
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+TextureFileName = Получить свойство (* )
+Object.TextureFileName( Type )
+Object.TextureFileName( Type ) = Установить свойство (* )
+TextureFileName
+TextureFileName = Получить свойство (**)
+Object.GetTextureFileName(
+Type )
+Object.SetTextureFileName( Установить свойство (**)
+Type, TextureFileName )
+
+Синтаксис COM:
+
+Object.get_TextureFileName( Получить свойство
+Type, &TextureFileName )
+Object.put_TextureFileName( Установить свойство
+Type, TextureFileName )
+
+Входные параметры:
+
+ksTextureTypeEnum " Type " тип текстуры.
+2294
+
+
+
+TextureHeight  Высота текстуры
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+TextureHeight  = Получить свойство (* )
+Object.TextureHeight ( Type )
+Object.TextureHeight ( Type ) = Установить свойство (* )
+TextureHeight 
+TextureHeight  = Получить свойство (**)
+Object.GetTextureHeight ( Type )
+Object.SetTextureHeight ( Type, Установить свойство (**)
+TextureHeight  )
+
+Синтаксис COM:
+
+Object.get_TextureHeight ( Type, Получить свойство
+&TextureHeight  )
+Object.put_TextureHeight ( Установить свойство
+Type, TextureHeight  )
+
+Входные параметры:
+
+ksTextureTypeEnum " Type " тип текстуры.
+
+TextureWidth  Ширина текстуры
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+TextureWidth  = Получить свойство (* )
+Object.TextureWidth ( Type )
+Object.TextureWidth ( Type ) = Установить свойство (* )
+TextureWidth 
+TextureWidth  = Получить свойство (**)
+Object.GetTextureWidth ( Type )
+Object.SetTextureWidth ( Type, Установить свойство (**)
+TextureWidth  )
+
+Синтаксис COM:
+
+Object.get_TextureWidth ( Type, Получить свойство
+&TextureWidth  )
+2295
+
+
+
+Object.put_TextureWidth (  Type, Установить свойство
+TextureWidth  )
+
+Входные параметры:
+
+ksTextureTypeEnum " Type " тип текстуры.
+
+TextureDx  Смещение по горизонтали
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+TextureDx  = Object.TextureDx ( Получить свойство (* )
+Type )
+Object.TextureDx ( Type ) = Установить свойство (* )
+TextureDx 
+TextureDx  = Получить свойство (**)
+Object.GetTextureDx ( Type )
+Object.SetTextureDx ( Type, Установить свойство (**)
+TextureDx  )
+
+Синтаксис COM:
+
+Object.get_TextureDx ( Type, Получить свойство
+&TextureDx  )
+Object.put_TextureDx (  Type, Установить свойство
+TextureDx  )
+
+Входные параметры:
+
+ksTextureTypeEnum " Type " тип текстуры.
+
+TextureDy  Смещение по вертикали
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+TextureDy  = Object.TextureDy ( Получить свойство (* )
+Type )
+2296
+
+
+
+Object.TextureDy ( Type ) = Установить свойство (* )
+TextureDy 
+TextureDy  = Получить свойство (**)
+Object.GetTextureDy ( Type )
+Object.SetTextureDy ( Type, Установить свойство (**)o
+TextureDy  )
+
+Синтаксис COM:
+
+Object.get_TextureDy ( Type, Получить свойство
+&TextureDy  )
+Object.put_TextureDy (  Type, Установить свойство
+TextureDy  )
+
+Входные параметры:
+
+ksTextureTypeEnum " Type " тип текстуры.
+
+TextureAngle  Поворот текстуры
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+TextureAngle  = Получить свойство (* )
+Object.TextureAngle ( Type )
+Object.TextureAngle ( Type ) = Установить свойство (* )
+TextureAngle 
+TextureAngle  = Получить свойство (**)
+Object.GetTextureAngle ( Type )
+Object.SetTextureAngle ( Type, Установить свойство (**)
+TextureAngle  )
+
+Синтаксис COM:
+
+Object.get_TextureAngle ( Type, Получить свойство
+&TextureAngle  )
+Object.put_TextureAngle (  Type, Установить свойство
+TextureAngle  )
+
+Входные параметры:
+
+ksTextureTypeEnum " Type " тип текстуры.
+2297
+
+
+
+ITexturesParam  методы
+Update  Обновление данных
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM :
+HRESULT Update( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+2298
+
+
+
+Текстовый документ
+
+Интерфейс ITextDocumentSectionsManager
+Интерфейс менеджера разделов текстового документа.
+Иерархия:
+IDispatch
+
+ITextDocumentSectionsManager
+Примечание:
+Интерфейс является дополнительным к интерфейсу документа ITextDocument. Интер"
+фейс можно получить посредством вызова метода IUnknown::QueryInterface (const GUID
+far& iid, void** pif).
+KOMPAS v19
+
+ITextDocumentSectionsManager  свойства
+
+Section  Получить параметры раздела по индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс ITextDocumentSection. 
+
+Синтаксис Automation:
+
+Section = Получить свойство(* )
+Object.Section
+Section= Получить свойство (**)
+Object.GetSecti
+on()
+
+ Синтаксис COM:
+
+Object.get_Sect Получить
+ion( &Section ) свойство
+
+Входные параметры:
+  
+
+ long Index " индекс раздела.
+
+Примечание:
+Свойство доступно только для чтения.
+2299
+
+
+
+SectionByTextLine  Получить параметры раздела по 
+индексу строки
+Интерфейс...
+Тип данных: Указатель на интерфейс ITextDocumentSection
+Синтаксис Automation:
+
+SectionByTextLine = Получить свойство(* )
+Object.SectionByTextLine
+SectionByTextLine= Получить свойство (**)
+Object.GetSectionByTextLine()
+
+ Синтаксис COM:
+
+Object.get_SectionByTextLin Получить свойство
+e( &SectionByTextLine )
+
+Входные параметры:
+  
+
+ long Index " индекс раздела.
+
+Примечание:
+Свойство доступно только для чтения.
+
+SectionsCount  Количество разделов
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+SectionsCount = Получить свойство(* )
+Object.SectionsCount
+SectionsCount = Получить свойство (**)
+Object.GetSectionsCount()
+
+ Синтаксис COM:
+
+Object.get_SectionsCount( Получить свойство
+&SectionsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+2300
+
+
+
+ITextDocumentSectionsManager  методы
+
+AddSection  Добавить раздел
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddSection();
+Синтаксис COM:
+HRESULT AddSection( ITextDocumentSection * * Result );
+Возвращаемое значение:
+  
+
+" Указатель на интерфейс ITextDocumentSection
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс параметров раздела текстового документа. 
+2. Метод добавляет новый раздел в конец документа.
+
+   
+
+AddSectionAt  Добавить раздел
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddSectionAt( long Index );
+Синтаксис COM :
+HRESULT AddSectionAt( long Index, ITextDocumentSection * * Result );
+Возвращаемое значение: 
+  
+
+" Указатель на интерфейс ITextDocumentSection
+
+Входные параметры:
+  
+
+Index " индекс раздела.
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс параметров раздела текстового документа. 
+2. Метод добавляет новый раздел в определенное место текстового документа.
+
+GetSectionLineIndexes  Получить индексы первой и 
+последней строки раздела и число строк раздела
+Интерфейс...
+Синтаксис Automation:
+long GetSectionLineIndexes( long SectionIndex, long * FirstLineIndex, long * LastLineIndex );
+2301
+
+
+
+Синтаксис COM :
+HRESULT GetSectionLineIndexes( long SectionIndex, long * FirstLineIndex, long *
+LastLineIndex, long * Result );
+Возвращаемое значение: 
+
+"   Число строк в разделе.
+
+Входные параметры:
+  
+
+SectionIndex " Идентификатор раздела.
+
+Выходные параметры:
+
+FirstLineIndex " индекс строки, в которой начинается раздел,
+LastLineIndex " индекс последней строки раздела. 
+
+MoveLinesToSection  Перенести строки в другой раздел
+Интерфейс...
+Синтаксис Automation:
+BOOL MoveLinesToSection( ITextDocumentSection * Section, long FirstLineIndex, long
+LastLineIndex );
+Синтаксис COM:
+HRESULT MoveLinesToSection( ITextDocumentSection * Section, long FirstLineIndex, long
+LastLineIndex, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+
+Входные параметры:
+
+Section " индекс раздела,
+FirstLineIndex " индекс строки, в которой начинается раздел,
+LastLineIndex " индекс последней строки раздела. 
+
+MoveSection  Переместить раздел
+Интерфейс...
+Синтаксис Automation:
+BOOL MoveSection( long SectionIndex, long NewSectionIndex );
+2302
+
+
+
+Синтаксис COM:
+HRESULT MoveSection( long SectionIndex, long NewSectionIndex, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+
+Входные параметры:
+
+SectionIndex " индекс перемещаемого раздела,
+NewSectionInd " индекс раздела, перед которым будет размещаться 
+ex перемещаемый раздел. 
+
+Примечания:
+Метод перемещает выбранный раздел в определенное место текстового документа.
+
+Интерфейс ITextDocumentSection
+Интерфейс параметров раздела текстового документа.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ITextDocumentSection
+
+Примечание:
+Интерфейс можно получить с помощью методов менеджера разделов
+ITextDocumentSectionsManager.
+
+ITextDocumentSection  свойства
+
+Format  Формат листа
+Интерфейс...
+Тип данных: Указатель на интерфейс ISheetFormat
+Синтаксис Automation:
+
+Format = Получить свойство(* )
+Object.Format
+Format = Получить свойство (**)
+Object.GetForm
+at()
+
+ Синтаксис COM:
+
+Object.get_For Получить
+mat( &Format ) свойство
+2303
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+LayoutLibraryFileName  Имя файла библиотеки стилей 
+оформления для первого листа
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+LayoutLibraryFileName = Получить свойство (* )
+Object.LayoutLibraryFileName
+Object.LayoutLibraryFileName = Установить свойство (* )
+LayoutLibraryFileName
+LayoutLibraryFileName = Получить свойство (**)
+Object.GetLayoutLibraryFileName()
+Object.SetLayoutLibraryFileName( Установить свойство (**)
+LayoutLibraryFileName )
+
+Синтаксис COM:
+
+Object.get_LayoutLibraryFileName( Получить свойство,
+&LayoutLibraryFileName )
+Object.put_LayoutLibraryFileName( Установить свойство.
+LayoutLibraryFileName )
+
+LayoutStyleNumber  Номер стиля оформления для 
+первого листа
+Интерфейс...
+Тип данных: double
+
+Синтаксис Automation:
+
+LayoutStyleNumber = Получить свойство (* )
+Object.LayoutStyleNumber
+Object.LayoutStyleNumber = Установить свойство (* )
+LayoutStyleNumber
+LayoutStyleNumber = Получить свойство (**)
+Object.GetLayoutStyleNumber()
+Object.SetLayoutStyleNumber( Установить свойство (**)
+LayoutStyleNumber )
+
+Синтаксис COM:
+2304
+
+
+
+Object.get_LayoutStyleNumber( Получить свойство,
+&LayoutStyleNumber )
+Object.put_LayoutStyleNumber( Установить свойство.
+LayoutStyleNumber )
+
+EvenLayoutLibraryFileName  Имя файла библиотеки 
+стилей оформления для четных листов
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+EvenLayoutLibraryFileName = Получить свойство (* )
+Object.EvenLayoutLibraryFileName
+Object.EvenLayoutLibraryFileName = Установить свойство (* )
+EvenLayoutLibraryFileName
+EvenLayoutLibraryFileName = Получить свойство (**)
+Object.GetEvenLayoutLibraryFileName(
+)
+Object.SetEvenLayoutLibraryFileName( Установить свойство (**)
+EvenLayoutLibraryFileName )
+
+Синтаксис COM:
+
+Object.get_EvenLayoutLibraryFileName Получить свойство,
+( &EvenLayoutLibraryFileName )
+Object.put_EvenLayoutLibraryFileName Установить свойство.
+(  EvenLayoutLibraryFileName )
+
+EvenLayoutStyleNumber  Номер стиля оформления для 
+четных листов
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+EvenLayoutStyleNumber = Получить свойство (* )
+Object.EvenLayoutStyleNumber
+Object.EvenLayoutStyleNumber = Установить свойство (* )
+EvenLayoutStyleNumber
+EvenLayoutStyleNumber = Получить свойство (**)
+Object.GetEvenLayoutStyleNumber()
+2305
+
+
+
+Object.SetEvenLayoutStyleNumber( Установить свойство (**)
+EvenLayoutStyleNumber )
+
+Синтаксис COM:
+
+Object.get_EvenLayoutStyleNumber( Получить свойство,
+&EvenLayoutStyleNumber )
+Object.put_EvenLayoutStyleNumber( Установить свойство.
+EvenLayoutStyleNumber )
+
+OddLayoutLibraryFileName  Имя файла библиотеки 
+стилей оформления для нечетных листов
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+OddLayoutLibraryFileName = Получить свойство (* )
+Object.OddLayoutLibraryFileName
+Object.OddLayoutLibraryFileName = Установить свойство (* )
+OddLayoutLibraryFileName
+OddLayoutLibraryFileName = Получить свойство (**)
+Object.GetOddLayoutLibraryFileName()
+Object.SetOddLayoutLibraryFileName( Установить свойство (**)
+OddLayoutLibraryFileName )
+
+Синтаксис COM:
+
+Object.get_OddLayoutLibraryFileName( Получить свойство,
+&OddLayoutLibraryFileName )
+Object.put_OddLayoutLibraryFileName( Установить свойство.
+OddLayoutLibraryFileName )
+
+OddLayoutStyleNumber  Номер стиля оформления для 
+первого листа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+2306
+
+
+
+OddLayoutStyleNumber = Получить свойство (* )
+Object.OddLayoutStyleNumber
+Object.OddLayoutStyleNumber = Установить свойство (* )
+OddLayoutStyleNumber
+OddLayoutStyleNumber = Получить свойство (**)
+Object.GetOddLayoutStyleNumber()
+Object.SetOddLayoutStyleNumber( Установить свойство (**)
+OddLayoutStyleNumber )
+
+Синтаксис COM:
+
+Object.get_OddLayoutStyleNumber( Получить свойство,
+&OddLayoutStyleNumber )
+Object.put_OddLayoutStyleNumber( Установить свойство.
+OddLayoutStyleNumber )
+
+ITextDocumentSection  методы
+
+Update  Обновление данных
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Delete  Удалить раздел
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+2307
+
+
+
+Менеджер библиотек
+Интерфейс ILibraryManager
+Интерфейс Менеджера библиотек.
+Иерархия:
+IKompasAPIObject
+
+ ILibraryManager
+Примечание:
+
+1. Данный интерфейс объединяет работу с библиотеками процедур (файлы *.rtw и *.dll ) и
+библиотеками документов: фрагментов (файлы *.lfr ) и моделей (файлы *.l3d). Интер"
+фейс позволяет выполнять следующие действия:
+
+▼ получить коллекции соответствующих библиотек, активный узел в менеджере библио"
+тек, его название и комментарий;
+
+▼ получить и управлять положением и видимостью Менеджера библиотек.
+2. Данный интерфейс можно получить у интерфейса приложения IApplication с помощью
+
+свойства IApplication::LibraryManager.
+
+ILibraryManager  свойства
+
+ActiveFolder  Активная папка в окне Менеджера 
+библиотек
+Функция не поддерживается
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+ActiveFolder = Получить свойство (* )
+iObject.ActiveFolder
+iObject.ActiveFolder = Установить свойство (* )
+ActiveFolder
+ActiveFolder = Получить свойство (**)
+iObject.GetActiveFolder()
+iObject.SetActiveFolder Установить свойство (**)
+(ActiveFolder)
+
+Синтаксис COM:
+
+iObject">get_ActiveFolder Получить свойство
+(&ActiveFolder)
+iObject">put_ActiveFolder Установить свойство
+(ActiveFolder)
+
+Примечание:
+2308
+
+
+
+Позволяет получить и установить имя текущей папки в Менеджере библиотек.
+
+ActiveFolderComment  Комментарий активной папки
+Функция не поддерживается
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ActiveFolderComment = Получить свойство (* )
+iObject.ActiveFolderComment
+iObject.ActiveFolderComment = Установить свойство (* )
+ActiveFolderComment
+ActiveFolderComment = Получить свойство (**)
+iObject.GetActiveFolderComment
+()
+iObject.SetActiveFolderComment Установить свойство (**)
+(ActiveFolderComment)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ActiveFolderComment
+(&ActiveFolderComment)
+iObject" Установить свойство
+>put_ActiveFolderComment
+(ActiveFolderComment)
+
+Примечание:
+Комментарий текущей папки может быть многострочным. Поэтому свойство возвращает
+или принимает переменную типа VARIANT на безопасный массив строк SAFEARRAY
+(VT_ARRAY | VT_BSTR).
+
+CurrentLibrary  Текущая прикладная библиотека
+Интерфейс...
+Тип данных: указатель на интерфейс IProceduresLibrary
+Синтаксис Automation:
+
+CurrentLibrary = Получить свойство (* )
+iObject.CurrentLibrary
+CurrentLibrary = Получить свойство (**)
+iObject.GetCurrentLibrary()
+
+Синтаксис COM:
+2309
+
+
+
+iObject">get_CurrentLibrary Получить свойство
+(&CurrentLibrary)
+
+Примечание:
+
+1. Подключенными одновременно могут быть несколько библиотек, но текущей библиоте"
+кой может быть одна.
+
+2. Текущей является библиотека, у которой непосредственно выполняется команда или
+вызван обработчик события.
+
+DocumentsLibraries  Коллекция библиотек документов
+Интерфейс...
+Тип данных: Указатель на интерфейс IInsertsLibraries
+Синтаксис Automation:
+
+DocumentsLibraries = Получить свойство (* )
+Object.DocumentsLibraries
+DocumentsLibraries = Получить свойство (**)
+Object.GetDocumentsLibraries()
+
+ Синтаксис COM:
+
+Object.get_DocumentsLibraries( Получить свойство
+&DocumentsLibraries )
+
+Примечание:
+Свойство доступно только для чтения
+
+FragmentsLibraries  Коллекция библиотек фрагментов
+Интерфейс...
+Тип данных: Указатель на коллекцию библиотек документов IInsertsLibraries
+Синтаксис Automation:
+
+FragmentsLibraries = Получить свойство (* )
+iObject.FragmentsLibraries
+LayerGroups = Получить свойство (**)
+iObject.GetLayerGroups()
+
+Синтаксис COM:
+
+iObject">get_FragmentsLibraries Получить свойство
+(&FragmentsLibraries)
+2310
+
+
+
+Примечание:
+
+1. Свойство позволяет получить коллекцию библиотек фрагментов, которые зарегистри"
+рованы в Менеджере библиотек.
+
+2. Под библиотекой фрагментов понимается библиотека документов КОМПАС, состоящая
+из фрагментов.
+
+3. Следует различать следующие состояния библиотек фрагментов:
+▼ зарегистрирована в Менеджере библиотек; имеется описание библиотеки в Менеджере,
+▼ подключена; эта библиотека отображается в меню "Библиотеки", рядом с ее названием в
+
+списке показан знак «галочка»,
+4. Если библиотека защищена лицензией, то при подключении библиотеки она захватывает
+
+лицензию.
+5. Фрагменты из подключенной библиотеки могут быть вставлены в графические доку"
+
+мент системы КОМПАС.
+6. Если библиотека не защищена, ее можно редактировать.
+
+Layout  Положение Менеджера библиотек (вверху, 
+внизу, слева, справа, плавающий)
+Интерфейс...
+Тип данных: PropertyManagerLayout
+Синтаксис Automation:
+
+Layout = iObject.Layout Получить свойство (* )
+Layout = iObject.GetLayout() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Layout (&Layout) Получить свойство
+
+Примечание:
+Позволяет получить положение Менеджера библиотек.
+
+ModelsLibraries  Коллекция библиотек моделей
+Интерфейс...
+Тип данных: Указатель на коллекцию библиотек документов IInsertsLibraries
+Синтаксис Automation:
+
+ModelsLibraries = Получить свойство (* )
+iObject.ModelsLibraries
+ModelsLibraries = Получить свойство (**)
+iObject.ModelsLibraries()
+
+Синтаксис COM:
+2311
+
+
+
+iObject">get_ModelsLibraries Получить свойство
+(&ModelsLibraries)
+
+Примечание:
+
+1. Свойство позволяет получить коллекцию библиотек моделей, которые зарегистрирова"
+ны в Менеджере библиотек.
+
+2. Под библиотекой фрагментов понимается библиотека документов КОМПАС, состоящая
+из деталей и сборок.
+
+3. Следует различать следующие состояния библиотек фрагментов:
+▼ зарегистрирована в Менеджере библиотек; имеется описание библиотеки в Менеджере,
+▼ подключена; эта библиотека отображается в меню "Библиотеки", рядом с ее названием в
+
+списке показан знак «галочка»,
+4. Если библиотека защищена лицензией, то при подключении библиотеки она захватывает
+
+лицензию.
+5. Модели из подключенной библиотеки могут быть вставлены в документ"модель систе"
+
+мы КОМПАС.
+6. Если библиотека не защищена, ее можно редактировать.
+
+ProceduresLibraries  Коллекция прикладных библиотек
+Интерфейс...
+Тип данных: IProceduresLibraries
+Синтаксис Automation:
+
+ProceduresLibraries = Получить свойство (* )
+iObject.ProceduresLibraries
+ProceduresLibraries = Получить свойство (**)
+iObject.GetProceduresLibraries()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_ProceduresLibraries
+(&ProceduresLibraries)
+
+Примечание:
+
+1. Свойство позволяет получить коллекцию процедурных библиотек, которые зарегистри"
+рованы в Менеджере библиотек.
+
+2. Под процедурной библиотекой понимается библиотека, разработанная в какой"либо
+среде программирования с использованием Компас API.
+
+3. Следует различать следующие состояния процедурных библиотек:
+▼  зарегистрирована в Менеджере библиотек; имеется описание библиотеки в Менеджере,
+2312
+
+
+
+▼ подключена; библиотека подключена к задаче, эта библиотека отображается в меню "Би"
+блиотеки", рядом с ее названием в списке показан знак «галочка»,
+
+▼ библиотека выполняется (является текущей); вызвана команда (процедура) библиотеки
+или библиотека подписалась на события системы КОМПАС. В случае выполнения библи"
+отечной команды библиотеку нельзя отключить и удалить описание библиотеки из Ме"
+неджера библиотек.
+
+4. Если библиотека защищена лицензией, то при подключении библиотеки она захватывает
+лицензию.
+
+SystemControlStartLibrary  Получить прикладную 
+библиотеку, которая запустила SystemControlStart
+Интерфейс...
+Тип данных: IProceduresLibrary
+Синтаксис Automation:
+
+SystemControlStartLibrary = Получить свойство (* )
+iObject.SystemControlStartLibrar
+y
+SystemControlStartLibrary = Получить свойство (**)
+iObject.GetSystemControlStartLi
+brary()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_SystemControlStartLibrary
+(&CurrentLibrary)
+
+Примечание:
+
+1. Свойство позволяет вернуть интерфейс библиотеки.
+2. Библиотека во время выполнения может вызвать функцию SystemControlStart для пере"
+
+дачи управления системе КОМПАС. После вызова этой функции выполнение библиотеки
+приостанавливается.
+
+3. Управление возвращается библиотеке при вызове функции SystemControlStop из этой
+же библиотеки или при выполнении соответствующей команды меню.
+
+SystemControlStartResult  Получить результат работы 
+SystemControlStart
+Интерфейс...
+Тип данных: ksSystemControlStartEnum.
+Синтаксис Automation:
+2313
+
+
+
+SystemControlStartResult = Получить свойство (* )
+iObject.SystemControlStartResul
+t
+SystemControlStartResult = Получить свойство (**)
+iObject.GetSystemControlStartR
+esult()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_SystemControlStartResult
+(&SystemControlStartResult)
+
+Visible  Свойство видимости Менеджера библиотек
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Visible = iObject.Visible Получить свойство (* )
+iObject.Visible = Visible Установить свойство (* )
+Visible = iObject.GetVisible() Получить свойство (**)
+iObject.SetVisible (Visible) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Visible (&Visible) Получить свойство
+iObject">put_Visible (Visible) Установить свойство
+
+Примечание:
+Позволяет получить и установить свойство видимости Менеджера библиотек.
+
+ILibraryManager методы
+
+AddFolder  Добавить новую папку в Менеджер 
+библиотек
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+void AddFolder (BSTR PathFolder);
+Синтаксис COM:
+2314
+
+
+
+HRESULT AddFolder ([in] BSTR PathFolder);
+Входные параметры:
+
+PathFolder " путь в Менеджере библиотек к папке. Если папка 
+является вложенной, т. е. добавляется в другую папку, 
+имена папок внутри пути отделяются символом "|".
+
+RemoveFolder  Удалить папку из Менеджера библиотек
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+void RemoveFolder (BSTR PathFolder);
+Синтаксис COM:
+HRESULT RemoveFolder ([in] BSTR PathFolder);
+Входные параметры:
+
+PathFolder " путь в Менеджере библиотек к папке. Если папка 
+является вложенной, т. е. добавляется в другую папку, 
+имена папок внутри пути отделяются символом "|".
+
+SetCurrentLibrary  Установить текущую прикладную 
+библиотеку
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCurrentLibrary (LPDISPATCH pVal);
+Синтаксис COM:
+HRESULT SetCurrentLibrary ([in] IProceduresLibrary* pVal, [out, retval] VARIANT_BOOL*
+result);
+Входные параметры:
+
+pVal " интерфейс библиотеки IProceduresLibrary, которую 
+нужно сделать текущей.
+
+Возвращаемое значение:
+
+TRUE " библиотека стала текущей,
+FALSE " в случае ошибки.
+
+Примечание:
+Данный метод следует использовать осторожно, иначе можно нарушить последователь"
+ность выполнения библиотек.
+2315
+
+
+
+Метод может быть применен к подключенной библиотеке.
+Метод позволяет остановить режим SystemControlStart, запущенный не из выполняемой
+(текущей) библиотеки. Для этого необходимо выполнить следующие действия:
+
+1. При помощи свойства SystemControlStartLibrary получить библиотеку, вызвавшую
+SystemControlStart.
+
+2. Сделать ее текущей методом SetCurrentLibrary.
+3. При помощи метода ksSystemControlStop вернуть управление библиотеке, которая запу"
+
+стила SystemControlStart.
+4. Восстановить в качестве текущей выполняемую ранее библиотеку.
+
+Интерфейс ILibrary
+Базовый интерфейс всех библиотек системы КОМПАС.
+Иерархия:
+IKompasAPIObject
+
+ILibrary
+Описание:
+Базовый интерфейс для прикладных библиотек, библиотек фрагментов и библиотек мо"
+делей. Включает в себя функционал, общий для этих библиотек. С помощью этого ин"
+терфейса можно узнать тип библиотеки, имя библиотеки, имя файла, признак лицензи"
+онной защиты, управлять подключением библиотеки.
+
+ILibrary  свойства
+
+Attach  Подключение библиотеки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Attach = iObject.Attach Получить свойство (* )
+iObject.Attach = Attach Установить свойство (* )
+Attach = iObject.GetAttach() Получить свойство (**)
+iObject.SetAttach (Attach) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Attach (&Attach) Получить свойство
+iObject">put_Attach (Attach) Установить свойство
+
+Значение свойства:
+
+TRUE " библиотека подключена,
+FALSE " библиотека не подключена.
+2316
+
+
+
+Примечание:
+Свойство позволяет получить и управлять подключением библиотеки. При подключении
+библиотеки в системе КОМПАС создается объект, отвечающий за работу данной библи"
+отеки. В Менеджере библиотек напротив имени библиотеки появляется значок «галоч"
+ка». “Захватывается лицензия на библиотеку. Если это прикладная библиотека, то под"
+ключенную библиотеку можно посылать на выполнение, вызвав метод Execute. Для
+библиотек документов можно производить вставку документа в документ КОМПАС.
+
+Enable  Признак лицензионной защиты библиотеки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Enable = iObject.Enable Получить свойство (* )
+Enable = iObject.GetEnable() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Enable( &Enable ) Получить свойство
+
+Значения свойства:
+
+TRUE " библиотека доступна для выполнения или вставки,
+FALSE " библиотека недоступна для выполнения или вставки.
+
+Примечание:
+Свойство возвращает признак лицензионной защиты библиотеки. Библиотека может
+быть не подключена.
+
+LibraryManagerFolder  Папка библиотеки в Менеджере 
+библиотек
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+LibraryManagerFolder = Получить свойство (* )
+iObject.LibraryManagerFolder
+iObject" Получить свойство (**)
+>get_LibraryManagerFolder(
+&LibraryManagerFolder )
+
+Синтаксис COM:
+2317
+
+
+
+iObject" Получить свойство
+>get_LibraryManagerFolder(
+&LibraryManagerFolder )
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Если библиотека зарегистрирована в Менеджере библиотек, то свойство позволяет по"
+
+лучить в виде строки папку или папки, где библиотека располагается. Если папка явля"
+ется вложенной в другую папку, имена папок отделяются символом "|".
+
+LibraryType  Тип библиотеки
+Интерфейс...
+Тип данных: ksLibraryTypeEnum
+Синтаксис Automation:
+
+LibraryType = Получить свойство (* )
+iObject.LibraryType
+LibraryType = Получить свойство (**)
+iObject.GetLibraryType()
+
+Синтаксис COM:
+
+iObject">get_LibraryType( Получить свойство
+&LibraryType )
+
+Примечание:
+Свойство возвращает тип библиотеки (прикладная, фрагментов, моделей).
+
+Name  Имя библиотеки
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Name( &Name ) Получить свойство
+
+Примечание:
+Свойство возвращает отображаемое имя библиотеки, задаваемое при помощи функции
+DisplayLibraryName.
+2318
+
+
+
+PathName  Имя файла библиотеки
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+PathName = iObject.PathName Получить свойство (* )
+PathName = Получить свойство (**)
+iObject.GetPathName()
+
+Синтаксис COM:
+
+iObject">get_PathName( Получить свойство
+&PathName ) 
+
+Примечание:
+Свойство возвращает имя файла библиотеки.
+
+ILibrary  методы
+
+Execute  Выполнить команду
+Интерфейс...
+Синтаксис Automation:
+BOOL Execute (long command, LPDISPATCH external, VARIANT_BOOL post);
+Синтаксис COM:
+HRESULT Execute([in] long command,
+[in] LPDISPATCH external,
+[in] VARIANT_BOOL post,
+[out, retval] VARIANT_BOOL* pVal);
+Входные параметры:
+
+command " номер команды,
+external " интерфейс для обмена данными между библиотекой, вызвавшей 
+
+Execute, и библиотекой, в которой реализована команда. Интерфейс 
+определен разработчиком библиотек. Может быть NULL,
+
+post " отложенное выполнение, если TRUE,
+ если FALSE " немедленное.
+
+Возвращаемое значение:
+
+TRUE " команда выполнена.
+FALSE " команда не выполнена.
+
+Примечание:
+2319
+
+
+
+Метод позволяет выполнить команду прикладной библиотеки. При этом проверяется ли"
+цензионная защита, и может быть передан пользовательский интерфейс для обмена
+данными между библиотеками. Выполнение команды может быть отложенное или не"
+медленное.
+Получить интерфейс для обмена данными между библиотекой в функции LibraryEntry
+можно с помощью свойства IProceduresLibrary::ExternalInterface
+
+Интерфейс IInsertsLibrary
+Интерфейс библиотеки элементов (документов) Компас.
+Иерархия:
+IKompasAPIObject
+
+ILibrary
+IInsertsLibrary
+
+Описание:
+Позволяет получить доступ к библиотеке элементов (документов) системы КОМПАС
+(фрагментов или моделей), редактировать структуру библиотеки, получить доступ к кол"
+лекции элементов (документов) библиотеки.
+Примечание:
+Интерфейс библиотеки фрагментов или моделей системы КОМПАС можно получить у
+интерфейса IInsertsLibraries с помощью свойства IInsertsLibraries::Item. 
+
+IInsertsLibrary  свойства
+
+ActiveFolder  Активная папка в окне библиотеки элементов
+Функция не поддерживается
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+ActiveFolder = Получить свойство (* )
+iObject.ActiveFolder
+ActiveFolder = Получить свойство (**)
+iObject.GetActiveFolder
+
+Синтаксис COM:
+
+iObject">get_ActiveFolder Получить свойство
+(&ActiveFolder)
+
+Примечание:
+Свойство позволяет получить активную папку в окне библиотеки.
+2320
+
+
+
+Inserts  Коллекция элементов (документов) библиотеки
+Интерфейс...
+Тип данных: указатель на интерфейс IInserts
+Синтаксис Automation:
+
+Inserts = iObject.Inserts Получить свойство (* )
+Inserts = iObject.GetInserts Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Inserts (&Inserts) Получить свойство
+
+Примечание:
+Свойство позволяет получить коллекцию элементов (документов) библиотеки.
+
+IInsertsLibrary  методы
+
+AddFolder  Добавить папку в библиотеку элементов
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+BOOL AddFolder (BSTR PathFolder);
+Синтаксис COM:
+HRESULT AddFolder ([in] BSTR PathFolder, [out, retval] VARIANT_BOOL* pVal);
+Входные параметры:
+
+PathFolder " путь к папке,
+post " TRUE " отложенное выполнение.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Добавляет новую папку в библиотеку элементов.
+
+Delete  Удалить описание библиотеки
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+2321
+
+
+
+HRESULT Delete( BOOL* PVal );
+Возвращаемое значение :
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+RemoveFolder  Удалить папку из библиотеки элементов
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+BOOL RemoveFolder (BSTR PathFolder);
+Синтаксис COM:
+HRESULT RemoveFolder ([in] BSTR PathFolder, [out, retval] VARIANT_BOOL* pVal);
+Входные параметры:
+
+PathFolder " путь к папке,
+post " TRUE " отложенное выполнение.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Удаляет папку из библиотеки элементов.
+
+SetActiveFolder  Установить активную папку в окне 
+библиотеки элементов (документов)
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+BOOL SetActiveFolder (BSTR PathFolder, BOOL LastIsFile, BOOL HaveLibName);
+Синтаксис COM:
+HRESULT SetActiveFolder ([in] BSTR PathFolder,
+VARIANT_BOOL LastIsFile,
+VARIANT_BOOL HaveLibName,
+[out, retval] VARIANT_BOOL * pVal);
+Входные параметры:
+
+PathFolder " путь к папке,
+2322
+
+
+
+LastIsFile TRUE " в пути имеется имя файла документа,
+HaveLibName(BOOL) " TRUE " в пути имеется имя библиотеки.
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить активную папку в окне библиотеки документов. Путь к пап"
+ке может содержать или не содержать имя библиотеки и имя документа. Имя библиоте"
+ки, имя папки и имя документа разделяются символом "|". Если папка является вложен"
+ной, т. е. находится внутри другой папки, названия папок в пути отделяются символом "|".
+Пример. Библиотека с именем 111, содержит папку с именем ddd, в которой находится
+файл с именем fragment. Путь к этому файлу должен быть задан следующим образом:
+111|ddd|fragment.
+
+Интерфейс IProceduresLibrary
+Интерфейс прикладной библиотеки КОМПАС.
+Иерархия:
+IKompasAPIObject
+
+ILibrary
+IProceduresLibrary
+
+Примечание:
+
+1.  Интерфейс позволяет работать с прикладной библиотекой (*.rtw или *.dll), зарегистри"
+рованной в Менеджере библиотек. Можно получить стиль отображения библиотеки (па"
+нель, окно, диалог, меню) и массив процедур, реализованных в библиотеке.
+
+2.  Данный интерфейс можно получить следующими способами:
+▼ у интерфейса коллекции прикладных библиотек IProceduresLibraries c помощью свойст"
+
+ва IProceduresLibraries::Item,
+▼ у интерфейса ILibraryManager с помощью свойства ILibraryManager::CurrentLibrary, 
+
+ILibraryManager::SystemControlStartLibrary.
+
+IProceduresLibrary  свойства
+
+AddIns  Признак AddInбиблиотеки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AddIns = iObject.AddIns Получить свойство (* )
+2323
+
+
+
+AddIns = iObject.GetAddIns Получить свойство (**)
+Синтаксис COM:
+
+iObject">get_AddIns (&AddIns) Получить свойство
+
+Примечание:
+Если библиотека является расширением, свойство вернет TRUE.
+
+CurrentCommand  Текущая команда библиотеки
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+CurrentCommand = Получить свойство (* )
+iObject.CurrentCommand
+CurrentCommand = Получить свойство (**)
+iObject.GetCurrentCommand
+
+Синтаксис COM:
+
+iObject">get_CurrentCommand Получить свойство
+(&CurrentCommand)
+
+Примечание:
+Свойство позволяет получить текущую команду библиотеки. Текущая команда " это ко"
+манда, которая выполняется в данный момент времени.
+
+Executable  Признак выполнения библиотеки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Executable = iObject.Executable Получить свойство (* )
+Executable = Получить свойство (**)
+iObject.GetExecutable()
+
+Синтаксис COM:
+
+iObject">get_Executable( Получить свойство
+&Executable )
+
+Примечание:
+2324
+
+
+
+Если выполняется команда библиотеки или отрабатывается событие, на которое подпи"
+салась библиотека, то свойство вернет TRUE.
+
+ExternalInterface  Получить указатель внешнего интерфейса
+Интерфейс...
+Тип данных: Указатель на интерфейс IDispatch
+Синтаксис Automation:
+
+ExternalInterface = Получить свойство (* )
+Object.ExternalInterface
+ExternalInterface = Получить свойство (**)
+Object.GetExternalInterface()
+
+Синтаксис COM:
+
+Object.get_ExternalInterface( Получить свойство
+&ExternalInterface )
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. Addref на выдаваемый интерфейс не выполняется.
+3. Внешний интерфейс можно использовать для обмена данными между двумя приложе"
+
+ниями. Первое приложение передает интерфейс при вызове метода ILibrary::Execute.
+4. После выполнения ILibrary::Execute свойство ExternalInterface возвращает NULL.
+
+IconsFont  Имя файла шрифта для панели команд 
+библиотеки
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+IconsFont = Object.IconsFont Получить свойство (* )
+IconsFont = Получить свойство (**)
+Object.GetIconsFont()
+
+Синтаксис COM:
+
+Object.get_IconsFont( Получить свойство
+&IconsFont )
+
+Примечание:
+Свойство доступно только для чтения.
+2325
+
+
+
+LibraryName  Имя библиотеки, возвращаемое функцией 
+LIBRARYNAME или LIBRARYID
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+LibraryName = Получить свойство (* )
+Object.LibraryName
+LibraryName = Получить свойство (**)
+Object.GetLibraryName()
+
+Синтаксис COM:
+
+Object.get_LibraryName( Получить свойство
+&LibraryName )
+
+Примечание:
+Свойство возвращает имя библиотеки, возвращаемое функцией LIBRARYNAME или
+LIBRARYID.
+Отображаемое имя библиотеки может отличаться, если в библиотеке реализована фун"
+кция DisplayLibraryName.
+Для получения отображаемого имени библиотеки используется свойство ILibrary::Name.
+При получении библиотеки по имени из коллекции можно использовать как отображае"
+мое, так и внутреннее имя.
+Свойство доступно только для чтения.
+
+Procedures  Коллекция процедур библиотеки
+Интерфейс...
+Тип данных: указатель на интерфейс IProcedures
+Синтаксис Automation:
+
+Procedures = iObject.Procedures Получить свойство (* )
+Procedures = Получить свойство (**)
+iObject.GetProcedures
+
+Синтаксис COM:
+
+iObject">get_Procedures Получить свойство
+(&Procedures)
+
+Примечание:
+Свойство позволяет получить коллекцию процедур библиотеки.
+2326
+
+
+
+Style  Стиль отображения библиотеки
+Интерфейс...
+Тип данных: ksLibraryStyleEnum
+Синтаксис Automation:
+
+Style = iObject.Style Получить свойство (* )
+iObject.Style = Style Установить свойство (* )
+Style = iObject.GetStyle() Получить свойство (**)
+iObject.SetStyle (Style) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Style (&Style) Получить свойство
+iObject">put_Style (Style) Установить свойство
+
+Примечание:
+Позволяет получить и установить стиль отображения библиотеки.
+
+UniqueId  Идентификатор библиотеки
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+UniqueId = iObject.UniqueId Получить свойство (* )
+UniqueId = iObject.GetUniqueId Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_UniqueId Получить свойство
+(&UniqueId)
+
+Примечание:
+Свойство позволяет получить идентификатор библиотеки. Идентификатор присваивает"
+ся библиотеке, когда она подключена к системе. В этот момент библиотека отображает"
+ся в меню Библиотеки и в Менеджере библиотек рядом с именем библиотеки взводит"
+ся «галочка». У подключенной библиотеки можно выполнять команды (процедуры).
+
+IProceduresLibrary  методы
+
+Delete  Удалить описание библиотеки
+Интерфейс...
+Синтаксис Automation:
+2327
+
+
+
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL* PVal );
+Возвращаемое значение :
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+SystemControlStart  Передать управление системе из под 
+библиотеки
+Интерфейс...
+Синтаксис Automation:
+ksSystemControlStartEnum SystemControlStart( BSTR menuCommand );
+Синтаксис COM:
+HRESULT SystemControlStart([in] BSTR menuCommand, [out, retval]
+ksSystemControlStartEnum* pVal);
+Входные параметры:
+
+PathFolder " путь к папке,
+post " TRUE " отложенное выполнение.
+
+Возвращаемое значение:
+
+ksSystemControlStartEnum
+
+Примечание:
+Библиотечная функция отдает управление КОМПАС"ГРАФИК для интерактивной дора"
+ботки документа. Возврат в библиотечную функцию будет осуществлен после нажатия
+команды в меню Библиотеки, обозначенной строкой menuCommand. 
+Если строка не задана, то ей автоматически будет присвоено значение "Вернуться в би"
+блиотеку" (функция вернет ksSCStoppedByMenuCommand). Или при вызове из этой же
+библиотеки SystemControlStop (функция вернет ksSCStopItself). Библиотека, находясь в
+этом режиме, как бы замирает на вызове SystemControlStart. Если этот режим вызван в
+другой библиотеке, то в данной библиотеке режим выполняться не будет (функция вер"
+нет ksSCStartedByAnotherLibrary). Только одна библиотека может находиться в режиме
+SystemControlStart.
+
+SystemControlStop  Вернуть управление в библиотеку
+Интерфейс...
+Синтаксис Automation:
+2328
+
+
+
+BOOL SystemControlStop();
+Синтаксис COM:
+HRESULT SystemControlStop ([out, retval] VARIANT_BOOL* pVal);
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет вернуть управление в библиотеку, если она находится в режиме
+SystemControlStart.
+
+Интерфейс IProcedure
+Интерфейс команды прикладной библиотеки КОМПАС.
+Иерархия:
+IKompasAPIObject
+
+IProcedure
+Примечание:
+
+1.  Интерфейс позволяет получить имя, идентификатор команды, ее папку в библиотеке,
+выполнить команду.
+
+2.  Данный интерфейс может быть получен у интерфейса коллекции команд IProcedures с
+помощью свойств IProcedures::Item, IProcedures::ItemByID.
+
+IProcedure  свойства
+
+ID  Идентификатор команды в прикладной библиотеке
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ID = iObject.ID Получить свойство (* )
+ID = iObject.GetID() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ID (&ID) Получить свойство
+
+Примечание:
+Позволяет получить идентификатор команды в прикладной библиотеке.
+
+LibraryFolder  Папка в прикладной библиотеке
+Интерфейс...
+2329
+
+
+
+Тип данных: строка
+Синтаксис Automation:
+
+LibraryFolder = Получить свойство (* )
+iObject.LibraryFolder()
+LibraryFolder = Получить свойство (**)
+iObject.GetLibraryFolder()
+
+Синтаксис COM:
+
+iObject">get_LibraryFolder Получить свойство
+(&LibraryFolder)
+
+Примечание:
+Позволяет получить папку в прикладной библиотеке.
+
+Name  Имя команды
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Name (&Name) Получить свойство
+
+Примечание:
+Позволяет получить имя команды.
+
+IProcedure  методы
+
+Execute  Выполнить команду
+Интерфейс...
+Синтаксис Automation:
+BOOL Execute (LPDISPATCH external, BOOL post);
+Синтаксис COM:
+HRESULT Execute([in] LPDISPATCH external,
+[in] VARIANT_BOOL post,
+[out, retval] VARIANT_BOOL* pVal);
+Входные параметры:
+2330
+
+
+
+external " интерфейс для обмена данными между библиотекой, 
+вызвавшей Execute, и библиотекой, в которой реализована 
+команда. Интерфейс определен разработчиком библиотек. 
+Может быть NULL,
+
+post " TRUE " отложенное выполнение.
+
+Возвращаемое значение:
+
+TRUE " команда выполнена,
+FALSE " команда не выполнена.
+
+Примечание:
+Метод позволяет выполнить команду прикладной библиотеки. При этом проверяется ли"
+цензионная защита и может быть передан пользовательский интерфейс для обмена дан"
+ными между библиотеками. Выполнение команды может быть отложенное или немед"
+ленное.
+
+Интерфейс IInsert
+Интерфейс элемента (фрагмента или модели) библиотеки элементов.
+Иерархия:
+IKompasAPIObject
+
+IInsert
+Описание:
+Позволяет получить доступ к документу"вставке в библиотеку элементов (фрагментов
+или моделей).
+Примечание:
+Данный интерфейс можно получить у интерфейса IInserts с помощью свойства
+IInserts::Item или метода IInserts::Add.
+
+IInsert  свойства
+
+Comment  Комментарий
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Comment = iObject.Comment Получить свойство (* )
+iObject.Comment = Comment Установить свойство (* )
+Comment = Получить свойство (**)
+iObject.GetComment()
+iObject.SetComment (Comment) Установить свойство (**)
+
+Синтаксис COM:
+2331
+
+
+
+iObject">get_Comment Получить свойство
+(&Comment)
+iObject">put_Comment Установить свойство
+(Comment)
+
+Примечание:
+Позволяет получить и установить комментарий для вставки. Комментарий может быть
+многострочным. Поэтому свойство возвращает или принимает переменную типа
+VARIANT на безопасный массив строк SAFEARRAY (VT_ARRAY | VT_BSTR).
+
+InsertType  Тип элемента
+Интерфейс...
+Тип данных: из перечисления ksDocumentsLibraryInsertionTypeEnum
+Синтаксис Automation:
+
+InsertType = Object.InsertType Получить свойство (* )
+InsertType = Получить свойство (**)
+Object.GetInsertType()
+
+Синтаксис COM:
+
+Object.get_InsertType( Получить свойство
+&InsertType )
+
+Примечание:
+Свойство доступно только для чтения
+
+LibraryFolder  Папка в библиотеке элементов
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+LibraryFolder = Получить свойство (* )
+iObject.LibraryFolder()
+LibraryFolder = Получить свойство (**)
+iObject.GetLibraryFolder()
+
+Синтаксис COM:
+
+iObject">get_LibraryFolder Получить свойство
+(&LibraryFolder)
+2332
+
+
+
+Примечание:
+Свойство позволяет получить папку вставки внутри библиотеки. Папки отделяются сим"
+волом "|".
+Пример "детали|литье|фланец".
+
+Name  Имя элемента
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+Name = iObject.Name Получить свойство (* )
+iObject.Name = Name Установить свойство (* )
+Name = iObject.GetName() Получить свойство (**)
+iObject.SetName (Name) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Name (&Name) Получить свойство
+iObject">put_Name (Name) Установить свойство
+
+Примечание:
+Позволяет получить и установить имя вставки.
+
+PathName  Полное имя элемента
+Интерфейс...
+Тип данных: строка
+Синтаксис Automation:
+
+PathName = iObject.PathName() Получить свойство (* )
+PathName = Получить свойство (**)
+iObject.GetPathName()
+
+Синтаксис COM:
+
+iObject">get_PathName Получить свойство
+(&PathName)
+
+Примечание:
+Свойство позволяет получить полное имя вставки вместе с папками внутри библиотеки.
+Папки отделяются символом "|".
+Пример "детали|литье|фланец".
+2333
+
+
+
+IInsert  методы
+
+Delete  Удалить элемент из библиотеки
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete ([out, retval] VARIANT_BOOL* pVal);
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить вставку из библиотеки документов.
+
+Edit  Редактировать элемент
+Функция не поддерживается
+Интерфейс...
+Синтаксис Automation:
+IKompasDocument* Edit();
+Синтаксис COM:
+HRESULT Edit ([out, retval] IKompasDocument** pVal);
+Возвращаемое значение:
+
+Указатель на интерфейс IKompasDocument со"
+зданной вставки.
+
+Примечание:
+Метод позволяет создать и добавить в библиотеку документ"вставку определенного ти"
+па. В библиотеки фрагментов можно вставлять фрагменты, в библиотеки моделей, как
+3D модели, так и сборки. Имя вставки и папки в имени вставки отделяются символом "|".
+Пример "детали|литье|фланец".
+
+Интерфейс ICheckSum
+Интерфейс контрольной суммы.
+Иерархия:
+IKompasAPIObject
+2334
+
+
+
+ICheckSum
+Описание.
+Интерфейс позволяет формировать контрольную сумму с последовательности параме"
+тров, получаемых в прикладной библиотеке, и контролировать её работоспособность.
+Запись в файл полученной контрольной суммы после выполнения заданной последова"
+тельности команд библиотеки с последующим сравнением значений контрольной сум"
+мы, полученных в разное время, позволяет контролировать повторяемость результатов
+" получения одних и тех же параметров, а в случае внесения изменений в текст библио"
+теки " обнаружить скрытые ошибки (ошибки, приведшие к изменению получаемых  па"
+раметров и, соответственно, изменению контрольной суммы). Если в библиотеке выпол"
+няется анализ документа, рекомендуется выполнять тестовые запуски библиотеки на
+одних и тех же документах.
+Примечание:
+Данный интерфейс можно получить от интерфейса IApplicationI, используя свойство
+IApplication::CheckSum.
+
+ICheckSum  свойства
+
+Result  Получить контрольную сумму в виде массива 
+SAFEARRAY значений типа BYTE (VT_ARRAY | VT_UI1)
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Result = iObject.Result Получить свойство (* )
+Result = iObject.GetResult() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Result (&Result) Получить свойство,
+
+Примечание:
+Свойство доступно только для чтения.
+
+StrResult Получить контрольную сумму в виде строки
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+StrResult = iObject.StrResult Получить свойство (* )
+StrResult = iObject.GetStrResult() Получить свойство (**)
+
+Синтаксис COM:
+2335
+
+
+
+iObject">get_StrResult( &StrResult ) Получить свойство,
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. Строка контрольной суммы представляет собой последовательность из 32 буквенных
+
+латинских символов. Строка инициализированной (очищенной) контрольной суммы
+представляет собой последовательность aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.
+
+Version  Версия контрольной суммы
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Version = iObject.Version Получить свойство (* )
+iObject.Version = Version Установить свойство (* )
+Version = iObject.GetVersion() Получить свойство (**)
+iObject.SetVersion(Version) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Version(&Version) Получить свойство
+iObject">put_Version(Version) Установить свойство
+
+Примечание:
+Версия контрольной суммы это число, равное версии потока КОМПАС. ICheckSum ис"
+пользуется для автоматизированного тестирования функционала. 
+Смысл тестирования заключается в получении значения контрольной суммы на тесте и
+сравнения его с эталонным. Контрольные суммы должны совпадать.
+Причины различий могут быть следующими:
+
+▼ ошибка в функционале,
+▼ развитие функционала.
+
+Введение свойства Version позволяет установить причину несовпадения контрольных
+сумм.
+До введения свойства развитие функционала воспринималось как его ошибка.
+Отслеживание версии контрольной суммы начинается с версии потока 0x0A001023L, что
+соответствует версии КОМПАС V10 SP2.
+Получаем версию контрольной суммы всегда как версию потока КОМПАС.
+Задать версию контрольной суммы можно следующими способами:
+
+▼ непосредственно числом (версия потока),
+▼ из перечисления ksCheckSumVersionEnum. 
+
+При получении интерфейса ICheckSum версия контрольной суммы инициируется вер"
+сией потока текущей задачи КОМПАС.
+2336
+
+
+
+ICheckSum  методы
+
+Add  Добавить параметр к контрольной сумме
+Интерфейс...
+Синтаксис Automation:
+void Add (VARIANT value, BOOL order);
+Синтаксис COM:
+HRESULT Add (VARIANT value, VARIANT_BOOL order);
+Входные параметры:
+
+value " добавляемое значение,
+order " формировать суммарную контрольную сумму значений:
+
+TRUE " с учетом порядка следования значений,
+FALSE " без учета порядка следования значений.
+
+Примечание:
+Параметр value может принимать значения следующих типов:
+
+▼ VT_INT,
+▼ VT_I2,
+▼ VT_I4,
+▼ VT_R4,
+▼ VT_R8,
+▼ VT_UI1,
+▼ VT_UINT,
+▼ VT_BOOL,
+▼ VT_BSTR,
+▼ VT_ARRAY | VT_UI1.
+
+AddInterface Добавить к контрольной сумме параметр, 
+получаемый из объекта по его интерфейсу
+Интерфейс...
+Синтаксис Automation:
+BOOL AddInterface (LPUNKNOWN object, BOOL order);
+Синтаксис COM:
+HRESULT AddInterface( LPUNKNOWN object, VARIANT_BOOL order, VARIANT_BOOL * res );
+Входные параметры:
+
+object " указатель на интерфейс,
+2337
+
+
+
+order " формировать суммарную контрольную сумму 
+значений:
+TRUE " с учетом порядка следования значений,
+FALSE " без учета порядка следования значений.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного получения контрольной суммы 
+присланного объекта и добавления полученного значения в 
+суммарную контрольную сумму,
+
+FALSE " в случае неудачи.
+
+Примечание:

@@ -1,0 +1,2532 @@
+BOOL ResetDepthObject (BOOL normal);
+Входной параметр:
+3221
+
+
+
+normal " направление выдавливания:
+(TRUE " совпадает с направлением нормали к плоскости 
+эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetDepthObject  Установить объект, задающий глубину 
+выдавливания
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetDepthObject (BOOL normal, LPDISPATCH obj);
+Синтаксис COM:
+BOOL SetDepthObject (BOOL normal, LPENTITY obj);
+Входной параметр:
+
+normal " направление выдавливания:
+(TRUE " совпадает с направлением нормали к плоскости 
+эскиза,
+FALSE " противоположно направлению нормали к 
+плоскости эскиза),
+
+obj " указатель на интерфейс ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetSideParam  Изменить параметры выдавливания в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_EXTRUSION_SOLID.htm
+Синтаксис Automation:
+BOOL SetSideParam (BOOL forward, 
+3222
+
+
+
+short type, 
+double depth, 
+double draftValue, 
+BOOL draftOutward);
+Синтаксис COM:
+BOOL SetSideParam (BOOL forward, 
+short type, 
+double depth, 
+double draftValue, 
+BOOL draftOutward);
+Входные параметры:
+
+forward " направление выдавливания:
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+type " тип выдавливания,
+depth " глубина выдавливания,
+draftValue " угол уклона,
+draftOutward " направление уклона:
+
+FALSE " уклон наружу,
+TRUE " уклон внутрь.
+
+Типы выдавливания...Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetSketch  Изменить указатель на интерфейс эскиза элемента
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_EXTRUSION_SOLID.htm
+Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс эскиза ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3223
+
+
+
+SetThinParam  Изменить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ThinParam  Получить указатель на интерфейс параметров тонкой 
+стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPARAM ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksThinParam или
+IThinParam.
+3224
+
+
+
+Сечение плоскостью (Интерфейсы ksCutByPlaneDefinition, 
+ICutByPlaneDefinition)
+Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Интерфейс операции сечения плоскостью.
+
+ksCutByPlaneDefin " интерфейс
+ition Automation
+ICutByPlaneDefiniti " интерфейс COM
+on
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ICutByPlaneDefinition  свойства
+
+chooseType  Тип области применения
+Интерфейс... Справка системы КОМПАС...
+
+Тип данных: из перечисления ksChooseType
+Синтаксис Automation:
+
+chooseType = iCutByPlane.chooseType Получить свойство(* )
+iCutByPlane.chooseType = chooseType Установить свойство (* )
+chooseType = Получить свойство (**)
+iCutByPlane.GetchooseType()
+iCutByPlane.SetchooseType(chooseType Установить свойство (**)
+)
+
+direction  Направление отсечения
+Интерфейс... Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Синтаксис Automation:
+3225
+
+
+
+direction = iCutByPlane.direction Получить свойство(* )
+iCutByPlane.direction = direction Установить свойство (* )
+direction = Получить свойство (**)
+iCutByPlane.GetDirection()
+iCutByPlane.SetDirection(direction) Установить свойство (**)
+
+ICutByPlaneDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс... Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+
+ChooseParts  Получить указатель на интерфейс для работы с 
+областью применения для компонентов
+Интерфейс... Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Синтаксис Automation:
+LPDISPATCH ChooseParts();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс для работы с областью
+применения для компонентов ksChooseParts или
+IChooseParts.
+
+Примечание.
+Интерфейс можно получить только для операции в сборке.
+3226
+
+
+
+GetPlane  Получить секущую плоскость
+Интерфейс... Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс секущей плоскости
+ksEntity или IEntity.
+
+SetPlane  Установить секущую плоскость
+Интерфейс... Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane  " указатель на интерфейс секущей плоскости ksEntity или 
+IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Сечение по эскизу (Интерфейсы ksCutBySketchDefinition, 
+ICutBySketchDefinition)
+Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Интерфейс операции сечения эскизом.
+
+ksCutBySketchDefini " интерфейс
+tion Automation
+ICutBySketchDefiniti " интерфейс COM
+on
+3227
+
+
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ICutBySketchDefinition  свойства
+
+direction  Направление отсечения
+Интерфейс... Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " прямое направление,
+FALSE " обратное направление.
+
+Синтаксис Automation:
+
+direction = iCutBySketch.direction Получить свойство(* )
+iCutBySketch.direction = direction Установить свойство (* )
+direction = iCutBySketch.GetDirection() Получить свойство (**)
+iCutBySketch.SetDirection(direction) Установить свойство (**)
+
+chooseType  Тип области применения
+Интерфейс... Справка системы КОМПАС...
+
+Тип данных: из перечисления ksChooseType
+Синтаксис Automation:
+
+chooseType = iCutBySketch.chooseType Получить свойство(* )
+iCutBySketch.chooseType = chooseType Установить свойство (* )
+chooseType = iCutBySketch.GetchooseType() Получить свойство (**)
+iCutBySketch.SetchooseType(chooseType) Установить свойство (**)
+
+ICutBySketchDefinition  методы
+
+ChooseParts  Получить указатель на интерфейс для работы с 
+областью применения для компонентов
+Интерфейс... Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ChooseParts();
+3228
+
+
+
+Синтаксис COM:
+LPCHOOSEBODIES ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс для работы с областью
+применения для компонентов ksChooseParts или
+IChooseParts.
+
+Примечание.
+Интерфейс можно получить только для операции в сборке.
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс... Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+
+GetSketch  Получить эскиз секущей поверхности
+Интерфейс... Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза секущей повер"
+хности ksEntity или IEntity.
+3229
+
+
+
+SetSketch  Установить эскиз секущей поверхности
+Интерфейс... Справка системы КОМПАС...
+CM_MAKE_CUT_OPER.htm
+Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+plane " указатель на интерфейс эскиза секущей поверхности 
+ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Тонкостенная оболочка (Интерфейсы ksShellDefinition, 
+IShellDefinition)
+Справка системы КОМПАС...
+
+Интерфейс тонкостенной оболочки.
+
+ksShellDefinition " интерфейс Automation
+IShellDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition .
+
+ksShellDefinition  свойства
+
+thickness  Толщина оболочки
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+thickness = iShell.thickness Получить свойство(* )
+iShell.thickness = thickness Установить свойство (* )
+3230
+
+
+
+thickness = Получить свойство (**)
+iShell.GetThickness()
+iShell.SetThickness(thickness) Установить свойство (**)
+
+thinType  Направление построения оболочки
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " внутрь,
+FALSE " наружу.
+
+Синтаксис Automation:
+
+thinType = iShell.thinType Получить свойство(* )
+iShell.thinType = thinType Установить свойство (* )
+thinType = iEvolution.GetThinType() Получить свойство (**)
+iShell.SetThinType(thinType) Установить свойство (**)
+
+ksShellDefinition  методы
+
+FaceArray  Получить указатель на интерфейс массива удаляемых 
+граней
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH FaceArray();
+Синтаксис COM:
+LPENTITYCOLLECTION FaceArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва удаляемых граней ksEntityCollection или
+IEntityCollection.
+
+Ребро жесткости (ksRibDefinition, IRibDefinition)
+Справка системы КОМПАС...
+
+Интерфейс ребра жесткости.
+3231
+
+
+
+ksRibDefinition " интерфейс
+Automation
+
+IRibDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksRibDefinition  свойства
+
+angle  Угол уклона ребра жесткости
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+angle = iRib.angle Получить свойство(* )
+iRib.angle = angle Установить свойство (* )
+angle = iRib.GetAngle() Получить свойство (**)
+iRib.SetAngle(angle) Установить свойство (**)
+
+index  Сегмент, задающий направление уклона
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+Значения свойства:
+
+0 " первое ребро эскиза,
+1, 2,… и т.д. " последующие ребра эскиза.
+
+Синтаксис Automation:
+
+index = iRib.index Получить свойство(* )
+iRib.index = index Установить свойство (* )
+index = iRib.GetIndex() Получить свойство (**)
+iRib.SetIndex(index) Установить свойство (**)
+3232
+
+
+
+side  Направление формирования ребра
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: long
+Значения свойства:
+
+0 " прямое направление в плоскости эскиза,
+1 " обратное направление в плоскости эскиза,
+2 " прямое направление ортогонально эскизу,
+3 " обратное направление ортогонально эскизу.
+
+Синтаксис Automation:
+
+side = iRib.side Получить свойство(* )
+iRib.side = side Установить свойство (* )
+side = iRib.GetSide() Получить свойство (**)
+iRib.SetAngle(angle) Установить свойство (**)
+
+ksRibDefinition  методы
+
+GetSketch  Получить указатель на интерфейс эскиза ребра
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH * GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+ 
+
+" указатель на интерфейс эскиза ребра ksEntity
+или IEntity.
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (short *thinType,
+double *normalThickness,
+double *reverseThickness);
+Синтаксис COM:
+3233
+
+
+
+BOOL GetThinParam ( BYTE *thinType,
+double *normalThickness,
+double *reverseThickness );
+Выходные параметры:
+
+thinType " направление построения стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Типы направлений выдавливания..
+
+SetSketch  Установить эскиз ребра
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс эскиза ребра ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetThinParam  Установить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (short thinType,
+double normalThickness,
+double reverseThickness);
+Синтаксис COM:
+3234
+
+
+
+BOOL SetThinParam (BYTE thinType,
+double normalThickness,
+double reverseThickness);
+Входные параметры:
+
+thinType " направление построения стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Типы направлений выдавливания..
+
+ThinParam  Получить указатель на интерфейс тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPROPERTY ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksThinParam или
+IThinParam.
+
+Уклон (Интерфейсы ksInclineDefinition, IInclineDefinition)
+Справка системы КОМПАС...
+CM_MAKE_DRAFT.htm
+Интерфейс уклона.
+
+ksInclineDefinition " интерфейс Automation
+IInclineDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition
+3235
+
+
+
+ksInclineDefinition  свойства
+
+angle  Угол уклона
+Интерфейс...Справка системы КОМПАС...
+CM_MAKE_DRAFT.htm
+Тип данных: double
+Синтаксис Automation:
+
+angle = iIncline.angle Получить свойство(* )
+iIncline.angle = angle Установить свойство (* )
+angle = iIncline.GetAngle() Получить свойство (**)
+iIncline.SetAngle(angle) Установить свойство (**)
+
+direction  Направление уклона
+Интерфейс...Справка системы КОМПАС...
+CM_MAKE_DRAFT.htm
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " наружу,
+FALSE " внутрь.
+
+Синтаксис Automation:
+
+direction = iIncline.direction Получить свойство(* )
+iIncline.direction = direction Установить свойство (* )
+direction = Получить свойство (**)
+iIncline.GetDirection()
+iIncline.SetDirection(direction Установить свойство (**)
+)
+
+ksInclineDefinition  методы
+
+FaceArray  Получить указатель на интерфейс массива 
+уклоняемых граней
+Интерфейс...Справка системы КОМПАС...
+CM_MAKE_DRAFT.htm
+Синтаксис Automation:
+LPDISPATCH FaceArray();
+Синтаксис COM:
+LPENTITYCOLLECTION FaceArray();
+3236
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва граней ksEntityCollection или IEntityCollection.
+
+GetPlane  Получить указатель на интерфейс плоскости основания 
+уклона
+Интерфейс...Справка системы КОМПАС...
+CM_MAKE_DRAFT.htm
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс плоского объекта
+ksEntity или IEntity.
+
+SetPlane  Установить указатель на интерфейс плоскости 
+основания уклона
+Интерфейс...Справка системы КОМПАС...
+CM_MAKE_DRAFT.htm
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс плоскости операции ksEntity или 
+IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+3237
+
+
+
+Скругление (Интерфейсы ksFilletDefinition, IFilletDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров элемента "скругление".
+
+ksFilletDefinition " интерфейс Automation
+IFilletDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IFilletDefinition  свойства
+
+radius  Радиус скругления
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+radius = iFilletDefinition.radius Получить свойство(* )
+iFilletDefinition.radius = radius Установить свойство (* )
+radius = iFilletDefinition.GetRadius() Получить свойство (**)
+iFilletDefinition.SetRadius (radius) Установить свойство (**)
+
+tangent  Признак продолжения скругления по касательным 
+ребрам
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+tangent = iFilletDefinition.tangent Получить свойство(* )
+iFilletDefinition.tangent = tangent Установить свойство (* )
+tangent = iFilletDefinition.GetTangent() Получить свойство (**)
+iFilletDefinition.SetTangent (tangent) Установить свойство (**)
+
+Значения свойства:
+
+TRUE " продолжать скругление по касательным ребрам,
+FALSE " не продолжать скругление по касательным ребрам.
+3238
+
+
+
+IFilletDefinition  методы
+
+Array  Получить указатель на интерфейс массива скругляемых 
+объектов (граней и ребер)
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH Array();
+Синтаксис COM:
+LPENTITYCOLLECTION Array();
+Возвращаемое значение:
+
+" указатель на интерфейс массива объектов
+ksEntityCollection или IEntityCollection.
+
+Примечание:
+В возвращаемом массиве включен контроль, не позволяющий добавить в массив нуле"
+вые указатели на элементы.
+
+Фаска (Интерфейсы ksChamferDefinition, IChamferDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров фаски.
+
+ksChamferDefi " интерфейс Automation
+nition
+IChamferDefini " интерфейс COM
+tion
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksChamferDefinition  свойства
+
+tangent  Признак продолжения фаски по касательным ребрам
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Синтаксис Automation:
+3239
+
+
+
+tangent = iChamferDefinition.tangent Получить свойство(* )
+iChamferDefinition.tangent = tangent Установить свойство (* )
+tangent = Получить свойство (**)
+iChamferDefinition.GetTangent()
+iChamferDefinition.SetTangent (tangent) Установить свойство (**)
+
+Значения свойства:
+
+TRUE " продолжать фаску по касательным ребрам,
+FALSE " не продолжать фаску по касательным ребрам.
+
+ksChamferDefinition  методы
+
+Array  Получить указатель на интерфейс массива ребер и граней, 
+на которых строится фаска
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH Array();
+Синтаксис COM:
+LPENTITYCOLLECTION Array();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntityCollection или
+IEntityCollection.
+
+Примечание:
+В полученный с помощью данного метода массив нельзя добавлять нулевые указатели.
+
+GetChamferParam  Получить параметры фаски
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetChamferParam (BOOL *transfer, 
+double *distance1, 
+double *distance2);
+Синтаксис COM:
+BOOL GetChamferParam (BOOL *transfer, 
+double *distance1, 
+double *distance2);
+3240
+
+
+
+Выходные параметры:
+
+transfer " признак направления фаски,
+distance1 " размер первого катета фаски,
+distance2 " размер второго катета фаски.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetChamferParam  Изменить параметры фаски
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetChamferParam (BOOL transferTRUE, 
+double distance1, 
+double distance2);
+Синтаксис COM:
+BOOL SetChamferParam (BOOL transferTRUE, 
+double distance1, 
+double distance2);
+Входные параметры:
+
+transfer " признак направления фаски,
+distance1 " размер первого катета фаски,
+distance2 " размер второго катета фаски.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Основание  кинематический элемент (Интерфейсы 
+ksBaseEvolutionDefinition, IBaseEvolutionDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров основания  кинематического элемента.
+
+ksBaseEvolutionDefini " интерфейс
+tion Automation
+IBaseEvolutionDefiniti " интерфейс COM
+on
+3241
+
+
+
+Примечания:
+
+1. Данный интерфейс устарел. Рекомендуется использовать вместо него интерфейс
+ksBossLoftDefinition.
+
+2. Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ksBaseEvolutionDefinition  свойства
+
+sketchShiftType  Тип движения сечения по траектории
+Интерфейс...Тип данных: short
+Значения свойства:
+
+0 " образующая переносится параллельно самой се"
+бе,
+
+1 " образующая при переносе сохраняет исходный
+угол с направляющей,
+
+2 " плоскость образующей выставляется и сохраняет"
+ся ортогональной направляющей.
+
+Синтаксис Automation:
+
+sketchShiftType = iEvolution.sketchShiftType Получить свойство(* )
+iEvolution.sketchShiftType = sketchShiftType Установить свойство (* )
+sketchShiftType = Получить свойство (**)
+iEvolution.GetSketchShiftType()
+iEvolution.SetSketchShiftType(sketchShiftType) Установить свойство (**)
+
+ksBaseEvolutionDefinition  методы
+
+GetPathLength  Получить длину результирующей кривой 
+траектории
+Интерфейс...Синтаксис Automation:
+double GetPathLength (unsigned long bitVector);
+Синтаксис COM:
+double GetPathLength(unsigned long bitVector);
+Входные параметры:
+
+bitVector " единицы измерения в интервале
+[ST_MIX_MM..ST_MIX_M].
+
+Возвращаемое значение:
+3242
+
+
+
+длина результирующей " в случае успешного за"
+кривой траектории вершения,
+0 " в случае неудачи.
+
+Примечания:
+Метод работает только на уже построенной операции.
+
+GetSketch  Получить указатель на интерфейс эскиза сечения 
+кинематического элемента
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSketch();
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза ksEntity или
+IEntity.
+
+GetThinParam  Получить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+BYTE *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+3243
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+PathPartArray  Получить указатель на интерфейс массива 
+кривых, задающих траекторию движения сечения 
+кинематического элемента
+Интерфейс...Синтаксис Automation:
+IDispatch * PathPartArray();
+Синтаксис COM:
+LPENTITYCOLLECTION PathPartArray();
+Возвращаемое значение:
+
+" указатель на интерфейс динамического масси"
+ва кривых ksEntityCollection или IEntityCollection.
+
+SetSketch  Установить эскиз сечения кинематического элемента
+Интерфейс...Синтаксис Automation:
+BOOL SetSketch (LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch (LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс эскиза ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetThinParam  Установить параметры тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+3244
+
+
+
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+BYTE thinType, 
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ThinParam  Получить указатель на интерфейс тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPROPERTY ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс тонкой стенки
+ksThinParam или IThinParam.
+
+Эскиз (Интерфейсы ksSketchDefinition, ISketchDefinition)
+Справка системы КОМПАС...
+
+Интерфейс параметров эскиза.
+
+ksSketchDefi " интерфейс
+nition Automation
+ISketchDefini " интерфейс COM
+tion
+
+Примечание:
+3245
+
+
+
+1. Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+2. На момент редактирования (до вызова метода EndEdit), текущим документом является
+документ эскиза.
+
+ISketchDefinition  свойства
+
+angle  Угол поворота эскиза относительно проекции системы 
+координат модели на плоскость эскиза (в градусах)
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+angle = iSketchDefinition.angle Получить свойство(* )
+iSketchDefinition.angle = angle Установить свойство (* )
+angle = iSketchDefinition.GetAngle() Получить свойство (**)
+iSketchDefinition.SetAngle(angle) Установить свойство (**)
+
+ISketchDefinition  методы
+
+AddProjectionOf  Добавить в эскиз проекцию объекта
+Интерфейс...Справка системы КОМПАС...
+CM_PROJECTION_OBJECT.htm
+Синтаксис Automation:
+long AddProjectionOf (LPDISPATCH entity);
+Синтаксис COM:
+long AddProjectionOf (LPENTITY entity);
+Входной параметр:
+
+entity " указатель на интерфейс объекта ksEntity или IEntity.
+
+Возвращаемое значение:
+
+" указатель на группу объектов, получившихся в результате 
+проецирования.
+
+Примечание:
+
+1. Данный метод работает только в режиме редактирования эскиза.
+2. Параметр entity может быть указателем на ребро, вершину или грань.
+3246
+
+
+
+BeginEdit  Войти в режим редактирования эскиза (ksDocument2D)
+Интерфейс...Справка системы КОМПАС...
+236_22_1_Obshch_sved_ob_esk.htm#Raz29527
+Синтаксис Automation:
+LPDISPATCH BeginEdit();
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза ksDocument2D.
+
+Синтаксис COM:
+BOOL BeginEdit();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения (режим редактирования 
+включен).
+
+Примечание:
+После редактирования необходимо вызвать функцию EndEdit.
+
+EndEdit  Выйти из режима редактирования эскиза
+Интерфейс...Справка системы КОМПАС...
+236_22_1_Obshch_sved_ob_esk.htm#Raz29527
+Синтаксис Automation:
+BOOL EndEdit();
+Синтаксис COM:
+BOOL EndEdit();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetLocation  Получить смещение системы координат эскиза 
+относительно проекции системы координат модели на плоскость 
+эскиза
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetLocation (double * x, double * y);
+3247
+
+
+
+Синтаксис COM:
+BOOL GetLocation (double * x, double * y);
+Выходные параметры:
+
+x, y " смещение вдоль осей.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetLoftPoint  Получить координаты точки в плоскости эскиза
+Интерфейс...Синтаксис Automation:
+BOOL GetLoftPoint (double * x, double * y);
+Синтаксис COM:
+BOOL GetLoftPoint (double * x, double * y);
+Выходные параметры:
+
+x, y " координаты точки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+При формировании элемента по сечениям (операции ksBaseLoftDefinition,
+ksBossLoftDefinition, ksCutLoftDefinition) полученная точка определяет ближайшую к ней
+вершину как точку, через которую пройдет линия, соединяющая эскизы.
+
+GetPlane  Получить базовую плоскость эскиза
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH GetPlane();
+Синтаксис COM:
+LPENTITY GetPlane();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEntity или IEntity .
+3248
+
+
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPENTITY GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс ksSurface или ISurface.
+
+SetLoftPoint  Изменить координаты точки в плоскости эскиза
+Интерфейс...Синтаксис Automation:
+BOOL SetLoftPoint (double x, double y);
+Синтаксис COM:
+BOOL SetLoftPoint (double x, double y);
+Входные параметры:
+
+x, y " координаты точки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+При формировании элемента по сечениям (операции ksBaseLoftDefinition,
+ksBossLoftDefinition, ksCutLoftDefinition, ksLoftSurfaceDefinition) указанная точка опреде"
+ляет ближайшую к ней вершину как точку, через которую пройдет линия, соединяющая
+эскизы.
+
+SetLocation  Изменить смещение системы координат эскиза 
+относительно проекции системы координат модели на плоскость 
+эскиза
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetLocation (double x, double y);
+Синтаксис COM:
+BOOL SetLocation (double x, double y);
+3249
+
+
+
+Входные параметры:
+
+x, y " смещение вдоль осей.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetPlane  Изменить базовую плоскость эскиза
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetPlane (LPDISPATCH plane);
+Синтаксис COM:
+BOOL SetPlane (LPENTITY plane);
+Входной параметр:
+
+plane " указатель на интерфейс базовой плоскости эскиза 
+ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+UserSetPlacement  Перейти в режим указания пользователем 
+нового положения эскиза на той же плоскости (или плоской 
+грани), где он был расположен ранее
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL UserSetPlacement (BSTR prompt);
+Синтаксис COM:
+BOOL UserSetPlacement (LPOLESTR prompt);
+Входной параметр:
+
+prompt " текст строки"подсказки.
+
+Возвращаемое значение:
+3250
+
+
+
+TRUE " в случае успешного завершения.
+
+Примечание:
+После вызова этой функции запускается такой же режим, как после вызова в КОМПАС"
+3D команды Разместить эскиз.
+
+Вырезанный элемент 
+вращения(ИнтерфейсыksCutRotatedDefinition, 
+ICutRotatedDefinition)
+Справка системы КОМПАС...
+CM_BASE_ROTATED_SOLID.htm
+Интерфейс вырезанного элемента вращения.
+
+ksCutRotatedDefinition " интерфейс Automation
+ICutRotatedDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+ICutRotatedDefinition  свойства
+
+chooseType  Тип области применения
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: из перечисления ksChooseType
+Синтаксис Automation:
+
+chooseType = iCutRotated.chooseType Получить свойство(* )
+iCutRotated.chooseType = chooseType Установить свойство (* )
+chooseType = iCutRotated.GetchooseType() Получить свойство (**)
+iCutRotated.SetchooseType(chooseType) Установить свойство (**)
+
+cut  Признак результата операции
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+3251
+
+
+
+TRUE " результат операции " вычитание объекта,
+FALSE " результат операции " пересечение объектов.
+
+Синтаксис Automation:
+
+cut = iCutRotated.cut Получить свойство(* )
+iCutRotated.cut = cut Установить свойство (* )
+cut = iCutRotated.GetCut() Получить свойство (**)
+iCutRotated.SetCut (cut) Установить свойство (**)
+
+directionType  Направление вращения
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: short
+Значения свойства:
+
+Типы направлений...
+
+Синтаксис Automation:
+
+directionType = iCutRotated.directionType Получить свойство(* )
+iCutRotated.directionType= directionType Установить свойство (* )
+directionType = iCutRotated.GetDirectionType() Получить свойство (**)
+iCutRotated.SetDirectionType (directionType) Установить свойство (**)
+
+Примечание:
+
+1. Прямое направление " вдоль нормали к плоскости эскиза и всегда против часовой стрел"
+ки.
+
+2. Нормаль, проведенная к поверхности тела, всегда выходит из тела.
+
+toroidShapeType  Признак тороида
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " тороид,
+FALSE " сфероид.
+
+Синтаксис Automation:
+3252
+
+
+
+toroidShapeType = iCutRotated.toroidShapeType Получить свойство(* )
+iCutRotated.toroidShapeType = toroidShapeType Установить свойство (* )
+toroidShapeType = Получить свойство (**)
+iCutRotated.GetToroidShapeType()
+iCutRotated.SetToroidShapeType (toroidShapeType) Установить свойство (**)
+
+ICutRotatedDefinition  методы
+
+ChooseBodies  Получить указатель на интерфейс области 
+применения для тел в операции
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseBodies();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseBodies();
+Возвращаемое значение:
+
+" указатель на интерфейс области применения
+для тел ksChooseBodies или IChooseBodies.
+
+ChooseParts  Получить указатель на интерфейс для работы с 
+областью применения для компонентов
+Интерфейс...Синтаксис Automation:
+LPDISPATCH ChooseParts();
+Синтаксис COM:
+LPCHOOSEBODIES ChooseParts();
+Возвращаемое значение:
+
+" указатель на интерфейс для работы с областью
+применения для компонентов ksChooseParts или
+IChooseParts.
+
+Примечание.
+Интерфейс можно получить только для операции в сборке.
+
+GetSketch  Получить указатель на интерфейс эскиза элемента
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_ROTATED_SOLID.htm
+Синтаксис Automation:
+LPDISPATCH GetSketch();
+3253
+
+
+
+Синтаксис COM:
+LPENTITY GetSketch();
+Возвращаемое значение:
+
+" указатель на интерфейс эскиза ksEntity или
+IEntity.
+
+GetSideParam  Получить параметры вращения в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_ROTATED_SOLID.htm
+Синтаксис Automation:
+BOOL GetSideParam (BOOL forward, 
+double *angle);
+Синтаксис COM:
+BOOL GetSideParam (BOOL forward, 
+double * angle);
+Входной параметр:
+
+forward " направление вращения:
+TRUE " прямое,
+FALSE " обратное.
+
+Выходной параметр:
+
+angle " угол вращения.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+GetThinParam  Получить параметры тонкой стенки элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+3254
+
+
+
+Синтаксис COM:
+BOOL GetThinParam (BOOL *thin, 
+short *thinType, 
+double *normalThickness, 
+double *reverseThickness);
+Выходные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+RotatedParam  Получить указатель на интерфейс параметров 
+элемента вращения
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_ROTATED_SOLID.htm
+Синтаксис Automation:
+LPDISPATCH RotatedParam();
+Синтаксис COM:
+LPROTATEDPARAM RotatedParam();
+Возвращаемое значение:
+
+" Указатель на интерфейс ksRotatedParam или
+IRotatedParam.
+
+SetSideParam  Изменить параметры вращения в одном 
+направлении
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_ROTATED_SOLID.htm
+Синтаксис Automation:
+BOOL SetSideParam (short forward, 
+double angle);
+Синтаксис COM:
+BOOL SetSideParam (BOOL forward,
+3255
+
+
+
+double angle);
+Входные параметры:
+
+forward " направление вращения:
+TRUE " прямое,
+FALSE " обратное,
+
+angle " угол вращения.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetSketch  Изменить указатель на интерфейс эскиза элемента
+Интерфейс...Справка системы КОМПАС...
+CM_BASE_ROTATED_SOLID.htm
+Синтаксис Automation:
+BOOL SetSketch(LPDISPATCH sketch);
+Синтаксис COM:
+BOOL SetSketch(LPENTITY sketch);
+Входной параметр:
+
+sketch " указатель на интерфейс эскиза ksEntity или IEntity.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+SetThinParam  Изменить параметры тонкой стенки элемента
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+double normalThickness, 
+double reverseThickness);
+Синтаксис COM:
+BOOL SetThinParam (BOOL thin, 
+short thinType, 
+3256
+
+
+
+double normalThickness, 
+double reverseThickness);
+Входные параметры:
+
+thin " признак тонкостенной операции,
+thinType " направление построения тонкой стенки,
+normalThickness " толщина стенки в прямом направлении,
+reverseThickness " толщина стенки в обратном направлении.
+
+Типы направлений...Возвращаемое значение:
+
+TRUE " в случае успешного завершения.
+
+ThinParam  Получить указатель на интерфейс параметров тонкой 
+стенки
+Интерфейс...Справка системы КОМПАС...
+
+Синтаксис Automation:
+LPDISPATCH ThinParam();
+Синтаксис COM:
+LPTHINPARAM ThinParam();
+Возвращаемое значение:
+
+" указатель на интерфейс ksThinParam или
+IThinParam.
+
+Тонкая стенка (Интерфейсы ksThinParam, IThinParam)
+Справка системы КОМПАС...
+
+Интерфейс структуры параметров тонкой стенки.
+
+ksThinParam " интерфейс
+Automation
+
+IThinParam " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен с использованием метода ThinParam интерфей"
+сов формообразующих операций.
+3257
+
+
+
+IThinParam  свойства
+
+normalThickness  Толщина стенки в прямом направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+thin = iThinParam.normalThickness Получить свойство(* )
+iThinParam.normalThickness = Установить свойство (* )
+normalThickness
+normalThickness = Получить свойство (**)
+iThinParam.GetNormalThickness()
+iThinParam.SetNormalThickness(normalT Установить свойство (**)
+hickness)
+
+thin  Признак формирования тонкой стенки элемента
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " тонкая стенка формируется,
+FALSE " тонкая стенка не формируется.
+
+Синтаксис Automation:
+
+thin = iThinParam.thin Получить свойство(* )
+iThinParam.thin = thin Установить свойство (* )
+thin = iThinParam.GetThin() Получить свойство (**)
+iThinParam.SetThin (thin) Установить свойство (**)
+
+thinType  Направление формирования тонкой стенки
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: short
+Значения свойства:
+
+Типы направлений... 
+3258
+
+
+
+Синтаксис Automation:
+
+thinType = iThinParam.thinType Получить свойство(* )
+iThinParam.thinType = thinType Установить свойство (* )
+thinType = iThinParam.GetThinType() Получить свойство (**)
+iThinParam.SetThinType(thinType) Установить свойство (**)
+
+reverseThickness  Толщина стенки в обратном направлении
+Интерфейс...Справка системы КОМПАС...
+
+Тип данных: double
+Синтаксис Automation:
+
+reverseThickness = Получить свойство(* )
+iThinParam.reverseThickness
+iThinParam.reverseThickness = Установить свойство (* )
+reverseThickness
+reverseThickness = Получить свойство (**)
+iThinParam.GetReverseThickness()
+iThinParam.SetReverseThickness(reverse Установить свойство (**)
+Thickness)
+3259
+
+
+
+3260
+
+
+
+Интерфейсы дополнительных элементов
+
+Описание вершины (Интерфейсы 
+ksVertexDefinition,IVertexDefinition)
+Интерфейс описания вершины.
+
+ksVertexDefinition " интерфейс Automation
+IVertexDefinition " интерфейс COM
+
+Примечание:
+Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IVertexDefinition  свойства
+
+sketchVertex  Является ли вершина точкой эскиза
+Интерфейс...
+Тип данных: BOOL
+Синтаксис:
+
+sketchVertex = iEllipse3dParam.sketchVertex Получить свойство (* )
+sketchVertex = iEllipse3dParam.GetsketchVertex() Получить свойство (**)
+
+Примечание:
+Свойство доступно только для чтения.
+
+topologyVertex  Является ли точка топологической вершиной
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+topologyVertex = iVertexDefinition.topologyVertex Получить свойство (* )
+topologyVertex = Получить свойство (**)
+iVertexDefinition.GetTopologyVertex()
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. Точка является топологической вершиной, если принадлежит ребру.
+
+freeVertex  Является ли вершина свободной
+Интерфейс...
+3261
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+freeVertex = iVertexDefinition.freeVertex Получить свойство (* )
+freeVertex = iVertexDefinition.GetFreeVertex() Получить свойство (**)
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. Вершина является свободной, если не принадлежит ребру и не принадлежит элементам
+
+эскиза (дуги, отрезки, кривые).
+
+IVertexDefinition  методы
+
+GetOwnerEntity  Получить указатель на объект, породивший 
+вершину
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetOwnerEntity();
+Синтаксис COM:
+LPENTITY GetOwnerEntity();
+Выходные параметры:
+
+x, y, z " координаты вершины.
+
+Возвращаемое значение:
+
+указатель на интерфейс ksEntity или
+iEntity
+
+GetPoint  Получить координаты вершины
+Интерфейс...Синтаксис Automation:
+BOOL GetPoint (double *x, double *y, double *z);
+Синтаксис COM:
+BOOL GetPoint (double *x, double *y, double *z);
+Выходные параметры:
+
+x, y, z " координаты вершины.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+3262
+
+
+
+Ребро (Интерфейсы ksEdgeDefinition, IEdgeDefinition)
+Интерфейс свойств ребра.
+
+ksEdgeDefinition " интерфейс Automation
+IEdgeDefinition " интерфейс COM
+
+Описание:
+Ребро содержит информацию о математической кривой в трехмерном пространстве, о
+вершинах и о присоединенных гранях. Ориентация ребра относительно грани является
+положительной, если грань расположена слева от него или отрицательной, если справа.
+Примечание:
+Данный интерфейс можно получить, используя следующие методы:
+
+▼ метод интерфейса элемента модели ksEntity::GetDefinition или IEntity::GetDefinition
+▼ методы интерфейса ksEdgeCollection или IEdgeCollection.
+
+IEdgeDefinition  свойства
+
+sketchEdge  Является ли ребро кривой эскиза
+Интерфейс...
+Тип данных: BOOL
+Синтаксис:
+
+sketchEdge = iEllipse3dParam.sketchEdge Получить свойство (* )
+sketchEdge = Получить свойство (**)
+iEllipse3dParam.GetSketchEdge()
+
+Примечание:
+Свойство доступно только для чтения.
+
+IEdgeDefinition  методы
+
+EdgeCollection  Получить указатель на интерфейс массива ребер, 
+стыкующихся с данным ребром
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH EdgeCollection (BOOL begin);
+3263
+
+
+
+Синтаксис COM:
+LPEDGECOLLECTION EdgeCollection (BOOL begin);
+Входные параметры:
+
+begin " TRUE " в начале ребра,
+" FALSE " в конце ребра.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksEdgeCollection или IEdgeCollection.
+
+GetAdjacentFace  Получить указатель на интерфейс грани, в цикл 
+которой входит ребро
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetAdjacentFace (BOOL facePlus );
+Синтаксис COM:
+LPFACEDEFINITION GetAdjacentFace (BOOL facePlus );
+Входные параметры:
+
+facePlus " TRUE " ориентация грани относительно отрезка положительная,
+" FALSE " ориентация грани относительно отрезка отрицательная.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksFaceDefinitionили IFaceDefinition.
+
+GetCurve3D  Получить указатель на интерфейс математической 
+кривой
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetCurve3D();
+Синтаксис COM:
+LPCURVE3D GetCurve3D();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksCurve3D или ICurve3D.
+3264
+
+
+
+GetEntity  Получить указатель на интерфейс ребра
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetEntity();
+Синтаксис COM:
+LPENTITY GetEntity();
+Возвращаемое значение:
+
+" указатель на интерфейс ребра ksEntity или IEntity
+
+GetLength  Получить длину ребра
+Интерфейс...
+Синтаксис Automation:
+double GetLength (long bitVector);
+Синтаксис COM:
+double GetLength (unsigned int bitVector);
+Входные параметры:
+
+bitVector " единицы измерения.
+
+Возвращаемое значение:
+
+длина ребра " в случае успеха,
+0 " в случае неудачи.
+
+GetOwnerEntity  Получить указатель на объект, породивший 
+ребро
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetOwnerEntity();
+Синтаксис COM:
+LPENTITY GetOwnerEntity();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или IEntity.
+3265
+
+
+
+GetVertex  Получить указатель на интерфейс вершин: начальной 
+и конечной
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetVertex (BOOL start);
+Синтаксис COM:
+LPVERTEXDEFINITION GetVertex (BOOL start);
+Входные параметры:
+
+start " TRUE " начальная вершина,
+" FALSE " конечная вершина. 
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksVertexDefinition или IVertexDefinition.
+
+IsStraight  Определить, прямолинейно ли ребро
+Интерфейс...
+Синтаксис Automation:
+BOOL IsStraight();
+Синтаксис COM:
+BOOL IsStraight();
+Возвращаемое значение:
+
+TRUE " ребро прямолинейное,
+FALSE " ребро криволинейное.
+
+OrientedEdgeCollection  Получить указатель на интерфейс 
+массива ориентированных ребер,
+стыкующихся с данным ребром
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH OrientedEdgeCollection();
+Синтаксис COM:
+LPORIENTEDEDGECOLLECTION OrientedEdgeCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksOrientedEdgeCollection или IOrientedEdgeCollection.
+3266
+
+
+
+IsArc  Определить, является ли кривая дугой окружности
+Интерфейс...
+Синтаксис Automation:
+BOOL IsArc();
+Синтаксис COM:
+BOOL IsArc();
+Возвращаемое значение:
+
+TRUE " кривая является дугой окружности,
+FALSE " кривая не является окружности.
+
+IsCircle  Определить, является ли кривая окружностью
+Интерфейс...
+Синтаксис Automation:
+BOOL IsCircle();
+Синтаксис COM:
+BOOL IsCircle();
+Возвращаемое значение:
+
+TRUE " кривая является окружностью,
+FALSE " кривая не является окружностью.
+
+IsEllipse  Определить, является ли кривая эллипсом
+Интерфейс...
+Синтаксис Automation:
+BOOL IsEllipse();
+Синтаксис COM:
+BOOL IsEllipse();
+Возвращаемое значение:
+
+TRUE " кривая является эллипсом,
+FALSE " кривая не является эллипсом.
+
+IsNurbs  Определить, является ли кривая NURBS
+Интерфейс...
+Синтаксис Automation:
+BOOL IsNurbs();
+Синтаксис COM:
+3267
+
+
+
+BOOL IsNurbs();
+Возвращаемое значение:
+
+TRUE " кривая является NURBS,
+FALSE " кривая не является NURBS.
+
+IsPeriodic  Определить, является ли кривая периодичной
+Интерфейс...
+Синтаксис Automation:
+BOOL IsPeriodic();
+Синтаксис COM:
+ BOOL IsPeriodic();
+Возвращаемое значение:
+
+TRUE " кривая периодична,
+FALSE " кривая непериодична.
+
+Массив граней (Интерфейсы ksFaceCollection, IFaceCollection)
+Интерфейс массива граней.
+
+ksFaceCollection " интерфейс Automation
+IFaceCollection " интерфейс COM
+
+Примечание:
+Данный интерфейс может быть получен следующими способами:
+
+▼ от интерфейса свойств грани ksFaceDefinition, IFaceDefinition с помощью метода
+ksFaceDefinition::ConnectedFaceCollection,
+
+▼ от интерфейса тела ksBody, IBody с помощью методов ksBody::FaceCollection,
+IBody::FaceCollection.
+
+IFaceCollection  методы
+
+First  Получить указатель на интерфейс первого объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH First();
+Синтаксис COM:
+LPFACEDEFINITION First();
+Возвращаемое значение:
+3268
+
+
+
+" указатель на интерфейс ksFaceDefinition или IFaceDefinition.
+
+FindIt  Получить индекс элемента в массиве
+Интерфейс...Синтаксис Automation:
+long FindIt (LPDISPATCH entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+"1 " если элемент не найден.
+
+Синтаксис COM:
+unsigned long FindIt(LPFACEDEFINITION entity);
+Возвращаемое значение:
+
+индекс элемента " если элемент найден в массиве,
+SYS_MAX_UINT " если элемент не найден.
+
+Входные параметры:
+ 
+
+entity " указатель на интерфейс компонента
+ksFaceDefinition или IFaceDefinition.
+
+GetByIndex  Получить указатель на интерфейс объекта в массиве 
+по индексу
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetByIndex (long index);
+Синтаксис COM:
+LPFACEDEFINITION GetByIndex (long index);
+Входной параметр:
+
+index " номер объекта в массиве.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksFaceDefinition или
+IFaceDefinition.
+3269
+
+
+
+GetByName  Получить указатель на интерфейс объекта в массиве 
+по имени
+Интерфейс...Синтаксис Automation:
+LPDISPATCH GetByName (BSTR name,
+BOOL testFullName,
+BOOL testIgnoreCase);
+Синтаксис COM:
+LPFACEDEFINITION GetByName (LPOLESTR name, 
+BOOL testFullName, 
+BOOL testIgnoreCase);
+Входные параметры:
+
+name " название грани,
+testFullName " признак полного имени:
+
+TRUE " name " проверять по полному пути, 
+FALSE " имя name может быть частью полного имени,
+
+testIgnoreCase " признак игнорирования регистра символов:
+TRUE " игнорировать регистр,
+FALSE " учитывать регистр.
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksFaceDefinition или IFaceDefinition.
+
+GetCount  Получить количество элементов в массиве
+Интерфейс...Синтаксис Automation:
+long GetCount();
+Синтаксис COM:
+long GetCount();
+Возвращаемое значение:
+
+" количество элементов массива.
+
+Last  Получить указатель на интерфейс последнего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Last();
+Синтаксис COM:
+LPFACEDEFINITION Last();
+3270
+
+
+
+Возвращаемое значение:
+
+" указатель на интерфейс ksFaceDefinition или IFaceDefinition.
+
+Next  Получить указатель на интерфейс следующего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Next();
+Синтаксис COM:
+LPFACEDEFINITION Next();
+Возвращаемое значение:
+
+" указатель на интерфейс ksFaceDefinition или IFaceDefinition.
+
+Prev  Получить указатель на интерфейс предыдущего объекта в 
+массиве
+Интерфейс...Синтаксис Automation:
+LPDISPATCH Prev();
+Синтаксис COM:
+LPFACEDEFINITION Next();
+Возвращаемое значение:
+
+" указатель на интерфейс ksFaceDefinition или IFaceDefinition.
+
+Refresh  Обновить массив
+Интерфейс...Синтаксис Automation:
+BOOL Refresh();
+Синтаксис COM:
+BOOL Refresh();
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+После вызова данной функции возникает полное соответствие массива с массивом гра"
+ней трехмерного тела и удаляются все предыдущие изменения в массиве.
+3271
+
+
+
+Грань (Интерфейсы ksFaceDefinition, IFaceDefinition)
+Интерфейс свойств грани.
+
+ksFaceDefinition " интерфейс Automation
+IFaceDefinition " интерфейс COM
+
+Описание:
+Грань " это объект топологии. Содержит информацию о геометрии (поверхность), ин"
+формацию о связях с другими гранями (массив циклов) и признак ориентации нормали.
+Этот признак имеет значение TRUE, если он совпадает с направлением нормали матема"
+тической поверхности.
+Примечание:
+Данный интерфейс может быть получен следующими способами:
+
+▼ от интерфейса коллекции свойств грани ksFaceCollection, IFaceCollection,
+▼ от интерфейса свойств ребра ksEdgeDefinition, IEdgeDefinition.
+▼ используя метод интерфейса элемента модели ksEntity::GetDefinition или
+
+IEntity::GetDefinition.
+
+IFaceDefinition  свойства
+
+normalOrientation  Признак ориентации нормали
+Интерфейс..Тип данных: BOOL
+Синтаксис Automation:
+
+normalOrient = iFaceDefinition.normalOrientation Получить свойство (* )
+iFaceDefinition.GetNormalOrientation() Получить свойство (**)
+
+Возвращаемое значение:
+
+TRUE " направление нормали совпадает с направлением нормали 
+математической поверхности,
+
+FALSE " направление нормали не совпадает с направлением нормали 
+математической поверхности ksSurface.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IFaceDefinition  методы
+
+ConnectedFaceCollection  Получить указатель на интерфейс 
+массива граней, стыкующихся с данной гранью
+Интерфейс..Синтаксис Automation:
+LPDISPATCH ConnectedFaceCollection();
+3272
+
+
+
+Синтаксис COM:
+LPFACECOLLECTION ConnectedFaceCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksFaceCollection или IFaceCollection.
+
+EdgeCollection  Получить указатель на интерфейс массива ребер, 
+ограничивающих грань
+Интерфейс..Синтаксис Automation:
+LPDISPATCH EdgeCollection();
+Синтаксис COM:
+LPEDGECOLLECTION EdgeCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksEdgeCollection или IEdgeCollection.
+
+GetArea  Получить площадь грани
+Интерфейс..Синтаксис Automation:
+double GetArea (long bitVector );
+Синтаксис COM:
+double GetArea (unsigned long bitVector );
+Входные параметры:
+
+bitVector " единицы измерения.
+
+Возвращаемое значение:
+
+площадь грани " в случае успешного завершения.
+0 " в случае неудачи.
+
+GetCylinderParam  Получить параметры цилиндрической грани
+Интерфейс..Синтаксис Automation:
+BOOL GetCylinderParam (double* h, 
+double* r);
+Синтаксис COM:
+BOOL GetCylinderParam (double * h, 
+double * r);
+Выходные параметры:
+3273
+
+
+
+h " высота цилиндра,
+r " радиус цилиндра.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха.
+
+GetEntity  Получить указатель на интерфейс грани
+Интерфейс..Синтаксис Automation:
+LPDISPATCH GetEntity();
+Синтаксис COM:
+LPENTITY GetEntity();
+Возвращаемое значение:
+
+" указатель на интерфейс грани ksEntity или IEntity
+
+GetNextFace  Получить указатель на интерфейс следующей грани 
+в этом теле
+Интерфейс..Синтаксис Automation:
+LPDISPATCH GetNextFace();
+Синтаксис COM:
+LPFACEDEFINITION GetNextFace();
+Возвращаемое значение:
+
+" указатель на интерфейс ksFaceDefinition или IFaceDefinition.
+
+GetOwnerEntity  Получить указатель на объект, породивший 
+цилиндрическую грань
+Интерфейс..Синтаксис Automation:
+LPDISPATCH GetOwnerEntity();
+Синтаксис COM:
+LPENTITY GetOwnerEntity();
+Возвращаемое значение:
+
+" указатель на интерфейс объекта ksEntity или IEntity.
+3274
+
+
+
+GetSurface  Получить указатель на интерфейс математической 
+поверхности
+Интерфейс..Синтаксис Automation:
+LPDISPATCH GetSurface();
+Синтаксис COM:
+LPSURFACE GetSurface();
+Возвращаемое значение:
+
+" указатель на интерфейс ksSurface  или ISurface.
+
+GetTessellation  Получить указатель на интерфейс триангуляции
+Интерфейс..Синтаксис Automation:
+LPDISPATCH GetTessellation();
+Синтаксис COM:
+LPTESSELLATION GetTessellation();
+Возвращаемое значение:
+
+" указатель на интерфейс ksTessellation или ITessellation.
+
+IsCone  Определить, коническая ли грань
+Интерфейс..Синтаксис Automation:
+BOOL IsCone();
+Синтаксис COM:
+BOOL IsCone();
+Возвращаемое значение:
+
+TRUE " грань коническая,
+FALSE " грань не коническая.
+
+IsConnectedWith  Проверить, связаны ли грани
+Интерфейс..Синтаксис Automation:
+BOOL IsConnectedWith (LPDISPATCH other);
+Синтаксис COM:
+BOOL IsConnectedWith (LPFACEDEFINITION other);
+Входные параметры:
+3275
+
+
+
+" указатель на интерфейс ksFaceDefinition или IFaceDefinition другой грани.
+
+Возвращаемое значение:
+
+TRUE " если грани связаны,
+FALSE " если грани не связаны.
+
+IsCylinder  Определить, цилиндрическая ли грань
+Интерфейс..Синтаксис Automation:
+BOOL IsCylinder();
+Синтаксис COM:
+BOOL IsCylinder();
+Возвращаемое значение:
+
+TRUE " грань цилиндрическая,
+FALSE " грань не цилиндрическая.
+
+IsNurbsSurface  Определить, является ли грань NURBS 
+поверхностью
+Интерфейс..Синтаксис Automation:
+BOOL IsNurbsSurface();
+Синтаксис COM:
+BOOL IsNurbsSurface();
+Возвращаемое значение:
+
+TRUE " грань является NURBS поверхностью,
+FALSE " грань не является NURBS поверхностью.
+
+IsPlanar  Определить, плоская ли грань
+Интерфейс...Синтаксис Automation:
+BOOL IsPlanar();
+Синтаксис COM:
+BOOL IsPlanar();
+Возвращаемое значение:
+
+TRUE " грань плоская,
+FALSE " грань не плоская.
+3276
+
+
+
+IsRevolved  Определить, является ли грань поверхностью 
+вращения
+Интерфейс..Синтаксис Automation:
+BOOL IsRevolved();
+Синтаксис COM:
+BOOL IsRevolved();
+Возвращаемое значение:
+
+TRUE " грань является поверхностью вращения,
+FALSE " грань не является поверхностью вращения.
+
+IsSphere  Определить, является ли грань сферической
+Интерфейс..Синтаксис Automation:
+BOOL IsSphere();
+Синтаксис COM:
+BOOL IsSphere();
+Возвращаемое значение:
+
+TRUE " грань является сферической,
+FALSE " грань не является сферической.
+
+IsSwIept  Определить, задается ли грань поверхностью по 
+траектории
+Интерфейс..Синтаксис Automation:
+BOOL IsSwept();
+Синтаксис COM:
+BOOL IsSwept();
+Возвращаемое значение:
+
+TRUE " грань задается поверхностью по траектории,
+FALSE " грань не задается поверхностью по траектории.
+
+IsTorus  Определить, является ли грань тором
+Интерфейс..Синтаксис Automation:
+BOOL IsTorus();
+Синтаксис COM:
+BOOL IsTorus();
+Возвращаемое значение:
+3277
+
+
+
+TRUE " грань является тором,
+FALSE " грань не является тором.
+
+IsValid  Получить индикатор доступности объекта.
+Интерфейс..Синтаксис Automation:
+BOOL IsValid();
+Синтаксис COM:
+BOOL IsValid();
+Возвращаемое значение:
+
+TRUE  " объект доступен,
+FALSE  " объект недоступен.
+
+LoopCollection  Получить указатель на интерфейс массива циклов
+Интерфейс..Синтаксис Automation:
+LPDISPATCH LoopCollection();
+Синтаксис COM:
+LPLOOPCOLLECTION LoopCollection();
+Возвращаемое значение:
+
+" указатель на интерфейс ksLoopCollection или
+ILoopCollection.
+
+Описание импортированной поверхности (Интерфейсы 
+ksImportedSurfaceDefinition, IImportedSurfaceDefinition)
+Справка системы КОМПАС...
+CM_IMPORTEDSURFACE.htm
+Интерфейс параметров импортированной поверхности.
+
+ksImportedSurfaceDefinition " интерфейс Automation
+IImportedSurfaceDefinition " интерфейс COM
+
+Примечание:
+
+1. Поверхность можно импортировать, задав массив упорядоченных массивов точек. Один
+упорядоченный массив точек IVertexCollection определяет одну кривую. Если первая и
+3278
+
+
+
+последняя точки кривой совпадают, это является признаком замкнутости кривой. Для
+нормального построения поверхности кривых должно быть, как минимум, две.
+
+2. Данный интерфейс можно получить, используя метод интерфейса элемента модели
+ksEntity::GetDefinition или IEntity::GetDefinition.
+
+IImportedSurfaceDefinition  методы
+
+Добавить кривую по массиву точек
+Пример...
+
+Интерфейс...Справка системы КОМПАС...
+CM_IMPORTEDSURFACE.htm
+Синтаксис Automation:
+BOOL AddCurve (VARIANT arr);
+Синтаксис COM:
+BOOL AddCurve (VARIANT arr);
+Входные параметры:
+
+arr " массив координат точек кривой.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Тип переменной arr " VT_ARRAY | VT_R8. Одномерный SAFEARRAY массив double значе"
+ний.
+
+2. Каждая точка представлена тремя координатами x, y, z. Следовательно число точек в 
+массиве должно быть кратно.
+
+AddPoint  Добавить точку в определение новой кривой
+Интерфейс...Справка системы КОМПАС...
+CM_IMPORTEDSURFACE.htm
+Синтаксис Automation:
+BOOL AddPoint(double x, double y, double z);
+Синтаксис COM:
+BOOL AddPoint(double x, double y, double z);
+Входные параметры:
+3279
+
+
+
+x, y, z " координаты точки кривой.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Перед добавлением точек кривой нужно открыть описание кривой методом
+ksImportedSurfaceDefinition::BeginCurve.
+После добавления точек необходимо закрыть определение кривой методом
+ksImportedSurfaceDefinition::EndCurve.
+
+BeginCurve  Начать создание новой кривой
+Интерфейс...Справка системы КОМПАС...
+CM_IMPORTEDSURFACE.htm
+Синтаксис Automation:
+BOOL BeginCurve();
+Синтаксис COM:
+BOOL BeginCurve();
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Для добавления точек кривой используется метод ksImportedSurfaceDefinition::AddPoint.
+После добавления точек необходимо завершить задание кривой методом
+ksImportedSurfaceDefinition::EndCurve.
+
+Clear  Очистить содержимое 
+Интерфейс...Справка системы КОМПАС...
+CM_IMPORTEDSURFACE.htm
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+BOOL Clear();
+Возвращаемое значение:
+3280
+
+
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Очищается имя файла и массив кривых.
+
+EndCurve  Завершить создание новой кривой
+Интерфейс...Справка системы КОМПАС...
+CM_IMPORTEDSURFACE.htm
+Синтаксис Automation:
+BOOL EndCurve();
+Синтаксис COM:
+BOOL EndCurve();
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Перед добавлением точек кривой нужно открыть описание кривой методом
+ksImportedSurfaceDefinition::BeginCurve.
+Для добавления точек используется метод ksImportedSurfaceDefinition::AddPoint.
+
+Условное изображение резьбы (Интерфейсы 
+ksThreadDefinition, IThreadDefinition)
+Справка системы КОМПАС...
+
+Интерфейс условного изображения резьбы.
+
+ksThreadDefinition " интерфейс Automation
+IThreadDefinition " интерфейс COM
+
+Примечание:
+
+1. Определяется параметрами резьбы: номинальный диаметр резьбы, длина резьбы, шаг
+резьбы, тип резьбы (внутренняя, внешняя), направление построения резьбы, а также
+объектами необходимыми для построения: базовый объект (ребро или грань), начальная
+и конечная грань.
+
+2. Если базовым объектом является ребро, то базовая грань определяется автоматически.
+При этом задание начальной и конечной грани не обязательно, хотя возможно. Если ба"
+зовым объектом является грань, то указывать начальную и конечную грани необходимо.
+Базовая грань должна быть цилиндрической либо конической, начальная и конечная
+3281
+
+
+
+грань " любые грани, ограничивающие резьбу. Базовое ребро должно быть окружно"
+стью, принадлежащей цилиндру.
+
+3. Если базовое ребро изменено, то при вызове методов Update или Create автоматически
+будет произведена проверка направления резьбы. В случае ошибки направление изме"
+нится.
+

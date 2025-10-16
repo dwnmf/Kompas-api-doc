@@ -1,0 +1,2532 @@
+VZ " третья компонента вектора движения,
+ Delta " значение сдвига по вектору движения,
+FromEdit " признак поворота с помощью редактора.
+2608
+
+
+
+ClickManipulatorPrimitive  Клик или двойной клик по 
+примитиву манипулятора
+Интерфейс...
+Синтаксис Automation :
+BOOL ClickManipulatorPrimitive( long ManipulatorId, ksManipulatorPrimitiveEnum
+PrimitiveType, BOOL DoubleClick );
+Синтаксис COM:
+BOOL ClickManipulatorPrimitive( long ManipulatorId, ksManipulatorPrimitiveEnum
+PrimitiveType, [in] VARIANT_BOOL DoubleClick );
+Возвращаемое значение: 
+ 
+
+TRUE " если библиотека обработала событие,
+FALSE " библиотека не обработала событие, требуется 
+
+использовать встроенную обработку событий 
+манипулятора.
+
+ 
+Входные параметры:
+
+ManipulatorId " идентификатор манипулятора,
+PrimitiveType " примитив манипулятора из перечисления
+
+ksManipulatorPrimitiveEnum,
+DoubleClick " двойной клик.
+
+BeginDragManipulator  Начало перемещения 
+примитива манипулятором
+Интерфейс...
+Синтаксис Automation :
+BOOL BeginDragManipulator     ( long ManipulatorId, ksManipulatorPrimitiveEnum
+PrimitiveType );
+Синтаксис COM :
+BOOL BeginDragManipulator     ( long ManipulatorId, ksManipulatorPrimitiveEnum
+PrimitiveType );
+Возвращаемое значение: 
+ 
+
+TRUE " если библиотека обработала событие,
+FALSE " библиотека не обработала событие, требуется 
+
+использовать встроенную обработку событий 
+манипулятора.
+
+Входные параметры:
+2609
+
+
+
+ManipulatorId " идентификатор манипулятора,
+PrimitiveType " примитив манипулятора из перечисления
+
+ksManipulatorPrimitiveEnum.
+
+EndDragManipulator  Завершение перемещения 
+примитива манипулятором
+Интерфейс...
+Синтаксис Automation :
+BOOL EndDragManipulator     ( long ManipulatorId, ksManipulatorPrimitiveEnum PrimitiveType
+);
+Синтаксис COM :
+BOOL EndDragManipulator     ( long ManipulatorId, ksManipulatorPrimitiveEnum PrimitiveType
+);
+Возвращаемое значение: 
+ 
+
+TRUE " если библиотека обработала событие,
+FALSE " библиотека не обработала событие, требуется 
+
+использовать встроенную обработку событий 
+манипулятора.
+
+Входные параметры:
+
+ManipulatorId " идентификатор манипулятора,
+PrimitiveType " примитив манипулятора из перечисления
+
+ksManipulatorPrimitiveEnum,
+
+CreateManipulatorEdit  Создание редактора для ввода 
+значения, управляющего положением манипулятора
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateManipulatorEdit     ( long ManipulatorId, ksManipulatorPrimitiveEnum
+PrimitiveType );
+Синтаксис COM :
+BOOL CreateManipulatorEdit     ( long ManipulatorId, ksManipulatorPrimitiveEnum
+PrimitiveType );
+Возвращаемое значение: 
+ 
+
+TRUE " если библиотека обработала событие,
+2610
+
+
+
+FALSE " библиотека не обработала событие, требуется 
+использовать встроенную обработку событий 
+манипулятора.
+
+ Входные параметры:
+
+ManipulatorId " идентификатор манипулятора,
+PrimitiveType " примитив манипулятора из перечисления
+
+ksManipulatorPrimitiveEnum,
+
+DestroyManipulatorEdit  Удаление редактора для ввода 
+значения, управляющего положением манипулятора
+Интерфейс...
+Синтаксис Automation:
+ BOOL DestroyManipulatorEdit     ( long ManipulatorId );
+Синтаксис COM :
+BOOL DestroyManipulatorEdit     ( long ManipulatorId );
+Возвращаемое значение: 
+ 
+
+TRUE " если библиотека обработала событие,
+FALSE " библиотека не обработала событие, требуется 
+
+использовать встроенную обработку событий 
+манипулятора.
+
+Входные параметры:
+
+ManipulatorId " идентификатор манипулятора.
+
+ChangeManipulatorValue  Завершение редактирования 
+значения в редакторе манипулятора
+Интерфейс...
+Синтаксис Automation:
+BOOL ChangeManipulatorValue     (long ManipulatorId, ksManipulatorPrimitiveEnum
+PrimitiveType, double newValue );
+Синтаксис COM:
+BOOL ChangeManipulatorValue     (long ManipulatorId, ksManipulatorPrimitiveEnum
+PrimitiveType, double newValue );
+Возвращаемое значение: 
+2611
+
+
+
+ 
+TRUE " если библиотека обработала событие,
+FALSE " библиотека не обработала событие, требуется 
+
+использовать встроенную обработку событий 
+манипулятора.
+
+Входные параметры:
+
+ManipulatorId " идентификатор манипулятора,
+PrimitiveType " примитив манипулятора из перечисления
+
+ksManipulatorPrimitiveEnum,
+newValue " новое значение.
+
+Интерфейс ksPLMObjectNotify
+Интерфейс событий объектов версионирования.
+Иерархия:
+IDispatch
+
+ksPLMObjectNotify
+Примечание:
+Источником событий объектов версионирования является 3D документ
+IKompasDocument3D.
+Версия: KOMPAS v19
+
+ksPLMObjectNotify  методы
+
+PLMChangeChanged  Изменение признака отличия
+Интерфейс...
+Синтаксис Automation:
+BOOL PLMChangeChanged( IDispatch* Object, long newValue );
+Синтаксис COM :
+HRESULT PLMChangeChanged( IDispatch* Object, long newValue, BOOL * Result );
+Возвращаемое значение: 
+ 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+   
+
+Object  " объект версионирования,
+newValue " новое значение признака отличия из перечисления 
+
+ksPLMChangesEnum.
+2612
+
+
+
+PLMStatusChanged  Изменение статуса в системе 
+версионирования
+Интерфейс...
+Синтаксис Automation:
+BOOL PLMStatusChanged( IDispatch* Object, long newValue );
+Синтаксис COM:
+HRESULT PLMStatusChanged( IDispatch* Object, long newValue, BOOL * Result );
+Возвращаемое значение: 
+ 
+
+TRUE " не используется.
+
+Входные параметры:
+   
+
+Object  " объект версионирования,
+newValue " новое значение статуса из перечисления 
+
+ksPLMStatusEnum.
+
+Интерфейс ksProcess2DNotify\IProcess2DNotify
+Интерфейс событий для процесса 2D.
+Иерархия:
+IDispatch
+
+ksProcess2DNotify
+ События позволяют контролировать события процесса 2D.
+Источником событий для подписки на данный интерфейс является:
+IProcess2D " интерфейс процесса 2D.
+
+События
+
+Activate  Активизация процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL Activate();
+Синтаксис COM:
+BOOL Activate();
+Возвращаемое значение: 
+2613
+
+
+
+Не используется. 
+
+Deactivate  Деактивизация процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL Deactivate();
+Синтаксис COM
+BOOL Deactivate();
+Возвращаемое значение: 
+Не используется. 
+
+GetMouseEnterLeavePoint  Запрос параметров точек для 
+визуального определения места применения параметра
+Интерфейс...
+Синтаксис Automation:
+BOOL GetMouseEnterLeavePoint( LPDISPATCH Control, long BtnID, long PointIndex,
+LPDISPATCH Parameters );
+Синтаксис COM :
+BOOL GetMouseEnterLeavePoint( LPUNKNOWN control, long btnID, long pointIndex,
+LPUNKNOWN parameters );
+Входные параметры:
+
+index " индекс стандартного или 
+пользовательского набора загрузки.
+
+Возвращаемое значение: 
+Не используется
+Примечание
+У сборки есть умолчательные стандартные наборы, индексы которых соответствуют пе"
+речислению ksLoadStateEnum. Кроме этого могут быть еще и пользовательские наборы.
+
+EndProcess  Завершение процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL EndProcess();
+Синтаксис COM:
+BOOL EndProcess();
+Возвращаемое значение: 
+Не используется. 
+2614
+
+
+
+ExecuteCommand  Выполнить команду меню процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL ExecuteCommand( long Command );
+Синтаксис COM:
+BOOL ExecuteCommand( long Command );
+Возвращаемое значение: 
+
+TRUE " если параметры процесса изменились.
+
+Входные параметры:
+ 
+
+Command " номер команды меню процесса.
+
+PlacementChange  Изменение положения
+Интерфейс...
+Синтаксис Automation:
+BOOL PlacementChange( double X, double Y, double Angle, BOOL Dynamic );
+Синтаксис COM:
+ BOOL PlacementChange( double X, double Y, double Angle, BOOL Dynamic );
+Возвращаемое значение: 
+
+TRUE " если параметры процесса изменились.
+
+Входные параметры:
+ 
+
+ X ,Y " координаты курсора,
+Angle " угол,
+Dynamic TRUE " динамическое изменение положения,
+
+ FALSE " фиксация положения.
+
+Run  Запуск процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL Run();
+Синтаксис COM:
+BOOL Run();
+Возвращаемое значение: 
+Не используется. 
+2615
+
+
+
+Stop  Остановка процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL Stop();
+Синтаксис COM:
+BOOL Stop();
+Возвращаемое значение: 
+Не используется. 
+
+Интерфейс ksProcess3DNotify\IProcess3DNotify
+Интерфейс событий для процесса 3D.
+Иерархия:
+IDispatch
+
+ksProcess3DNotify
+События позволяют контролировать события процесса 3D.
+Источником событий для подписки на данный интерфейс является:
+IProcess3D " интерфейс процесса 3D.
+
+ksProcess3DNotify  методы
+
+ProcessingGroupObjects  Обработать объекты, 
+пришедшие из рамки
+Интерфейс...
+Синтаксис Automation:
+BOOL ProcessingGroupObjects( VARIANT Objects, long selectionType );
+Синтаксис COM:
+HRESULT ProcessingGroupObjects( VARIANT Objects, long selectionType, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Выходные параметры:
+
+Objects " массив объектов,
+selectionType " тип выделения.
+
+Примечание
+Если процесс должен поддерживать групповое селектирование рамкой, требуется уста"
+новить свойство IProcess3D::SelectionBandMode.
+2616
+
+
+
+ksProcess3DNotify  события
+
+Activate  Активизация процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL Activate();
+Синтаксис COM:
+BOOL Activate();
+Возвращаемое значение: 
+Не используется.
+
+CreateTakeObject  Создание объекта в подпроцессе
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateTakeObject( LPDISPATCH Object );
+Синтаксис COM:
+BOOL CreateTakeObject( LPUNKNOWN Object );
+Возвращаемое значение:
+ 
+
+TRUE " если объект подходит.
+
+Входные параметры:
+ 
+
+Object " указатель на на созданный объект
+при использовании автоматизации указатель IModelObject, 
+IMateConstraint3D в зависимости от типа подпроцесса,
+при использовании COM указатель IEntity, IMateConstraint в 
+зависимости от типа подпроцесса.
+
+Deactivate  Деактивизация процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL Deactivate();
+Синтаксис COM:
+BOOL Deactivate();
+Возвращаемое значение: 
+Не используется.
+2617
+
+
+
+EndProcess  Завершение процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL EndProcess();
+Синтаксис COM:
+BOOL EndProcess();
+Возвращаемое значение: 
+Не используется.
+
+ExecuteCommand  Выполнить команду меню процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL ExecuteCommand( long Command );
+Синтаксис COM:
+BOOL ExecuteCommand( long Command );
+Возвращаемое значение: 
+
+TRUE " если параметры процесса изменились.
+
+Входные параметры: 
+
+Command " номер команды меню процесса.
+
+FilterObject  Фильтрация объектов под курсором
+Интерфейс...
+Синтаксис Automation:
+BOOL FilterObject( LPDISPATCH Object );
+Синтаксис COM:
+BOOL FilterObject( LPUNKNOWN Object );
+Возвращаемое значение:
+ 
+
+TRUE " если объект подходит.
+
+Входные параметры:
+2618
+
+
+
+ 
+Object " указатель на объект под курсором:
+
+при использовании автоматизации указатель IModelObject, 
+IPart7, IBody7, IMateConstraint3D в зависимости от типа 
+выбранного объекта,
+при использовании COM указатель IEntity, IPart, IBody, 
+IMateConstraint в зависимости от типа выбранного объекта.
+
+PlacementChange Изменение положения
+Интерфейс...
+Синтаксис Automation:
+BOOL PlacementChange( LPDISPATCH Object );
+Синтаксис COM:
+BOOL PlacementChange( LPUNKNOWN Object );
+Возвращаемое значение: 
+
+TRUE " если параметры процесса изменились.
+
+Входные параметры:
+ 
+
+Object " указатель на выбранный объект:
+при использовании автоматизации указатель IModelObject, 
+IPart7, IBody7 в зависимости от типа выбранного объекта,
+при использовании COM указатель IEntity, IPart, IBody в 
+зависимости от типа выбранного объекта.
+
+Run Запуск процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL Run();
+Синтаксис COM:
+BOOL Run();
+Возвращаемое значение: 
+Не используется.
+
+Stop  Остановка процесса
+Интерфейс...
+Синтаксис Automation:
+BOOL Stop();
+2619
+
+
+
+Синтаксис COM:
+BOOL Stop();
+Возвращаемое значение: 
+Не используется.
+ 
+
+Интерфейс ksObject2DNotifyResult
+IObject2DNotifyResult
+Интерфейс результатов редактирования объекта.
+
+ksObject2DNotifyResult " интерфейс Automation
+IObject2DNotifyResult " интерфейс COM
+
+В Automation получить интерфейс результата можно при помощи метода
+ksDocument2D::GetObject2DNotifyResult.
+В COM получить интерфейс результата можно при помощи экспортной функции
+ksGetObject2DNotifyResult.
+Примечание:
+В процессе обработки события Object2DNotifyEnum можно получить информацию о ре"
+дактировании объекта.
+
+ksObject2DNotifyResult  методы
+
+GetAngle  Получить угол поворота объекта
+Интерфейс...
+Синтаксис Automation:
+double GetAngle();
+Синтаксис COM:
+double GetAngle();
+Возвращаемое значение:
+
+" угол поворота объекта.
+
+GetCopyObject  Получить копию объекта, если 
+выполнялась операция копирования
+Интерфейс...
+Синтаксис Automation:
+long GetCopyObject();
+Синтаксис COM:
+long GetCopyObject();
+2620
+
+
+
+Возвращаемое значение:
+
+" указатель на объект.
+
+GetNotifyType  Получить тип события
+Интерфейс...
+Синтаксис Automation:
+long GetNotifyType();
+Синтаксис COM:
+long GetNotifyType();
+Возвращаемое значение:
+
+" тип события.
+
+GetProcessType  Тип процесса
+Интерфейс...
+Синтаксис:
+long GetProcessType();
+Возвращаемое значение:
+
+Тип процесса из перечисления " в случае успеха.
+ProcessTypeEnum
+
+GetScale  Получить коэффициенты масштабирования 
+по координатным осям
+Интерфейс...
+Синтаксис Automation:
+BOOL GetScale (double *sx, double *sy);
+Синтаксис COM:
+BOOL GetScale (double *sx, double *sy);
+Выходные параметры:
+
+Sx " масштаб по оси X,
+Sy " масштаб по оси Y.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+2621
+
+
+
+FALSE " в случае неудачи.
+
+GetSheetPoint  Получить координаты точки в системе 
+координат листа
+Интерфейс...
+Синтаксис Automation:
+BOOL GetSheetPoint (BOOL from, double *x, double *y);
+Синтаксис COM:
+BOOL GetSheetPoint (BOOL from, double *x, double *y);
+Входные параметры:
+
+from " TRUE " начало сдвига, центр поворота, центр 
+масштабирования, первая точка оси симметрии, начало 
+копирования,
+" FALSE " конец сдвига, вторая точка оси симметрии, конец 
+копирования.
+
+Выходные параметры:
+
+x, y, " значения координат точки в системе координат
+листа.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+IsCopy  Получить признак копирования исходных 
+объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL IsCopy();
+Синтаксис COM:
+BOOL IsCopy();
+Возвращаемое значение:
+
+TRUE " процесс с копированием,
+FALSE " процесс без копирования.
+2622
+
+
+
+IsRedoMode  Признак работы команды Redo
+Интерфейс...
+Синтаксис Automation:
+BOOL IsRedoMode();
+Синтаксис COM:
+BOOL IsRedoMode();
+Возвращаемое значение:
+
+TRUE  " если работает команда Redo.
+
+Примечание:
+Свойство требуется проверять в событиях, если необходимо отличать событие, получен"
+ное от визуальной работы пользователя, от действий, вызванных командой повторить
+(т.е. вернуть отмененное действие).
+См. также ksObject2DNotifyResult::IsUndoMode
+
+IsUndoMode  Признак работы команды Undo
+Интерфейс...
+Синтаксис Automation:
+BOOL IsUndoMode();
+Синтаксис COM:
+BOOL IsUndoMode();
+Возвращаемое значение:
+
+TRUE  " если работает команда Undo.
+
+Примечание:
+Свойство требуется проверять в событиях, если необходимо отличать событие, получен"
+ное от визуальной работы пользователя, от действий, вызванных командой Отменить.
+Например, при отмене создания объекта посылается событие удаления объекта.
+При отмене удаления объекта посылается событие создания объекта.
+См. также ksObject2DNotifyResult::IsRedoMode
+
+Интерфейс ksPropertyManagerNotify/
+IPropertyManagerNotify
+
+ksPropertyManagerNotify " интерфейс Automation
+2623
+
+
+
+IPropertyManagerNotify " интерфейс COM
+
+Интерфейс событий Панели свойств или процессных параметров.
+Позволяют контролировать состояние Панели свойств.
+Источником событий для подписки на данный интерфейс являются объекты:
+
+▼ IPropertyManager " интерфейс панели свойств.
+▼ IProcessParam " интерфейс параметров процесса.
+
+ksPropertyManagerNotify, IPropertyManagerNotify  
+события
+
+ ButtonClick  Нажата кнопка спецпанели
+Интерфейс..
+Синтаксис Automation:
+BOOL ButtonClick( long buttonID );
+Синтаксис COM:
+BOOL ButtonClick( long buttonID );
+Входные параметры:
+
+buttonID " идентификатор нажатой кнопки.
+
+Возвращаемое значение:
+
+Для кнопки Справка " TRUE " выводить стандартную справку КОМПАС,
+(pbHelp) " FALSE " справку не выводить.
+Для остальных " не используется.
+
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+ButtonUpdate  Задано состояние кнопки спецпанели
+Интерфейс..
+Синтаксис Automation:
+BOOL ButtonUpdate (long buttonID, long *check, BOOL * enable);
+Синтаксис COM:
+BOOL ButtonUpdate (long buttonID, long *check, boolean * enable);
+Входные параметры:
+2624
+
+
+
+buttonID " идентификатор кнопки,
+check " состояние кнопки (нажата/отжата),
+enable " доступность кнопки (доступна/недоступна).
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+ ChangeControlValue  Измененено значения элемента 
+управления
+Интерфейс..
+Синтаксис Automation:
+BOOL ChangeControlValue (IPropertyControl * сontrol);
+Синтаксис COM:
+BOOL ChangeControlValue (IUnknown* сontrol);
+Входные параметры:
+
+сontrol " указатель на интерфейс элемента панели свойств 
+IPropertyControl.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+ChangeTabExpanded  Изменение активности закладки 
+панели свойств
+Интерфейс..
+Синтаксис Automation:
+BOOL ChangeTabExpanded( long TabIndex );
+Синтаксис COM:
+BOOL ChangeTabExpanded( long TabIndex );
+Возвращаемое значение:
+2625
+
+
+
+" Не используется.
+
+Входные параметры:
+
+TabIndex " индекс закладки.
+
+CommandHelp  Вызвана справка
+Интерфейс...
+Синтаксис Automation:
+BOOL CommandHelp (long ID);
+Синтаксис COM:
+BOOL CommandHelp (long ID);
+Входные параметры:
+
+ID " идентификатор элемента Панели свойств, для
+которого вызывается справка.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+ControlCommand  Нажата кнопка элемента управления
+Интерфейс..
+Синтаксис Automation:
+BOOL ControlCommand (IPropertyControl * сontrol, long buttonID);
+Синтаксис COM:
+BOOL ControlCommand (IUnknown* сontrol , long buttonID);
+Входные параметры:
+
+сontrol " указатель на интерфейс элемента панели свойств 
+IPropertyControl,
+
+buttonID " идентификатор нажатой кнопки.
+
+Возвращаемое значение:
+
+" Не используется.
+2626
+
+
+
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+GetContextMenuType  CLLBACK для получения типа 
+контекстного меню
+Интерфейс..
+Синтаксис Automation:
+BOOL GetContextMenuType( long LX, long LY, long * ContextMenuType );
+Синтаксис COM:
+HRESULT GetContextMenuType( long LX, long LY, long * ContextMenuType, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ LX " координаты курсора,
+ LY " координаты курсора.
+ContextMenuType " тип контекстного меню.
+
+FillContextPanel  CLLBACK для накачки контекстной 
+панели
+Интерфейс..
+Синтаксис Automation
+BOOL FillContextPanel( IProcessContextPanel * ContextPanel );
+Синтаксис COM:
+HRESULT FillContextPanel( IProcessContextPanel * ContextPanel, BOOL * Result );
+Возвращаемое значение:
+ 
+
+"   Не используется.
+
+Входные параметры:
+
+ContextPanel " указатель на интерфейс контекстной панели,
+
+FillContextIconMenu  CLLBACK для накачки иконок 
+контекстной панели
+Интерфейс..
+Синтаксис Automation:
+2627
+
+
+
+BOOL FillContextIconMenu( IProcessContextIconMenu * ContextMenu );
+Синтаксис COM:
+HRESULT FillContextIconMenu( IProcessContextIconMenu * ContextMenu, BOOL * Result );
+Возвращаемое значение: 
+
+"   Не используется.
+
+Входные параметры:
+
+ContextMenu " указатель на интерфейс контекстного меню с 
+иконками.
+
+EndEditItem  Завершение редактирования текста 
+элемента списка
+Интерфейс..
+Синтаксис Automation:
+BOOL EndEditItem( IPropertyControl * Control, long Index );
+Синтаксис COM:
+HRESULT EndEditItem( IPropertyControl * Control, long Index, BOOL * Result );
+Возвращаемое значение: 
+
+"   Не используется.
+
+Входные параметры:
+
+Control " указатель контрола,
+Index " индекс значения.
+
+ProcessActivate  Процесс активизирован
+Интерфейс..
+Синтаксис Automation:
+BOOL ProcessActivate();
+Синтаксис COM:
+BOOL ProcessActivate();
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+2628
+
+
+
+ProcessDeactivate  Процесс деактивирован
+Интерфейс..
+Синтаксис Automation:
+BOOL ProcessDeactivate();
+Синтаксис COM:
+BOOL ProcessDeactivate();
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+SelectItem  Элемент списка выделен
+Интерфейс..
+Синтаксис Automation:
+BOOL SelectItem (LPUNKNOWN Control, long Index, BOOL Select);
+Синтаксис COM:
+BOOL SelectItem (LPUNKNOWN Control, long Index, BOOL Select);
+Входные параметры:
+
+Control " указатель на указатель на интерфейс элемента Панели 
+свойств IPropertyControl,
+
+Index " индекс строки в раскрывающемся списке,
+Select " тип объекта:
+
+TRUE " комментарий, системная клавиша,
+FALSE " базовый объект. 
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+CheckItem  Элемент списка выбран
+Интерфейс..
+Синтаксис Automation:
+BOOL CheckItem (LPUNKNOWN Control, long Index, BOOL Check);
+Синтаксис COM:
+2629
+
+
+
+BOOL CheckItem (LPUNKNOWN Control, long Index, BOOL Check);
+Входные параметры:
+
+Control " указатель на указатель на интерфейс элемента Панели 
+свойств IPropertyControl,
+
+Index " идентификатор кнопки,
+Select " тип объекта:
+
+TRUE " комментарий, системная клавиша,
+FALSE " базовый объект. 
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+ ChangeActiveTab  Изменение активности закладки 
+Панели свойств
+Функция не поддерживается
+Интерфейс..
+Синтаксис Automation:
+BOOL ChangeActiveTab( long TabIndex );
+Синтаксис COM:
+BOOL ChangeActiveTab( long TabIndex );
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+ EditFocus  Установка/снятие фокуса на поле ввода
+Интерфейс..
+Синтаксис Automation:
+BOOL EditFocus( IPropertyControl * Control, BOOL Set );
+Синтаксис COM:
+BOOL EditFocus( LPUNKNOWN ctrl, BOOL Set );
+Входные параметры:
+
+ctrl " указатель на интерфейс элемента управления
+IPropertyControl,
+
+Set  true " фокус установлен, false " фокус снят.
+2630
+
+
+
+Возвращаемое значение:
+Не используется.
+Примечание:
+Индекс события задан в перечислении событий Панели свойств
+ksPropertyManagerNotifyEnum.
+
+LayoutChanged  Изменение размещения панели 
+свойств
+Функция не поддерживается
+Интерфейс..
+Синтаксис Automation:
+BOOL LayoutChanged();
+Синтаксис COM:
+HRESULT LayoutChanged( BOOL * Result );
+Входные параметры:
+
+ctrl  " указатель на интерфейс IPropertyControl,
+menuID  " идентификатор меню.
+
+Возвращаемое значение:
+Не используется.
+
+UserMenuCommand  Вызов команды пользовательского 
+меню
+Интерфейс..
+Синтаксис Automation:
+BOOL UserMenuCommand (LPDISPATCH ctrl, long menuID);
+Синтаксис COM:
+BOOL UserMenuCommand (LPUNKNOWN ctrl, long menuID);
+Входные параметры:
+
+ctrl  " указатель на интерфейс IPropertyControl,
+menuID  " идентификатор меню.
+
+Возвращаемое значение:
+Не используется.
+2631
+
+
+
+Интерфейс ksPropertyUserControlNotify/
+IPropertyUserControlNotify
+
+ksPropertyUserControlNotify " интерфейс Automation
+" аналога в COM нет
+
+Интерфейс событий пользовательского элемента управления.
+Позволяют контролировать состояние элемента управления OCX.
+Источником событий для подписки на данный интерфейс является IPropertyUserControl
+" пользовательский элемент управления Панели свойств.
+
+ksPropertyUserControlNotify  события
+
+CreateOCX  Создан элемент управления OCX
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateOCX (LPDISPATCH iOcx);
+Входные параметры:
+
+iOcx " указатель на интерфейс IDispatch созданного элемента 
+управления OCX.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+
+1. При обработке этого события библиотека может подписаться на события элемента
+управления OCX для осуществления взаимодействия с ним. Если библиотека подписа"
+лась на события элемента управления OCX, то она должна обязательно от них отписаться
+при получении события DestroyOCX.
+
+2.  Индекс события задан в перечислении событий пользовательского элемента управле"
+ния ksPropertyUserControlNotifyEnum.
+
+DestroyOCX  Элемент управления OCX удален
+Интерфейс...
+Синтаксис Automation:
+BOOL DestroyOCX();
+Возвращаемое значение:
+
+" Не используется.
+2632
+
+
+
+Примечание:
+
+1. При обработке этого события библиотека должна отписаться от событий элемента
+управления OCX, если она на них подписывалась в событии CreateOCX.
+
+2. Индекс события задан в перечислении событий пользовательского элемента управления
+ksPropertyUserControlNotifyEnum.
+
+Интерфейс ksContentDialogNotify
+Интерфейс событий диалога с произвольным контентом IContentDialogParam.
+Иерархия:
+IDispatch
+
+ksContentDialogNotify
+Методы интерфейса позволяют обрабатывать события диалога с произвольным напол"
+нением.
+Источником событий для подписки является объект IContentDialogParam.
+КОМПАС версия v18
+
+ksContentDialogNotify  методы
+
+ButtonUpdate  Установка состояния кнопки панели
+Интерфейс...
+Синтаксис Automation:
+BOOL ButtonUpdate( long ButtonID, long * Check, BOOL * Enable );
+Синтаксис COM:
+HRESULT ButtonUpdate( long ButtonID, long * Check, BOOL * Enable, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+
+ButtonID " идентификатор команды панели диалога,
+Check " состояние кнопки (Нажата\Отжата),
+Enable " доступность команды.
+
+CreateContentCallback  Создание контента
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateContentCallback( OLE_HANDLE ParentHwnd, OLE_HANDLE * NewContentHwnd
+);
+Синтаксис COM:
+2633
+
+
+
+HRESULT CreateContentCallback( OLE_HANDLE ParentHwnd, OLE_HANDLE *
+NewContentHwnd, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+
+ParentHwnd " родительское окно.
+
+Выходные параметры:
+ 
+
+NewContentHwnd " новое окно контента.
+
+DestroyContent  Удаление контента
+Интерфейс...
+Синтаксис Automation:
+BOOL DestroyContent();
+Синтаксис COM:
+HRESULT DestroyContent( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+ExecuteCommand  Выполнить команду
+Интерфейс...
+Синтаксис Automation:
+BOOL ExecuteCommand( long ButtonID );
+Синтаксис COM:
+HRESULT ExecuteCommand( long ButtonID, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+ 
+
+ButtonID " идентификатор команды панели диалога.
+2634
+
+
+
+Интерфейс ksSpecificationDescriptionNotify
+Интерфейс событий описания спецификации.
+Позволяют контролировать редактирование описания спецификации.
+Источником событий для подписки на данный интерфейс являются объекты:
+
+▼ ISpecificationDescriptions " Интерфейс коллекции описаний спецификации,
+▼ ISpecificationDescription " Интерфейс описания спецификации.
+
+ksSpecificationDescriptionNotify  события
+
+BeginCalcPositions  Начало расчета позиций
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginCalcPositions();
+Возвращаемое значение:
+
+TRUE " расчет позиций,
+FALSE " запрещает расчет позиций.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+BeginCreateObject  Начало создания объекта СП (до 
+диалога выбора раздела)
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginCreateObject (long typeObj);
+Входные параметры:
+
+typeObj 0 " базовый объект, 
+1 " объект вспомогательный,
+"1 " тип объекта не определен.
+
+Возвращаемое значение:
+
+TRUE " создать объект спецификации,
+FALSE " запрещает создание объекта спецификации.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+2635
+
+
+
+CalcPositions  Проведен расчет позиций
+Интерфейс...
+Синтаксис Automation:
+BOOL CalcPositions();
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+ChangeCurrentSpcDescription  Изменилось текущее 
+описание спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL ChangeCurrentSpcDescription (ISpecificationDescription * Descr);
+Входные параметры:
+
+Descr " указатель на интерфейс ISpecificationDescription текущего 
+описания спецификации.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+SpcDescriptionAdd  Добавилось описание 
+спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL SpcDescriptionAdd (ISpecificationDescription * Descr);
+Входные параметры:
+
+Descr " указатель на интерфейс ISpecificationDescription 
+добавленного описания спецификации.
+
+Возвращаемое значение:
+2636
+
+
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+SpcDescriptionBeginEdit  Начало редактирования 
+описания спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL SpcDescriptionBeginEdit (ISpecificationDescription * Descr);
+Входные параметры:
+
+Descr " указатель на интерфейс ISpecificationDescription 
+редактируемого описания спецификации.
+
+Возвращаемое значение:
+
+TRUE " редактировать описание спецификации,
+FALSE " запрещает редактирование описания спецификации.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+SpcDescriptionEdit  Отредактировано описание 
+спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL SpcDescriptionEdit (ISpecificationDescription * Descr, BOOL isOk);
+Входные параметры:
+
+Descr " указатель на интерфейс ISpecificationDescription 
+редактируемого описания спецификации,
+
+isOk " результат изменения описания спецификации.
+
+Возвращаемое значение:
+
+" Не используется.
+
+Примечание:
+2637
+
+
+
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+SpcDescriptionRemove  Удалилось описание 
+спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL SpcDescriptionRemove (ISpecificationDescription * Descr);
+Входные параметры:
+
+Descr " указатель на интерфейс ISpecificationDescription 
+удаляемого описания спецификации.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+Synchronization  Синхронизация проведена
+Интерфейс...
+Синтаксис Automation:
+BOOL Synchronization();
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+SynchronizationBegin  Начало синхронизации
+Интерфейс...
+Синтаксис Automation:
+BOOL SynchronizationBegin();
+Возвращаемое значение:
+
+TRUE " синхронизировать,
+2638
+
+
+
+FALSE " запрещает синхронизацию.
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+TuningSpcStyleBeginChange  Начало изменения 
+настроек спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL TuningSpcStyleBeginChange( ISpecificationDescription * Descr );
+Входные параметры:
+
+Descr " указатель на интерфейс ISpecificationDescription 
+редактируемого описания спецификации.
+
+Возвращаемое значение:
+
+TRUE " изменить настройки спецификации,
+FALSE " запрещает изменения настроек спецификации.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+
+TuningSpcStyleChange  Настройки спецификации 
+изменились
+Интерфейс...
+Синтаксис Automation:
+BOOL TuningSpcStyleChange (ISpecificationDescription * Descr, BOOL isOk);
+Входные параметры:
+
+Descr " указатель на интерфейс ISpecificationDescription 
+редактируемого описания спецификации.
+
+isOk " результат изменения настроек спецификации.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для для Менеджера библиотек
+ksSpecificationNotifyEnum.
+2639
+
+
+
+Интерфейс ksSpecificationObjectNotify
+Интерфейс событий объектов спецификации.
+Предназначен для того, чтобы следить и при необходимости управлять редактированием
+объектов спецификации.
+Источником событий для подписки на данный интерфейс являются объекты:
+
+▼ ISpecificationObject " Интерфейс объекта спецификации (базового или вспомогательно"
+го),
+
+▼ ISpecificationBaseObjects " Интерфейс коллекции базовых объектов спецификации,
+▼ ISpecificationCommentObjects " Интерфейс коллекции вспомогательных объектов специ"
+
+фикации.
+
+ksSpecificationObjectNotify  события
+
+BeginDelete  Начало удаления объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginDelete (ISpecificationObject * obj );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject удаляемого 
+объекта спецификации.
+
+Возвращаемое значение:
+
+TRUE " удалить объект,
+FALSE " запрещает удаление объекта.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+BeginGeomChange  Начало изменения геометрии 
+объекта спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginGeomChange( ISpecificationObject * obj );
+Входные параметры:
+2640
+
+
+
+obj " указатель на интерфейс ISpecificationObject 
+редактируемого объекта спецификации,
+
+Возвращаемое значение:
+
+TRUE " изменить геометрию объекта спецификации,
+FALSE " запрещает изменение геометрии объекта спецификации.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+BeginProcess  Начало редактирования\создания 
+объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginProcess( long pType, ISpecificationObject * obj );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject 
+редактируемого объекта спецификации,
+
+pType " тип объекта из перечисления 
+ksSpecificationObjectTypeEnum( SPC_BASE_OBJECT, 
+SPC_COMMENT ).
+
+Возвращаемое значение:
+
+TRUE " редактировать\создать объект,
+FALSE " запрещает редактирование\создание объекта объекта.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+CellBeginEdit  Начало редактирования в ячейке
+Интерфейс...
+Синтаксис Automation:
+BOOL CellBeginEdit( ISpecificationObject * obj, long number );
+Входные параметры:
+2641
+
+
+
+obj " указатель на интерфейс ISpecificationObject 
+редактируемого объекта спецификации,
+
+number " номер редактируемой ячейки.
+
+Возвращаемое значение:
+
+TRUE " редактировать ячейку,
+FALSE " запрещает редактировать ячейку.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+CellDblClick  Двойной щелчок в ячейке
+Интерфейс...
+Синтаксис Automation:
+BOOL CellDblClick( ISpecificationObject * obj, long number );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject 
+редактируемого объекта спецификации,
+
+number " номер редактируемой ячейки.
+
+Возвращаемое значение:
+
+TRUE " обработать двойной клик в ячейке,
+FALSE " запрещает обработку двойного клика в ячейке.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+ChangeCurrent  Изменился текущий объект
+Интерфейс...
+Синтаксис Automation:
+BOOL ChangeCurrent( ISpecificationObject * obj );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject те"
+кущего объекта спецификации.
+
+Возвращаемое значение:
+2642
+
+
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+CreateObject  Создание объекта спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateObject( ISpecificationObject * obj );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject со"
+зданного объекта спецификации.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+Delete  Удаление объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete (ISpecificationObject * obj);
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject удаляемого 
+объекта спецификации.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+2643
+
+
+
+DocumentAdd  Добавление документа в объекте 
+спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL DocumentAdd( ISpecificationObject * obj, BSTR docName );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject 
+редактируемого объекта спецификации,
+
+docName " имя файла добавленного документа.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+DocumentBeginAdd  Начало добавления документа
+Интерфейс...
+Синтаксис Automation:
+BOOL DocumentBeginAdd( ISpecificationObject * obj );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject 
+редактируемого объекта спецификации.
+
+Возвращаемое значение:
+
+TRUE " добавить документ сборочного чертежа, 
+FALSE " запрещает добавление документа сборочного чертежа.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+DocumentRemove  Удаление документа из объекта 
+спецификации
+Интерфейс...
+Синтаксис Automation:
+2644
+
+
+
+BOOL DocumentRemove( ISpecificationObject * obj, BSTR docName );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject 
+редактируемого объекта спецификации,
+
+docName " имя файла удаляемого документа.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+EndProcess  Конец редактирования\создания объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL EndProcess( long pType );
+Входные параметры:
+
+pType " тип процесса ( SPC_BASE_OBJECT, SPC_COMMENT ).
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+GeomChange  Геометрия объекта спецификации 
+изменилась
+Интерфейс...
+Синтаксис Automation:
+BOOL GeomChange( ISpecificationObject * obj );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject ре"
+дактируемого объекта спецификации.
+
+Возвращаемое значение:
+2645
+
+
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+UpdateObject  Редактирование объекта спецификации
+Интерфейс...
+Синтаксис Automation:
+BOOL UpdateObject( ISpecificationObject * obj );
+Входные параметры:
+
+obj " указатель на интерфейс ISpecificationObject ре"
+дактируемого объекта спецификации.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для объектов спецификации
+ksSpcObjectNotifyEnum.
+
+Интерфейс ksViewsAndLayersManagerNotify/
+IViewsAndLayersManagerNotify 
+
+ksViewsAndLayersManagerN " интерфейс
+otify Automation
+IViewsAndLayersManagerNot " интерфейс COM
+ify
+
+Интерфейс событий менеджера видов и слоев.
+Позволяют контролировать начало и завершение работы с диалогом менеджера видов и
+слоев.
+Источником событий для подписки на данный интерфейс являются объекты:
+ IViewsAndLayersManager " Менеджер слоев и видов графического документа.
+
+ksViewsAndLayersManagerNotify/
+IViewsAndLayersManagerNotify  события
+
+BeginEdit  Начато редактирование
+Интерфейс...
+2646
+
+
+
+Синтаксис Automation:
+BOOL BeginEdit();
+Синтаксис COM:
+BOOL BeginEdit();
+Возвращаемое значение:
+
+FALSE " запретить редактирование через диалог.
+
+Примечание:
+Индекс события задан в перечислении событий для менеджера видов и слоев
+ksViewsAndLayersManagerNotifyEnum.
+
+EndEdit  Завершено редактирование
+Интерфейс..
+Синтаксис Automation:
+BOOL EndEdit (BOOL isOk);
+Синтаксис COM:
+BOOL EndEdit (BOOL isOk);
+Входные параметры:
+
+isOk " TRUE диалог закрыт по кнопке OK,
+" FALSE диалог закрыт по кнопке Отмена.
+
+Возвращаемое значение:
+
+" не используется.
+
+Примечание:
+Индекс события задан в перечислении событий для менеджера видов и слоев
+ksViewsAndLayersManagerNotifyEnum.
+
+Интерфейс ksFindObjectParametersNotify 
+Интерфейс фильтрации объектов в функциях поиска объектов под курсором.
+Иерархия:
+IDispatch
+
+ksFindObjectParametersNotify
+Версия: KOMPAS v19
+2647
+
+
+
+ksFindObjectParametersNotify  методы
+
+FilterObject  Фильтрация объектов
+Интерфейс..
+Синтаксис Automation:
+BOOL FilterObject( IDispatch* Object );
+Синтаксис COM :
+HRESULT FilterObject( IDispatch* Object, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE "  если объект подходит.
+
+Входные параметры:
+ 
+
+ Object " указатель на объект под курсором.
+2648
+
+
+
+Конвертер файлов КОМПАС
+Интерфейс IСonverter
+Конвертер файлов КОМПАС.
+Иерархия:
+IKompasAPIObject
+
+IConverter
+Примечание:
+
+1. Интерфейс позволяет управлять конвертером системы КОМПАС, задавать параметры
+конвертирования, получать фильтр и выполнять конвертацию документа системы КОМ"
+ПАС.
+
+2. Данный интерфейс может быть получен от интерфейса приложения IApplication с помо"
+щью свойства IApplication::Converter.
+
+IConverter  методы
+
+Convert  Запустить процесс конвертации
+Интерфейс...
+Синтаксис Automation:
+long * Convert (BSTR inputFile, BSTR outfile, long command, BOOL showParam);
+Синтаксис COM:
+HRESULT Convert ([in] BSTR inputFile,
+[in] BSTR outfile,
+[in] long command,
+[in] VARIANT_BOOL showParam,
+[out, retval] long* Result);
+Входные параметры:
+
+inputFile " имя исходного файла документа,
+outfile " новое имя файла документа,
+command " номер команды,
+showParam " TRUE " выдавать диалог параметров конвертации,
+
+ FALSE " не выдавать диалог параметров конвертации.
+
+Возвращаемое значение:
+
+1 " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Если имя исходного файла документа не задано, то берется текущий документ. Если но"
+вое имя файла документа не задано, то конвертация будет происходить в новый доку"
+мент системы КОМПАС.
+2649
+
+
+
+ConverterParameters  Получить интерфейс параметров 
+конвертирования
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH ConverterParameters (long command);
+Синтаксис COM:
+HRESULT ConverterParameters ([in] long command, [out, retval] IUnknown ** PVal);
+Входные параметры:
+
+command " номер команды, для которой 
+необходимо получить интерфейс 
+параметров.
+
+Возвращаемое значение:
+
+ указатель на интерфейс IUnknown " в случае успешного завершения,
+0 " в случае неудачи.
+
+Примечание:
+Данный метод позволяет получить интерфейс параметров конвертирования, который
+объявлен, реализован и поддерживается в самом конвертере.
+
+GetFilter  Получить фильтр и номер команды по типу 
+документа
+Интерфейс...
+Синтаксис Automation:
+BSTR * GetFilter (long docType, BOOL saveAs, long * command);
+Синтаксис COM:
+HRESULT GetFilter ([in] long docType,
+[in] VARIANT_BOOL saveAs,
+[out] long* command,
+[out, retval] BSTR* Result);
+Входные параметры:
+2650
+
+
+
+docType " при импорте в КОМПАС"документ " тип документа из перечисления 
+DocumentTypeEnum,
+" при экспорте КОМПАС"документа " тип документа, в который производится 
+экспорт, перечисление типов документов, должно быть задано в конверторе. 
+Например, для конвертора в DXF и DWG используются типы:
+#define FORMAT_DXF  1     // ID команды для работы с DXF
+#define FORMAT_DWG  2   // ID команды для работы с DWG
+
+saveAs " TRUE " экспорт документа КОМПАС,
+" FALSE " импорт в документ КОМПАС.
+
+Выходные параметры:
+
+command " номер команды.
+
+Возвращаемое значение:
+
+фильтр " строка со справочным значением (например 'КОМПАС"
+Фрагменты (*.myfrw)|*.myfrw|'), которое используется в 
+диалогах Открыть файл и Сохранить файл.
+
+VisualEditConvertParam  Запустить визуальное 
+редактирование параметров конвертации
+Интерфейс...
+Синтаксис Automation:
+BOOL * VisualEditConvertParam( OLE_HANDLE parentHwnd, long command );
+Синтаксис COM:
+HRESULT VisualEditConvertParam ([in] OLE_HANDLE parentHwnd,
+[in] long command,
+[out, retval] VARIANT_BOOL * val);
+Входные параметры:
+
+parentHwnd " дескриптор окна родителя,
+command " номер команды.
+
+Возвращаемое значение:
+
+TRUE " выход из диалога по кнопке OK,
+FALSE " выход из диалога по кнопке Отмена.
+2651
+
+
+
+2652
+
+
+
+Печать
+Интерфейс IPrintJob
+Справка системы КОМПАС...
+KOMPAS.chm::/638_76_10_Zadanie_na_pechatq.htm
+Интерфейс задания на печать.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IPrintJob
+
+IPrintJob_OutputParameters
+Описание:
+Интерфейс позволяет устанавливать и получать параметры задания на печать.
+Термины:
+Лист " лист документа.
+Страница устройства печати " область печати при заданном размере листов бумаги печа"
+тающего устройства.
+Примечание:
+
+1. Интерфейс можно получить у интерфейса приложения КОМПАС с помощью свойства
+IApplication::PrintJob.
+
+2. Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) у
+данного интерфейса можно получить дополнительный интерфейс
+IPrintJob_OutputParameters.
+
+IPrintJob  свойства
+
+PagesCount  Количество страниц печати
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+PagesCount = Получить свойство (* )
+Object.PagesCount
+PagesCount = Получить свойство (**)
+Object.GetPagesCount()
+
+Синтаксис COM:
+
+Object.get_PagesCount( Получить свойство
+&PagesCount )
+2653
+
+
+
+Примечание:
+
+1. Свойство позволяет получать текущее количество страниц устройства печати c учетом
+выключенных.
+
+2. Свойство доступно только для чтения.
+
+PagePrintableFlag  Признак печатаемости страницы по 
+ее индексам
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+PagePrintableFlag = Получить свойство (* )
+Object.PagePrintableFlag(
+WPage, HPage )
+Object.PagePrintableFlag( Установить свойство (* )
+WPage, HPage ) =
+PagePrintableFlag
+PagePrintableFlag = Получить свойство (**)
+Object.GetPagePrintableFlag(
+WPage, HPage )
+Object.SetPagePrintableFlag( Установить свойство (**)
+WPage, HPage,
+DimensionLineScale )
+
+Синтаксис COM:
+
+Object.get_PagePrintableFlag( Получить свойство
+WPage, HPage,
+&PagePrintableFlag )
+Object.put_PagePrintableFlag( Установить свойство
+WPage, HPage,
+PagePrintableFlag )
+
+Входные параметры:
+
+long WPage " индекс страницы по горизонтали,
+long HPage  " индекс страницы по вертикали.
+
+Примечание:
+
+1. Свойство позволяет включить/отключить печать страницы по ее индексам (по горизон"
+тали и вертикали). Если индексы заданы вне диапазона, возвращается FALSE.
+
+2. Состояние страницы сбросится, если в результате перемещения листов какой"либо из ее
+индексов станет не действительным.
+2654
+
+
+
+SheetsCoun  Количество листов
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+SheetsCount = Получить свойство (* )
+Object.SheetsCount
+SheetsCount = Получить свойство (**)
+Object.GetSheetsCount()
+
+Синтаксис COM:
+
+Object.get_SheetsCount( Получить свойство
+&SheetsCount )
+
+Примечание:
+
+1. Свойство позволяет получать количество загруженных листов документов в задании на
+печать.
+
+2. Свойство доступно только для чтения.
+
+Sheet  Интерфейс листа документа
+Интерфейс...
+Тип данных: указатель на интерфейс листа документа IPrintJob_Sheet
+Синтаксис Automation:
+
+Sheet = Object.Sheet ( Index ) Получить свойство (* )
+Sheet = Object.GetSheet( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sheet( Index, &Sheet Получить свойство
+)
+
+Входные параметры:
+
+long Index " индекс листа, нумерация начинается с единицы.
+
+Примечание:
+
+1. Свойство позволяет получать интерфейс листа документа.
+2. Свойство доступно только для чтения.
+2655
+
+
+
+IPrintJob  методы
+
+AddSheets  Добавить листы указанного документа
+Интерфейс...
+Синтаксис Automation:
+BOOL AddSheets( BSTR  FileName,
+VARIANT Sheets,
+long  Range );
+Синтаксис COM:
+HRESULT AddSheets( BSTR FileName,
+VARIANT Sheets,
+ksSheetsRangeEnum Range,
+BOOL * Result );
+Входные параметры:
+
+FileNa " имя файла, из которого надо добавить листы,
+me
+Sheet " массив VT_ARRAY | VT_DISPATCH листов 
+s документа,
+Range " тип диапазона страниц из перечисления 
+
+ksSheetsRangeEnum.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Метод позволяет добавить в задание на печать листы указанного документа.
+2. Если вместо имени файла передается пустая строка, то добавляются листы активного
+
+документа.
+
+Clear  Очистить здание на печать
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+HRESULT Clear( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+2656
+
+
+
+FALSE " в случае неудачи.
+Примечание:
+Метод позволяет очистить задание на печать и привести все настройки в умолчательное
+состояние.
+
+Load  Загрузить задание на печать из файла
+Интерфейс...
+Синтаксис Automation:
+BOOL Load( BSTR FileName,
+VARIANT * Errors );
+Синтаксис COM:
+HRESULT Load( BSTR FileName, 
+VARIANT * Errors,
+BOOL  * Result );
+Входные параметры:
+
+FileNa " имя файла задания на печать.
+me
+
+Выходные параметры:
+
+Errors " массив VT_ARRAY | VT_BSTR сооб"
+щений об ошибках.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+
+1. Метод позволяет загрузить задание на печать из файла *.pjd.
+2.  FALSE возвращается в следующих случаях:
+
+▼ файл не найден,
+▼ файл поврежден,
+▼ файл имеет неправильный формат,
+▼ загрузка файла была прервана из"за отсутствия данных,
+▼ ни одного листа ни одного документа загрузить в задание не удалось.
+3. Если задание загружено, возвращается TRUE, даже если при загрузке возникли некри"
+
+тические ошибки.
+2657
+
+
+
+Execute  Отправить задание на печать на устройство 
+печати
+Интерфейс...
+Синтаксис Automation:
+BOOL Execute( BSTR OutputFileName );
+Синтаксис COM:
+HRESULT Execute( BSTR  OutputFileName,
+BOOL * Result );
+Входные параметры:
+
+Outpu " имя устройства печати.
+tFileN
+ame
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1. Метод позволяет отправить задание на печать на устройство печати.
+2. Чтобы отправить задание на печать на текущий принтер, следует в качестве параметра
+
+OutputFileName прислать пустую строку.
+
+GetPageGabarites  Получить габариты страницы 
+устройства печати
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPageGabarites( double * Width
+double * Height );
+Синтаксис COM:
+HRESULT GetPageGabarites( double * Width, 
+double * Height,
+BOOL  * Result );
+Выходные параметры:
+
+Width " ширина страницы,
+Height " высота страницы.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+2658
+
+
+
+FALSE " в случае неудачи (если листа с таким
+номером не существует).
+
+Примечание:
+Метод позволяет получить габариты страницы устройства печати.
+
+GetPagesMapGabarites  Получить размеры карты 
+страниц
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPagesMapGabarites( long * WPageCount,
+long * HPageCount );
+Синтаксис COM:
+HRESULT GetPagesMapGabarites( long * WPageCount,
+long * HPageCount,
+BOOL * Result );;
+Выходные параметры:
+
+WPageCount " количество страниц по горизонтали,
+HPageCount " количество страниц по вертикали.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить размеры карты страниц " количество страниц по вертикали и
+горизонтали.
+
+RemoveSheets  Удалить лист из задания на печать
+Интерфейс...
+Синтаксис Automation:
+BOOL RemoveSheets( VARIANT Index );
+Синтаксис COM:
+HRESULT RemoveSheets( VARIANT Index,
+BOOL * Result );
+Входные параметры:
+
+Index " индекс листа.
+
+Возвращаемое значение:
+2659
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи (если листа с таким
+
+номером не существует).
+
+Примечание:
+Метод позволяет удалить лист из задания на печать.
+
+Save  Сохранить задание на печать в файл
+Интерфейс...
+Синтаксис Automation:
+BOOL Save( BSTR  FileName,
+VARIANT * Errors );
+Синтаксис COM:
+HRESULT Save( BSTR FileName,
+VARIANT * Errors,
+BOOL  * Result );
+Входные параметры:
+
+FileNa " имя файла задания на печать.
+me
+
+Выходные параметры:
+
+Errors " массив VT_ARRAY | VT_BSTR, если
+есть ошибки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет сохранить задание на печать в файл *.pjd.
+
+ShowPreviewWindow  Показать окно предварительного 
+просмотра перед печатью
+Интерфейс...
+Синтаксис Automation:
+BOOL ShowPreviewWindow();
+Синтаксис COM:
+HRESULT ShowPreviewWindow( BOOL * Result );
+2660
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечания:
+
+1. Метод позволяет показать окно предварительного просмотра перед печатью с текущим
+состоянием задания на печать.
+
+2. После закрытия окна предварительного просмотра задание на печать очищается, анало"
+гично вызову метода IPrintJob::Clear.
+
+SpecialExecute  Отправить задание на специальную 
+печать
+Интерфейс...
+Синтаксис Automation:
+BOOL SpecialExecute( BSTR OutputFileName );
+Синтаксис COM:
+HRESULT SpecialExecute( BSTR OutputFileName, BOOL * Result );
+Входные параметры:
+
+OutputFileN  " имя устройства печати.
+ame
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Метод позволяет отправить задание на полистную печать на устройство печати.
+Примечание:
+Чтобы отправить задание на печать на текущий принтер, следует в качестве параметра
+OutputFileName прислать пустую строку.
+
+Интерфейс IPrintJob_Sheet
+Справка системы КОМПАС...
+KOMPAS.chm::/638_76_10_Zadanie_na_pechatq.htm
+Задание на печать: Интерфейс листа документа.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+2661
+
+
+
+IPrintJob_Sheet
+Описание:
+Интерфейс позволяет устанавливать и получать параметры листа документа в задании
+на печать.
+Примечание:
+Интерфейс можно получить у интерфейса задания на печать с помощью свойства
+IPrintJob::Sheet.
+
+IPrintJob_Sheet  свойства
+
+ClipFlag  Получить признак вывода части листа 
+документа
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClipFlag = Object.ClipFlag Получить свойство (* )
+Object.ClipFlag = ClipFlag Установить свойство (* )
+ClipFlag = Object.GetClipFlag() Получить свойство (**)
+Object.SetClipFlag( ClipFlag ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ClipFlag( &ClipFlag ) Получить свойство
+Object.put_ClipFlag(  ClipFlag ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать признак вывода части листа документа.
+
+DocumentName  Имя документавладельца листа
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+DocumentName = Получить свойство (* )
+Object.DocumentName
+DocumentName = Получить свойство (**)
+Object.GetDocumentName()
+
+Синтаксис COM:
+2662
+
+
+
+Object.get_DocumentName( Получить свойство
+&DocumentName )
+
+Примечание:
+
+1.  Свойство позволяет получать имя документа"владельца листа.
+2.  Свойство доступно только для чтения.
+
+GetGabarites  Получить габариты листа
+Интерфейс...
+Синтаксис Automation:
+BOOL GetGabarites( double * Width,
+double * Height );
+Синтаксис COM:
+HRESULT GetGabarites( double * Width,
+double * Height,
+BOOL * Result );
+Выходные параметры:
+
+Width " ширина листа,
+Height " высота листа.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить габариты листа.
+
+Number  Номер листа документа
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Number = Object.Number Получить свойство
+(* )
+
+Number = Object.GetNumber() Получить свойство
+(**)
+
+Синтаксис COM:
+
+Object.get_Number( &Number ) Получить свойство
+2663
+
+
+
+Примечание:
+
+1.  Свойство позволяет получать номер листа документа.
+2.  Свойство доступно только для чтения.
+
+Orientation  Получить текущую ориентацию листа
+Интерфейс...
+Тип данных: из перечисления ksAngleEnum
+Синтаксис Automation:
+
+Orientation = Object.Orientation Получить свойство (* )
+Object.Orientation = Orientation Установить свойство (* )
+Orientation = Получить свойство (**)
+Object.GetOrientation()
+Object.SetOrientation( Установить свойство (**)
+Orientation )
+
+Синтаксис COM:
+
+Object.get_Orientation( Получить свойство
+&Orientation )
+Object.put_Orientation( Установить свойство
+Orientation )
+
+Примечание:
+Свойство позволяет устанавливать и получать текущую ориентацию листа.
+
+Scale  Задать масштаб листа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Scale = Object.Scale Получить свойство (* )
+Object.Scale = Scale Установить свойство (* )
+Scale = Object.GetScale() Получить свойство (**)
+Object.SetScale( Scale ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Scale( &Scale ) Получить свойство
+Object.put_Scale(  Scale ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать масштаб листа.
+2664
+
+
+
+X  Координата Х левого нижнего угла листа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X Получить свойство (* )
+Object.X = X Установить свойство (* )
+X = Object.GetX() Получить свойство (**)
+Object.SetX( X ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ) Получить свойство
+Object.put_X(  X ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату Х левого нижнего угла листа.
+
+Y  Координата Y левого нижнего угла листа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y Получить свойство (* )
+Object.Y = Y Установить свойство (* )
+Y = Object.GetY() Получить свойство (**)
+Object.SetY( Y ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y( &Y ) Получить свойство
+Object.put_Y(  Y ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату Y левого нижнего угла листа.
+
+IPrintJob_Sheet  методы
+
+GetClipFrameGabarites  Получить выводимые на печать 
+габариты листа
+Интерфейс...
+Синтаксис Automation:
+2665
+
+
+
+BOOL GetClipFrameGabarites( double * Left, 
+double * Bottom,
+double * Right,
+double * Top );
+Синтаксис COM:
+HRESULT GetClipFrameGabarites( double * Left, 
+double * Bottom,
+double * Right,
+double * Top,
+BOOL  * Result );
+Выходные параметры:

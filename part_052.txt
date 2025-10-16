@@ -1,0 +1,2532 @@
+ksObjectCutUnitMarkings 13015 Коллекция обозначений узла в сечении
+ksObjectUnitMarking 13016 Обозначение узла
+ksObjectUnitMarkings 13017 Коллекция обозначений узлов
+ksObjectUnitNumber 13018 Номер узла
+ksObjectUnitNumbers 13019 Коллекция номеров узлов
+ksObjectMultiTextLeader 13020 Выносная надпись к многослойным 
+
+конструкциям
+ksObjectMultiTextLeaders 13021 Коллекция выносных надписей к 
+
+многослойным конструкциям
+ksObjectBrace 13022 Фигурная скобка
+ksObjectBraces 13023 Коллекция фигурных скобок
+ksObjectLineSegments 13024 Коллекция отрезков
+ksObjectLineSegment 13025 Отрезок
+ksObjectRadialDimension 13028 Радиальный размер
+ksObjectDiametralDimension 13029 Диаметральный размер
+ksObjectBreakRadialDimension 13030 Радиальный размер с изломом
+ksObjectRadialDimensions 13031 Коллекция радиальных размеров
+ksObjectBreakRadialDimensions 13032 Коллекция радиальных размеров с 
+
+изломом
+ksObjectDiametralDimensions 13033 Коллекция диаметральных размеров
+ksObjectLineDimension 13041 Линейный размер
+ksObjectLineDimensions 13042 Коллекция линейных размеров
+ksObjectBreakLineDimension 13043 Линейный размер с обрывом
+ksObjectBreakLineDimensions 13044 Коллекция линейных размеров с 
+
+обрывом
+ksObjectHeightDimension 13045 Размер высоты
+ksObjectHeightDimensions 13046 Коллекция размеров высоты
+ksObjectAngleDimension 13047 Угловой размер
+ksObjectBreakAngleDimension 13048 Угловой размер c обрывом
+2777
+
+
+
+ksObjectAngleDimensions 13049 Коллекция угловых размеров
+ksObjectArcDimension 13050 Размер дуги окружности
+ksObjectArcDimensions 13051 Коллекция размеров дуг окружностей
+ksObjectLeader 13052 Простая линия выноски
+ksObjectLeaders 13053 Коллекция линий выносок
+ksObjectRough 13054 Обозначение шероховатости
+ksObjectRoughs 13055 Коллекция обозначений шероховатости
+ksObjectMarkLeader 13056 Знак маркировки
+ksObjectBrandLeader 13057 Знак клеймения
+ksObjectPositionLeader 13058 Линия выноски для обозначения позиции
+ksObjectChangeLeader 13059 Обозначение изменения
+ksObjectBase 13060 Обозначение базы
+ksObjectBases 13061 Коллекция обозначений базы
+ksObjectDrawingTable 13062 Таблица на чертеже
+ksObjectDrawingTables 13063 Коллекция таблиц на чертеже
+ksObjectTolerance 13064 Допуск формы
+ksObjectTolerances 13065 Коллекция допусков формы
+ksObjectCutLines 13066 Коллекция линий разреза/сечения
+ksObjectCutLine 13067 Линия разреза/сечения
+ksObjectViewPointer 13068 Cтрелка взгляда
+ksObjectViewPointers 13069 Коллекция стрелок взгляда
+ksObjectDrawingContour 13072 Контур на чертеже
+ksObjectDrawingContours 13073 Коллекция контуров на чертеже
+ksObjectCircles 13074 Коллекция окружностей
+ksObjectCircle 13075 Окружность
+ksObjectPoints 13076 Коллекция точек
+ksObjectPoint 13077 Точка
+ksObjectBeziers 13078 Коллекция Bezier сплайнов
+ksObjectBezier 13079 Bezier сплайн
+ksObjectMacroObjects 13080 Коллекция макроэлементов
+ksObjectMacroObject 13081 Макроэлемент
+ksObjectLines 13082 Коллекция линий
+ksObjectLine 13083 Линия
+ksObjectPolyLines2D 13084 Коллекция полилиний
+ksObjectPolyLine2D 13085 Полилиния
+ksObjectNurbses 13086 Коллекция Nurbs"сплайнов
+ksObjectNurbs 13087 Nurbs"сплайн
+ksObjectRasters 13088 Коллекция растровых объектов
+ksObjectRaster 13089 Растровый объект
+ksObjectOleDrawingObjects 13090 Коллекция OLE"объектов
+ksObjectOleDrawingObject 13091 OLE"объект
+ksObjectEllipses 13092 Коллекция эллипсов
+ksObjectEllipse 13093 Эллипс
+ksObjectEllipseArcs 13094 Коллекция дуг эллипсов
+ksObjectEllipseArc 13095 Дуга эллипса
+ksObjectRectangles 13096 Коллекция прямоугольников
+ksObjectRectangle 13097 Прямоугольник
+ksObjectRegularPolygons 13098 Коллекция многоугольников
+ksObjectRegularPolygon 13099 Многоугольник
+ksObjectEquidistants 13100 Коллекция эквидистант
+ksObjectEquidistant 13101 Эквидистанта
+ksObjectInsertionFragment 13102 Вставка фрагмента
+ksObjectInsertionView 13103 Вставка вида из другого чертежа
+ksObjectInsertionObjects 13104 Коллекция вставок фрагментов и видов
+ksObjectInsertionDefinition 13105 Описание вставки фрагмента и вида
+ksObjectCentreMarkers 13106 Коллекция обозначений центров
+2778
+
+
+
+ksObjectCentreMarker 13107 Обозначение центра
+ksObjectRemoteElements 13108 Коллекция выносных элементов
+ksObjectRemoteElement 13109 Выносной элемент
+ksObjectAxisLines 13110 Коллекция осевых линий
+ksObjectAxisLine 13111 Осевая линия
+ksObjectHatchParam 13112 Параметры штриховки
+ksObjectDrawingGroup 13113 Группа объектов
+ksObjectDrawingGroups 13114 Коллекция групп объектов
+ksObjectCurve2D 13115 Математическая 2D кривая
+ksObjectHatches 13116 Коллекция штриховок
+ksObjectHatch 13117 Штриховка
+ksObjectColourings 13118 Коллекция заливок
+ksObjectColouring 13119 Заливка
+ksObjectSpecRough 13120 Неуказанная шероховатость
+ksObjectTechnicalDemand 13121 Технические требования
+ksObjectAnnotativeLineSegment 13122 Аннотационный отрезок
+ksObjectAnnotativeCircle 13123 Аннотационная окружность
+ksObjectAnnotativeEllipse 13124 Аннотационный эллипс
+ksObjectAnnotativeArc 13125 Аннотационная дуга
+ksObjectAnnotativeEllipseArc 13126 Аннотационная дуга эллипса
+ksObjectAnnotativePolyLine 13127 Аннотационная полилиния
+ksObjectAnnotativePoint 13128 Аннотационная точка
+ksObjectAnnotativeText 13129 Текст с аннотационной точкой привязки
+ksObjectBuildingCutLines 13131 Коллекция линий разреза/сечения для 
+
+СПДС
+ksObjectBuildingCutLine 13132 Линия разреза/сечения для СПДС
+ksObjectWaveLines 13133 Коллекция волнистых линий
+ksObjectWaveLine 13134 Волнистая линия
+ksObjectBrokenLines 13135 Коллекция линий обрыва с изломами
+ksObjectBrokenLine 13136 Линия обрыва с изломами
+ksObjectCopyObjectParam 13137 Параметры копирования объектов
+ksObjectCurveCopyObjectParam 13138 Параметры копирования объектов вдоль 
+
+кривой
+ksObjectCircleCopyObjectParam 13139 Параметры копирования объектов по 
+
+окружности
+ksObjectCircularCopyObjectParam 13140 Параметры копирования объектов по 
+
+концентрической сетке
+ksObjectMeshCopyObjectParam 13141 Параметры копирования объектов по 
+
+сетке 
+ksObjectLocalCoordinateSystem2D 13142 Локальная система координат
+ksObjectLocalCoordinateSystems2D 13143 Коллекция локальных систем координат 
+ksObjectAttachedLeader 13144 Присоединенная линия выноски (не 
+
+имеет текстов) 
+ksObjectAttachedLeaders 13145 Коллекция присоединенных линий 
+
+выносок
+ksObjectLoadCombinationsParam 13146 Параметры типа загрузки документа
+ksObjectOpenDocumentParam 13147 Параметры открытия документа
+ksObjectAssociationTables 13148 Коллекция ассоциативных таблиц
+ksObjectAssociationTable 13149 Ассоциативная таблица
+ksObjectNurbsesByPoints 13150 Коллекция NURBS"кривых по точкам
+ksObjectNurbsByPoints 13151 NURBS"кривая по точкам
+ksObjectProcess2D 13152 Процесс 2D из библиотеки
+ksObjectPhantom2D 13153 Параметры фантома 2D
+ksObjectProcess3D 13154 Процесс 3D из библиотеки
+2779
+
+
+
+ksObjectUserDesignationCompObj 13155 Составной пользовательский объект 
+обозначение 3D
+
+ksObjectUserFolder 13156 Пользовательская директория
+ksObjectUserFolders 13157 Пользовательские директории
+ksObjectMeshObject3D 13158 Пространственный полигональный 
+
+объект
+ksObjectConicCurves 13159 Коллекция конический кривых
+ksObjectConicCurve 13160 Коническая кривая
+ksObjectCircularsCentries 13161 Коллекция круговых сеток центров
+ksObjectCircularCentres 13162 Круговая сетка центров
+ksObjectLinearsCentries 13163 Коллекция линейных сеток центров
+ksObjectLinearCentres 13164 Линейная сетка центров
+ksObjectFindObjectParameters 13165 Параметры поиска объектов
+ksObjectManipulators 13166 Коллекция манипуляторов
+ksObjectPlacement3DManipulator 13167 Манипулятор системы координат
+ksObjectEditDoubleManipulator 13168 Манипулятор в виде редактора числового 
+
+значения
+ksObjectMouseEnterLeaveParameters 13169 Параметры отображения точки, 
+
+позволяющей определить место 
+применения контрола
+
+ksObjectConditionIntersect 13170 Условное пересечение
+ksObjectConditionIntersects 13171 Коллекция условных пересечений
+
+ksAccuracyEnum  Количество знаков после запятой
+
+ksAccuracyDefault "1 По умолчанию. Использовать на"
+стройки
+
+ksAccuracy0 0 0.
+ksAccuracy1 1 0,1.
+ksAccuracy2 2 0,12.
+ksAccuracy3 3 0,123.
+ksAccuracy4 4 0,1234.
+ksAccuracy5 5 0,12345.
+ksAccuracy6 6 0,123456.
+ksAccuracy7 7 0,1234567.
+ksAccuracy8 8 0,12345678.
+ksAccuracy9 9 0,123456789.
+
+ksAlignEnum  Выравнивание
+
+ksAlignLeft 0 Выравнивание слева
+ksAlignCenter 1 Выравнивание по
+
+центру
+ksAlignRight 2 Выравнивание справа
+ksAlignAllWidth 3 Выравнивание на всю
+
+ширину
+2780
+
+
+
+ksAlignDecimal 3 Выравнивание по де"
+сятичной точке
+
+ksAlignDefault "1 По умолчанию (из
+стиля)
+
+ksAlignmentTypeEnum – Тип ориентации объекта
+
+ksATArbitrary 0 Произвольная
+ksATHorizontal 1 Горизонтальная
+ksATVertical 2 Вертикальная
+
+ksAllocationEnum – Размещение текста относительно 
+точки привязки
+
+ksAlLeft 0 Слева
+ksAlCentre 1 По центру
+ksAlRight 2 Справа
+
+ksAngleDimTypeEnum  Тип углового размера
+
+ksADMinAngle 0 На минимальный (острый) угол
+ksADMaxAngle 1 На максимальный (тупой) угол
+ksADMoreAngle 2 На угол более 180 гр
+
+ksAngleEnum  Углы поворота, кратные 90 градусам
+
+ksAngle0 0 0 градусов
+ksAngle90 1 90 градусов
+ksAngle180 2 180 градусов
+ksAngle270 3 270 градусов
+
+ksAnnotationSymbolEnum  Аннотационные символы
+
+ksUnknownSymbol 0 Символ не определен
+ksDotPoint 1 Точка
+ksPlusPoint 2 Крестик
+ksXPoint 3 X"точка
+ksSquarePoint 4 Квадрат
+ksTrianglePoint 5 Треугольник
+2781
+
+
+
+ksCirclePoint 6 Окружность
+ksAsteriskPoint 7 Звезда
+ksStrikeSquarePoint 8 Перечеркнутый квадрат
+ksPlusPointTwo 9 Утолщенный плюс
+
+ksAnnotativeTerminatorSignEnum  Типы специальных 
+символов для аннотационных объектов
+
+ksASUnknown 0 Не задан
+ksASArrowInside 101 Стрелка (ласточкин хвост) изнутри
+ksASArrowOutside 102 Стрелка (ласточкин хвост) снаружи
+ksASNotchTail 103 Засечка с продолжением кривой (с хвостиком)
+ksASUpHalfArrow 104 Верхняя половина стрелки изнутри
+ksASDownHalfArrow 105 Нижняя половина стрелки изнутри
+ksASBigArrowInside 106 Большая стрелка изнутри (7мм)
+ksASArrowOrdinate 107 Стрелка для размера высоты (штрихи длиной 
+
+4мм под углом 45гр)
+ksASTriangle 108 Треугольник по направлению кривой
+ksAScircleRad2 109 Окружность радиусом 2мм тонкой линией " 
+
+для шероховатости и линии"выноски
+ksASCentreMarker 110 Обозначение фиктивного центра в виде 
+
+большого креста
+ksASGlueSign 111 Знак склеивания
+ksASSolderingSign 112 Знак пайки
+ksASSewingSign 113 Знак сшивания
+ksASCrampSign 114 Знак соединения внахлестку металлическими 
+
+скобами
+ksASCornerCrampSign 115 Знак углового соединения металлическими 
+
+скобами
+ksASMontageJointSign 116 Знак монтажного шва
+ksASNotch 117 Засечка без продолжения кривой (без 
+
+хвостика)
+ksASBaseTriangle 118 Треугольник по текущей СК " для базы
+ksASClosedArrowInside 119 Закрытая стрелка изнутри
+ksASClosedArrowOutside 120 Закрытая стрелка снаружи
+ksASOpenArrowInside 121 Открытая стрелка изнутри
+ksASOpenArrowOutside 122 Открытая стрелка снаружи
+ksASRightAngleInside 123 Стрелка 90гр изнутри
+ksASRightAngleOutside 124 Стрелка 90гр снаружи
+ksASDot 125 Точка (диаметр равен длине стрелки размера)
+ksASSmallDot 126 Точка маленькая (диаметр равен 0,6 длины 
+
+стрелки размера)
+ksASPoint 127 Вспомогательная точка
+ksASLeftNotch 128 Засечка с наклоном влево
+
+ksAPITypeEnum  Тип API
+
+ksAPIUndef 0 Интерфейс неопределённого типа
+2782
+
+
+
+ksAPI5Auto 1 API5 " интерфейсы автоматизации
+ksAPI7Dual 2 API7 " дуальные интерфейсы
+ksAPI3DCom 3 API 3D COM " интерфейсы
+
+ksArc3DBuildingTypeEnum  Способ создания 3D дуги
+
+ksArc3DByPoints 0 По трем точкам
+ksArc3DByCentre 1 По центру, углам и плоскости
+ksArc3DByDirrection 2 По двум точкам и направлению
+ksArc3DByTanCurve 3 Касательно к кривой
+
+ksArc3DParameterEnum  Индекс параметра 3D дуги
+
+ksArc3DCenter 0 Точка центра
+ksArc3DPoint1 1 Точка 1
+ksArc3DPoint2 2 Точка 2
+ksArc3DPoint3 3 Точка 3
+ksArc3DAngle1 1 Угол 1
+ksArc3DAngle2 2 Угол 2
+ksArc3DRadius 3 Радиус
+
+ksArchMeasureEnum  Способ задания глубины прогиба
+
+ ksArchMeasureByCoefficient 0 Глубина прогиба задана коэффициентом прогиба, 
+в %
+
+ ksArchMeasureByLength 1 Глубина прогиба задана расстоянием
+
+ksArrowEnum – Тип стрелки линиивыноски
+
+Тип стрелки Константа Объекты со стрелками
+Разме" Ли" Обо" Много" Марки и 
+ры нии" значе" слойные позици"
+
+выно" ния по" линии" онные 
+ски зиций выноски обозна"
+
+чения
+ksLeaderWithoutA 0 + + + + +
+rrow
+
+Вспомогательная ksLeaderPoint 1 + + + + +
+точка
+2783
+
+
+
+Стрелка ksLeaderArrow 2 + + + + +
+Без стрелки ksWithoutArrow 0 + + + + +
+Вспомогательная ksPoint 1 + + + + +
+точка
+Стрелка ksArrow 2 + + + + +
+Верхняя половина ksUpHalfArrow 3 + + " + +
+стрелки изнутри
+Нижняя половина ksDownHalfArrow 4 + + " + +
+стрелки изнутри
+Засечка ksNotch 5 + + " + +
+Засечка с ksLeftNotch 6 + + " + +
+наклоном влево
+Угол 90 град ksRightAngle 7 + + + + +
+Стрелка закрытая ksClosedArrow 8 + + + + +
+Стрелка открытая ksOpenArrow 9 + + + + +
+Точка ksDot 10 + + + + +
+Точка маленькая ksSmallDot 11 + + + + +
+Треугольник 60 ksTriangle60 12 " + " + +
+град
+Треугольник 90 ksTriangle90 13 " + " + +
+град
+
+ksAttributeTypeEnum  Тип данных для типа атрибута
+
+ksATUnknown "1 Неизвестный
+ksATString 0 Строка
+ksATDouble 1 Число
+ksATFixedTable 2 Таблица с фиксированным
+
+числом строк
+ksATVariableTable 3 Таблица с переменным чи"
+
+слом строк
+
+ksBasisVectorTypeEnum  Типы базисного вектора
+
+ksTangentVector 0 Касательный вектор
+ksNormalVector 1 Вектор главной нормали
+ksBinormalVector 2 Вектор бинормали
+
+ksBendAngleReleaseTypeEnum  Способ освобождения 
+угла сгиба
+
+ksBendAngleBendOnly 0 Только сгиб
+ksBendAngleIn 1 Сгиб и продолжение
+ksBendAngleAllBends 2 Все сгибы
+2784
+
+
+
+ksBendDisposalEnum  Тип размещения сгиба на ребре
+
+ksBendDisposalAllLength 0 По всей длине
+ksBendDisposalCentre 1 По центру
+ksBendDisposalLeft 2 Отступ слева
+ksBendDisposalRight 3 Отступ справа
+ksBendDisposalTwo 4 Два отступа
+ksBendDisposalLeftAndWidth 5 Отступ слева и по ширине
+ksBendDisposalRightAndWidth 6 Отступ справа и по ширине
+
+ksBendLengthTypeEnum  Тип определения длины
+
+ksBendLengthByContinue 0 По продолжению
+ksBendLengthByContour 1 По контуру
+ksBendLengthByTouch 2 По касанию
+ksBendLengthByContourInternal 3 По контуру внутри
+ksBendLengthByTangentInternal 4 По касанию внутри
+
+ksBendOffsetTypeEnum  Тип смещения
+
+ksBendOffsetIn 0 Смещение внутрь
+ksBendOffsetOut 1 Смещение наружу
+ksBendOffsetLineOutside 2 По внешней линии контура
+ksBendOffsetLineInside 3 По внутренней линии контура
+ksBendOffsetByTouch 4 По касанию к сгибу
+ksBendByCentre 5 По центру
+
+ksBendReleaseTypeEnum  Тип освобождения cгиба
+
+ksBendReleaseByRect 0 Прямоугольное
+ksBendReleaseByCircle 1 Скругленное
+
+ksBendSideTypeEnum  Тип построения боковой стороны 
+сгиба
+
+ksBendSideByAngle 0 По уклону и углу
+ksBendSideByWidening 1 По расширению
+2785
+
+
+
+ksBendTypeEnum  Способ сгиба
+
+ksLineBend 0 По линии сгиба
+ksBendLineOutside 1 Линия сгиба снаружи
+ksBendLineInside 2 Линия сгиба внутри
+ksBendByTouch 3 По касанию
+ksBendByCentre 4 По центру
+
+ksBisectorVariant  Вариант решения биссектрисы для 
+двух прямых
+
+ksBVNone 0 Неопределенное направление (ближайшее решение)
+ksBVNormalSum 1 Биссектриса вдоль суммы нормалей прямых/отрезков
+ksBVNormalDiff 2 Биссектриса вдоль разности нормалей прямых/отрезков
+
+ksBmpSizeEnum  Размеры иконок
+
+ksBmp1616 0 16*16
+ksBmp2424 1 24*24
+ksBmp3232 2 32*32
+ksBmp4848 3 48*48
+
+ksBreakLineTypeEnum  Тип линии разрыва
+
+ksBLNotImage 0 Не отображается
+ksBLStraight 1 Прямая
+ksBLBreak 2 С изломом
+ksBLVawe 3 Волнистая
+
+ksCellBoundariesEnum  Типы границ таблицы
+
+ksCBLeftBorder Левая граница
+ksCBRightBorder Правая граница
+ksCBTopBorder Верхняя граница
+ksCBBottomBorder Нижняя граница
+Групповые границы
+ksCBHorisontMidleBorder Внутренняя горизон"
+
+тальная граница
+2786
+
+
+
+ksCBVerticalMidleBorder Внутренняя верти"
+кальная граница
+
+ksCBExternalBorders Внешние границы
+ksCBAllBorders Все границы
+ksCBExternalBorders Внутренние границы
+ksCBInternalBorders Нет границ
+
+ksCentreMarkerEnum  Тип обозначения центра
+
+ksCMUnknown "1 Неизвестный
+ksCMPlusPoint 0 Маленький крестик
+ksCMOneAxis 1 Одна ось
+ksCMTwoAxis 2 Две оси
+
+ksChamferBuildingTypeEnum  Типы построения фаски
+
+ksChamferSideAngle 0 По стороне и углу
+ksChamferTwoSides 1 По двум сторонам
+
+ksChangeLeaderSignEnum  Тип значка для обозначения 
+изменения
+
+ksCLSSquare 0 Квадрат
+ksCLSCircle 1 Окружность
+ksCLSBracketSquare 2 Квадратные скобки
+ksCLSBracketCircle 3 Круглые скобки
+ksCLSBracketCorner 4 Угловые скобки
+
+ksCheckBoxVisualStyleEnum  Визуальный стиль чекбокса
+
+ksCheckBoxDefault 0 Обычный
+ksCheckBoxSwitcher 1 Переключатель
+
+ksCheckSumVersionEnum  Версии контрольных сумм
+
+KsCsrCurrent 0 Версия текущей задачи КОМПАС
+ksCsrKompas10SP2 "1 Версия KOMPAS 10 SP2
+ksCsrKompas11 "5 Версия KOMPAS 11
+2787
+
+
+
+ksCsrKompas11SP1 "6 Версия KOMPAS 11 SP1
+ksCsrKompas12 "10 Версия KOMPAS 12
+ksCsrKompas12SP1 "11 Версия KOMPAS 12 SP1
+ksCsrKompas13 "15 Версия KOMPAS 13
+ksCsrKompas13SP1 "16 Версия KOMPAS 13 SP1
+ksCsrKompas14SP1 "21 Версия KOMPAS 14 SP1
+ksCsrKompas14SP2 "22 Версия KOMPAS 14 SP2
+ksCsrKompas15 "25 Версия KOMPAS 15
+ksCsrKompas15Sp2 "27 Версия KOMPAS 15 SP2
+ksCsrKompas16 "30 Версия KOMPAS 16
+ksCsrKompas16Sp1 "31 Версия KOMPAS 16 SP1
+ksCsrKompas17 "35 Версия KOMPAS 17
+ksCsrKompas17Sp1 "36 Версия KOMPAS 17 SP1
+ksCsrKompas18 "37 Версия KOMPAS 18
+
+Примечание:
+ksCsrKompas10SP2 = 0x0A001023
+ksCsrKompas13SP1 " До выхода КОМПАС 13 SP1 равен версии текущей задачи.
+
+ksChooseBodiesType  Типы действий над телами для 
+операций
+
+ksNewBody 0 Новое тело.
+ksAutomaticDefinition 1 Автоматический выбор тел.
+ksManualEditing 2 Ручное указание тел.
+ksAllBodies 3 Все тела.
+
+Примечание:
+Для операций сечение плоскостью и сечение эскизом значение ksNewBody интерпрети"
+руется как ksAutomaticDefinition.
+
+ksChooseManagerTypeEnum  Тип менеджера выбора 
+объектов
+
+ksChMUnknown "2 Неизвестный
+ksChMAllColors "1 Любой менеджер
+ksChMLevel1ColorBase 0 Основная группа выбора. Цвет " Указание 1
+ksChMLevel1Color1 1 Дополнительная группа выбора. Цвет " Указание 2
+ksChMLevel1Color2 2 Дополнительная группа выбора. Цвет " Указание 3
+ksChMLevel2ColorBase 100 Основная группа выбора. Уровень 2. Цвет " Указание 1
+ksChMLevel2Color1 101 Дополнительная группа выбора. Уровень 2. Цвет " 
+
+Указание 2
+ksChMLevel2Color2 102 Дополнительная группа выбора. Уровень 2. Цвет " 
+
+Указание 3
+2788
+
+
+
+ksChoosePartsType  Способ определения области 
+применения для компонентов в сборочной операции
+
+ksChAutomaticDefinition 1 Автоопределение
+ksChManualEditing 2 Ручное редактирование
+ksChAllParts 3 Все компоненты
+ksChNoLibraryParts 4 Все компоненты, кроме
+
+библиотечных
+
+ksChooseType  Область применения
+
+ksChBodiesAndParts 1 Компоненты и тела
+ksChParts 2 Компоненты
+ksChBodies 3 Все компоненты
+
+ksCircularPatternBuildingTypeEnum  Способ построения 
+массива по концентрической сетке
+
+ksCPSaveAll 0 Стандартная схема
+ksCPChessOrderByAxis1 1 Шахматный порядок " сдвиг вдоль первой оси 
+
+(концентрическое направление
+ksCPChessOrderByAxis2 2 Шахматный порядок " сдвиг вдоль второй оси 
+
+(радиальное направление)
+
+ksCloudPointsSurfaceBuildingTypeEnum  Тип 
+поверхности по пласту (облаку) точек
+
+ksCLByPoints 0 Сплайновая поверхность по точкам
+ksCLByPole 1 Сплайновая поверхность по полю"
+
+сам
+ksCLPolyhedral 2 Многогранная поверхность
+
+ksCloudTypeEnum  Способ распознавания сети точек
+
+ksCLAuto 0 Автоматически
+ksCLLocalCS 1 В плоскости CK
+ksCLScreen 2 В плоскости экрана
+2789
+
+
+
+ksColouringTypeEnum  Тип заливки
+
+ksColouringSolid 0 Одноцветная 
+ksColouringLinear 1 Линейная
+ksColouringAngle 2 Угловая
+ksColouringCone 3 Коническая
+ksColouringCircle 4 Радиальная
+ksColouringSquare 5 Квадратная
+ksColouringCylinder 6 Цилиндрическая
+
+ksConicCurvePontIndexEnum  Индекс точки конической 
+кривой
+
+ksCCBeginPoint 0 Начальная точка
+ksCCEndPoint 1 Конечная точка 
+ksCCIntersectPoint 2 Точка пересечения
+ksCCPointOnCurve 3 Точка на кривой
+
+ksConjunctivePointTypeEnum  Способ построение 
+присоединительной точки
+
+ksCPByObject 0 По объекту
+ksCPManualDirection 1 Ручное задание направление осей
+
+ksConnectTypeEnum  Тип соединения кривых
+
+ksCTUnknown "1 Неизвестный
+ksCTPosition 0 Соединение по позиции
+ksCTTangent 1 Соединение по касательной
+ksCTNormal 2 Соединение перпендикулярно
+ksCTSmooth 3 Гладкое соединение
+
+ksConstraintTypeEnum – Типы параметрических 
+ограничений
+
+кsCUnknown 0 Неизвестный тип
+ksCFixedPoint 1 Фиксировать точку
+ksCPointOnCurve 2 Точка на кривой
+ksCHorizontal 3 Горизонталь
+ksCVertical 4 Вертикаль
+ksCParallel 5 Параллельность двух прямых или отрезков
+2790
+
+
+
+ksCPerpendicular 6 Перпендикулярность двух прямых или отрезков
+ksCEqualLength 7 Равенство длин двух отрезков
+ksCEqualRadius 8 Равенство радиусов двух дуг/окружностей.
+ksCHAlignPoints 9 Выравнивать две точки по горизонтали
+ksCVAlignPoints 10 Выравнивать две точки по вертикали
+ksCMergePoints 11 Совпадение двух точек
+ksCAssociation 12 Ассоциативная связь
+ksCDimWithVariable 13 Размер с переменной
+ksCFixedDim 14 Фиксированный размер
+ksCTangentTwoCurves 15 Касание двух кривых
+ksCSymmetryTwoPoints 16 Симметрия двух точек относительно отрезка
+ksCCollinear 17 Коллинеарность двух отрезков
+ksCFixedAngle 18 Фиксированный угол
+ksCFixedLenght 19 Фиксированная длина
+ksCPointOnCurveMiddle 20 Точка на середине кривой
+ksCBisector 21 Биссектриса
+ksCConcentricity 22 Cовпадение центров окружностей, дуг, эллипсов и 
+
+точек
+
+Примечание.
+При использовании API 5 частичным аналогом данного перечисления является набор ти"
+пов параметрических ограничений.
+
+ksClosingClosedTypeEnum  Способ замыкания углов 
+листового тела
+
+ksClosingCJoint 0 Замыкание
+встык
+
+ksClosingCOver 1 Замыкание с
+перекрытием
+
+ksClosingCTightClosure 2 Плотное замы"
+кание
+
+ksClosingCorneringEnum  Обработка угла при 
+замыкании
+
+ksCorneringNone 0 Без обработки
+ksCorneringJointOnBorder 1 Стык по кром"
+
+ке
+ksCorneringJointOnChord 2 Стык по хорде
+ksCorneringCircled 3 Круговая
+2791
+
+
+
+ksClosingHolePlacementEnum  Размещение отверстия 
+при круговой обработке угла
+
+ksCorneringHPBend 0 На пересече"
+нии сгибов
+
+ksCorneringHPAngle 1 В точке угла
+ksCorneringHPPoint 2 Через точку
+
+угла
+
+ksClosingTypeEnum  Тип замыкания операции сгиб по 
+эскизу листового тела
+
+ksClosingAngles 0 Замыкание смежных 
+углов
+
+ksClosingBegin 1 Замыкание в начале
+ksClosingEnd 2 Замыкание в конце
+
+ksCrossSectionPlaneBuildingTypeEnum  Способ 
+построения секущей плоскости для шага динамического 
+сечения 
+
+ksCrossSectionPlaneByModelPlan 0 По плоскости модели 
+ksCrossSectionPlaneByOtherStep 1 По плоскости сечения 
+
+предыдущего шага
+
+ksCurveStyleTypeEnum  Тип стиля кривой
+
+ksCSTSoldLine 0 Сплошная 
+ksCSTBrokenLine 1 Прерывистая
+
+ksCurvePenTypeEnum  Способ задания параметров пера
+
+ksCPTIndependent 0 Задано значе"
+нием
+
+ksCPTBasicLine 1 Как у основной
+линии
+2792
+
+
+
+"
+
+ksCPTThinLine 2 Как у тонкой
+линии
+
+ksCPTHeavyLine 3 Как у утолщен"
+ной линии
+
+ksEndFaceTypeEnum  Форма торца отверстия
+
+ksEFFlat 0 Плоский
+ksEFConic 1 Конический
+ksEFSphere 2 Сферический
+
+ksHoleTypeEnum  Тип отверстия
+
+ksHTBase 0 Простое
+ksHTCounterbore 1 С цековкой
+ksHTCountersinking 2 С зенковкой
+ksHTCounterdrill 3 С цековкой и зенковкой
+ksHTConic 4 Коническое.
+ksHTLfrLibrary 5 Отверстие из библиотеки
+
+ksCountersinkTypeEnum  Способ определения 
+параметров зенковки
+
+ksCTDiameterAngle 0 По диаметру и
+углу
+
+ksCTDepthAngle 1 По глубине и
+углу
+
+ksCTDiameterDepth 2 По диаметру и
+глубине
+
+ksConicTypeEnum  Способ определения параметров 
+конического отверстия
+
+ksCNDiameter 0 По диаметру верхнего осно
+вания конуса
+
+ksCNAngle 1 По углу конуса
+2793
+
+
+
+ksContentDialogNotifyEnum  События диалога с 
+произвольным наполнением
+
+ksCDCreateContentCallback 1 Создание контента
+ksCDDestroyContent 2 Удаление контента
+ksCDExecuteCommand 3 Выполнить команду
+ksCDButtonUpdate 4 Установка состояния 
+
+кнопки панели
+
+ksContourSegmentEnum  Типы сегментов контура
+
+ksCSUnknown "1 Неизвестный объект
+ksCSLineSeg 1 Отрезок
+ksCSCircle 2, Окружность
+ksCSArc 3 Дуга
+ksCSBezier 8 Bezier сплайн
+ksCSEllipse 32 Эллипс
+ksCSNurbs 33 Nurbs сплайн
+ksCSEllipseArc 34 Дуга эллипса
+
+ksContour3DTypeEnum  Тип контура
+
+ksCTAuto 0 Автоопределение ти"
+па
+
+ksCTSpace 1 Произвольный контур
+ksCTSurface 2 Контур на грани
+ksCTSketch 3 Контур эскиза
+
+ksCoordLawEnum  Порядок законов
+
+ksCLawX 0 Закон X
+ksCLawY 1 Закон Y
+ksCLawZ 2 Закон Z
+
+ksCopyGeometryBuildingTypeEnum  Способ построения 
+операции копия геометрии
+
+ksCGBTWithoutGrouping 0 Без группировки.
+2794
+
+
+
+ksCGBTBodyFaceGrouping 1 Собрать грани по исходным 
+элементам. C группировкой 
+граней одного тела
+
+ksCornerTypeEnum  Тип угла объекта для 
+прямоугольника и многоугольника
+
+ksCTNoProcess 0 Без обработки
+ksCTChamfer 1 Фаска
+ksCTFillet 2 Скругление
+
+ksCurveProjectionTypeEnum  Тип проекции кривой
+
+ksCPNearest 0 Ближайшая проекция
+ksCPNearestByDirection 1 По направлению
+
+ksCutBuildingTypeEnum  Способ создания сечения
+
+ksCutByContour 0 Сечение контуром
+ksCutByPlane 1 Сечение плоскостью
+
+ksCurveStyleEnum – Системные стили линии
+
+ksCSHidden "1 Невидимая (скрытая; для кривых)
+ksCSUnvisible 0 Невидимая (для таблицы)
+ksCSNormal 1 " основная,
+ksCSThin 2 " тонкая,
+ksCSAxial 3 " осевая,
+ksCSDashed 4 " штриховая,
+ksCSBrokenLine 5 " для линии обрыва
+ksCSConstruction 6 " вспомогательная,
+ksCSThick 7 " утолщенная,
+ksCSDash2Dots 8 " пунктир 2,
+ksCSDashedNormal 9 " штриховая осн.
+ksCSNormalDashDot 10 " осевая осн.
+ksCSConstraints для ограничений
+ksCSDedreesOfFreedom для степеней свобод
+2795
+
+
+
+11 " тонкая линия, включаемая в штриховку
+ksCSISO02Dashed 12 " ISO 02 штриховая линия,
+ksCSISO03DashedLSpace 13 " ISO 03 штриховая линия (дл. пробел),
+ksCSISO04DashDotLDash 14 " ISO 04 штрихпунктирная линия (дл. 
+
+штрих),
+ksCSISO05DashDotLDash2Dots 15 " ISO 05 штрихпунктирная линия (дл. штрих 
+
+2 пунктира),
+ksCSISO06DashDotLDash3Dots 16 " ISO 06 штрихпунктирная линия (дл. штрих 
+
+3 пунктира),
+ksCSISO07Dotted 17 " ISO 07 пунктирная линия,
+ksCSISO08DashDotLShDashes 18 " ISO 08 штрихпунктирная линия (дл. и кор. 
+
+штрихи),
+ksCSISO09DashDot1L2ShDashes 19 " ISO 09 штрихпунктирная линия (дл. и 2 
+
+кор. штриха),
+ksCSISO10DashDot 20 " ISO 10 штрихпунктирная линия,
+ksCSISO11DashDot2Dashes 21 " ISO 11 штрихпунктирная линия (2 штриха),
+ksCSISO12DashDot2Dots 22 " ISO 12 штрихпунктирная линия (2 
+
+пунктира),
+ksCSISO13DashDot3Dots 23 " ISO 13 штрихпунктирная линия (3 
+
+пунктира),
+ksCSISO14DashDot2Dashes2Dots 24 " ISO 14 штрихпунктирная линия (2 штриха 
+
+2 пунктира),
+ksCSISO15DashDot2Dashes3Dots 25 " ISO 15 штрихпунктирная линия (2 штриха 
+
+3 пунктира).
+
+ksDepthTypeEnum  Способ определения глубины 
+отверстия
+
+ksDTValue 0 На расстояние
+ksDTReachThrough 1 Через все
+ksDTObject 2 До объекта
+
+ksDimensionArrowPosEnum  Размещение стрелок 
+относительно выносной линии
+
+ksDimArrowInside 0 Стрелки изнутри
+ksDimArrowOutside 1 Стрелки снаружи
+ksDimArrowAuto 2 Авторазмещение
+
+стрелок
+2796
+
+
+
+ksDimensionBaseEnum  Параметр отрисовки текста
+
+ksDimBaseCenter 0 От центра
+ksDimBaseP1 1 От первой выносной линии
+ksDimBaseP2 2 От второй выносной линии
+ksDimCommonBase 3 Размер с общей размерной линией 
+
+(текст размера выводится вертикально 
+у второй выносной линии)
+
+ksDimFirstCommonBase 4 Первый размер в цепочке размерных 
+линий (у первой выносной линии 
+отрисовывается текст '0', текст размера 
+выводится вертикально у второй 
+выносной линии).
+
+ksDimensionDeviationEnum  Отклонения номинального 
+значения размера
+
+ksDimDeviation 0 Отклонения
+ksDimLimits 1 Предельные значения (предельные 
+
+значения записываются одно над 
+другим)
+
+ksDimLineLimits 2 Предельные значения в одну строку 
+(предельные значения записываются 
+друг за другом через дефис)
+
+ksDimensionTextAlignEnum  Выравнивание размерной 
+надписи
+
+ksDimACentreLowFont 0 По центру, с умень"
+шенным шрифтом
+
+ksDimAUpperBoundary 1 По верхней границе
+ksDimACentre 2 По центру
+ksDimALowerBoundary 3 По нижней границе
+
+ksDimensionTextBracketsEnum  Размер в скобках
+
+ksDimBracketsOff 0 Размер без скобок
+ksDimBrackets 1 Размер в круглых скобках
+ksDimSquareBrackets 2 Размер в квадратных скобках
+2797
+
+
+
+ksDimensionTextPosEnum  Положение размерной 
+надписи отноcительно выносной линии
+
+ksDimTextParallelOnLine 0 Параллельно, над линией
+ksDimTextParallelInCut 1 Параллельно, в разрезе линии
+ksDimTextHorizontalInCut 2 Горизонтально, в разрезе линии
+
+ksDimensionTextTypeEnum  Тип размерной надписи
+
+ksDimTAuto 0 Автоматическое
+ksDimTManual 1 Ручное
+ksDTPOnShelf 2 На полке
+
+ksDimTextFormatEnum  Формат отображения 
+размерной надписи
+
+ksDimTextFormatGMS 0 Градусы"минуты"се"
+кунды
+
+ksDimTextFormatGDD 1 Градусы и десятичные
+доли градуса
+
+Примечание.
+Используется только для углового размера.
+
+ksDirectionTypeEnum  Типы направлений выдавливания
+
+dtNormal 0 прямое направление 
+(для тонкой стенки " наружу)
+
+dtReverse 1 обратное направление
+(для тонкой стенки " внутрь)
+
+dtBoth 2 в обе стороны
+dtMiddlePlane 3 от средней плоскости
+
+Примечание:
+
+1. При типе направления dtMiddlePlane в методах SetSideParam и GetSideParam параметр
+depth интерпретируется как общая глубина выдавливания и задается следующим обра"
+зом:
+SetSideParam(TRUE, etBlind, depth, ...)
+
+2. В API5 соответствует Типам направлений выдавливания.
+2798
+
+
+
+ksDocumentFormatEnum  Форматы листа
+
+ksFormatA0 0 Формат А0
+ksFormatA1 1 Формат А1
+
+ksFormatA2 2 Формат А2
+ksFormatA3 3 Формат А3
+ksFormatA4 4 Формат А4
+ksFormatA5 5 Формат А5
+ksFormatUser 6 ksFormatUser
+
+ksDocumentsLibraryInsertionTypeEnum – Типы 
+документов в библиотеке документов КОМПАС
+
+ksInsertionUnknown 0 Неизвестный тип
+ksInsertionFragment 2 Фрагмент
+ksInsertionPart 4 Деталь
+ksInsertionAssembly 5 Сборка
+ksInsertionTextual 6 Текстовый документ 
+ksInsertionRaster 20 Растр
+ksInsertionTable 21 Таблица
+ksInsertionTxtFile 22 Текстовый документ. *.txt
+
+ksDrawingObjecParamTypeEnum – Тип параметров 
+объекта
+
+ksAllParam "1 Параметры в системе координат владельца.
+ksSheetAllParam "2 Параметры в системе координат листа.
+ksViewAllParam "7 Параметры в системе координат вида.
+
+Примечание:
+При выдаче параметров в системе координат владельца для геометрических объектов
+учитывается также текущая суммарная матрица, задаваемая функцией Mtr.
+Примерами параметров, зависящих от суммарной матрицы, являются координаты точек,
+углы, длины, радиусы и т.п. Она не распространяется на параметры аннотационных объ"
+ектов, так как аннотационные объекты не масштабируются. Примерами параметров ан"
+нотационных объектов, не зависящих от текущей суммарной матрицы, являются высота
+шрифта, сужение.
+2799
+
+
+
+ksDynamicCrossSectionStepBuildingTypeEnum  Способ 
+создания шага сечения модели
+
+ksDCSTUnknown "1 Неопределенный
+ksDCSTByFreePlane 0 Произвольная плоскость
+ksDCSTByOffsetPlane 1 Смещенная плоскость
+ksDCSTByRotatedPlane 2 Повернутая плоскость
+ksDCSTByZone 3 Задано зоной
+ksDCSTByBorderPoints 4 Параллелепипед
+
+ksD3ConverterOptionsEnum  Константы управляющие 
+разрешением на чтение или запись объектов в 
+дополнительные форматы jgs, sat, xt, step, stl, VRML 
+
+ksD3COBodyes 0 Разрешение на чтение\запись твёрдых тел
+ksD3COSurfaces 2 Разрешение на чтение\запись поверхностей
+ksD3COCurves 4 Разрешение на чтение\запись кривых
+ksD3COSketches 6 Разрешение на чтение (не применяется) 
+
+\запись эскизов
+ksD3COInvisibleObjects 8 Разрешение на чтение (не применяется) 
+
+\запись невидимых объектов
+ksD3COPoints 10 Разрешение на чтение\запись точек
+ksD3CODocumentProperties 12 Разрешение на чтение\запись информации о 
+
+документе (автор, организация, 
+комментарии)
+
+D3COTechnicalDemand 14 Разрешение на чтение\запись технических 
+требований                                   
+
+ksD3CODimensions         16 Разрешение на чтение\запись размеров
+ksD3COAttributes 18 Разрешение на чтение\запись атрибутов 
+
+объектов
+ksD3CBRep 20 Разрешение на чтение\запись форм изделий 
+
+в граничном представлении (только в JT)
+ksD3CPolygonal 22 Разрешение на чтение\запись полигональных 
+
+форм изделий
+ksD3CPolygonalLOD0 24 Разрешение на чтение\запись полигональных 
+
+форм изделий уровня детализации 0 
+ksD3CAssociated 26 Разрешение на чтение ассоциированной 
+
+геометрии (резьбы и др)                         
+ksD3COStyle 28 Разрешение на чтение\запись элементов 
+
+оформления (цвет, начертание, и т.п.)
+2800
+
+
+
+ksEditableStateEnum  Способ редактирования
+
+ksESUndefined "1 Неопределенное состояние
+ksESDisable 0 Не проецировать
+ksESEnable 1 Проецировать
+ksESByLayer 2 По слою
+
+ksEditColorTypeEnum Тип цвета редактирования
+
+ksECSelectObject 0  Подсвечивание " Выделенный объект
+ksECChooseObject1 1  Подсвечивание " Указанный объект 1
+ksECChooseObject2 2  Подсвечивание " Указанный объект 2
+ksECChooseObject3 3  Подсвечивание " Указанный объект 3
+ksECPassiveParts 4 Контекстное редактирование " Пассивные 
+
+компоненты
+ksECFacePhantom 5  Фантом грани
+ksECLabelsPhantom 6  Фантом надписи
+ksECDimensions 7 Размеры
+
+ksEditListCommandEnum  Идентификаторы 
+стандартных команд для элемента панели свойств  
+Список
+
+ksListItemNew 1 Создать новый элемент в списке
+ksListItemDelete 2 Удалить выделенные элементы из 
+
+списка
+ksListItemMoveUp 3 Переместить вверх
+ksListItemMoveDown 4 Переместить вниз
+ksListItemEdit 5 Редактировать элемент в списке
+
+ksEditListTypeEnum  Тип списка панели свойств
+
+ksEditList 0 Обычный список
+ksCheckList 1 Список флагов
+ksRadioList 2 Список переключателей
+
+ksEquidistantTypeEnum  Тип построения эквидистанты
+
+ksETUnknown "1 Неизвестный
+ksETLeft 0 Слева по направлению
+ksETRight 1 Справа по направлению
+ksETBoth 2 С двух сторон
+2801
+
+
+
+ksEquidistant3DCutModeEnum  Обход углов 
+эквидистанты 3D
+
+ksECMUnknown 0 Не определен
+ksECMLineSeg 1 Обход срезом
+ksECMCircle 2 Обход дугой
+
+ksEndTypeEnum  типы операций выдавливания
+
+etBlind 0  строго на глубину
+etThroughAll 1  через всю деталь
+etUpToVertexTo 2  на расстояние до вершины
+etUpToVertexFrom 3  на расстояние за вершину
+etUpToSurfaceTo 4  на расстояние до поверхности
+etUpToSurfaceFrom 5  на расстояние за поверхность
+etUpToNearSurface 6  до ближайшей поверхности
+
+Примечание:
+
+1. При типах выдавливания etUpToVertexTo, etUpToVertexFrom, etUpToSurfaceTo и
+etUpToSurfaceFrom в методах SetSideParam и GetSideParam параметр depth интерпрети"
+руется как глубина, вычитаемая или добавляемая к расстоянию до указанного объекта.
+Объект, определяющий глубину, задается с помощью метода SetDepthObject.
+
+2. В API5 соответствует Типам операций выдавливания. 
+
+ksEvolutionShiftSketchTypeEnum  Тип движения сечения 
+в кинематической операции
+
+ksEvShiftParallel 0 Образующая переносится параллельно 
+самой себе
+
+ksEvShiftKeepAngle 1 Образующая при переносе сохраняет 
+исходный угол с направляющей
+
+ksEvShiftOrtogonal 2 Плоскость образующей выставляется и 
+сохраняется ортогональной 
+направляющей
+
+ksExtensionLimitTypeEnum  Способ ограничения
+
+ksETLUnknown "1 Неизвестный
+ksETLength 0 На заданную длину
+ksETLVertex 1 До вершины
+2802
+
+
+
+ksExtensionSurfaceTypeEnum  Тип продления 
+поверхности
+
+ksESTUnknown "1 Неизвестный.
+ksESTSelf 0 Той же поверхностью.
+ksESTTangent 1 По касательной.
+ksESTDirection 2 По направлению.
+
+ksExternalFilesTypesEnum  Тип внешнего файла
+
+ksEFTUnknown "1 Неизвестный тип
+ksEFTDocumentFile 0 Файл документа
+ksEFTCurveStyleLibrary 1 Библиотека стилей кривых
+ksEFTTextStyleLibrary 2 Библиотека стилей текстов
+ksEFTHatchStyleLibrary 3 Библиотека стилей штриховок
+ksEFTAttributeTypesLibrary 4 Библиотека типов атрибутов
+ksEFTLayoutsLibrary 5 Библиотека оформлений
+ksEFTFragmentFile 6 Фрагмент
+ksEFTFragmentsLibrary 7 Библиотека фрагментов
+ksEFTSheetConnectedToSpc 8 Лист сборки, подключенный к спецификации
+ksEFTSystemFile 9 Системный файл
+ksEFTIngotsLibrary 10 Библиотека типовых элементов (3D)
+ksEFTPartFile 11 Деталь (3D)
+ksEFTRasterFile 12 Растровое изображение
+ksEFTDocConnectedToSpcObj 13 Документ, подключенный к объекту 
+
+спецификации
+ksEFTSpcConnectedToSheet 14 Спецификация, подключенная к листу сборки
+ksEFTDocConnectedToSpcObj 15 Документ, подключенный к объектам 
+InOtherDocs спецификации в других документах
+ksEFTAssemblyFile 16 Файл"сборка (3D)
+ksEFTModelsLibrary 17 Библиотека моделей
+ksEFTTemporaryFile 18 Временный файл
+ksEFTSourceFileForVariable 19 Файлы"источники для переменных
+ksEFTServiceFile 20 Служебный файл
+ksEFTDraftFile 21 Чертеж
+ksEFTHyperLink 22 Гиперссылка
+ksEFTDataFile 23 Файл данных
+ksEFTReadingRegimFile 24 Файл режима чтения компонента
+ksEFTCopyExternalGeometry 27 Файл"источник копии внешней геометрии
+ksEFExternalBilletPart 28 Файлы деталей заготовок
+ksEFTExternalLayoutGeometry 29 Файлы компоновочной геометрии
+ksEFTMetaDataSource 30 Файл"источник метаданных
+ksEFTExternalRefContextFile 32 Файл контекста внешней ссылки
+
+ksFeatureStateEnum  Состояние объекта
+
+ksFSNone 0 Состояния не определены
+ksFSLocked 0x1 Объект заблокирован\Только чтение
+2803
+
+
+
+ksFSRebuild 0x2 Необходимо перестроить модель
+ksFSInside3dMacro 0x4 Объект включен в состав трехмерного 
+
+макроэлемента
+ksFSLCSDependent 0x8 Зависимость от ЛСК
+ksFSComprisedOfParts 0x10 Тело состоит из частей
+ksFSCurrent 0x20 Текущая СК
+ksFSReadOnlyAccessM3d 0x40 Файл компонента (m3d) имеет доступ 
+
+“Только чтение”
+ksFSDetailedFold 0x80 Развернутый сгиб
+ksFSSketchUndefined 0x100 Эскиз не определен
+ksFSSketchDefined 0x200 Эскиз определен
+ksFSSketchRedefined 0x400 Эскиз переопределен
+ksFSEditRestricted 0x800 Редактирование запрещено, но запрет 
+
+можно снять
+ksFSEditImpossible 0x1000 Редактирование запрещено
+ksFSFixedComponent 0x2000 Компонент зафиксирован
+ksFSPutInRecalcState 0x4000 Вставка компонента в пересчитанном 
+
+состоянии
+ksFSReadOnlyAccessA3d 0x8000 Файл компонента (a3d) имеет доступ 
+
+“Только чтение”
+ksFSUncuttable 0x10000 Неразрезаемый компонент
+ksFSUpdateNeeded 0x100000 Необходимость обновления
+ksFSBrokenLink 0x200000 Разрыв связи копии геометрии с 
+
+источником
+
+ksFacetCullingMode  Режим фильтрации отображаемых 
+граней внешнего объекта
+
+ksFSMNone 0 Отображается всё (не 
+фильтруется)
+
+ksFSMFront 1 Отбрасывается передняя грань
+ksFSMBack 2 Отбрасывается задняя грань
+ksFSMAll 3 Ничего не отображается
+
+ksFilletBuildingTypeEnum  Типы построения скругления
+
+ksFilletCircleArc 0 Дугой окружности
+ksFilletEllipseArc 1 Дугой эллипса
+ksFilletCoefficient 2 С коэффициентом (0 < K < 1)
+ksFilletHord 3 С постоянной хордой
+2804
+
+
+
+ksFilletOffsetModeEnum  Способ расчета смещения для 
+точек останова скругления
+
+ksFilletOffsetByPersent 0 В процентах от длины кривой.
+ksFilletOffsetByLength 1 По длине сегмента
+ksFilletOffsetByAngle 2 По центральному углу дуги
+
+ksFindObjectsTypeEnum  Тип поиска объектов
+
+ksFindObjByType "1 Объект заданного типа
+ksFindAll 0 Любые объекты
+ksFindAnyCurve 1 Любая кривая или прямая
+ksFindCircleAnalog 4 Дуга или окружность
+ksFindtTimmedCurve 8 Кривая, имеющая граничные точки
+ksFindEllipseAnalog 13 Эллипc или дуга эллипса.
+ksFindHatchBoundary 15 Кривые, подходящие для границы 
+
+штриховки. (Дополнительно 
+проверяется стиль кривых)
+
+ksFindObjectParametersNotifyEnum  События функции 
+поиска объектов
+
+ksFOPFilterObjectr 1 Фильтрация объетов
+
+ksGabaritBuildingTypeEnum  Способ задания габаритов
+
+ksGabaritByBorderPoints 0 По двум вершинам
+ksGabaritByCenterAndBorder 1 По центру и вершине
+
+ksHatchStyleEnum  Системные стили штриховки
+
+ksHatchMetal 0 Mеталл
+ksHatchNonMetal 1 Не металл
+ksHatchTimber 2 Дерево
+2805
+
+
+
+"
+
+ksHatchNaturalStone 3 Камень естественный
+ksHatchCeramics 4 Керамика
+ksHatchConcrete 5 Бетон
+ksHatchGlass 6 Стекло
+ksHatchLiquid 7 Жидкость
+ksHatchNaturallyGround 8 Естественный грунт
+ksHatchSpreadGround 9 Насыпной грунт
+ksHatchArtificialStone 10 Камень искусственный
+ksHatchReinforcedConcrete 11 Железобетон
+ksHatchTenseReinforcedConcrete 12 Напряженный железобетон
+ksHatchLongitudalTimber 13 Дерево в продольном сече
+
+нии
+ksHatchSand 14 Песок
+
+ksHeightDimTypeEnum  Тип размеров высоты
+
+ksHDFrontView 0 Для вида спереди или разреза, с полкой 
+и стрелкой, возможна выносная линия.
+
+ksHDTopView 1 Для вида сверху без линии"выноски
+ksHDTopViewLeader 2 Для вида сверху с линией"выноской
+
+ksHoleCutTypeEnum – Тип построения отверстия и 
+выреза
+
+ksHoleCutByWidth 0 По толщине
+ksHoleCutByDepth 1 На глубину
+ksHoleCutUpToSurface 2 До грани
+
+ksHyperLinkTypeEnum  Тип гиперссылки
+
+ksHLUnknown 0 Неизвестный
+ksHLFile 1 Ссылка на файл или web"страницу
+ksHLObject 2 Ссылка на объект
+ksHLMail 3 Адрес электронной почты
+
+ksHypertextTypeEnum  Тип ссылки на текст
+
+Ссылки на вид:
+ksHTViewScale 1 Масштаб вида
+ksHTViewUnfold 3 Значок «развернуто»
+2806
+
+
+
+ksHTViewTurn 4 Значок «повернуто»
+ksHTViewTurnAngle 5 Повернуто на угол
+ksHTViewName 6 Имя вида
+
+Ссылки на объект:
+ksHTObjectText 0 Основной текст объекта
+ksHTObjectText1 1 Первый дополнительный текст
+ksHTObjectText2 2 Второй дополнительный текст
+ksHTObjectText3 3 Третий дополнительный текст
+ksHTObjectText4 4 Четвертый дополнительный текст
+ksHTObjectNumberingGroup 5 Группа нумерации
+Ссылки на переменную:
+ksHTVariableValue 0 Значение переменной
+ksHTVariableName 1 Имя переменной
+ksHTVariableExpression 2 Выражение " Имя = значение
+ksHTVariableComment 3 Комментарий
+
+Ссылка на обозначение позиции:
+ksHTPositionNumber 0x10 Номер позиции
+ksHTSpecificationObjectMarking 0x80 Обозначение из объекта спецификации 
+
+подключенного к линии выноски
+ksHTSpecificationObjectName 0x81 Наименование из объекта спецификации 
+
+подключенного к линии выноски
+ksHTSpecificationObjectCount 0x82 Количество из объекта спецификации 
+
+подключенного к линии выноски
+
+Ссылка на свойство объекта или документа:
+ksHTObjectProperty 0x80 Свойство объекта
+
+Ссылка на положение объекта:
+ksHTObjectZone "1 Обозначение зоны
+ksHTObjectSheet "2 Номер листа
+
+Ссылка на положение вида и его обозначения:
+ksHTViewTitleZone "1 Обозначение зоны вида
+ksHTViewTitleSheet "2 Номер листа вида
+ksHTViewBaseObjectZone "3 Обозначение зоны знака вида (стрелки вида, линии 
+
+сечения, выносного элемента)
+ksHTViewBaseObjectSheet "4 Номер листа знака вида (стрелки вида, линии 
+
+сечения, выносного элемента)
+
+ksJalousieBuildingTypeEnum  Способ построения жалюзи
+
+ksJalousieExtract 0 Вытяжка
+ksJalousieTrim 1 Подрезка
+2807
+
+
+
+ksJalousieFormEndEnum  Форма торца жалюзи
+
+ksJalousieTangent 0 По направлению
+ksJalousieNormal 1 По нормали к толщине
+
+ksJalousieHeightTypeEnum  Способ задания высоты 
+жалюзи
+
+ksJalousieAllHeight 0 Полная
+ksJalousieUpToFaceHeight 1 От грани
+ksJalousieSlotHeight 2 Высота прорези
+
+ksInsertionTypeEnum  Тип вставки фрагмента или вида
+
+ksTUnknown "1 Неизвестный
+ksTBodyFragment 0 Вставка внешнего фрагмента. Взять в 
+
+документ
+ksTReferenceFragment 1 Вставка внешнего фрагмента. Внешней 
+
+ссылкой
+ksTLocalFragment 3 Вставка локального фрагмента
+ksTBodyView 4 Вставка вида другого чертежа. Взять в 
+
+документ
+ksTReferenceView 5 Вставка вида другого чертежа. Внешней 
+
+ссылкой
+
+ksKOMPASConverterEnum  Типы внутренних 
+конвертеров КОМПАС 3D
+
+ksConverterToRaster 0 Конвертация в растровый
+формат
+
+ksConverterToSAT 1 Конвертация в формат SAT
+ksConverterToXT 2 Конвертация в формат XT
+ksConverterToSTEP 3 Конвертация в формат STEP
+ksConverterToIGES 4 Конвертация в формат IGES
+ksConverterToVRML 5 Конвертация в формат VRML
+ksConverterToSTL 6 Конвертация в формат STL
+2808
+
+
+
+ks
+ks
+ks
+ks
+ks
+ks
+ks
+ks
+ks
+ ksKompasModuleEnum  Модули Компас
+
+ksKompasModule2D 1 Модуль 2D
+ksKompasModule3D 2 Модуль 3D
+ksKompasPrint 100 Модуль печати
+ksKompasExport 101 Модуль экспорта
+
+ksKompasVariantEnum  Константы вариантов 
+реализаций Компас
+
+KompasPro 0 КОМПАС.
+KompasHome 1 КОМПАС"Home.
+KompasViewer 2 КОМПАС"Viewer.
+KompasSpds 4 КОМПАС"SPDS.
+KompasGraphic 256 КОМПАС"График.
+KompasInvisible 512 КОМПАС"Invisible.
+KompasLatin 1024 КОМПАС " иностранная версия.
+KompasConsumer 4096 КОМПАС"Consumer.
+KompasStudy 8192 КОМПАС"Study.
+
+ksLawTypeEnum  Типы законов
+
+ksTLawConst 0 Константный
+ksTLawLinear 1 Линейный 
+ksTLawCube 2 Кубический
+ksTLawByExpression 3 По выражению
+
+ksLeaderSignEnum  Тип значка для линиивыноски
+
+ksLSignNone 0 Без знака
+ksLGlueSign 1 Знак склеивания
+ksLSolderingSign 2 Знак пайки
+ksLSewingSign 3 Знак сшивания
+ksLCrampSign 4 Знак соединения внахлестку метал"
+
+лическими скобками
+ksLcornerCrampSign 5 Знак углового соединения металли"
+
+ческими скобами
+ksLMontageJointSign 6 Знак монтажного шва
+
+ksLengthBuildingTypeEnum  Способ расчета длины 
+продолжения сгиба листового тела
+
+ksLBDistance 0 На расстояние
+2809
+
+
+
+ksLBToVertex 2 До вершины
+ksLBToSurface 3 До поверхности
+
+ksLengthUnitEnum – Единицы измерения длины
+
+ksLUMillimetres 0 Миллиметры
+ksLUCentimetres 1 Сантиметры
+ksLUnDecimetres 2 Дециметры
+ksLUnMetres 3 Метры
+ksLUKilometres 4 Километры
+
+ksLengthUnitsEnum – Единицы измерения длины
+
+ksLUnSM 0 Сантиметры
+ksLUnMM 1 Миллиметры
+ksLUnDM 2 Дециметры
+ksLUnM 3 Метры
+ksLUnDocument 4 Настройки документа
+
+ksLibraryStyleEnum  Стили отображения прикладных 
+библиотек
+
+ksLibraryStyleUnknown 0 Неизвестный стиль
+ksLibraryStyleMenu 1 Отображение в виде меню
+ksLibraryStyleDialog 2 Отображение в виде диалога
+ksLibraryStyleWindow 3 Отображение в виде специально"
+
+го окна
+ksLibraryStyleBar 4 Отображение в виде панели ин"
+
+струментов
+ksLibraryStyleInvisible 5 Невидимый режим
+
+ksLibraryTypeEnum  Типы библиотек
+
+ksLibraryUnknown 0 Неизвестный тип.
+ksLibraryProcedure 1 Прикладная библиотека.
+ksLibraryFragment 2 Библиотека фрагментов.
+ksLibraryModel 3 Библиотека моделей.
+ksLibraryDocuments 4 Универсальная библиотека
+
+документов
+
+ksLineDimensionOrientationEnum  Тип ориентации 
+линейного размера
+
+ksLinDParallel 0 Параллельно объекту
+2810
+
+
+
+ksLinDHorizontal 1 Горизонтально
+ksLinDVertical 2 Вертикально
+
+ksLinearPatternBuildingTypeEnum  Способ построения 
+массива по сетке
+
+ksLPSaveAll 0 Оставлять копии внутри сетки
+ksLPSaveAlongPerimeter 1 Оставлять копии только по периметру сетки
+ksLPSaveAlongAxially 2 Оставлять копии только по осям сетки
+ksLPChessOrderByAxis1 3 Шахматный порядок " сдвиг вдоль первой оси
+ksLPChessOrderByAxis2 4 Шахматный порядок " сдвиг вдоль второй оси
+
+ksLineSegment3DTypeEnum  Тип построения отрезка 3D
+
+ksLSTTwoPoints 0 По 2 точкам
+ksLSTPointLenghtAngle 1 По точке, длине и углу наклона
+
+ksLoadStateEnum  Тип загрузки компонента
+
+ksLUnknown "1 Неопределен
+ksLCompletely 0 Загружен полностью
+ksLUnload 1 Пустой, не загружен
+ksLTriangles 2 Упрощенный. Триангуляция
+ksLPartially 3 Частичная загрузка
+ksLGabarit 4 Габарит
+
+Описание.
+Компонент загружен полностью " загружена триангуляция (для отрисовки), загружена
+модель. Можно редактировать.
+Компонент не загружен " не отображается в окне документа. Редактировать нельзя.
+Компонент загружен частично " загружена только триангуляция (для отрисовки). Редак"
+тировать нельзя.
+Примечание.
+Тип загрузки относится к вставкам компонентов в сборке 3D.
+
+ksLoftBuildingType  Способы построения элемента по 
+сечениям у крайних сечений
+
+ksLoftAuto 0 Автоматически
+ksLoftByNormal 1 По нормали
+2811
+
+
+
+"
+
+ksLoftByObject 2 По объекту
+ksLoftCupola 3 Купол
+
+ksManipulatorTypeEnum  Способ разбиения зоны
+
+ksPlacement3DManipulator 1 Манипулятор системы координат
+ksEditDoubleManipulator 2 Манипулятор " редактор веществен
+
+ного значения
+
+ksManipulatorPrimitiveEnum  Тип примитива 
+манипулятора
+
+ksMPNone 0 Неизвестный тип
+ksMPAxisX 1 Ось X
+ksMPAxisY 2 Ось Y
+ksMPAxisZ 3 Ось Z
+ksMPPlaceXOY 4 Плоскость XOY
+ksMPPlaceXOZ 5 Плоскость XOZ
+ksMPPlaceYOZ 6 Плоскость YOZ
+ksMPConturXY 7 Граница плоскости XOY
+ksMPConturXZ 8 Граница плоскости XOZ
+ksMPConturYZ 9 Граница плоскости YOZ.
+ksMPTextX 10 Текст X
+ksMPTextY 11 Текст Y.
+ksMPTextZ 12 Текст Z.
+ksMPOriginal 13 Начало координат
+
+ksManipulatorModeEnum  Режимы работы 
+манипулятора
+
+ksManipulatorModeDefault 1 По умолчанию
+ksManipulatorModeNotHandle 2 Запрет ручного редактирования
+Editor
+
+ksMateConstraintAlignmentEnum  Варианты 
+выравнивания направлений для сопряжений
+
+ksMCAlignmentOpposite "1 Противонаправленные
+ksMCAlignmentClosest 0 Ориентация согласно ближайшего решения
+ksMCAlignmentCooriented 1 Сонаправленные, с одинаковой ориентацией
+2812
+
+
+
+ksMCAlignmentUnknown 2 Нет определенной ориентации
+Дополнительные
+ksMCAlignment_1 3 Дополнительный вариант 1
+ksMCAlignment_2 4 Дополнительный вариант 2
+ksMCAlignment_3 5 Дополнительный вариант 3
+ksMCReverse_1 6 Противонаправленные. Дополнительный 
+
+вариант 1
+ksMCReverse_2 7 Противонаправленные. Дополнительный 
+
+вариант 2
+ksMCReverse_3 8 Противонаправленные. Дополнительный 
+
+вариант 3
+
+ksMarkInsideFormEnum – тип формы для марки (без 
+линиивыноски)
+
+ksMFormEmpty 0 Без формы.
+ksMFormCircle 1 Окружность.
+ksMFormRectangle 2 Прямоугольник
+ksMFormSquare 3 Квадрат
+ksMFormRhomb1 4 Ромб 1
+ksMFormRhomb2 5 Ромб 2
+ksMFormHexagon 6 Шестиугольник
+ksMFormTriangle1 7 Треугольник 1
+ksMFormTriangle2 8 Треугольник 2
+ksMFormChamferedRectangle 9 Скругленный прямоугольник
+ksMFormCircleWidthVerticalDelimer 10 Окружность с вертикальным разделителем
+ksMFormDoubleCircle 11 Двойная окружность
+
+ksMarkNodeEnum – Тип узла марки
+
+ksMarkCircle 0 Окружность
+ksMarkRefCircle 1 Указатель ориентации оси c окружностью
+ksMarkText 2 Текст
+
+ksMarkOnLinePosTypeEnum – Положение марки 
+относительно линии
+
+ksMTextAboveLine 0 Текст над линией
+ksMTextOnLine 1 Текст на линии
+ksMTextUnderLine 2 Текст под линией
+2813
+
+
+
+ksMassSettingModeEnum – Варианты задания МЦХ
+
+ksCalculateParam 0 Расчет параметров
+ksManualMass 1 Ручное задание массы
+
+ksMassUnitsEnum – Единицы измерения массы
+
+ksMUnGR 0 Граммы
+ksMUnKG 1 Килограммы
+ksMUnDocument 2 Настройки документа
+
+ksMaterialPropertyTypeEnum  Тип события выбора 
+материала
+
+ksMPNewPartDocume 1 Вызов из настроек новых до"
+ntSettings кументов для настроек детали
+
+ksMateTangentTypeEnum  Вид касания для сопряжения 
+касание
+
+ksMTangentUnknown 0 Неопределено
+ksMTangentByPoint 1 Касание в общем случае (контакт 
+
+точкой)
+ksMTangentByGeneratrixLine 2 Касание по образующей прямой 
+
+(например два цилиндра с 
+параллельными осями)
+
+ksMTangentByCircle 3 Касание по окружности 
+(например сфера в конусе)
+
+ksMateMotionTypeEnum  Тип движения компонента для 
+механического сопряжения
+
+ksMMotionUnknown 0 Неопределено
+ksMMotionLinear 1 Линейное перемеще"
+
+ние
+ksMMotionRotation 2 Вращение
+2814
+
+
+
+ksMathCurve3DTypeEnum  Тип математической кривой 
+в трехмерном пространстве
+
+ks3DCurve 0 Кривая
+ksLine3D 1 Прямая
+ksLineSegment3D 2 Отрезок прямой
+ksArc3D 3 Окружность, эллипс, дуга
+ksSpiral 4 Спираль
+ksConeSpiral 5 Коническая спираль
+ksCurveSpiral 6 Спираль по образующей кривой
+ksCrookedSpiral 7 Спираль по направляющей кривой
+ksPolyCurve3D 8 Кривая, построенная по точкам
+ksPolyline3D 9 Полилиния
+ksNurbs3D 10 NURBS кривая
+ksBezier3D 11 Кривая Безье
+ksHermit3D 12 Составной кубический сплайн 
+
+Эрмита
+ksCubicSpline3D 13 Кубический сплайн
+ksPlaneCurve 14 Плоская кривая в пространстве
+ksOffsetCurve3D 15 Эквидистантная кривая
+ksTrimmedCurve3D 16 Усеченная кривая
+ksReparamCurve3D 17 Репараметризованная кривая
+ksBridgeCurve3D 18 Кривая"мостик, соединяющая две 
+
+кривые
+ksCharacterCurve3D 19 Кривая, координатные функции 
+
+которой заданы в символьном виде
+ksContourOnSurface 20 Контур на поверхности
+ksContourOnPlane 21 Контур на плоскости
+ksSurfaceCurve 22 Кривая на поверхности
+ksSilhouetteCurve 23 Силуэтная кривая
+ksSurfaceIntersectionCurve 24 Кривая пересечения поверхностей
+ksBSpline 25 В"сплайн
+ksContour3D 26 Контур
+
+ksMathSurface3DTypeEnum  Тип математической 
+поверхности в трехмерном пространстве
+
+ks3DSurface 0 Поверхность
+ksElementarySurface 1 Элементарная поверхность
+ksPlane 2 Плоскость
+ksConeSurface 3 Коническая поверхность
+ksCylinderSurface 4 Цилиндрическая поверхность
+ksSphereSurface 5 Сфера
+ksTorusSurface 6 Тор
+ksSweptSurface 7 Поверхность движения
+ksExtrusionSurface 8 Поверхность перемещения
+ksRevolutionSurface 9 Поверхность вращения
+ksEvolutionSurface 10 Кинематическая поверхность
+ksExactionSurface 11 Кинематическая поверхность с 
+
+поворотными торцами
+ksExpansionSurface 12 Плоскопараллельная поверхность
+2815
+
+
+
+ksElevationSurface 13 Поверхность по сечениям с 
+направляющей
+
+ksSpiralSurface 14 Спиральная поверхность
+ksRuledSurface 15 Линейчатая поверхность
+ksSectorSurface 16 Секториальная поверхность
+ksPolySurface 17 Поверхность, определяемая 
+
+точками
+ksHermitSurface 18 Hermit " поверхность, определяемая 
+
+точками
+ksSplineSurface 19 NURBS поверхность, определяемая 
+
+точками
+ksGridSurface 20 Поверхность, определяемая 
+
+точками
+ksTriBezierSurface 21 Треугольная Bezier поверхность, 
+
+определяемая точками
+ksTriSplineSurface 22 Треугольная NURBS поверхность, 
+
+определяемая точками
+ksOffsetSurface 23 Эквидистантная поверхность
+ksDeformedSurface 24 Деформированная поверхность
+ksNurbsSurface 25 NURВS поверхность, определяемая 
+
+кривыми
+ksCornerSurface 26 Поверхность по трем кривым
+ksCoverSurface 27 Поверхность по четырем кривым
+ksCoonsPatchSurface 28 Бикубическая поверхность Кунса по 
+
+четырем кривым
+ksMeshSurface 29 Поверхность на сетке кривых
+ksLoftedSurface 30 Поверхность Эрмита, определяемая 
+
+кривыми
+ksSmoothSurface 31 Поверхность coпряжения
+ksChamferSurface 32 Поверхность фаски
+ksFilletSurface 33 Поверхность cкругления
+ksChannelSurface 34 Поверхность cкругления с 
+
+переменным радиусом
+ksJoinSurface 35 Поверхность соединения
+ksCurveBoundedSurface 36 Поверхность, усеченная кривыми 
+
+(контурами) на поверхности
+ksBendedUnbendedSurface 37 Поверхность, полученная сгибом/
+
+разгибом
+ksCylindricBendedSurface 38 Поверхность, полученная 
+
+цилиндрическим сгибом
+ksCylindricUnbendedSurface 39 Поверхность, полученная 
+
+цилиндрическим разгибом
+ksConicBendedSurface 40 Поверхность, полученная 
+
+коническим сгибом
+ksConicUnbendedSurface 41 Поверхность, полученная 
+
+коническим разгибом
+ksExplorationSurface 42 Поверхность заметания с 
+
+масштабированием и поворотом 
+образующей кривой
+
+ksFreeSurface 200 Тип для поверхностей, созданных 
+пользователем
+2816
+
+
+
+ksMeshAroundPointTypeEnum  Тип сетки, построенной 
+вокруг точки
+
+ksMALinear 0 Прямоугольная сетка (метрический шаг)
+ksMAUVLinear 1 Прямоугольная сетка (параметрический шаг)
+ksMACircular 2 Концентрическая сетка
+ksMAHexagonal 3 Гексогональная сетка
+
+ksMeshPointsSurfaceBuildingTypeEnum  Тип поверхности 
+по сети точек
+
+ksMPByPoints 0 Сплайновая поверхность по точкам
+ksMPByPole 1 Сплайновая поверхность по полюсам
+
+ksMeasureResultEnum  Результат измерения расстояния 
+и угла между поверхностями
+
+ksMResUnknown 0 Не определен
+ksMResAxisAxisCoaxial 1 Оси совпадают
+ksMResAxisAxisParallel 2 Оси параллельны
+ksMResAxisAxisIntersect 3 Оси пересекаются
+ksMResAxisAxisDistant 4 Оси на расстоянии
+ksMResAxisSurfColinear 5 Ось лежит на поверхности
+ksMResAxisSurfParallel 6 Ось параллельна поверхности
+ksMResAxisSurfIntersect 7 Ось пересекает поверхность
+ksMResAxisSurfDistant 8 Ось на расстоянии от поверхности
+ksMResSurfSurfColinear 9 Одна поверхность лежит на другой
+ksMResSurfSurfParallel 10 Поверхности параллельны
+ksMResSurfSurfIntersecting 11 Поверхности пересекаются
+
+ksMlEndLimiterEnum  Типы ограничений на концах 
+мультилинии
+
+ksMEndUnknown 0 Без ограничения
+ksMEndLine 1 Прямолинейный
+ksMEndArc 2 Дуговой
+ksMEndPolyline 3 Ломаный
+2817
+
+
+
+ksMlVertexLimiterEnum  Типы ограничений в вершинах 
+мультилинии
+
+ksMVeUnknown 0 Без ограничения
+ksMVeArc 1 Дуговой
+ksMVeAngle 2 Угловой стык
+ksMVeTangent 3 Касательный стык
+
+ksMlVertexTrackingEnum  Типы обхода вершин 
+мультилинии
+
+ksMTrShear 0 Обход срезом
+ksMTrFillet 1 Обход скруглением
+ksMTrEquaFillet 2 Обход скруглением с одинаковым радиусом
+
+ksModelDrawingElementsEnum  Возможные элементы 
+отрисовки модели
+
+ksModelDrawingElementNone 0x0000 Пусто 
+ksModelDrawingElementBackground 0x0001 Фоновая подложка
+ksModelDrawingElementCompBodies 0x0010, Тела компонента
+ksModelDrawingElementCompObjs 0x0020 Объекты компонента 
+ksModelDrawingElementAuxObjs 0x0100 Внешние объекты
+ksModelDrawingElementNotifyLibs 0x0200 Библиотеки на подписке
+ksModelDrawingElementEditor 0x1000 Элементы редактора, включая эскиз и 
+
+фантомы
+ksModelDrawingElementWidgets 0x2000 Элементы управления, оконная сетка 
+
+и пр.
+ksModelDrawingElementMeshCutter 0x4000 Сечение модели
+ksModelDrawingElementAll 0xffff Все элементы сразу 
+
+ksModelRenderTypeEnum  Вариант отрисовки
+
+ksModelRenderNone "1 Без аппаратного ускорения
+ksModelRenderAuto 0 Автоматическое определение
+ksModelRenderPerfected 1  Улучшенный. Триангуляция лежит 
+
+на GPU. Минимальное число 
+отрисовочных вызовов
+
+ksModelRenderMedium 2 Базовый. Триангуляция лежит на 
+GPU. Группировка по телам
+
+ksModelRenderLow 3 Совместимый. Старая реализация. 
+Минимальные требования к GPU
+2818
+
+
+
+ksModelPerformanceLevelEnum  Качество сглаживания
+
+ksMPLDisabledAntialia 0 Без сглаживания
+sing
+ksMPLLowAntialiasing 1 Низкое качество сглаживания
+ksMPLNormalAntialias 2 Среднее качество сглаживания
+ing
+ksMPLHightAntialiasin 3 Высокое качество сглаживания
+g
+
+ksModelTransparencyTypeEnum  Прозрачность
+
+ksModelTransparency 1 Сетчатая прозрачность
+Mesh
+ksModelTransparency 2 Реалистичная прозрачность
+Realistic
+
+ksModelObjectParamTypeEnum  Тип параметров 
+объекта
+
+ksMOAllParam 0 Параметры в системе координат ЛСК объекта
+ksMOPartAllParam 1 Параметры в системе координат детали
+ksMOCurrentLSKAllParam 2 Параметры в системе текущей ЛСК
+
+ksMultiThicknessGroupTypeEnum  Тип разнотолщинной 
+группы
+
+ksArbitraryThicknesses 0 Группы произвольных толщин
+ksSetsThicknesses 1 Группы наборов толщин
+2819
+
+
+
+ksNewDocumentSettingsTypeEnum  Тип настроек новых 
+документов
+
+ksNewPartDocumentSettings 1 Настройки новых документов для
+детали
+
+ksNurbsByPointsAproximationTypeEnum  Способ 
+вычисления шага аппроксимации для точек сплайна
+
+ksNBPAproximationStepByCurvature 0 Вычисление шага аппроксимации с учетом 
+радиуса кривизны
+
+ksNBPAproximationStepByDeviation 1 Вычисление шага аппроксимации по 
+угловой толерантности
+
+ksNurbsByPointsBuildingTypeEnum  Способ 
+формирования точек сплайна
+
+ksNByPBTUndefined 0 Неопределенный
+ksNByPBLinear 1 Линейный
+ksNByPBChordLength 2 По длине хорды
+ksNByPBCentripetal 3 Центростремительный
+
+ksNurbsByPointsPointConstraintsEnum  Вариант 
+управления точкой сплайна
+
+ksNByPBPCNone 0 Нет
+ksNByPBPCTangent 1 Касательностью
+ksNByPBPCSmoothG2 2 Касательностью и кривиз"
+
+ной
+ksNByPBPCNormal 3 Перпендикулярно
+
+ksObjectsFilter3DEnum  Способ фильтрации 3D объектов
+
+ksFilterAll 0 Фильтровать все
+ksFilterFaces 1 Фильтровать грани
+ksFilterEdges 2 Фильтровать ребра
+ksFilterVertexs 3 Фильтровать вершины
+ksFilterCPlanes 4 Фильтровать конструктивные плоскости
+ksFilterCAxis 5 Фильтровать конструктивные оси
+ksFilterParts 6 Фильтровать компоненты
+ksFilterBodies 7 Фильтровать тела
+2820
+
+
+
+ksFilterSurfaces 8 Фильтровать поверхности
+ksFilterSketches 9 Фильтровать эскизы
+ksFilterCurves 10 Фильтровать кривые
+ksFilterCS 11 Фильтровать системы координат
+ksFilterControlPoints 12 Фильтровать контрольные и присоединительные точки
+ksFilterPoints3D 13 Фильтровать точки
+ksFilterDesignations 14 Фильтровать обозначения
+ksFilterThread 15 Фильтровать условные обозначения резьбы
+
+ksOperationResultEnum  Результат операции
+
+ksOperationUnion 0 Объединение
+ksOperationNewBo 1 Новое тело
+dy
+ksOperationCut 2 Вычитание
+ksOperationIntersec 3 Пересечение
+t
+
+ksOffsetGapType  Типы смещений зазора
+
+ksOGParametrU 0 По параметру U
+ksOGLength 1 По длине
+ksOGDraftPosition 2 Угол расположения
+
+ksOrientationTypeEnum  Тип ориентирования ЛСК
+
+ksAxisOrientation 0 Направление осей
+ksEulerCorners 1 Система углов Эйлера
+ksOrientByObject 2 Ориентирование по объекту
+
+ksOutputColorTypeEnum  Цвет вывода на печать
+
+ksPJ_OCBlack 0 В черных линиях
+ksPJ_OCByView 1 Цветом вида
+ksPJ_OCByLayer 2 Цветом слоя
+ksPJ_OCByObject 3 Цветом объекта
+2821
+
+
+
+ksPartAccessTypeEnum  Тип доступа к компоненту
+
+ksATUncertainty "1 Неопределенный
+ksATEditable 0 Редактирование
+ksATReadOnly 1 Только чтение
+ksATDisable 2 Доступ запрещен
+
+ksPart7CollectionTypeEnum – Тип коллекции 
+компонентов
+
+ksAllParts 0 Все компоненты (включая копии
+из операций копирования)
+
+ksUniqueParts 1 Первые экземпляры вставок
+компонентов
+
+ksPatternBasePointTypeEnum  Способ задания базовой 
+точки
+
+ksCRAuto 0 Автоопределение
+ksCRManual 1 Ручное указание
+ksCRFirstObject 2 По первому в списке
+
+ksPatternExemplarsOrientationTypeEnum  Способ 
+ориентации экземпляров массива
+
+ksOrientationSave 0 Сохранять исходную ориентацию
+ksOrientationByNormal 1 Доворачивать до нормали
+ksOrientationByObject 2 Ориентировать по объекту
+
+ksPhantomTypeEnum  Типы фантома
+
+ksUnknownPhantom 0 Нет фантома
+ksMoveGroupPhantom 1 Cдвиг группы
+ksLineSegPhantom 2 Отрезок
+ksRectanglePhantom 3 Прямоугольник
+ksAngleLineSegPhantom 4 Отрезок с заданным углом
+ksHalfRectanglePhantom 5 Половина прямоугольника
+ksUserPhantom 6 Пользовательский фантом
+ksCirclePhantom 7 Окружность
+2822
+
+
+
+ksPLMChangesEnum  Отличие в системе 
+версионирования
+ 
+
+ksPLMChangeUndefined 0 Состояние не задано
+ksPLMNoChanges 1 Нет различий
+ksPLMChangesNotCommit 2  Изменения не загружены в
+ed PLM
+ksPLMUpdateNeeded 3 Есть изменения в PLM
+ksPLMConflict 4 Конфликт
+
+ ksPLMStatusEnum  Статус в системе версионирования
+
+ksPLMStateUndefined 0 Состояние не задано
+ksPLMStateNotRegistered 1 Не зарегистрирован в PLM
+ksPLMStateAvailable 2 Доступен
+ksPLMStateInProgress 3 Взят в работу
+ksPLMStateBlocked 4 Заблокирован
+ksPLMStateError 5 Ошибка
+
+ksPLMObjectNotifyEnum  Cобытия объектов 
+версионирования
+
+ ksPLMStatusChanged 1001 Изменение статуса в системе версионирования
+ksOrientationByObject 1002 Изменение признака отличия в системе 
+
+версионирования
+
+ksPointsArrOnCurveTypeEnum  Способ построения точек 
+группы по кривой
+
+ksPAOCByPointsCount 0 Равномерно по длине (Построение по заданному 
+количеству точек)
+
+ksPAOCByStep 1 Шаг по кривой (Построение по расстоянию между 
+точками)
+
+ksPAOCByParametricStep 2 Равномерный шаг по параметру кривой (Построение 
+по параметрическому расстоянию между точками)
+2823
+
+
+
+ksPointsArrOnSurfaceTypeEnum  Способ построения 
+точек группы по поверхности
+
+ksPAOSByPointsUVCount "1 По количеству точек по U и V
+ksPAOSByLinearDeflection 0 По линейному отклонению
+ksPAOSByAngularDeflection 1 По угловому отклонению
+ksPAOSByMeshAroundPoint 2 По сетке вокруг заданной точки
+
+ksPoint3DCurveParamTypeEnum  Типы смещений при 
+способе построения точки вдоль кривой
+
+ksOffsetByU 1 По параметру U,%
+ksOffsetByLen 2 По длине дуги
+ksOffsetByAngle 3 По центральному углу дуги
+
+ksPoint3DSurfaceParamTypeEnum  Типы смещений при 
+способе построения точки на поверхности
+
+ksOffsetByUV 1 По параметрам U и V,%
+ksOffsetByLenFromObj 2 По расстояниям от плоских
+
+объектов
+ksOffsetByCoords 3 По координатам на плоско"
+
+сти
+ksOffsetByCylinderCoords 4 Смещение по цилиндриче"
+
+ским координатам
+ksOffsetBySphereCoords 5 Смещение по сферическим
+
+координатам
+
+ksPoint3DTypeEnum  Способы построения 
+пространственной точки
+
+ksPUnknown 0 Неизвестный тип
+ksPParamCoord 1 По координатам от
+
+опорного объекта
+ksPDisplace 2 По смещению от
+
+опорного объекта
+ksPIntersect 3 На пересечении
+
+опорных объектов
+2824
+
+
+
+ksPCenter 4 В центре опорного
+объекта
+
+ksPCurve 5 На кривой со смеще"
+нием
+
+ksPSurface 6 На поверхности
+ksPProjection 7 Проецированием
+ksPCylindrCoord 8 По цилиндрическим
+
+координатам
+ksPSphericCoord 9 По сферическим ко"
+
+ординатам
+
+ksPointLocationTypeEnum  Положение двумерной точки 
+относительно двумерной кривой
+
+ksPLUndefined 0 Положение не опре"
+делено, кривая разо"
+мкнута
+
+ksPLOutside 1 Точка снаружи за"
+мкнутой кривой
+
+ksPLOnCurve 2 Точка на кривой
+ksLPInside 3 Точка внутри замкну"
+
+той кривой
+
+ksPositionLederFormEnum  Тип формы для позиционной 
+линиивыноски
+
+ksPLSingleText 0 Простой текст
+ksPLOpenText 1 Открытый текст
+ksPLCircle 2 Круг
+ksPLHexagon 3 Шестиугольник
+ksPLCircleWithSeparator 4 Круг с разделителем
+
+ksPressFormingHeightTypeEnum  Способ задания высоты 
+штамповки
+
+ksPressFormingAllHeight 0 Полная
+ksPressFormingOutHeight 1 Снаружи
+ksPressFormingInHeight 2 Внутри
+2825
+
+
+
+ksProcessContextMenuType  Тип процессного меню
+
+ksProcessDefaultContextMenu 0 Обычное меню про"
+цесса
+
+ksProcessContextMenuHide "2 Без меню
+ksProcessContextPanel "3 Контекстная панель с
+
+контролами
+ksProcessContextIconMenu "4 Меню с иконками
+
+ksProcess3DManipulatorsNotifyEnum  События 
+манипуляторов процесса 3D
+
+ksRotateManipulator 1 Вращение манипулятора относительно оси на 
+угол
+
+ksMoveManipulator 2 Перемещение манипулятора
+ksClickManipulatorPrimitive 3 Клик или двойной клик по примитиву 
+
+манипулятора
+ksBeginDragManipulator 4 Начало перемещения манипулятором 
+
+примитива
+ksEndDragManipulator 5 Завершение перемещения манипулятором 
+
+примитива
+ ksCreateManipulatorEdit 6 Создание редактора для ввода значения, 
+
+управляющего положением манипулятора
+ksDestroyManipulatorEdit 7 Удаление редактора для ввода значения, 
+
+управляющего положением манипулятора
+ksChangeManipulatorValue 8 Завершение редактирования значения в 
+
+редакторе манипулятора
+
+ksProcessObjectsFilter3DEnum  Режим использования 
+прямоугольной рамки для выделения объектов в 
+процессе
+
+ksProcessFilterBodies 0 Фильтровать тела
+ksProcessFilterSurfaces 1 Фильтровать поверхности
+ksProcessFilterObjects 2 Объекты модели, не являющиеся операциями
+ksProcessFilterOperations 3 Операции
+ksProcessFilterParts 4 Фильтровать компоненты
+ksProcessFilterExcludeExternalObject 1000 Отсекать объекты других компонентов, не 
+s находящиеся сейчас в режиме 
+
+редактирования на месте
+2826
+
+
+
+ksProtectProductStatusEnum  Состояния (статус) защиты 
+продукта
+
+ ksProtectUnknown 0  Неопределенный, состояние неиз"
+вестно
+
+ksProtectDemo 1 Недоступный, деморежим.
+ksProtectDisabled 2 Запрещенный, отключенный
+ksProtectExpired 3 Недействительный, просроченный
+ksProtectNormal 4 Нормальный, рабочий
+ksProtectFailed 5 Неудачный, неисправный, повре"
+
+ждённый
+
+ ksRuledBorderEnum  Типы кромки оснований
+
+ksRuledBodder1 0 Перпендикулярно плоскости листа
+ksRuledBodder2 1 Совпадение с поверхностями оснований
+
+ksRuledJointEnum  Типы кромки стыка
+
+ksRuledJoint1 0 Перпендикулярно поверхности листа
+ksRuledJoint2 1 Параллельно друг другу
+
+ksSHRibBuildingTypeEnum  Способ построения ребра 
+усиления
+
+ksSHRibBuildingHeightAngle 0 По стороне и углу
+ksSHRibBuildingTwoHeights 1 По двум сторонам
+ksSHRibBuildingDepthAngle 2 По глубине и углу
+
+ksSHRibCutingTypeEnum  Форма сечения ребра 
+усиления
+
+ksSHRibCuttingV 0 V"образная
+ksSHRibCuttingU 1 U"образная
+2827
+
+
+
+ksSegmentationMethodEnum  Способ сегментации 
+эскиза
+
+ksSmQuantity 0 По количеству сег"
+ментов
+
+ksSmLength 1 По длине сегментов
+ksSmAngle 2 По углу
+ksSmHeight 3 По величине отклоне"
+
+ния от хорды
+
+ksSelectionBandMode  Режим использования 
+прямоугольной рамки для выделения объектов
+
+ksSelectionNoBand 0 Не использовать селектирование рамкой
+ksSelectionWhenNoNearestObject 2 Начинать тащить рамку, когда под курсором нет 
+
+объекта
+
+ksSpcUsedTypeEnum  Признаки использования в 
+спецификации
+
+ksSpcUsedInAllDescriptions 0 Отображать во всех описаниях
+ksSpcUsedInCurrentDescriptio 1 Отображать в текущем описании
+n
+
+ksSplineTransitionTypeEnum  Способ создания 
+сопряжения в заданной вершине сплайна
+
+ksSTTNone 0 Не задан
+ksSTTByParam 1 Параметрами
+ksSTTConstraint 2 Сопряжением
+
+ksStylesLibraryTypeEnum  События функции поиска 
+объектов
+
+ksCurveStyleLibrary 1 Библиотека стилей кривых (*.lcs)
+2828
+
+
+
+ksHatchStyleLibrary 2 Библиотека стилей штриховок
+(*.lhs)
+
+ksTextStyleLibrary 3 Библиотека стилей текстов   (*.lts)
+ksStampStyleLibrary 4 Библиотека стилей описаний
+
+штампов (*.lyt)
+ksGraphicLayoutStyleLibra 5 Библиотека стилей оформлений
+ry графических документов и специ"
+
+фикаций (*.lyt)
+ksTextLayoutStyleLibrary 6 Библиотека стилей оформлений
+
+текстовых документов (*.lyt)
+ksSpcLayoutStyleLibrary 7 Библиотека стилей оформлений
+
+спецификаций (*.lyt)
+
+ksTextureTypeEnum  Тип текстуры
+
+ksBaseProperties "1 Все
+ksTexture 0 Текстура
+ksRelief 1 Рельеф
+ksCutting 2 Вырезы
+
+ksTransitionVectorIndexEnum  Индекс вектора в точке 
+сопряжения
+
+ksTVTangent 0 Касательный
+ksTVNormal 1 Нормальный
+ksTVBNormal 2 Бинормальный

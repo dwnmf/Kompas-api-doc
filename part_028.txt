@@ -1,0 +1,2532 @@
+Vector3D  Параметры вектора
+Интерфейс...
+Тип данных: Указатель на интерфейс IVector3D
+Синтаксис Automation:
+
+Vector3D = Object.Vector3D; Получить свойство (* )
+Vector3D = Object.GetVector3D(); Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Vector3D( &Vector3D ) Получить свойство
+
+Примечание.
+Свойство доступно только для чтения.
+
+Интерфейс ISpiral3D
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ISpiral3D
+Примечание:
+Интерфейс можно получить у коллекции спиралей с помощью свойства
+ISpirals3D::Spiral3D и метода ISpirals3D::Add, а также у интерфейсов IConicSpiral3D и
+ICylindricSpiral3D с помощью метода IUnknown::QueryInterface.
+
+ISpiral3D  свойства
+
+BasePlane  Базовая плоскость
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+1460
+
+
+
+BasePlane = Object.BasePlane Получить свойство (* )
+Object.BasePlane = BasePlane Установить свойство (* )
+BasePlane = Object.GetBasePlane() Получить свойство (**)
+Object.SetBasePlane( BasePlane ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BasePlane( &BasePlane ) Получить свойство
+Object.put_BasePlane( BasePlane ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать базовую плоскость или плоскую грань, на
+которой располагается спираль.
+
+BuildingDirection  Направление построения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BuildingDirection = Object.BuildingDirection Получить свойство (* )
+Object.BuildingDirection = BuildingDirection Установить свойство (* )
+BuildingDirection = Object.GetBuildingDirection() Получить свойство (**)
+Object.SetBuildingDirection( BuildingDirection ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingDirection( &BuildingDirection Получить свойство
+)
+Object.put_BuildingDirection( BuildingDirection ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать направление построения спирали.
+
+BuildingType  Способ построения
+Интерфейс...
+Тип данных: из перечисления ksSpline3DBuildingTypeEnum
+Синтаксис Automation:
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Object.GetBuildingType() Получить свойство (**)
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+1461
+
+
+
+Object.get_BuildingType( &BuildingType ) Получить свойство
+Object.put_BuildingType( BuildingType ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать способ построения спирали.
+
+Heigh  Высота
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Height = Object.Height Получить свойство (* )
+Object.Height = Height Установить свойство (* )
+Height = Object.GetHeight() Получить свойство (**)
+Object.SetHeight( Height ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Height( &Height ) Получить свойство
+Object.put_Height( Height ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать высоту спирали.
+
+HeightBaseObject  Объект, задающий высоту
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+HeightBaseObject = Object.HeightBaseObject Получить свойство (* )
+Object.HeightBaseObject = HeightBaseObject Установить свойство (* )
+HeightBaseObject = Object.GetHeightBaseObject() Получить свойство (**)
+Object.SetHeightBaseObject( HeightBaseObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+bject.get_HeightBaseObject( &HeightBaseObject ) Получить свойство
+Object.put_HeightBaseObject(  HeightBaseObject ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать указатель на объект, задающий высоту
+спирали.
+1462
+
+
+
+HeightCorrection  Коррекция высоты, заданной по объекту
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+HeightCorrection = Object.HeightCorrection Получить свойство (* )
+Object.HeightCorrection = HeightCorrection Установить свойство (* )
+HeightCorrection = Object.GetHeightCorrection() Получить свойство (**)
+Object.SetHeightCorrection( HeightCorrection ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HeightCorrection( &HeightCorrection ) Получить свойство
+Object.put_HeightCorrection(  HeightCorrection ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать коррекцию высоты, заданной по объекту.
+
+HeightType  Способ задания высоты
+Интерфейс...
+Тип данных: из перечисления ksSpiral3DHeightTypeEnum
+Синтаксис Automation:
+
+HeightType = Object.HeightType Получить свойство (* )
+Object.HeightType = HeightType Установить свойство (* )
+HeightType = Object.GetHeightType() Получить свойство (**)
+Object.SetHeightType( HeightType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HeightType( &HeightType ) Получить свойство
+Object.put_HeightType( HeightType ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать способ задания высоты спирали.
+
+Sketch  Эскиз
+Интерфейс...
+Тип данных: Указатель на интерфейс ISketch
+Синтаксис Automation:
+
+Sketch = Object.Sketch Получить свойство
+(* )
+1463
+
+
+
+Sketch = Object.GetSketch() Получить свойство
+(**)
+
+Синтаксис COM:
+
+Object.get_Sketch( &Sketch ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получить указатель на эскиз спирали.
+
+Step  Шаг
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Step = Object.Step Получить свойство (* )
+Object.Step = Step Установить свойство (* )
+Step = Object.GetStep() Получить свойство (**)
+Object.SetStep( Step ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Step( &Step ) Получить свойство
+Object.put_Step( Step ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать шаг витков спирали.
+
+TurningAngle  Начальный угол (или угол поворота спирали 
+вокруг своей оси)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+TurningAngle = Object.TurningAngle Получить свойство (* )
+Object.TurningAngle = TurningAngle Установить свойство (* )
+TurningAngle = Object.GetTurningAngle() Получить свойство (**)
+Object.SetTurningAngle( TurningAngle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TurningAngle( &TurningAngle ) Получить свойство
+1464
+
+
+
+Object.put_TurningAngle( TurningAngle ) Установить свойство
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать угол поворота спирали вокруг перпенди"
+куляра к опорной грани.
+
+2.  Угол измеряется относительно оси абсцисс системы координат опорной грани.
+
+TurnsCount  Количество витков
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+TurnsCount = Object.TurnsCount Получить свойство (* )
+Object.TurnsCount = TurnsCount Установить свойство (* )
+TurnsCount = Object.GetTurnsCount() Получить свойство (**)
+Object.SetTurnsCount( TurnsCount ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TurnsCount( &TurnsCount ) Получить свойство
+Object.put_TurnsCount( TurnsCount ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать количество витков спирали.
+
+TurnDirection  Направление навивки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+TurnDirection = Object.TurnDirection Получить свойство (* )
+Object.TurnDirection = TurnDirection Установить свойство (* )
+TurnDirection = Object.GetTurnDirection() Получить свойство (**)
+Object.SetTurnDirection( TurnDirection ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TurnDirection( &TurnDirection ) Получить свойство
+Object.put_TurnDirection( TurnDirection ) Установить свойство
+
+Значение свойства:
+
+TRUE " прямое,
+FALSE " обратное.
+
+Примечание:
+1465
+
+
+
+Свойство позволяет устанавливать и получать направление навивки.
+
+ISpiral3D  методы
+
+GetBasePoint  Получить координаты точки привязки 
+спирали на базовой плоскости (точку пересечения оси 
+спирали с базовой плоскостью)
+Интерфейс...
+Синтаксис Automation:
+BOOL GetBasePoint( double * X, double * Y );
+Синтаксис COM:
+HRESULT GetBasePoint( double * X, double * Y, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Выходные параметры:
+X, Y " координаты точки привязки спирали.
+Примечание:
+Метод возвращает координаты точки привязки спирали.
+
+SetBasePoint  Установить координаты точки привязки 
+спирали на базовой плоскости (точку пересечения оси 
+спирали с базовой плоскостью)
+Интерфейс...
+Синтаксис Automation:
+BOOL SetBasePoint( double X, double Y );
+Синтаксис COM:
+HRESULT SetBasePoint( double X, double Y, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+X, Y " координаты точки привязки спирали.
+Примечание:
+Метод устанавливает координаты точки привязки спирали.
+1466
+
+
+
+Интерфейс ISpline3D
+Справка системы КОМПАС:
+kompas.chm::/1091_116_6_Splajn.htm
+Интерфейс cплайна.
+Иерархия:
+IKompasAPIObject
+
+IModelObject
+ISpline3D
+
+ILocalCSObject
+Примечание:
+
+1.  Интерфейс можно получить у коллекции сплайнов, используя свойство
+ISplines3D::Spline3D или метод ISplines3D::Add.
+
+2.  После задания параметров сплайна требуется вызвать метод IModelObject::Update.
+3.  С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+
+подчиненного объекта ЛСК ILocalCSObject.
+
+ISpline3D  свойства
+
+CenterPointAssociationObject  Точка привязки центра 
+кривизны
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+CenterPointAssociationObject = Получить свойство (* )
+Object.CenterPointAssociationObject( PointIndex );
+Object.CenterPointAssociationObject( PointIndex ) = Установить свойство (* )
+CenterPointAssociationObject;
+CenterPointAssociationObject = Получить свойство (**)
+Object.GetCenterPointAssociationObject( PointIndex );
+Object.SetCenterPointAssociationObject( PointIndex, Установить свойство (**)
+CenterPointAssociationObject )
+
+Синтаксис COM:
+
+Object.get_CenterPointAssociationObject( Получить свойство
+PointIndex, &CenterPointAssociationObject )
+Object.put_CenterPointAssociationObject( Установить свойство
+PointIndex, CenterPointAssociationObject )
+
+Входные параметры:
+1467
+
+
+
+long PointIndex  " индекс точки.
+
+CenterPointParams  Получение параметров точки центра 
+кривизны
+Интерфейс...
+Тип данных: Указатель на интерфейс IKompasAPIObject.
+Синтаксис Automation:
+
+CenterPointParams = Получить свойство (* )
+Object.CenterPointParams( PointIndex );
+CenterPointParams = Получить свойство (**)
+Object.GetCenterPointParams( PointIndex );
+
+Синтаксис COM:
+
+Object.get_CenterPointParams( PointIndex, Получить свойство
+&CenterPointParams )
+
+Входные параметры:
+
+long PointIndex  " индекс точки.
+
+Примечание:
+
+1. Свойство доступно только для чтения.
+2. В зависимости от типа ISpline3D::CenterPointType, интерфейс параметров должен приво"
+
+диться к одному из следующих вариантов:
+▼ ksPDisplace   " IPoint3DParamDisplace (интерфейс параметров пространственной точки,
+
+заданной по смещению от опорного объекта),
+▼ ksPIntersect " IPoint3DParamIntersect (интерфейс параметров пространственной точки,
+
+заданной на пересечении опорных объектов),
+▼ ksPCenter     " IPoint3DParamCenter    (интерфейс параметров пространственной точки,
+
+заданной в центре опорного объекта),
+▼ ksPCurve      " IPoint3DParamCurve    (интерфейс параметров пространственной точки, за"
+
+данной на кривой со смещением),
+▼ ksPSurface    " IPoint3DparamSurface (интерфейс параметров пространственной точки, за"
+
+данной на поверхности),
+▼ ksPProjection " IPoint3DParamProjection (интерфейс параметров пространственной точ"
+
+ки, заданной проецированием).
+
+CenterPointType  Установить способ построения точки
+Интерфейс...
+1468
+
+
+
+Тип данных: Значение из перечисления ksPoint3DTypeEnum.
+Синтаксис Automation:
+
+CenterPointType = Object.CenterPointType( Получить свойство (* )
+PointIndex );
+Object.CenterPointType( PointIndex ) = Установить свойство (* )
+CenterPointType;
+CenterPointType = Object.GetCenterPointType( Получить свойство (**)
+PointIndex );
+Object.SetCenterPointType( PointIndex, Установить свойство (**)
+CenterPointType )
+
+Синтаксис COM:
+
+Object.get_CenterPointType( PointIndex, Получить
+&CenterPointType ) свойство
+Object.put_CenterPointType(  PointIndex, Установить
+CenterPointType ) свойство
+
+Входные параметры:
+
+long PointIndex  " индекс точки.
+
+Closed  Замкнутость
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " сплайн замкнутый,
+FALSE " сплайн разомкнутый.
+
+Синтаксис Automation:
+
+Closed = iObject.Closed; Получить свойство (* )
+iObject.Closed = Closed; Установить свойство (* )
+Closed = iObject.GetClosed(); Получить свойство (**)
+iObject.SetClosed(Closed); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Closed (&Closed) Получить свойство
+iObject">put_Closed (Closed) Установить свойство
+1469
+
+
+
+Примечание.
+Свойство позволяет получить/установить разомкнутый или замкнутый сплайн.
+
+ConstraintLimitObject  Граница
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject. 
+Синтаксис Automation:
+
+ConstraintLimitObject = Получить свойство (* )
+Object.ConstraintLimitObject( PointIndex );
+Object.ConstraintLimitObject( PointIndex ) = Установить свойство (* )
+ConstraintLimitObject;
+ConstraintLimitObject = Получить свойство (**)
+Object.GetConstraintLimitObject( PointIndex );
+Object.SetConstraintLimitObject( PointIndex, Установить свойство (**)
+ConstraintLimitObject );
+
+Синтаксис COM:
+
+Object.get_ConstraintLimitObject( PointIndex, Получить свойство
+&ConstraintLimitObject )
+Object.put_ConstraintLimitObject(  PointIndex, Установить свойство
+ConstraintLimitObject )
+
+Входные параметры:
+
+long PointIndex    " индекс точки.
+
+ConstraintObject  Объект сопряжения
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+ConstraintObject = Object.ConstraintObject( Получить свойство (* )
+PointIndex );
+Object.ConstraintObject( PointIndex ) = Установить свойство (* )
+ConstraintObject;
+ConstraintObject = Object.GetConstraintObject( Получить свойство (**)
+PointIndex );
+1470
+
+
+
+Object.SetConstraintObject( PointIndex, Установить свойство (**)
+ConstraintObject );
+
+Синтаксис COM:
+
+Object.get_ConstraintObject( PointIndex, Получить
+&ConstraintObject ) свойство
+Object.put_ConstraintObject(  PointIndex, Установить
+ConstraintObject ) свойство
+
+Входные параметры:
+
+long PointIndex    " индекс точки.
+
+ConstraintReverse  Противоположное направление
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ConstraintReverse = Object.ConstraintReverse( Получить свойство (* )
+PointIndex );
+Object.ConstraintReverse( PointIndex ) = Установить свойство (* )
+ConstraintReverse;
+ConstraintReverse = Object.GetConstraintReverse( Получить свойство (**)
+PointIndex );
+Object.SetConstraintReverse( PointIndex, Установить свойство (**)
+ConstraintReverse );
+
+Синтаксис COM:
+
+Object.get_ConstraintReverse( PointIndex, Получить
+&ConstraintReverse ) свойство
+Object.put_ConstraintReverse(  PointIndex, Установить
+ConstraintReverse ) свойство
+
+Входные параметры:
+
+long PointIndex    " индекс точки.
+
+ConstraintType  Тип сопряжения в заданной вершине. 
+Управление кривизной
+Интерфейс...
+1471
+
+
+
+Тип данных: Значение из перечисления ksNurbsByPointsPointConstraintsEnum.
+Синтаксис Automation:
+
+ConstraintType = Object.ConstraintType( PointIndex Получить свойство (* )
+);
+Object.ConstraintType( PointIndex ) = Установить свойство (* )
+ConstraintType;
+ConstraintType = Object.GetConstraintType( Получить свойство (**)
+PointIndex );
+Object.SetConstraintType( PointIndex, Установить свойство (**)
+ConstraintType );
+
+Синтаксис COM:
+
+Object.get_ConstraintType( PointIndex, Получить
+&ConstraintType ) свойство
+Object.put_ConstraintType(  PointIndex, Установить
+ConstraintType ) свойство
+
+Входные параметры:
+
+long PointIndex    " индекс точки.
+
+Curvature  Величина кривизны в указанной точке
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Curvature = Object.Curvature( PointIndex ); Получить свойство (* )
+Object.Curvature( PointIndex ) = Curvature; Установить свойство (* )
+Curvature = Object.GetCurvature( PointIndex ); Получить свойство (**)
+Object.SetCurvature( PointIndex, Curvature ); Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Curvature( PointIndex, &Curvature ) Получить
+свойство
+
+Object.put_Curvature(  PointIndex, Curvature ) Установить
+свойство
+
+Входные параметры:
+
+long PointIndex    " индекс точки.
+1472
+
+
+
+CurvatureRadius  Радиус кривизны
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+CurvatureRadius = Object.CurvatureRadius( Получить свойство (* )
+PointIndex );
+Object.CurvatureRadius( PointIndex ) = Установить свойство (* )
+CurvatureRadius;
+CurvatureRadius = Object.GetCurvatureRadius( Получить свойство (**)
+PointIndex );
+Object.SetCurvatureRadius( PointIndex, Установить свойство (**)
+CurvatureRadius );
+
+Синтаксис COM:
+
+Object.get_CurvatureRadius( PointIndex, Получить
+&CurvatureRadius ) свойство
+Object.put_CurvatureRadius(  PointIndex, Установить
+CurvatureRadius ) свойство
+
+Входные параметры:
+
+long PointIndex    " индекс точки.
+
+DirectionVector  Направляющий вектор в точке сопряжения
+Интерфейс...
+Тип данных: Указатель на интерфейс IVector3D.
+Синтаксис Automation:
+
+DirectionVector = Object.DirectionVector( Получить свойство (* )
+PointIndex, VectorIndex, PVal );
+DirectionVector = Object.GetDirectionVector( Получить свойство (**)
+PointIndex, VectorIndex, PVal );
+
+Синтаксис COM:
+
+Object.get_DirectionVector( PointIndex, Получить
+VectorIndex, PVal, &DirectionVector ) свойство
+
+Входные параметры:
+1473
+
+
+
+long PointIndex  " индекс точки.
+VectorIndex " cпособ создания сопряжения в за"
+
+данной вершине сплайна из перечи"
+сления ksTransitionVectorIndexEnum.
+
+Примечание:
+Свойство доступно только для чтения.
+
+Knots  Массив SAFEARRAY узлов кривой NURBS
+Интерфейс...
+Синтаксис Automation:
+
+Knots = Object.Knots Получить свойство (* )
+Object.Knots = Knots Установить свойство (* )
+Knots = Object.GetKnots() Получить свойство (**)
+Object.SetKnots( Knots ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Knots( &Knots ) Получить свойство
+Object.put_Knots( Knots ) Установить свойство
+
+Свойство позволяет получить и изменить узлы кривой NURBS.
+
+Reverse  Противоположное направление
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Reverse = Object.Reverse( Index ) Получить свойство (* )
+Object.Reverse( Index ) = Reverse Установить свойство (* )
+Reverse = Object.GetReverse( Index ) Получить свойство (**)
+Object.SetReverse( Index, Reverse )) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Reverse( Index, &Reverse ) Получить свойство
+Object.put_Reverse(  Index, Reverse ) Установить свойство
+
+Входные параметры:
+
+Index " индекс касательного вектора.
+1474
+
+
+
+SplineOnPoles  Тип построения
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " сплайн по полюсам,
+FALSE " сплайн по точкам.
+
+Синтаксис Automation:
+
+SplineOnPoles = Получить свойство (* )
+iObject.SplineOnPoles;
+iObject.SplineOnPoles = Установить свойство (* )
+SplineOnPoles;
+SplineOnPoles = Получить свойство (**)
+iObject.GetSplineOnPoles();
+iObject.SetSplineOnPoles(SplineO Установить свойство (**)
+nPoles);
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_SplineOnPoles 
+(&SplineOnPoles)
+iObject" Установить свойство
+>put_SplineOnPoles 
+(SplineOnPoles)
+
+Примечание.
+Свойство позволяет получить/установить сплайн по точкам/полюсам.
+
+SplineOrder  Порядок сплайна
+Интерфейс...
+Тип данных: long
+Значения свойства:
+
+TRUE " сплайн по полюсам,
+FALSE " сплайн по точкам.
+
+Синтаксис Automation:
+
+SplineOrder = Получить свойство (* )
+iObject.SplineOrder;
+iObject.SplineOrder = Установить свойство (* )
+SplineOrder;
+1475
+
+
+
+SplineOrder = Получить свойство (**)
+iObject.GetSplineOrder();
+iObject.SetSplineOrder(Spl Установить свойство (**)
+ineOrder);
+
+Синтаксис COM:
+
+iObject">get_SplineOrder Получить свойство
+(&SplineOrder)
+iObject">put_SplineOrder Установить свойство
+(SplineOrder)
+
+Примечание.
+Свойство позволяет получить/установить порядок сплайна. Значение порядка кривой
+должно принадлежать диапазону 3 ... 10.
+
+SplineTransitionType  Способ создания сопряжения в 
+заданной вершине
+Интерфейс...
+Тип данных: Значение из перечисления ksSplineTransitionTypeEnum.
+Синтаксис Automation:
+
+SplineTransitionType = Object.SplineTransitionType( Получить свойство (* )
+PointIndex );
+Object.SplineTransitionType( PointIndex ) = Установить свойство (* )
+SplineTransitionType;
+SplineTransitionType = Получить свойство (**)
+Object.GetSplineTransitionType( PointIndex );
+Object.SetSplineTransitionType( PointIndex, Установить свойство (**)
+SplineTransitionType );
+
+Синтаксис COM:
+
+Object.get_SplineTransitionType( PointIndex, Получить
+&SplineTransitionType ) свойство
+Object.put_SplineTransitionType(  PointIndex, Установить
+SplineTransitionType ) свойство
+
+Входные параметры:
+
+long PointIndex    " индекс точки.
+1476
+
+
+
+TangentVectorLenght  Длина касательного вектора
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+TangentVectorLenght = Object.TangentVectorLenght( Получить свойство (* )
+PointIndex );
+Object.TangentVectorLenght( PointIndex ) = Установить свойство (* )
+TangentVectorLenght;
+TangentVectorLenght = Получить свойство (**)
+Object.GetTangentVectorLenght( PointIndex );
+Object.SetTangentVectorLenght( PointIndex, Установить свойство (**)
+TangentVectorLenght );
+
+Синтаксис COM:
+
+Object.get_TangentVectorLenght( PointIndex, Получить
+&TangentVectorLenght ) свойство
+Object.put_TangentVectorLenght(  PointIndex, Установить
+TangentVectorLenght ) свойство
+
+Входные параметры:
+
+long PointIndex    " индекс точки.
+
+VertexCount  Количество вершин
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+VertexCount = Получить свойство (* )
+iObject.VertexCount;
+VertexCount = Получить свойство (**)
+iObject.GetVertexCount( );
+
+Синтаксис COM:
+
+iObject">get_VertexCount( Получить свойство
+&VertexCount )
+
+Примечание.
+Свойство доступно только для чтения.
+1477
+
+
+
+VertexParams  Получение параметров вершины ломаной
+Интерфейс...
+Тип данных: Указатель на интерфейс параметров вершины ломаной ICurveVertexParam
+Синтаксис Automation:
+
+VertexParams = Получить свойство (* )
+iObject.VertexParams( Index );
+VertexParams = Получить свойство (**)
+iObject.GetVertexParams( Index );
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_VertexParams( 
+Index, &VertexParams )
+
+Входные параметры:
+
+Index " индекс вершины.
+
+Примечание.
+Свойство доступно только для чтения.
+
+VertexParamsArray  Массив параметров вершин в виде 
+SAFEARRAY DISPATCH  VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Значения свойства:
+
+Массив SafeArray типа VT_ARRAY |
+VT_DISPATCH.
+
+Синтаксис Automation:
+
+VertexParamsArray = Получить свойство (* )
+iObject.VertexParamsArray;
+VertexParamsArray = Получить свойство (**)
+iObject.GetVertexParamsArray();
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_VertexParamsArray( 
+&VertexParamsArray )
+1478
+
+
+
+Примечание.
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получить массив SAFEARRAY параметров всех вершин. Это массив
+
+VT_DISPATCH, которые можно преобразовать в интерфейсы ICurveVertexParam.
+
+VectorDirectionObject  Направляющий объект вектора в 
+точке сопряжения 
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject. 
+Синтаксис Automation:
+
+VectorDirectionObject = Получить свойство (* )
+Object.VectorDirectionObject( PointIndex,
+VectorIndex );
+Object.VectorDirectionObject( PointIndex, Установить свойство (* )
+VectorIndex ) = VectorDirectionObject;
+VectorDirectionObject = Получить свойство (**)
+Object.GetVectorDirectionObject( PointIndex,
+VectorIndex );
+Object.SetVectorDirectionObject( PointIndex, Установить свойство (**)
+VectorIndex, VectorDirectionObject );
+
+Синтаксис COM:
+
+Object.get_VectorDirectionObject( PointIndex, Получить
+VectorIndex, &VectorDirectionObject ) свойство
+Object.put_VectorDirectionObject(  PointIndex, Установить
+VectorIndex, VectorDirectionObject ) свойство
+
+Входные параметры:
+
+long PointIndex  " индекс точки.
+VectorIndex " cпособ создания сопряжения в за"
+
+данной вершине сплайна из перечи"
+сления ksTransitionVectorIndexEnum.
+
+VectorOrientation  Направление вектора в точке сопряжения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+1479
+
+
+
+VectorOrientation = Object.VectorOrientation( Получить свойство (* )
+PointIndex, VectorIndex );
+Object.VectorOrientation( PointIndex, VectorIndex ) = Установить свойство (* )
+VectorOrientation;
+VectorOrientation = Object.GetVectorOrientation( Получить свойство (**)
+PointIndex, VectorIndex );
+Object.SetVectorOrientation( PointIndex, Установить свойство (**)
+VectorIndex, VectorOrientation );
+
+Синтаксис COM:
+
+Object.get_VectorOrientation( PointIndex, Получить
+VectorIndex, &VectorOrientation ) свойство
+Object.put_VectorOrientation(  PointIndex, Установить
+VectorIndex, VectorOrientation ) свойство
+
+Входные параметры:
+
+long PointIndex  " индекс точки.
+VectorIndex " cпособ создания сопряжения в за"
+
+данной вершине сплайна из перечи"
+сления ksTransitionVectorIndexEnum.
+
+В Компас 18.1 удалены свойства:
+▼ SplineTangent
+▼ TangentCurve 
+▼ VectorLenght 
+
+ISpline3D  методы
+
+AddVertex  Создать новую вершину
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddVertex( long Index );
+Синтаксис COM:
+HRESULT AddVertex( [in] long Index,
+[out, retval] ICurveVertexParam ** Result);
+Возвращаемое значение:
+
+ICurveVertexParam " указатель на интерфейс 
+параметров вершины 
+ломаной.
+1480
+
+
+
+ClearTangentParameters  Удалить параметры управления во 
+всех точках
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearTangentParameters();
+Синтаксис COM:
+HRESULT ClearTangentParameters( BOOL * Result );
+Возвращаемое значение:
+ 
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+DeleteCenterPointParams  Удалить параметры для заданной 
+точки
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteCenterPointParams( long PointIndex );
+Синтаксис COM:
+HRESULT DeleteCenterPointParams( long PointIndex, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения.
+
+Входные параметры:
+ 
+
+ PointIndex " индекс точки.
+
+DeleteVertex  Удалить вершину с указанным индексом
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteVertex( long Index );
+Синтаксис COM:
+HRESULT DeleteVertex([in] long Index,
+[out, retval] VARIANT_BOOL * Result );
+Входные параметры:
+1481
+
+
+
+Index " индекс вершины.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Flush  Очистить массив вершин
+Интерфейс...
+Синтаксис Automation:
+BOOL Flush();
+Синтаксис COM:
+HRESULT Flush([out, retval] VARIANT_BOOL * Result);
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+GetCenterPoint  Угол вектора производной в указанной 
+точке
+Интерфейс...
+Синтаксис Automation:
+BOOL GetCenterPoint( long PointIndex, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetCenterPoint( long PointIndex, double * X, double * Y, double * Z, BOOL * Result
+);
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Входные параметры:
+ 
+
+ PointIndex " индекс точки.
+
+Выходные параметры:
+    
+
+ X, Y, Z " координаты точки.
+1482
+
+
+
+GetVector  Получить направление касательного вектора (в 
+сопаряжении)
+Интерфейс...
+Синтаксис Automation:
+BOOL GetVector( long PointIndex, ksTransitionVectorIndexEnum VectorIndex, double * X,
+double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetVector( long PointIndex, ksTransitionVectorIndexEnum VectorIndex, double * X,
+double * Y, double * Z, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Входные параметры:
+ 
+ PointIndex " индекс точки,
+ VectorIndex " cпособ создания сопряжения в заданной 
+
+вершине сплайна из перечисления 
+ksTransitionVectorIndexEnum.
+
+Выходные параметры:
+   
+
+ X, Y, Z " координаты направления вектора.
+
+GetVertexCoordinatesArray  Получить массив координат и 
+весов вершин в виде SAFEARRAY double  VT_ARRAY | VT_R8
+
+Интерфейс...
+Синтаксис Automation:
+BOOL GetVertexCoordinatesArray( VARIANT * Coordinates,
+VARIANT * Weights );
+Синтаксис COM:
+HRESULT GetVertexCoordinatesArray([out] VARIANT * Coordinates,
+[out] VARIANT * Weights,
+[out, retval] VARIANT_BOOL * Result);
+Входные параметры:
+
+Coordinates " массив SafeArray типа VT_ARRAY | VT_R8 
+координат точек всех вершин,
+1483
+
+
+
+Weights " массив SafeArray типа VT_ARRAY | VT_R8 весов 
+каждой из всех вершин.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание.
+
+1.  Параметры Coordinates и Weights не являются обязательными. В функцию достаточно
+передать один из указателей на VARIANT.
+
+2.  Массивы являются согласованными:
+Координаты точек в массиве Coordinates лежат в следующей последовательности:
+
+▼ x0, y0, z0, x1, y1, z1 ...xi, yi, zi,
+Веса точек в массиве Weights лежат в последовательности:
+
+▼ weight0, weight1, ...weighti.
+
+InvertVector  Сменить направление касательного вектора на 
+обратное (в сопряжении)
+Интерфейс...
+Синтаксис Automation:
+BOOL InvertVector( long PointIndex, ksTransitionVectorIndexEnum VectorIndex );
+Синтаксис COM:
+HRESULT InvertVector( long PointIndex, ksTransitionVectorIndexEnum VectorIndex, BOOL *
+Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения.
+
+Входные параметры:
+ 
+
+ PointIndex " индекс точки,
+ VectorIndex " cпособ создания сопряжения в заданной вершине 
+
+сплайна из перечисления ksTransitionVectorIndexEnum.
+
+ReadFromFile  Прочитать параметры вершин из текстового 
+файла
+Интерфейс...
+1484
+
+
+
+Синтаксис Automation:
+BOOL ReadFromFile( BSTR fileName );
+Синтаксис COM:
+HRESULT ReadFromFile( [in] BSTR fileName,
+[out, retval] VARIANT_BOOL * Result);
+Входные параметры:
+
+fileName " имя файла.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание.
+См. также ISpline3D::WriteToFile.
+
+SetCenterPoint  Угол вектора производной в указанной точке
+Интерфейс...
+Синтаксис Automation:
+BOOL SetCenterPoint( long PointIndex, double X, double Y, double Z );
+Синтаксис COM:
+HRESULT SetCenterPoint( long PointIndex, double X, double Y, double Z, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения.
+
+Входные параметры:
+ 
+
+ PointIndex " индекс точки,
+ X, Y, Z " координаты точки.
+
+SetVector  Установить направление касательного вектора
+Интерфейс...
+Синтаксис Automation:
+BOOL SetVector( long PointIndex, ksTransitionVectorIndexEnum VectorIndex, double X,
+double Y, double Z );
+Синтаксис COM:
+1485
+
+
+
+HRESULT SetVector( long PointIndex, ksTransitionVectorIndexEnum VectorIndex, double X,
+double Y, double Z, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удач"
+ного заверше"
+ния.
+
+Входные параметры:
+ 
+
+ PointIndex " индекс точки,
+ VectorIndex " cпособ создания сопряжения в заданной вершине 
+
+сплайна из перечисления ksTransitionVectorIndexEnum.
+X, Y, Z " координаты направления вектора.
+
+WriteToFile  Записать параметры вершин в текстовый файл
+Интерфейс...
+Синтаксис Automation:
+BOOL WriteToFile( BSTR fileName );
+Синтаксис COM:
+HRESULT WriteToFile( [in] BSTR fileName,
+[out, retval] VARIANT_BOOL * Result);
+Входные параметры:
+
+fileName " имя файла.
+
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Примечание.
+См. также ISpline3D::ReadFromFile.
+В Компас 18.1 удалены методы:
+
+▼ SetTangentVector
+▼ GetTangentVector
+▼ Invert 
+1486
+
+
+
+Интерфейс ISplineOnSurface
+Справка системы КОМПАС...
+kompas.chm::/CM_SPLINE_ON_SURFACE.htm
+Сплайн на поверхности.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ISplineOnSurface
+Примечание:
+Интерфейс можно получить у коллекции сплайнов по поверхностям с помощью свойст"
+ва ISplinesOnSurfaces::SplineOnSurface и метода ISplinesOnSurfaces::Add.
+
+ISplineOnSurface  свойства
+
+AssociationObject  Установить опорный объект для вершины
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+AssociationObject = Object.AssociationObject( Index ) Получить свойство (* )
+Object.AssociationObject( Index ) = AssociationObject Установить свойство (* )
+AssociationObject = Object.GetAssociationObject( Index ) Получить свойство (**)
+Object.SetAssociationObject( Index, AssociationObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AssociationObject( Index, &AssociationObject ) Получить свойство
+Object.put_AssociationObject(  Index, AssociationObject ) Установить свойство
+
+Входные параметры:
+long  Index " индекс вершины.
+
+Closed  Замкнутость
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Closed = Object.Closed Получить свойство (* )
+Object.Closed = Closed Установить свойство (* )
+1487
+
+
+
+Closed = Получить свойство (**)
+Object.GetClosed()
+Object.SetClosed( Closed ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Closed( Получить свойство
+&Closed )
+Object.put_Closed( Установить свойство
+Closed )
+
+Reverse  Противоположное направление
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Reverse = Object.Reverse( Index ) Получить свойство (* )
+Object.Reverse( Index ) = Reverse Установить свойство (* )
+Reverse = Object.GetReverse( Index ) Получить свойство (**)
+Object.SetReverse( Index, Reverse ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Reverse( Index, &Reverse ) Получить свойство
+Object.put_Reverset(  Index, Reverse ) Установить свойство
+
+Входные параметры:
+long  Index " индекс вершины.
+Свойство позволяет устанавливать и получать признак того, что направление изменено
+на противоположное.
+
+SplineOnPoles  Тип построения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SplineOnPoles = Object.SplineOnPoles Получить свойство (* )
+Object.SplineOnPoles = SplineOnPoles Установить свойство (* )
+SplineOnPoles = Object.GetSplineOnPoles() Получить свойство (**)
+Object.SetSplineOnPoles( SplineOnPoles ) Установить свойство (**)
+
+Синтаксис COM:
+1488
+
+
+
+Object.get_SplineOnPoles( &SplineOnPoles ) Получить свойство
+Object.put_SplineOnPoles(  SplineOnPoles ) Установить свойство
+
+TRUE " по полюсам
+FALSE " по точкам.
+
+SplineOrder  Порядок сплайна
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+SplineOrder = Object.SplineOrder Получить свойство (* )
+Object.SplineOrder = SplineOrder Установить свойство (* )
+SplineOrder = Получить свойство (**)
+Object.GetSplineOrder()
+Object.SetSplineOrder( SplineOrder ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SplineOrder( Получить свойство
+&SplineOrder )
+Object.put_SplineOrder(  SplineOrder Установить свойство
+)
+
+SurfaceObject  Установить поверхность
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+SurfaceObject = Object.SurfaceObject Получить свойство (* )
+Object.SurfaceObject = SurfaceObject Установить свойство (* )
+SurfaceObject = Object.GetSurfaceObject() Получить свойство (**)
+Object.SetSurfaceObject( SurfaceObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SurfaceObject( &SurfaceObject Получить свойство
+)
+Object.put_SurfaceObject(  SurfaceObject ) Установить свойство
+
+SplineTangent  Тип касательного вектора в вершине
+Интерфейс...
+Тип данных: из перечисления ksSplineTangentEnum
+1489
+
+
+
+Синтаксис Automation:
+
+SplineTangent = Object.SplineTangent( Index ) Получить свойство (* )
+Object.SplineTangent( Index ) = SplineTangent Установить свойство (* )
+SplineTangent = Object.GetSplineTangent( Index ) Получить свойство (**)
+Object.SetSplineTangent( Index, SplineTangent ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SplineTangent( Index, &SplineTangent ) Получить свойство
+Object.put_SplineTangent(  Index, SplineTangent ) Установить свойство
+
+Входные параметры:
+long  Index " индекс вершины.
+
+TangentCurve  Касательная кривая
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+TangentCurve = Object.TangentCurve( Index ) Получить свойство (* )
+Object.TangentCurve( Index ) = TangentCurve Установить свойство (* )
+TangentCurve = Object.GetTangentCurve( Index ) Получить свойство (**)
+Object.SetTangentCurve( Index, TangentCurve ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_TangentCurve( Index, &TangentCurve ) Получить свойство
+Object.put_TangentCurve(  Index, TangentCurve ) Установить свойство
+
+Входные параметры:
+long  Index " индекс вершины.
+
+VertexCount  Получить количество вершин
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+VertexCount = Object.VertexCount Получить свойство (* )
+VertexCount = Object.GetVertexCount() Получить свойство (**)
+
+Синтаксис COM:
+1490
+
+
+
+Object.get_VertexCount( &VertexCount Получить свойство
+)
+
+Примечание:
+Свойство доступно только для чтения.
+
+VectorLenght  Длина вектора
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+VectorLenght = Object.VectorLenght( Index ) Получить свойство (* )
+Object.VectorLenght( Index ) = VectorLenght Установить свойство (* )
+VectorLenght = Object.GetVectorLenght( Index ) Получить свойство (**)
+Object.SetVectorLenght( Index, VectorLenght ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VectorLenght( Index, &VectorLenght Получить свойство
+)
+Object.put_VectorLenght(  Index, VectorLenght ) Установить свойство
+
+Входные параметры:
+long  Index " индекс вершины.
+
+ISplineOnSurface  методы
+
+AddPoint  Создание новой вершины
+Интерфейс...
+Синтаксис Automation:
+BOOL AddPoint( long IndexAt, double X, double Y, double Z, double W, IModelObject *
+AssociationObject );
+Синтаксис COM:
+HRESULT AddPoint( long IndexAt, double X, double Y, double Z, double W, IModelObject *
+AssociationObject, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры: 
+1491
+
+
+
+IndexAt " индекс вершины,
+X " координата по X,
+Y " координата по Y,
+Z " координата по Z
+W " вес,
+Association " ассоциативная вершина.
+Object
+
+AddVertex  Создание новой вершины
+Интерфейс...
+Синтаксис Automation:
+BOOL AddVertex( long IndexAt,
+double U,
+double V,
+double W,
+IModelObject * AssociationObject );
+Синтаксис COM:
+HRESULT AddVertex( long IndexAt,
+double U,
+double V,
+double W,
+IModelObject * AssociationObject,
+BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+IndexAt " индекс вершины, перед которой нужно добавить
+новую,
+
+U " координата по U в %,
+V " координата по V в %,
+W " вес,
+Association " ассоциативная вершина.
+Object
+
+Clear  Очистить массив вершин
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+1492
+
+
+
+HRESULT Clear( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+ClearTangentParameters  Удалить параметры управления во 
+всех точках
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearTangentParameters();
+Синтаксис COM:
+HRESULT ClearTangentParameters( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+DeleteVertex  Удалить вершину с указанным индексом
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteVertex( long Index );
+Синтаксис COM:
+HRESULT DeleteVertex( long Index, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры: 
+
+Index " индекс вершины.
+
+GetPoint  Получить координаты и вес вершины
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPoint( long Index, double * X, double * Y, double * Z, double * W );
+Синтаксис COM:
+1493
+
+
+
+HRESULT GetPoint( long Index, double * X, double * Y, double * Z, double * W, BOOL * Result
+);
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры: 
+
+Index " индекс вершины.
+
+Выходные параметры:
+
+X " координата по X,
+Y " координата по Y,
+Z " координата по Z,
+W " вес.
+
+GetTangentVector  Получить направление касательного 
+вектора
+Интерфейс...
+Синтаксис Automation:
+BOOL GetTangentVector( long Index, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetTangentVector( long Index, double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры: 
+
+Index " индекс вершины.
+
+Выходные параметры:
+
+X " координата по X,
+Y " координата по Y,
+Z " координата по Z.
+
+GetVertex  Получить координаты UV и вес вершины
+Интерфейс...
+1494
+
+
+
+Синтаксис Automation:
+BOOL GetVertex( long Index, double * U, double * V, double * W );
+Синтаксис COM:
+HRESULT GetVertex( long Index, double * U, double * V, double * W, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры: 
+
+Index " индекс вершины.
+
+Выходные параметры:
+
+U " координата по U в %,
+V " координата по V в %,
+W " вес.
+
+GetVertexParams  Массив параметров UV и весов вершин в 
+виде SAFEARRAY double  VT_ARRAY | VT_R8
+Интерфейс...
+Синтаксис Automation:
+BOOL GetVertexParams( VARIANT * UV, VARIANT * Points, VARIANT * Weights );
+Синтаксис COM:
+HRESULT GetVertexParams( VARIANT * UV, VARIANT * Points, VARIANT * Weights, BOOL *
+Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Выходные параметры:
+
+UV " массив VT_ARRAY | VT_R8 параметров UV,
+Points " массив VT_ARRAY | VT_R8 координат вершин,
+Weights " массив VT_ARRAY | VT_R8 весов вершин. 
+
+Invert  Сменить направление касательного вектора на 
+обратное
+Интерфейс...
+Синтаксис Automation:
+1495
+
+
+
+BOOL Invert( long Index );
+Синтаксис COM:
+HRESULT Invert( long Index, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры: 
+
+Index " индекс вершины.
+
+SetPoint  Установить координаты и вес вершины
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPoint( long Index, double X, double Y, double Z, double W );
+Синтаксис COM:
+HRESULT SetPoint( long Index, double X, double Y, double Z, double W, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры: 
+
+X " координата по X,
+Y " координата по Y,
+Z " координата по Z,
+W " вес.
+
+SetTangentVector  Установить направление касательного 
+вектора
+Интерфейс...
+Синтаксис Automation:
+BOOL SetTangentVector( long Index, double X, double Y, double Z );
+Синтаксис COM:
+HRESULT SetTangentVector( long Index, double X, double Y, double Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+1496
+
+
+
+FALSE " в случае неудачи.
+Входные параметры: 
+
+Index " индекс вершины,
+X " координата по X,
+Y " координата по Y,
+Z " координата по Z.
+
+SetVertex  Установить координаты UV и вес вершины
+Интерфейс...
+Синтаксис Automation:
+BOOL SetVertex( long Index, double U, double V, double W );
+Синтаксис COM:
+HRESULT SetVertex( long Index, double U, double V, double W, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Index " индекс вершины,
+U " координата по U в %,
+V " координата по V в %,
+W " вес.
+
+Интерфейс ISurfacesIntersectionCurve
+Справка системы КОМПАС...
+kompas.chm::/1021_108_13_Krivay_peresech_poverchnostey.htm
+Интерфейс кривых пересечений поверхностей.
+Иерархия:
+IKompasAPIObject
+
+IModelObject
+ISurfacesIntersectionCurve
+
+Описание:
+Интерфейс позволяет создать кривую пересечения двух поверхностей, или двух наборов
+поверхностей, или поверхности и набора.
+Примечание:
+1497
+
+
+
+Интерфейс можно получить с помощью свойства
+ISurfacesIntersectionCurves::SurfacesIntersectionCurve и метода
+ISurfacesIntersectionCurves::Add.
+
+ISurfacesIntersectionCurve  свойства
+
+AutoCheck  Включение/выключение автоматического 
+выбора всех массивов ребер
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoCheck = Object.AutoCheck Получить свойство (* )
+Object.AutoCheck = AutoCheck Установить свойство (* )
+AutoCheck = Получить свойство (**)
+Object.GetAutoCheck()
+Object.SetAutoCheck( Установить свойство (**)
+AutoCheck )
+
+Синтаксис COM:
+
+Object.get_AutoCheck( Получить свойство
+&AutoCheck )
+Object.put_AutoCheck( Установить свойство
+AutoCheck )
+
+Свойство позволяет включать и отключать автоматический выбор всех массивов ребер.
+
+EdgesArraysCount  Количество массивов ребер в кривой 
+пересечения поверхностей
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+EdgesArraysCount = Получить свойство (* )
+Object.EdgesArraysCount
+EdgesArraysCount = Получить свойство (**)
+Object.GetEdgesArraysCount()
+
+Синтаксис COM:
+
+Object.get_EdgesArraysCount( Получить свойство
+&EdgesArraysCount )
+1498
+
+
+
+Свойство позволяет получить количество массивов ребер в кривой пересечения повер"
+хностей.
+Примечание:
+Свойство доступно только для чтения.
+
+Edges  Количество массивов ребер в кривой пересечения 
+поверхностей
+Интерфейс...
+Тип данных: VARIANT 
+Синтаксис Automation:
+
+Edges = Object.Edges( Получить свойство (* )
+EdgesArrayIndex )
+Edges = Object.GetEdges( Получить свойство (**)
+EdgesArrayIndex )
+
+Синтаксис COM:
+
+Object.get_Edges( Получить свойство
+EdgesArrayIndex,  &Edges )
+
+Входные параметры:
+
+EdgesArrayIndex  " индекс массива ре"
+бер
+
+Примечание:
+Свойство доступно только для чтения.
+В зависимости от количества ребер возвращается:
+
+▼ нет ребер " VT_EMPTY (если указан неправильный индекс или ребра не созданы),
+▼ одно ребро " VT_DISPATCH,
+▼ более одного ребра " VT_ARRAY | VT_DISPATCH.
+
+Индекс должен быть в диапазоне 0...ISurfacesIntersectionCurve::EdgesArraysCount"1.
+
+EdgesCheck  Признак выбора указанного по индексу массива 
+ребер
+Интерфейс...
+Тип данных: BOOL 
+Синтаксис Automation:
+
+EdgesCheck = Object.EdgesCheck( EdgesArrayIndex ) Получить свойство (* )
+Object.EdgesCheck( EdgesArrayIndex ) = EdgesCheck Установить свойство (* )
+1499
+
+
+
+EdgesCheck = Object.GetEdgesCheck( EdgesArrayIndex ) Получить свойство (**)
+Object.SetEdgesCheck( EdgesArrayIndex, EdgesCheck) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EdgesCheck( Получить свойство
+EdgesArrayIndex,  &EdgesCheck
+)
+Object.put_EdgesCheck( Установить свойство
+EdgesArrayIndex, EdgesCheck )
+
+Входные параметры:
+
+EdgesArrayIndex  " индекс массива ребер.
+
+Примечание:
+Индекс должен быть в диапазоне 0...ISurfacesIntersectionCurve::EdgesArraysCount"1.
+
+EdgesChecks  Признаки выбора массивов ребер
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_BOOL
+Синтаксис Automation:
+
+EdgesChecks = Object.EdgesChecks Получить свойство (* )
+Object.EdgesChecks = EdgesChecks Установить свойство (* )
+EdgesChecks = Object.GetEdgesChecks() Получить свойство (**)
+Object.SetEdgesChecks( EdgesChecks ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EdgesChecks( Получить свойство
+&EdgesChecks )
+Object.put_EdgesChecks( Установить свойство
+EdgesChecks )
+
+Свойство позволяет устанавливать и получать признаки выбора массива ребер.
+
+EdgesChecksCount  Количество доступных для создания 
+контуров
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+EdgesChecksCount = Получить свойство (* )
+Object.EdgesChecksCount
+1500
+
+
+
+EdgesChecksCount = Получить свойство (**)
+Object.GetEdgesChecksCount()
+
+Синтаксис COM:
+
+Object.get_EdgesChecksCount( Получить свойство
+&EdgesChecksCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ObjectsCount  Получить количество объектов в указанном 
+наборе
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ObjectsCount = Получить свойство (* )
+Object.ObjectsCount( ForArray1 )
+ObjectsCount = Получить свойство (**)
+Object.GetObjectsCount(
+ForArray1 )
+
+Синтаксис COM:
+
+Object.get_ObjectsCount( Получить свойство
+ForArray1, &ObjectsCount )
+
+Входные параметры:
+
+ForArray1  " TRUE " первый набор,
+ " FALSE " второй набор.
+
+Свойство позволяет получить количество объектов в указанном наборе.
+Примечание:
+Свойство доступно только для чтения.
+
+ISurfacesIntersectionCurve  методы
+
+AddObjects  Добавить элемент(ы) в указанный набор
+Интерфейс...
+Синтаксис Automation:
+1501
+
+
+
+BOOL AddObjects( BOOL ForArray1, VARIANT * Objects );
+Синтаксис COM:
+HRESULT AddObjects( BOOL ForArray1, VARIANT * Objects, BOOL * Res );
+Выходные параметры:
+
+ForArray1  " TRUE " первый набор,
+ " FALSE " второй набор,
+
+Objects  " набор граней.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+Примечание:
+Если в набор добавляется одна грань, то ее можно передать как VT_DISPATCH.
+Если в набор добавляется несколько граней, то нужно передать массив VT_ARRAY |
+VT_DISPATCH.
+
+Clear  Очистить указанный набор объектов
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear( BOOL ForArray1 );  
+Синтаксис COM:
+HRESULT Clear( BOOL ForArray1, BOOL * Res );
+Выходные параметры:
+
+ForArray1  " TRUE " первый набор,
+ " FALSE " второй набор.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+GetObject  Получить объект из указанного набора по 
+индексу
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH GetObject( BOOL ForArray1, long Index );
+Синтаксис COM:
+HRESULT GetObject( BOOL ForArray1, long Index, IModelObject **Object );
+Выходные параметры:
+1502
+
+
+
+ForArray1  " TRUE " первый набор,
+ " FALSE " второй набор,
+
+Index  " индекс объекта в наборе.
+
+Возвращаемое значение:
+
+" указатель на интерфейс IModelObject.
+
+GetObjects  Получить 1й и 2й наборы поверхностей
+Интерфейс...
+Синтаксис Automation:
+BOOL GetObjects( VARIANT * ObjectsArray1, VARIANT * ObjectsArray2 );  
+Синтаксис COM:
+HRESULT GetObjects( VARIANT * ObjectsArray1, VARIANT * ObjectsArray2, BOOL * Res );
+Выходные параметры:
+
+ObjectsArray1  " первый набор граней,
+ObjectsArray2  " первый набор граней.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+Примечание:
+Если в наборе одна грань, то она возвращается как VT_DISPATCH.
+Если в наборе несколько граней, то возвращается массив VT_ARRAY | VT_DISPATCH.
+
+SetObjects  Задать 1й и 2й наборы поверхностей
+Интерфейс...
+Синтаксис Automation:
+BOOL SetObjects( VARIANT ObjectsArray1, VARIANT ObjectsArray2 )
+Синтаксис COM:
+HRESULT SetObjects( VARIANT ObjectsArray1, VARIANT ObjectsArray2, BOOL * Res );
+Входные параметры:
+
+ObjectsArray1  " первый набор граней,
+ObjectsArray2  " первый набор граней.
+
+Возвращаемое значение:
+1503
+
+
+
+TRUE  " в случае удачи.
+
+Примечание:
+Если требуется передать одну грань в наборе, ее можно передать как VT_DISPATCH.
+Если требуется передать несколько граней в наборе, то нужно передать его как массив
+VT_ARRAY | VT_DISPATCH.
+
+Интерфейс ITrimmedCurve
+Справка системы КОМПАС...
+kompas.chm::/CM_CURVEOPER_CUT.htm
+Интерфейс параметров операции усечения кривой
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ITrimmedCurve
+
+ITrimmedCurve  свойства
+
+BeginParameter  Начальный параметр кривой
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BeginParameter = Object.BeginParameter Получить свойство (* )
+Object.BeginParameter = BeginParameter Установить свойство (* )
+BeginParameter = Object.GetBeginParameter() Получить свойство (**)
+Object.SetBeginParameter( BeginParameter ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BeginParameter( &BeginParameter ) Получить свойство 
+Object.put_BeginParameter(  BeginParameter ) Установить свойство 
+
+CutObject1  Первый секущий объект для усечения кривой
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+1504
+
+
+
+CutObject1 = Object.CutObject1 Получить свойство (* )
+Object.CutObject1 = CutObject1 Установить свойство (* )
+CutObject1 = Object.GetCutObject1() Получить свойство (**)
+Object.SetCutObject1( CutObject1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CutObject1( &CutObject1 ) Получить свойство
+Object.put_CutObject1(  CutObject1 ) Установить свойство
+
+Свойство позволяет устанавливать и получать первый секущий объект.
+
+CutObject2  Второй секущий объект для усечения кривой
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+CutObject2 = Object.CutObject2 Получить свойство (* )
+Object.CutObject2 = CutObject2 Установить свойство (* )
+CutObject2 = Object.GetCutObject2() Получить свойство (**)
+Object.SetCutObject2( CutObject2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CutObject2( &CutObject2 ) Получить свойство
+Object.put_CutObject2(  CutObject2 ) Установить свойство
+
+Свойство позволяет устанавливать и получать второй секущий объект.
+
+Curve  Усекаемая кривая
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Curve = Object.Curve Получить свойство
+(* )
+
+Object.Curve = Curve Установить свойство
+(* )
+
+Curve = Object.GetCurve() Получить свойство
+(**)
+
+Object.SetCurve( Curve ) Установить свойство
+(**)
+
+Синтаксис COM:
+1505
+
+
+
+Object.get_Curve( &Curve ) Получить свойство
+Object.put_Curve(  Curve ) Установить свойство
+
+Свойство позволяет устанавливать и получать усекаемую кривую.
+
+EndParameter  Конечный параметр кривой
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+EndParameter = Object.EndParameter Получить свойство (* )
+Object.EndParameter = EndParameter Установить свойство (* )
+EndParameter = Object.GetEndParameter() Получить свойство (**)
+Object.SetEndParameter( EndParameter ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_EndParameter( &EndParameter ) Получить свойство 
+Object.put_EndParameter(  EndParameter ) Установить свойство 
+
+Sense  Сменить направление
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Sense = Object.Sense Получить свойство (* )
+Object.Sense = Sense Установить свойство (* )
+Sense = Object.GetSense() Получить свойство (**)
+Object.SetSense( Sense ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sense( &Sense ) Получить свойство 
+Object.put_Sense(  Sense ) Установить свойство 
+
+Свойство позволяет менять направление усечения.
+Примечание:
+Свойство работает только при UseTwoCutObjecs = FALSE.
+
+UseTwoCutObjecs  Использовать два секущих объекта
+Интерфейс...
+1506
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseTwoCutObjecs = Object.UseTwoCutObjecs Получить свойство (* )
+Object.UseTwoCutObjecs = UseTwoCutObjecs Установить свойство (* )
+UseTwoCutObjecs = Получить свойство (**)
+Object.GetUseTwoCutObjecs()
+Object.SetUseTwoCutObjecs( UseTwoCutObjecs Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_UseTwoCutObjecs( Получить свойство 
+&UseTwoCutObjecs )
+Object.put_UseTwoCutObjecs( Установить свойство 
+UseTwoCutObjecs )
+
+Свойство позволяет устанавливать и получать признак использования двух секущих объ"
+ектов.
+
+ITrimmedCurve  методы
+
+GetIntersectParameters  Получить массивы точек 
+пересечения кривой с секущими объектами
+Интерфейс...
+Синтаксис Automation:
+BOOL GetIntersectParameters( VARIANT * CutPoints1, VARIANT * CutPoints2 );
+Синтаксис COM:
+HRESULT GetIntersectParameters( VARIANT * CutPoints1, VARIANT * CutPoints2, BOOL *
+Result );
+Выходные параметры
+CutPoints1 " Массив VT_ARRAY | VT_R8 параметров в точках пересечения с первым секу"
+щим объектом.
+CutPoints2 " Массив VT_ARRAY | VT_R8 параметров в точках пересечения со вторым се"
+кущим объектом.
+
+Интерфейс IUnhistoredCurve3D
+Интерфейс кривой без истории.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IUnhistoredCurve3D
+1507
+
+
+
+Интерфейс можно получить у коллекции кривых без истории с помощью свойства
+IUnhistoredCurves3D::UnhistoredCurve3D и методов IUnhistoredCurves3D::Add и
+IUnhistoredCurves3D::Load. 
+
+IUnhistoredCurve3D  методы
+
+Replace  Изменить кривую
+Интерфейс...
+Синтаксис Automation:
+BOOL Replace( IModelObject * Curve, BOOL DeleteSource );
+Синтаксис COM:
+HRESULT Replace( IModelObject * Curve, BOOL DeleteSource, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Curve " указатель на кривую,
+DeleteSource " удалить исходную кривую.
+
+Метод заменяет математику в кривой без истории на математику с переданной кривой.
+
+Unwrap  Построить развертку
+Интерфейс...
+Синтаксис Automation:
+BOOL Unwrap( VARIANT Placement, double X, double Y, double Z, double Accuracy );
+Синтаксис COM:
+HRESULT Unwrap( VARIANT Placement, double X, double Y, double Z, double Accuracy, BOOL
+* Result );
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ Placement " положение плоскости, на которой требуется
+построить развертку,
+
+X, Y, Z " координаты начала построения развертки,
+Accuracy " точность.
+1508
+
+
+
+Интерфейс IUserFolder
+Интерфейс пользовательской директории.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IUserFolder
+               Данный интерфейс можно получить с помощью метода IUserFolders::Add.
+Версия: КОМПАС v18.
+
+IUserFolder  методы
+
+Add  Создает новый элемент и добавляет его в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add(ksObj3dTypeEnum Type);
+Синтаксис COM
+HRESULT Add( ksObj3dTypeEnum Type, IModelObject * * Result );
+Возвращаемое значение:
+ 
+
+"указатель на интерфейс IModelObject.
+
+Входные параметры:
+
+Type " тип объекта из перечисления ksObj3dTypeEnum
+
+GetObjects  Получить набор объектов в виде SAFEARRAY 
+DISPATCH  VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetObjects();
+Синтаксис COM:
+HRESULT GetObjects( VARIANT * Result );
+Возвращаемое значение: 
+Коллекция объектов возвращается в виде массива SAFEARRAY объектов LPDISPATCH
+(VT_ARRAY | VT_DISPATCH). 
+Если возвращается один объект, то тип VARIANT"а будет VT_DISPATCH, если возвраща"
+ется несколько объектов, то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+1509
+
+
+
+SetObjects  Задать объекты
+Интерфейс...
+Синтаксис Automation:
+BOOL SetObjects( VARIANT Objects );
+Синтаксис COM:
+HRESULT SetObjects( VARIANT Objects, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+
+Objects " набор объектов.
+
+ Примечание:
+▼ Если требуется передать один объект в наборе, его можно передать как VT_DISPATCH.
+▼ Если требуется передать несколько объектов в наборе, то нужно передать их как массив
+
+VT_ARRAY | VT_DISPATCH.
+
+Интерфейс IUserObject3D
+Интерфейс пользовательского объекта 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IUserObject3D
+Имеет дополнительный интерфейс IUserParameters, который можно получить с помо"
+щью метода IUnknown::QueryInterface.
+
+IUserObject3D  свойства
+
+AssociationObject  Опорный объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+AssociationObject = Получить свойство (* )
+Object.AssociationObject( Index );
+Object.AssociationObject( Index ) = Установить свойство (* )
+AssociationObject;
+1510
+
+
+
+AssociationObject = Получить свойство (**)
+Object.GetAssociationObject( Index );
+Object.SetAssociationObject( Index, Установить свойство (**)
+AssociationObject );
+
+Синтаксис COM:
+
+Object.get_AssociationObject( Index, Получить свойство
+&AssociationObject )
+Object.put_AssociationObject(  Index, Установить свойство
+AssociationObject )
+
+Входные параметры:
+
+long Index " индекс объекта.
+
+AssociationObjectCount  Количество опорных объектов
+Интерфейс...
+Тип данных: Указатель на интерфейс long
+Синтаксис Automation:
+
+AssociationObjectCount = Получить свойство (* )
+Object.AssociationObjectCount
+AssociationObjectCount = Получить свойство (**)
+Object.GetAssociationObjectCou
+nt()
+
+Синтаксис COM:
+
+Object.get_AssociationObjectCo Получить свойство
+unt( &AssociationObjectCount )
+
+Примечание:
+ Свойство доступно только для чтения.
+
+ObjectID  Идентификатор объекта
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ObjectID = Object.ObjectID Получить свойство (* )
+ Object.ObjectID = ObjectID Установить свойство (* )
+ObjectID = Object.GetObjectID() Получить свойство (**)
+ Object.SetObjectID( ObjectID ) Установить свойство (**)
+1511
+
+
+
+Синтаксис COM:
+
+Object.get_ObjectID( &ObjectID ) Получить свойство
+Object.put_ObjectID(  ObjectID ) Установить свойство
+
+PropertyObjectEditable  Поддерживается интерфейс 
+внешних свойств объекта
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+PropertyObjectEditable = Получить свойство (* )
+Object.PropertyObjectEditable
+ Object.PropertyObjectEditable = Установить свойство (* )
+PropertyObjectEditable
+PropertyObjectEditable = Получить свойство (**)
+Object.GetPropertyObjectEditable()
+Object.SetPropertyObjectEditable( Установить свойство (**)
+PropertyObjectEditable )
+
+Синтаксис COM:
+
+Object.get_PropertyObjectEditable( Получить свойство
+&PropertyObjectEditable )
+Object.put_PropertyObjectEditable( Установить свойство
+PropertyObjectEditable )
+
+UserParameters  Получить интерфейс параметров
+Интерфейс...
+Тип данных: Указатель на интерфейс IUnknown
+Синтаксис Automation:
+
+UserParameters = Получить свойство
+Object.UserParameters (* )
+UserParameters = Получить свойство
+Object.GetUserParameters() (**)
+
+Синтаксис COM:
+
+ Object.get_UserParameters( Получить свойство
+&UserParameters )
+
+Примечание:
+1512
+
+
+
+ Свойство доступно только для чтения.
+
+IUserObject3D  методы
+
+ClearAssociationObject  Удалить все опорные объекты
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearAssociationObject();
+Синтаксис COM:
+HRESULT ClearAssociationObject( BOOL * Result);
+Возвращаемое значение:
+
+TRU " в случае удачного завершения,
+E 
+FAL " в случае неудачи.
+SE
+
+Интерфейс IEdge
+Интерфейс Ребро 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IEdge
+КОМПАС версия v18
+
+IEdge  свойства
+
+AdjacentFace  Получить указатель на интерфейс грани, в 
+цикл которой входит ребро
+Интерфейс...
+Тип данных: Указатель на интерфейс IFace. 
+Синтаксис Automation:
+
+BaseAdjacentFace = Получить свойство (* )
+Object.BaseAdjacentFace
+BaseAdjacentFace = Получить свойство (**)
+Object.GetBaseAdjacentFace()
+
+Синтаксис COM:
+1513
+
+
+
+ Object.get_BaseAdjacentFace( Получить свойство
+&BaseAdjacentFace )
+
+Примечание:
+Свойство доступно только для чтения.
+
+BaseCurve3DType  Тип базовой кривой
+Интерфейс...
+Тип данных: Значение из перечисления ksMathCurve3DTypeEnum.
+Синтаксис Automation:
+
+BaseCurve3DType = Получить свойство (* )
+Object.BaseCurve3DType
+BaseCurve3DType = Получить свойство (**)
+Object.GetBaseCurve3DType()
+
+Синтаксис COM:
+
+ Object.get_BaseCurve3DType( Получить свойство
+&BaseCurve3DType )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Curve3DType  Тип кривой
+Интерфейс...
+Тип данных: Значение из перечисления ksMathCurve3DTypeEnum.
+Синтаксис Automation:
+
+Curve3DType = Получить свойство (* )
+Object.Curve3DType
+Curve3DType = Получить свойство (**)
+Object.GetCurve3DType()
+
+Синтаксис COM:
+

@@ -1,0 +1,2532 @@
+Object.SetCreateZonesInGlobalCS( Установить свойство (**)
+CreateZonesInGlobalCS ) 
+
+Синтаксис COM:
+
+Object.get_CreateZonesInGlobalCS( Получить свойство
+&CreateZonesInGlobalCS ) 
+Object.put_CreateZonesInGlobalCS( Установить свойство
+CreateZonesInGlobalCS )
+
+CurrentZone  Текущая зона
+Интерфейс
+Тип данных: Указатель на интерфейс IZone
+Синтаксис Automation:
+
+CurrentZone = Object.CurrentZone Получить свойство (* )
+Object.CurrentZone = CurrentZone Установить свойство (* )
+CurrentZone = Object.GetCurrentZone() Получить свойство (**)
+Object.SetCurrentZone( CurrentZone ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CurrentZone( &CurrentZone ) Получить свойство
+Object.put_CurrentZone(  CurrentZone ) Установить свойство
+
+Zone  Получить зону по имени или индексу
+Интерфейс
+Тип данных: Указатель на интерфейс IZone 
+Синтаксис Automation:
+
+Zone = Object.Zone( Index ) Получить свойство (* )
+Zone = Object.GetZone( Index ) Получить свойство (**)
+
+Синтаксис COM:
+2723
+
+
+
+Object.get_Zone( Index, &Zone ) Получить свойство
+
+Входные параметры:
+
+VARIANT Index  " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ZonesCount  Количество зон
+Интерфейс
+Тип данных: long
+Синтаксис Automation:
+
+ZonesCount = Получить свойство (* )
+Object.ZonesCount
+ZonesCount = Получить свойство (**)
+Object.GetZonesCount()
+
+Синтаксис COM:
+
+Object.get_ZonesCount( Получить свойство
+&ZonesCount )
+
+Примечание:
+
+ZoneDivision  Получить объект Разбиение зоны по 
+имени или индексу
+Интерфейс
+Тип данных: Указатель на интерфейс IZoneDivision
+Синтаксис Automation:
+
+ZoneDivision = Получить свойство (* )
+Object.ZoneDivision( Index )
+ZoneDivision = Получить свойство (**)
+Object.GetZoneDivision( Index )
+
+Синтаксис COM:
+2724
+
+
+
+Object.get_ZoneDivision( Index, Получить свойство
+&ZoneDivision )
+
+Входные параметры:
+
+VARIANT Index  " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ZonesDivisionCount  Количество объектов Разбиение 
+зоны
+Интерфейс
+Тип данных: long
+Синтаксис Automation:
+
+ZonesDivisionCount = Получить свойство (* )
+Object.ZonesDivisionCount
+ZonesDivisionCount = Получить свойство (**)
+Object.GetZonesDivisionCount()
+
+Синтаксис COM:
+
+Object.get_ZonesDivisionCount( Получить свойство
+&ZonesDivisionCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ZonesTree  Дерево зон
+Интерфейс
+Тип данных: Указатель на интерфейс IFeature7 
+Синтаксис Automation:
+
+ZonesTree = Object.ZonesTree Получить свойство (* )
+ZonesTree = Получить свойство (**)
+Object.GetZonesTree()
+
+Синтаксис COM:
+2725
+
+
+
+Object.get_ZonesTree( Получить свойство
+&ZonesTree )
+
+Примечание:
+Свойство доступно только для чтения.
+
+ZonesVisible  Отображать зоны
+Интерфейс
+Тип данных: BOOL
+Синтаксис Automation:
+
+ZonesVisible = Object.ZonesVisible Получить свойство (* )
+Object.ZonesVisible = ZonesVisible Установить свойство (* )
+ZonesVisible = Object.GetZonesVisible() Получить свойство (**)
+Object.SetZonesVisible( ZonesVisible ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ZonesVisible( &ZonesVisible ) Получить свойство
+Object.put_ZonesVisible(  ZonesVisible ) Установить свойство
+
+IZonesManager  методы
+AddZone  Добавить зону
+Интерфейс
+Синтаксис Automation:
+LPDISPATCH AddZone( ksZoneTypeEnum ZoneType );
+Синтаксис COM :
+HRESULT AddZone( ksZoneTypeEnum ZoneType, IZone ** Result );
+Возвращаемое значение: 
+
+Указатель на интер"
+фейс IZone
+
+Входные параметры:
+
+ZoneType " cпособ создания зоны из перечисления
+ksZoneTypeEnum
+2726
+
+
+
+AddZoneDivision  Добавить Разбиение зоны
+Интерфейс
+Синтаксис Automation:
+LPDISPATCH AddZoneDivision( ksZoneDivisionTypeEnum ZoneType );
+Синтаксис COM :
+HRESULT AddZoneDivision( ksZoneDivisionTypeEnum ZoneType, IZoneDivision * * Result );
+Возвращаемое значение: 
+
+" указатель на интерфейс
+IZoneDivision 
+
+Входные параметры:
+
+ZoneType " cпособ разбиения зоны из пере"
+числения ksZoneDivisionTypeEnum
+
+Интерфей IZoneDivision
+Интерфейс параметров разбиения зоны
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IZoneDivision
+
+Данный интерфейс можно получить с помощью метода IZonesManager::AddZoneDivision
+или свойства IZonesManager::ZoneDivision.
+Версия Компас v18.1 
+
+IZoneDivision  свойства
+Parameters  Параметры зоны
+Интерфейс
+Тип данных: Указатель на интерфейс IKompasAPIObject 
+Синтаксис Automation:
+
+Parameters = Object.Parameters Получить свойство (* )
+Parameters = Получить свойство (**)
+Object.GetParameters()
+
+Синтаксис COM:
+2727
+
+
+
+Object.get_Parameters( Получить свойство
+&Parameters )
+
+Примечание:
+Свойство доступно только для чтения.
+В зависимости от способа создания зоны IZoneDivision::ZoneDivisionType возвращается
+интерфейс параметров зоны.
+
+▼ ksZoneDivisionRegular   " Параметры разбиения зоны для способа Равномерно по осям   "
+IZoneDivisionParametersRegular;
+
+▼ ksZoneDivisionByPlanes " Параметры разбиения зоны для способа По набору плоскостей
+" IZoneDivisionParametersByPlanes.
+
+Zone  Зона
+Интерфейс
+Тип данных: Указатель на интерфейс IZone 
+Синтаксис Automation:
+
+Zone = Object.Zone Получить свойство (* )
+Object.Zone = Zone Установить свойство (* )
+Zone = Object.GetZone() Получить свойство (**)
+Object.SetZone( Zone ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Zone( &Zone ) Получить свойство
+Object.put_Zone(  Zone ) Установить свойство
+
+ZoneDivisionType  Способ разбиения зоны
+Интерфейс
+Тип данных: из перечисления ksZoneDivisionTypeEnum
+Синтаксис Automation:
+
+ZoneDivisionType = Получить свойство (* )
+Object.ZoneDivisionType
+Object.ZoneDivisionType = Установить свойство (* )
+ZoneDivisionType 
+ZoneDivisionType = Получить свойство (**)
+Object.GetZoneDivisionType()
+Object.SetZoneDivisionType( Установить свойство (**)
+ZoneDivisionType ) 
+
+Синтаксис COM:
+2728
+
+
+
+Object.get_ZoneDivisionType( Получить свойство
+&ZoneDivisionType )
+Object.put_ZoneDivisionType( Установить свойство
+ZoneDivisionType )
+
+Интерфейс IZoneParametersByBorderPoints
+Интерфейс параметров зоны, заданной габаритным параллелепипедом.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IZoneParametersByBorderPoints
+
+Данный интерфейс можно получить с помощью метода IZone::Parameters.
+Версия Компас v18.1
+
+IZoneParametersByBorderPoints  свойство
+AssociationObject  Установить опорный объект для 
+вершины
+Интерфейс
+Тип данных: Указатель на интерфейс IModelObject 
+Синтаксис Automation:
+
+AssociationObject = Получить свойство (* )
+Object.AssociationObject( First ) 
+Object.AssociationObject( First ) = Установить свойство (* )
+AssociationObject
+AssociationObject = Получить свойство (**)
+Object.GetAssociationObject( First )
+Object.SetAssociationObject( First, Установить свойство (**)
+AssociationObject )
+
+Синтаксис COM:
+
+Object.get_AssociationObject( First, Получить свойство
+&AssociationObject )
+Object.put_AssociationObject(  First, Установить свойство
+AssociationObject )
+
+Входные параметры:
+2729
+
+
+
+BOOL  " First " TRUE " первая вершина,
+             FALSE " вторая вершина.
+
+BuildingType  Способ задания габаритов
+Интерфейс
+Тип данных: из перечисления ksGabaritBuildingTypeEnum.
+Синтаксис Automation:
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Object.GetBuildingType() Получить свойство (**)
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( &BuildingType Получить свойство
+)
+Object.put_BuildingType(  BuildingType ) Установить свойство
+
+PointParameters  Получить интерфейс параметров 
+точки
+Интерфейс
+Тип данных: Указатель на интерфейс IKompasAPIObject 
+Синтаксис Automation:
+
+PointParameters = Получить свойство (* )
+Object.PointParameters( First )
+PointParameters = Получить свойство (**)
+Object.GetPointParameters( First
+)
+
+Синтаксис COM:
+
+Object.get_PointParameters( Получить свойство
+First, &PointParameters )
+
+Примечание:
+Свойство доступно только для чтения.
+2730
+
+
+
+PointType  Тип параметров построения точки
+Интерфейс
+Тип данных: из перечисления ksPoint3DTypeEnum
+Синтаксис Automation:
+
+PointType = Object.PointType( First ) Получить свойство (* )
+Object.PointType( First ) = PointType Установить свойство (* )
+PointType = Object.GetPointType( First ) Получить свойство (**)
+Object.SetPointType( First, PointType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointType( First, &PointType ) Получить свойство
+Object.put_PointType(  First, PointType ) Установить свойство
+
+Входные параметры:
+
+BOOL " First " TRUE " первая вершина,
+FALSE " вторая вершина.
+
+IZoneParametersByBorderPoints  методы
+GetPoint  Получить координаты точки
+Интерфейс
+Синтаксис Automation:
+BOOL GetPoint( BOOL First, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetPoint( BOOL First, double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+
+First " TRUE " первая вершина,
+" FALSE " вторая вершина.
+
+Выходные параметры:
+
+X, Y, Z " Координаты вершины.
+2731
+
+
+
+SetPoint  Установить координаты точки
+Интерфейс
+Синтаксис Automation :
+BOOL SetPoint( BOOL First, double X, double Y, double Z );
+Синтаксис COM :
+HRESULT SetPoint( BOOL First, double X, double Y, double Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+
+First " TRUE " первая вершина,
+" FALSE " вторая вершина.
+
+Интерфейс IZoneParametersByObjects 
+Интерфейс параметров зоны по суммарному габариту объектов.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IZoneParametersByObjects
+
+Данный интерфейс можно получить с помощью метода IZone::Parameters.
+Версия Компас v18.1
+
+IZoneParametersByObjects  свойства
+BaseObjects  Объекты
+Интерфейс
+Тип данных: VARIANT
+Синтаксис Automation:
+
+BaseObjects = Object.BaseObjects Получить свойство (* )
+Object.BaseObjects = BaseObjects Установить свойство (* )
+BaseObjects = Object.GetBaseObjects() Получить свойство (**)
+Object.SetBaseObjects( BaseObjects ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseObjects( &BaseObjects ) Получить свойство
+Object.put_BaseObjects(  BaseObjects ) Установить свойство
+2732
+
+
+
+Примечание.
+Позволяет получать и устанавливать опорный объект или массив опорных объектов по
+которым определяется суммарный габарит зоны. 
+Массив объектов возвращается в виде массива SAFEARRAY объектов LPDISPATCH
+(VT_ARRAY | VT_DISPATCH).
+
+Интерфейс IZoneDivisionParametersRegular
+Интерфейс параметров разбиения зоны для способа Равномерно по осям.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IZoneDivisionParametersRegular
+
+Данный интерфейс можно получить с помощью метода IZoneDivision::Parameters.
+Версия Компас v18.1
+
+IZoneDivisionParametersRegular  свойства
+XCount  Количество по X
+Интерфейс
+Тип данных: long
+Синтаксис Automation:
+
+XCount = Object.XCount Получить свойство (* )
+Object.XCount = XCount Установить свойство (* )
+XCount = Object.GetXCount() Получить свойство (**)
+Object.SetXCount( XCount ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_XCount( &XCount ) Получить свойство
+Object.put_XCount(  XCount ) Установить свойство
+
+YCount  Количество по Y
+Интерфейс
+Тип данных: long
+Синтаксис Automation:
+
+YCount = Object.YCount Получить свойство (* )
+Object.YCount = YCount Установить свойство (* )
+2733
+
+
+
+YCount = Object.GetYCount() Получить свойство (**)
+Object.SetYCount( YCount ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_YCount( &YCount ) Получить свойство
+Object.put_YCount(  YCount ) Установить свойство
+
+ZCount  Количество по Z
+Интерфейс
+Тип данных: long
+Синтаксис Automation:
+
+ZCount = Object.ZCount Получить свойство (* )
+Object.ZCount = ZCount Установить свойство (* )
+ZCount = Object.GetZCount() Получить свойство (**)
+Object.SetZCount( ZCount ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ZCount( &ZCount ) Получить свойство
+Object.put_ZCount(  ZCount ) Установить свойство
+
+Интерфейс IZoneDivisionParametersByPlanes 
+Интерфейс параметров разбиения зоны для способа по набору плоскостей.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IZoneDivisionParametersByPlanes
+
+Данный интерфейс можно получить с помощью метода IZoneDivision::Parameters.
+Версия Компас v18.1
+
+IZoneDivisionParametersByPlanes  свойства
+Planes  Секущие плоскости
+Интерфейс
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Planes = Object.Planes Получить свойство (* )
+Object.Planes = Planes Установить свойство (* )
+2734
+
+
+
+Planes = Object.GetPlanes() Получить свойство (**)
+Object.SetPlanes( Planes ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Planes( &Planes ) Получить свойство
+Object.put_Planes(  Planes ) Установить свойство
+
+Примечание.
+Позволяет получать и устанавливать секущую плоскость или массив секущих плоско"
+стей для разбиения зоны. 
+Массив объектов возвращается в виде массива SAFEARRAY объектов LPDISPATCH
+(VT_ARRAY | VT_DISPATC.
+
+Динамическое сечение
+Интерфейс IDynamicCrossSection
+Интерфейс параметров динамического сечения.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IDynamicCrossSection
+Данный интерфейс можно получить с помощью метода
+IDynamicCrossSectionsManager::AddDynamicCrossSection и свойств
+IDynamicCrossSectionsManager::DynamicCrossSection,
+IDynamicCrossSectionsManager::CurrentDynamicCrossSection.
+Версия Компас v18.1
+
+IDynamicCrossSection  свойства
+FillCutPlanes  Закрашивать сечение
+Интерфейс
+Тип данных: BOOL
+Синтаксис Automation:
+
+FillCutPlanes = Object.FillCutPlanes Получить свойство (* )
+Object.FillCutPlanes = FillCutPlanes Установить свойство (* )
+FillCutPlanes = Object.GetFillCutPlanes() Получить свойство (**)
+Object.SetFillCutPlanes( FillCutPlanes ) Установить свойство (**)
+
+Синтаксис COM:
+2735
+
+
+
+Object.get_FillCutPlanes( &FillCutPlanes ) Получить свойство
+Object.put_FillCutPlanes(  FillCutPlanes ) Установить свойство
+
+Step  Получить шаг сечения по индексу
+Интерфейс
+Тип данных: Указатель на интерфейс IDynamicCrossSectionStep. 
+Синтаксис Automation:
+
+Step = Object.Step( Index ) Получить свойство
+(* )
+
+Step = Object.GetStep( Index ) Получить свойство
+(**)
+
+Синтаксис COM:
+
+Object.get_Step( Index, &Step ) Получить свойство
+
+Входные параметры:
+
+long Index  " индекс шага.
+
+Примечание:
+Свойство доступно только для чтения.
+
+StepsCount  Количество шагов сечения
+Интерфейс
+Тип данных: long
+Синтаксис Automation:
+
+StepsCount = Object.StepsCount Получить свойство (* )
+StepsCount = Получить свойство (**)
+Object.GetStepsCount()
+
+Синтаксис COM:
+
+Object.get_StepsCount( Получить свойство
+&StepsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+2736
+
+
+
+IDynamicCrossSection  методы
+AddStep  Добавить шаг
+Интерфейс
+Синтаксис Automation:
+LPDISPATCH AddStep( ksDynamicCrossSectionStepBuildingTypeEnum BuildingType );
+Синтаксис COM:
+HRESULT AddStep( ksDynamicCrossSectionStepBuildingTypeEnum BuildingType,
+IDynamicCrossSectionStep * * Result );
+Возвращаемое значение: 
+
+ Указатель на интерфейс
+IDynamicCrossSectionStep.
+
+Входные параметры:
+
+BuildingType  " Способ создания шага сечения
+модели из перечисления
+ksDynamicCrossSectionStepBuilding
+TypeEnum.
+
+Delete  Удаление сечения
+Интерфейс
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Интерфейс IDynamicCrossSectionStep
+Интерфейс Шаг динамического сечения.
+Иерархия:
+2737
+
+
+
+IDispatch
+IKompasAPIObject
+
+IDynamicCrossSectionStep
+Данный интерфейс можно получить с помощью метода IDynamicCrossSection::AddStep и
+свойства IDynamicCrossSection::Step.
+
+IDynamicCrossSectionStep  свойства
+BuildingType  Тип шага динамического сечения
+Интерфейс
+Тип данных: из перечисления ksDynamicCrossSectionStepBuildingTypeEnum.
+Синтаксис Automation:
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Object.GetBuildingType() Получить свойство (**)
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( &BuildingType Получить свойство
+)
+Object.put_BuildingType(  BuildingType ) Установить свойство
+
+Parameters  Параметры шага
+Интерфейс
+Тип данных: Указатель на интерфейс IKompasAPIObject 
+Синтаксис Automation:
+
+Parameters = Object.Parameters Получить свойство (* )
+Parameters = Получить свойство (**)
+Object.GetParameters()
+
+Синтаксис COM:
+
+Object.get_Parameters( Получить свойство
+&Parameters )
+
+Примечание:
+Свойство доступно только для чтения.
+2738
+
+
+
+IDynamicCrossSectionStep  методы
+Delete  Удаление шага
+Интерфейс
+Синтаксис Automation :
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Интерфейс IDynamicCrossSectionsManager
+Интерфейс Менеджера динамических сечений.
+Иерархия:
+IDispatch
+
+IDynamicCrossSectionsManager
+Интерфейс является дополнительным к интерфейсу документа IKompasDocument3D.
+Данный интерфейс можно получить с помощью метода IUnknown::QueryInterface (const
+GUID far& iid, void** pif).
+Версия Компас v18.1
+
+IDynamicCrossSectionsManager  свойства
+CurrentDynamicCrossSection  Текущее динамическое 
+сечение
+Интерфейс
+Тип данных: Указатель на интерфейс IDynamicCrossSection.
+Синтаксис Automation:
+
+CurrentDynamicCrossSection = Получить свойство (* )
+Object.CurrentDynamicCrossSection
+Object.CurrentDynamicCrossSection = Установить свойство (* )
+CurrentDynamicCrossSection
+CurrentDynamicCrossSection = Получить свойство (**)
+Object.GetCurrentDynamicCrossSection()
+2739
+
+
+
+Object.SetCurrentDynamicCrossSection( Установить свойство (**)
+CurrentDynamicCrossSection )
+
+Синтаксис COM:
+
+Object.get_CurrentDynamicCrossSection Получить свойство
+( &CurrentDynamicCrossSection )
+Object.put_CurrentDynamicCrossSection Установить свойство
+(  CurrentDynamicCrossSection ) 
+
+DynamicCrossSection  Получить объект по имени, 
+индексу или указателю на размер
+Интерфейс
+Тип данных: Указатель на интерфейс IDynamicCrossSection.
+Синтаксис Automation:
+
+DynamicCrossSection = Получить свойство (* )
+Object.DynamicCrossSection(
+Index ) 
+DynamicCrossSection = Получить свойство (**)
+Object.GetDynamicCrossSection
+( Index )
+
+Синтаксис COM:
+
+Object.get_DynamicCrossSectio Получить свойство
+n( Index, &DynamicCrossSection
+)
+
+Примечание:
+Свойство доступно только для чтения.
+
+DynamicCrossSectionsCount  Количество динамических 
+сечений
+Интерфейс
+Тип данных: long
+Синтаксис Automation:
+2740
+
+
+
+DynamicCrossSectionsCount = Получить свойство
+Object.DynamicCrossSectionsCo (* )
+unt 
+DynamicCrossSectionsCount = Получить свойство
+Object.GetDynamicCrossSection (**)
+sCount()
+
+Синтаксис COM:
+
+Object.get_DynamicCrossSectio Получить свойство
+nsCount(
+&DynamicCrossSectionsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+DynamicCrossSectionModeOn  Включить/отключить 
+режим отображения сечения модели
+Интерфейс
+Тип данных: BOOL
+Синтаксис Automation:
+
+DynamicCrossSectionModeOn = Получить свойство (* )
+Object.DynamicCrossSectionModeOn
+Object.DynamicCrossSectionModeOn = Установить свойство (* )
+DynamicCrossSectionModeOn
+DynamicCrossSectionModeOn = Получить свойство (**)
+Object.GetDynamicCrossSectionModeOn
+()
+Object.SetDynamicCrossSectionModeOn Установить свойство (**)
+( DynamicCrossSectionModeOn )
+
+Синтаксис COM:
+
+Object.get_DynamicCrossSectionModeO Получить свойство
+n( &DynamicCrossSectionModeOn )
+Object.put_DynamicCrossSectionModeO Установить свойство
+n(  DynamicCrossSectionModeOn )
+2741
+
+
+
+IDynamicCrossSectionsManager  методы
+AddDynamicCrossSection  Добавить динамическое 
+сечение
+Интерфейс
+Синтаксис Automation:
+LPDISPATCH AddDynamicCrossSection();
+Синтаксис COM :
+HRESULT AddDynamicCrossSection( IDynamicCrossSection * * Result );
+Возвращаемое значение: 
+
+ " Указатель на интерфейс
+IDynamicCrossSection.
+
+Интерфейс 
+IDynamicCrossSectionStepParametersByFreePlane
+Интерфейс параметров шага динамического сечения по произвольной плоско
+сти.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDynamicCrossSectionStepParametersByFreePlane
+
+Данный интерфейс можно получить с помощью метода
+IDynamicCrossSectionStep::Parameters.
+Версия Компас v18.1
+
+IDynamicCrossSectionStepParametersByFreePlane  
+свойства
+LocalCoordinateSystem  Локальная система координат
+Интерфейс
+Тип данных: Указатель на интерфейс ILocalCoordinateSystem.
+Синтаксис Automation:
+
+LocalCoordinateSystem = Получить свойство (* )
+Object.LocalCoordinateSystem 
+2742
+
+
+
+LocalCoordinateSystem = Получить свойство (**)
+Object.GetLocalCoordinateSyste
+m()
+
+Синтаксис COM:
+
+Object.get_LocalCoordinateSyst Получить свойство
+em( &LocalCoordinateSystem )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IDynamicCrossSectionStepParametersByFreePlane  
+методы
+ReverseDirection  Изменить направление отсечения
+Интерфейс
+Синтаксис Automation:
+BOOL ReverseDirection();
+Синтаксис COM:
+HRESULT ReverseDirection( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Интерфейс 
+IDynamicCrossSectionStepParametersByOffsetPlane
+Интерфейс параметров шага динамического сечения по смещенной плоскости.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDynamicCrossSectionStepParametersByOffsetPlane
+
+Данный интерфейс можно получить с помощью метода
+IDynamicCrossSectionStep::Parameters.
+Версия Компас v18.1
+2743
+
+
+
+IDynamicCrossSectionStepParametersByOffsetPlane  
+свойства
+BaseStep  Базовый шаг
+Интерфейс
+Тип данных: Указатель на интерфейс IDynamicCrossSectionStep 
+Синтаксис Automation:
+
+BaseStep = Object.BaseStep Получить свойство (* )
+Object.BaseStep = BaseStep Установить свойство (* )
+BaseStep = Object.GetBaseStep() Получить свойство (**)
+Object.SetBaseStep( BaseStep ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseStep( &BaseStep ) Получить свойство
+Object.put_BaseStep(  BaseStep ) Установить свойство
+
+OffsetPlane  Параметры смещенной плоскости
+Интерфейс
+Тип данных: Указатель на интерфейс IPlane3DByOffset.
+Синтаксис Automation:
+
+OffsetPlane = Object.OffsetPlane Получить свойство (* )
+OffsetPlane = Object.GetOffsetPlane() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OffsetPlane( &OffsetPlane ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+PlaneBuildingType  Тип шага динамического сечения
+Интерфейс
+Тип данных: из перечисления ksCrossSectionPlaneBuildingTypeEnum.
+Синтаксис Automation:
+
+PlaneBuildingType = Object.PlaneBuildingType Получить свойство (* )
+Object.PlaneBuildingType = PlaneBuildingType Установить свойство (* )
+2744
+
+
+
+PlaneBuildingType = Object.GetPlaneBuildingType() Получить свойство (**)
+Object.SetPlaneBuildingType( PlaneBuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PlaneBuildingType( Получить свойство
+&PlaneBuildingType )
+Object.put_PlaneBuildingType( Установить свойство
+PlaneBuildingType )
+
+IDynamicCrossSectionStepParametersByOffsetPlane  
+методы
+ReverseDirection  Изменить направление отсечения
+Интерфейс
+Синтаксис Automation :
+BOOL ReverseDirection();
+Синтаксис COM:
+HRESULT ReverseDirection( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Интерфейс 
+IDynamicCrossSectionStepParametersByRotatedPlane
+Интерфейс параметров шага динамического сечения по плоскости под углом.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDynamicCrossSectionStepParametersByRotatedPlane
+
+Данный интерфейс можно получить с помощью метода
+IDynamicCrossSectionStep::Parameters.
+Версия Компас v18.1
+2745
+
+
+
+IDynamicCrossSectionStepParametersByRotatedPlane  
+свойства
+BaseStep  Базовый шаг
+Интерфейс
+Тип данных: Указатель на интерфейс IDynamicCrossSectionStep. 
+Синтаксис Automation:
+
+BaseStep = Object.BaseStep Получить свойство (* )
+Object.BaseStep = BaseStep Установить свойство (* )
+BaseStep = Object.GetBaseStep() Получить свойство (**)
+Object.SetBaseStep( BaseStep ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseStep( &BaseStep ) Получить свойство
+Object.put_BaseStep(  BaseStep ) Установить свойство
+
+Plane  Плоскость под углом к другой плоскости
+Интерфейс
+Тип данных: Указатель на интерфейс IPlane3DByAngle.
+Синтаксис Automation:
+
+Plane = Object.Plane Получить свойство (* )
+Plane = Object.GetPlane() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Plane( &Plane ) Получить свойство
+
+Примечание:
+ Свойство доступно только для чтения.
+
+PlaneBuildingType  Тип шага динамического сечения
+Интерфейс
+Тип данных: из перечисления ksCrossSectionPlaneBuildingTypeEnum.
+Синтаксис Automation:
+2746
+
+
+
+PlaneBuildingType = Получить свойство (* )
+Object.PlaneBuildingType
+Object.PlaneBuildingType = Установить свойство (* )
+PlaneBuildingType
+PlaneBuildingType = Получить свойство (**)
+Object.GetPlaneBuildingType()
+Object.SetPlaneBuildingType( Установить свойство (**)
+PlaneBuildingType )
+
+Синтаксис COM:
+
+Object.get_PlaneBuildingType( Получить свойство
+&PlaneBuildingType )
+Object.put_PlaneBuildingType( Установить свойство
+PlaneBuildingType )
+
+Интерфейс 
+IDynamicCrossSectionStepParametersByZone
+Интерфейс параметров шага динамического сечения по зоне.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDynamicCrossSectionStepParametersByZone
+
+Данный интерфейс можно получить с помощью метода
+IDynamicCrossSectionStep::Parameters.
+Версия Компас v18.1
+
+IDynamicCrossSectionStepParametersByZone  
+свойства
+Zone  Зона
+Интерфейс
+Тип данных: Указатель на интерфейс IZone.
+Синтаксис Automation:
+
+Zone = Object.Zone Получить свойство (* )
+Object.Zone = Zone Установить свойство (* )
+Zone = Object.GetZone() Получить свойство (**)
+Object.SetZone( Zone ) Установить свойство (**)
+
+Синтаксис COM:
+2747
+
+
+
+Object.get_Zone( &Zone ) Получить свойство
+Object.put_Zone(  Zone ) Установить свойство
+
+Интерфейс 
+IDynamicCrossSectionStepParametersByBorderPoints
+Интерфейс параметров шага динамического сечения по габаритному паралле
+лепипеду, заданному точками.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDynamicCrossSectionStepParametersByBorderPoints
+
+Данный интерфейс можно получить с помощью метода
+IDynamicCrossSectionStep::Parameters.
+Версия Компас v18.1
+
+IDynamicCrossSectionStepParametersByBorderPoints 
+свойства
+AssociationObject  Установить опорный объект для 
+вершины
+Интерфейс
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+AssociationObject = Получить свойство (* )
+Object.AssociationObject( First )
+Object.AssociationObject( First ) = Установить свойство (* )
+AssociationObject
+AssociationObject = Получить свойство (**)
+Object.GetAssociationObject( First )
+Object.SetAssociationObject( First, Установить свойство (**)
+AssociationObject )
+
+Синтаксис COM:
+
+Object.get_AssociationObject( First, Получить свойство
+&AssociationObject )
+Object.put_AssociationObject( First, Установить свойство
+AssociationObject )
+
+Входные параметры:
+2748
+
+
+
+BOOL  " First " TRUE " первая вершина,
+ FALSE " вторая вершина.
+
+BuildingType  Вариант построения габарита
+Интерфейс
+Тип данных: из перечисления ksGabaritBuildingTypeEnum.
+Синтаксис Automation:
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Object.GetBuildingType() Получить свойство (**)
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( &BuildingType Получить свойство
+)
+Object.put_BuildingType(  BuildingType ) Установить свойство
+
+PointParameters  Получить интерфейс параметров 
+точки
+Интерфейс
+Тип данных: Указатель на интерфейс IKompasAPIObject. 
+Синтаксис Automation:
+
+PointParameters = Получить свойство (* )
+Object.PointParameters( First )
+PointParameters = Получить свойство (**)
+Object.GetPointParameters( First
+)
+
+Синтаксис COM:
+
+Object.get_PointParameters( First, &PointParameters ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+2749
+
+
+
+PointType  Тип параметров построения точки
+Интерфейс
+Тип данных: из перечисления ksPoint3DTypeEnum.
+Синтаксис Automation:
+
+PointType = Object.PointType( First ) Получить свойство (* )
+Object.PointType( First ) = PointType Установить свойство (* )
+PointType = Object.GetPointType( First ) Получить свойство (**)
+Object.SetPointType( First, PointType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointType( First, &PointType ) Получить свойство
+Object.put_PointType( First,  PointType ) Установить свойство
+
+Входные параметры:
+
+BOOL  " First " TRUE " первая вершина,
+FALSE " вторая вершина.
+
+IDynamicCrossSectionStepParametersByBorderPoints  
+методы
+GetPoint  Получить координату точки
+Интерфейс
+Синтаксис Automation:
+BOOL GetPoint( BOOL First, double * X, double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetPoint( BOOL First, double * X, double * Y, double * Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+
+First " TRUE " первая вершина,
+FALSE " вторая вершина.
+
+Выходные параметры:
+
+X,Y, Z " координаты вершины.
+2750
+
+
+
+SetPoint  Установить координату точки
+Интерфейс
+Синтаксис Automation:
+BOOL SetPoint( BOOL First, double X, double Y, double Z );
+Синтаксис COM:
+HRESULT SetPoint( BOOL First, double X, double Y, double Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного завершения.
+
+Входные параметры:
+
+First " TRUE " первая вершина,
+ FALSE " вторая вершина.
+
+X,Y, Z " координаты вершины.
+2751
+
+
+
+2752
+
+
+
+Дерево СЧИ
+Интерфейс IProductDataManager
+Менеджер Дерева СЧИ.
+Иерархия:
+IDispatch
+
+IProductDataManager
+Интерфейс является дополнительным к интерфейсу IKompasDocument. Данный интер"
+фейс можно получить посредством вызова метода IUnknown::QueryInterface (const GUID
+far& iid, void** pif).
+КОМПАС версия v18
+
+IProductDataManager  свойства
+
+Geometry  Список подключенных документов
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Geometry = Object.Geometry( Получить свойство (* )
+PropObject )
+Object.Geometry( PropObject ) = Установить свойство (* )
+Geometry
+Geometry = Object.GetGeometry( Получить свойство (**)
+PropObject )
+Object.SetGeometry( Установить свойство (**)
+PropObject, Geometry )
+
+Синтаксис COM:
+
+Object.get_Geometry( Получить свойство
+PropObject, &Geometry )
+Object.put_Geometry( Установить свойство
+PropObject, Geometry )
+
+Входные параметры:
+
+IPropertyKeeper * PropObject " указатель на объ"
+ект СЧИ.
+
+Примечание: 
+Свойство возвращает переменную типа VARIANT на безопасный массив SAFEARRAY
+(VT_ARRAY | VT_DISPATCH).
+2753
+
+
+
+MetaProductInfo  Метаданные дерева СЧИ
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+MetaProductInfo = Получить свойство (* )
+Object.MetaProductInfo
+Object.MetaProductInfo = Установить свойство (* )
+MetaProductInfo
+MetaProductInfo = Получить свойство (**)
+Object.GetMetaProductInfo()
+Object.SetMetaProductInfo( Установить свойство (**)
+MetaProductInfo )
+
+Синтаксис COM:
+
+Object.get_MetaProductInfo( Получить свойство
+&MetaProductInfo )
+Object.put_MetaProductInfo( Установить свойство
+MetaProductInfo )
+
+ObjectAttachedDocuments  Список подключенных к 
+объекту документов
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ObjectAttachedDocuments = Получить свойство (* )
+Object.ObjectAttachedDocument
+s( PropObject )
+Object.ObjectAttachedDocument Установить свойство (* )
+s( PropObject ) =
+ObjectAttachedDocuments 
+ObjectAttachedDocuments = Получить свойство (**)
+Object.GetObjectAttachedDocum
+ents( PropObject )
+Object.SetObjectAttachedDocum Установить свойство (**)
+ents( PropObject,
+ObjectAttachedDocuments )
+
+Синтаксис COM:
+2754
+
+
+
+Object.get_ObjectAttachedDocu Получить свойство
+ments( PropObject,
+&ObjectAttachedDocuments )
+Object.put_ObjectAttachedDocu Установить свойство
+ments(  PropObject,
+ObjectAttachedDocuments )
+
+Входные параметры:
+
+IPropertyKeeper * PropObject " указатель на объ"
+ект СЧИ.
+
+Примечание: 
+Свойство возвращает переменную типа VARIANT на безопасный массив имен файлов,
+связанных с объектом СЧИ SAFEARRAY (VT_ARRAY | VT_BSTR).
+
+ObjectMetaProductInfo  Метаданные объекта дерева 
+СЧИ
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ObjectMetaProductInfo = Получить свойство (* )
+Object.ObjectMetaProductInfo(
+PropObject )
+Object.ObjectMetaProductInfo( Установить свойство (* )
+PropObject ) =
+ObjectMetaProductInfo 
+ObjectMetaProductInfo = Получить свойство (**)
+Object.GetObjectMetaProductInf
+o( PropObject )
+Object.SetObjectMetaProductInf Установить свойство (**)
+o( PropObject,
+ObjectMetaProductInfo )
+
+Синтаксис COM:
+
+Object.get_ObjectMetaProductIn Получить свойство
+fo( PropObject,
+&ObjectMetaProductInfo )
+Object.put_ObjectMetaProductIn Установить свойство
+fo(  PropObject,
+ObjectMetaProductInfo )
+2755
+
+
+
+Входные параметры:
+
+IPropertyKeeper * PropObject " указатель на объ"
+ект СЧИ.
+
+ProductObjects  Получить массив объектов дерева СЧИ
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ProductObjects = Получить свойство (* )
+Object.ProductObjects( Filter )
+ProductObjects = Получить свойство (**)
+Object.GetProductObjects( Filter
+)
+
+Синтаксис COM:
+
+Object.get_ProductObjects( Получить свойство
+Filter, &ProductObjects )
+
+Входные параметры:
+
+long Filter " фильтр по типам
+объектов.
+
+Примечание:
+Свойство доступно только для чтения.
+Фильтр формируется из комбинации нужных типов объектов из перечисления
+ksProductObjectTypeEnum.
+
+ProductObject  Получить объект дерева СЧИ по 
+идентификатору
+Интерфейс...
+Тип данных: Указатель на интерфейс IPropertyKeeper
+Синтаксис Automation:
+
+ProductObject = Получить свойство (* )
+Object.ProductObject(
+UniqueMetaObjectKey )
+2756
+
+
+
+ProductObject = Получить свойство (**)
+Object.GetProductObject(
+UniqueMetaObjectKey )
+
+Синтаксис COM:
+
+Object.get_ProductObject( Получить свойство
+UniqueMetaObjectKey,
+&ProductObject )
+
+Входные параметры:
+
+ BSTR UniqueMetaObjectKey " уникальный иден"
+тификатор объекта.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ReferenceData  Справочные данные свойств
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ReferenceData = Получить свойство (* )
+Object.ReferenceData
+Object.ReferenceData = Установить свойство (* )
+ReferenceData
+ReferenceData = Получить свойство (**)
+Object.GetReferenceData()
+Object.SetReferenceData( Установить свойство (**)
+ReferenceData )
+
+Синтаксис COM:
+
+Object.get_ReferenceData( Получить свойство
+&ReferenceData )
+Object.put_ReferenceData( Установить свойство
+ReferenceData )
+
+ReferenceDataInfo  Справочные данные свойства
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+2757
+
+
+
+ReferenceDataInfo = Object.ReferenceDataInfo( Получить свойство (* )
+ReferenceDataType, ReferenceDataId )
+Object.ReferenceDataInfo( ReferenceDataType, Установить свойство (* )
+ReferenceDataId ) = ReferenceDataInfo   
+ReferenceDataInfo = Получить свойство (**)
+Object.GetReferenceDataInfo(
+ReferenceDataType, ReferenceDataId )
+Object.SetReferenceDataInfo( Установить свойство (**)
+ReferenceDataType, ReferenceDataId,
+ReferenceDataInfo )
+
+Синтаксис COM:
+
+Object.get_ReferenceDataInfo( Получить свойство
+ReferenceDataType, ReferenceDataId,
+&ReferenceDataInfo )
+Object.put_ReferenceDataInfo( Установить свойство
+ReferenceDataType, ReferenceDataId,
+ReferenceDataInfo )
+
+Входные параметры:
+
+BSTR ReferenceDataType " тип справочных данных,
+BSTR ReferenceDataId " идентификатор справочных 
+
+данных.
+
+ 
+
+ReferenceDataIds  Идентификаторы справочных 
+данных
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+ReferenceDataIds = Получить свойство (* )
+Object.ReferenceDataIds(
+ReferenceDataType )
+ReferenceDataIds = Получить свойство (**)
+Object.GetReferenceDataIds(
+ReferenceDataType )
+
+Синтаксис COM:
+2758
+
+
+
+Object.get_ReferenceDataIds( Получить свойство
+ReferenceDataType,
+&ReferenceDataIds )
+
+Примечание:
+Свойство доступно только для чтения.
+Свойство возвращает переменную типа VARIANT на безопасный массив идентификато"
+ров справочных данных SAFEARRAY (VT_ARRAY | VT_BSTR).
+
+IProductDataManager  методы
+
+AddProductObject  Добавить объект дерева СЧИ по 
+идентификатору
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddProductObject( IPropertyKeeper * Parent, BSTR Name,
+ksProductObjectTypeEnum ObjectType );
+Синтаксис COM:
+HRESULT AddProductObject( IPropertyKeeper * Parent, BSTR Name,
+ksProductObjectTypeEnum ObjectType, IPropertyKeeper * * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного 
+завершения.
+
+Входные параметры:
+
+Parent " владелец информационного 
+объекта,
+
+Name " имя объекта,
+ObjectType " тип объекта.
+
+Примечание:
+В зависимости от типа информационного объекта выбирается владелец объекта. Напри"
+мер, для вставок моделей и тел владелец " исполнение.
+
+AddReferenceData  Добавить справочные данные
+Интерфейс...
+Синтаксис Automation:
+BSTR AddReferenceData( BSTR ReferenceDataType, BSTR ReferenceDataInfo );
+2759
+
+
+
+Синтаксис COM:
+HRESULT AddReferenceData( BSTR ReferenceDataType, BSTR ReferenceDataInfo, BSTR *
+Result );
+Возвращаемое значение: 
+
+" идентификатор справочных 
+данных.
+
+Входные параметры:
+
+ReferenceDataType " тип справочных данных,
+ReferenceDataInfo " заголовок справочных 
+
+данных.
+
+DeleteProductObject  Удалить объект из дерева СЧИ по 
+идентификатору
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteProductObject( BSTR UniqueMetaObjectKey );
+Синтаксис COM:
+HRESULT DeleteProductObject( BSTR UniqueMetaObjectKey, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного 
+завершения.
+
+Входные параметры:
+
+UniqueMetaObjectKey " идентификатор объекта СЧИ.
+
+DeleteReferenceData  Удалить справочные данные
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteReferenceData( BSTR ReferenceDataType, BSTR ReferenceDataId );
+Синтаксис COM:
+HRESULT DeleteReferenceData( BSTR ReferenceDataType, BSTR ReferenceDataId, BOOL *
+Result );
+Возвращаемое значение: 
+2760
+
+
+
+TRUE " в случае успешного 
+завершения.
+
+Входные параметры:
+
+ReferenceDataType " тип справочных данных,
+ReferenceDataId " идентификатор справочных 
+
+данных.
+2761
+
+
+
+2762
+
+
+
+Константы API версии 7
+ButtonTypeEnum  Типы кнопок для элемента панели 
+свойств "Набор кнопок"
+
+ksPushButton 0 Набор обычных нефиксируе"
+мых кнопок
+
+ksCheckButton 1 Набор фиксируемых кнопок
+ksRadioButton 2 Набор кнопок с возможно"
+
+стью фиксации только одной
+кнопки
+
+CheckStateEnum  Возможные состояния элемента 
+управления Панели свойств "Переключатель состояния 
+поля ввода"
+
+ksCheckUndefined 0 Значение поля не задано;
+на переключателе пусто,
+
+ksCheckCurrent 1 Поле ввода активно; на пе"
+реключателе значок "га"
+лочка",
+
+ksCheckFixed 2 Содержание поля ввода
+зафиксировано; на пере"
+ключателе перекрестие.
+
+ksCheckVariable 3 Значение поля ввода зада"
+но; на переключателе пу"
+сто. 
+
+ControlTypeEnum  Типы элементов управления Панели 
+свойств
+
+ksControlUnknown 0 Неизвестный тип
+ksControlSeparator 1 Разделитель (сепаратор) IPropertySeparator
+ksControlEditInt 2 Редактор целочисленных IPropertyEdit
+
+значений
+ksControlEditReal 3 Редактор дробных IPropertyEdit
+
+значений
+ksControlEditStr 4 Редактор строковых IPropertyEdit
+
+значений
+ksControlListInt 5 Раскрывающийся список IPropertyList
+
+целочисленных значений
+ksControlListReal 6 Раскрывающийся список IPropertyList
+
+дробных значений
+2763
+
+
+
+ksControlListStr 7 Раскрывающийся список IPropertyList
+строковых значений
+
+ksControlCheckBox 8 Опция IPropertyCheckBox
+ksControlMultiButton 9 Набор кнопок IPropertyMultiButto
+
+n
+ksControlGrid 10 Сетка IPropertyGrid
+ksControlSlideBox 11 Окно отображения слайда, IPropertySlideBox
+
+растрового изображения, 
+группы или файла 
+документа КОМПАС
+
+ksControlUser 12 Пользовательский элемент IPropertyUserContr
+управления ol
+
+ksControlTextButton 13 Кнопка с текстом IPropertyTextButton
+ksControlSpinInt 14 Счетчик целочисленных IPropertySpinEdit
+
+значений с полем ввода
+ksControlSpinReal 15 Счетчик дробных значений IPropertySpinEdit
+
+с полем ввода
+ksControlFileName 16 Выбор файла IPropertyFileName
+ksControlColor 17 Выбор цвета IPropertyColor
+ksControlEditList 18 Список IPropertyEdit
+ksControlEditLength 19 Редактор длины IPropertyEdit
+ksControlEditAngle 20 Редактор угла IPropertyEdit
+ksControlEditPoint 21 Редактор координат IPropertyEdit
+ksControlListLength 22 Комбобокс длин IPropertyList
+ksControlListAngle 23 Комбобокс углов IPropertyList
+ksControlBmpList 24 Комбобокс со строкой и IPropertyBmpList
+
+битмапом
+ksControlLibExplorer 25 Отображение библиотеки 
+
+документов
+ksControlListScale 26 Комбобокс со списком IPropertyList
+
+масштабов
+ksControlLineStyle 27 Комбобокс со списком IPropertyStyleList
+
+стилей линий
+ksControlOpticalProps 28 Контрол оптических IPropertyOpticalPro
+
+свойств ps
+ksControlEditCheckBox 29 Редактор строковых IPropertyEdit
+
+значений c чекбоксом
+ksControlPointStyle 30 Комбобокс со списком IPropertyStyleList
+
+стилей точек
+ksControlPointStyle3D 31 Комбобокс со списком IPropertyStyleList
+
+стилей точек 3D
+ksControlLineStyle3D 32 Комбобокс со списком IPropertyStyleList
+
+стилей линий 3D
+ksControlHatchStyle 33 Комбобокс со списком IPropertyStyleList
+
+стилей штриховок
+ksControlGroupBegin 34 Начало группы контролов
+ksControlGroupEnd 35 Конец группы контролов
+ksControlTwinSwitcher 36 Переключатель
+ksControlPoint3D 37 Точка 3D
+ksControlPreviewText 38 Предпросмотр текста
+ksControlAggregateTriple 40 Составной контрол из трех 
+
+контролов
+2764
+
+
+
+ksControlBasePoint 41 Базовая точка
+ksControlLinkButton 42 Набор кнопок в виде 
+
+ссылок
+ksControlMarking 43 Контрол обозначение
+
+ConvertCoordTypeEnum  Типы преобразования 
+логических координат в координаты документа
+
+kcDocument 1 В СК документа.
+kcGeoView 2 В геометрическую точку теку"
+
+щего вида.
+kcCurrentPlane 3 В СК текущего плоского объек"
+
+та.
+
+DefaultFixTypeEnum  Тип фиксированности для 
+умолчательных элементов управления Панели свойств
+
+ksAllFixOff "1 Все элементы управления
+расфиксированы
+
+ksAllFix 0 Все элементы управления
+фиксированы
+
+ksPointFix 1 Фиксирована точка
+ksAngleFix 2 Фиксирован угол
+
+DocumentCloseOptions  Действия при закрытии 
+документа КОМПАС
+
+kdDoNotSaveChanges 0 Закрыть документ без сохранения, если 
+документ был изменен.
+
+kdSaveChanges 1 Закрыть документ, сохранив сделанные 
+изменения.
+
+kdPromptToSaveChanges 2 Выдать запрос на сохранение документа, если 
+он изменен.
+
+DocumentTypeEnum  Типы документов КОМПАС
+
+ksDocumentUnknown 0 Неизвестный тип
+ksDocumentDrawing 1 Чертеж
+ksDocumentFragment 2 Фрагмент
+ksDocumentSpecificatio 3 Спецификация
+n
+ksDocumentPart 4 Деталь
+2765
+
+
+
+ksDocumentAssembly 5 Сборка
+ksDocumentTextual 6 Текстовый доку"
+
+мент
+ksDocumentTechnology 7 Технологическая
+Assembly сборка
+
+FilterConditionStateEnum  Состояние параметра в 
+условии фильтрации слоев
+
+ksStateUndefined "1 Состояние не определено
+ksStateFALSE 0 Состояние FALSE
+ksStateTRUE 1 Состояние TRUE
+
+FrameRegimeEnum  Режим отображения окна
+
+ksFrameMinimize 0 Свернуть окно
+ksFrameMaximize 1 Развернуть окно
+ksFrameRestore 2 Восстановить окно
+
+KompasAPIObjectTypeEnum  Типы объектов КОМПАС 
+API
+
+ksObjectUnknown 0 Неизвестный тип
+
+ksObjectApplication 10001 Приложение " основной объект API
+ksObjectDocuments 10002 Коллекция документов, открытых в 
+
+приложении
+ksObjectKompasError 10003 Информация о ошибке системы КОМПАС
+ksObjectProcessParam 10004 Параметры процесса
+ksObjectPropertyTabs 10005 Коллекция закладок панели свойств
+ksObjectPropertyTab 10006 Закладка панели свойств
+ksObjectPropertyControls 10007 Коллекция элементов управления 
+
+вкладки Панели свойств
+ksObjectPropertySeparator 10008 Разделитель (сепаратор)
+ksObjectPropertyEdit 10009 Редактор
+ksObjectPropertyList 10010 Раскрывающийся список
+ksObjectPropertyCheckBox 10011 Опция
+ksObjectPropertyMultiButton 10012 Набор кнопок
+ksObjectPropertyUserControl 10013 Пользовательский элемент управления
+ksObjectPropertyBmpList 10014 Комбобокс со строкой и битмапом
+ksObjectPropertySlideBox 10016 Окно отображения слайда, растрового 
+
+изображения, файла документа КОМПАС 
+или группы файлов.
+
+ksObjectPropertyGrid 10017 Сетка
+ksObjectDocumentFrame 10018 Окно документа
+2766
+
+
+
+ksObjectDocumentFrames 10019 Коллекция окон документа
+ksObjectPropertyManager 10020 Панель свойств
+ksObjectDrawingDocument 10021 Документ " Чертеж
+ksObjectFragmentDocument 10022 Документ " Фрагмент
+ksObjectSpcDocument 10023 Документ " Спецификация
+ksObjectPartDocument 10024 Документ " Деталь
+ksObjectAssemblyDocument 10025 Документ " Сборка
+ksObjectTextDocument 10026 Документ " Текстовый
+ksObjectPropertyTextButton 10027 Кнопка с текстом
+ksObjectPropertySpinEdit 10028 Поле ввода со счетчиком
+ksObjectViewsAndLayersManager 10029 Менеджер слоев и видов графического 
+
+документа
+ksObjectViews 10030 Коллекция видов
+ksObjectView 10031 Вид
+ksObjectAssociationView 10032 Ассоциативный вид
+ksObjectLayerGroups 10033 Коллекция групп слоев
+ksObjectDrawingOblects 10034 Коллекция объектов графического 
+
+документа
+ksObjectLayerGroup 10035 Группа слоев
+ksObjectLayers 10036 Коллекция слоев
+ksObjectLayer 10037 Слой
+ksObjectLayerFilterCondition 10038 Условие фильтрации слоев
+ksObjectLayerFilterConditions 10039 Коллекция условий фильтрации слоев
+ksObjectDocumentSettings 10040 Настройки документа
+ksObjectDocument2DSettings 10041 Настройки графического документа
+ksObjectDrawingDocumentSettings 10042 Настройки чертежа
+ksObjectFragmentDocumentSettings 10043 Настройки фрагмента
+ksObjectDocument3DSettings 10045 Настройки 3D документа
+ksObjectLibraryManager 10050 Менеджер библиотек
+ksObjectProcedure 10051 Процедура прикладной библиотеки
+ksObjectProceduresLibraries 10052 Коллекция прикладных библиотек
+ksObjectProceduresLibrary 10053 Прикладная библиотека
+ksObjectProcedures 10054 Коллекция процедур прикладной 
+
+библиотеки
+ksObjectInsertsLibraries 10055 Коллекция библиотек элементов 
+
+(документов)
+ksObjectInsertsLibrary 10056 Библиотека элементов (документов)
+ksObjectInserts 10057 Коллекция элементов (документов) 
+
+библиотеки элементов (документов)
+ksObjectInsert 10058 Элемент библиотеки элементов 
+
+(документов)
+ksObjectSpecificationDescriptions 10059 Коллекция описаний спецификации
+ksObjectSpecificationDescription 10060 Описание спецификации
+ksObjectSpecificationStyle 10061 Стиль спецификации
+ksObjectSpecificationColumnStyles 10062 Коллекция стилей колонок 
+
+спецификации
+ksObjectSpecificationColumnStyle 10063 Стиль колонки спецификации
+ksObjectSpecificationSectionStyles 10064 Коллекция стилей разделов 
+
+спецификации
+ksObjectSpecificationSectionStyle 10065 Стиль раздела спецификации
+ksObjectSpecificationTuning 10066 Настройки спецификации
+ksObjectSpecificationTuningSections 10067 Коллекция настроек разделов 
+
+спецификации
+ksObjectSpecificationTuningSection 10068 Настройка раздела спецификации
+2767
+
+
+
+ksObjectSpecificationSubsections 10069 Коллекция подразделов спецификации
+ksObjectSpecificationSubsection 10070 Подраздел спецификации
+ksObjectAdditionalBlockStyles 10071 Коллекция стилей блоков 
+
+дополнительных разделов
+ksObjectAdditionalBlockStyle 10072 Стиль блока дополнительных разделов
+ksObjectAdditionalBlockTunings 10073 Коллекция настроек блоков 
+
+дополнительных разделов
+ksObjectAdditionalBlockTuning 10074 Настройка блока дополнительных 
+
+разделов
+ksObjectAdditionalBlockSectionTunings 10075 Коллекция настроек разделов блока 
+
+дополнительных разделов
+ksObjectAdditionalBlockSectionTuning 10076 Настройка раздела блока 
+
+дополнительных разделов
+ksObjectSheetFormat 10077 Формат листа
+ksObjectTextStyle 10078 Параметры стиля текста
+ksObjectFont 10079 Параметры шрифта
+ksObjectTabulators 10080 Коллекция позиции табуляторов
+ksObjectTabulator 10081 Позиция табулятора
+ksObjectSpecificationBaseObjects 10083 Коллекция базовых объектов 
+
+спецификации
+ksObjectSpecificationCommentObjects 10084 Коллекция вспомогательных объектов 
+
+спецификации
+ksObjectSpecificationObject 10085 Объект спецификации
+ksObjectSpecificationBaseObject 10086 Базовый объект спецификации
+ksObjectSpecificationCommentObject 10087 Вспомогательный объект спецификации
+ksObjectSpecificationColumns 10088 Коллекция колонок объекта 
+
+спецификации
+ksObjectSpecificationColumn 10089 Колонка объекта спецификации
+ksObjectSpecificationColumnItems 10090 Коллекция элементов колонки объекта 
+
+спецификации
+ksObjectSpecificationColumnItem 10091 Элемент колонки объекта спецификации
+ksObjectAttachedDocuments 10092 Коллекция присоединенных документов 
+
+к объекту спецификации
+ksObjectAttachedDocument 10093 Параметры присоединенного документа 
+
+к объекту спецификации
+ksObjectPropertyFileName 10094 Выбор файла
+ksObjectPropertyEditList 10095 Список
+ksObjectLayoutSheets 10096 Коллекция листов оформления
+ksObjectLayoutSheet 10097 Параметры листа оформления
+ksObjectConverter 10098 Конвертер КОМПАС"документов
+ksObjectCheckSum 10099 Контрольная сумма
+ksObjectProgressBar 10100 Индикатор процесса
+ksObjectPropertyEditList 10101 Список
+ksObjectPropertyLibExplorer 10102 Отображение библиотеки документов
+ksObjectVariable7 10103 Параметрическая переменная модели
+ksObjectInsertionParameters 10104 Параметры вставки фрагмента и 
+
+растрового объекта в текст
+ksObjectMath2D 10105 Математика 2D
+ksObjectSelectionManager 10106 Менеджер селектированных объектов
+ksObjectChooseManager 10107 Менеджер выбора (подсветки) объектов
+ksObjectStamp 10108 Штамп
+ksObjectPropertyStyleList 10109 Комбобокс со стилем
+ksObjectPrintJob 10110 Задание на печать
+2768
+
+
+
+ksObjectPrintJob_Sheet 10111 Задание на печать::Интерфейс листа 
+документа
+
+ksObjectPropertyOpticalProps 10112 Контрол оптических свойств
+ksObjectPropertyEditCheckBox 10113 Объединенный редактор с чекбоксом
+ksObjectPropertyGroupBegin 10116 Начало группы контролов
+ksObjectPropertyGroupEnd 10117 Конец группы контролов
+ksObjectThreadPattern 10118 Параметры стандарта резьбы
+ksObjectThreadDialogParam 10119 Параметры диалога выбора стандарта 
+
+резьбы
+ksObjectPropertyPreviewText 10120 Предпросмотр текста
+ksObjectPropertyAggregateControl 10121 Составной контрол
+ksObjectPropertyLinkButton 10122 Набор кнопок в виде ссылок
+ksObjectPropertyMarking 10123 Контрол обозначение
+ksObjectContentDialogParam 10124 Параметры диалога с произвольным 
+
+наполнением
+ksObjectPropertyBasePoint 10125 Базовая точка
+ksObjectTextDocumentSection 10126 Раздел текстового документа
+ksObjectUserDataStoragesMng 10500 Менеджер пользовательских хранилищ
+ksObjectUserDataStorages 10501 Коллекция объектов пользовательского 
+
+хранилища
+ksObjectUserDataStorage 10502 Объект пользовательского хранилища 
+
+данных
+ksObjectAttribute 10504 Атрибут
+ksObjectColumnInfo 10505 Параметры столбца табличного атрибута
+ksObjectAttributeType 10506 Параметры типа атрибута
+ksObjectAttrTypeMng 10507 Менеджер типов атрибутов
+ksObjectProperty 10508 Свойство
+ksObjectPropertyMng 10509 Менеджер свойств
+ksObjectReportProcess 10510 Интерфейс для управления процессом 
+
+Создать отчет
+ksObjectReport 10511 Интерфейс Отчета
+ksObjectReportStyle 10512 Интерфейс стиля Отчета
+ksObjectReportStyleColumn 10513 Интерфейс колонки стиля Отчета
+ksObjectPropertyKeeper 10514 Объект дерева СЧИ
+ksObjectStyles 10515 Коллекция стилей
+ksObjectCurvesStyles 10516 Коллекция стилей кривых
+ksObjectHatchsStyles 10517 Коллекция стилей штриховок
+ksObjectTextsStyles 10518 Коллекция стилей текстов
+ksObjectStyle 10519 Cтиль
+ksObjectCurveStyle 10520 Стиль кривой
+ksObjectHatchStyle 10521 Стиль штриховки
+ksObjectSpecificationStyles 10522 Коллекция стилей спецификации
+ksObjectText 10700 Текст
+ksObjectTextLine 10701 Cтрока текста
+ksObjectTextItem 10702 Компонент строки текста
+ksObjectTableCell 10703 Ячейка таблицы
+ksObjectExternalTessellation 10704 Объект с внешней триангуляцией
+ksObjectExternalGDI 10709 Внешний GDI"объект
+ksObjectLibArraySettings 10710 Интерфейс для выбора состояний 
+
+библиотек в настройках
+ksObjectTextTable 10711 Таблица в тексте текстового документа
+ksObjectPropertyTwinSwitcher 10713 Переключатель
+ksObjectPropertyPoint3D 10714 Точка 3D
+ksObjectPart7 11000 3D компонент
+ksObjectModelObject 11001 3D объект
+2769
+
+
+
+ks3dMateConstraint 11002 3D сопряжение
+ksObjectParts7 11003 Коллекция 3D компонентов
+ksObjectVariableTable 11004 Таблица переменных
+ksObjectProgressBar 11005 Индикатор прогресса
+ksObjectLineDimensions3D 11030 Коллекция линейных размеров 3D
+ksObjectBaseLineDimension3D 11031 Линейный размер 3D (от отрезка до 
+
+точки)
+ksObjectLineDimension3D 11032 Линейный размер 3D (на плоскости)
+ksObjectRadialDimension3D 11033 Радиальный размер 3D
+ksObjectDiametralDimension3D 11034 Диаметральный размер 3D
+ksObjectRadialDimensions3D 11035 Коллекция радиальных размеров 3D
+ksObjectDiametralDimensions3D 11036 Коллекция диаметральных размеров 3D
+ksObjectAngleDimension3D 11037 Угловой размер 3D
+ksObjectAngleDimensions3D 11038 Коллекция угловых размеров 3D
+ksObjectLocalCoordinateSystems 11039 Коллекция локальных систем координат
+ksObjectLocalCoordinateSystem 11040 Локальная система координат
+ksObjectLocalCSAxesDirectionParam 11041 Параметры для типа ориентации ЛСК"
+
+направление осей
+ksObjectLocalCSRotateParam 11042 Параметры для типа ориентации ЛСК"
+
+вращение вокруг осей СК
+ksObjectLocalCSEulerParam 11043 Параметры для типа ориентации ЛСК"
+
+система углов Эйлера
+ksObjectSpline3D 11044 Сплайн
+ksObjectSplines3D 11045 Коллекция сплайнов
+ksObjectCurveVertexParam 11046 Параметры вершины кривой
+ksObjectPolyLines 11047 Коллекция 3D ломаных
+ksObjectPolyLine 11048 3D ломаная
+ksObjectLeaders3D 11049 Коллекция линий"выносок 3D
+ksObjectLeader3D 11050 Линия"выноска 3D
+ksObjectMarkLeader3D 11051 Знак маркировки 3D
+ksObjectRough3D 11052 Обозначение 3D шероховатости
+ksObjectRoughs3D 11053 Коллекция обозначений 3D 
+
+шероховатости
+ksObjectPositionLeader3D 11054 Линия"выноска для обозначения 
+
+позиции 3D
+ksObjectBrandLeader3D 11055 Знак клеймения 3D
+ksObjectBase3D 11056 Обозначение 3D базы
+ksObjectBases3D 11057 Коллекция обозначений 3D базы
+ksObjectTolerances3D 11058 Коллекция допуска формы 3D
+ksObjectTolerance3D 11059 Обозначение допуска формы 3D
+ksObjectControlPoints 11060 Коллекция контрольных точек
+ksObjectControlPoint 11061 Контрольная точка
+ksObjectConjunctivePoints 11062 Коллекция присоединительных точек
+ksObjectConjunctivePoint 11063 Присоединительная точка
+ksObjectSplitLines 11064 Коллекция линий разъема
+ksObjectSplitLine 11065 Линия разъема
+ksObjectSurfacePatches 11066 Коллекция заплаток
+ksObjectSurfacePatch 11067 Заплатка
+ksObjectFaceRemovers 11068 Коллекция операций удаления граней
+ksObjectFaceRemover 11069 Операция удаления граней
+ksObjectSurfaceSewers 11070 Коллекция операций сшивки 
+
+поверхностей
+ksObjectSurfaceSewer 11071 Операция сшивки поверхностей
+ksObjectNurbsSurfaces 11072 Коллекция NURBS"поверхностей
+ksObjectNurbsSurface 11073 NURBS"поверхность
+2770
+
+
+
+ksObjectSurfacesIntersectionCurves 11074 Коллекция кривых пересечений 
+поверхностей
+
+ksObjectSurfacesIntersectionCurve 11075 Кривая пересечения поверхностей
+ksObjectEquidistants3D 11076 Коллекция эквидистант 3D
+ksObjectEquidistant3D 11077 Эквидистанта 3D
+ksObjectTrimmedCurves 11078 Коллекция операций усечения кривой 
+ksObjectTrimmedCurve 11079 Операция усечения кривой 
+ksObjectFeaturePatterns 11080 Коллекция операций копирования 
+ksObjectLinearPattern 11081 Массив операций по сетке 
+ksObjectCircularPattern 11082 Массив операций по концентрической 
+
+сетке 
+ksObjectPathPattern 11083 Массив операций вдоль кривой 
+ksObjectPartsLinearPattern 11084 Массив компонентов по сетке для сборки 
+ksObjectPartsCircularPattern 11085 Массив компонентов по концентрической 
+
+сетке для сборки 
+ksObjectPartsPathPattern 11086 Массив компонентов вдоль кривой для 
+
+сборки 
+ksObjectAuxLinearPattern 11087 Массив вспомогательной геометрии по 
+
+сетке 
+ksObjectAuxCircularPattern 11088 Массив вспомогательной геометрии по 
+
+концентрической сетке 
+ksObjectAuxPathPattern 11089 Массив вспомогательной геометрии 
+
+вдоль кривой 
+ksObjectPointDrivenPattern 11090 Массив операций по точкам 
+ksObjectPartsPointDrivenPattern 11091 Массив компонентов по точкам 
+ksObjectDerivedPattern 11092 Массив по образцу 
+ksObjectMirrorPattern 11093 Зеркальный массив 
+ksObjectShellMirrorPattern 11094 Зеркально отобразить тело или 
+
+операцию 
+ksObjectAuxMirrorPattern 11095 Зеркальный массив вспомогательной 
+
+геометрии 
+ksObjectRuledSurfaces 11096 Коллекция операций создания 
+
+линейчатой поверхности 
+ksObjectRuledSurface 11097 Линейчатая поверхность 
+ksObjectExtensionSurfaces 11098 Коллекция операций продления 
+
+поверхности 
+ksObjectExtensionSurface 11099 Операция продления поверхности 
+ksObjectEquidistantSurfaces 11100 Коллекция операций построения 
+
+эквидистант поверхности 
+ksObjectEquidistantSurface 11101 Операция построения эквидистанты 
+
+поверхности 
+ksObjectTrimmedSurfaces 11102 Коллекция Операций усечения 
+
+поверхности 
+ksObjectTrimmedSurface 11103 Операция усечения поверхности 
+ksObjectVector3D 11104 Вектор 3D 
+ksObjectVector3DBy2VertexesParamete 11105 Параметры вектора 3D по двум вершинам 
+rs
+ksObjectVector3DByCoefficientsParame 11106 Параметры вектора 3D по 
+ters коэффициентам 
+ksObjectVector3DBy2AnglesParameters 11107 Параметры вектора 3D по двум углам 
+ksObjectVector3DByObjectParameters 11108 Параметры вектора 3D по ребру или 
+
+плоскости 
+2771
+
+
+
+ksObjectVector3DAlongSurfaceNormalP 11109 Параметры вектора 3D, 
+arameters перпендикулярного грани в указанной 
+
+точке 
+ksObjectVector3DByCurveParameters 11110 Параметры вектора 3D по базисному 
+
+вектору в точке кривой 
+ksObjectVector3DByScreenNormalPara 11111 Параметры вектора 3D перпендикулярно 
+meters плоскости экрана 
+ksObjectVector3DByLocalCSParameters 11112 Параметры вектора 3D по углу в 
+
+плоскости СК и по оси СК
+ksObjectConnectCurves 11113 Коллекция операций соединения кривых 
+ksObjectConnectCurve 11114 Операция соединения кривых 
+ksObjectFilletCurves 11115 Коллекция операций скругления кривых 
+ksObjectFilletCurve 11116 Операция соединения кривых 
+ksObjectSurfaceThickenings 11117 Коллекция операций придания толщины 
+
+поверхности 
+ksObjectSurfaceThickening 11118 Операция придания толщины 
+
+поверхности 
+ksObjectArcs3D 11119 Коллекция дуг 3D 
+ksObjectArc3D 11120 3D дуга 
+ksObjectAuxPointDrivenPattern 11121 Массив вспомогательной геометрии по 
+
+точкам 
+ksObjectBodiesPointDrivenPattern 11122 Массив тел по точкам 
+ksObjectTablePattern 11123 Массив операций по таблице из файла 
+ksObjectPartsTablePattern 11124 Массив компонентов по таблице из 
+
+файла 
+ksObjectAuxTablePattern 11125 Массив компонентов по таблице из 
+
+файла 
+ksObjectBodiesTablePattern 11126 Массив вспомогательной геометрии по 
+
+таблице из файла 
+ksObjectRotateds 11127 Коллекция операций вращения 
+ksObjectRotated 11128 Операция вращения 
+ksObjectCutRotated 11129 Операция 'вырезать вращением' 
+ksObjectExtrusionSurfaces 11130 Коллекция поверхностей выдавливания 
+ksObjectExtrusionSurface 11131 Операция поверхность выдавливания 
+ksObjectRotatedSurfaces 11132 Коллекция поверхностей вращения 
+ksObjectRotatedSurface 11133 Операция поверхность вращения 
+ksObjectPoint3DParamBySphere 11134 Точка, заданная сферическими 
+
+координатами 
+ksObjectPoint3DParamByCylinder 11135 Точка, заданная цилиндрическими 
+
+координатами 
+ksObjectMeshPointsSurfaces 11136 Коллекция поверхностей по сети точек 
+ksObjectMeshPointsSurface 11137 Поверхность по сети точек 
+ksObjectCloudPointsSurfaces 11138 Коллекция поверхностей по пласту 
+
+(облаку) точек 
+ksObjectCloudPointsSurface 11139 Поверхность по пласту (облаку) точек 
+ksObjectImportedSurfaces 11140 Коллекция импортированных 
+
+поверхностей 
+ksObjectImportedSurface 11141 Импортированная поверхность 
+ksObjectBodiesLinearPattern 11142 Массив тел по сетке 
+ksObjectBodiesCircularPattern 11143 Массив тел по концентрической сетке 
+ksObjectBodiesPathPattern 11144 Массив тел вдоль кривой 
+ksObjectScalings3D 11145 Коллекция операций масштабирования 
+
+тел и поверхностей
+2772
+
+
+
+ksObjectScaling3D 11146 Масштабирование тел и поверхностей
+ksObjectCurveOutLine 11147 Линия очерка
+ksObjectCurveOutLines 11148 Коллекция линий очерка
+ksObjectCurveByLaw 11149 Кривая по закону
+ksObjectCurveByLaws 11150 Коллекция кривых по закону
+ksObjectIsoparametricCurve 11151 Изопараметрическая кривая
+ksObjectIsoparametricCurves 11152 Коллекция изопараметрических кривых
+ksObjectIsoparametricCurvesSet 11153 Группа изопараметрических кривых
+ksObjectIsoparametricCurvesSets 11154 Коллекция групп изопараметрических 
+
+кривых
+ksObjectSplineOnSurface 11155 Сплайн по поверхности
+ksObjectSplinesOnSurfaces 11156 Коллекция сплайнов по поверхностям
+ksObjectProjectionCurve 11157 Проекционная кривая
+ksObjectProjectionCurves 11158 Коллекция проекционных кривых
+ksObjectCurveBy2Projections 11159 Проекционная кривая
+ksObjectCurvesBy2Projectionses 11160 Коллекция проекционных кривых
+ksObjectContour3D 11161 Контур 3D
+ksObjectContours3D 11162 Коллекция контуров 3D
+ksObjectLineSegment3D 11163 Отрезок 3D
+ksObjectLineSegments3D 11164 Коллекция отрезков 3D
+ksObjectConicSpiral3D 11179 Коническая спираль
+ksObjectCylindricSpiral3D 11180 Цилиндрическая спираль
+ksObjectSpirals3D 11181 Коллекция спиралей
+ksObjectPointsArrOnCurve 11182 Группа точек по кривой
+ksObjectPointsArrsOnCurves 11183 Коллекция групп точек по кривым
+ksObjectPointsArrOnSurfaces 11184 Группа точек по поверхности
+ksObjectPointsArrsOnSurfaces 11185 Коллекция групп точек по поверхностям
+ksObjectPointsArrFromFile 11186 Группа точек из файла
+ksObjectPointsArrsFromFiles 11187 Коллекция групп точек из файлов
+ksObjectAxis3D 11188 Вспомогательная ось 3D
+ksObjectAxes3D 11189 Коллекция вспомогательных осей 3D
+ksObjectAxis3DBy2Points 11190 Ось через две вершины
+ksObjectAxis3DBy2Planes 11191 Ось на пересечении плоскостей
+ksObjectAxis3DByConeface 11192 Ось конической поверхности
+ksObjectAxis3DByEdge 11193 Ось через ребро
+ksObjectAxis3DByPointAndObject 11194 Ось через вершину по объекту
+ksObjectAxis3DByOperation 11195 Ось операции
+ksObjectPlanes3D 11196 Коллекция плоскостей 3D
+ksObjectPlane3D 11197 Плоскость 3D
+ksObjectPlane3DByPlaneCurve 11198 Плоскость через плоскую кривую
+ksObjectPlane3DTangentToFaceInPoint 11199 Плоскость касательная к грани в точке 3D
+ksObjectPlane3DByOffset 11200 Смещенная плоскость
+ksObjectPlane3DBy3Points 11201 Плоскость, проходящая через три 
+
+вершины
+ksObjectPlane3DByAngle 11202 Плоскость, под углом к другой плоскости
+ksObjectPlane3DByEdgeAndPoint 11203 Плоскость через ребро и вершину
+ksObjectPlane3DParallelByPoint 11204 Плоскость через вершину параллельно 
+
+другой плоскости
+ksObjectPlane3DPerpendicularByEdge 11205 Плоскость, проходящая через вершину 
+
+перпендикулярно ребру
+ksObjectPlane3DNormalToSurface 11206 Нормальная плоскость
+ksObjectPlane3DMiddle 11207 Средняя плоскость 3D
+ksObjectPlane3DByEdgeAndPlane 11208 Плоскость через ребро параллельно / 
+
+перпендикулярно грани 3D
+2773
+
+
+
+ksObjectPlane3DBy2Edge 11209 Плоскость через ребро параллельно /
+перпендикулярно другому ребру 3D
+
+ksObjectPlane3DTangentToFace 11210 Плоскость касательная к грани 3D
+ksObjectUserObject3D 11211 Пользовательский объект 3D
+ksObjectUserObjects3D 11212 Коллекция пользовательских объектов 
+
+3D
+ksObjectLinearPatternAnyCopy 11213 Копирование произвольных объектов по 
+
+сетке
+ksObjectCircularPatternAnyCopy 11214 Копирование произвольных объектов по 
+
+окружности
+ksObjectPathPatternAnyCopy 11215 Копирование произвольных объектов по 
+
+кривой
+ksObjectPointDrivenPatternAnyCopy 11217 Копирование произвольных объектов по 
+
+точкам
+ksObjectTablePatternAnyCopy 11218 Копирование произвольных объектов по 
+
+таблице
+ksObjectLinearUnhistoriedDimension 11219 Импортированный линейный размер
+ksObjectAngularUnhistoriedDimension 11220 Импортированный угловой размер
+ksObjectRadialUnhistoriedDimension 11221 Импортированный радиальный размер
+ksObjectDiametralUnhistoriedDimensio 11222 Импортированный диаметральный 
+n размер
+ksObjectPlacement3D 11223 Интерфейс локальной системы 
+
+координат (положение объекта)
+ksObjectLayers3D 11224 Коллекция слоев в 3D
+ksObjectLayer3D 11225 Слой в 3D
+ksObjectLayerGroups3D 11226 Коллекция групп слоев в 3D
+ksObjectLayerGroup3D 11227 Группа слоев в 3D
+ksObjectDocument3DManager 11228 Менеджер 3D документа
+ksObjectToleranceRecalc 11229 Пересчет модели
+ksObjectSpecRough3D 11230 Неуказанная шероховатость 3D
+ksObjectSketchBreakLinearDimension 11231 Управляющий линейный размер эскиза 
+
+3D с обрывом
+ksObjectMathCurve3D 11232 Математическая кривая в трехмерном 
+
+пространстве
+ksObjectMathSurface3D 11233 Математическая поверхность в 
+
+трехмерном пространстве
+ksObjectBilletObsolete 11234 Деталь заготовка и Зеркальная деталь
+ksObjectBilletsObsoletes 11235 Коллекция деталей заготовок и 
+
+зеркальных деталей
+ksObjectCopyGeometry 11236 Копия геометрии
+ksObjectCopiesGeometry 11237 Коллекция копий геометрии
+ksObjectCollectionGeometry 11238 Коллекция геометрии
+ksObjectCollectionsGeometry 11239 Коллекции геометрии
+ksObjectUserWireFrame3D 11240 Пользовательский объект Каркас 3D
+ksObjectThreads 11241 Коллекция условных обозначений 
+
+резьбы
+ksObjectThread 11242 Условное обозначение резьбы
+ks3dMateConstraints 11243 Коллекция 3D сопряжений
+ksMate3DByAngle 11244 Сопряжение под углом
+ksMate3DByTangent 11245 Сопряжение по касательной
+ksMate3DSymmetry 11246 Сопряжение симметрия
+ksMate3DTransmission 11247 Сопряжение механическое перемещение
+ksMate3DCamGear 11248 Сопряжение кулачок"толкатель
+2774
+
+
+
+ksMate3DDependentPosition 11249 Сопряжение зависимое положение
+ksObjectHoles3D 11250 Коллекции отверстий 3D
+ksObjectHole3D 11251 Отверстие 3D
+ksObjectCountersinkHoleParameters 11252 Параметры отверстия с зенковкой
+ksObjectSpotfacingHoleParameters 11253 Параметры отверстия с цековкой
+ksObjectCountersinkSpotfacingHolePara 11254 Параметры отверстия с зенковкой и 
+meters цековкой
+ksObjectConicHoleParameters 11255 Параметры конического отверстия
+ksObjectChamfers 11256 Коллекции фасок
+ksObjectChamfer 11257 Фаска
+ksObjectFillets 11258 Коллекции скруглений
+ksObjectFillet 11259 Скругление
+ksObjectInclines 11260 Коллекции операций уклон
+ksObjectIncline 11261 Операция Уклон
+ksObjectRibs 11262 Коллекции операций Ребро жесткости
+ksObjectRib 11263 Ребро жесткости
+ksObjectShells 11264 Коллекции операций Оболочка
+ksObjectShell 11265 Оболочка
+ksObjectBooleans 11266 Коллекция булевых операций
+ksObjectBoolean 11267 Булева операция
+ksObjectCuts 11268 Коллекция операций 'сечение'
+ksObjectCut 11269 Операция 'сечение'
+ksObjectLofts 11270 Коллекция операций по сечениям
+ksObjectLoft 11271 Операция по сечениям
+ksObjectLoftSurfaces 11272 Коллекция поверхностей по сечениям
+ksObjectLoftSurface 11273 Операция поверхность по сечениям
+ksObjectCoupling 11274 Цепочка в операции по сечениям
+ksObjectEvolutions 11275 Коллекция кинематических операций
+ksObjectEvolution 11276 Кинематическая операция
+ksObjectEvolutionSurfaces 11277 Коллекция кинематических поверхностей
+ksObjectEvolutionSurface 11278 Кинематическая поверхность
+ksObjectVertex 11279 Вершина
+ksObjectEdge 11280 Ребро
+ksObjectFace 11281 Грань
+ksObjectLoop7 11282 Цикл
+ksObjectOrientedEdge7 11283 Ориентированное ребро
+ksObjectUnionsComponents 11284 Коллекция операций объединение 
+
+компонентов
+ksObjectUnionComponents 11285 Операция объединения компонентов
+ksObjectMoldCavities 11286 Коллекция операций вычитания 
+
+компонентов
+ksObjectMoldCavity 11287 Операция вычитания компонентов
+ksObjectMacroObjects3D 11288 Коллекция макроэлементов 3D
+ksObjectMacroObject3D 11289 3D макроэлемент
+ksObjectNurbsSurfacesByCurvesMeshs 11290 Коллекция поверхностей по сети кривых
+ksObjectNurbsSurfaceByCurvesMesh 11291 Поверхность по сети кривых
+ksObjectJointSurfaces 11292 Коллекция поверхностей соединения
+ksObjectJointSurface 11293 Поверхность соединения
+ksObjectBodyRepositions 11294 Коллекция операций 
+
+перепозиционирования тела, 
+поверхности
+
+ksObjectBodyReposition 11295 Перепозиционирование тела, 
+поверхности
+
+ksObjectDistanceAngleMeasurements3 11296 Коллекция измерений расстояния и угла
+D
+
+2775
+
+
+
+ksObjectDistanceAngleMeasurement3D 11297 Измерение расстояния и угла
+ksObjectEdgeLengthMeasurements3D 11298 Коллекция измерений длины ребра
+ksObjectEdgeLengthMeasurement3D 11299 Измерение длины ребра
+ksObjectAreaMeasurements3D 11300 Коллекция измерений площади
+ksObjectAreaMeasurement3D 11301 Измерение площади
+ksObjectSheetMetalSketchBends 11302 Коллекция операций сгиб по эскизу
+ksObjectSheetMetalSketchBend 11303 Сгиб по эскизу
+ksObjectSheetMetalClosedCorners 11304 Коллекция операций Замыкание углов
+ksObjectSheetMetalClosedCorner 11305 Замыкание углов
+ksObjectSheetMetalPlates 11306 Коллекция операций Пластина
+ksObjectSheetMetalPlate 11307 Пластина
+ksObjectSheetMetalUndercuts 11308 Коллекция операций Подсечка
+ksObjectSheetMetalUndercut 11309 Подсечка
+ksObjectSheetMetalBendedStraightens 11310 Коллекция операций Согнуть/Разогнуть
+ksObjectSheetMetalBendedStraighten 11311 Согнуть/Разогнуть
+ksObjectSheetMetalPressFormings 11312 Коллекция операций открытая или 
+
+закрытая штамповка
+ksObjectSheetMetalPressForming 11313 Открытая или закрытая штамповка
+ksObjectSheetMetalShoulders 11314 Коллекция операций буртик
+ksObjectSheetMetalShoulder 11315 Буртик
+ksObjectSheetMetalJalousies 11316 Коллекция операций жалюзи
+ksObjectSheetMetalJalousie 11317 Жалюзи
+ksObjectSheetMetalRibs 11318 Коллекция операций ребро усиления
+ksObjectSheetMetalRib 11319 Ребро усиления
+ksObjectSheetMetalRuledShells 11320 Коллекция операций Обечайка
+ksObjectSheetMetalRuledShell 11321 Обечайка
+ksObjectSheetMetalLinearRuledShells 11322 Коллекция операций Линейчатая 
+
+обечайка
+ksObjectSheetMetalLinearRuledShell 11323 Линейчатая обечайка
+ksObjectLibraryHoleParameters 11324 Параметры отверстия из библиотеки
+ksObjectFullFillets 11325 Коллекция операций полного скругления
+ksObjectFullFillet 11326 Полное скругление
+ksObjectZone 11327 Зона
+ksObjectZonesManager 11328 Менеджер зон
+ksObjectZoneParametersByObjects 11329 Параметры зоны по суммарному 
+
+габариту объектов
+ksObjectZoneParametersByBorderPoint 11330 Параметры зоны, заданной габаритным 
+s параллелепипедом
+ksObjectZoneDivision 11331 Разбить зону
+ksObjectZoneDivisionParametersByPlan 11332 Параметры разбиения зоны для способа 
+es По набору плоскостей
+ksObjectZoneDivisionParametersRegula 11333 Параметры разбиения зоны для способа 
+r Равномерно по осям
+ksObjectDynamicCrossSection 11334 Динамическое сечение
+ksObjectDynamicCrossSectionStep 11335 Шаг динамического сечения
+ksObjectDynamicCrossSectionStepPara 11336 Параметры шага динамического сечения 
+metersByFreePlane по произвольной плоскости
+ksObjectDynamicCrossSectionStepPara 11337 Параметры шага динамического сечения 
+metersByOffsetPlane по смещенной плоскости
+ksObjectDynamicCrossSectionStepPara 11338 Параметры шага динамического сечения 
+metersByRotatedPlane по плоскости под углом
+ksObjectDynamicCrossSectionStepPara 11339 Параметры шага динамического сечения 
+metersByZone по зоне
+2776
+
+
+
+ksObjectDynamicCrossSectionStepPara 11340 Параметры шага динамического сечения 
+metersByBorderPoints по габаритному параллелепипеду 
+
+заданному точками
+ksObjectAxisLine3D 11341 Осевая линия
+ksObjectRestoredSurfaces 11342 Коллекция операций восстановленная 
+
+поверхность
+ksObjectRestoredSurface 11343 Восстановленная поверхность
+ksObjectDrawingObject 13000 Графический объект
+ksObjectDrawingText 13001 Текст на чертеже
+ksObjectDrawingTexts 13002 Коллекция текстов на чертеже
+ksObjectStraightAxis 13003 Прямая ось
+ksObjectCircleAxis 13004 Круговая ось
+ksObjectArcAxis 13005 Дуговая ось
+ksObjectBuildingAxes 13006 Коллекция строительных осей
+ksObjectAxisJut 13007 Выступ оси
+ksObjectMarkNodes 13008 Kоллекция узлов для вставки марки
+ksObjectMarkNode 13009 Узел для вставки дополнительных марок
+ksObjectMarkOnLeader 13010 Марка/позиционное обозначение с 
+
+линией"выноской
+ksObjectMarkOnLine 13011 Марка/позиционное обозначение на 
+
+линии
+ksObjectMarkInsideForm 13012 Марка/позиционное обозначение без 
+
+линии"выноски
+ksObjectMarks 13013 Коллекция марок
+ksObjectCutUnitMarking 13014 Обозначение узла в сечении

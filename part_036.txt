@@ -1,0 +1,2532 @@
+Выходные параметры:
+
+x, y, z " координаты точки.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Метод позволяет установить координаты начала полки.
+
+SetBranchEndPoint  Установить координаты конечной 
+точки ответвления
+Интерфейс...
+Синтаксис Automation:
+BOOL SetBranchEndPoint( long Index,
+double X,
+double Y,
+double Z );
+Синтаксис COM:
+HRESULT SetBranchEndPoint( long Index,
+double X,
+double Y,
+double Z,
+BOOL * Result );
+Входные параметры:
+
+Index " индекс ответвления,
+x, y, z " координаты точки.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха.
+FALSE " в случае неудачи.
+
+Метод позволяет установить координаты конечной точки ответвления.
+
+Интерфейс IUserDesignationCompObj 
+Составной объект для пользовательских объектов обозначений 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+1899
+
+
+
+IModelObject
+ IUserDesignationCompObj
+
+КОМПАС версия v18
+
+IUserDesignationCompObj  методы
+
+SetObjects  Задать объекты
+Интерфейс...
+Синтаксис Automation:
+BOOL SetObjects( VARIANT Objects );
+Синтаксис COM:
+HRESULT SetObjects( VARIANT Objects, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае успешного 
+завершения,
+
+FALSE " в случае неудачи.
+Входные параметры:
+
+Objects " массив SafeArray 
+(VT_ARRAY | 
+VT_DISPATCH) объектов.
+
+Пересчет модели с учетом допусков
+Интерфейс IToleranceRecalcsManager
+Менеджер пересчета модели по допускам.
+Иерархия:
+IDispatch
+
+IToleranceRecalcsManager
+Является дополнительным к интерфейсу менеджера 3D документа (можно получить с
+помощью QueryInterface).
+
+IToleranceRecalcsManager свойства
+
+CurrentRecalc  Интерфейс текущего пересчета
+Интерфейс...
+Тип данных: указатель на интерфейс IToleranceRecalc
+1900
+
+
+
+Синтаксис Automation:
+
+CurrentRecalc= Object.CurrentRecalc Получить свойство (* )
+CurrentRecalc= Получить свойство (**)
+Object.GetCurrentRecalc()
+
+Синтаксис COM:
+
+CurrentRecalc = Получить свойство
+Object.GetCurrentRecalc()
+
+Примечание:
+Свойство доступно только для чтения.
+
+RecalcsCount  Количество пересчетов размеров
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+RecalcsCount= Object.RecalcsCount Получить свойство (* )
+RecalcsCount= Получить свойство (**)
+Object.GetRecalcsCount()
+
+Синтаксис COM:
+
+RecalcsCount = Получить свойство
+Object.GetRecalcsCount()
+
+Примечание:
+Свойство доступно только для чтения.
+
+ToleranceMode  Включить\отключить режим пересчета 
+по допуску
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ToleranceMode = Object.ToleranceMode; Получить свойство (* )
+Object.ToleranceMode = ToleranceMode; Установить свойство (* )
+ToleranceMode = Object.GetToleranceMode(); Получить свойство (**)
+1901
+
+
+
+Object.SetToleranceMode( ToleranceMode ); Установить свойство (* )
+Синтаксис COM:
+
+Object">get_ToleranceMode( &ToleranceMode Получить свойство
+);
+Object">put_ToleranceMode( ToleranceMode ); Установить свойство
+
+IToleranceRecalcsManager методы
+
+AddRecalc  Создать пересчет размеров
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddRecalc();
+Синтаксис СОМ:
+HRESULT AddRecalc( IToleranceRecalc ** Result );
+Возвращаемое значение:
+
+ " указатель на интерфейс пересчета размеров
+IToleranceRecalc.
+
+AddRecalcCopy  Создать пересчет размеров по образцу
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddRecalcCopy( IToleranceRecalc * Source );
+Синтаксис СОМ:
+HRESULT AddRecalcCopy( IToleranceRecalc * Source, IToleranceRecalc ** Result );
+Возвращаемое значение:
+
+ " указатель на интерфейс пересчета размеров
+IToleranceRecalc.
+
+Входные параметры
+
+Sou " указатель на копируемый пересчет размеров
+rce IToleranceRecalc.
+1902
+
+
+
+GetRecalc  Получить пересчет размеров по имени или 
+индексу
+Интерфейс...
+Синтаксис Automation:
+ LPDISPATCH GetRecalc( VARIANT Index );
+Синтаксис СОМ:
+HRESULT GetRecalc( VARIANT Index, IToleranceRecalc ** Result );
+Возвращаемое значение:
+
+ " указатель на интерфейс пересчета размеров
+IToleranceRecalc.
+
+Входные параметры
+
+Inde " имя или индекс пересчета.
+x 
+
+SaveRecalcModel  Сохранить пересчитанную копию 
+модели
+Интерфейс...
+Синтаксис Automation:
+ BOOL SaveRecalcModel( BSTR FileName );
+Синтаксис СОМ:
+HRESULT SaveRecalcModel( BSTR FileName, BOOL * Result );
+Возвращаемое значение:
+
+TRU " в случае удачного завершения,
+E 
+FAL " в случае неудачи.
+SE
+
+Входные параметры
+
+File " имя файла, в который будет сохранена модель.
+Na
+me
+
+Интерфейс IToleranceRecalc
+Интерфейс пересчета модели.
+1903
+
+
+
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IToleranceRecalc
+
+Интерфейс можно получить у Менеджера пересчета модели c помощью методов
+IToleranceRecalcsManager::AddRecalc, IToleranceRecalcsManager::AddRecalcCopy,
+IToleranceRecalcsManager::GetRecalc и свойства IToleranceRecalcsManager::CurrentRecalc.
+
+IToleranceRecalc свойства
+
+Coefficient  Коэффициент
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Coefficient = Object.Coefficient( Index ); Получить свойство (* )
+Object.Coefficient( Index ) = Coefficient; Установить свойство (* )
+Coefficient = Object.GetCoefficient( Index ); Получить свойство
+
+(**)
+Object.SetCoefficient( Index, Coefficient ); Установить свойство
+
+(* )
+
+Синтаксис COM:
+
+Object.get_Coefficient( Index, &Coefficient ); Получить свойство
+Object.put_Coefficient(  Index, Coefficient ); Установить свойство
+
+Входные параметры:
+
+VARIANT Index" имя или индекс
+пересчета.
+
+Current  Текущий пересчет
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Current = Object.Current; Получить свойство (* )
+Object.Current = Current; Установить свойство (* )
+Current = Object.GetCurrent(); Получить свойство (**)
+Object.SetCurrent( Current ); Установить свойство (* )
+1904
+
+
+
+Синтаксис COM:
+
+Object">get_Current( &Current ); Получить свойство
+Object">put_Current( Current ); Установить свойство
+
+Примечание:
+Установить свойство можно только равным TRUE.
+
+Id  Идентификатор
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Id = Object.Id Получить свойство (* )
+Id = Object.GetId() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Id( &Id ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Item  Получить переменную или компонент
+Интерфейс...
+Тип данных: Указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+
+Item = Object.Item( Index ) Получить свойство (* )
+Item = Object.GetItem( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Item( Index, &Item ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+ItemsCount  Количество объектов в пересчете
+Интерфейс...
+Тип данных: long
+1905
+
+
+
+Синтаксис Automation:
+
+ItemsCount= Object.ItemsCount Получить свойство (* )
+ItemsCount= Object.GetItemsCount() Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_ItemsCount( &ItemsCount Получить свойство
+)
+
+Примечание:
+Свойство доступно только для чтения.
+
+Name  Имя
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = Object.Name; Получить свойство (* )
+Object.Name = Name; Установить свойство (* )
+Name = Object.GetName(); Получить свойство (**)
+Object.SetName( Name ); Установить свойство (* )
+
+Синтаксис COM:
+
+Object">get_Name( &Name ); Получить свойство
+Object">put_Name( Name ); Установить свойство
+
+RecalcType  Способ пересчета
+Интерфейс...
+Тип данных: из перечисления ksToleranceRecalcsEnum
+Синтаксис Automation:
+
+RecalcType = Object.RecalcType( Index ); Получить свойство (* )
+Object.RecalcType( Index ) = RecalcType; Установить свойство (* )
+RecalcType = Object.GetRecalcType( Index ); Получить свойство (**)
+Object.SetRecalcType( Index, RecalcType ); Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_RecalcType( Index, &RecalcType ); Получить свойство
+Object.put_RecalcType(  Index, RecalcType ); Установить свойство
+1906
+
+
+
+Входные параметры:
+
+VARIANT Index " имя или индекс 
+пересчета.
+
+RecalcUserType  Способ пользовательского пересчета 
+для вставки
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+RecalcUserType = Object.RecalcUserType( Index Получить свойство (* )
+);
+Object.RecalcUserType( Index ) = Установить свойство (* )
+RecalcUserType;
+RecalcUserType = Object.GetRecalcUserType( Получить свойство (**)
+Index );
+Object.SetRecalcUserType( Index, Установить свойство (* )
+RecalcUserType );
+
+Синтаксис COM:
+
+Object.get_RecalcUserType( Index, Получить свойство
+&RecalcUserType );
+Object.put_RecalcUserType(  Index, Установить свойство
+RecalcUserType );
+
+Входные параметры:
+
+VARIANT Index " имя или индекс 
+пересчета.
+
+IToleranceRecalc методы
+
+AddAllVariables  Добавить все переменные
+Интерфейс...
+Синтаксис Automation:
+BOOL AddAllVariables();
+Синтаксис COM:
+HRESULT AddAllVariables( BOOL * Result );
+Возвращаемое значение:
+1907
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+AddItems  Добавить переменные, размер или 
+компонент
+Интерфейс...
+Синтаксис Automation:
+BOOL AddItems( IKompasAPIObject * Object );
+Синтаксис COM:
+HRESULT AddItems( IKompasAPIObject * Object, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Object " указатель на интерфейс переменной, размера или 
+компонента.
+
+DeleteItem  Удалить переменную или вариант 
+пересчета компонента по имени, индексу или 
+интерфейсу
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteItem( VARIANT Index );
+Синтаксис COM:
+HRESULT DeleteItem( VARIANT Index, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Index " имя или индекс пересчета.
+1908
+
+
+
+Технические требования
+Интерфейс ITechnicalDemand3D
+Технические требования 3D.
+Иерархия:
+IKompasAPIObject
+
+ITechnicalDemand3D
+Описание:
+Интерфейс позволяет задавать и получать параметры технических требований в 3D.
+Примечание:
+Интерфейс можно получить у интерфейса документа 3D с помощью свойства
+IKompasDocument3D::TechnicalDemand3D
+
+ITechnicalDemand3D  свойства
+
+Text  Текст
+Интерфейс...
+Тип данных: указатель на интерфейс текста IText
+Синтаксис Automation:
+
+Text = Object.Text Получить свойство (* )
+Text = Object.GetText() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Text( &Text ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать интерфейс текста технических требований.
+2.  Свойство доступно только для чтения.
+
+ITechnicalDemand3D  методы
+
+IsCreated  Признак наличия технических требований в 
+документе
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsCreated = Object.IsCreated Получить свойство (* )
+1909
+
+
+
+IsCreated = Получить свойство (**)
+Object.GetIsCreated()
+
+Синтаксис COM:
+
+Object.get_IsCreated( Получить свойство
+&IsCreated )
+
+Примечание:
+
+1.  Свойство позволяет получать признак наличия технических требований в документе.
+2.  Свойство доступно только для чтения.
+
+Update  Обновление данных
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет применить заданные параметры технических требований.
+
+Неуказанная шероховатость
+Интерфейс ISpecRough3D
+Интерфейс неуказанной шероховатости 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ISpecRough3D
+
+Интерфейс можно получить с помощью свойства IKompasDocument3D1::SpecRough.
+
+ISpecRough3D  свойства
+
+AddSign  Добавить знак в скобках
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+1910
+
+
+
+AddSign = Object.AddSign; Получить свойство (* )
+Object.AddSign = AddSign; Установить свойство (* )
+AddSign = Object.GetAddSign(); Получить свойство (**)
+Object.SetAddSign( AddSign ); Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_AddSign( &AddSign ); Получить свойство
+Object.put_AddSign(  AddSign ); Установить свойство
+
+IsCreated  Признак отображения в документе
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsCreated = Object.IsCreated Получить свойство (* )
+IsCreated = Object.GetIsCreated() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_IsCreated( &IsCreated ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Placement  Размещение
+Интерфейс...
+Тип данных: из перечисления ksSpecRoughPlacementEnum
+Синтаксис Automation:
+
+ Placement = Object. Placement; Получить свойство (* )
+Object. Placement =  Placement; Установить свойство (* )
+ Placement = Object.Get Placement(); Получить свойство (**)
+Object.Set Placement(  Placement ); Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_ Placement( & Placement ); Получить свойство
+Object.put_ Placement(   Placement ); Установить свойство
+1911
+
+
+
+SignType  Тип значка
+Интерфейс...
+Тип данных: из перечисления ksRoughSignEnum
+Синтаксис Automation:
+
+ SignType = Object. SignType; Получить свойство (* )
+Object. SignType =  SignType; Установить свойство (* )
+ SignType = Object.Get SignType(); Получить свойство (**)
+Object.Set SignType(  SignType ); Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_ SignType( & SignType ); Получить свойство
+Object.put_ SignType(   SignType ); Установить свойство
+
+Text  Текст
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ Text = Object. Text; Получить свойство (* )
+Object. Text =  Text; Установить свойство (* )
+ Text = Object.Get Text(); Получить свойство (**)
+Object.Set Text(  Text ); Установить свойство (* )
+
+Синтаксис COM:
+
+Object.get_ Text( & Text ); Получить свойство
+Object.put_ Text(   Text ); Установить свойство
+
+ISpecRough3D  методы
+
+Delete  Удалить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение:
+1912
+
+
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Update  Обновление данных
+Интерфейс...
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Операции, массивы, эскизы, точки
+Контейнер
+Интерфейс IModelContainer
+Интерфейс контейнера трехмерных объектов.
+Иерархия:
+IDispatch
+
+IModelContainer
+Описание.
+Интерфейс позволяет работать с коллекциями 3D"объектов, входящих в состав 3D"объ"
+екта.
+Примечание.
+Интерфейс контейнера является дополнительным к интерфейсу IPart7. Данный интер"
+фейс можно получить от IPart7 посредством вызова метода IUnknown::QueryInterface
+(const GUID far& iid, void** pif);
+
+IModelContainer  свойства
+1913
+
+
+
+BilletsObsoletes  Коллекция деталей заготовок и 
+зеркальных деталей
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции деталей заготовок и зеркальных деталей
+IBilletsObsoletes
+Синтаксис Automation:
+
+BilletsObsoletes = Получить свойство (* )
+Object.BilletsObsoletes;
+BilletsObsoletes = Получить свойство (**)
+Object.GetBilletsObsoletes();
+
+Синтаксис COM:
+
+Object.get_BilletsObsoletes( Получить свойство
+&BilletsObsoletes);
+
+Примечание:
+Свойство доступно только для чтения.
+
+BodyRepositions  Коллекция операций 
+перепозиционирования тела, поверхности
+Интерфейс...
+Тип данных: Указатель на интерфейс IBodyRepositions. 
+Синтаксис Automation:
+
+BodyRepositions = Получить свойство (* )
+Object.BodyRepositions;
+BodyRepositions = Получить свойство (**)
+Object.GetBodyRepositions();
+
+Синтаксис COM:
+
+Object.get_BodyRepositions( Получить свойство
+&BodyRepositions );
+
+Примечание:
+Свойство доступно только для чтения.
+
+Booleans  Коллекция булевых операций
+Интерфейс...
+Тип данных: Указатель на интерфейс IBooleans. 
+1914
+
+
+
+Синтаксис Automation:
+
+Booleans = Object.Booleans Получить свойство (* )
+Booleans = Object.GetBooleans() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Booleans( &Booleans ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Chamfers  Коллекция операций Фаска
+Интерфейс...
+Тип данных: Указатель на интерфейс IChamfers. 
+Синтаксис Automation:
+
+Chamfers = Object.Chamfers Получить свойство (* )
+Chamfers = Object.GetChamfers() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Chamfers( &Chamfers ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+CollectionsGeometry  Коллекции геометрии
+Интерфейс...
+Тип данных: указатель на интерфейс ICollectionsGeometry.
+Синтаксис Automation:
+
+CollectionsGeometry = Получить свойство (* )
+Object.CollectionsGeometry;
+CollectionsGeometry = Получить свойство (**)
+Object.GetCollectionsGeometry();
+
+Синтаксис COM:
+
+Object.get_CollectionsGeometry( Получить свойство
+&CollectionsGeometry );
+
+Примечание:
+1915
+
+
+
+Свойство доступно только для чтения.
+
+CopiesGeometry  Коллекция операций копирования 
+геометрии
+Интерфейс...
+Тип данных: указатель на интерфейс ICopiesGeometry.
+Синтаксис Automation:
+
+CopiesGeometry = Получить свойство (* )
+Object.CopiesGeometry;
+CopiesGeometry = Получить свойство (**)
+Object.GetCopiesGeometry();
+
+Синтаксис COM:
+
+Object.get_CopiesGeometry( Получить свойство
+&CopiesGeometry );
+
+Примечание:
+Свойство доступно только для чтения.
+
+Cuts  Коллекция операций Cечение
+Интерфейс...
+Тип данных: Указатель на интерфейс ICuts.
+Синтаксис Automation:
+
+Cuts = Object.Cuts Получить свойство (* )
+Cuts = Object.GetCuts() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Cuts( &Cuts ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Evolutions  Коллекция кинематических операций
+Интерфейс...
+Тип данных: Указатель на интерфейс IEvolutions. 
+1916
+
+
+
+Синтаксис Automation:
+
+Evolutions = Object.Evolutions Получить свойство (* )
+Evolutions = Object.GetEvolutions() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Evolutions( &Evolutions ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Extrusions  Указатель на интерфейс коллекции 
+операций выдавливания
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции операций выдавливания IExtrusions.
+Синтаксис Automation:
+
+Extrusions = iObject.Extrusions; Получить свойство (* )
+Extrusions = iObject.GetExtrusions(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Extrusions( &Extrusions Получить свойство
+);
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получать коллекции операций выдавливания.
+
+FeaturePatterns  Указатель на интерфейс коллекции 
+операций копирования
+Интерфейс...
+Тип данных: указатель на интерфейс IFeaturePatterns.
+Синтаксис Automation:
+
+FeaturePatterns = Получить свойство (* )
+Object.FeaturePatterns
+FeaturePatterns = Получить свойство (**)
+Object.GetFeaturePatterns()
+
+Синтаксис COM:
+1917
+
+
+
+FeaturePatterns = Получить свойство
+Object.GetFeaturePatterns()
+
+Свойство позволяет получить коллекцию всех операций копирования, входящих в состав
+данного объекта.
+Примечание:
+Свойство доступно только для чтения.
+
+Fillets  Коллекция операций Скругление
+Интерфейс...
+Тип данных: Указатель на интерфейс IFillets. 
+Синтаксис Automation:
+
+Fillets = Object.Fillets Получить свойство (* )
+Fillets = Object.GetFillets() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Fillets( &Fillets ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+FullFillets  Коллекция операций полного скругления
+Интерфейс...
+Тип данных: Указатель на интерфейс IFullFillets 
+Синтаксис Automation:
+
+FullFillets = Object.FullFillets Получить свойство (* )
+FullFillets = Object.GetFullFillets() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FullFillets( &FullFillets ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+Версия Компас v18.1
+1918
+
+
+
+Holes3D  Коллекция отверстий 3D
+Интерфейс...
+Тип данных: Указатель на интерфейс IHoles3D.
+Синтаксис Automation:
+
+Holes3D = Object.Holes3D Получить свойство (* )
+Holes3D = Object.GetHoles3D() Получить свойство (**)
+
+Синтаксис COM:
+
+ Object.get_Holes3D( &Holes3D ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Inclines  Коллекция операций Уклон
+Интерфейс...
+Тип данных: Указатель на интерфейс IInclines. 
+Синтаксис Automation:
+
+Inclines = Object.Inclines Получить свойство (* )
+Inclines = Object.GetInclines() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Inclines( &Inclines ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Lofts  Коллекция операций По сечениям
+Интерфейс...
+Тип данных: Указатель на интерфейс ILofts. 
+Синтаксис Automation:
+
+Lofts = Object.Lofts Получить свойство (* )
+Lofts = Object.GetLofts() Получить свойство (**)
+
+Синтаксис COM:
+1919
+
+
+
+Object.get_Lofts( &Lofts ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+MacroObjects3D  Коллекция макроэлементов 3D
+Интерфейс...
+Тип данных: Указатель на интерфейс IMacroObjects3D.
+Синтаксис Automation:
+
+MacroObjects3D = Object.MacroObjects3D Получить свойство (* )
+MacroObjects3D = Object.GetMacroObjects3D() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_MacroObjects3D( &MacroObjects3D ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+MoldCavities  Коллекция операций вычитания 
+компонентов
+Интерфейс...
+Тип данных: Указатель на интерфейс IMoldCavities.
+Синтаксис Automation:
+
+MoldCavities = Object.MoldCavities Получить свойство (* )
+MoldCavities = Object.GetMoldCavities() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_MoldCavities( &MoldCavities ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Objects  Трехмерные объекты, входящие в состав 
+данного объекта
+Интерфейс...
+Тип данных: VARIANT
+1920
+
+
+
+Синтаксис Automation:
+
+Objects = iObject.Objects(ObjType) Получить свойство (* )
+Objects = Получить свойство (**)
+iObject.GetObjects(ObjType)
+
+Синтаксис COM:
+
+iObject">get_Objects( &Objects ) Получить свойство
+
+Входные параметры:
+
+ObjType " тип трехмерных объектов из перечисления
+KompasAPIObjectTypeEnum.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Коллекция объектов возвращается в виде массива SAFEARRAY объектов LPDISPATCH
+
+(VT_ARRAY | VT_DISPATCH). Если возвращается один объект, то тип VARIANT"а будет
+VT_DISPATCH, если возвращается несколько объектов, то тип VARIANT"а будет
+VT_ARRAY | VT_DISPATCH.
+
+Points3D  Указатель на интерфейс на интерфейс 
+коллекции элементов Пространственная точка
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции элементов Пространственная точка
+IPoints3D.
+Синтаксис Automation:
+
+Points3D = iObject.Points3D; Получить свойство (* )
+Points3D = iObject.GetPoints3D(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Points3D( &Points3D ); Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получать коллекции элементов Пространственная точка.
+1921
+
+
+
+Ribs  Коллекция операций Ребро жесткости
+Интерфейс...
+Тип данных: Указатель на интерфейс IRibs. 
+Синтаксис Automation:
+
+Ribs = Object.Ribs Получить свойство (* )
+Ribs = Object.GetRibs() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Ribs( &Ribs ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Rotateds  Указатель на интерфейс коллекции операций 
+вращения
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции операций вращения IRotateds.
+Синтаксис Automation:
+
+Rotateds = Object.Rotateds Получить свойство (* )
+Rotateds = Object.GetRotateds() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Rotateds( &Rotateds ) Получить свойство
+
+Свойство позволяет получить коллекцию всех операций вращения, входящих в состав
+данного объекта.
+Примечание:
+Свойство доступно только для чтения.
+
+Scalings3D  Коллекция операций масштабирования
+Интерфейс...
+Тип данных: указатель на интерфейс IScalings3D.
+Синтаксис Automation:
+
+Scalings3D = Object.Scalings3D Получить свойство (* )
+Scalings3D = Object.GetScalings3D() Получить свойство (**)
+
+Синтаксис COM:
+1922
+
+
+
+Object.get_Scalings3D( &Scalings3D Получить свойство
+)
+
+Примечание:
+Свойство доступно только для чтения.
+
+Shells  Коллекция операций Оболочка
+Интерфейс...
+Тип данных: Указатель на интерфейс IShells. 
+Синтаксис Automation:
+
+Shells = Object.Shells Получить свойство (* )
+Shells = Object.GetShells() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Shells( &Shells ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Sketchs  Указатель на интерфейс коллекции объектов 
+"Эскиз"
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции элементов «Эскиз» ISketchs.
+Синтаксис Automation:
+
+Sketchs = iObject.Sketchs; Получить свойство (* )
+Sketchs = iObject.GetSketchs(); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Sketchs( &Sketchs ); Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получать коллекции элементов "Эскиз".
+
+SurfaceThickenings  Указатель на интерфейс коллекции 
+операций придания толщины
+Интерфейс...
+1923
+
+
+
+Тип данных: указатель на интерфейс коллекции операций придания толщины
+ISurfaceThickenings.
+Синтаксис Automation:
+
+SurfaceThickenings = Получить свойство (* )
+Object.SurfaceThickenings
+SurfaceThickenings = Получить свойство (**)
+Object.GetSurfaceThickenings()
+
+Синтаксис COM:
+
+Object.get_SurfaceThickenings( Получить свойство
+&SurfaceThickenings )
+
+Свойство позволяет получить коллекцию всех операций придания толщины, входящих в
+состав данного объекта.
+Примечание:
+Свойство доступно только для чтения.
+
+UnionsComponents  Коллекция операций объединения 
+компонентов
+Интерфейс...
+Тип данных: Указатель на интерфейс IUnionsComponents. 
+Синтаксис Automation:
+
+UnionsComponents = Object.UnionsComponents Получить свойство (* )
+UnionsComponents = Получить свойство (**)
+Object.GetUnionsComponents()
+
+Синтаксис COM:
+
+Object.get_UnionsComponents( Получить свойство
+&UnionsComponents )
+
+Примечание:
+Свойство доступно только для чтения.
+
+UserObjects  Коллекции пользовательских объектов 3D
+Интерфейс...
+Тип данных: Указатель на интерфейс IUserObjects3D.
+Синтаксис Automation:
+1924
+
+
+
+UserObjects = Получить свойство(* )
+Object.UserObjects 
+UserObjects = Получить свойство (**)
+Object.GetUserObjects()
+
+Синтаксис COM:
+
+Object.get_UserObjects( Получить свойство
+&UserObjects )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IModelContainer  методы
+
+AddObject  Создает новый элемент 3D модели
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddObject( ksObj3dTypeEnum ObjectType );
+Синтаксис COM:
+HRESULT AddObject( ksObj3dTypeEnum ObjectType, IModelObject * * Result );
+Возвращаемое значение: 
+ 
+
+" указатель на интерфейс
+IModelObject.
+
+Входные параметры:
+ 
+
+ObjectType " тип объекта из перечисле"
+ния ksObj3dTypeEnum.
+
+Операции
+Интерфейс IExtrusions
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_BASE_EXTRUSION_SOLID.htm
+Интерфейс коллекции операций выдавливания.
+Иерархия:
+1925
+
+
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IExtrusions
+
+Примечание.
+Получить интерфейс операций выдавливания можно, используя свойство контейнера
+трехмерных объектов IModelContainer::Extrusions.
+
+IExtrusions  свойства
+
+Extrusion  Операция выдавливания, заданная по 
+индексу или ссылке
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_BASE_EXTRUSION_SOLID.htm
+Тип данных: указатель на интерфейс IExtrusion
+Синтаксис Automation:
+
+Extrusion = iObject.Extrusion( index ) Получить свойство (*
+)
+
+Extrusion = iObject.GetExtrusion( Получить свойство
+index ) (**)
+
+Синтаксис COM:
+
+iObject">get_Extrusion( index, Получить свойство
+&Extrusion )
+
+Входные параметры:
+
+VARIANT index " индекс операции выдавливания.
+
+Примечание:
+В качестве индекса может использоваться:
+
+▼ индекс объекта в коллекции,
+▼ ссылка на объект (reference).
+
+IExtrusions  методы
+
+Add  Создать операцию выдавливание
+Интерфейс...
+1926
+
+
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_BASE_EXTRUSION_SOLID.htm
+Синтаксис Automation:
+LPDISPATH Add(ksObj3dTypeEnum ExtrusionType);
+Синтаксис COM:
+HRESULT Add( ksObj3dTypeEnum ExtrusionType, IExtrusion ** Result);
+Возвращаемое значение:
+
+Указатель на интерфейс операции " в случае удачного завершения.
+выдавливание IExtrusion
+
+Примечания:
+
+1.  Метод позволяет создать новый интерфейс операции выдавливания.
+2.  Допустимыми значениями ExtrusionType являются o3d_bossExtrusion, o3d_cutExtrusion.
+3.  После получения нового интерфейса нужно задать параметры операции выдавливание
+
+и вызвать метод IModelObject::Update.
+
+Интерфейс IRotateds
+Справка системы КОМПАС...
+kompas.chm::/252_26_1_elem_vr.htm
+Коллекция операций вращения.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+IRotateds
+
+Интерфейс позволяет получать и создавать операции вращения.
+Примечание
+Интерфейс можно получить, используя свойство контейнера трехмерных объектов
+IModelContainer::Rotateds (операции вращения и вырезания вращением) и свойство кон"
+тейнера поверхностей ISurfaceContainer::RotatedSurfaces (поверхность вращения).
+
+IRotateds  свойства
+
+Rotated  Возвращает операцию вращения, заданную по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IRotated
+1927
+
+
+
+Синтаксис Automation:
+
+Rotated = Object.Rotated( Index ) Получить свойство (* )
+Rotated = Object.GetRotated( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Rotated( Index, &Rotated ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IRotateds  методы
+
+Add  Создает новую операцию вращения и добавляет 
+ее в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( ksObj3dTypeEnum RotatedType );
+Синтаксис COM:
+HRESULT Add( ksObj3dTypeEnum RotatedType, IRotated ** Result );
+Возвращаемое значение:
+Указатель на интерфейс операции вращения IRotatedIRotated.htm.
+Входные параметры:
+RotatedType " тип операции
+Примечание:
+Для создания операций вращения и вырезания вращением надо получать коллекцию у
+контейнера трехмерных объектов с помощью свойства IModelContainer::Rotateds, для со"
+здания поверхности вращения " у контейнера поверхностей с помощью свойства
+ISurfaceContainer::RotatedSurfaces.
+
+Интерфейс IScalings3D
+Справка системы КОМПАС...
+kompas.chm::/783_Glava88_Masshtabirovanie.htm
+Коллекция операций масштабирования.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+1928
+
+
+
+IScalings3D
+Интерфейс позволяет получать и создавать операции масштабирования.
+Интерфейс можно получить у контейнера модельных объектов с помощью метода
+IModelContainer::Scalings3D
+
+IScalings3D  свойства
+
+Scaling3D  Возвращает элемент, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IScaling3D
+Синтаксис Automation:
+
+Scaling3D = Object.Scaling3D( Index ) Получить свойство (* )
+Scaling3D = Object.GetScaling3D( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Scaling3D = Object.GetScaling3D( Index ) Получить свойство
+
+Возвращает операцию масштабирования из коллекции по заданному индексу или имени.
+Примечание:
+Свойство доступно только для чтения.
+
+IScalings3D  методы
+
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IScaling3D ** Result );
+Возвращаемое значение:
+Указатель на интерфейс IScaling3D
+Создает и добавляет новую операцию масштабирования в коллекцию.
+
+Интерфейс ISurfaceThickenings
+Справка системы КОМПАС...
+kompas.chm::/847_90_4_Pridan_tol_pov.htm
+Коллекция операций придания толщины поверхности.
+1929
+
+
+
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ISurfaceThickenings
+
+ISurfaceThickenings  свойства
+
+SurfaceThickening  Возвращает элемент, заданный по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ISurfaceThickening
+Синтаксис Automation:
+
+SurfaceThickening = Получить свойство (* )
+Object.SurfaceThickening( Index )
+SurfaceThickening = Получить свойство (**)
+Object.GetSurfaceThickening( Index )
+
+Синтаксис COM:
+
+Object.get_SurfaceThickening( Index, Получить свойство
+&SurfaceThickening )
+
+Свойство позволяет получить указатель на операцию придания толщины поверхности.
+Примечание:
+Свойство доступно только для чтения.
+
+ISurfaceThickenings  методы
+
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ISurfaceThickening ** Result );
+Возвращаемое значение:
+Указатель на интерфейс операции придания толщины поверхности ISurfaceThickening.
+1930
+
+
+
+Интерфейс IExtrusion
+Справка системы КОМПАС...
+KOMPAS.chm::/237_25_1_elem_vydavl.htm
+Интерфейс операции выдавливания.
+Иерархия:
+IKompasAPIObject
+
+IModelObject
+IExtrusion
+
+IChooseBodies7
+IThinParameters
+ICutExtrusion
+IExtrusion1
+Примечание.
+
+1.  Интерфейс можно получить с помощью метода коллекции операций выдавливания
+IExtrusions::Add или свойства IExtrusions::Extrusion.
+
+2.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) ин"
+терфейс позволяет получить следующие дополнительный интерфейсы:
+
+▼ IChooseBodies7 " интерфейс для области применения тел в операции,
+▼ IThinParameters " интерфейс параметров тонкой стенки,
+▼ ICutExtrusion " интерфейс операции "Вырезать выдавливанием",
+▼ IExtrusion1 " интерфейс параметров элемента выдавливания.
+
+IExtrusion  свойства
+
+Depth  Глубина выдавливания
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/696_84_1_2_Glubina_vydavlivanij.htm
+Тип данных: double
+Синтаксис Automation:
+
+Depth = iObject.Depth( Получить свойство (* )
+normal );
+iObject.Depth( normal ) = Установить свойство (* )
+Depth;
+Depth = iObject.GetDepth( Получить свойство (**)
+normal );
+iObject.SetDepth( normal, Установить свойство (**)
+Depth );
+1931
+
+
+
+Синтаксис COM:
+
+iObject">get_Depth( Получить свойство
+normal, &Depth );
+iObject">put_Depth( Установить свойство
+normal, Depth );
+
+Входные параметры:
+
+normal TRUE " выдавливание в прямом 
+направлении, 
+FALSE " выдавливание в обратном 
+направлении.
+
+Примечание:
+Свойство позволяет получить и установить глубину выдавливания.
+
+DepthObject  Объект, задающий глубину выдавливания
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/243_25_5_1_Vyd_na_rasst.htm
+Тип данных: указатель на интерфейс объекта IModelObject
+Синтаксис Automation:
+
+DepthObject = Получить свойство (* )
+iObject.DepthObject( 
+normal );
+iObject.DepthObject( Установить свойство (* )
+normal ) = DepthObject;
+DepthObject = Получить свойство (**)
+iObject.GetDepthObject( 
+normal );
+iObject.SetDepthObject( Установить свойство (**)
+normal, DepthObject );
+
+Синтаксис COM:
+
+iObject">get_DepthObject( Получить свойство
+normal, &DepthObject );
+iObject">put_DepthObject( Установить свойство
+normal, DepthObject );
+
+Входные параметры:
+1932
+
+
+
+normal TRUE " признак уклона нару"
+жу в прямом направлении, 
+FALSE " признак уклона нару"
+жу в обратном направлении.
+
+Примечание:
+
+1.  Свойство позволяет получать указатель на объект, задающий глубину.
+2.  Объект может быть задан, если направление на него совпадает с выбранным направле"
+
+нием (прямым или обратным) операции выдавливания IExtrusion::Direction.
+
+Direction  Тип направления выдавливания
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/696_84_1_2_Glubina_vydavlivanij.htm
+Тип данных: из перечисления DirectionTypeEnum
+Синтаксис Automation:
+
+Direction = Получить свойство (* )
+iObject.Direction;
+iObject.Direction = Установить свойство (* )
+Direction;
+Direction = Получить свойство (**)
+iObject.GetDirection();
+iObject.SetDirection( Установить свойство (**)
+Direction );
+
+Синтаксис COM:
+
+iObject">get_Direction( Получить свойство
+&Direction );
+iObject">put_Direction( Установить свойство
+Direction );
+
+Примечание:
+Свойство позволяет получить и установить тип направления выдавливания.
+
+DraftOutward  Признак уклона внутрь
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/698_84_1_3_Ugol_uklona.htm#Raw48834
+Тип данных: bool
+1933
+
+
+
+Синтаксис Automation:
+
+DraftOutward = Получить свойство (* )
+iObject.DraftOutward( 
+normal );
+iObject.DraftOutward( Установить свойство (* )
+normal ) = DraftOutward;
+DraftOutward = Получить свойство (**)
+iObject.GetDraftOutward( 
+normal );
+iObject.SetDraftOutward( Установить свойство (**)
+normal, DraftOutward );
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_DraftOutward( 
+normal, &DraftOutward );
+iObject" Установить свойство
+>put_DraftOutward( 
+normal, DraftOutward );
+
+Входные параметры:
+
+normal TRUE " признак уклона наружу в прямом 
+направлении, 
+FALSE " признак уклона наружу в 
+обратном направлении.
+
+Примечание:
+Свойство позволяет получить и установить признак уклона внутрь.
+
+DraftValue  Угол наклона
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/698_84_1_3_Ugol_uklona.htm#Raw48834
+Тип данных: double
+Синтаксис Automation:
+
+DraftValue = Получить свойство (* )
+iObject.DraftValue( normal 
+);
+iObject.DraftValue( normal Установить свойство (* )
+) = DraftValue;
+1934
+
+
+
+DraftValue = Получить свойство (**)
+iObject.GetDraftValue( 
+normal );
+iObject.SetDraftValue( Установить свойство (**)
+normal, DraftValue );
+
+Синтаксис COM:
+
+iObject">get_DraftValue( Получить свойство
+normal, &DraftValue );
+iObject">put_DraftValue( Установить свойство
+normal, DraftValue );
+
+Входные параметры:
+
+normal TRUE "угол наклона в прямом 
+направлении, 
+FALSE " угол наклона в обратном 
+направлении.
+
+Примечание:
+Свойство позволяет получить и установить угол наклона.
+
+ExtrusionType  Тип выдавливания
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/696_84_1_2_Glubina_vydavlivanij.htm
+Тип данных: из перечисления EndTypeEnum
+Синтаксис Automation:
+
+ExtrusionType = Получить свойство (* )
+iObject.ExtrusionType( 
+normal );
+iObject.ExtrusionType( Установить свойство (* )
+normal ) = ExtrusionType;
+ExtrusionType = Получить свойство (**)
+iObject.GetExtrusionType( 
+normal );
+iObject.SetExtrusionType( Установить свойство (**)
+normal, ExtrusionType );
+
+Синтаксис COM:
+1935
+
+
+
+iObject" Получить свойство
+>get_ExtrusionType( 
+&ExtrusionType );
+iObject" Установить свойство
+>put_ExtrusionType( 
+ExtrusionType );
+
+Входные параметры:
+
+normal TRUE " выдавливание в пря"
+мом направлении, 
+FALSE " выдавливание в
+обратном направлении.
+
+Примечание:
+Свойство позволяет получить и установить тип выдавливания.
+
+Sketch  Эскиз
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_BASE_EXTRUSION_SOLID.htm
+Тип данных: указатель на интерфейс эскиза ISketch
+Синтаксис Automation:
+
+Sketch = iObject.Sketch; Получить свойство (* )
+iObject.Sketch = Sketch; Установить свойство (* )
+Sketch = Получить свойство (**)
+iObject.GetSketch();
+iObject.SetSketch( Sketch Установить свойство (**)
+);
+
+Синтаксис COM:
+
+iObject">get_Sketch( Получить свойство
+&Sketch );
+iObject">put_Sketch( Установить свойство
+Sketch );
+
+Примечание:
+Свойство позволяет установить новый эскиз для операции и получить указатель на
+эскиз.
+1936
+
+
+
+IExtrusion  методы
+
+GetSideParameters  Получить параметры выдавливания 
+в одном направлении
+Интерфейс...
+Синтаксис Automation:
+BOOL GetSideParameters( BOOL normal,
+End_Type * ExtrusionType,
+double * Depth, 
+double * DraftValue, 
+BOOL * DraftOutward,
+IModelObject * DepthObject );
+Синтаксис COM:
+HRESULT GetSideParameters( BOOL normal,
+End_Type * ExtrusionType,
+double * Depth, 
+double * DraftValue, 
+BOOL * DraftOutward,
+IModelObject * DepthObject );
+Входные параметры:
+
+normal направление,
+TRUE " в прямом направлении, 
+FALSE " в обратном направлении.
+
+Выходные параметры:
+
+ExtrusionType " тип выдавливания,
+Depth " глубина выдавливания,
+DraftValue " угол наклона,
+DraftOutward " признак уклона внутрь,
+DepthObject " указатель на объект, задаю"
+
+щий глубину выдавливания.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Метод позволяет получать параметры операции выдавливание.
+2.  Параметр Depth позволяет задать на сколько выдавить за объект, задающий глубину вы"
+
+давливания, или какое расстояние оставить до объекта, задающего глубину выдавлива"
+1937
+
+
+
+ния " в зависимости от типа построения (для типов построения "до поверхности" и "до
+вершины" см. перечисление ksEndTypeEnum).
+
+SetSideParameters  Установить параметры 
+выдавливания в одном направлении
+Интерфейс...
+Синтаксис Automation:
+BOOL SetSideParameters( BOOL normal,
+End_Type * ExtrusionType,
+double * Depth, 
+double * DraftValue, 
+BOOL * DraftOutward,
+IModelObject * DepthObject );
+Синтаксис COM:
+HRESULT SetSideParameters( BOOL normal,
+End_Type * ExtrusionType,
+double * Depth, 
+double * DraftValue, 
+BOOL * DraftOutward,
+IModelObject * DepthObject );
+Входные параметры:
+
+normal направление,
+TRUE " в прямом направлении, 
+FALSE " в обратном направлении,
+
+ExtrusionType " тип выдавливания,
+Depth " глубина выдавливания,
+DraftValue " угол наклона,
+DraftOutward " признак уклона внутрь,
+DepthObject " указатель на объект, задающий глубину 
+
+выдавливания.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+
+1.  Метод позволяет получать параметры операции выдавливание.
+2.  Параметр Depth в позволяет задать на сколько выдавить за объект, задающий глубину
+
+выдавливания, или какое расстояние оставить до объекта, задающего глубину выдавли"
+вания " в зависимости от типа построения (для типов построения "до поверхности" и "до
+вершины" см. перечисление ksEndTypeEnum).
+1938
+
+
+
+Интерфейс ICutExtrusion
+Справка системы КОМПАС...
+kompas.chm::/CM_CUT_EXTRUSION_SOLID.htm
+Интерфейс операции "Вырезать выдавливанием".
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IExtrusion
+ICutExtrusion
+
+Примечание.
+Интерфейс можно получить с помощью метода коллекции операций выдавливания
+IExtrusions::Add(Obj3dType ExtrusionType ), передав тип 3D объекта " операция "вырезать
+выдавливанием" (o3d_cutExtrusion) или свойства IExtrusions::Extrusion.
+
+ICutExtrusion  свойства
+
+Cut  Признак результата операции (результирующего 
+тела)
+Интерфейс...
+Тип данных: bool
+Синтаксис Automation:
+
+Cut = iObject.Cut; Получить свойство(* )
+iObject.Cut = Cut; Установить свойство (* )
+Cut = iObject.GetCut(); Получить свойство (**)
+iObject.SetCut( Cut ); Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Cut( &Cut ); Получить свойство
+iObject">put_Cut( Cut ); Установить свойство
+
+Примечание:
+Свойство позволяет установить и получить результат (результирующее тело) операции
+"Вырезать выдавливанием".
+
+Интерфейс IExtrusionSurface
+Справка системы КОМПАС...
+kompas.chm::/885_103_2_Poverkhnostq_vydavliv.htm
+Интерфейс параметров поверхности выдавливания
+1939
+
+
+
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IExtrusion
+IExtrusionSurface
+
+Интерфейс позволяет создавать и редактировать поверхности выдавливания. 
+Примечание:
+Интерфейс можно получить с помощью свойства IExtrusions::Extrusion и метода
+IExtrusions::Add с типом o3d_ExtrusionSurface.
+
+IExtrusionSurface  свойства
+
+ClosedShell  Признак замкнутости поверхности
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClosedShell = Object.ClosedShell Получить свойство(* )
+Object.ClosedShell = ClosedShell Установить свойство (* )
+ClosedShell = Получить свойство (**)
+Object.GetClosedShell()
+Object.SetClosedShell( ClosedShell Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_ClosedShell( Получить свойство
+&ClosedShell )
+Object.put_ClosedShell( Установить свойство
+ClosedShell )
+
+Интерфейс IRotated
+Справка системы КОМПАС...
+kompas.chm::/252_26_1_elem_vr.htm
+Интерфейс параметров операции вращения.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IRotated
+1940
+
+
+
+Интерфейс позволяет создавать и редактировать операции вращения. Имеет дополни"
+тельный интерфейс IThinParameters, который можно получить с помощью метода
+IUnknown::QueryInterface.
+Примечание:
+Интерфейс можно получить с помощью свойства IRotateds::Rotated и метода
+IRotateds::Add с типом o3d_bossRotated.
+
+IRotated  свойства
+
+Angle  Угол вращения
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle( Normal ) Получить свойство (* )
+Object.Angle( Normal ) = Angle Установить свойство (* )
+Angle = Object.GetAngle( Normal ) Получить свойство (**)
+Object.SetAngle( Normal, Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( Normal, &Angle ) Получить свойство
+Object.put_Angle(  Normal, Angle ) Установить свойство
+
+Входные параметры:
+
+BOOL Normal " направление.
+
+Примечания:
+
+1.  Для вращения в двух направлениях угол требуется задать дважды — для прямого и
+обратного направления.
+
+2.  Если используется тип направления Средняя плоскость, то угол задается один раз. При
+этом он воспринимается системой как общий угол (т.е. в каждую сторону откладывается
+его половина).
+
+AngleObject  Объект, задающий угол вращения
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+AngleObject = Object.AngleObject( Normal ) Получить свойство (* )
+Object.AngleObject( Normal ) = AngleObject Установить свойство (* )
+1941
+
+
+
+AngleObject = Object.GetAngleObject( Normal ) Получить свойство (**)
+Object.SetAngleObject( Normal, AngleObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AngleObject( Normal, &AngleObject ) Получить свойство
+Object.put_AngleObject(  Normal, AngleObject ) Установить свойство
+
+Входные параметры
+
+BOOL Normal " направление.
+
+Axis  Ось операции вращения
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Axis = Object.Axis Получить свойство (* )
+Object.Axis = Axis Установить свойство (**)
+Object.Axis = Axis Получить свойство (**)
+Object.SetAxis( Axis ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Axis( &Axis ) Получить свойство
+Object.put_Axis(  Axis ) Установить свойство
+
+Свойство позволяет устанавливать и получать объект, задающий ось вращения. Ось мо"
+жет являться кривой 3D, ребром или браться из эскиза.
+Примечание:
+Объект, задающий ось, должен быть прямолинейным. Если используется ось из эскиза,
+то она должна быть изображена отрезком со стилем линии Осевая или объектом Осевая
+линия.
+
+CutOffByPoint  Флаг «отсекать» для способа 
+определения угла До точки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CutOffByPoint( Normal ) = Object.CutOffByPoint Получить свойство (* )
+Object.CutOffByPoint( Normal ) = CutOffByPoint Установить свойство (* )
+CutOffByPoint = Object.GetCutOffByPoint( Normal ) Получить свойство (**)
+1942
+
+
+
+Object.SetCutOffByPoint( Normal, CutOffByPoint ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_CutOffByPoint( Normal, &CutOffByPoint ) Получить свойство
+Object.put_CutOffByPoint( Normal,  CutOffByPoint ) Установить свойство
+
+Direction  Направление вращения
+Интерфейс...
+Тип данных: из перечисления ksDirectionTypeEnum
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство (* )
+Object.Direction = Direction Установить свойство (**)
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство
+Object.put_Direction(  Direction ) Установить свойство
+
+Свойство позволяет устанавливать и получать направление, в котором производится
+вращение.
+
+Profile  Сечение для операции вращения
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Profile = Object.Profile Получить свойство (* )
+Object.Profile = Profile Установить свойство (**)
+Profile = Object.GetProfile() Получить свойство (**)
+Object.SetProfile( Profile ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Profile( &Profile ) Получить свойство
+Object.put_Profile(  Profile ) Установить свойство
+
+Свойство позволяет устанавливать и получать объект, определяющий форму сечения
+операции. Это может быть эскиз, грань, кривая 3D.
+Примечание:
+1943
+
+
+
+Если в эскизе, задающем сечение, присутствует ось, и ось не задана свойством
+IRotated::Axis, то для построения операции будет использоваться ось из эскиза.
+
+RotatedType  Способ построения угла вращения
+Интерфейс...
+Тип данных: из перечисления ksRotatedTypeEnum
+Синтаксис Automation:
+
+RotatedType = Object.RotatedType( Normal ) Получить свойство (* )
+Object.RotatedType( Normal ) = RotatedType Установить свойство (**)
+RotatedType = Object.GetRotatedType( Normal ) Получить свойство (**)
+Object.SetRotatedType( Normal, RotatedType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_RotatedType( Normal, &RotatedType ) Получить свойство
+Object.put_RotatedType(  Normal, RotatedType ) Установить свойство
+
+Входные параметры:
+
+BOOL Normal " направление.
+
+ToroidShapeType  Признак тороида
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ToroidShapeType = Object.ToroidShapeType Получить свойство (* )
+Object.ToroidShapeType = ToroidShapeType Установить свойство (**)
+ToroidShapeType = Object.GetToroidShapeType() Получить свойство (**)
+Object.SetToroidShapeType( ToroidShapeType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ToroidShapeType( &ToroidShapeType ) Получить свойство
+Object.put_ToroidShapeType( ToroidShapeType ) Установить свойство
+
+Свойство позволяет устанавливать и получать признак тороида.
+1944
+
+
+
+Интерфейс ICutRotated
+Справка системы КОМПАС...
+kompas.chm::/252_26_1_elem_vr.htm
+Интерфейс параметров операции «Вырезать вращением»
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IRotated
+ICutRotated
+
+Интерфейс позволяет создавать и редактировать операции вырезания вращением. Име"
+ет дополнительный интерфейс IThinParameters, который можно получить с помощью
+методаIUnknown::QueryInterface.
+Примечание:
+Интерфейс можно получить с помощью свойства IRotateds::Rotated и метода
+IRotateds::Add с типом o3d_cutRotated.
+
+ICutRotated  свойства
+
+Cut  Признак результата операции (результирующего 
+тела)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Cut = Object.Cut Получить свойство (* )
+Object.Cut = Cut Установить свойство (* )
+Cut = Object.GetCut() Получить свойство (**)
+Object.SetCut( Cut ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Cut( Получить свойство
+&Cut )
+Object.put_Cut(  Cut Установить свойство
+)
+
+Значения свойства:
+
+TRUE " вычитание элементов,
+FALSE " пересечение элементов.
+1945
+
+
+
+Интерфейс IRotatedSurface
+Справка системы КОМПАС...
+kompas.chm::/884_Glava103_Poverkhnosti.htm
+Интерфейс параметров поверхности вращения
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IRotated
+IRotatedSurface
+
+Интерфейс позволяет создавать и редактировать поверхности вращения.
+Примечание:
+Интерфейс можно получить с помощью свойства IRotateds::Rotated и метода
+IRotateds::Add с типом o3d_RotatedSurface.
+
+IRotatedSurface  свойства
+
+ClosedShell  Признак замкнутости поверхности
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClosedShell = Object.ClosedShell Получить свойство (* )
+Object.ClosedShell = ClosedShell Установить свойство (* )
+ClosedShell = Получить свойство (**)
+Object.GetClosedShell()
+Object.SetClosedShell( ClosedShell Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_ClosedShell( Получить свойство
+&ClosedShell )
+Object.put_ClosedShell( Установить свойство
+ClosedShell )
+
+Интерфейс IRotated1
+Интерфейс операции вращения.
+1946
+
+
+
+Справка системы КОМПАС...
+kompas.chm::/252_26_1_elem_vr.htm
+Иерархия:
+IDispatch
+
+IRotated1
+Интерфейс является дополнительным к интерфейсу IRotated. Данный интерфейс можно
+получить посредством вызова метода IUnknown::QueryInterface (const GUID far& iid,
+void** pif).
+КОМПАС версия v18
+
+IRotated1  Cвойства
+
+OperationResult  Результат операции
+Интерфейс...
+Тип данных: Значение из перечисления ksOperationResultEnum.
+Синтаксис Automation:
+
+OperationResult = Object.OperationResult Получить свойство (* )
+Object.OperationResult = OperationResult Установить свойство (**)
+OperationResult = Object.GetOperationResult() Получить свойство (**)
+Object.SetOperationResult( OperationResult ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_OperationResult( &OperationResult ) Получить свойство
+Object.put_OperationResult(  OperationResult ) Установить свойство
+
+Интерфейс IShellSurface
+Интерфейс операции Поверхность (поверхность выдавливания, вращения, по
+сечениям, кинематическая).
+Иерархия:
+IDispatch
+
+IShellSurface
+Интерфейс является дополнительным для поверхностей:
+
+▼ выдавливания IExtrusion,
+▼ вращения IRotated,
+▼ по сечениям ILoft, 
+▼ кинематических IEvolution. 
+1947
+
+
+
+Интерфейс можно получить посредством вызова метода IUnknown::QueryInterface (const
+GUID far& iid, void** pif).
+КОМПАС версия v18
+
+IShellSurface  свойства
+
+ClosedShell  Признак замкнутости поверхности
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClosedShell = Object.ClosedShell Получить свойство (* )
+Object.ClosedShell = ClosedShell Установить свойство (**)
+ClosedShell = Object.GetClosedShell() Получить свойство (**)
+Object.SetClosedShell( ClosedShell ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ClosedShell( &ClosedShell ) Получить свойство
+Object.put_ClosedShell(  ClosedShell ) Установить свойство
+
+Интерфейс IScaling3D
+Справка системы КОМПАС...
+kompas.chm::/783_Glava88_Masshtabirovanie.htm
+Интерфейс параметров операции масштабирования.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IScaling3D
+Интерфейс позволяет изменять размеры тела или поверхности в трех направлениях со"
+гласно заданному коэффициенту.
+Интерфейс можно получить у коллекции операций масштабирования с помощью свой"
+ства IScalings3D::Scaling3D и метода IScalings3D::Add.
+
+IScaling3D  свойства
+
+BasePoint  Центр масштабирования тела или 
+поверхности
+Интерфейс...
+1948
+
+
+
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+BasePoint = Object.BasePoint Получить свойство (* )
+Object.BasePoint = BasePoint Установить свойство (* )
+BasePoint = Object.GetBasePoint() Получить свойство (**)
+Object.SetBasePoint( BasePoint ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BasePoint( &BasePoint ) Получить свойство 
+Object.put_BasePoint(  BasePoint ) Установить свойство 
+
+Свойство позволяет устанавливать и получать центр масштабирования " вершину или
+точку в пространстве, выбираемую за неподвижную.
+
+Scale  Масштаб (коэффициент масштабирования тела 
+или поверхности
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Scale = Object.Scale Получить свойство (* )
+Object.Scale = Scale Установить свойство (* )
+Scale = Object.GetScale() Получить свойство (**)
+Object.SetScale( Scale ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Scale( &Scale ) Получить свойство 
+Object.put_Scale(  Scale ) Установить свойство 
+
+Свойство позволяет устанавливать и получать коэффициент масштабирования.
+
+Shell  Тело или поверхность для масштабирования
+Интерфейс...
+Тип данных: указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+
+Shell = Object.Shell Получить свойство
+(* )
+
+Object.Shell = Shell Установить свойство
+(* )
+1949
+
+
+
+Shell = Object.GetShell() Получить свойство
+(**)
+
+Object.SetShell( Shell ) Установить свойство
+(**)
+
+Синтаксис COM:
+
+Object.get_Shell( &Shell ) Получить свойство
+Object.put_Shell(  Shell ) Установить свойство
+
+Свойство позволяет устанавливать и получать объект для масштабирования.
+
+Интерфейс ISurfaceThickening
+Справка системы КОМПАС...
+kompas.chm::/847_90_4_Pridan_tol_pov.htm
+Интерфейс операции придания толщины поверхности.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ISurfaceThickening
+IThinParameters
+
+Интерфейс позволяет придать толщину граням тела или поверхности, т.е. добавить слой
+материала на эти грани. Сформированный слой материала представляет собой запол"
+ненное материалом пространство между исходной и эквидистантной поверхностями или
+двумя эквидистантными поверхностями.
+Имеет дополнительный интерфейс IThinParameters.
+
+ISurfaceThickening  свойства
+
+Faces  Список граней
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Faces = Object.Faces Получить свойство (* )
+Object.Faces = Faces Установить свойство (* )
+Faces = Object.GetFaces() Получить свойство (**)
+Object.SetFaces( Faces ) Установить свойство (**)
+
+Синтаксис COM:
+1950
+
+
+
+Object.get_Faces( &Faces ) Получить свойство
+Object.put_Faces(  Faces ) Установить свойство
+
+Свойство позволяет задать грань (тип VARIANT'a " VT_DISPATCH) или массив граней (тип
+VARIANT'a " VT_ARRAY | VT_DISPATCH) для выполнения операции.
+
+Интерфейс IThread
+Интерфейс условного обозначения резьбы.
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_SYMBOLS_THREAD.htm
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IThread
+IThreadsParameters
+
+Интерфейс можно получить с помощью методов: 
+IThreads::Thread
+IThreads::Add
+Интерфейс имеет дополнительный интерфейс IThreadsParameters.
+
+IThread  свойства
+
+AutoDiameter  Автоопределение диаметра
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoDiameter = Object.AutoDiameter Получить свойство (* )
+Object.AutoDiameter = AutoDiameter Установить свойство (* )
+AutoDiameter = Получить свойство (**)
+Object.GetAutoDiameter()
+Object.SetAutoDiameter( AutoDiameter ) Установить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_AutoDiameter( &AutoDiameter ) Получить свойство
+Object.put_AutoDiameter(  AutoDiameter ) Установить свойство
+1951
+
+
+
+AutoLenght  Автоматическое определение длины 
+резьбы (TRUE  длина определяется автоматически  до 
+конечной границы, FALSE  длина задана явно)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoLenght = Object.AutoLenght Получить свойство (* )
+Object.AutoLenght = AutoLenght Установить свойство (* )
+AutoLenght = Object.GetAutoLenght() Получить свойство (**)
+ Object.SetAutoLenght( AutoLenght ) Установить свойство (**)
+
+ Синтаксис COM:
+
+Object.get_AutoLenght( &AutoLenght ) Получить свойство
+Object.put_AutoLenght(  AutoLenght ) Установить свойство
+
+ 
+
+BaseObject  Ребро или грань, по которой строится резьба
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+ BaseObject = Object.BaseObject Получить свойство (* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Object.GetBaseObject() Получить свойство (**)
+Object.SetBaseObject( BaseObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseObject( &BaseObject ) Получить свойство
+Object.put_BaseObject(  BaseObject ) Установить свойство
+
+BaseObjectAdjustment  Подгонка диаметра базового 
+объекта под диаметр резьбы
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BaseObjectAdjustment = Получить свойство (* )
+Object.BaseObjectAdjustment 
+1952
+
+
+
+Object.BaseObjectAdjustment = Установить свойство (* )
+BaseObjectAdjustment  
+BaseObjectAdjustment = Получить свойство (**)
+Object.GetBaseObjectAdjustment()
+Object.SetBaseObjectAdjustment( Установить свойство (**)
+BaseObjectAdjustment ) 
+
+Синтаксис COM:
+
+Object.get_BaseObjectAdjustment( Получить свойство
+&BaseObjectAdjustment )
+Object.put_BaseObjectAdjustment( Установить свойство
+BaseObjectAdjustment )
+
+BaseObjectAdjustmentOffset1  Дополнительная 
+подгонка для сохранения глубины зенковки/
+скругления/фаски при подгонке диаметра базового 
+объекта под диаметр резьбы
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BaseObjectAdjustmentOffset1 = Получить свойство (* )
+Object.BaseObjectAdjustmentOffset1 
+Object.BaseObjectAdjustmentOffset1 = Установить свойство (* )
+BaseObjectAdjustmentOffset1  
+BaseObjectAdjustmentOffset1 = Получить свойство (**)
+Object.GetBaseObjectAdjustmentOffset1(
+)
+Object.SetBaseObjectAdjustmentOffset1( Установить свойство (**)
+BaseObjectAdjustmentOffset1 ) 
+
+Синтаксис COM:
+
+Object.get_BaseObjectAdjustmentOffset1( Получить свойство
+&BaseObjectAdjustmentOffset1 )
+Object.put_BaseObjectAdjustmentOffset1( Установить свойство
+BaseObjectAdjustmentOffset1 )
+
+BaseObjectAdjustmentOffset2  Дополнительная 
+подгонка для сохранения глубины неплоского торца 
+отверстия при подгонке диаметра базового объекта под 
+диаметр резьбы
+Интерфейс...
+1953
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+BaseObjectAdjustmentOffset2 = Получить свойство (* )
+Object.BaseObjectAdjustmentOffset2 
+Object.BaseObjectAdjustmentOffset2 = Установить свойство (* )
+BaseObjectAdjustmentOffset2  
+BaseObjectAdjustmentOffset2 = Получить свойство (**)

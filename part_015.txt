@@ -1,0 +1,2533 @@
+
+ICurve2D  свойства
+
+IsClosed  Замкнутость кривой
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsClosed = Object.IsClosed() Получить свойство(* )
+IsClosed = Object.GetIsClosed() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_IsClosed( &IsClosed ) Получить свойство
+
+Примечание:
+753
+
+
+
+1.  Свойство позволяет получать признак замкнутости кривой.
+2.  Свойство доступно только для чтения.
+
+IsSelfIntersect  Самопересечение кривой
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsSelfIntersect = Получить свойство(* )
+Object.IsSelfIntersect()
+IsSelfIntersect = Получить свойство (**)
+Object.GetIsSelfIntersect()
+
+Синтаксис COM:
+
+Object.get_IsSelfIntersect( Получить свойство
+&IsSelfIntersect )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Length  Длина кривой
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Length = Object.Length() Получить свойство(* )
+Length = Object.GetLength() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Length( &Length ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать длину кривой.
+2.  Свойство доступно только для чтения.
+
+ParamMin  Минимальный параметр
+Интерфейс...
+Тип данных: double
+754
+
+
+
+Синтаксис Automation:
+
+ParamMin = Object.ParamMin() Получить свойство(* )
+ParamMin = Получить свойство (**)
+Object.GetParamMin()
+
+Синтаксис COM:
+
+Object.get_ParamMin( Получить свойство
+&ParamMin )
+
+Примечание:
+
+1.  Свойство позволяет получать минимальный параметр кривой.
+2.  Свойство доступно только для чтения.
+
+ParamMax  Максимальный параметр
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ParamMax = Получить свойство(* )
+Object.ParamMaxLength()
+ParamMax = Получить свойство (**)
+Object.GetParamMax()
+
+Синтаксис COM:
+
+Object.get_ParamMax( Получить свойство
+&ParamMax )
+
+Примечание:
+
+1.  Свойство позволяет получать максимальный параметр кривой.
+2.  Свойство доступно только для чтения.
+
+ ICurve2D  методы
+
+CalculatePolygonByStep  Получить массив равномерно 
+расположенных на кривой точек
+Интерфейс...
+Синтаксис Automation:
+VARIANT CalculatePolygonByStep( double Step );
+Синтаксис COM:
+755
+
+
+
+HRESULT CalculatePolygonByStep( double  Step,
+VARIANT * Result );
+Входные параметры:
+
+Ste " шаг,
+p
+An " угол нормали.
+gle
+
+Возвращаемое значение:
+
+Массив SAFEARRAY точек VT_ARRAY | VT_R8.
+
+Примечание:
+Метод позволяет получить массив равномерно расположенных на кривой точек.
+
+CouplingCurvCurv  Расчет скруглений для двух кривых
+Интерфейс...
+Синтаксис Automation:
+VARIANT CouplingCurvCurv( LPDISPATCH * Curve2,
+double Radius );
+Синтаксис COM:
+HRESULT CouplingCurvCurv( ICurve2D * Curve2,
+double Radius,
+VARIANT * Result );
+Входные параметры:
+
+Cur " указатель на интерфейс второй кривой,
+ve2
+Ra " радиус скругления.
+diu
+s
+
+Возвращаемое значение:
+
+" Массив SAFEARRAY структуры сопряжения VT_ARRAY |
+VT_R8.
+
+Примечание:
+Метод позволяет рассчитать скругления для двух кривых.
+756
+
+
+
+GetDistancePointPoint  Получить расстояние между 
+двумя точками на кривой
+Интерфейс...
+Синтаксис Automation:
+double GetDistancePointPoint( double X1,
+double Y1,
+double X2,
+double Y2 );
+Синтаксис COM:
+HRESULT GetDistancePointPoint( double  X1,
+double  Y1,
+double  X2,
+double  Y2,
+double * Result );
+Входные параметры:
+
+X1, " координаты первой точки,
+Y1
+X2, " координаты второй точки.
+Y2
+
+Возвращаемое значение:
+
+" Расстояние между двумя точками.
+
+Примечание:
+Метод позволяет получить расстояние между двумя точками на кривой.
+
+GetDistanceToPoint  Получить расстояние между точкой 
+и проекцией точки на кривую
+Интерфейс...
+Синтаксис Automation:
+double GetDistanceToPoint( double X,
+double Y );
+Синтаксис COM:
+HRESULT GetDistanceToPoint( double  X,
+double  Y,
+double * Result );
+Входные параметры:
+
+X, " координаты точки.
+Y
+
+757
+
+
+
+Возвращаемое значение:
+
+" Расстояние между точкой и ее проекцией на кривую.
+
+Примечание:
+Метод позволяет получить расстояние между точкой и проекцией точки на кривую.
+
+GetMetricLength  Метрическая длина кривой
+Интерфейс...
+Синтаксис Automation:
+double GetMetricLength( double T1,
+double T2 );
+Синтаксис COM:
+HRESULT GetMetricLength( double  T1,
+double  T2,
+double * Result );
+Входные параметры:
+
+Т1, " параметры кривой.
+Т2
+
+Возвращаемое значение:
+
+" Метрическая длина кривой.
+
+Примечание:
+Метод позволяет получить метрическую длину кривой.
+
+GetNurbsParams  Получить параметры в NURBS
+представлении
+Интерфейс...
+Синтаксис Automation:
+BOOL GetNurbsParams( BOOL UnClamped,
+VARIANT * Points,
+VARIANT * Weights,
+VARIANT * Knots,
+double  * TMin,
+double  * TMax );
+Синтаксис COM:
+HRESULT GetNurbsParams( BOOL UnClamped,
+VARIANT * Points,
+VARIANT * Weights,
+VARIANT * Knots, 
+758
+
+
+
+double  * TMin,
+double  * TMax,
+BOOL  * Result );
+Входные параметры:
+
+UnClampe " TRUE " вернуть параметры точек для замкнуто"
+d го представления,
+
+" FALSE " вернуть параметры точек для разо"
+мкнутого представления.
+
+Входные параметры:
+
+Points " SAFEARRAY координат точек VT_ARRAY |
+VT_R8,
+
+Weights " SAFEARRAY весов точек VT_ARRAY | VT_R8,
+Knots " SAFEARRAY узлов точек VT_ARRAY | VT_R8,
+TMin " минимальный параметр кривой,
+TMax " максимальный параметр кривой.
+
+Возвращаемое значение:
+
+TRU " в случае успеха,
+E
+FAL " в случае неудачи.
+SE
+
+Примечание:
+Метод позволяет получить параметры кривой в NURBS"представлении.
+
+GetPointLocation  Положение точки относительно 
+кривой
+Интерфейс...
+Синтаксис Automation:
+ksPointLocationTypeEnum GetPointLocation( double X, double Y );
+Синтаксис COM:
+HRESULT GetPointLocation( double X, double Y, ksPointLocationTypeEnum * Result );
+Возвращаемое значение: 
+
+Res " положение двумерной точки относительно
+ult двумерной кривой.
+
+Входные параметры:
+
+X " первая координата точки,
+759
+
+
+
+Y " вторая координата точки.
+
+Intersect  Пересечение двух кривых
+Интерфейс...
+Синтаксис Automation:
+VARIANT Intersect( LPDISPATCH * Curve2 );
+Синтаксис COM:
+HRESULT Intersect( ICurve2D * Curve2,
+VARIANT * Result );
+Входные параметры:
+
+Cur " указатель на интерфейс кривой, которая пере"
+ve2 секает данную кривую.
+
+Возвращаемое значение:
+
+" Массив SAFEARRAY точек пересечений VT_ARRAY | VT_R8
+
+Примечание:
+Метод позволяет получить координаты точек пересечения двух кривых.
+
+MovePoint  Сдвинуть точку на расстояние Lenght по 
+кривой
+Интерфейс...
+Синтаксис Automation:
+BOOL MovePoint( double * X,
+double * Y,
+double  Lenght,
+BOOL   Direction );
+Синтаксис COM:
+HRESULT MovePoint( double * X,
+double * Y,
+double  Lenght,
+BOOL Direction, 
+BOOL * Result );
+Входные параметры:
+
+X, " координаты точки,
+Y
+
+760
+
+
+
+Le " расстояние, на которое нужно сместить точку,
+ng
+ht
+Dir " направление смещения.
+ecti
+on
+
+Возвращаемое значение:
+
+" Массив SAFEARRAY точек VT_ARRAY | VT_R8.
+
+Примечание:
+Метод позволяет получить массив равномерно расположенных на кривой точек.
+
+PointOn  Получить координаты точки по параметру t
+Интерфейс...
+Синтаксис Automation:
+BOOL PointOn( double T,
+double * X,
+double * Y );
+Синтаксис COM:
+HRESULT PointOn( double  T,
+double * X,
+double * Y, 
+BOOL  * Result );
+Входные параметры:
+
+Т " параметр кривой.
+
+Выходные параметры:
+
+X, " координаты точки.
+Y
+
+Возвращаемое значение:
+
+TRU " в случае успеха,
+E
+FAL " в случае неудачи.
+SE
+
+Примечание:
+Метод позволяет получить координаты точки по параметру кривой.
+761
+
+
+
+PointProjection  Проекция точки на кривую
+Интерфейс...
+Синтаксис Automation:
+BOOL PointProjection( double X,
+double  Y,
+double * Kx,
+double * Ky,
+double * T,
+double * Angle );
+Синтаксис COM:
+HRESULT PointProjection( double  X,
+double  Y,
+double * Kx,
+double * Ky,
+double * T,
+double * Angle, 
+BOOL  * Result );
+Входные параметры:
+
+X, Y " координаты точки.
+
+Выходные параметры:
+
+Kx, Ky " координаты проекции точки,
+Т " параметр кривой,
+Angle " угол нормали.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет построить проекцию точки на кривую.
+
+Tangent  Касательные для двух кривых
+Интерфейс...
+Синтаксис Automation:
+BOOL Tangent( LPDISPATCH * Curve2,
+VARIANT * Curve1Points,
+VARIANT * Curve2Points );
+Синтаксис COM:
+HRESULT Tangent( ICurve2D * Curve2,
+VARIANT * Curve1Points,
+762
+
+
+
+VARIANT * Curve2Points,
+BOOL * Result );
+Входные параметры:
+
+Curve2 " указатель на интерфейс второй кривой.
+
+Выходные параметры:
+
+Curve1Points " массив SAFEARRAY точек на первой кривой 
+VT_ARRAY | VT_R8,
+
+Curve2Points " SAFEARRAY точек на второй кривой VT_ARRAY | 
+VT_R8.
+
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить касательные для двух кривых.
+
+TangentLinePoint  Точки касания кривой и прямой из 
+заданной точки
+Интерфейс...
+Синтаксис Automation:
+VARIANT TangentLinePoint( double X,
+double Y );
+Синтаксис COM:
+HRESULT TangentLinePoint( double  X,
+double  Y,
+VARIANT * Result );
+Входные параметры:
+
+X, " координаты точки.
+Y
+
+Возвращаемое значение:
+
+" Массив SAFEARRAY точек на кривой VT_ARRAY | VT_R8.
+
+Примечание:
+Метод позволяет получить координаты точек касания кривой и прямой из заданной точ"
+ки.
+763
+
+
+
+Группы
+Интерфейс IDrawingGroup
+Интерфейс группы (постоянной, временной, именованной).
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingGroup
+
+Описание:
+Интерфейс позволяет задавать параметры группы (постоянной, временной или имено"
+ванной).
+Примечание:
+Интерфейс можно получить у коллекции групп, используя свойство
+IDrawingGroups::Item или метод IDrawingGroups::Add или у дополнительного интерфейса
+документа 2D с помощью свойства IKompasDocument2D1::CurrentGroup.
+
+IDrawingGroup  свойства
+
+Current  Текущая группа
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Current = Object.Current Получить свойство(* )
+Current = Object.GetCurrent() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Current( &Current ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать признак того, что группа является текущей.
+2.  Свойство доступно только для чтения.
+
+Name  Имя именованной группы
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+764
+
+
+
+Name = Object.Name Получить свойство(* )
+Object.Name = Name Установить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+Object.SetName( Name ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name( &Name ) Получить свойство
+Object.put_Name(  Name ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать имя группы и добавляет группу в имено"
+ванные.
+
+Objects  Получить массив объектов 
+SAFEARRAY|VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_DISPATCH
+Синтаксис Automation:
+
+Objects = Object.Objects Получить свойство(* )
+Objects = Object.GetObjects() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Objects( &Objects ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать массив объектов, входящих в группу. Если возвращается
+один объект, то тип VARIANT"а будет VT_DISPATCH, если возвращается несколько объ"
+ектов, то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+2.  Свойство доступно только для чтения.
+
+ObjectsCount  Количество объектов в группе
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ObjectsCount = Получить свойство(* )
+Object.ObjectsCount
+ObjectsCount = Получить свойство (**)
+Object.GetObjectsCount()
+765
+
+
+
+Синтаксис COM:
+
+Object.get_ObjectsCount( Получить свойство
+&ObjectsCount )
+
+Примечание:
+
+1.  Свойство позволяет получать количество объектов в группе.
+2.  Свойство доступно только для чтения.
+
+IDrawingGroup  методы
+
+AddObjects  Добавить объекты в группу
+Интерфейс...
+Синтаксис Automation:
+BOOL AddObjects( VARIANT Objects );
+Синтаксис COM:
+HRESULT AddObjects( VARIANT Objects,
+BOOL * Result );
+Входные параметры:
+
+Objects " объект или массив объектов для добавления в 
+группу ( VARIANT типа VT_DISPATCH или 
+VT_ARRAY | VT_DISPATCH).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет добавить объекты в группу.
+
+AddRegion  Добавить объекты в группу рамкой
+Интерфейс...
+Синтаксис Automation:
+BOOL AddRegion( long  RegionType,
+double XMin,
+double YMin,
+double XMax,
+double YMax );
+Синтаксис COM:
+766
+
+
+
+HRESULT AddRegion( ksRegionTypeEnum RegionType,
+double XMin,
+double YMin,
+double XMax,
+double YMax,
+BOOL * Result );
+Входные параметры:
+
+RegionType " тип рамки из перечисления ksRegionTypeEnum,
+XMin, YMin " координаты нижнего левого угла рамки,
+XMax, YMax " координаты верхнего правого угла рамки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет добавить объекты в группу рамкой.
+
+Clear  Очистить группу
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear( BOOL DeleteTmp );
+Синтаксис COM:
+HRESULT Clear( BOOL  DeleteTmp,
+BOOL * Result );
+Входные параметры:
+
+DeleteTmp " удалять ли временные объекты.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить все объекты из группы.
+
+Close  Закрыть группу
+Интерфейс...
+Синтаксис Automation:
+767
+
+
+
+BOOL Close();
+Синтаксис COM:
+HRESULT Close( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет открыть группу для редактирования.
+
+Delete  Удалить группу
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить группу.
+
+DetachObjects  Исключить объекты из группы
+Интерфейс...
+Синтаксис Automation:
+BOOL DetachObjects( VARIANT Objects,
+BOOL  DeleteTmp );
+Синтаксис COM:
+HRESULT DetachObjects( VARIANT Objects,
+BOOL  DeleteTmp,
+BOOL * Result );
+Входные параметры:
+
+Objects " объект или массив объектов для удаления из 
+группы( VARIANT типа VT_DISPATCH или 
+VT_ARRAY | VT_DISPATCH ),
+
+DeleteTmp " удалять ли временные объекты.
+768
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет исключить объекты из группы.
+
+Draw  Отрисовать в окне
+Интерфейс...
+Синтаксис Automation:
+BOOL Draw( OLE_HANDLE HWnd );
+Синтаксис COM:
+HRESULT Draw( OLE_HANDLE HWnd,
+BOOL * Result );
+Входные параметры:
+
+HWnd " дескриптор окна.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет отрисовать группу в окне.
+
+ExistObject  Проверить, есть ли объект в группе
+Интерфейс...
+Синтаксис Automation:
+BOOL ExistObject( LPDISPATCH Object );
+Синтаксис COM:
+HRESULT ExistObject( IDrawingObject * Object,
+BOOL * Result );
+Входные параметры:
+
+Object " объект, наличие которого в группе надо 
+проверить.
+
+Возвращаемое значение:
+
+TRUE " объект есть в группе,
+769
+
+
+
+FALSE " объекта нет в группе.
+Примечание:
+Метод позволяет определить, есть ли в группе заданный объект.
+
+Open  Открыть группу
+Интерфейс...
+Синтаксис Automation:
+BOOL Open();
+Синтаксис COM:
+HRESULT Open( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет открыть группу для редактирования.
+
+ReadFragment  Добавить объекты в группу из 
+фрагмента 
+Интерфейс...
+Синтаксис Automation:
+BOOL ReadFragment( BSTR  FileName,
+BOOL  CurentLayer,
+double XBase,
+double YBase,
+double Scale,
+double Angle,
+BOOL  ScaleProjLinesSize );
+Синтаксис COM:
+HRESULT ReadFragment( BSTR  FileName,
+BOOL  CurentLayer,
+double XBase,
+double YBase,
+double Scale,
+double Angle,
+BOOL  ScaleProjLinesSize,
+BOOL * Result );
+Входные параметры:
+
+FileName " имя файла фрагмента,
+770
+
+
+
+CurentLayer " тип размещения по слоям 
+FALSE " на свои слои,
+TRUE " в текущий слой,
+
+XBase, YBase " координаты базовой точки в СК вида,
+Scale " масштаб,
+Angle " угол поворота в СК вида,
+ScaleProjLinesSize " масштабировать ли проекционные линии.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет добавить объекты в группу из фрагмента.
+
+ReadFromClip  Считать объекты из клипа
+Интерфейс...
+Синтаксис Automation:
+BOOL ReadFromClip( BOOL AttrCopy,
+BOOL SpcObjCopy );
+Синтаксис COM:
+HRESULT ReadFromClip( BOOL AttrCopy,
+BOOL SpcObjCopy,
+BOOL * Result );
+Входные параметры:
+
+AttrCopy " копировать ли атрибуты,
+SpcObjCopy " копировать ли объекты спецификации.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет считать объекты из клипа в группу.
+
+Store  Вставить временную группу в документ
+Интерфейс...
+Синтаксис Automation:
+BOOL Store();
+Синтаксис COM:
+HRESULT Store( BOOL * Result );
+771
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет вставить временную группу в документ.
+
+WriteFragment  Записать в фрагмент
+Интерфейс...
+Синтаксис Automation:
+BOOL WriteFragment( BSTR  FileName,
+BSTR  Comment,
+double XBase,
+double YBase );
+Синтаксис COM:
+HRESULT WriteFragment( BSTR  FileName,
+BSTR  Comment,
+double XBase,
+double YBase,
+BOOL * Result );
+Входные параметры:
+
+FileName " имя файла фрагмента,
+Comment " комментарий,
+XBase, YBase " координаты базовой точки в СК вида,
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет записать группу в фрагмент.
+
+WriteToClip  Записать объекты в клип
+Интерфейс...
+Синтаксис Automation:
+BOOL WriteToClip( BOOL AttrCopy,
+BOOL SpcObjCopy );
+Синтаксис COM:
+772
+
+
+
+HRESULT WriteToClip( BOOL  AttrCopy,
+BOOL  SpcObjCopy,
+BOOL * Result );
+Входные параметры:
+
+AttrCopy " копировать ли атрибуты,
+SpcObjCopy " копировать ли объекты спецификации.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет скопировать объекты из группы в клип.
+
+Интерфейс IDrawingGroups
+Интерфейс коллекции групп (именованных, рабочих временных и постоян
+ных).
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingGroups
+
+Описание:
+Позволяет создавать и получать группы (именованные, рабочие временные и постоян"
+ные).
+Примечание:
+Данный интерфейс можно получить у дополнительного интерфейса документа 2D с по"
+мощью свойства IKompasDocument2D1::DrawingGroups.
+
+IDrawingGroups  свойства
+
+Item  Элемент, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс группы IDrawingGroup
+Синтаксис Automation:
+
+Item = iObject.Item  ( Index ); Получить свойство(* )
+Item = iObject.GetItem( Index ); Получить свойство (**)
+
+Синтаксис COM:
+773
+
+
+
+iObject">get_Item( Index, &Item ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IDrawingGroups  методы
+
+Add  Создать новый элемент и добавить его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( BOOL temp,
+BSTR Name );
+Синтаксис COM:
+HRESULT Add( BOOL temp,
+BSTR Name,
+IDrawingGroup ** Result);
+Входные параметры:
+
+temp " является ли группа временной,
+Name " имя группы.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс группы IDrawingGroup.
+
+Листы и оформление
+Интерфейс ILayoutSheets
+Справка системы КОМПАС...
+KOMPAS.chm::/1132_Glava133_Osnovnaja_nadpisq.htm
+Интерфейс коллекции листов оформления.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+ILayoutSheets
+
+Описание:
+Управляет массивом интерфейсов листов оформления ILayoutSheet.
+Примечание:
+774
+
+
+
+1.  После вызова метода Add лист оформления будет добавлен с умолчательными параме"
+трами (заданными в настройках). Для изменения параметров листа нужно изменить их у
+полученного объекта и вызывать ILayoutSheet::Update.
+
+2.  Данный интерфейс может быть получен от интерфейса документа IKompasDocument с
+помощью свойства IKompasDocument::LayoutSheets.
+
+ILayoutSheets  свойства
+
+Item  Лист оформления, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ILayoutSheet листа оформления
+Синтаксис Automation:
+
+Sheet = iObject.Item (Index) Получить свойство(* )
+Sheet = iObject.GetItem (Index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Item (Index, Получить свойство
+&Sheet)
+
+Примечание:
+Свойство доступно только для чтения.
+
+ItemByNumber  Лист оформления, заданный по номеру
+Интерфейс...
+Тип данных: указатель на интерфейс ILayoutSheet листа оформления
+Синтаксис Automation:
+
+Sheet = iObject.ItemByNumber Получить свойство(* )
+(Number)
+Sheet = Получить свойство (**)
+iObject.GetItemByNumber
+(Number)
+
+Синтаксис COM:
+
+iObject">get_ItemByNumber Получить свойство
+(Number, &Sheet)
+
+Входные параметры:
+
+Number " номер листа, отображается в основной надписи.
+775
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+ILayoutSheets  методы
+
+Add  Создать лист оформления (добавляет лист 
+оформления в коллекцию)
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add ([out, retval] ILayoutSheet ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс листа оформления ILayoutSheet.
+
+Примечание:
+Лист оформления будет добавлен с умолчательными параметрами (заданными в на"
+стройках). Для изменения параметров листа в документе нужно задать его параметры и
+вызвать метод ILayoutSheet::Update.
+
+Интерфейс ILayoutSheet
+Справка системы КОМПАС...
+kompas.chm::/1132_Glava133_Osnovnaja_nadpisq.htm
+Интерфейс параметров листа оформления.
+Иерархия:
+IKompasAPIObject
+
+ILayoutSheet
+Описание:
+В чертежно"графическом редакторе КОМПАС"График при работе с документами ис"
+пользуется понятие оформления. Оформление включает основную надпись, а также
+внешнюю и внутреннюю рамки. Данный интерфейс позволяет выбрать оформление, ко"
+торое будет использоваться для листов документа. Оформления документов хранятся в
+специальных системных библиотеках " файлах с расширением lyt.
+Примечание:
+Данный интерфейс можно получить у коллекции листов оформления ILayoutSheets с по"
+мощью свойства ILayoutSheets::Item, ILayoutSheets::ItemByNumber, метода
+ILayoutSheets::Add.
+776
+
+
+
+ILayoutSheet  свойства
+
+Format  Формат листа
+Интерфейс...
+Тип данных: указатель на интерфейс ISheetFormat формата листа оформления
+Синтаксис Automation:
+
+Format = iObject.Format Получить свойство(* )
+Format = iObject.GetFormat() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Format (&Format) Получить свойство
+
+Примечание:
+
+1.  Данное свойство определяет формат листа оформления. После изменения значений
+свойств формата листа оформления, для того чтобы изменения вступили в силу, надо
+вызвать метод Update.
+
+2.  Свойство доступно только для чтения.
+
+LayoutLibraryFileName  Имя файла библиотеки стилей 
+оформления
+Интерфейс...
+Тип данных: BSTR (строка)
+Синтаксис Automation:
+
+LayoutLibraryFileName = Получить свойство(* )
+iObject.LayoutLibraryFileName
+iObject.LayoutLibraryFileName = Установить свойство (* )
+LayoutLibraryFileName
+LayoutLibraryFileName = Получить свойство (**)
+iObject.GetLayoutLibraryFileNam
+e()
+iObject.SetLayoutLibraryFileNam Установить свойство (**)
+e (LayoutLibraryFileName)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_LayoutLibraryFileName
+(&LayoutLibraryFileName)
+iObject" Установить свойство
+>put_LayoutLibraryFileName
+(LayoutLibraryFileName)
+777
+
+
+
+Примечание:
+Данное свойство позволяет получить/изменить полное имя файла библиотеки стилей
+оформлений, из которой взят данный стиль. После изменения значений свойств форма"
+та листа оформления, для того чтобы изменения вступили в силу, надо вызвать метод
+Update.
+
+LayoutStyleNumber  Номер стиля оформления
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+LayoutStyleNumber = Получить свойство(* )
+iObject.LayoutStyleNumber
+iObject.LayoutStyleNumber = Установить свойство (* )
+LayoutStyleNumber
+LayoutStyleNumber = Получить свойство (**)
+iObject.GetLayoutStyleNumber()
+iObject.SetLayoutStyleNumber Установить свойство (**)
+(LayoutStyleNumber)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_LayoutStyleNumber
+(&LayoutStyleNumber)
+iObject" Установить свойство
+>put_LayoutStyleNumber
+(LayoutStyleNumber)
+
+Примечание:
+Данное свойство позволяет получить\изменить номер используемого стиля в библиоте"
+ке стилей оформлений (см. LayoutLibraryFileName). После изменения значений свойств
+формата листа оформления, для того чтобы изменения вступили в силу, надо вызвать
+метод Update.
+
+SheetType  Тип листа
+Интерфейс...
+Тип данных: из перечисления ksSheetTypeEnum
+Синтаксис Automation:
+
+SheetType = iObject.SheetType Получить свойство(* )
+iObject.SheetType = SheetType Установить свойство (* )
+SheetType = Получить свойство (**)
+iObject.GetSheetType()
+778
+
+
+
+iObject.SetSheetType Установить свойство (**)
+(SheetType)
+
+Синтаксис COM:
+
+iObject">get_SheetType Получить свойство
+(&SheetType)
+iObject">put_SheetType Установить свойство
+(SheetType)
+
+Stamp  Основная надпись листа
+Интерфейс...
+Тип данных: указатель на интерфейс IStamp
+Синтаксис Automation:
+
+Stamp = Object.Stamp Получить свойство(* )
+Stamp = Object.GetStamp() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Stamp( &Stamp ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать интерфейс основной надписи.
+2.  Свойство доступно только для чтения.
+
+ILayoutSheet  методы
+
+Delete  Удалить лист
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete ([out, retval] VARIANT_BOOL* pVal);
+Возвращаемое значение:
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Примечание:
+Удаляет лист оформления из документа.
+779
+
+
+
+GetPlaceInsideFrames  Выдать свободное место внутри 
+рамок
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPlaceInsideFrames( double* Left, double* Top, double* Right, double* Bottom);
+Синтаксис COM:
+ HRESULT GetPlaceInsideFrames([out] double* Left, [out] double* Top, [out] double* Right,
+[out] double* Bottom, [out, retval] VARIANT_BOOL * Val);
+Возвращаемое значение:
+ 
+
+TRUE " в случае успеха,
+FALSE " в случае неудачи.
+
+Выходные параметры:
+
+Left, Top " координата верхней левой точки,
+Right, Bottom " координата нижней правой точки.
+
+Update  Обновить данные
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update ([out, retval] VARIANT_BOOL* pVal);
+Возвращаемое значение:
+
+TRUE " обновление прошло успешно,
+FALSE " обновить настройки не удалось.
+
+Примечание:
+Все изменения, сделанные в данном интерфейсе и интерфейсе формата листа, вступят
+в силу только после вызова этого метода.
+
+Интерфейс ISheetFormat
+Справка системы КОМПАС...
+kompas.chm::/1132_Glava133_Osnovnaja_nadpisq.htm
+Интерфейс формата листа.
+Иерархия:
+780
+
+
+
+IKompasAPIObject
+ISheetFormat
+
+Примечание:
+
+1.  Данный интерфейс позволяет получить и изменить текущий формат листа для докумен"
+та.
+
+2.  Данный интерфейс может быть получен следующими способами:
+▼ от интерфейса стиля спецификации ISpecificationStyle с помощью свойства
+
+ISpecificationStyle::Format,
+▼ от интерфейса параметров листа оформления ILayoutSheet с помощью свойства
+
+ILayoutSheet::Format.
+
+ISheetFormat  свойства
+
+Format  Формат листа
+Интерфейс...
+Тип данных: из перечисления ksDocumentFormatEnum
+Синтаксис Automation:
+
+Format = iObject.Format Получить свойство(* )
+iObject.Format = Format Установить свойство (* )
+Format = iObject.GetFormat() Получить свойство (**)
+iObject.SetFormat (Format) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Format (&Format) Получить свойство
+iObject">put_Format (Format) Установить свойство
+
+FormatHeight  Высота пользовательского формата
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+FormatHeight = Получить свойство(* )
+iObject.FormatHeight
+iObject.FormatHeight = Установить свойство (* )
+FormatHeight
+FormatHeight = Получить свойство (**)
+iObject.GetFormatHeight()
+iObject.SetFormatHeight Установить свойство (**)
+(FormatHeight)
+
+Синтаксис COM:
+781
+
+
+
+iObject">get_FormatHeight Получить свойство
+(&FormatHeight)
+iObject">put_FormatHeight Установить свойство
+(FormatHeight)
+
+Примечание:
+Свойство используется только для пользовательских форматов листа (см.
+ISheetFormat::Format).
+
+FormatMultiplicity  Кратность формата листа
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+FormatMultiplicity = Получить свойство(* )
+iObject.FormatMultiplicity
+iObject.FormatMultiplicity = Установить свойство (* )
+FormatMultiplicity
+FormatMultiplicity = Получить свойство (**)
+iObject.GetFormatMultiplicity()
+iObject.SetFormatMultiplicity Установить свойство (**)
+(FormatMultiplicity)
+
+Синтаксис COM:
+
+iObject">get_FormatMultiplicity Получить свойство
+(&FormatMultiplicity)
+iObject">put_FormatMultiplicity Установить свойство
+(FormatMultiplicity)
+
+Примечание:
+
+1.  Свойство используется только для стандартных форматов листа (см.
+ISheetFormat::Format).
+
+2.  Свойство не используется для текстовых документов.
+
+FormatWidth  Ширина пользовательского формата
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+FormatWidth = Получить свойство(* )
+iObject.FormatWidth
+782
+
+
+
+iObject.FormatWidth = Установить свойство (* )
+FormatWidth
+FormatWidth = Получить свойство (**)
+iObject.GetFormatWidth()
+iObject.SetFormatWidth Установить свойство (**)
+(FormatWidth)
+
+Синтаксис COM:
+
+iObject">get_FormatWidth Получить свойство
+(&FormatWidth)
+iObject">put_FormatWidth Установить свойство
+(FormatWidth)
+
+Примечание:
+Свойство используется только для пользовательских форматов листа (см.
+ISheetFormat::Format).
+
+VerticalOrientation  Вертикальная ориентация формата 
+листа
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+VerticalOrientation = Получить свойство(* )
+iObject.VerticalOrientation
+iObject.VerticalOrientation = Установить свойство (* )
+VerticalOrientation
+VerticalOrientation = Получить свойство (**)
+iObject.GetVerticalOrientation()
+iObject.SetVerticalOrientation Установить свойство (**)
+(VerticalOrientation)
+
+Синтаксис COM:
+
+iObject">get_VerticalOrientation Получить свойство
+(&VerticalOrientation)
+iObject">put_VerticalOrientation Установить свойство
+(VerticalOrientation)
+
+Примечание:
+Свойство используется только для стандартных форматов листа (см.
+ISheetFormat::Format).
+783
+
+
+
+Интерфейс ISpecRough
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_ROUGH.htm
+Неуказанная шероховатость.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ISpecRough
+
+Описание:
+Интерфейс позволяет задавать и получать параметры неуказанной шероховатости.
+Примечание:
+Интерфейс можно получить у интерфейса чертежа с помощью свойства
+IDrawingDocument::SpecRough.
+
+ISpecRough  свойства
+
+AddSign  Добавить знак в скобках
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AddSign = Object.AddSign Получить свойство(* )
+Object.AddSign = AddSign Установить свойство (* )
+AddSign = Object.GetAddSign() Получить свойство (**)
+Object.SetAddSign( AddSign ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AddSign( &AddSign ) Получить свойство
+Object.put_AddSign(  AddSign ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать признак знака в скобках.
+
+AutoPlacement  Авторазмещение
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoPlacement = Получить свойство(* )
+Object.AutoPlacement
+784
+
+
+
+Object.AutoPlacement = Установить свойство (* )
+AutoPlacement
+AutoPlacement = Получить свойство (**)
+Object.GetAutoPlacement()
+Object.SetAutoPlacement( Установить свойство (**)
+AutoPlacement )
+
+Синтаксис COM:
+
+Object.get_AutoPlacement( Получить свойство
+&AutoPlacement )
+Object.put_AutoPlacement( Установить свойство
+AutoPlacement )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак авторазмещения неуказанной
+шероховатости.
+
+Crossed  Признак необходимости перестроения 
+неуказанной шероховатости
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Crossed = Object.Crossed Получить свойство(* )
+Crossed = Object.GetCrossed() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Crossed( &Crossed ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+Версия Компас v18.1
+
+Distance  Расстояние до знака
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Distance = Object.Distance Получить свойство(* )
+Object.Distance = Distance Установить свойство (* )
+Distance = Object.GetDistance() Получить свойство (**)
+Object.SetDistance( Distance ) Установить свойство (**)
+785
+
+
+
+Синтаксис COM:
+
+Object.get_Distance( &Distance ) Получить свойство
+Object.put_Distance(  Distance ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать расстояние до знака неуказанной шерохо"
+ватости.
+
+IsCreated  Признак отображения в документе
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsCreated = Object.IsCreated Получить свойство(* )
+IsCreated = Получить свойство (**)
+Object.GetIsCreated()
+
+Синтаксис COM:
+
+Object.get_IsCreated( Получить свойство
+&IsCreated )
+
+Примечание:
+
+1.  Свойство позволяет получать признак отображения неуказанной шероховатости в доку"
+менте.
+
+2.  Свойство доступно только для чтения.
+
+SignType  Тип значка
+Интерфейс...
+Тип данных: из перечисления ksRoughSignEnum
+Синтаксис Automation:
+
+SignType = Object.SignType Получить свойство(* )
+Object.SignType = SignType Установить свойство (* )
+SignType = Object.GetSignType() Получить свойство (**)
+Object.SetSignType( SignType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SignType( &SignType ) Получить свойство
+Object.put_SignType(  SignType ) Установить свойство
+786
+
+
+
+Примечание:
+Свойство позволяет устанавливать тип значка неуказанной шероховатости.
+
+Text  Текст
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Text = Object.Text Получить свойство(* )
+Object.Text = Text Установить свойство (* )
+Text = Object.GetText() Получить свойство (**)
+Object.SetText( Text ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Text( &Text ) Получить свойство
+Object.put_Text(  Text ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать текст неуказанной шероховатости.
+
+X  Координата начала выносной линии или положение 
+знака по оси Х
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X Получить свойство(* )
+Object.X = X Установить свойство (* )
+X = Object.GetX() Получить свойство (**)
+Object.SetX( X ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ) Получить свойство
+Object.put_X(  X ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату Х положения знака неуказан"
+ной шероховатости.
+
+Y  Координата начала выносной линии или положение 
+знака по оси Y
+Интерфейс...
+787
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y Получить свойство(* )
+Object.Y = Y Установить свойство (* )
+Y = Object.GetY() Получить свойство (**)
+Object.SetY( Y ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y( &Y ) Получить свойство
+Object.put_Y(  Y ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату Y положения знака неуказан"
+ной шероховатости.
+
+ISpecRough  методы
+
+Delete  Удалить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить неуказанную шероховатость.
+
+Update  Обновить данные
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+788
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет применить заданные параметры неуказанной шероховатости.
+
+Интерфейс IStamp
+Справка системы КОМПАС...
+KOMPAS.chm::/574_68_2_Osnovnaja_nadpisq_i_fo.htm
+Интерфейс основной надписи (штампа).
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IStamp
+
+Описание:
+Интерфейс позволяет задавать и получать параметры штампа.
+Примечание:
+Интерфейс можно получить у интерфейса параметров листа оформления с помощью
+свойства ILayoutSheet::Stamp.
+
+IStamp  свойства
+
+Crossed  Признак необходимости перестроения штампа
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Crossed = Object.Crossed Получить свойство(* )
+Crossed = Object.GetCrossed() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Crossed( &Crossed ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Text  Текст
+Интерфейс...
+789
+
+
+
+Тип данных: указатель на интерфейс текста IText
+Синтаксис Automation:
+
+Text = Object.Text( Id ) Получить свойство(* )
+Text = Object.GetText( Id ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Text( Id, &Text ) Получить свойство
+
+Входные параметры:
+
+Id (long) " идентификатор ячейки.
+
+Примечание:
+
+1.  Свойство позволяет получать интерфейс текста ячейки штампа.
+2.  Свойство доступно только для чтения.
+
+IStamp  методы
+
+Clear  Очистить штамп
+Интерфейс...
+Синтаксис Automation:
+BOOL Clear();
+Синтаксис COM:
+HRESULT Clear( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет очистить штамп.
+
+GetNextColumnId  Получить идентификатор следующей 
+непустой ячейки штампа
+Интерфейс...
+Синтаксис Automation:
+long GetNextColumnId( long Id );
+Синтаксис COM:
+HRESULT GetNextColumnId( long  Id, 
+long * Result );
+790
+
+
+
+Входные параметры:
+
+Id " идентификатор ячейки штампа.
+
+Возвращаемое значение:
+
+" Идентификатор следующей не пустой ячейки штампа.
+
+Примечание:
+Метод позволяет получить идентификатор следующей непустой ячейки штампа.
+
+Update  Обновить данные
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет применить заданные параметры штампа.
+
+Интерфейс ITechnicalDemand
+Справка системы КОМПАС...
+KOMPAS.chm::/413_Glava47_Tekhnicheskie_trebo.htm
+Интерфейс технических требований.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ITechnicalDemand
+
+Описание:
+Интерфейс позволяет задавать и получать параметры технических требований.
+Примечание:
+Интерфейс можно получить у интерфейса чертежа с помощью свойства
+IDrawingDocument::TechnicalDemand.
+791
+
+
+
+ITechnicalDemand  свойства
+
+AutoPlacement  Авторазмещение
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoPlacement = Получить свойство(* )
+Object.AutoPlacement
+Object.AutoPlacement = Установить свойство (* )
+AutoPlacement
+AutoPlacement = Получить свойство (**)
+Object.GetAutoPlacement()
+Object.SetAutoPlacement( Установить свойство (**)
+AutoPlacement )
+
+Синтаксис COM:
+
+Object.get_AutoPlacement( Получить свойство
+&AutoPlacement )
+Object.put_AutoPlacement( Установить свойство
+AutoPlacementX1 )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак авторазмещения технических
+требований.
+
+BlocksGabarits  Габариты
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_R8
+Синтаксис Automation:
+
+BlocksGabarits = Получить свойство(* )
+Object.BlocksGabarits
+Object.BlocksGabarits = Установить свойство (* )
+BlocksGabarits
+BlocksGabarits = Получить свойство (**)
+Object.GetBlocksGabarits()
+Object.SetBlocksGabarits( Установить свойство (**)
+BlocksGabarits )
+
+Синтаксис COM:
+
+Object.get_BlocksGabarits( Получить свойство
+&BlocksGabarits )
+792
+
+
+
+Object.put_BlocksGabarits( Установить свойство
+BlocksGabarits )
+
+Примечание:
+Свойство позволяет устанавливать и получать габариты технических требований.
+
+BlocksStartLineNumbers  Получить список номеров строк 
+в начале блоков
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_I4
+Синтаксис Automation:
+
+BlocksStartLineNumbers = Получить свойство(* )
+Object.BlocksStartLineNumbers
+BlocksStartLineNumbers = Получить свойство (**)
+Object.GetBlocksStartLineNumbers()
+
+Синтаксис COM:
+
+Object.get_BlocksStartLineNumbers( Получить свойство
+&BlocksStartLineNumbers )
+
+Примечание:
+
+1. Свойство позволяет получать список номеров строк в начале блоков технических требо"
+ваний.
+
+2.  Свойство доступно только для чтения.
+
+IsCreated  Признак отображения в документе
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+IsCreated = Object.IsCreated Получить свойство(* )
+IsCreated = Получить свойство (**)
+Object.GetIsCreated()
+
+Синтаксис COM:
+
+Object.get_IsCreated( Получить свойство
+&IsCreated )
+
+Примечание:
+793
+
+
+
+1.  Свойство позволяет получать признак отображения технических требований в докумен"
+те.
+
+2.  Свойство доступно только для чтения.
+
+Text  Текст
+Интерфейс...
+Тип данных: указатель на интерфейс текста IText
+Синтаксис Automation:
+
+Text = Object.Text Получить свойство(* )
+Text = Object.GetText() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Text( &Text ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать интерфейс текста технических требований.
+2.  Свойство доступно только для чтения.
+
+ITechnicalDemand  методы
+
+Delete  Удалить объект
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет удалить технические требования.
+
+Synchronize  Синхронизация
+Интерфейс...
+Синтаксис Automation:
+794
+
+
+
+BOOL Synchronize();
+Синтаксис COM:
+HRESULT Synchronize( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Метод позволяет при создании ассоциативного вида синхронизировать технические тре"
+бования чертежа с техническими требованиями документа 3D, с которого создается вид.
+
+Update  Обновить данные
+Интерфейс...
+Синтаксис Automation:
+BOOL Update();
+Синтаксис COM:
+HRESULT Update( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет применить заданные параметры технических требований.
+
+Макрообъекты
+Интерфейс IMacroObjects
+Справка системы КОМПАС...
+KOMPAS.chm::/351_Glava39_Ispolqzovanie_makro.htm
+Интерфейс коллекции макроэлементов.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IMacroObjects
+IAnnotativeContainer
+Описание:
+Позволяет создавать и получать макроэлементы.
+795
+
+
+
+Примечание:
+
+1.  Получить интерфейс можно, используя метод контейнера графических объектов
+IDrawingContainer::MacroObjects.
+
+2.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) ин"
+терфейс позволяет получить дополнительный интерфейс IAnnotativeContainer.
+
+IMacroObjects  свойства
+
+MacroObject  Макроэлемент, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс макроэлемента IMacroObject
+Синтаксис Automation:
+
+MacroObject = iObject.MacroObject ( Index ); Получить свойство(* )
+MacroObject = iObject.GetMacroObject( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_MacroObject( Index, &MacroObject ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+IMacroObjects  методы
+
+Add  Создать новый элемент и добавить его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IMacroObject ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс макроэлемента IMacroObject.
+
+Интерфейс IMacroObject
+Справка системы КОМПАС...
+KOMPAS.chm::/351_Glava39_Ispolqzovanie_makro.htm
+Интерфейс нетипизированного макроэлемента.
+796
+
+
+
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IMacroObject
+IAnnotativeContainer
+IDrawingContainer
+IBuildingContainer
+ISymbols2DContainer
+IPropertyKeeper
+Описание:
+Интерфейс позволяет задавать параметры макроэлемента.
+Примечание:
+
+1.  Интерфейс можно получить, используя свойство коллекции макроэлементов
+IMacroObjects::MacroObject или метод IMacroObjects::Add.
+
+2.  После задания параметров макроэлемента требуется вызвать метод
+IDrawingObject::Update.
+
+3.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& IID, void** pif) у
+данного интерфейса можно получить дополнительные интерфейсы:
+
+▼ интерфейс контейнера аннотационных объектов IAnnotativeContainer,
+▼ интерфейс контейнера объектов вида графического документа IDrawingContainer,
+▼ интерфейс контейнера объектов СПДС IBuildingContainer,
+▼ интерфейс контейнера условных обозначений ISymbols2DContainer,
+▼ интерфейс получения/редактирования значения свойств IPropertyKeeper.
+
+IMacroObject  свойства
+
+AttachedLeaders  Присоединенные линии выноски
+Интерфейс...
+Тип данных: Указатель на интерфейс ILeaders
+Синтаксис Automation:
+
+AttachedLeaders = Object.AttachedLeaders Получить свойство(* )
+AttachedLeaders = Object.GetAttachedLeaders() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AttachedLeaders( &AttachedLeaders ) Получить свойство
+797
+
+
+
+Свойство позволяет получить коллекцию присоединенных линий"выносок макроэле"
+мента.
+Примечание:
+Свойство доступно только для чтения.
+
+BreakObjectsEnabled  Учитывать разрыв вида
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BreakObjectsEnabled = Получить свойство(*
+Object.BreakObjectsEnabled )
+Object.BreakObjectsEnabled = Установить свойство
+BreakObjectsEnabled (* )
+BreakObjectsEnabled = Получить свойство
+Object.GetBreakObjectsEnabled( (**)
+)
+Object.SetBreakObjectsEnabled( Установить свойство
+BreakObjectsEnabled ) (**)
+
+Синтаксис COM:
+
+Object.get_BreakObjectsEnabled( Получить свойство
+&BreakObjectsEnabled )
+Object.put_BreakObjectsEnabled( Установить свойство
+BreakObjectsEnabled )
+
+Версия Компас v18.1
+
+Command  Номер команды редактирования
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Command = Object.Command Получить свойство(* )
+Object.Command = Command Установить свойство (* )
+Command = Object.GetCommand() Получить свойство (**)
+Object.SetCommand( Command ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Command( &Command ) Получить свойство
+Object.put_Command(  Command ) Установить свойство
+
+Примечание:
+798
+
+
+
+Свойство позволяет устанавливать и получать номер команды редактирования в меню
+библиотеки.
+
+CreateSpcObjects  Создавать объекты спецификации
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CreateSpcObjects = Получить свойство(* )
+Object.CreateSpcObjects
+Object.CreateSpcObjects = Установить свойство (* )
+CreateSpcObjects
+CreateSpcObjects = Получить свойство (**)
+Object.GetCreateSpcObjects()
+Object.SetCreateSpcObjects( Установить свойство (**)
+CreateSpcObjects )
+
+Синтаксис COM:
+
+Object.get_CreateSpcObjects( Получить свойство
+&CreateSpcObjects )
+Object.put_CreateSpcObjects( Установить свойство
+CreateSpcObjects )
+
+DoubleClickEditable  Редактирование по двойному клику 
+поддерживается
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DoubleClickEditable = Object.DoubleClickEditable Получить свойство(* )
+Object.DoubleClickEditable = DoubleClickEditable Установить свойство (* )
+DoubleClickEditable = Получить свойство (**)
+Object.GetDoubleClickEditable()
+Object.SetDoubleClickEditable( Установить свойство (**)
+DoubleClickEditable )
+
+Синтаксис COM:
+
+Object.get_DoubleClickEditable( &DoubleClickEditable ) Получить свойство
+Object.put_DoubleClickEditable(  DoubleClickEditable ) Установить свойство
+799
+
+
+
+Примечание:
+Свойство позволяет устанавливать и получать признак редактирования по двойному
+щелчку мыши.
+
+HotPointsEditable  Редактирование при помощи 
+характерных точек поддерживается
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+HotPointsEditable = Получить свойство(* )
+Object.HotPointsEditable
+Object.HotPointsEditable = Установить свойство (* )
+HotPointsEditable
+HotPointsEditable = Получить свойство (**)
+Object.GetHotPointsEditable()
+Object.SetHotPointsEditable( Установить свойство (**)
+HotPointsEditable )
+
+Синтаксис COM:
+
+Object.get_HotPointsEditable( Получить свойство
+&HotPointsEditable )
+Object.put_HotPointsEditable( Установить свойство
+HotPointsEditable )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак редактирования при помощи ха"
+рактерных точек.
+
+ExternalEditable  Поддерживается интерфейс внешнего 
+управления
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ExternalEditable = Object.ExternalEditable Получить свойство(* )
+Object.ExternalEditable = ExternalEditable Установить свойство (* )
+ExternalEditable = Object.GetExternalEditable() Получить свойство (**)
+Object.SetExternalEditable( ExternalEditable ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ExternalEditable( &ExternalEditable ) Получить свойство
+800
+
+
+
+Object.put_ExternalEditable(  ExternalEditable ) Установить свойство
+Примечание:
+Свойство позволяет устанавливать и получать признак поддержки интерфейса внешнего
+управления.
+
+IName  Имя макроэлемента в Дереве чертежа
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = Object.Name Получить свойство(* )
+Object.Name = Name Установить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+Object.SetName( Name ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name( &Name ) Получить свойство
+Object.put_Name(  Name ) Установить свойство
+
+LibraryFileName  Имя файла библиотеки, в которой 
+находится функция редактирования
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+LibraryFileName = Object.LibraryFileName Получить свойство(* )
+Object.LibraryFileName = LibraryFileName Установить свойство (* )
+LibraryFileName = Object.GetLibraryFileName() Получить свойство (**)
+Object.SetLibraryFileName( LibraryFileName ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LibraryFileName( &LibraryFileName ) Получить свойство
+Object.put_LibraryFileName(  LibraryFileName ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать имя файла библиотеки, в которой нахо"
+дится функция редактирования макроэлемента.
+801
+
+
+
+LibraryName  Имя библиотеки, в которой находится 
+функция редактирования
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+LibraryName = Object.LibraryName Получить свойство(* )
+Object.LibraryName = LibraryName Установить свойство (* )
+LibraryName = Object.GetLibraryName() Получить свойство (**)
+Object.SetLibraryName( LibraryName ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_LibraryFileName( &LibraryFileName ) Получить свойство
+Object.put_LibraryFileName( LibraryFileName ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать имя библиотеки, в которой находится
+функция редактирования макроэлемента (отображаемое имя библиотеки).
+
+PropertyObjectEditable  Поддерживается интерфейс 
+внешних свойств объекта
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+PropertyObjectEditable = Object.PropertyObjectEditable Получить свойство(* )
+Object.PropertyObjectEditable = PropertyObjectEditable Установить свойство (* )
+PropertyObjectEditable = Object.GetPropertyObjectEditable() Получить свойство (**)
+Object.SetPropertyObjectEditable( PropertyObjectEditable ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PropertyObjectEditable( Получить свойство
+&PropertyObjectEditable )
+Object.put_PropertyObjectEditable( Установить свойство
+PropertyObjectEditable )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак поддержки интерфейса внешних
+свойств объекта ILibPropertyObject.
+802
+
+
+
+UserParams  Массив SAFEARRAY байтов 
+пользовательских параметров объекта
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+HotPointsEditable = Object.HotPointsEditable Получить свойство(* )
+Object.HotPointsEditable = HotPointsEditable Установить свойство (* )
+HotPointsEditable = Object.GetHotPointsEditable() Получить свойство (**)
+Object.SetHotPointsEditable( HotPointsEditable ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_HotPointsEditable( &HotPointsEditable ) Получить свойство
+Object.put_HotPointsEditable(  HotPointsEditable ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать массив SAFEARRAY со структурой пользо"
+вательских параметров объекта.
+
+IMacroObject  методы
+
+AddDefaultHotPoint  Задать характерную точку 
+макроэлемента
+Интерфейс...
+Синтаксис Automation:
+BOOL AddDefaultHotPoint( double X, double Y );
+Синтаксис COM:
+HRESULT AddDefaultHotPoint( double X, double Y, BOOL * Result );
+Входные параметры:
+
+X, Y " координаты характерной точки.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+AddObjects  Добавить объект, слой, вид, группу или 
+SAFEARRAY объектов в макрообъект
+Интерфейс...
+803
+
+
+
+Синтаксис Automation:
+BOOL AddObjects( VARIANT Objects );
+Синтаксис COM:
+HRESULT Add( VARIANT Objects, BOOL * Result );
+Входные параметры:
+
+Objects " объект или массив объектов, добавляе"
+мых в макроэлемент.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет добавлять объект, слой, вид, группу или SAFEARRAY объектов в макро"
+элемент
+
+DeleteAttachedLeaders  Удалить присоединенные линии 
+выноски
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteAttachedLeaders();
+Синтаксис COM:
+HRESULT DeleteAttachedLeaders( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+DeleteDefaultHotPoint  Удалить характерную точку 
+макроэлемента
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteDefaultHotPoint();
+Синтаксис COM:
+HRESULT DeleteDefaultHotPoint( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+804
+
+
+
+FindObject  Найти объект, ближайший к заданной точке, 
+удовлетворяющий параметрам поиска
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH FindObject( double X, double Y, double Limit, IFindObjectParameters * Param );
+Синтаксис COM:
+HRESULT FindObject( double X, double Y, double Limit, IFindObjectParameters * Param,
+IDrawingObject * * Result );
+Возвращаемое значение: 
+
+"   Указатель на интерфейс IDrawingObject.
+
+Входные параметры:
+
+X " первая координата точки,
+Y " вторая координата точки,
+Limit " предел поиска и найденное расстояние,
+Param " параметры поиска объектов IFindObjectParameters
+
+Примечание:
+Для поиска объектов в точке могут быть заданы расширенные параметры поиска.
+Интерфейс расширенных параметров поиска IFindObjectParameters можно получить с
+помощью метода IKompasDocument1::GetInterface
+в 2D документах при использовании константы ksObjectFindObjectParameters.
+Если расширенные параметры поиска не требуются, необходимо передать NULL в фун"
+кцию.
+
+GetPlacement  Получить точку привязки и угол поворота 
+системы координат макроэлемента
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPlacement( double * X, 
+double * Y,
+double * Angle,
+BOOL * MirrorSymmetry );
+Синтаксис COM:
+HRESULT GetPlacement( double * X,
+double * Y,
+double * Angle,
+BOOL * MirrorSymmetry,
+BOOL * Result );
+805
+
+
+
+Входные параметры:
+
+X, Y " координаты точки привязки,
+Angle " угол поворота макроэлемента,
+MirrorSy " признак зеркальной симметрии объекта.
+mmetry
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить точку привязки и угол поворота макроэлемента.
+
+SetPlacement  Установить точку привязки и угол 
+поворота системы координат макроэлемента
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlacement( double X,
+double Y,
+double Angle,
+BOOL * MirrorSymmetry );
+Синтаксис COM:
+HRESULT SetPlacement( double X,
+double Y,
+double Angle,
+BOOL * MirrorSymmetry,
+BOOL * Result );
+Входные параметры:
+
+X, Y " координаты точки привязки,
+Angle " угол поворота макроэлемента,
+MirrorSymmetry " признак зеркальной симметрии объекта (NULL – не 
+
+изменять признак).
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить точку привязки и угол поворота макроэлемента.
+Смотрите также:
+806
+
+
+
+Рекомендации по обеспечению корректного редактирования библиотекой макроэлемен"
+тов, геометрия которых зеркально отражена относительно исходного ее построения
+
+Интерфейс IAnnotativeContainer
+Интерфейс контейнера аннотационных объектов.
+Иерархия:
+IDispatch
+
+IAnnotativeContainer
+Описание:
+Интерфейс позволяет создавать и получать аннотационные объекты.
+Примечание:
+Интерфейс является дополнительным к интерфейсу макрообъекта IMacroObject. Данный
+интерфейс можно получить посредством вызова метода IUnknown::QueryInterface (const
+GUID far& IID, void** pif).
+
+IAnnotativeContainer  свойства
+
+Count  Количество объектов
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Count = Object.Count Получить свойство(* )
+Count = Object.GetCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Count( &Count ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать количество объектов в контейнере.
+2.  Свойство доступно только для чтения.
+
+Item  Получить элемент по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IAnnotativeObject
+Синтаксис Automation:
+
+Item = Object.Item( Index ) Получить свойство(* )
+807
+
+
+
+Item = Object.GetItem( Получить свойство (**)
+Index )
+
+Синтаксис COM:
+

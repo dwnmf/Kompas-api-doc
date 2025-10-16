@@ -1,0 +1,2533 @@
+Angle1  Угол наклона первой размерной линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle1 = Object.Angle1 Получить свойство(* )
+Object.Angle1 = Angle1 Установить свойство (* )
+Angle1 = Получить свойство (**)
+Object.GetAngle1()
+Object.SetAngle1( Установить свойство (**)
+Angle1 )
+
+Синтаксис COM:
+
+Object.get_Angle1( Получить свойство(* )
+&Angle1 )
+Object.put_Angle1( Установить свойство (* )
+Angle1 )
+
+Angle2  Угол наклона второй размерной линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle2 = Object.Angle2 Получить свойство(* )
+Object.Angle2 = Angle2 Установить свойство (* )
+970
+
+
+
+Angle2 = Получить свойство (**)
+Object.GetAngle2()
+Object.SetAngle2( Установить свойство (**)
+Angle2 )
+
+Синтаксис COM:
+
+Object.get_Angle2( &Angle2 ) Получить свойство(* )
+Object.put_Angle2(  Angle2 ) Установить свойство (* )
+
+BaseObject1  Первый опорный объект
+Интерфейс...
+Тип данных: интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject1 = Object.BaseObject1 Получить свойство(* )
+Object.BaseObject1 = BaseObject1 Установить свойство (* )
+BaseObject1 = Получить свойство (**)
+Object.GetBaseObject1()
+Object.SetBaseObject1( Установить свойство (**)
+BaseObject1 )
+
+Синтаксис COM:
+
+Object.get_BaseObject1( Получить свойство(* )
+&BaseObject1 )
+Object.put_BaseObject1(  Установить свойство (* )
+BaseObject1 )
+
+Примечание:
+Если при создании размера задать опорные объекты IAngleDimension::BaseObject1,
+IAngleDimension::BaseObject2, то координаты центра IAngleDimension::Xc,
+IAngleDimension::Yc, радиус IAngleDimension::Radius, IAngleDimension::X1,
+IAngleDimension::Y1, IAngleDimension::X2, IAngleDimension::Y2, задавать не нужно. Дан"
+ные свойства будут получены с опорного объекта.
+В качестве базовых объектов могут использоваться отрезки.
+Чтобы разорвать связь с объектом, нужно установить значение свойства равным NULL.
+
+BaseObject2  Второй опорный объект
+Интерфейс...
+Тип данных: интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject2 = Object.BaseObject2 Получить свойство(* )
+Object.BaseObject2 = BaseObject2 Установить свойство (* )
+971
+
+
+
+BaseObject2 = Получить свойство (**)
+Object.GetBaseObject2()
+Object.SetBaseObject2( Установить свойство (**)
+BaseObject2 )
+
+Синтаксис COM:
+
+Object.get_BaseObject2( Получить свойство(* )
+&BaseObject2 )
+Object.put_BaseObject2(  Установить свойство (* )
+BaseObject2 )
+
+Примечание:
+Если при создании размера задать опорные объекты IAngleDimension::BaseObject1,
+IAngleDimension::BaseObject2, то координаты центра IAngleDimension::Xc,
+IAngleDimension::Yc, радиус IAngleDimension::Radius, IAngleDimension::X1,
+IAngleDimension::Y1, IAngleDimension::X2, IAngleDimension::Y2, задавать не нужно. Дан"
+ные свойства будут получены с опорного объекта.
+В качестве базовых объектов могут использоваться отрезки.
+Чтобы разорвать связь с объектом, нужно установить значение свойства равным NULL.
+
+DimensionType  Тип углового размера
+Интерфейс...
+Тип данных: из перечисления ksAngleDimTypeEnum
+Синтаксис Automation:
+
+DimensionType = Получить свойство(* )
+Object.DimensionType
+Object.DimensionType Установить свойство (* )
+= DimensionType
+DimensionType = Получить свойство (**)
+Object.GetDimensionT
+ype()
+Object.SetDimensionT Установить свойство (**)
+ype( DimensionType )
+
+Синтаксис COM:
+
+Object.get_Dimension Получить свойство(* )
+Type(
+&DimensionType )
+Object.put_Dimension Установить свойство (* )
+Type(  DimensionType
+)
+
+972
+
+
+
+Direction  Направление размерной дуги
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+true " по часовой стрелке;
+false " против часовой стрелки.
+
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство(* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство(* )
+Object.put_Direction(  Direction ) Установить свойство (* )
+
+Radius  Радиус
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = Object.Radius Получить свойство(* )
+Object.Radius = Radius Установить свойство (* )
+Radius = Получить свойство (**)
+Object.GetRadius()
+Object.SetRadius( Установить свойство (**)
+Radius )
+
+Синтаксис COM:
+
+Object.get_Radius( Получить свойство(* )
+&Radius )
+Object.put_Radius( Установить свойство
+Radius ) (* )
+
+ShelfX  Точка начала полки
+Интерфейс...
+973
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+ShelfX = Object.ShelfX Получить свойство(* )
+Object.ShelfX = ShelfX Установить свойство (* )
+ShelfX = Object.GetShelfX() Получить свойство (**)
+Object.SetShelfX( ShelfX ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y2( &Y2 ) Получить свойство(* )
+Object.put_Y2(  Y2 ) Установить свойство (* )
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+ShelfY  Точка начала полки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfY = Object.ShelfY Получить свойство(* )
+Object.ShelfY = ShelfY Установить свойство (* )
+ShelfY = Object.GetShelfY() Получить свойство (**)
+Object.SetShelfY( ShelfY ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfY( &ShelfY ) Получить свойство(* )
+Object.put_ShelfY(  ShelfY ) Установить свойство (* )
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+Xc  Координата центра по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = Object.Xc Получить свойство(* )
+Object.Xc = Xc Установить свойство (* )
+Xc = Object.GetXc() Получить свойство (**)
+974
+
+
+
+Object.SetXc( Xc ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_Xc( &Xc ) Получить свойство(* )
+Object.put_Xc(  Xc ) Установить свойство (* )
+
+X1  Координата точки выхода первой выносной линии 
+по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X1 Получить свойство(* )
+Object.X1 = X1 Установить свойство (* )
+X1 = Object.GetX1() Получить свойство (**)
+Object.SetX1( X1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X1( &X1 ) Получить свойство(* )
+Object.put_X1(  X1 ) Установить свойство (* )
+
+X2  Координата точки выхода первой выносной линии 
+по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X2 Получить свойство(* )
+Object.X2 = X2 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX2( X2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X2( &X2 ) Получить свойство(* )
+Object.put_X2(  X2 ) Установить свойство (* )
+
+X3  Начало ножки или точка на дуге задающая 
+положение текста по X
+Интерфейс...
+Тип данных: double
+975
+
+
+
+Синтаксис Automation:
+
+X3 = Object.X3 Получить свойство(* )
+Object.X3 = X3 Установить свойство (* )
+X3 = Object.GetX3() Получить свойство (**)
+Object.SetX3( X3 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X3( &X3 ) Получить свойство(* )
+Object.put_X3(  X3 ) Установить свойство (* )
+
+Yc  Координата центра по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = Object.Yc Получить свойство(* )
+Object.Yc = Yc Установить свойство (* )
+Yc = Object.GetYc() Получить свойство (**)
+Object.SetYc( Yc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Yc( &Yc ) Получить свойство(* )
+Object.put_Yc(  Yc ) Установить свойство (* )
+
+Y1  Координата точки выхода первой выносной линии 
+по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = Object.Y1 Получить свойство(* )
+Object.Y1 = Y1 Установить свойство (* )
+Y1 = Object.GetY1() Получить свойство (**)
+Object.SetY1( Y1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y1( &Y1 ) Получить свойство(* )
+Object.put_Y1(  Y1 ) Установить свойство (* )
+976
+
+
+
+Y2  Координата точки выхода первой выносной линии 
+по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = Object.Y2 Получить свойство(* )
+Object.Y2 = Y2 Установить свойство (* )
+Y2 = Object.GetY2() Получить свойство (**)
+Object.SetY2( Y2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y2( &Y2 ) Получить свойство(* )
+Object.put_Y2(  Y2 ) Установить свойство (* )
+
+Y3  Начало ножки или точка на дуге, задающая 
+положение текста по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y3 = Object.Y3 Получить свойство(* )
+Object.Y3 = Y2 Установить свойство (* )
+Y3 = Object.Get3() Получить свойство (**)
+Object.SetY3( Y3 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y3( &Y3 ) Получить свойство(* )
+Object.put_Y3(  Y3 ) Установить свойство (* )
+
+Интерфейс IBreakAngleDimension
+Справка системы КОМПАС: Команда Угловой размер с обрывом...
+kompas.chm::/CM_CUT_DIMA.htm
+Интерфейс параметров углового размера c обрывом.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IAngleDimension
+977
+
+
+
+IBreakAngleDimension
+IDimensionText
+IDimensionParams
+Описание:
+Интерфейс позволяет получить и задать свойства углового размера c обрывом.
+Интерфейс можно получить у коллекции угловых размеров, используя свойство
+IAngleDimensions::AngleDimension или метод IAngleDimensions::Add.
+После задания параметров размера требуется вызвать метод IDrawingObject::Update.
+Интерфейсы IDimensionText и IDimensionParams являются дополнительными. Их можно
+получить с помощью метода IUnknown::QueryInterface.
+
+Интерфейс IArcDimension
+Справка системы КОМПАС: Команда Размер дуги окружности
+kompas.chm::/CM_ARC_DIM.htm
+Интерфейс параметров размера дуги окружности.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IArcDimension
+
+IDimensionText
+IDimensionParams
+Описание:
+Интерфейс позволяет получить и задать свойства размера дуги окружности.
+Интерфейс можно получить у коллекции размеров дуг окружностей, используя свойство
+IArcDimensions::IArcDimension или метод IArcDimensions::Add.
+После задания параметров размера требуется вызвать метод IDrawingObject::Update.
+Интерфейсы IDimensionText и IDimensionParams являются дополнительными. Их можно
+получить с помощью метода IUnknown::QueryInterface.
+Примечание:
+
+1.  Свойство IDimensionText::NominalValue возвращает длину дуги.
+2.  Если при создании размера задать опорный объект IArcDimension::BaseObject, то значе"
+
+ния свойств IArcDimension::Xc, IArcDimension::Yc, IArcDimension::X1, IArcDimension::Y1,
+IArcDimension::X2, IArcDimension::Y2, IArcDimension::Direction задавать не нужно. Данные
+свойства будут получены с исходных объектов. В качестве базового объекта может ис"
+пользоваться дуга окружности.
+978
+
+
+
+IArcDimension  свойства
+
+BaseObject  Опорный объект
+Интерфейс...
+Тип данных: указатель на интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство(* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Получить свойство (**)
+Object.GetBaseObject()
+Object.SetBaseObject( BaseObject Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_BaseObject( Получить свойство(* )
+&BaseObject )
+Object.put_BaseObject(  Установить свойство (* )
+BaseObject )
+
+Примечание:
+Если при создании размера задать опорный объект IArcDimension::BaseObject, то значе"
+ния свойств IArcDimension::Xc, IArcDimension::Yc, IArcDimension::X1, IArcDimension::Y1,
+IArcDimension::X2, IArcDimension::Y2, IArcDimension::Direction задавать не нужно. Данные
+свойства будут получены с исходных объектов. В качестве базового объекта может ис"
+пользоваться дуга окружности.
+Чтобы разорвать связь с объектом, нужно установить значение свойства, равное NULL.
+
+DimensionType  Тип размера (Выносные линии от 
+центра\Параллельные выносные линии)
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+true " выносные линии от центра;
+false " параллельные выносные 
+
+линии.
+
+Синтаксис Automation:
+
+DimensionType = Получить свойство(* )
+Object.DimensionType
+979
+
+
+
+Object.DimensionType = Установить свойство (* )
+DimensionType
+DimensionType = Получить свойство (**)
+Object.GetDimensionType()
+Object.SetDimensionType( Установить свойство (**)
+DimensionType )
+
+Синтаксис COM:
+
+Object.get_DimensionType( Получить свойство(* )
+&DimensionType )
+Object.put_DimensionType(  Установить свойство (* )
+DimensionType )
+
+Примечание:
+Свойство позволяет задать направление выносных линий – от центра или параллельные
+выносные линии, проведенному в середину дуги. Если угол раствора дуги больше 180
+градусов, возможно создание размера только с выносными линиями от центра.
+
+Direction  Направление размерной дуги
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+true " по часовой стрелке;
+false " против часовой стрелки.
+
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство(* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство(* )
+Object.put_Direction(  Direction ) Установить свойство (* )
+
+ShelfX  Значение координаты положения точки начала 
+полки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+980
+
+
+
+ShelfX = Object.ShelfX Получить свойство(* )
+Object.ShelfX = ShelfX Установить свойство (* )
+ShelfX = Object.GetShelfX() Получить свойство (**)
+Object.SetShelfX( ShelfX ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfX( &ShelfX ) Получить свойство(* )
+Object.put_ShelfX( ShelfX ) Установить свойство (* )
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+ShelfY  Значение координаты положения точки начала 
+полки по оси Y
+
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfY = Object.ShelfY Получить свойство(* )
+Object.ShelfY = ShelfY Установить свойство (* )
+ShelfY = Object.GetShelfY() Получить свойство (**)
+Object.SetShelfY( ShelfY ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfY( &ShelfY ) Получить свойство(* )
+Object.put_ShelfY(  ShelfY ) Установить свойство (* )
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+TextPointer  Указатель от текста к дуге
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+true " отрисовать указатель;
+false " не отрисовывать указатель.
+981
+
+
+
+Синтаксис Automation:
+
+TextPointer = Object.TextPointer Получить свойство(* )
+Object.TextPointer = TextPointer Установить свойство (* )
+TextPointer = Получить свойство (**)
+Object.GetTextPointer()
+Object.SetTextPointer( Установить свойство (**)
+TextPointer )
+
+Синтаксис COM:
+
+Object.get_TextPointer( Получить свойство(* )
+&TextPointer )
+Object.put_TextPointer(  Установить свойство (* )
+TextPointer )
+
+Примечание:
+Свойство позволяет включить соединить указателем дугу и текст, относящегося к ней
+размера. Это может потребоваться, например, при простановке размеров концентриче"
+ских дуг с одинаковым раствором и начальным углом.
+
+Xc  Значение координаты центра по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = Object.Xc Получить свойство(* )
+Object.Xc = Xc Установить свойство (* )
+Xc = Object.GetXc() Получить свойство (**)
+Object.SetXc( Xc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Xc( &Xc ) Получить свойство(* )
+Object.put_Xc(  Xc ) Установить свойство (* )
+
+X1  Значение координаты первой точки дуги по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X1 Получить свойство(* )
+Object.X1 = X1 Установить свойство (* )
+X1 = Object.GetX1() Получить свойство (**)
+Object.SetX1( X1 ) Установить свойство (**)
+982
+
+
+
+Синтаксис COM:
+
+Object.get_X1( &X1 ) Получить свойство(* )
+Object.put_X1(  X1 ) Установить свойство (* )
+
+X2  Значение координаты второй точки дуги по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = Object.X2 Получить свойство(* )
+Object.X2 = X2 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX2( X2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X2( &X2 ) Получить свойство(* )
+Object.put_X2(  X2 ) Установить свойство (* )
+
+X3  Значение координаты положения размерной линии 
+и надписи по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X3 = Object.X3 Получить свойство(* )
+Object.X3 = X3 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX3( X3 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X3( &X3 ) Получить свойство(* )
+Object.put_X3(  X3 ) Установить свойство (* )
+
+Yc  Значение координаты центра по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = Object.Yc Получить свойство(* )
+Object.Yc = Yc Установить свойство (* )
+983
+
+
+
+Yc = Object.GetYc() Получить свойство (**)
+Object.SetYc( Yc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Yc( &Yc ) Получить свойство(* )
+Object.put_Yc(  Yc ) Установить свойство (* )
+
+Y1  Значение координаты первой точки дуги по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = Object.Y1 Получить свойство(* )
+Object.Y1 = Y1 Установить свойство (* )
+Y1 = Object.GetY1() Получить свойство (**)
+Object.SetY1( Y1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y1( &Y1 ) Получить свойство(* )
+Object.put_Y1(  Y1 ) Установить свойство (* )
+
+Y2  Значение координаты второй точки дуги по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = Object.Y2 Получить свойство(* )
+Object.Y2 = Y2 Установить свойство (* )
+Y2 = Object.GetY2() Получить свойство (**)
+Object.SetY2( Y2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y2( &Y2 ) Получить свойство(* )
+Object.put_Y2(  Y2 ) Установить свойство (* )
+
+Y3  Значение координаты положения размерной линии 
+и надписи по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+984
+
+
+
+Y3 = Object.Y3 Получить свойство(* )
+Object.Y3 = Y3 Установить свойство (* )
+Y3 = Object.GetY3() Получить свойство (**)
+Object.SetY3( Y3 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y3( &Y3 ) Получить свойство(* )
+Object.put_Y3(  Y3 ) Установить свойство (* )
+
+Интерфейс IBreakLineDimension
+Справка системы КОМПАС: Команда Линейный размер с обрывом
+kompas.chm::/CM_CUT_DIML.htm
+Интерфейс параметров линейного размера с обрывом.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IBreakLineDimension
+
+IDimensionText
+IDimensionParams
+Описание:
+Интерфейс позволяет получить и задать свойства линейного размера с обрывом.
+Интерфейс можно получить у коллекции линейных размеров с обрывом, используя
+свойство IBreakLineDimensions::BreakLineDimension или метод
+IBreakLineDimensions::Add.
+После задания параметров размера требуется вызвать метод IDrawingObject::Update.
+Интерфейсы IDimensionText и IDimensionParams являются дополнительными. Их можно
+получить с помощью метода IUnknown::QueryInterface.
+
+IBreakLineDimension  свойства
+
+BaseObject  Опорный объект
+Интерфейс...
+Тип данных: интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство(* )
+Object.BaseObject = BaseObject Установить свойство (* )
+985
+
+
+
+BaseObject = Получить свойство (**)
+Object.GetBaseObject()
+Object.SetBaseObject( BaseObject Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_BaseObject( Получить свойство(* )
+&BaseObject )
+Object.put_BaseObject(  Установить свойство (* )
+BaseObject )
+
+Примечание:
+
+1.  Если при создании размера задать опорный объект, то координаты центра
+IBreakLineDimension::X1, IBreakLineDimension::Y1, IBreakLineDimension::X2,
+IBreakLineDimension::Y2 задавать не нужно. Данные свойства будут получены с исходно"
+го объекта.
+В качестве опорного объекта может использоваться отрезок.
+
+2.  Чтобы разорвать связь с объектом, нужно установить значение свойства BaseObject,
+равное NULL.
+
+ShelfX  Координата X точки начала полки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfX = Object.ShelfX Получить свойство(* )
+Object.ShelfX = ShelfX Установить свойство (* )
+ShelfX = Object.GetShelfX() Получить свойство (**)
+Object.SetShelfX( ShelfX ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfX( &ShelfX ) Получить свойство(* )
+Object.put_ShelfX( ShelfX ) Установить свойство (* )
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+ShelfY  Координата Y точки начала полки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+986
+
+
+
+ShelfY = Object.ShelfY Получить свойство(* )
+Object.ShelfY = ShelfY Установить свойство (* )
+ShelfY = Object.GetShelfY() Получить свойство (**)
+Object.SetShelfY( ShelfY ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfY( &ShelfY ) Получить свойство(* )
+Object.put_ShelfY(  ShelfY ) Установить свойство (* )
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+X1  Координата X первой точки привязки размера
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X1 Получить свойство(* )
+Object.X1 = X1 Установить свойство (* )
+X1 = Object.GetX1() Получить свойство (**)
+Object.SetX1( X1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X1( &X1 ) Получить свойство(* )
+Object.put_X1(  X1 ) Установить свойство (* )
+
+X2  Координата X второй точки привязки размера
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = Object.X2 Получить свойство(* )
+Object.X2 = X2 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX2( X2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X2( &X2 ) Получить свойство(* )
+Object.put_X2(  X2 ) Установить свойство (* )
+987
+
+
+
+X3  Координата X положения размерной линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X3 = Object.X3 Получить свойство(* )
+Object.X3 = X3 Установить свойство (* )
+X3 = Object.GetX3() Получить свойство (**)
+Object.SetX3( X3 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X3( &X3 ) Получить свойство(* )
+Object.put_X3(  X3 ) Установить свойство (* )
+
+Y1  Координата Y первой точки привязки размера
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = Object.Y1 Получить свойство(* )
+Object.Y1 = Y1 Установить свойство (* )
+Y1 = Object.GetY1() Получить свойство (**)
+Object.SetY1( Y1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y1( &Y1 ) Получить свойство(* )
+Object.put_Y1(  Y1 ) Установить свойство (* )
+
+Y2  Координата Y второй точки привязки размера
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = Object.Y2 Получить свойство(* )
+Object.Y2 = Y2 Установить свойство (* )
+Y2 = Object.GetY2() Получить свойство (**)
+Object.SetY2( Y2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y2( &Y2 ) Получить свойство(* )
+Object.put_Y2(  Y2 ) Установить свойство (* )
+988
+
+
+
+Y3  Координата Y положения размерной линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y3 = Object.Y3 Получить свойство(* )
+Object.Y3 = Y3 Установить свойство (* )
+Y3 = Object.GetY3() Получить свойство (**)
+Object.SetY3( Y3 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y3( &Y3 ) Получить свойство(* )
+Object.put_Y3(  Y3 ) Установить свойство (* )
+
+Интерфейс IDiametralDimension
+Справка системы КОМПАС: Команда Диаметральный размер
+kompas.chm::/CM_DIMD.htm
+Интерфейс параметров диаметрального размера.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IDiametralDimension
+
+IDimensionText
+IDimensionParams
+Описание:
+Интерфейс позволяет получить и задать свойства диаметрального размера.
+Интерфейс можно получить у коллекции диаметральных размеров, используя свойство
+IDiametralDimensions::DiametralDimension или метод IDiametralDimensions::Add.
+После задания параметров размера требуется вызвать метод IDrawingObject::Update.
+Интерфейсы IDimensionText и IDimensionParams являются дополнительными. Их можно
+получить с помощью метода IUnknown::QueryInterface.
+Примечание:
+Если при создании размера задать опорный объект IDiametralDimension::BaseObject, то
+координаты центра IDiametralDimension::Xc, IDiametralDimension::Yc и радиус
+IDiametralDimension::Radius задавать не нужно. Данные свойства будут получены с опор"
+ного объекта. Свойство IDimensionText::NominalValue возвращает диаметр.
+В качестве опорного объекта может быть использована окружность или дуга окружно"
+сти.
+989
+
+
+
+IDiametralDimension  свойства
+
+Angle  Угол наклона размерной линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство(* )
+Object.put_Angle(  Angle ) Установить свойство (* )
+
+BaseObject  Опорный объект
+Интерфейс...
+Тип данных: интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство(* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Получить свойство (**)
+Object.GetBaseObject()
+Object.SetBaseObject( BaseObject Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_BaseObject( Получить свойство(* )
+&BaseObject )
+Object.put_BaseObject(  Установить свойство (* )
+BaseObject )
+
+Примечание:
+Если при создании размера задать опорный объект IDiametralDimension::BaseObject, то
+координаты центра IDiametralDimension::Xc, IDiametralDimension::Yc и радиус
+IDiametralDimension::Radius задавать не нужно. Данные свойства будут получены с опор"
+ного объекта.
+В качестве опорного объекта может быть использована окружность или дуга окружно"
+сти.
+Чтобы разорвать связь с объектом, нужно установить значение свойства равным NULL.
+990
+
+
+
+DimensionType  Тип диаметрального размера (полная 
+размерная линия\размерная линия с обрывом)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DimensionType = Получить свойство(* )
+Object.DimensionType
+Object.DimensionType = Установить свойство (* )
+DimensionType
+DimensionType = Получить свойство (**)
+Object.GetDimensionType()
+Object.SetDimensionType( Установить свойство (**)
+DimensionType )
+
+Синтаксис COM:
+
+Object.get_DimensionType( Получить свойство(* )
+&DimensionType )
+Object.put_DimensionType(  Установить свойство (* )
+DimensionType )
+
+Radius  Радиус
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = Object.Radius Получить свойство(* )
+Object.Radius = Radius Установить свойство (* )
+Radius = Object.GetRadius() Получить свойство (**)
+Object.SetRadius( Radius ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Radius( &Radius ) Получить свойство(* )
+Object.put_Radius(  Radius ) Установить свойство (* )
+
+Xc  Координата центра по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = Object.Xc Получить свойство(* )
+991
+
+
+
+Object.Xc = Xc Установить свойство (* )
+Xc = Object.GetXc() Получить свойство (**)
+Object.SetXc( Xc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Xc( &Xc ) Получить свойство(* )
+Object.put_Xc(  Xc ) Установить свойство (* )
+
+Yc  Координата центра по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = Object.Yc Получить свойство(* )
+Object.Yc = Yc Установить свойство (* )
+Yc = Object.GetYc() Получить свойство (**)
+Object.SetYc( Yc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Yc( &Yc ) Получить свойство(* )
+Object.put_Yc(  Yc ) Установить свойство (* )
+
+Интерфейс IHeightDimension
+Справка системы КОМПАС: Команда Размер высоты
+kompas.chm::/CM_ORDINATE_DIM.htm
+
+ Диалог ввода размерной надписи размера высоты
+kompas.chm::/DLG_DIM_TEXT_ORD_INPUT.htm
+Интерфейс параметров размера высоты.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IHeightDimension
+
+IDimensionParams
+IDimensionText
+Описание:
+Интерфейс позволяет получить и задать свойства размера высоты.
+Интерфейс можно получить у коллекции размеров высоты, используя свойство
+IHeightDimensions::HeightDimension или метод IHeightDimensions::Add.
+После задания параметров размера требуется вызвать метод IDrawingObject::Update.
+992
+
+
+
+Интерфейсы IDimensionText и IDimensionParams являются дополнительными. Их можно
+получить с помощью метода IUnknown::QueryInterface.
+Примечание:
+Свойство IDimensionText::NominalValue возвращает значение высоты (Y1 " Y).
+
+IHeightDimension  свойства
+
+DimensionType  Тип размера
+Интерфейс...
+Тип данных: из перечисления ksHeightDimTypeEnum 
+Синтаксис Automation:
+
+DimensionType = Получить свойство(* )
+Object.DimensionType
+Object.DimensionType = Установить свойство (* )
+DimensionType
+DimensionType = Получить свойство (**)
+Object.GetDimensionType()
+Object.SetDimensionType( Установить свойство (**)
+DimensionType )
+
+Синтаксис COM:
+
+Object.get_DimensionType( Получить свойство(* )
+&DimensionType )
+Object.put_DimensionType(  Установить свойство (* )
+DimensionType )
+
+X  Значение координаты точки нулевого уровня по оси 
+X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X Получить свойство(* )
+Object.X = X Установить свойство (* )
+X = Object.GetX() Получить свойство (**)
+Object.SetX( X ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ) Получить свойство(* )
+Object.put_X( X ) Установить свойство (* )
+993
+
+
+
+X1  Значение координаты точки измеряемого уровня
+по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X1 Получить свойство(* )
+Object.X1 = X1 Установить свойство (* )
+X1 = Object.GetX1() Получить свойство (**)
+Object.SetX1( X1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X1( &X1 ) Получить свойство(* )
+Object.put_X1(  X1 ) Установить свойство (* )
+
+X2  Значение координаты положения размерной 
+надписи по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = Object.X2 Получить свойство(* )
+Object.X2 = X2 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX2( X2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X2( &X2 ) Получить свойство(* )
+Object.put_X2(  X2 ) Установить свойство (* )
+
+Y  Значение координаты точки нулевого уровня по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y Получить свойство(* )
+Object.Y = Y Установить свойство (* )
+Y = Object.GetY() Получить свойство (**)
+Object.SetY( Y ) Установить свойство (**)
+
+Синтаксис COM:
+994
+
+
+
+Object.get_Y( &Y ) Получить свойство(* )
+Object.put_Y(  Y ) Установить свойство (* )
+
+Y1  Значение координаты точки измеряемого уровня 
+по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = Object.Y1 Получить свойство(* )
+Object.Y1 = Y1 Установить свойство (* )
+Y1 = Object.GetY1() Получить свойство (**)
+Object.SetY1( Y1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y1( &Y1 ) Получить свойство(* )
+Object.put_Y1(  Y1 ) Установить свойство (* )
+
+Y2  Значение координаты положения размерной 
+надписи по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = Object.Y2 Получить свойство(* )
+Object.Y2 = Y2 Установить свойство (* )
+Y2 = Object.GetY2() Получить свойство (**)
+Object.SetY2( Y2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y2( &Y2 ) Получить свойство(* )
+Object.put_Y2(  Y2 ) Установить свойство (* )
+
+Интерфейс ILineDimension
+Справка системы КОМПАС: Команда Линейный размер (графический документ)
+kompas.chm::/CM_DIML.htm
+Интерфейс параметров линейного размера.
+Иерархия:
+995
+
+
+
+IKompasAPIObject
+IDrawingObject
+
+ILineDimension
+IDimensionText
+IDimensionParams
+Описание:
+Интерфейс позволяет получить и задать свойства линейного размера.
+Интерфейс можно получить у коллекции линейных размеров, используя свойство
+ILineDimensions::LineDimension или метод ILineDimensions::Add.
+После задания параметров размера требуется вызвать метод IModelObject::Update.
+Интерфейсы IDimensionText и IDimensionParams являются дополнительными. Их можно
+получить с помощью метода IUnknown::QueryInterface.
+Примечание:
+Свойство IDimensionText::NominalValue возвращает расстояние между точками (X1, Y1) и
+(X2, Y2).
+
+ILineDimension  свойства
+
+Angle  Угол наклона размера
+Справка системы КОМПАС: Угол наклона выносных линий
+kompas.chm::/192_24_1_3_Razmer_s_naklonnymi_.htm
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство(* )
+Object.put_Angle(  Angle ) Установить свойство (* )
+
+Примечание:
+
+1.  Свойство позволяет задавать угол наклона выносных линий размера.
+2.  Свойство используется при создании размера, параллельного объекту. Свойство
+
+ILineDimension::Orientation должно быть равно ksLinDParallel.
+996
+
+
+
+Orientation  Тип ориентации линейного размера
+Интерфейс...
+Тип данных: из перечисления ksLineDimensionOrientationEnum
+Синтаксис Automation:
+
+Orientation = Object.Orientation Получить свойство(* )
+Object.Orientation = Orientation Установить свойство (* )
+Orientation = Получить свойство (**)
+Object.GetOrientation()
+Object.SetOrientation( Orientation Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_Orientation( Получить свойство(* )
+&Orientation )
+Object.put_Orientation(  Установить свойство (* )
+Orientation )
+
+ShelfX  Координата X точки начала полки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfX = Object.ShelfX Получить свойство(* )
+Object.ShelfX = ShelfX Установить свойство (* )
+ShelfX = Object.GetShelfX() Получить свойство (**)
+Object.SetShelfX( ShelfX ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfX( &ShelfX ) Получить свойство(* )
+Object.put_ShelfX( ShelfX ) Установить свойство (* )
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+ShelfY  Координата Y точки начала полки
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+997
+
+
+
+ShelfY = Object.ShelfY Получить свойство(* )
+Object.ShelfY = ShelfY Установить свойство (* )
+ShelfY = Object.GetShelfY() Получить свойство (**)
+Object.SetShelfY( ShelfY ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfY( &ShelfY ) Получить свойство(* )
+Object.put_ShelfY(  ShelfY ) Установить свойство (* )
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+X1  Координата X первой точки привязки размера
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X1 Получить свойство(* )
+Object.X1 = X1 Установить свойство (* )
+X1 = Object.GetX1() Получить свойство (**)
+Object.SetX1( X1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X1( &X1 ) Получить свойство(* )
+Object.put_X1(  X1 ) Установить свойство (* )
+
+X2  Координата X второй точки привязки размера
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = Object.X2 Получить свойство(* )
+Object.X2 = X2 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX2( X2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X2( &X2 ) Получить свойство(* )
+Object.put_X2(  X2 ) Установить свойство (* )
+998
+
+
+
+X3  Координата X положения размерной линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X3 = Object.X3 Получить свойство(* )
+Object.X3 = X3 Установить свойство (* )
+X3 = Object.GetX3() Получить свойство (**)
+Object.SetX3( X3 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X3( &X3 ) Получить свойство(* )
+Object.put_X3(  X3 ) Установить свойство (* )
+
+Y1  Координата Y первой точки привязки размера
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = Object.Y1 Получить свойство(* )
+Object.Y1 = Y1 Установить свойство (* )
+Y1 = Object.GetY1() Получить свойство (**)
+Object.SetY1( Y1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y1( &Y1 ) Получить свойство(* )
+Object.put_Y1(  Y1 ) Установить свойство (* )
+
+Y2  Координата Y второй точки привязки размера
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = Object.Y2 Получить свойство(* )
+Object.Y2 = Y2 Установить свойство (* )
+Y2 = Object.GetY2() Получить свойство (**)
+Object.SetY2( Y2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y2( &Y2 ) Получить свойство(* )
+Object.put_Y2(  Y2 ) Установить свойство (* )
+999
+
+
+
+Y3  Координата Y положения размерной линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y3 = Object.Y3 Получить свойство(* )
+Object.Y3 = Y3 Установить свойство (* )
+Y3 = Object.GetY3() Получить свойство (**)
+Object.SetY3( Y3 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y3( &Y3 ) Получить свойство(* )
+Object.put_Y3(  Y3 ) Установить свойство (* )
+
+Интерфейс IRadialDimension
+Справка системы КОМПАС: Команда Радиальный размер
+kompas.chm::/CM_DIMR.htm
+Интерфейс параметров радиального размера.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IRadialDimension
+
+IDimensionText
+IDimensionParams
+Описание:
+Интерфейс позволяет получить и задать свойства радиального размера.
+Интерфейс можно получить у коллекции радиальных размеров, используя свойство
+IRadialDimensions::RadialDimension или метод IRadialDimensions::Add.
+После задания параметров размера требуется вызвать метод IDrawingObject::Update.
+Интерфейсы IDimensionText и IDimensionParams являются дополнительными. Их можно
+получить с помощью метода IUnknown::QueryInterface 
+Примечание:
+Если при создании размера задать опорный объект IRadialDimension::BaseObject, то ко"
+ординаты центра IRadialDimension::Xc IRadialDimension::Yc и радиус
+IRadialDimension::Radius задавать не нужно. Данные свойства будут получены с опорного
+объекта. Свойство IDimensionText::NominalValue возвращает диаметр.
+В качестве опорного объекта может быть использована окружность или дуга окружно"
+сти.
+1000
+
+
+
+IRadialDimension  свойства
+
+Angle  Угол наклона размерной линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство(* )
+Object.put_Angle(  Angle ) Установить свойство (* )
+
+BaseObject  Опорный объект
+Интерфейс...
+Тип данных: интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство(* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Получить свойство (**)
+Object.GetBaseObject()
+Object.SetBaseObject( BaseObject Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_BaseObject( Получить свойство(* )
+&BaseObject )
+Object.put_BaseObject(  Установить свойство (* )
+BaseObject )
+
+Примечание:
+Если при создании размера задать опорный объект IRadialDimension::BaseObject, то ко"
+ординаты центра IRadialDimension::Xc IRadialDimension::Yc и радиус
+IRadialDimension::Radius задавать не нужно. Данные свойства будут получены с опорного
+объекта.
+В качестве опорного объекта может быть использована окружность или дуга окружно"
+сти.
+Чтобы разорвать связь с объектом, нужно установить значение свойства равным NULL.
+1001
+
+
+
+BranchBegin  Начало ответвления
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BranchBegin = Object.BranchBegin( Index ) Получить свойство(* )
+Object.BranchBegin( Index ) = BranchBegin Установить свойство (* )
+BranchBegin = Object.GetBranchBegin( Index ) Получить свойство (**)
+BranchBegin = Object.GetBranchBegin( Index ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BranchBegin( Index, &BranchBegin ) Получить свойство
+Object.put_BranchBegin(  Index, BranchBegin ) Установить свойство
+
+Входные параметры:
+long Index " номер ответвления
+Значения свойства:
+
+TRUE " от начала полки,
+FALSE " от конца полки.
+
+BranchsCount  Количество ответвлений
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+BranchsCount = Получить свойство(* )
+Object.BranchsCount
+BranchsCount = Получить свойство (**)
+Object.GetBranchsCount()
+
+Синтаксис COM:
+
+Object.get_BranchsCo Получить свойство 
+unt( &BranchsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+1002
+
+
+
+BranchObject  Опорный объект для дополнительного 
+ответвления
+Интерфейс...
+Тип данных: интерфейс IDrawingObject
+Синтаксис Automation:
+
+BranchObject = Object.BranchObject( Index ) Получить свойство(* )
+Object.BranchObject( Index ) = BranchObject Установить свойство (* )
+BranchObject = Object.GetBranchObject( Index ) Получить свойство (**)
+Object.SetBranchObject( Index, BranchObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BranchObject( Index, &BranchObject Получить свойство
+)
+Object.put_BranchObject(  Index, BranchObject ) Установить свойство
+
+Входные параметры:
+long Index " номер ответвления.
+Свойство позволяет устанавливать и получать объект, на который указывает ответвле"
+ние.
+
+DimensionType  Тип радиального размера (от 
+центра\не от центра)
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DimensionType = Получить свойство(* )
+Object.DimensionType
+Object.DimensionType = Установить свойство (* )
+DimensionType
+DimensionType = Получить свойство (**)
+Object.GetDimensionType()
+Object.SetDimensionType( Установить свойство (**)
+DimensionType )
+
+Синтаксис COM:
+
+Object.get_DimensionType( Получить свойство(* )
+&DimensionType )
+Object.put_DimensionType(  Установить свойство (* )
+DimensionType )
+1003
+
+
+
+Radius  Радиус
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = Object.Radius Получить свойство(* )
+Object.Radius = Radius Установить свойство (* )
+Radius = Object.GetRadius() Получить свойство (**)
+Object.SetRadius( Radius ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Radius( &Radius ) Получить свойство(* )
+Object.put_Radius(  Radius ) Установить свойство (* )
+
+ShelfX  Точка начала полки  координата X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfX = Object.ShelfX Получить свойство(* )
+Object.ShelfX = ShelfX Установить свойство (* )
+ShelfX = Object.GetShelfX() Получить свойство (**)
+Object.SetShelfX( ShelfX ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ShelfX( &ShelfX ) Получить свойство
+Object.put_ShelfX(  ShelfX ) Установить свойство
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+ShelfY  Точка начала полки  координата Y 
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ShelfY = Object.ShelfY Получить свойство(* )
+Object.ShelfY = ShelfY Установить свойство (* )
+ShelfY = Object.GetShelfY() Получить свойство (**)
+Object.SetShelfY( ShelfY ) Установить свойство (**)
+1004
+
+
+
+Синтаксис COM:
+
+Object.get_ShelfY( &ShelfY ) Получить свойство
+Object.put_ShelfY(  ShelfY ) Установить свойство
+
+Примечание:
+Перед заданием свойства нужно установить признак размещения на полке TextType =
+ksDTPOnShelf.
+
+Xc  Координата центра по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = Object.Xc Получить свойство(* )
+Object.Xc = Xc Установить свойство (* )
+Xc = Object.GetXc() Получить свойство (**)
+Object.SetXc( Xc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Xc( &Xc ) Получить свойство(* )
+Object.put_Xc(  Xc ) Установить свойство (* )
+
+Yc  Координата центра по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = Object.Yc Получить свойство(* )
+Object.Yc = Yc Установить свойство (* )
+Yc = Object.GetYc() Получить свойство (**)
+Object.SetYc( Yc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Yc( &Yc ) Получить свойство(* )
+Object.put_Yc(  Yc ) Установить свойство (* )
+1005
+
+
+
+IRadialDimension  методы
+
+AddBranch  Добавить ответвление для объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL AddBranch( BOOL BranchBegin,
+IDrawingObject * BranchObject );
+Синтаксис COM:
+HRESULT AddBranch( BOOL BranchBegin,
+IDrawingObject * BranchObject,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+BranchBegin " строить от начала полки,
+BranchObject " опорный объект.
+
+Метод позволяет добавить ответвление, используя опорный объект.
+
+AddBranchByArcParam  Добавить ответвление 
+по параметрам дуги
+Интерфейс...
+Синтаксис Automation:
+BOOL AddBranchByArcParam( BOOL BranchBegin, 
+double Xc,
+double Yc,
+double Radius,
+double Angle1,
+double Angle2,
+BOOL   Direction );
+Синтаксис COM:
+HRESULT AddBranchByArcParam( BOOL BranchBegin,
+double Xc,
+double Yc,
+double Radius,
+double Angle1,
+double Angle2,
+BOOL Direction,
+BOOL * Result );
+1006
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+BranchBegin " строить от начала полки,
+Xc,Yc " координаты центра дуги,
+Radius " радиус дуги,
+Angle1 " 1"й угол дуги,
+Angle2 " 2"й угол дуги,
+Direction " направление дуги.
+
+Метод позволяет построить ответвление, используя параметры дуги.
+
+DeleteBranch  Удалить ответвление
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteBranch( long Index );
+Синтаксис COM:
+HRESULT DeleteBranch( long Index, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Входные параметры:
+Index " номер ответвления.
+
+GetBranchParam  Получить параметры ответвления для 
+объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL GetBranchParam( long Index, 
+double * Xc,
+double * Yc,
+double * Angle1,
+double * Angle2,
+BOOL *   Direction );
+Синтаксис COM:
+1007
+
+
+
+HRESULT GetBranchParam( long Index,
+double * Xc,
+double * Yc,
+double * Angle1,
+double * Angle2,
+BOOL * Direction,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Входные параметры:
+Index " номер ответвления.
+Выходные параметры:
+
+Xc,Yc " координаты центра дуги,
+Angle1 " 1"й угол дуги,
+Angle2 " 2"й угол дуги,
+Direction " направление дуги.
+
+SetBranchParam  Установить параметры ответвления 
+для объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL SetBranchParam( long Index, double Xc, double Yc, double Angle1, double Angle2,
+BOOL Direction );
+Синтаксис COM:
+HRESULT SetBranchParam( long Index, double Xc, double Yc, double Angle1, double Angle2,
+BOOL Direction, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Index " номер ответвления,
+Xc,Yc " координаты центра дуги,
+Radius " радиус дуги,
+Angle1 " 1"й угол дуги,
+Angle2 " 2"й угол дуги,
+1008
+
+
+
+Direction " направление дуги.
+
+Интерфейс IBreakRadialDimension
+Справка системы КОМПАС: Команда Радиальный размер с изломом
+kompas.chm::/CM_DIMR_WITH_BREAK.htm
+Интерфейс параметров радиального размера с изломом.
+Иерархия:
+IKompasAPIObject
+
+IDrawingObject
+IBreakRadialDimension
+
+IDimensionText
+Описание:
+Интерфейс позволяет получить и задать свойства радиального размера с изломом.
+Интерфейс можно получить у коллекции радиальных размеров с изломом, используя
+свойство IBreakRadialDimensions::BreakRadialDimension или метод
+IBreakRadialDimensions::Add.
+После задания параметров размера требуется вызвать метод IDrawingObject::Update.
+Интерфейс IDimensionText является дополнительным. Его можно получить с помощью
+метода IUnknown::QueryInterface. Интерфейс IDimensionParams для радиального размер
+с изломом не поддерживается.
+Примечание:
+Если при создании размера задать опорный объект IBreakRadialDimension::BaseObject, то
+координаты центра IBreakRadialDimension::Xc, IBreakRadialDimension::Yc и радиус
+IBreakRadialDimension::Radius задавать не нужно. Данные свойства будут получены с
+опорного объекта. Свойство IDimensionText::NominalValue возвращает радиус.
+В качестве опорного объекта может быть использована окружность или дуга окружно"
+сти.
+
+IBreakRadialDimension  свойства
+
+Angle  Угол наклона размерной линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+1009
+
+
+
+Object.get_Angle( &Angle ) Получить свойство(* )
+Object.put_Angle(  Angle ) Установить свойство (* )
+
+BaseObject  Опорный объект
+Интерфейс...
+Тип данных: интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство(* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Получить свойство (**)
+Object.GetBaseObject()
+Object.SetBaseObject( BaseObject Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_BaseObject( Получить свойство(* )
+&BaseObject )
+Object.put_BaseObject(  Установить свойство (* )
+BaseObject )
+
+Примечание:
+Если при создании размера задать опорный объект IBreakRadialDimension::BaseObject, то
+координаты центра IBreakRadialDimension::Xc IBreakRadialDimension::Yc и радиус
+IBreakRadialDimension::Radius задавать не нужно. Данные свойства будут получены с
+опорного объекта.
+В качестве опорного объекта может быть использована окружность или дуга окружно"
+сти.
+Чтобы разорвать связь с объектом, нужно установить значение свойства равным NULL.
+
+BreakAngle  Угол излома
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BreakAngle = Object.BreakAngle Получить свойство(* )
+Object.BreakAngle = BreakAngle Установить свойство (* )
+BreakAngle = Получить свойство (**)
+Object.GetBreakAngle()
+Object.SetBreakAngle( BreakAngle Установить свойство (**)
+)
+
+Синтаксис COM:
+1010
+
+
+
+Object.get_BreakAngle Получить свойство
+( &BreakAngle )
+Object.put_BreakAngle Установить свойство
+(  BreakAngle )
+
+BreakLength  Длина излома
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BreakLength = Object.BreakLength Получить свойство(* )
+Object.BreakLength = BreakLength Установить свойство (* )
+BreakLength = Получить свойство (**)
+Object.GetBreakLength()
+Object.SetBreakLength( Установить свойство (**)
+BreakLength )
+
+Синтаксис COM:
+
+Object.get_BreakLength( Получить свойство(* )
+&BreakLength )
+Object.put_BreakLength(  Установить свойство (* )
+BreakLength )
+
+BreakX1  Координата X начала излома
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BreakX1 = Object.BreakX1 Получить свойство(* )
+Object.BreakX1 = BreakX1 Установить свойство (* )
+BreakX1 = Object.GetBreakX1() Получить свойство (**)
+Object.SetBreakX1( BreakX1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BreakX1( Получить свойство
+&BreakX1 )
+Object.put_BreakX1( Установить свойство
+BreakX1 )
+1011
+
+
+
+BreakX2  Координата X конца излома
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BreakX2 = Object.BreakX2 Получить свойство(* )
+Object.BreakX2 = BreakX2 Установить свойство (* )
+BreakX2 = Object.GetBreakX2() Получить свойство (**)
+Object.SetBreakX2( BreakX2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BreakX2( Получить свойство
+&BreakX2 )
+Object.put_BreakX2( Установить свойство
+BreakX2 )
+
+BreakY1  Координата Y начала излома
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BreakY1 = Object.BreakY1 Получить свойство(* )
+Object.BreakY1 = BreakY1 Установить свойство (* )
+BreakY1 = Object.GetBreakY1() Получить свойство (**)
+Object.SetBreakY1( BreakY1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BreakY1( Получить свойство
+&BreakY1 )
+Object.put_BreakY1( Установить свойство
+BreakY1 )
+
+BreakY2  Координата Y конца излома
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BreakY2 = Object.BreakY2 Получить свойство(* )
+Object.BreakY2 = BreakY2 Установить свойство (* )
+BreakY2 = Object.GetBreakY2() Получить свойство (**)
+1012
+
+
+
+Object.SetBreakY2( BreakY2 ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_BreakY2( Получить свойство
+&BreakY2 )
+Object.put_BreakY2( Установить свойство
+BreakY2 )
+
+Radius  Радиус
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Radius = Object.Radius Получить свойство(* )
+Object.Radius = Radius Установить свойство (* )
+Radius = Object.GetRadius() Получить свойство (**)
+Object.SetRadius( Radius ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Radius( &Radius ) Получить свойство(* )
+Object.put_Radius(  Radius ) Установить свойство (* )
+
+TextOnLine  Положение размерной надписи 
+отноcительно размерной линии
+Интерфейс...
+Тип данных: из перечисления ksDimensionTextPosEnum
+Синтаксис Automation:
+
+TextOnLine = Object.TextOnLine Получить свойство(* )
+Object.TextOnLine = TextOnLine Установить свойство (* )
+TextOnLine = Получить свойство (**)
+Object.GetTextOnLine()
+Object.SetTextOnLine( TextOnLine Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_TextOnLine( Получить свойство(* )
+&TextOnLine )
+Object.put_TextOnLine(  Установить свойство (* )
+TextOnLine )
+
+Примечание:
+1013
+
+
+
+Позволяет задать положение размерной надписи отноcительно размерной линии. Умол"
+чательное положение определяется в
+
+диалоге настройки положения надписи 
+kompas.chm::/CM_DIMR_WITH_BREAK.htm
+сделанной для текущего документа.
+
+Xc  Координата центра по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Xc = Object.Xc Получить свойство(* )
+Object.Xc = Xc Установить свойство (* )
+Xc = Object.GetXc() Получить свойство (**)
+Object.SetXc( Xc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Xc( &Xc ) Получить свойство(* )
+Object.put_Xc(  Xc ) Установить свойство (* )
+
+Yc  Координата центра по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Yc = Object.Yc Получить свойство(* )
+Object.Yc = Yc Установить свойство (* )
+Yc = Object.GetYc() Получить свойство (**)
+Object.SetYc( Yc ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Yc( &Yc ) Получить свойство(* )
+Object.put_Yc(  Yc ) Установить свойство (* )
+
+Обозначения для строительства
+Интерфейс IBuildingContainer
+Контейнер объектов СПДС.
+1014
+
+
+
+Иерархия:
+IDispatch
+
+IBuildingContainer
+Описание:
+Позволяет получить доступ к коллекциям объектов СПДС.
+Примечание:
+Дополнительный интерфейс вида. Данный интерфейс можно получить у вида IView по"
+средством вызова метода IUnknown::QueryInterface (const GUID far& IID, void** pif).
+
+IBuildingContainer  свойства
+
+Braces  Интерфейс коллекции фигурных скобок
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции фигурных скобок IBraces
+Синтаксис Automation:
+
+IBraces = iObject.Braces; Получить свойство(* )
+IBraces = Получить свойство (**)
+iObject.GetBraces();
+
+Синтаксис COM:
+
+iObject">get_Braces( Получить свойство
+&Braces );
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Коллекция позволяет получать и создавать фигурные скобки.
+
+BuildingAxes  Интерфейс коллекции строительных осей
+Интерфейс...
+Тип данных: указатель на интерфейс IBuildingAxes коллекции строительных осей
+Синтаксис Automation:
+
+BuildingAxes = iObject.BuildingAxes Получить свойство(* )
+BuildingAxes = iObject.GetBuildingAxes() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_BuildingAxes(&BuildingAxes)
+1015
+
+
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Коллекция позволяет получать и создавать строительные оси.
+
+BuildingCutLines  Коллекция линий разреза для СПДС
+Интерфейс...
+Тип данных: указатель на интерфейс ICutLines
+Синтаксис Automation:
+
+BuildingCutLines = Получить свойство(* )
+Object.BuildingCutLines
+BuildingCutLines = Получить свойство (**)
+Object.GetBuildingCutLine
+s()
+
+Синтаксис COM:
+
+Object.get_BuildingCutLin Получить свойство
+es( &BuildingCutLines )
+
+Свойство позволяет получать интерфейс коллекции линий разреза/сечения для СПДС.
+Примечание:
+Свойство доступно только для чтения.
+
+CutUnitMarkings  Интерфейс коллекции обозначений 
+узла в сечении
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции обозначений узла в сечении
+ICutUnitMarkings
+Синтаксис Automation:
+
+CutUnitMarkings = iObject.CutUnitMarkings Получить свойство(* )
+CutUnitMarkings = iObject.GetCutUnitMarkings() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_CutUnitMarkings(&CutUnitMarkings) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Коллекция позволяет получать и создавать обозначения узла в сечении.
+1016
+
+
+
+Marks  Интерфейс коллекции марок
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции марок IMarks
+Синтаксис Automation:
+
+Marks = iObject.Marks Получить свойство(* )
+Marks = iObject.GetMarks() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Marks(&Marks) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Коллекция позволяет получать и создавать марки.
+
+MultiTextLeaders  Интерфейс коллекции выносных 
+надписей к многослойным конструкциям
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции надписей к многослойным конструкци"
+ям IMultiTextLeaders
+Синтаксис Automation:
+
+MultiTextLeaders = Получить свойство(* )
+iObject.MultiTextLeader
+s
+MultiTextLeaders = Получить свойство (**)
+iObject.GetMultiTextLea
+ders()
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_MultiTextLeaders(
+&MultiTextLeaders)
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Коллекция позволяет получать и создавать надписи к многослойным конструкциям.
+1017
+
+
+
+UnitMarkings  Интерфейс коллекции обозначений узлов
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции обозначений узлов IUnitMarkings
+Синтаксис Automation:
+
+UnitMarkings = iObject.UnitMarkings Получить свойство(* )
+UnitMarkings = iObject.GetUnitMarkings() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_UnitMarkings(&UnitMarkings) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Коллекция позволяет получать и создавать обозначения узлов.
+
+UnitNumbers  Интерфейс коллекции номеров узла
+Интерфейс...
+Тип данных: указатель на интерфейс коллекции номеров узла IUnitNumbers
+Синтаксис Automation:
+
+IUnitNumbers = Получить свойство(* )
+iObject.UnitNumbers;
+IUnitNumbers = Получить свойство (**)
+iObject.GetUnitNumbers();
+
+Синтаксис COM:
+
+iObject" Получить свойство
+>get_UnitNumbers( 
+&UnitNumbers );
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Коллекция позволяет получать и создавать номера узла.
+
+Интерфейс IBraces
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_BRACE.htm
+Интерфейс коллекции фигурных скобок.
+Иерархия:
+IKompasAPIObject
+1018
+
+
+
+IKompasCollection
+IDrawingObjects
+
+IBraces
+Описание:
+Интерфейс позволяет получить доступ к фигурным скобкам на чертеже.
+Примечание:
+Получить интерфейс коллекции фигурных скобок можно, используя метод контейнера
+объектов СПДС IBuildingContainer::Braces.
+
+IBraces  свойства
+
+Brace  Фигурная скобка, заданная по индексу, ссылке 
+или имени и номеру
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_BRACE.htm
+Тип данных: указатель на интерфейс фигурной скобки IBrace
+Синтаксис Automation:
+
+Brace = iObject.Brace( index ) Получить свойство(* )
+Brace = iObject.GetBrace( index ) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Brace( index, Получить свойство
+&Brace )
+
+Входные параметры:
+
+Index (Variant) Индекс.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса могут использоваться следующие типы:
+
+▼ индекс объекта в коллекции,
+▼ ссылка на объект (reference),
+▼ строковое значение текста IBrace::Text.
+
+Пример:
+Brace = iBraces.Brace("Text");
+где "Brace" " текст на фигурной скобке.
+1019
+
+
+
+IBraces  методы
+
+Add  Создать фигурную скобку
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_BRACE.htm
+Синтаксис Automation:
+LPDISPATH Add( );
+Синтаксис COM:
+HRESULT Add( IBrace** Result);
+Возвращаемое значение:
+
+Result " Указатель на интерфейс фигурной скобки
+IBrace.
+
+Примечание:
+Метод позволяет создать новый интерфейс фигурной скобки. После получения нового
+интерфейса нужно задать параметры фигурной скобки и вызвать метод
+IDrawingObject::Update.
+
+Интерфейс IBuildingAxes
+Интерфейс коллекции строительных (координационных) осей.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IBuildingAxes
+Описание:
+Интерфейс позволяет получать и создавать объекты СПДС "строительные оси".
+Примечание:
+Получить интерфейс коллекции строительных осей можно, используя метод контейнера
+объектов СПДС IBuildingContainer::BuildingAxes.
+
+IBuildingAxes  свойства
+
+BuildingAxis  Ось, заданная по индексу, ссылке или 
+имени
+Интерфейс...
+Тип данных: указатель на интерфейс оси IBuildingAxis
+1020
+
+
+
+Синтаксис Automation:
+
+Axis = iObject.BuildingAxis(index) Получить свойство(* )
+Axis = iObject.GetBuildingAxis(index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_BuildingAxis(index, Получить свойство
+&Axis)
+
+Входные параметры:
+
+Index (Variant) Индекс.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса могут использоваться следующие типы:
+
+▼ Индекс объекта в коллекции,
+▼ Сcылка на объект (reference),
+▼ Строковое значение текста строительной оси IBuildingAxis::Text.
+
+Пример:
+    axis = iBuildingAxes.BuildingAxis("A1") 
+  где "А1" " текст оси
+
+IBuildingAxes  методы
+
+Add  Создать ось
+Интерфейс...
+Синтаксис Automation:
+LPDISPATH Add( DrawingObjectTypeEnum type );
+Синтаксис COM:
+HRESULT Add( DrawingObjectTypeEnum type, IBuildingAxis** Result);
+Входные параметры:
+
+type " тип объекта из перечисления DrawingObjectTypeEnum.
+
+Возможные значения type:
+
+ksDrStraightAxis 56 IStraightAxis Прямая 
+ось,
+
+ksDrCircleAxis 58 ICircleAxis Круговая 
+ось,
+1021
+
+
+
+ksDrArcAxis 59 IArcAxis Дуговая ось.
+Возвращаемое значение:
+
+Result " Указатель на базовый интерфейс для строи"
+тельных осей IBuildingAxis.
+
+Примечание:
+Метод позволяет создать новый интерфейс строительной оси. После получения нового
+интерфейса нужно задать параметры марки и вызвать метод IDrawingObject::Update.
+
+Интерфейс IMarks
+Интерфейс коллекции марок (содержит марки всех типов).
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IMarks
+Описание:
+Интерфейс позволяет получить доступ к маркам на чертеже.
+Примечание:
+Получить интерфейс коллекции марок можно, используя метод контейнера объектов
+СПДС IBuildingContainer::Marks.
+
+IMarks  свойства
+
+Mark  Марка, заданная по индексу, ссылке или имени и 
+номеру
+Интерфейс...
+Тип данных: указатель на интерфейс марки IMark
+Синтаксис Automation:
+
+Mark = iObject.Mark(index) Получить свойство(* )
+Mark = iObject.GetMark(index) Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Mark(index, Получить свойство
+&Mark)
+
+Входные параметры:
+1022
+
+
+
+Index (Variant) " Индекс.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса могут использоваться следующие типы:
+
+▼ Индекс объекта в коллекции,
+▼ Сcылка на объект (reference),
+▼ Cуммарная строка – имя (IMark::Name) + номер марки (IMark::Number) без дополнитель"
+
+ных разделителей.
+Пример:
+    mark = iMarks.Mark("A1"); 
+где "А" " имя марки 
+      "1" " номер марки
+
+IMarks  методы
+
+Add  Создать марку
+Интерфейс...
+Синтаксис Automation:
+LPDISPATH Add( DrawingObjectTypeEnum MarkType );
+Синтаксис COM:
+HRESULT Add([in] DrawingObjectTypeEnum MarkType,
+[out, retval] IMark** Result);
+Входные параметры:
+
+MarkType " тип объекта из перечисления
+DrawingObjectTypeEnum.
+
+Возможные значения MarkType
+
+ksDrMarkOnLeader 52 IMarkOnLeader " Марка/пози"
+ционное обозначение с ли"
+нией"выноской.
+
+ksDrMarkOnLine 53 IMarkOnLine " Марка/позици"
+онное обозначение на линии.
+
+ksDrMarkInsideForm 54 IMarkInsideForm " Марка/по"
+зиционное обозначение без
+линии"выноски.
+
+Возвращаемое значение:
+1023
+
+
+
+Result " указатель на базовый интерфейс для марок IMark.
+
+Примечание:
+Метод позволяет создать новый интерфейс марки. После получения нового интерфейса
+нужно задать параметры марки и вызвать метод IDrawingObject::Update.
+
+Интерфейс ICutUnitMarkings
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_CUTNODE.htm
+Интерфейс коллекции обозначений узла в сечении.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+ICutUnitMarkings
+Описание:
+Интерфейс позволяет получить коллекции обозначений узла в сечении.
+Примечание:
+Данный интерфейс можно получить у интерфейса контейнера объектов СПДС, исполь"
+зуя метод IBuildingContainer::CutUnitMarkings.
+

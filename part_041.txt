@@ -1,0 +1,2532 @@
+
+Add  Создать новый элемент и добавить его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add;
+Синтаксис COM:
+HRESULT Add( ISurfacePatch ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс заплатки ISurfacePatch.
+
+Интерфейс ISurfaceSewers
+Интерфейс коллекции операций сшивки поверхностей.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IModelObjects
+
+ISurfaceSewers
+Описание:
+Позволяет получать и создавать объект операции сшивки поверхностей.
+Примечание:
+Получить интерфейс коллекции можно, используя свойство контейнера поверхностей
+ISurfaceContainer::SurfaceSewers.
+
+ISurfaceSewers  свойства
+
+SurfaceSewer  Указатель на элемент, заданный по 
+индексу
+Интерфейс...
+2174
+
+
+
+Тип данных: указатель на интерфейс ISurfaceSewer
+Синтаксис Automation:
+
+SurfaceSewer = Получить свойство (* )
+iObject.SurfaceSewer( Index );
+SurfaceSewer = Получить свойство (**)
+iObject.GetSurfaceSewer( Index
+);
+
+Синтаксис COM:
+
+iObject">get_SurfaceSewer( Получить свойство
+Index, &SurfaceSewer )
+
+Входные параметры:
+
+Index " индекс объекта.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса может использоваться индекс в коллекции и reference объекта.
+
+ISurfaceSewers  методы
+
+Add  Создать новый элемент и добавить его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ISurfaceSewer ** Result);
+Входные параметры:
+
+DimType " тип линии"выноски.
+
+Типы линий"выносок:
+
+o3d_leader3D 86 Линия"выноска 3D
+o3d_markLeader3D 87 Знак маркировки 3D
+o3d_positionLeader3D 89 Обозначение позиции 3D
+o3d_brandLeader3D 90 Знак клеймения 3D
+
+Возвращаемое значение:
+2175
+
+
+
+" Указатель на интерфейс линии выноски
+IBaseLeader3D.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс присоединительной
+точки IConjunctivePointI.
+
+Примечание:
+
+1.  Метод позволяет создать новый интерфейс присоединительной точки.
+2.  После получения нового интерфейса нужно задать параметры и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс ITrimmedSurfaces
+Справка системы КОМПАС...
+kompas.chm::/1131_118_11_Usech_pov.htm
+Коллекция операций усечения поверхности
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IModelObjects
+ITrimmedSurfaces
+
+ITrimmedSurfaces  свойства
+
+TrimmedSurface  Возвращает элемент, заданный по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ITrimmedSurface
+Синтаксис Automation:
+
+TrimmedSurface = Получить свойство (* )
+Object.TrimmedSurface( Index )
+TrimmedSurface = Получить свойство (**)
+Object.GetTrimmedSurface( Index )
+
+Синтаксис COM:
+2176
+
+
+
+Object.get_TrimmedSurface( Index, Получить свойство
+&TrimmedSurface )
+
+Свойство позволяет получить указатель на интерфейс операции усечения поверхности.
+Примечание:
+Свойство доступно только для чтения.
+
+ITrimmedSurfaces  методы
+
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ITrimmedSurface ** Result );
+Возвращаемое значение:
+Указатель на интерфейс операции усечения поверхности ITrimmedSurface
+
+Интерфейс IRestoredSurfaces
+Коллекция операций Восстановленная поверхность.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+ IModelObjects
+IRestoredSurfaces
+
+Примечание
+Получить интерфейс коллекции операций восстановленная поверхность можно, исполь"
+зуя свойство контейнера трехмерных объектов ISurfaceContainer::RestoredSurfaces.
+
+IRestoredSurfaces  свойства
+
+RestoredSurface  Возвращает элемент, заданный по 
+индексу
+Интерфейс...
+Тип данных: Указатель на интерфейс IRestoredSurface
+Синтаксис Automation:
+2177
+
+
+
+RestoredSurface = Получить свойство (* )
+Object.RestoredSurface( Index )
+ RestoredSurface = Получить свойство (**)
+Object.GetRestoredSurface( Index )
+
+Синтаксис COM:
+
+Object.get_RestoredSurface( Index, Получить свойство
+&RestoredSurface )
+
+Входные параметры:
+ 
+
+VARIANT Index " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IRestoredSurfaces  методы
+
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IRestoredSurface * * Result );
+Возвращаемое значение:
+ 
+
+ " Указатель на интерфейс IRestoredSurface.
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс операции восстановления поверхности.
+2. После получения нового интерфейса нужно задать параметры операции и вызвать метод
+
+IModelObject::Update.
+
+Интерфейс ICloudPointsSurface
+Справка системы КОМПАС...
+kompas.chm::/1120_118_8_Pov_po_plastu.htm
+Интерфейс параметров поверхности по пласту (облаку) точек
+2178
+
+
+
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+ICloudPointsSurface
+ILocalCSObject
+Интерфейс можно получить у интерфейса коллекции поверхностей по пласту (облаку
+точек) с помощью свойства ICloudPointsSurfaces::CloudPointsSurface или метода
+ICloudPointsSurfaces::CloudPointsSurface.
+С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+подчиненного объекта ЛСК ILocalCSObject.
+
+ICloudPointsSurface  свойства
+
+AssociationObject  Установить опорный объект для 
+вершины
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+AssociationObject = Получить свойство (* )
+Object.AssociationObject( Index )
+Object.AssociationObject( Index ) Установить свойство (* )
+= AssociationObject
+AssociationObject = Получить свойство (**)
+Object.GetAssociationObject(
+Index )
+Object.SetAssociationObject( Установить свойство (**)
+Index, AssociationObject )
+
+Синтаксис COM:
+
+Object.get_AssociationObject( Получить свойство
+Index, &AssociationObject )
+Object.put_AssociationObject( Установить свойство
+Index, AssociationObject )
+
+Входные параметры:
+long Index " индекс точки, для которой нужно установить опорный объект
+
+BuildingType  Тип поверхности по пласту (облаку) точек
+Интерфейс...
+2179
+
+
+
+Тип данных: из перечисления ksCloudPointsSurfaceBuildingTypeEnum
+Синтаксис Automation:
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Получить свойство (**)
+Object.GetBuildingType()
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( Получить свойство
+&BuildingType )
+Object.put_BuildingType(  BuildingType Установить свойство
+)
+
+Свойство позволяет устанавливать и получать способ построения поверхности по пласту
+(облаку) точек.
+
+CheckSelfIntersection  Проверка самопересечений
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CheckSelfIntersection = Получить свойство (* )
+Object.CheckSelfIntersection
+Object.CheckSelfIntersection = Установить свойство (* )
+CheckSelfIntersection
+CheckSelfIntersection = Получить свойство (**)
+Object.GetCheckSelfIntersection()
+Object.SetCheckSelfIntersection( Установить свойство (**)
+CheckSelfIntersection )
+
+Синтаксис COM:
+
+Object.get_CheckSelfIntersection( Получить свойство
+&CheckSelfIntersection )
+Object.put_CheckSelfIntersection( Установить свойство
+CheckSelfIntersection )
+
+Свойство позволяет включать и выключать проверку самопересечений.
+
+CloudType  Способ распознавания сети точек
+Интерфейс...
+Тип данных: из перечисления ksCloudTypeEnum
+2180
+
+
+
+Синтаксис Automation:
+
+CloudType = Получить свойство (* )
+Object.CloudType
+Object.CloudType = Установить свойство (* )
+CloudType
+CloudType = Получить свойство (**)
+Object.GetCloudType()
+Object.SetCloudType( Установить свойство (**)
+CloudType )
+
+Синтаксис COM:
+
+Object.get_CloudType( Получить свойство
+&CloudType )
+Object.put_CloudType( Установить свойство
+CloudType )
+
+CloudLCS  СК объекта
+Интерфейс...
+Тип данных: указатель на интерфейс ILocalCoordinateSystem
+Синтаксис Automation:
+
+CloudLCS = Получить свойство (* )
+Object.CloudLCS
+Object.CloudLCS = Установить свойство (* )
+CloudLCS
+CloudLCS = Получить свойство (**)
+Object.GetCloudLCS()
+Object.SetCloudLCS( Установить свойство (**)
+CloudLCS )
+
+Синтаксис COM:
+
+Object.get_CloudLCS( Получить свойство
+&CloudLCS )
+Object.put_CloudLCS( Установить свойство
+CloudLCS )
+
+Свойство позволяет устанавливать и получать локальную систему координат поверхно"
+сти.
+
+Degree  Степень сплайна
+Интерфейс...
+2181
+
+
+
+Тип данных: long
+Синтаксис Automation:
+
+Degree = Получить свойство (* )
+Object.Degree
+Object.Degree = Установить свойство (* )
+Degree
+Degree = Получить свойство (**)
+Object.GetDegree()
+Object.SetDegree( Установить свойство (**)
+Degree )
+
+Синтаксис COM:
+
+Object.get_Degree( Получить свойство
+&Degree )
+Object.put_Degree( Установить свойство
+Degree )
+
+FixedPosition  Фиксировать положение
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+FixedPosition = Получить свойство (* )
+Object.FixedPosition
+Object.FixedPosition = Установить свойство (* )
+FixedPosition
+FixedPosition = Получить свойство (**)
+Object.GetFixedPositio
+n()
+Object.SetFixedPositio Установить свойство (**)
+n( FixedPosition )
+
+Синтаксис COM:
+
+Object.get_FixedPositi Получить свойство
+on( &FixedPosition )
+Object.put_FixedPositi Установить свойство
+on(  FixedPosition )
+
+Points  Массив точек
+Интерфейс...
+2182
+
+
+
+Тип данных: VARIANT типа VT_ARRAY | VT_R8
+Синтаксис Automation:
+
+Points = Object.Points Получить свойство (* )
+Object.Points = Points Установить свойство (* )
+Points = Получить свойство (**)
+Object.GetPoints()
+Object.SetPoints( Установить свойство (**)
+Points )
+
+Синтаксис COM:
+
+Object.get_Points( Получить свойст"
+&Points ) во
+Object.put_Points(  Points Установить свой"
+) ство
+
+Свойство позволяет устанавливать и получать массив точек, задающих поверхность.
+
+PointsCount  Количество точек
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+PointsCount = Получить свойство (* )
+Object.PointsCount
+PointsCount = Получить свойство (**)
+Object.GetPointsCou
+nt()
+
+Синтаксис COM:
+
+Object.get_PointsCo Получить свойство
+unt( &PointsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+PointParameters  Интерфейс параметров точки 
+поверхности
+Интерфейс...
+Тип данных: указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+2183
+
+
+
+PointParameters = Получить свойство (* )
+Object.PointParameters( Index )
+PointParameters = Получить свойство (**)
+Object.GetPointParameters( Index )
+
+Синтаксис COM:
+
+Object.get_PointParameters( Index, Получить свойство
+&PointParameters )
+
+Примечание:
+Свойство доступно только для чтения.
+
+PointType  Тип параметров построения точки 
+поверхности
+Интерфейс...
+Тип данных: из перечисления ksPoint3DTypeEnum
+Синтаксис Automation:
+
+PointType = Object.PointType( Index ) Получить свойство (* )
+Object.PointType( Index ) = PointType Установить свойство (* )
+PointType = Object.GetPointType( Index ) Получить свойство (**)
+Object.SetPointType( Index, PointType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointType( Index, &PointType ) Получить свойство
+Object.put_PointType(  Index, PointType ) Установить свойство
+
+Входные параметры:
+
+long Index " индекс точки.
+
+ICloudPointsSurface  методы
+
+AddPoint  Добавить точку
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddPoint( double X, 
+double Y,
+double Z,
+2184
+
+
+
+ksPoint3DTypeEnum PVal,
+IModelObject * AssociationObject );
+Синтаксис COM:
+HRESULT AddPoint( double X,
+double Y,
+double Z,
+ksPoint3DTypeEnum PVal,
+IModelObject * AssociationObject,
+IKompasAPIObject ** Result );
+Возвращаемое значение:
+Указатель на интерфейс параметров точки
+Выходные параметры:
+
+X, Y, Z " координаты точки,
+PVal " тип параметров точки,
+AssociationO " опорный объект для точки.
+bject
+
+AddPoints  Добавить точки
+Интерфейс...
+Синтаксис Automation:
+BOOL AddPoints( VARIANT Points );
+Синтаксис COM:
+HRESULT AddPoints( VARIANT Points, 
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+Points: массив VT_ARRAY | VT_R8 координат точек
+
+ClearPoints  Очистить список рядов точек
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearPoints();
+Синтаксис COM:
+HRESULT ClearPoints( BOOL * Result );
+Возвращаемое значение:
+2185
+
+
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Метод позволяет удалить все точки поверхности.
+
+DeletePoint  Удалить точку
+Интерфейс...
+Синтаксис Automation:
+BOOL DeletePoint( long Index );
+Синтаксис COM:
+HRESULT DeletePoint( long Index, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+Index " индекс удаляемой точки.
+
+GetPoint  Получить параметры точки
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPoint( long Index,
+double * X,
+double * Y,
+double * Z );
+Синтаксис COM:
+HRESULT GetPoint( long Index,
+double * X,
+double * Y,
+double * Z,
+BOOL   * Result );
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+Index " индекс точки
+Выходные параметры:
+2186
+
+
+
+X, Y, Z " координаты точки
+Метод позволяет получить координаты точки.
+
+SetPoint  Установить параметры точки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPoint( long Index, double X, double Y, double Z );
+Синтаксис COM:
+HRESULT SetPoint( long Index, double X, double Y, double Z, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+Index " индекс точки,
+X, Y, Z " координаты точки.
+
+Метод позволяет установить параметры точки.
+
+Интерфейс IEquidistantSurface
+Справка системы КОМПАС...
+kompas.chm::/1139_119_11_Ekvidistanta_pov.htm
+Интерфейс операции построения эквидистанты поверхности
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IEquidistantSurface
+
+IEquidistantSurface  свойства
+
+BaseSurface  Базовая поверхность для эквидистантной 
+поверхности (грань или совокупность граней)
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+2187
+
+
+
+BaseSurface = Получить свойство (* )
+Object.BaseSurface
+Object.BaseSurface = Установить свойство (* )
+BaseSurface
+BaseSurface = Получить свойство (**)
+Object.GetBaseSurface()
+Object.SetBaseSurface( Установить свойство (**)
+BaseSurface )
+
+Синтаксис COM:
+
+Object.get_BaseSurface( Получить свойство
+&BaseSurface )
+Object.put_BaseSurface( Установить свойство
+BaseSurface )
+
+Примечание:
+В качестве базовой поверхности могут использоваться следующие объекты:
+
+▼ грань тела или поверхности;
+▼ связная совокупность граней одного тела или поверхности.
+
+Связная совокупность граней — множество граней, каждая из которых имеет общее ре"
+бро хотя бы еще с одной гранью этого множества, причем одно ребро одновременно
+принадлежит не более чем двум граням.
+
+Direction  Направление построения эквидистантной 
+поверхности относительно базовой
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство (* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство
+Object.put_Direction(  Direction ) Установить свойство
+
+Свойство позволяет получать и устанавливать направление эквидистантной поверхности
+относительно базовой поверхности.
+2188
+
+
+
+Distance  Расстояние от базовой поверхности до 
+эквидистантной поверхности
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Distance = Object.Distance Получить свойство (* )
+Object.Distance = Distance Установить свойство (* )
+Distance = Object.GetDistance() Получить свойство (**)
+Object.SetDistance( Distance ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Distance( &Distance ) Получить свойство
+Object.put_Distance(  Distance ) Установить свойство
+
+Свойство позволяет получать и устанавливать расстояние от базовой поверхности до эк"
+видистантной.
+
+Интерфейс IExtensionSurface
+Справка системы КОМПАС...
+kompas.chm::/1169_120_13_Prodlenie_pov.htm
+Интерфейс операции продления поверхности
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IExtensionSurface
+
+IExtensionSurface  свойства
+
+BuildingVectorParameters  Параметры вектора
+Интерфейс...
+Тип данных: Указатель на интерфейс IVector3D
+Синтаксис Automation:
+
+BuildingVectorParameters = Получить свойство (* )
+Object.BuildingVectorParameters
+BuildingVectorParameters = Получить свойство (**)
+Object.GetBuildingVectorParamet
+ers()
+2189
+
+
+
+Синтаксис COM:
+
+Object.get_BuildingVectorParame Получить свойство
+ters( &BuildingVectorParameters
+)
+
+Примечание:
+Свойство доступно только для чтения.
+
+DirObject  Объект, определяющий направление для 
+типа построения По направлению
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+DirObject= Object.DirObject Получить свойство (* )
+Object.DirObject= DirObject Установить свойство (* )
+DirObject = Object.GetDirObject() Получить свойство (**)
+Object.SetDirObject( DirObject ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DirObject( &DirObject Получить свойство
+)
+Object.put_DirObject(  DirObject ) Установить свойство
+
+Edges  Массив ребер в виде SAFEARRAY DISPATCH  
+VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_DISPATCH
+Синтаксис Automation:
+
+Edges = Object.Edges Получить свойство (* )
+Object.Edges = Edges Установить свойство (* )
+Edges = Object.GetEdges() Получить свойство (**)
+Object.SetEdges( Edges ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Edges( &Edges ) Получить свойство
+Object.put_Edges(  Edges ) Установить свойство
+2190
+
+
+
+ExtensionLimitType  Способ ограничения
+Интерфейс...
+Тип данных: из перечисления ksExtensionLimitTypeEnum
+Синтаксис Automation:
+
+ExtensionLimitType = Получить свойство (* )
+Object.ExtensionLimitType
+Object.ExtensionLimitType = Установить свойство (* )
+ExtensionLimitType
+ExtensionLimitType = Получить свойство (**)
+Object.GetExtensionLimitType()
+Object.SetExtensionLimitType( Установить свойство (**)
+ExtensionLimitType )
+
+Синтаксис COM:
+
+Object.get_ExtensionLimitType( Получить свойство
+&ExtensionLimitType )
+Object.put_ExtensionLimitType( Установить свойство
+ExtensionLimitType )
+
+ExtensionType  Тип продления поверхности
+Интерфейс...
+Тип данных: из перечисления ksExtensionTypeEnum
+Синтаксис Automation:
+
+ExtensionType = Получить свойство (* )
+Object.ExtensionType
+Object.ExtensionType = Установить свойство (* )
+ExtensionType
+ExtensionType = Получить свойство (**)
+Object.GetExtensionType()
+Object.SetExtensionType( Установить свойство (**)
+ExtensionType )
+
+Синтаксис COM:
+
+Object.get_ExtensionType( Получить свойство
+&ExtensionType )
+Object.put_ExtensionType( Установить свойство
+ExtensionType )
+2191
+
+
+
+Length  Длина (расстояние удлинения поверхности)
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Length = Object.Length Получить свойство (* )
+Object.Length = Length Установить свойство (* )
+Length = Object.GetLength() Получить свойство (**)
+Object.SetLength( Length ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Length( &Length ) Получить свойство
+Object.put_Length(  Length ) Установить свойство
+
+Sense  Сменить направление
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Sense = Object.Sense Получить свойство (* )
+Object.Sense = Sense Установить свойство (* )
+Sense = Object.GetSense() Получить свойство (**)
+Object.SetSense( Sense ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Sense( &Sense ) Получить свойство
+Object.put_Sense(  Sense ) Установить свойство
+
+SideEdges  Боковые ребра
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SideEdges = Object.SideEdges Получить свойство (* )
+Object.SideEdges = SideEdges Установить свойство (* )
+SideEdges = Получить свойство (**)
+Object.GetSideEdges()
+Object.SetSideEdges( SideEdges ) Установить свойство (**)
+
+Синтаксис COM:
+2192
+
+
+
+Object.get_SideEdges( Получить свойство
+&SideEdges )
+Object.put_SideEdges( Установить свойство
+SideEdges )
+
+Значения свойства:
+
+TRUE " как продление исходных боковых ребер,
+FALSE " по нормали к указанным кромкам.
+
+TargetObject  Объект, до которого производится 
+удлинение при способе построения До вершины
+Интерфейс...
+Тип данных: указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+TargetObject = Получить свойство (* )
+Object.TargetObject
+Object.TargetObject = Установить свойство (**)
+TargetObject
+TargetObject = Получить свойство (**)
+Object.GetTargetObject()
+Object.SetTargetObject( Установить свойство (**)
+TargetObject )
+
+Синтаксис COM:
+
+Object.get_TargetObject( Получить свойство
+&TargetObject )
+Object.put_TargetObject( Установить свойство
+TargetObject )
+
+Интерфейс IFaceRemover
+Интерфейс операции удаления граней.
+Иерархия:
+IKompasAPIObject
+
+IModelObject
+IFaceRemover
+
+Примечание:
+
+1.  Интерфейс можно получить у коллекции операций удаления граней, используя свойст"
+во IFaceRemovers::FaceRemover или метод IFaceRemovers::Add.
+
+2.  После задания параметров заплатки требуется вызвать метод IModelObject::Update.
+2193
+
+
+
+IFaceRemover  свойства
+
+Faces  Массив граней в виде SAFEARRAY DISPATCH  
+VT_ARRAY | VT_DISPATCH
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Faces = Object.Faces Получить свойство (* )
+Object.Faces = Faces Установить свойство (* )
+Faces = Object.GetFaces() Получить свойство (**)
+Object.SetFaces( Faces ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Faces( &Faces ) Получить свойство
+Object.put_Faces(  Faces ) Установить свойство
+
+Примечание.
+Свойство позволяет устанавливать и получать грани операции. Если возвращается один
+объект, то тип VARIANT"а будет VT_DISPATCH, если возвращается несколько объектов,
+то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+Интерфейс IImportedSurface
+Справка системы КОМПАС...
+kompas.chm::/884_Glava103_Poverkhnosti.htm
+Интерфейс параметров импортированной поверхности
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IImportedSurface
+ILocalCSObject
+Интерфейс можно получить у интерфейса коллекции импортированных поверхностей с
+помощью свойства IImportedSurfaces::ImportedSurface или метода
+IImportedSurfaces::Add.
+С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+подчиненного объекта ЛСК ILocalCSObject.
+2194
+
+
+
+IImportedSurface  свойства
+
+PointsVCount  Количество точек по V
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+PointsVCount = Object.PointsVCount Получить свойство (* )
+PointsVCount = Object.GetPointsVCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointsVCou Получить свойство
+nt( &PointsVCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+PointsUCount  Количество точек по U
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+PointsUCount = Object.PointsUCount Получить свойство (* )
+PointsUCount = Object.GetPointsUCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointsUCo Получить свойство
+unt( &PointsUCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IImportedSurface  методы
+
+AddPoint  Добавить точку в создаваемый ряд
+Интерфейс...
+Синтаксис Automation:
+BOOL AddPoint( double X,
+double Y,
+double Z );
+Синтаксис COM:
+2195
+
+
+
+HRESULT AddPoint( double X,
+double Y,
+double Z,
+BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+X, Y, Z " координаты точки.
+
+Примечание:
+Метод должен вызываться между вызовами методов IImportedSurface::BeginPointsSeries
+и IImportedSurface::EndPointsSeries.
+
+AddPointsSeries  Добавить ряд точек
+Интерфейс...
+Синтаксис Automation:
+BOOL AddPointsSeries( BOOL UV,
+long IndexAt,
+VARIANT arr );
+Синтаксис COM:
+HRESULT AddPointsSeries( BOOL UV,
+long IndexAt,
+VARIANT arr,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Возвращаемое значение:
+
+UV " TRUE " добавлять по U,
+  FALSE " по V,
+
+IndexAt " индекс, перед которым добавлять,
+arr " массив VT_ARRAY | VT_R8 координат точек.
+
+BeginPointsSeries  Начать добавление нового ряда точек
+Интерфейс...
+2196
+
+
+
+Синтаксис Automation:
+BOOL BeginPointsSeries( BOOL UV,
+long IndexAt );
+Синтаксис COM:
+HRESULT BeginPointsSeries( BOOL UV,
+long IndexAt,
+BOOL * Result );
+Возвращаемое значение: 
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+UV " TRUE " добавлять по U,
+" FALSE " по V,
+
+IndexAt " индекс ряда, перед которым добавлять новый ряд.
+
+ClearPointsSeries  Очистить список рядов точек
+Интерфейс...
+Синтаксис Automation:
+BOOL ClearPointsSeries();
+Синтаксис COM:
+HRESULT ClearPointsSeries( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Метод позволяет удалить все точки поверхности.
+
+DeletePointsSeries  Удалить ряд точек
+Интерфейс...
+Синтаксис Automation:
+BOOL DeletePointsSeries( BOOL UV,
+long Index );
+Синтаксис COM:
+HRESULT DeletePointsSeries( BOOL UV,
+long Index,
+BOOL * Result );
+Возвращаемое значение:
+2197
+
+
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+UV " TRUE " удалять по U,
+ " FALSE " по V,
+
+Index " индекс удаляемого ряда.
+
+EndPointsSeries  Завершить создание нового ряда точек
+Интерфейс...
+Синтаксис Automation:
+BOOL EndPointsSeries();
+Синтаксис COM:
+HRESULT EndPointsSeries( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+GetPoint  Получить параметры точки
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPoint( long UIndex,
+long VIndex,
+double * X,
+double * Y, double * Z );
+Синтаксис COM:
+HRESULT GetPoint( long UIndex, 
+long VIndex,
+double * X,
+double * Y,
+double * Z,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+2198
+
+
+
+UIndex " индекс точки по U,
+VIndex " индекс точки по V.
+
+Выходные параметры:
+X, Y,Z " координаты точки.
+Метод позволяет получить параметры точки.
+
+GetPoints  Получить массив всех точек
+Интерфейс...
+Синтаксис Automation:
+VARIANT GetPoints( long * UPCount, long * VPCount );
+Синтаксис COM:
+HRESULT GetPoints( long * UPCount, long * VPCount, VARIANT * Result );
+Возвращаемое значение:
+Массив VT_ARRAY | VT_R8 точек поверхности
+Выходные параметры:
+
+UPCount " количество точек по U,
+VPCount " количество точек по V.
+
+SetPoint  Установить параметры точки
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPoint( long UIndex,
+long VIndex,
+double X,
+double Y,
+double Z );
+Синтаксис COM:
+HRESULT SetPoint( long UIndex,
+long VIndex,
+double X,
+double Y,
+double Z,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+2199
+
+
+
+FALSE " в случае неудачи.
+Входные параметры:
+
+UIndex " индекс точки по U,
+VIndex " индекс точки по V,
+X, Y, Z " координаты точки.
+
+Метод позволяет установить параметры точки.
+
+SetPoints  Установить массив всех точек
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPoints( long UPCount,
+long VPCount, VARIANT Points );
+Синтаксис COM:
+HRESULT SetPoints( long UPCount, long VPCount, VARIANT Points, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+UPCount " количество точек по U,
+VPCount " количество точек по V,
+Points  " массив VT_ARRAY | VT_R8 координат точек.
+
+Метод позволяет установить массив точек поверхности.
+
+Интерфейс IMeshPointsSurface
+Справка системы КОМПАС...
+kompas.chm::/1092_114_6_Pov_po_seti_toch.htm
+Интерфейс параметров поверхности по сети точек.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IMeshPointsSurface
+ILocalCSObject
+2200
+
+
+
+Интерфейс можно получить у интерфейса коллекции поверхностей по сети точек с по"
+мощью свойства IMeshPointsSurfaces::MeshPointsSurface или метода
+IMeshPointsSurfaces::Add.
+С помощью метода IUnknown::QueryInterface у интерфейса можно получить интерфейс
+подчиненного объекта ЛСК ILocalCSObject.
+
+IMeshPointsSurface  свойства
+
+AssociationObject  Установить опорный объект для 
+вершины
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+AssociationObject = Получить свойство (* )
+Object.AssociationObject( UIndex,
+VIndex )
+Object.AssociationObject( UIndex, Установить свойство (* )
+VIndex ) = AssociationObject
+AssociationObject = Получить свойство (**)
+Object.GetAssociationObject( UIndex,
+VIndex )
+Object.SetAssociationObject( UIndex, Установить свойство (**)
+VIndex, AssociationObject )
+
+Синтаксис COM:
+
+Object.get_AssociationObject( Получить свойство
+UIndex, VIndex, &AssociationObject ) 
+Object.put_AssociationObject( Установить свойство
+UIndex, VIndex, AssociationObject )
+
+Входные параметры:
+
+long UIndex " индекс точки по U,
+long VIndex " индекс точки по V.
+
+BuildingType  Тип поверхности по сети точек
+Интерфейс...
+Тип данных: из перечисления ksMeshPointsSurfaceBuildingTypeEnum
+Синтаксис Automation:
+2201
+
+
+
+BuildingType = Object.BuildingType Получить свойство (* )
+Object.BuildingType = BuildingType Установить свойство (* )
+BuildingType = Получить свойство (**)
+Object.GetBuildingType()
+Object.SetBuildingType( BuildingType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BuildingType( Получить свойство
+&BuildingType )
+Object.put_BuildingType(  BuildingType Установить свойство
+)
+
+Свойство позволяет устанавливать и получать способ построения поверхности по сети
+точек.
+
+CheckSelfIntersection  Проверка самопересечений
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CheckSelfIntersection = Получить свойство (* )
+Object.CheckSelfIntersection
+Object.CheckSelfIntersection = Установить свойство (* )
+CheckSelfIntersection
+CheckSelfIntersection = Получить свойство (**)
+Object.GetCheckSelfIntersection()
+Object.SetCheckSelfIntersection( Установить свойство (**)
+CheckSelfIntersection )
+
+Синтаксис COM:
+
+Object.get_CheckSelfIntersection( Получить свойство
+&CheckSelfIntersection )
+Object.put_CheckSelfIntersection Установить свойство
+(  CheckSelfIntersection )
+
+Свойство позволяет включать и выключать проверку самопересечений.
+
+ClosedU  Признак замкнутости поверхности по 
+направлению U
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+2202
+
+
+
+ClosedU = Object.ClosedU Получить свойство (* )
+Object.ClosedU = ClosedU Установить свойство (* )
+ClosedU = Получить свойство (**)
+Object.GetClosedU()
+Object.SetClosedU( ClosedU ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ClosedU( Получить свойство
+&ClosedU )
+Object.put_ClosedU(  ClosedU Установить свойство
+)
+
+Свойство позволяет замкнуть поверхность в направлении U.
+Примечание:
+Замыкание по тому или иному направлению возможно, если количество точек в этом на"
+правлении " три или больше.
+
+ClosedV  Признак замкнутости поверхности по 
+направлению V
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClosedV = Object.ClosedV Получить свойство (* )
+Object.ClosedV = ClosedV Установить свойство (* )
+ClosedV = Object.GetClosedV() Получить свойство (**)
+Object.SetClosedV( ClosedV ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ClosedV( &ClosedV ) Получить свойство
+Object.put_ClosedV(  ClosedV ) Установить свойст"
+
+во
+
+Свойств позволяет замкнуть поверхность в направлении V.
+Примечание:
+Замыкание по тому или иному направлению возможно, если количество точек в этом на"
+правлении " три или больше.
+
+DegreeU  Порядок сплайна по направлению U
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+2203
+
+
+
+DegreeU = Object.DegreeU Получить свойство (* )
+Object.DegreeU = DegreeU Установить свойство (* )
+DegreeU = Получить свойство (**)
+Object.GetDegreeU()
+Object.SetDegreeU( DegreeU ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DegreeU( Получить свойство
+&DegreeU )
+Object.put_DegreeU( Установить свойство
+DegreeU )
+
+Свойство позволяет устанавливать и получать порядок поверхности в направлении U.
+
+DegreeV  Порядок сплайна по направлению V
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+DegreeV = Object.DegreeV Получить свойство (* )
+Object.DegreeV = DegreeV Установить свойство (* )
+DegreeV = Получить свойство (**)
+Object.GetDegreeV()
+Object.SetDegreeV( DegreeV ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DegreeV( &DegreeV Получить свойство
+)
+Object.put_DegreeV(  DegreeV ) Установить свойство
+
+Свойство позволяет устанавливать и получать порядок поверхности в направлении V.
+
+RowsCount  Количество рядов по направлению V
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+RowsCount = Object.RowsCount Получить свойство (* )
+RowsCount = Object.GetRowsCount() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_RowsCount( &RowsVCount ) Получить свойство
+2204
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+ColumnsCount  Количество точек в одном ряду по 
+направлению U
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ColumnsCount = Object.ColumnsCount Получить свойство (* )
+ColumnsCount = Получить свойство (**)
+Object.GetColumnsCount()
+
+Синтаксис COM:
+
+Object.get_ColumnsCount( Получить свойство
+&ColumnsCount )
+
+Примечание:
+Свойство доступно только для чтения.
+
+PointParameters  Интерфейс параметров точки 
+поверхности
+Интерфейс...
+Тип данных: указатель на интерфейс IKompasAPIObject
+Синтаксис Automation:
+
+PointParameters = Получить свойство (* )
+Object.PointParameters( UIndex, VIndex )
+PointParameters = Получить свойство (**)
+Object.GetPointParameters( UIndex,
+VIndex )
+
+Синтаксис COM:
+
+Object.get_PointParameters( UIndex, Получить свойство
+VIndex, &PointParameters )
+
+Входные параметры:
+
+long " индекс точки по U,
+UIndex
+2205
+
+
+
+long " индекс точки по V.
+VIndex
+
+Примечание:
+Свойство доступно только для чтения.
+
+PointType  Тип параметров построения точки 
+поверхности
+Интерфейс...
+Тип данных: из перечисления ksPoint3DTypeEnum
+Синтаксис Automation:
+
+PointType = Object.PointType( UIndex, VIndex ) Получить свойство (* )
+Object.PointType( UIndex, VIndex ) = PointType Установить свойство (* )
+PointType = Object.GetPointType( UIndex, VIndex ) Получить свойство (**)
+Object.SetPointType( UIndex, VIndex, PointType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointType( UIndex, VIndex, &PointType ) Получить свойство
+Object.put_PointType(  UIndex, VIndex, PointType ) Установить свойство
+
+Входные параметры:
+
+long UIndex " индекс точки по U,
+long VIndex " индекс точки по V.
+
+IMeshPointsSurface  методы
+
+AddPoint  Добавить точку в создаваемый ряд точек
+Интерфейс..
+Синтаксис Automation:
+LPDISPATCH AddPoint( double X,
+double Y,
+double Z,
+double Weight,
+ksPoint3DTypeEnum PointType,
+IModelObject * AssociationObject );
+Синтаксис COM:
+HRESULT AddPoint( double X, 
+double Y,
+double Z,
+double Weight,
+2206
+
+
+
+ksPoint3DTypeEnum PointType,
+IModelObject * AssociationObject,
+IKompasAPIObject ** Result );
+Возвращаемое значение:
+Указатель на интерфейс параметров точки
+Входные параметры:
+
+X, Y, Z " координаты точки,
+Weight " вес точки, 
+PointType " тип параметров точки,
+Associatio " опорный объект.
+nObject
+
+Примечание:
+Метод должен вызываться между вызовами методов
+IMeshPointsSurface::BeginPointsSeries и IMeshPointsSurface::EndPointsSeries.
+
+AddPointsSeries  Добавить ряд точек
+Интерфейс..
+Синтаксис Automation:
+BOOL AddPointsSeries( BOOL  AddNewRow,
+long IndexAt,
+VARIANT Points,
+VARIANT Weights );
+Синтаксис COM:
+HRESULT AddPointsSeries( BOOL  AddNewRow,
+long IndexAt,
+VARIANT Points,
+VARIANT Weights,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+AddNewRow " TRUE " добавить ряд,
+" FALSE " добавить колонку,
+
+IndexAt " индекс, перед которым нужно добавить ряд,
+Points " массив VT_ARRAY | VT_R8 координат точек,
+Weights " массив VT_ARRAY | VT_R8 весов точек.
+2207
+
+
+
+BeginPointsSeries  Начать добавление нового ряда точек
+Интерфейс...
+Синтаксис Automation:
+BOOL BeginPointsSeries( BOOL AddNewRow,
+long IndexAt );
+Синтаксис COM:
+HRESULT BeginPointsSeries( BOOLAddNewRow,
+long IndexAt,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+AddNewRow TRUE " добавлять ряд, FALSE " добавлять колонку,
+IndexAt " индекс ряда, перед которым нужно добавить новый ряд.
+
+ClearPointsSeries  Очистить список рядов точек
+Интерфейс..
+Синтаксис Automation:
+BOOL ClearPointsSeries();
+Синтаксис COM:
+HRESULT ClearPointsSeries( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Метод позволяет удалить все точки поверхности. 
+
+DeletePointsSeries  Удалить ряд точек
+Интерфейс..
+Синтаксис Automation:
+BOOL DeletePointsSeries( BOOL DeleteRow,
+long Index );
+Синтаксис COM:
+HRESULT DeletePointsSeries(BOOL DeleteRow,
+long Index,
+BOOL * Result );
+2208
+
+
+
+Возвращаемое значение:
+
+TRUE " в случае удачного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+DeleteRow " TRUE " удаляется ряд,
+" FALSE " удаляется колонка,
+
+Index " индекс удаляемого ряда.
+
+EndPointsSeries  Завершить создание ряда точек
+Интерфейс..
+Синтаксис Automation:
+BOOL EndPointsSeries();
+Синтаксис COM:
+HRESULT EndPointsSeries( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+GetParams  Получить параметры поверхности
+Интерфейс..
+Синтаксис Automation:
+BOOL GetParams( BOOL * ClosedV, 
+BOOL * ClosedU,
+long * DegreeV,
+long * DegreeU,
+long * PointsVCount,
+long * PointsUCount,
+VARIANT * Points,
+VARIANT * Weights );
+Синтаксис COM:
+HRESULT GetParams( BOOL    * ClosedV,
+BOOL    * ClosedU,
+long    * DegreeV,
+long    * DegreeU,
+long    * PointsVCount,
+long    * PointsUCount,
+2209
+
+
+
+VARIANT * Points,
+VARIANT * Weights,
+BOOL    * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Выходные параметры:
+
+ClosedV признак замкнутости поверхности по V,
+ClosedU признак замкнутости поверхности по U,
+DegreeV порядок сплайна по V,
+DegreeU порядок сплайна по U,
+PointsVC количество точек по V,
+ount
+PointsUC количество точек по U,
+ount
+Points массив VT_ARRAY | VT_R8 координат точек,
+Weights массив VT_ARRAY | VT_R8 весов точек.
+
+GetPoint  Параметры точки
+Интерфейс..
+Синтаксис Automation:
+BOOL GetPoint( long UIndex,
+long VIndex,
+double * X,
+double * Y,
+double * Z,
+double * Weight );
+Синтаксис COM:
+HRESULT GetPoint( long UIndex,
+long VIndex,
+double * X,
+double * Y,
+double * Z,
+double * Weight,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+2210
+
+
+
+UIndex " индекс точки по U,
+VIndex " индекс точки по V.
+
+Выходные параметры:
+
+X, Y, Z " координаты точки, 
+Weight " вес точки.
+
+Метод позволяет получить параметры точки.
+
+InitParamByFace  Создать по объекту
+Интерфейс..
+Синтаксис Automation:
+BOOL InitParamByFace( IModelObject * Face );
+Синтаксис COM:
+HRESULT InitParamByFace( IModelObject * Face, BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+Face " исходная поверхность.
+Метод позволяет создать поверхность по сети точек с помощью сплайновой аппрокси"
+мации поверхности.
+
+SetParams  Установить параметры поверхности
+Интерфейс..
+Синтаксис Automation:
+BOOL SetParams( BOOL ClosedV,
+BOOL ClosedU,
+long DegreeV,
+long DegreeU,
+long PointsVCount, 
+long PointsUCount,
+VARIANT Points,
+VARIANT Weights );
+Синтаксис COM:
+HRESULT SetParams( BOOL ClosedV,
+BOOL ClosedU,
+long DegreeV,
+2211
+
+
+
+long DegreeU,
+long PointsVCount,
+long PointsUCount,
+VARIANT Points,
+VARIANT Weights,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+
+Входные параметры:
+
+ClosedV " признак замкнутости поверхности по V,
+ClosedU " признак замкнутости поверхности по U,
+DegreeV " порядок сплайна по V,
+DegreeU " порядок сплайна по U,
+PointsVCount " количество точек по V,
+PointsUCount " количество точек по U,
+Points " массив VT_ARRAY | VT_R8 координат точек,
+Weights " массив VT_ARRAY | VT_R8 весов точек.
+
+SetPoint  Параметры точки
+Интерфейс..
+Синтаксис Automation:
+BOOL SetPoint( long UIndex,
+long VIndex,
+double X,
+double Y,
+double Z,
+double Weight );
+Синтаксис COM:
+HRESULT SetPoint( long UIndex,
+long VIndex,
+double X,
+double Y,
+double Z,
+double Weight,
+BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае удачного завершения,
+FALSE " в случае неудачи.
+2212
+
+
+
+Входные параметры:
+
+UIndex " индекс точки по U,
+VIndex " индекс точки по V,
+X, Y, Z " координаты точки, 
+Weight " вес точки.
+
+Метод позволяет установить параметры точки.
+
+Интерфейс INurbsSurface
+Интерфейс Nurbsповерхности.
+Иерархия:
+IKompasAPIObject
+
+IModelObject
+INurbsSurface
+
+Описание:
+Интерфейс позволяет создать NURBS"поверхность по заданной поверхности или по па"
+раметрам NURBS"поверхности. Есть возможность ограничить поверхность набором кон"
+туров.
+Примечание:
+Интерфейс можно получить с помощью свойства INurbsSurfaces::NurbsSurface и метода
+INurbsSurfaces::Add.
+
+INurbsSurface  свойства
+
+BoundaryCount  Количество циклов
+Интерфейс...
+Тип данных:long
+Синтаксис Automation:
+
+BoundaryCount = Получить свойство (* )
+Object.BoundaryCount
+BoundaryCount = Получить свойство (**)
+Object.GetBoundaryCount(
+)
+
+Синтаксис COM:
+
+Object.get_BoundaryCount Получить свойство
+
+Свойство позволяет устанавливать и получать количество циклов.
+2213
+
+
+
+ClosedU  Признак замкнутости поверхности по U
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClosedU = Object.ClosedU Получить свойство (* )
+Object.ClosedU = ClosedU Установить свойство (* )
+ClosedU = Object.GetClosedU() Получить свойство (**)
+Object.SetClosedU( ClosedU ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ClosedU( &ClosedU ) Получить свойство
+Object.put_ClosedU(  ClosedU ) Установить свойство
+
+Примечание:
+Свойство позволяет получить признак замкнутости поверхности по U.
+Свойство позволяет также преобразовать представление поверхности из замкнутого по
+U представления в разомкнутое по U и наоборот, из разомкнутого представления в за"
+мкнутое. См также INurbsSurface::ClosedV.
+
+ClosedV  Признак замкнутости поверхности по V
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ClosedV = Object.ClosedV Получить свойство (* )
+Object.ClosedV = ClosedV Установить свойство (* )
+ClosedV = Object.GetClosedV() Получить свойство (**)
+Object.SetClosedV( ClosedV ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ClosedV( &ClosedV ) Получить свойство
+Object.put_ClosedV(  ClosedV ) Установить свойство
+
+Примечание:
+Свойство позволяет получить признак замкнутости поверхности по V.
+Свойство позволяет также преобразовать представление поверхности из замкнутого по
+V представления в разомкнутое по V и наоборот, из разомкнутого представления в за"
+мкнутое. См. также INurbsSurface::ClosedU.
+2214
+
+
+
+INurbsSurface  методы
+
+AddBoundary  Добавить границу для NURBS
+поверхности
+Интерфейс...
+Синтаксис Automation:
+BOOL AddBoundary( BOOL UV, BOOL Closed, long Degree, VARIANT Points, VARIANT
+Weights, VARIANT Knots, double TMin, double TMax );
+Синтаксис COM:
+HRESULT AddBoundary( BOOL UV, BOOL Closed, long Degree, VARIANT Points, VARIANT
+Weights, VARIANT Knots, double TMin, double TMax, BOOL * Res );
+Выходные параметры:
+
+UV  " TRUE параметры кривой заданы в UV координатах 
+поверхности (2D"Nurbs),
+ " FALSE параметры заданы 3D координатами (3D"Nurbs).
+При создании границы выполняется проецирование 3D 
+кривой на поверхность,
+
+Closed  " TRUE замкнутое представление
+ " FALSE " разомкнутое представление,
+
+Degree  " порядок NURBS (степень полинома + 1), от 3 до 10,
+Points  " массив SafeArray точек VT_ARRAY | VT_R8,
+Weights  " веса,
+Knots  " массив SafeArray узлов точек VT_ARRAY | VT_R8,
+TMin, TMax  " минимальный и максимальный параметры кривой.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+Примечание:
+Позволяет добавить границу для поверхности.
+Граница не должна пересекаться с другими границами данной поверхности.
+
+DeleteBoundary  Удалить границу
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteBoundary( long BoundaryIndex )
+Синтаксис COM:
+HRESULT DeleteBoundary( long BoundaryIndex, BOOL * Res );
+Выходные параметры:
+
+BoundaryIndex  " индекс цикла (индекс контура).
+2215
+
+
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+GetBoundary  Получить параметры NURBS
+представления границы
+Интерфейс...
+Синтаксис Automation:
+BOOL GetBoundary( BOOL UV, BOOL Closed, long BoundaryIndex, long * Degree,
+VARIANT * Points, VARIANT * Weights, VARIANT * Knots,
+double * TMin, double * TMax );
+Синтаксис COM:
+HRESULT GetBoundary( BOOL UV, BOOL Closed, long BoundaryIndex, long * Degree,
+VARIANT * Points, VARIANT * Weights, VARIANT * Knots,
+double * TMin, double * TMax, BOOL * Res );
+Выходные параметры:
+
+UV  " TRUE параметры кривой заданы в UV координатах 
+поверхности (2D"Nurbs),
+ " FALSE параметры заданы 3D координатами (3D"Nurbs). 
+При создании границы выполняется проецирование 3D кривой 
+на поверхность.
+
+Closed  " TRUE замкнутое представление,
+ " FALSE " разомкнутое представление,
+
+BoundaryIndex  " индекс цикла (индекс контура).
+
+Входные параметры:
+
+Degree  " порядок NURBS (степень полинома + 1), от 3 до 10,
+Points  " массив SafeArray точек VT_ARRAY | VT_R8,
+Weights  " веса,
+Knots  " массив SafeArray узлов точек VT_ARRAY | VT_R8,
+TMin,  " минимальный и максимальный параметры кривой.
+TMax
+
+Возвращаемое значение:
+
+TRUE  " в случае уда"
+чи.
+2216
+
+
+
+GetNurbsParams  Получить параметры NURBS
+поверхности
+Интерфейс...
+Синтаксис Automation:
+BOOL GetNurbsParams( BOOL ClosedV, BOOL ClosedU,
+long * DegreeV, long * DegreeU, long * NPV, long * NPU,
+VARIANT * Points, VARIANT * Weights, VARIANT * KnotsV, VARIANT * KnotsU );
+Синтаксис COM:
+HRESULT GetNurbsParams( BOOL ClosedV, BOOL ClosedU, 
+long * DegreeV, long * DegreeU, long * NPV, long * NPU, 
+VARIANT * Points, VARIANT * Weights, VARIANT * KnotsV, VARIANT * KnotsU, BOOL * Res );
+Выходные параметры:
+
+ClosedV  " TRUE " получение параметров для замкнутого по V представления,
+ " FALSE " получение параметров для разомкнутого по V 
+представления, 
+
+ClosedU  " TRUE" получение параметров для замкнутого по U представления,
+ " FALSE " получение параметров для разомкнутого по U 
+представления. 
+
+Входные параметры:
+
+DegreeV  " порядок NURBS по V (степень полинома + 1), от 3 до 10,
+DegreeU  " порядок NURBS по U (степень полинома + 1), от 3 до 10,
+NPV  " количество точек по V,
+NPU  " количество точек по U,
+Points  " массив SafeArray точек VT_ARRAY | VT_R8,
+Weights  " веса,
+KnotsV  " массив SafeArray узлов точек по V VT_ARRAY | VT_R8,
+KnotsU  " массив SafeArray узлов точек по U VT_ARRAY | VT_R8.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+InitParamByFace  Создать по объекту
+Интерфейс...
+Синтаксис Automation:
+BOOL InitParamByFace( LPDISPATCH Face );
+Синтаксис COM:
+HRESULT InitParamByFace( IModelObject * Face, BOOL * Res );
+Выходные параметры:
+2217
+
+
+
+Face  " указатель на грань IModelObject.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+SetNurbsParams  Установить параметры NURBS
+поверхности
+Интерфейс...
+Синтаксис Automation:
+BOOL SetNurbsParams( BOOL ClosedV, BOOL ClosedU, 
+long DegreeV, long DegreeU, long NPV, long NPU, 
+VARIANT Points, VARIANT Weights, VARIANT KnotsV, VARIANT KnotsU );
+Синтаксис COM:
+HRESULT SetNurbsParams( BOOL ClosedV, BOOL ClosedU, 
+long DegreeV, long DegreeU, long NPV, long NPU, 
+VARIANT Points, VARIANT Weights, VARIANT KnotsV, VARIANT KnotsU, BOOL * Res );
+Выходные параметры:
+
+ClosedV  " TRUE" получение параметров для замкнутого по V 
+представления,
+ " FALSE " получение параметров для разомкнутого по V 
+представления, 
+
+ClosedU  " TRUE" получение параметров для замкнутого по U 
+представления,
+ " FALSE " получение параметров для разомкнутого по U 
+представления, 
+
+DegreeV  " порядок NURBS по V (степень полинома + 1), от 3 до 10,
+DegreeU  " порядок NURBS по U (степень полинома + 1), от 3 до 10,
+NPV  " количество точек по V,
+NPU  " Количество точек по U,
+Points  " массив SafeArray точек VT_ARRAY | VT_R8,
+Weights  " веса,
+KnotsV  " массив SafeArray узлов точек по V VT_ARRAY | VT_R8,
+KnotsU  " массив SafeArray узлов точек по U VT_ARRAY | VT_R8.
+
+Возвращаемое значение:
+
+TRUE  " в случае удачи.
+
+Интерфейс IPlane3D
+Интерфейс плоскости 3D.
+2218
+
+
+
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPlane3D
+
+IPlane3D  свойства
+
+Surface  Получить интерфейс математической 
+поверхности
+Интерфейс...
+Тип данных: указатель на интерфейс IMathSurface3D
+Синтаксис Automation:
+
+Surface = Object.Surface Получить свойство (* )
+Surface = Object.GetSurface() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Surface( &Surface ) Получить свойство,
+
+Примечание:
+Свойство доступно только для чтения.
+
+Интерфейс IPlane3DByPlaneCurve
+Плоскость через плоскую кривую.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPlane3D
+IPlane3DByPlaneCurve
+
+IPlane3DByPlaneCurve  свойства
+
+Curve  Интерфейс плоской кривой
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+2219
+
+
+
+Curve = Object.Curve Получить свойство (* )
+Object.Curve = Curve Установить свойство (* )
+Curve = Object.GetCurve() Получить свойство (**)
+Object.SetCurve( Curve ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Curve( &Curve ) Получить свойство
+Object.put_Curve(  Curve ) Установить свойство
+
+Интерфейс IPlane3DTangentToFaceInPoint 
+Плоскость касательная к грани в точке 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPlane3D
+IPlane3DTangentToFaceInPoint
+
+IPlane3DTangentToFaceInPoint  свойства
+
+Face  Грань для построения плоскости
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+Face = Object.Face Получить свойство (* )
+Object.Face = Face Установить свойство (* )
+Face = Object.GetFace() Получить свойство (**)
+Object.SetFace( Face ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Face( &Face ) Получить свойство
+Object.put_Face(  Face ) Установить свойство
+
+Point  Точка для построения плоскости, касательной к грани
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+2220
+
+
+
+Point = Object.Point Получить свойство (* )
+Object.Point = Point Установить свойство (* )
+Point = Object.GetPoint() Получить свойство (**)
+Object.SetPoint( Point ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Point( &Point ) Получить свойство
+Object.put_Point(  Point ) Установить свойство
+
+ParamU  Параметр U
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ParamU = Object.ParamU Получить свойство (* )
+Object.ParamU = ParamU Установить свойство (* )
+ParamU = Object.GetParamU() Получить свойство (**)
+Object.SetParamU( ParamU ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ParamU( &ParamU ) Получить свойство
+Object.put_ParamU(  ParamU ) Установить свойство
+
+ParamV  Параметр V
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+ParamV = Object.ParamV Получить свойство (* )
+Object.ParamV = ParamV Установить свойство (* )
+ParamV = Object.GetParamV() Получить свойство (**)
+Object.SetParamV( ParamV ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ParamV( &ParamV ) Получить свойство
+Object.put_ParamV(  ParamV ) Установить свойство
+
+Интерфейс IPlane3DByOffset
+Смещенная плоскость.
+Иерархия:
+2221
+
+
+
+IDispatch
+IKompasAPIObject
+
+IModelObject
+IPlane3D
+
+IPlane3DByOffset
+
+IPlane3DByOffset  свойства
+
+BasePlane  Интерфейс базовой плоскости или плоской грани
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+BasePlane = Object.BasePlane Получить свойство (* )
+Object.BasePlane = BasePlane Установить свойство (* )
+BasePlane = Object.GetBasePlane() Получить свойство (**)
+Object.SetBasePlane( BasePlane ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BasePlane( &BasePlane ) Получить свойство
+Object.put_BasePlane(  BasePlane ) Установить свойство
+
+Direction  Направление смещения от базовой плоскости. 
+TRUE  прямое направление, FALSE  обратное направление
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство (* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство
+Object.put_Direction(  Direction ) Установить свойство
+
+Offset  Смещение (расстояние) от базовой плоскости
+Интерфейс...
+2222
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Offset = Object.Offset Получить свойство (* )
+Object.Offset = Offset Установить свойство (* )
+Offset = Object.GetOffset() Получить свойство (**)
+Object.SetOffset( Offset ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Offset( &Offset ) Получить свойство
+Object.put_Offset(  Offset ) Установить свойство
+
+Интерфейс IPlane3DBy3Points
+Плоскость, проходящая через три вершины.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPlane3D
+IPlane3DBy3Points
+
+IPlane3DBy3Points  свойства
+
+Point1  Интерфейс первой точки
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Point1 = Object.Point1 Получить свойство (* )
+Object.Point1 = Point1 Установить свойство (* )
+Point1 = Object.GetPoint1() Получить свойство (**)
+Object.SetPoint1( Point1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Point1( &Point1 ) Получить свойство
+Object.put_Point1(  Point1 ) Установить свойство
+
+Point2  Интерфейс второй точки
+Интерфейс...
+2223
+
+
+
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Point2 = Object.Point2 Получить свойство (* )
+Object.Point2 = Point2 Установить свойство (* )
+Point2 = Object.GetPoint2() Получить свойство (**)
+Object.SetPoint2( Point2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Point2( &Point2 ) Получить свойство
+Object.put_Point2(  Point2 ) Установить свойство
+
+Point3  Интерфейс третьей точки
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Point3 = Object.Point3 Получить свойство (* )
+Object.Point3 = Point3 Установить свойство (* )
+Point3 = Object.GetPoint3() Получить свойство (**)
+Object.SetPoint3( Point3 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Point3( &Point3 ) Получить свойство
+Object.put_Point3(  Point3 ) Установить свойство
+
+Интерфейс IPlane3DByAngle
+Плоскость под углом к другой плоскости.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPlane3D
+IPlane3DByAngle
+
+IPlane3DByAngle  свойства
+
+Angle  Угол наклона плоскости относительно базовой 
+плоскости
+Интерфейс...
+2224
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство (* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство
+Object.put_Angle(  Angle ) Установить свойство
+
+BaseLine  Интерфейс базовой прямой (оси или ребра)
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+ BaseLine = Object.BaseLine Получить свойство (* )
+Object.BaseLine = BaseLine Установить свойство (* )
+BaseLine = Object.GetBaseLine() Получить свойство (**)
+Object.SetBaseLine( BaseLine ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseLine( &BaseLine ) Получить свойство
+Object.put_BaseLine(  BaseLine ) Установить свойство
+
+BasePlane  Интерфейс базовой плоскости
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+BasePlane = Object.BasePlane Получить свойство (* )
+Object.BasePlane = BasePlane Установить свойство (* )
+BasePlane = Object.GetBasePlane() Получить свойство (**)
+Object.SetBasePlane( BasePlane ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BasePlane( &BasePlane ) Получить свойство
+Object.put_BasePlane(  BasePlane ) Установить свойство
+2225
+
+
+
+Direction  Направление смещения от базовой плоскости. 
+TRUE  прямое направление, FALSE  обратное направление
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Direction = Object.Direction Получить свойство (* )
+Object.Direction = Direction Установить свойство (* )
+Direction = Object.GetDirection() Получить свойство (**)
+Object.SetDirection( Direction ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Direction( &Direction ) Получить свойство
+Object.put_Direction(  Direction ) Установить свойство
+
+Интерфейс IPlane3DByEdgeAndPoint
+Плоскость через ребро и вершину. 
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPlane3D
+IPlane3DByEdgeAndPoint
+
+IPlane3DByEdgeAndPoint  свойства
+
+Edge  Интерфейс ребра, через которое требуется построить 
+плоскость
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Edge = Object.Edge Получить свойство (* )
+Object.Edge = Edge Установить свойство (* )
+Edge = Object.GetEdge() Получить свойство (**)
+Object.SetEdge( Edge ) Установить свойство (**)
+
+Синтаксис COM:
+2226
+
+
+
+Object.get_Edge( &Edge ) Получить свойство
+Object.put_Edge(  Edge ) Установить свойство
+
+Point  Интерфейс вершины, через которую требуется 
+построить плоскость
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Point = Object.Point Получить свойство (* )
+Object.Point = Point Установить свойство (* )
+Point = Object.GetPoint() Получить свойство (**)
+Object.SetPoint( Point ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Point( &Point ) Получить свойство
+Object.put_Point(  Point ) Установить свойство
+
+Интерфейс IPlane3DBy2Edge
+Плоскость через ребро параллельно /перпендикулярно другому ребру 3D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IModelObject
+
+IPlane3D
+IPlane3DBy2Edge
+
+IPlane3DBy2Edge  свойства
+
+Edge1  Первое ребро, через которое будет проходить новая 
+плоскость
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject.
+Синтаксис Automation:
+
+Edge1 = Object.Edge1 Получить свойство (* )
+Object.Edge1 = Edge1 Установить свойство (* )
+Edge1 = Object.GetEdge1() Получить свойство (**)
+Object.SetEdge1( Edge1 ) Установить свойство (**)
+2227
+
+
+
+Синтаксис COM:
+
+Object.get_Edge1( &Edge1 ) Получить свойство
+Object.put_Edge1(  Edge1 ) Установить свойство
+
+Edge2  Второе ребро, через которое будет проходить новая 
+плоскость
+Интерфейс...
+Тип данных: Указатель на интерфейс IModelObject
+Синтаксис Automation:
+
+Edge2 = Object.Edge2 Получить свойство (* )
+Object.Edge2 = Edge2 Установить свойство (* )
+Edge2 = Object.GetEdge2() Получить свойство (**)
+Object.SetEdge2( Edge2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Edge2( &Edge2 ) Получить свойство
+Object.put_Edge2(  Edge2 ) Установить свойство
+
+Parallel  Признак положения плоскости. TRUE  Параллельно 
+ребру, FALSE  Перпендикулярно ребру
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Parallel = Object.Parallel Получить свойство (* )
+Object.Parallel = Parallel Установить свойство (* )
+Parallel = Object.GetParallel() Получить свойство (**)
+Object.SetParallel( Parallel ) Установить свойство (**)
+

@@ -1,0 +1,2533 @@
+Синтаксис COM:
+
+Object.get_SourceFileName Получить свойство,
+(&SourceFileName)
+Object.put_SourceFileName Установить свойство.
+(SourceFileName)
+
+Свойство позволяет получить и установить полное имя файла модели или сборки, для
+которой создан ассоциативный вид.
+
+Unfold  Листовая деталь в разогнутом виде
+Интерфейс...
+Тип данных:BOOL
+Синтаксис Automation:
+
+Unfold = Object.Unfold Получить свойство (* )
+Object.Unfold = Unfold Установить свойство (* )
+Unfold = Object.GetUnfold() Получить свойство (**)
+Object.SetUnfold( Unfold ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Unfold( &Unfold ) Получить свойство,
+Object.put_Unfold(  Unfold ) Установить свойство.
+
+UseOcclusion  Черновое проецирование
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+UseOcclusion = Object.UseOcclusion Получить свойство (* )
+538
+
+
+
+Object.UseOcclusion = UseOcclusion Установить свойство (* )
+UseOcclusion = Object.GetUseOcclusion() Получить свойство (**)
+Object.SetUseOcclusion( UseOcclusion ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_UseOcclusion( &UseOcclusion ) Получить свойство,
+Object.put_UseOcclusion(  UseOcclusion ) Установить свойство.
+
+Версия Компас v18.1
+
+VisibleLinesStyle  Cтиль видимых линий
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+VisibleLinesStyle = Object.VisibleLinesStyle Получить свойство (* )
+Object.VisibleLinesStyle = VisibleLinesStyle Установить свойство (* )
+VisibleLinesStyle = Object.GetVisibleLinesStyle() Получить свойство (**)
+Object.SetVisibleLinesStyle( VisibleLinesStyle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VisibleLinesStyle( &VisibleLinesStyle ) Получить свойство,
+Object.put_VisibleLinesStyle( VisibleLinesStyle ) Установить свойство.
+
+Позволяет установить системный (ksCurveStyleEnum) или пользовательский стиль ли"
+ний для отображения видимых линий.
+
+IAssociationView  методы
+
+CreateLocalView  Местный вид
+Интерфейс...
+Синтаксис Automation:
+BOOL CreateLocalView( LPDISPATCH Contour );
+Синтаксис COM:
+HRESULT CreateLocalView( IDrawingObject * Contour, BOOL * Result );
+Входные параметры:
+
+Contour  " указатель на замкнутую кривую.
+
+Возвращаемое значение:
+539
+
+
+
+TRUE  " в случае успешного завершения,
+FALSE  " в случае неудачи.
+
+Примечание:
+Границей местного вида может являться любой замкнутый контур (окружность, эллипс,
+замкнутая кривая Безье и т.п.).
+Если в опорном виде нет замкнутого контура, создайте его 
+Необходимым условием корректного построения местного вида является расположение
+ограничивающего его контура именно в опорном виде. 
+Переключение между полным и усеченным отображением вида осуществляется с помо"
+щью свойства IAssociationView::Local
+
+Интерфейс IAssociationViewElements
+Справка системы КОМПАС...
+KOMPAS.chm::/429_49_3_3_Obwekty.htm
+Интерфейс  Объекты и элементы для передачи в ассоциативный вид.
+Иерархия:
+IDispatch
+
+IAssociationViewElements
+Описание:
+Интерфейс позволяет задать, какие объекты и элементы надо передавать в ассоциатив"
+ный вид.
+Примечание:
+Интерфейс является дополнительным к интерфейсу ассоциативного вида
+IAssociationView.
+
+IAssociationViewElements  свойства
+
+CreateAxis  Создавать оси
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CreateAxis = Object.CreateAxis Получить свойство (* )
+Object.CreateAxis = CreateAxis Установить свойство (* )
+CreateAxis = Object.GetCreateAxis() Получить свойство (**)
+Object.SetCreateAxis( CreateAxis ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CreateAxis( &CreateAxis ) Получить свойство,
+540
+
+
+
+Object.put_CreateAxis(  CreateAxis ) Установить свойство.
+
+CreateCentresMarkers  Создавать обозначения центров
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CreateCentresMarkers = Получить свойство (* )
+Object.CreateCentresMarkers
+Object.CreateCentresMarkers = Установить свойство (* )
+CreateCentresMarkers
+CreateCentresMarkers = Получить свойство (**)
+Object.GetCreateCentresMarkers()
+Object.SetCreateCentresMarkers( Установить свойство (**)
+CreateCentresMarkers )
+
+Синтаксис COM:
+
+Object.get_CreateCentresMarkers( Получить свойство,
+&CreateCentresMarkers )
+Object.put_CreateCentresMarkers( Установить свойство.
+CreateCentresMarkers )
+
+CreateCircularCentres  Создавать круговые сетки 
+центров
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CreateCircularCentres = Получить свойство (* )
+Object.CreateCircularCentres
+Object.CreateCircularCentres = Установить свойство (* )
+CreateCircularCentres
+CreateCircularCentres = Получить свойство (**)
+Object.GetCreateCircularCentres()
+Object.SetCreateCircularCentres( Установить свойство (**)
+CreateCircularCentres )
+
+Синтаксис COM:
+
+Object.get_CreateCircularCentres( Получить свойство,
+&CreateCircularCentres )
+541
+
+
+
+Object.put_CreateCircularCentres( Установить свойство.
+CreateCircularCentres )
+
+CreateLinearCentres  Создавать линейные сетки центров
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CreateLinearCentres = Получить свойство (* )
+Object.CreateLinearCentres
+Object.CreateLinearCentres = Установить свойство (* )
+CreateLinearCentres
+CreateLinearCentres = Получить свойство (**)
+Object.GetCreateLinearCentres()
+Object.SetCreateLinearCentres( Установить свойство (**)
+CreateLinearCentres )
+
+Синтаксис COM:
+
+Object.get_CreateLinearCentres( Получить свойство,
+&CreateLinearCentres )
+Object.put_CreateLinearCentres( Установить свойство.
+CreateLinearCentres )
+
+HiddenObjectsVisible  Отображать скрытые объекты
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+HiddenObjectsVisible = Получить свойство (* )
+Object.HiddenObjectsVisible
+Object.HiddenObjectsVisible = Установить свойство (* )
+HiddenObjectsVisible
+HiddenObjectsVisible = Получить свойство (**)
+Object.GetHiddenObjectsVisible()
+Object.SetHiddenObjectsVisible( Установить свойство (**)
+HiddenObjectsVisible )
+
+Синтаксис COM:
+
+Object.get_HiddenObjectsVisible Получить свойство
+( &HiddenObjectsVisible )
+Object.put_HiddenObjectsVisible Установить свойство
+(  HiddenObjectsVisible )
+542
+
+
+
+Примечание:
+Свойство позволяет устанавливать и получать признак отображения скрытых объектов.
+
+ProjectAllDesignations  Передавать в вид все 
+обозначения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectAllDesignations = Получить свойство (* )
+Object.ProjectAllDesignations
+Object.ProjectAllDesignations = Установить свойство (* )
+ProjectAllDesignations
+ProjectAllDesignations = Получить свойство (**)
+Object.GetProjectAllDesignations()
+Object.SetProjectAllDesignations( Установить свойство (**)
+ProjectAllDesignations )
+
+Синтаксис COM:
+
+Object.get_ProjectAllDesignations( Получить свойство
+&ProjectAllDesignations )
+Object.put_ProjectAllDesignations(  Установить свойство
+ProjectAllDesignations )
+
+Свойство позволяет одновременно включить проецирование всех типов размеров и обо"
+значений, включая обозначение резьбы.
+
+ProjectAllObjects  Передавать в вид все объекты
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectAllObjects = Object.ProjectAllObjects Получить свойство (* )
+Object.ProjectAllObjects = ProjectAllObjects Установить свойство (* )
+ProjectAllObjects = Получить свойство (**)
+Object.GetProjectAllObjects()
+Object.SetProjectAllObjects( Установить свойство (**)
+ProjectAllObjects )
+
+Синтаксис COM:
+543
+
+
+
+Object.get_ProjectAllObjects( Получить свойство
+&ProjectAllObjects )
+Object.put_ProjectAllObjects( Установить свойство
+ProjectAllObjects )
+
+Примечание:
+Свойство позволяет одновременно включить проецирование тел ProjectBodies, повер"
+хностей ProjectSurfaces, кривых ProjectCurves и точек ProjectPoints.
+См. также IAssociationViewElements::ProjectAllDesignations
+
+ProjectAxis  Передавать в вид оси
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectAxis = Object.ProjectAxis Получить свойство (* )
+Object.ProjectAxis = ProjectAxis Установить свойство (* )
+ProjectAxis = Object.GetProjectAxis() Получить свойство (**)
+Object.SetProjectAxis( ProjectAxis ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectAxis( &ProjectAxis ) Получить свойство,
+Object.put_ProjectAxis(  ProjectAxis ) Установить свойство.
+
+ProjectBases  Передавать в вид обозначения баз
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectBases = Object.ProjectBases Получить свойство (* )
+Object.ProjectBases = ProjectBases Установить свойство (* )
+ProjectBases = Object.GetProjectBases() Получить свойство (**)
+Object.SetProjectBases( ProjectBases ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectBases( &ProjectBases ) Получить свойство
+Object.put_ProjectBases(  ProjectBases ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид обозначений баз.
+544
+
+
+
+ProjectBodies  Передавать в вид тела
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectBodies = Object.ProjectBodies Получить свойство (* )
+Object.ProjectBodies = ProjectBodies Установить свойство (* )
+ProjectBodies = Object.GetProjectBodies() Получить свойство (**)
+Object.SetProjectBodies( ProjectBodies ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectBodies( &ProjectBodies ) Получить свойство
+Object.put_ProjectBodies(  ProjectBodies ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид тел.
+
+ProjectBrandLeaders  Передавать в вид обозначения 
+клеймений
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectBrandLeaders = Получить свойство (* )
+Object.ProjectBrandLeaders
+Object.ProjectBrandLeaders = Установить свойство (* )
+ProjectBrandLeaders
+ProjectBrandLeaders = Получить свойство (**)
+Object.GetProjectBrandLeaders()
+Object.SetProjectBrandLeaders( Установить свойство (**)
+ProjectBrandLeaders )
+
+Синтаксис COM:
+
+Object.get_ProjectBrandLeaders Получить свойство
+( &ProjectBrandLeaders )
+Object.put_ProjectBrandLeaders Установить свойство
+(  ProjectBrandLeaders )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид обозначений
+клеймений.
+545
+
+
+
+ProjectCurves  Передавать в вид кривые
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectCurves = Object.ProjectCurves Получить свойство (* )
+Object.ProjectCurves = ProjectCurves Установить свойство (* )
+ProjectCurves = Object.GetProjectCurves() Получить свойство (**)
+Object.SetProjectCurves( ProjectCurves ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectCurves( &ProjectCurves ) Получить свойство
+Object.put_ProjectCurves( ProjectCurves ) Установить свойство
+
+Свойство позволяет включать и отключать проецирование в вид кривых.
+
+ProjectDimensions  Передавать в вид обозначения 
+размеров
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectDimensions = Получить свойство (* )
+Object.ProjectDimensions
+Object.ProjectDimensions = Установить свойство (* )
+ProjectDimensions
+ProjectDimensions = Получить свойство (**)
+Object.GetProjectDimensions()
+Object.SetProjectDimensions( Установить свойство (**)
+ProjectDimensions )
+
+Синтаксис COM:
+
+Object.get_ProjectDimensions( Получить свойство
+&ProjectDimensions )
+Object.put_ProjectDimensions(  Установить свойство
+ProjectDimensions )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид обозначений раз"
+меров.
+546
+
+
+
+ProjectHiddenComponents  Передавать в вид скрытые 
+компоненты
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectHiddenComponents = Получить свойство (* )
+Object.ProjectHiddenComponents
+Object.ProjectHiddenComponents = Установить свойство (* )
+ProjectHiddenComponents
+ProjectHiddenComponents = Получить свойство (**)
+Object.GetProjectHiddenComponents()
+Object.SetProjectHiddenComponents( Установить свойство (**)
+ProjectHiddenComponents )
+
+Синтаксис COM:
+
+Object.get_ProjectHiddenComponents( Получить свойство
+&ProjectHiddenComponents )
+Object.put_ProjectHiddenComponents(  Установить свойство
+ProjectHiddenComponents )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид скрытых компо"
+нентов.
+
+ProjectLeaders  Передавать в вид обозначения линий
+выносок
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectLeaders = Object.ProjectLeaders Получить свойство (* )
+Object.ProjectLeaders = ProjectLeaders Установить свойство (* )
+ProjectLeaders = Получить свойство (**)
+Object.GetProjectLeaders()
+Object.SetProjectLeaders( ProjectLeaders ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectLeaders( Получить свойство
+&ProjectLeaders )
+Object.put_ProjectLeaders(  ProjectLeaders Установить свойство
+)
+
+547
+
+
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид обозначений ли"
+ний"выносок.
+
+ProjectMarkLeaders  Передавать в вид обозначения 
+маркировок
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectMarkLeaders = Получить свойство (* )
+Object.ProjectMarkLeaders
+Object.ProjectMarkLeaders = Установить свойство (* )
+ProjectMarkLeaders
+ProjectMarkLeaders = Получить свойство (**)
+Object.GetProjectMarkLeaders()
+Object.SetProjectMarkLeaders( Установить свойство (**)
+ProjectMarkLeaders )
+
+Синтаксис COM:
+
+Object.get_ProjectMarkLeaders( Получить свойство
+&ProjectMarkLeaders )
+Object.put_ProjectMarkLeaders(  Установить свойство
+ProjectMarkLeaders )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид обозначений мар"
+кировок.
+
+ProjectPoints  Передавать в вид точки
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectPoints = Object.ProjectPoints Получить свойство (* )
+Object.ProjectPoints = ProjectPoints Установить свойство (* )
+ProjectPoints = Object.GetProjectPoints() Получить свойство (**)
+Object.SetProjectPoints( ProjectPoints ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectPoints( &ProjectPoints ) Получить свойство
+Object.put_ProjectPoints(  ProjectPoints ) Установить свойство
+548
+
+
+
+Свойство позволяет включать и отключать проецирование в вид точек.
+
+ProjectPositions  Передавать в вид обозначения позиций
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectPositions = Object.ProjectPositions Получить свойство (* )
+Object.ProjectPositions = ProjectPositions Установить свойство (* )
+ProjectPositions = Получить свойство (**)
+Object.GetProjectPositions()
+Object.SetProjectPositions( Установить свойство (**)
+ProjectPositions )
+
+Синтаксис COM:
+
+Object.get_ProjectPositions( Получить свойство
+&ProjectPositions )
+Object.put_ProjectPositions(  Установить свойство
+ProjectPositions )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид обозначений по"
+зиций.
+
+ProjectRoughs  Передавать в вид обозначения 
+шероховатостей
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectRoughs = Object.ProjectRoughs Получить свойство (* )
+Object.ProjectRoughs = ProjectRoughs Установить свойство (* )
+ProjectRoughs = Object.GetProjectRoughs() Получить свойство (**)
+Object.SetProjectRoughs( ProjectRoughs ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectRoughs( &ProjectRoughs Получить свойство
+)
+Object.put_ProjectRoughs(  ProjectRoughs ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид обозначений ше"
+роховатостей.
+549
+
+
+
+ProjectSketches  Передавать в вид эскизы
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectSketches = Object.ProjectSketches Получить свойство (* )
+Object.ProjectSketches = ProjectSketches Установить свойство (* )
+ProjectSketches = Object.GetProjectSketches() Получить свойство (**)
+Object.SetProjectSketches( ProjectSketches ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectSketches( Получить свойство
+&ProjectSketches )
+Object.put_ProjectSketches(  Установить свойство
+ProjectSketches )
+
+Версия Компас v18.1
+
+ProjectSpecRough  Передавать в вид обозначения 
+неуказанной шероховатости
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectSpecRough = Получить свойство (* )
+Object.ProjectSpecRough
+Object.ProjectSpecRough = Установить свойство (* )
+ProjectSpecRough 
+ProjectSpecRough = Получить свойство (**)
+Object.GetProjectSpecRough() 
+Object.SetProjectSpecRough( Установить свойство (**)
+ProjectSpecRough )
+
+Синтаксис COM:
+
+Object.get_ProjectSpecRough( Получить свойство
+&ProjectSpecRough )
+Object.put_ProjectSpecRough( Установить свойство
+ProjectSpecRough )
+
+ProjectLayers  Учитывать при проецировании слои
+Интерфейс...
+550
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectLayers = Object.ProjectLayers Получить свойство (* )
+Object.ProjectLayers = ProjectLayers Установить свойство (* )
+ProjectLayers = Object.GetProjectLayers() Получить свойство (**)
+Object.SetProjectLayers( ProjectLayers ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectLayers( &ProjectLayers ) Получить свойство
+Object.put_ProjectLayers(  ProjectLayers ) Установить свойство
+
+ProjectStandartElements  Передавать в вид 
+библиотечные элементы
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectStandartElements = Получить свойство (* )
+Object.ProjectStandartElements
+Object.ProjectStandartElements = Установить свойство (* )
+ProjectStandartElements
+ProjectStandartElements = Получить свойство (**)
+Object.GetProjectStandartElements()
+Object.SetProjectStandartElements( Установить свойство (**)
+ProjectStandartElements )
+
+Синтаксис COM:
+
+Object.get_ProjectStandartElements( Получить свойство
+&ProjectStandartElements )
+Object.put_ProjectStandartElements(  Установить свойство
+ProjectStandartElements )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид библиотечных
+элементов.
+
+ProjectSurfaces  Передавать в вид поверхности
+Интерфейс...
+Тип данных: BOOL
+551
+
+
+
+Синтаксис Automation:
+
+ProjectSurfaces = Object.ProjectSurfaces Получить свойство (* )
+Object.ProjectSurfaces = ProjectSurfaces Установить свойство (* )
+ProjectSurfaces = Получить свойство (**)
+Object.GetProjectSurfaces()
+Object.SetProjectSurfaces( ProjectSurfaces Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_ProjectSurfaces( Получить свойство
+&ProjectSurfaces )
+Object.put_ProjectSurfaces(  Установить свойство
+ProjectSurfaces )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид поверхностей.
+
+ProjectThreads  Передавать в вид обозначения резьб
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ProjectThreads = Object.ProjectThreads Получить свойство (* )
+Object.ProjectThreads = ProjectThreads Установить свойство (* )
+ProjectThreads = Получить свойство (**)
+Object.GetProjectThreads()
+Object.SetProjectThreads( ProjectThreads ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ProjectThreads( &ProjectThreads ) Получить свойство
+Object.put_ProjectThreads(  ProjectThreads ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид обозначений
+резьб.
+
+ProjectTolerances  Передавать в вид обозначения 
+допусков форм
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+552
+
+
+
+ProjectTolerances = Получить свойство (* )
+Object.ProjectTolerances
+Object.ProjectTolerances = Установить свойство (* )
+ProjectTolerances
+ProjectTolerances = Получить свойство (**)
+Object.GetProjectTolerances()
+Object.SetProjectTolerances( Установить свойство (**)
+ProjectTolerances )
+
+Синтаксис COM:
+
+Object.get_ProjectTolerances( Получить свойство
+&ProjectTolerances )
+Object.put_ProjectTolerances(  Установить свойство
+ProjectTolerances )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак передачи в вид обозначений до"
+пусков форм.
+
+Интерфейс IView1
+Дополнительный интерфейс для вида.
+Иерархия:
+IDispatch
+
+IView1
+Примечание:
+Дополнительный интерфейс для графических объектов. Данный интерфейс можно по"
+лучить у интерфейса вида IView посредством вызова метода IUnknown::QueryInterface
+(const GUID far& IID, void** pif).
+
+IView1  свойства
+
+BaseObject  Опорный объект
+Интерфейс...
+Тип данных: Указатель на интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство (* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Object.GetBaseObject() Получить свойство (**)
+Object.SetBaseObject( BaseObject ) Установить свойство (**)
+
+Синтаксис COM:
+553
+
+
+
+Object.get_BaseObject( &BaseObject ) Получить свойство
+Object.put_BaseObject(  BaseObject ) Установить свойство
+
+Примечание:
+В зависимости от типа ассоциативного вида нужно указать вспомогательный опорный
+объект.
+Опорный объект требуется при создании следующих видов:
+
+▼     Вид по стрелке " требуется объект стрелка взгляда.
+▼     Выносной вид " требуется объект обозначение выносного элемента.
+▼     Вид разреза/сечения " требуется объект линия разреза.
+
+Crossed  Признак необходимости перестроения вида
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Crossed = Object.Crossed Установить свойство
+(* )
+
+Crossed = Object.GetCrossed() Установить свойство
+(**)
+
+Синтаксис COM:
+
+Object.get_Crossed( &Crossed ) Установить свойство.
+
+Примечание:
+Свойство доступно только для чтения.
+Версия Компас v18.1
+
+CrossedTitle  Признак необходимости перестроения 
+заголовка вида
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CrossedTitle = Object.CrossedTitle Установить свойство
+(* )
+
+CrossedTitle = Object.GetCrossedTitle() Установить свойство
+(**)
+
+Синтаксис COM:
+554
+
+
+
+Object.get_CrossedTitle( &CrossedTitle Установить свойство.
+)
+
+Примечание:
+Свойство доступно только для чтения.
+Версия Компас v18.1
+
+EditMacroVisibleRegime  Находится ли вид в режиме 
+редактирования макроэлемента
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+EditMacroVisibleRegime = Получить свойство (* )
+Object.EditMacroVisibleRegime
+EditMacroVisibleRegime = Получить свойство (**)
+Object.GetEditMacroVisibleRegime()
+
+Синтаксис COM:
+
+Object.get_EditMacroVisibleRegime( Получить свойство
+&EditMacroVisibleRegime )
+
+Примечание:
+Свойство используется при редактировании макроэлементов.
+
+LocalCoordinateSystems2D  Получить коллекцию ЛСК 
+вида
+Интерфейс...
+Тип данных: указатель на интерфейс ILocalCoordinateSystems2D
+Синтаксис Automation:
+
+LocalCoordinateSystems2D = Получить свойство (* )
+Object.LocalCoordinateSystems2D
+LocalCoordinateSystems2D = Получить свойство (**)
+Object.GetLocalCoordinateSystems2D()
+
+Синтаксис COM:
+
+Object.get_LocalCoordinateSystems2D Получить свойство
+( &LocalCoordinateSystems2D )
+
+Свойство позволяет получить коллекцию ЛСК вида.
+555
+
+
+
+Numerator  Числитель масштаба
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Numerator = Object.Numerator Получить свойство (* )
+Object.Numerator = Numerator Установить свойство (* )
+Numerator = Object.GetNumerator() Получить свойство (**)
+Object.SetNumerator( Numerator ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Numerator( &Numerator ) Получить свойство
+Object.put_Numerator(  Numerator ) Установить свойство
+
+Printable  Признак разрешения/запрещения печати 
+вида
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Printable = Object.Printable Получить свойство (* )
+Object.Printable = Printable Установить свойство (* )
+Printable = Object.GetPrintable() Получить свойство (**)
+Object.SetPrintable( Printable ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Printable( &Printable ) Получить свойство
+Object.put_Printable(  Printable ) Установить свойство
+
+IView1  методы
+
+FindObject  Найти объект, ближайший к заданной точке, 
+удовлетворяющий параметрам поиска
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH FindObject( double X, double Y, double Limit, IFindObjectParameters * Param );
+Синтаксис COM:
+HRESULT FindObject( double X, double Y, double Limit, IFindObjectParameters * Param,
+IDrawingObject * * Result );
+556
+
+
+
+в
+
+в
+
+Возвращаемое значение: 
+
+ указатель на интерфейс IDrawingObject.
+
+Входные параметры:
+
+X " первая координата точки,
+Y " вторая координата точки,
+Limit " предел поиска и найденное расстояние,
+Param " параметры поиска объекто
+
+IFindObjectParameters.
+
+Примечание:
+Для поиска объектов в точке могут быть заданы расширенные параметры поиска.
+Интерфейс расширенных параметров поиска IFindObjectParameters можно получить с
+помощью метода IKompasDocument1::GetInterface; 
+в 2D документах при использовании константы ksObjectFindObjectParameters.
+Если расширенные параметры поиска не требуются, необходимо передать NULL в фун"
+кцию.
+
+FindObjects  Найти объекты в заданной точке, 
+удовлетворяющие параметрам поиска
+Интерфейс...
+Синтаксис Automation:
+VARIANT FindObjects( double X, double Y, double Limit, IFindObjectParameters * Param );
+Синтаксис COM :
+HRESULT FindObjects( double X, double Y, double Limit, IFindObjectParameters * Param,
+VARIANT * Result );
+Возвращаемое значение: 
+
+VARIANT " объект типа VARIANT на безопасный мас"
+сив SAFEARRAY: VT_ARRAY|VT_DISPATCH.
+
+Входные параметры:
+ 
+
+X " первая координата точки,
+Y " вторая координата точки,
+Limit " предел поиска и найденное расстояние,
+Param " параметры поиска объекто
+
+IFindObjectParameters.
+
+Примечание:
+Для поиска объектов в точке могут быть заданы расширенные параметры поиска.
+557
+
+
+
+Интерфейс расширенных параметров поиска IFindObjectParameters можно получить с
+помощью метода IKompasDocument1::GetInterface; 
+в 2D документах при использовании константы ksObjectFindObjectParameters.
+Если расширенные параметры поиска не требуются, необходимо передать NULL в фун"
+кцию.
+
+SelectObjects  Отобрать объекты рамкой
+Интерфейс...
+Синтаксис Automation:
+ VARIANT SelectObjects( ksRegionTypeEnum RegionType, double XMin, double YMin, double
+XMax, double YMax );
+Синтаксис COM :
+HRESULT SelectObjects( ksRegionTypeEnum RegionType, double XMin, double YMin, double
+XMax, double YMax, VARIANT * Result );
+Возвращаемое значение: 
+ 
+
+VARIANT " объект типа VARIANT на безопасный мас"
+сив SAFEARRAY: VT_ARRAY|VT_DISPATCH.
+
+ 
+RegionType "   тип региона,
+ XMin " минимальная граница поиска по x,
+YMin " минимальная граница поиска по y,
+XMax " максимальная граница поиска по x,
+YMax " максимальная граница поиска по y.
+
+Интерфейс IViewDesignation
+Справка системы КОМПАС...
+KOMPAS.chm::/381_44_5_Oboznachenie_vida.htm
+Интерфейс обозначения вида.
+Иерархия:
+IDispatch
+
+IViewDesignation
+Описание:
+Позволяет получить и изменить обозначение вида.
+Примечание:
+Дополнительный интерфейс вида. Данный интерфейс можно получить у вида IView по"
+средством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif); в ви"
+зуальном режиме этому интерфейсу соответствует закладка в параметрах вида "Обозна"
+чение вида".
+558
+
+
+
+Если простой вид, интерфейс позволяет получить или установить ссылку на объект
+"Стрелка взгляда", "Линия разреза", "Выносной элемент".
+С помощью флагов можно регулировать надпись обозначения вида, включать или вы"
+ключать соответствующие компоненты обозначения.
+Для ассоциативных видов изменить ссылку на объект нельзя. Можно только регулиро"
+вать надпись обозначения вида при помощи флагов.
+Чтобы изменения, установленные в интерфейсе, передались в модель, нужно вызвать у
+вида метод Update();
+
+IViewDesignation  свойства
+
+Designation  Обозначение вида
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Designation = Получить свойство (* )
+iObject.Designation
+iObject.GetDesignation() Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Designation Получить свойство
+(&Designation)
+
+Примечание:
+
+1.  Свойство позволяет получить обозначение вида в виде строки текста.
+2.  Свойство доступно только для чтения.
+
+DrawingText  Надпись вида
+Интерфейс...
+Тип данных: Указатель на интерфейс IDrawingObject
+Синтаксис Automation:
+
+DrawingText = Object.DrawingText Получить свойство (* )
+DrawingText = Object.GetDrawingText() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DrawingText( &DrawingText ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+559
+
+
+
+RefObject  Ссылка на объект "Стрелка вида", "Линия 
+разреза" или "Выносной элемент"
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+RefObject = Получить свойство (* )
+iObject.RefObject
+iObject.RefObject = Установить свойство (* )
+RefObject
+RefObject = Получить свойство (**)
+iObject.GetRefObject()
+iObject.SetRefObject Установить свойство (**)
+(RefObject)
+
+Синтаксис COM:
+
+iObject">get_RefObject Получить свойство
+(&RefObject)
+iObject">put_RefObject Установить свойство
+(RefObject)
+
+Примечание:
+Свойство позволяет получить или установить ссылку на объект  "Стрелка вида", "Линия
+разреза",  "Выносной элемент".
+Наименование из этого объекта используется в формировании обозначения вида. Если
+вид ассоциативный, свойство работает как readOnly (только для чтения). В настоящее
+время свойство реализовано через reference на объект.
+VARIANTpVal;
+        pVal.lVal = p;   // reference объекта
+        pVal.vt   = VT_I4; // тип long
+
+ShowAngle  Показывать "Повернуто на угол"
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowAngle = iObject.ShowAngle Получить свойство (* )
+iObject.ShowAngle = ShowAngle Установить свойство (* )
+ShowAngle = iObject.GetShowAngle() Получить свойство (**)
+iObject.SetShowAngle (ShowAngle) Установить свойство (**)
+560
+
+
+
+Синтаксис COM:
+
+iObject">get_ShowAngle Получить свойство
+(&ShowAngle)
+iObject">put_ShowAngle Установить свойство
+(ShowAngle)
+
+Примечание:
+Если свойство возвращает TRUE, в обозначении вида включается угол поворота вида.
+Если FALSE, угол поворота вида из обозначения выключается.
+
+ShowName  Показывать наименование
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowName = iObject.ShowName Получить свойство (* )
+iObject.ShowName = ShowName Установить свойство (* )
+ShowName = Получить свойство (**)
+iObject.GetShowName()
+iObject.SetShowName (ShowName) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ShowName(&ShowName) Получить свойство
+iObject">put_ShowName(ShowName) Установить свойство
+
+Примечание:
+Если свойство возвращает TRUE, в обозначении вида включается наименование из ссыл"
+ки на объект например (A"A).
+Если FALSE, наименование из обозначения выключается.
+
+ShowPage  Показывать лист
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowPage = iObject.ShowPage Получить свойство (* )
+iObject.ShowPage = ShowPage Установить свойство (* )
+ShowPage = iObject.GetShowPage() Получить свойство (**)
+iObject.SetShowPage (ShowPage) Установить свойство (**)
+
+Синтаксис COM:
+561
+
+
+
+iObject">get_ShowPage (&ShowPage) Получить свойство
+iObject">put_ShowPage (ShowPage) Установить свойство
+
+Примечание:
+Если свойство возвращает TRUE, в обозначении вида включается номер листа.
+Если FALSE, номер листа из обозначения выключается.
+
+ShowScale  Показывать масштаб
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowScale = iObject.ShowScale Получить свойство (* )
+iObject.ShowScale = ShowScale Установить свойство (* )
+ShowScale = iObject.GetShowScale() Получить свойство (**)
+iObject.SetShowScale (ShowScale) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ShowScale( &ShowScale ) Получить свойство
+iObject">put_ShowScale(  ShowScale ) Установить свойство
+
+Примечание:
+Если свойство возвращает TRUE, в обозначении вида включается масштаб.
+Если FALSE, масштаб из обозначения выключается.
+
+ShowTurn  Показывать "Повернуто"
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowTurn = iObject.ShowTurn Получить свойство (* )
+iObject.ShowTurn = ShowTurn Установить свойство (* )
+ShowTurn = iObject.GetShowTurn() Получить свойство (**)
+iObject.SetShowTurn (ShowTurn) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ShowTurn Получить свойство
+(&ShowTurn)
+iObject">put_ShowTurn Установить свойство
+(ShowTurn)
+
+Примечание:
+562
+
+
+
+Если свойство возвращает TRUE, в Обозначении вида включается спецзнак "Повернуто".
+Если FALSE, спецзнак "Повернуто" из обозначения выключается.
+
+ShowUnfold  Показывать "Развернуто"
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowUnfold = iObject.ShowUnfold Получить свойство (* )
+iObject.ShowUnfold = ShowUnfold Установить свойство (* )
+ShowUnfold = iObject.GetShowUnfold() Получить свойство (**)
+iObject.SetShowUnfold (ShowUnfold) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ShowUnfold (&ShowUnfold) Получить свойство
+iObject">put_ShowUnfold (ShowUnfold) Установить свойство
+
+Примечание:
+Если свойство возвращает TRUE, в Обозначении вида включается спецзнак "Развернуто".
+Если FALSE, спецзнак "Развернуто" из обозначения выключается.
+
+ShowZone  Показывать зону
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ShowZone = iObject.ShowZone Получить свойство (* )
+iObject.ShowZone = ShowZone Установить свойство (* )
+ShowZone = Получить свойство (**)
+iObject.GetShowZone()
+iObject.SetShowZone (ShowZone) Установить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_ShowZone Получить свойство
+(&ShowZone)
+iObject">put_ShowZone Установить свойство
+(ShowZone)
+
+Примечание:
+Если свойство возвращает TRUE, в обозначении вида включается зона.
+Если FALSE, зона из обозначения выключается.
+563
+
+
+
+Вспомогательные объекты
+Интерфейс ILocalCoordinateSystems2D
+Справка системы КОМПАС...
+kompas.chm::/842_91_2_lok_sist_koord.htm
+Коллекция локальных систем координат.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+ILocalCoordinateSystems2D
+Интерфейс коллекции локальных систем координат, позволяющий получить доступ к
+локальным системам координат вида.
+Примечание:
+Данный интерфейс можно получить с помощью свойства LocalCoordinateSystems2D ин"
+терфейса IView1.
+
+ILocalCoordinateSystems2D  свойства
+
+Current  Получить/установить текущую ЛСК
+Интерфейс...
+Тип данных: указатель на интерфейс ILocalCoordinateSystem2D
+Синтаксис Automation:
+
+Current = Object.Current Получить свойство (* )
+Object.Current = Current Установить свойство (* )
+Current = Object.GetCurrent() Получить свойство (**)
+Object.SetCurrent( Current ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Current( &Current ) Получить свойство
+Object.put_Current(  Current ) Установить свойство
+
+Свойство позволяет получать и устанавливать текущую ЛСК вида.
+
+Item  Возвращает ЛСК, заданную по индексу или имени
+Интерфейс...
+Тип данных: указатель на интерфейс ILocalCoordinateSystem2D
+Синтаксис Automation:
+564
+
+
+
+Item = Object.Item( Index ) Получить свойство (* )
+Item = Object.GetItem( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Item( Index, &Item ) Получить свойство
+
+Возвращает ЛСК из коллекции по заданному индексу или имени.
+Примечание:
+Свойство доступно только для чтения.
+
+ILocalCoordinateSystems2D  методы
+
+Add  Создает новую ЛСК и добавляет её в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ILocalCoordinateSystem2D * * Result );
+Создает и добавляет новую ЛСК в коллекцию.
+Возвращаемое значение:
+Указатель на интерфейс добавленной ЛСК.
+
+Интерфейс ILocalCoordinateSystem2D
+Справка системы КОМПАС...
+kompas.chm::/842_91_2_lok_sist_koord.htm
+Интерфейс локальной системы координат.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+ILocalCoordinateSystem2D
+
+Интерфейс локальных систем координат, позволяющий получить доступ к ее свойствам,
+таким как имя, положение в системе координат вида, обозначения осей координат.
+Примечание:
+Данный интерфейс можно получить с помощью свойств ItemILocal и CurrentILocal, а так"
+же метода AddILocal интерфейса ILocalCoordinateSystems2D.
+565
+
+
+
+ILocalCoordinateSystem2D  свойства
+
+Angle  Угол наклона оси Х ЛСК
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство (* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство
+Object.put_Angle(  Angle ) Установить свойство
+
+Свойство позволяет получать и устанавливать угол наклона оси X в системе координат
+вида.
+
+AxisXLabel  Обозначение оси X ЛСК
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+AxisXLabel = Object.AxisXLabel Получить свойство (* )
+Object.AxisXLabel = AxisXLabel Установить свойство (* )
+AxisXLabel = Object.GetAxisXLabel() Получить свойство (**)
+Object.SetAxisXLabel( AxisXLabel ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AxisXLabel( &AxisXLabel ) Получить свойство
+Object.put_AxisXLabel(  AxisXLabel ) Установить свойство
+
+Свойство позволяет получать и устанавливать обозначение оси X ЛСК.
+
+AxisYLabel  Обозначение оси Y ЛСК
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+AxisYLabel = Object.AxisYLabel Получить свойство (* )
+Object.AxisYLabel = AxisYLabel Установить свойство (* )
+566
+
+
+
+AxisYLabel = Object.GetAxisYLabel() Получить свойство (**)
+Object.SetAxisYLabel( AxisYLabel ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AxisYLabel( &AxisYLabel ) Получить свойство
+Object.put_AxisYLabel(  AxisYLabel ) Установить свойство
+
+Свойство позволяет получать и устанавливать обозначение оси Y ЛСК.
+
+Name  Название ЛСК
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = Object.Name Получить свойство (* )
+Object.Name = Name Установить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+Object.SetName( Name ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name( &Name ) Получить свойство
+Object.put_Name(  Name ) Установить свойство
+
+Свойство позволяет получать и устанавливать название ЛСК.
+
+X  Xкоордината начала ЛСК
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X Получить свойство (* )
+Object.X = X Установить свойство (* )
+X = Object.GetX() Получить свойство (**)
+Object.SetX( X ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ) Получить свойство
+Object.put_X(  X ) Установить свойство
+
+Свойство позволяет получать и устанавливать значение x"координаты начала ЛСК в си"
+стеме координат вида.
+567
+
+
+
+Y  Yкоордината начала ЛСК
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y Получить свойство (* )
+Object.Y = Y Установить свойство (* )
+Y = Object.GetY() Получить свойство (**)
+Object.SetY( Y ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y( &Y ) Получить свойство
+Object.put_Y(  Y ) Установить свойство
+
+Свойство позволяет получать и устанавливать значение y"координаты начала ЛСК в си"
+стеме координат вида.
+
+ILocalCoordinateSystem2D  методы
+
+Delete  Удаление ЛСК
+Интерфейс...
+Синтаксис Automation:
+BOOL Delete();
+Синтаксис COM:
+HRESULT Delete( BOOL * Result );
+Удаляет ЛСК из коллекции.
+Возвращаемое значение:
+Возвращает TRUE в случае успешного удаления, FALSE " в случае неудачи.
+
+Вставки видов, фрагментов, OLE объектов
+Интерфейс IInsertionsManager
+Интерфейс менеджера вставок фрагментов и видов.
+Иерархия:
+IDispatch
+
+IInsertionsManager
+Описание:
+Интерфейс позволяет создавать и получать вставки фрагментов и видов.
+Примечание:
+568
+
+
+
+Интерфейс является дополнительным к интерфейсу документа IKompasDocument. Ин"
+терфейс можно получить посредством вызова метода IUnknown::QueryInterface (const
+GUID far& iid, void** pif).
+
+IInsertionsManager  свойства
+
+DefinitionsCount  Количество описаний
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+DefinitionsCount = Object.DefinitionsCount( Получить свойство (* )
+long type )
+DefinitionsCount = Получить свойство (**)
+Object.GetDefinitionsCount( long type )
+
+Синтаксис COM:
+
+Object.get_DefinitionsCount( Получить свойство
+ksInsertionTypeEnum type, 
+&DefinitionsCount )
+
+Входные параметры:
+
+type " тип вставки фрагмента или вида.
+
+Примечание:
+
+1.  Свойство позволяет получать количество описаний вставок фрагмента или вида задан"
+ного типа.
+
+2.  Свойство доступно только для чтения.
+
+InsertionDefinition  Получить описание по имени или 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IInsertionDefinition
+Синтаксис Automation:
+
+InsertionDefinition = Получить свойство (* )
+Object.InsertionDefinition( long  type, 
+VARIANT Index )
+569
+
+
+
+InsertionDefinition = Получить свойство (**)
+Object.GetInsertionDefinition( long  type, 
+VARIANT Index )
+
+Синтаксис COM:
+
+Object.get_InsertionDefinition( Получить свойство
+ksInsertionTypeEnum type, VARIANT Index, 
+&InsertionDefinition )
+
+Входные параметры:
+
+type " тип вставки фрагмента или вида,
+Index " индекс или имя вставки фрагмента или вида.
+
+Примечание:
+
+1.  Свойство позволяет получать описание вставки фрагмента или вида по имени или ин"
+дексу.
+
+2.  Свойство доступно только для чтения.
+
+InsertionDefinitions  Описания фрагментов и видов
+Интерфейс...
+Тип данных: VARIANT типа VT_ARRAY | VT_DISPATCH
+Синтаксис Automation:
+
+InsertionDefinitions = Получить свойство (* )
+Object.InsertionDefinitions
+InsertionDefinitions = Получить свойство (**)
+Object.GetInsertionDefinitions()
+
+Синтаксис COM:
+
+Object.get_InsertionDefinitions( Получить свойство
+&InsertionDefinitions )
+
+Примечание:
+
+1.  Свойство позволяет получать массив описаний фрагментов и видов. Если возвращается
+один объект, то тип VARIANT"а будет VT_DISPATCH, если возвращается несколько объ"
+ектов, то тип VARIANT"а будет VT_ARRAY | VT_DISPATCH.
+
+2.  Свойство доступно только для чтения.
+570
+
+
+
+IInsertionsManager  методы
+
+AddDefinition  Создать новое описание для фрагмента 
+или вида
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddDefinition( long type,
+BSTR Name, 
+BSTR FileName );
+Синтаксис COM:
+HRESULT AddDefinition( ksInsertionTypeEnum type,
+BSTR Name,
+BSTR FileName,
+IInsertionDefinition ** Result );
+Входные параметры:
+
+typ " тип вставки фрагмента или вида,
+e
+Na " имя вставки,
+me
+File " имя файла, из которого производится вставка.
+Na
+me
+
+Возвращаемое значение:
+
+" Указатель на интерфейс вставки фрагмента или вида
+IInsertionDefinition.
+
+Примечание:
+Метод позволяет создать новое описание вставки фрагмента или вида.
+
+Интерфейс IInsertionObjects
+Справка системы КОМПАС...
+KOMPAS.chm::/498_Glava_52_Obshchie_svedenija.htm
+Коллекция вставок фрагментов и видов других чертежей.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IDrawingObjects
+IInsertionObjects
+571
+
+
+
+Описание:
+Позволяет создавать и получать вставки фрагментов и видов.
+Примечание:
+Данный интерфейс можно получить у контейнера графических объектов
+IDrawingContainer::InsertionObjects.
+
+IInsertionObjects  свойства
+
+InsertionObject  Вставка фрагмента, заданная по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс вставки фрагмента IInsertionObject
+Синтаксис Automation:
+
+BrokenLine = iObject.BrokenLine  ( Index ); Получить свойство (* )
+BrokenLine = iObject.GetBrokenLine( Index Получить свойство (**)
+);
+
+Синтаксис COM:
+
+iObject">get_BrokenLine( Index, Получить свойство
+&BrokenLine )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IInsertionObjects  методы
+
+Add  Создать новый элемент и добавить его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IInsertionObject ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс вставки фрагмента 
+IInsertionObject.
+572
+
+
+
+Интерфейс IOleDrawingObjects
+Справка системы КОМПАС...
+KOMPAS.chm::/OLE_Overview.htm
+Интерфейс коллекции OLEобъектов.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IOleDrawingObjects
+Описание:
+Позволяет создавать и получать OLE"объекты.
+Примечание:
+Получить интерфейс можно, используя метод контейнера графических объектов
+IDrawingContainer::OleDrawingObjects.
+
+IOleDrawingObjects  свойства
+
+OleDrawingObject  OLEобъект, заданный по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс OLE"объекта IOleDrawingObject
+Синтаксис Automation:
+
+OleDrawingObject = Получить свойство (* )
+iObject.OleDrawingObject ( Index );
+OleDrawingObject = Получить свойство (**)
+iObject.GetOleDrawingObject( Index );
+
+Синтаксис COM:
+
+iObject">get_OleDrawingObject( Index, Получить свойство
+&OleDrawingObject )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IOleDrawingObjects  методы
+
+Add  Создать новый элемент и добавить его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+573
+
+
+
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IOleDrawingObject ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс OLE"объекта IOleDrawingObject.
+
+Интерфейс IInsertionObject
+Справка системы КОМПАС...
+KOMPAS.chm::/498_Glava_52_Obshchie_svedenija.htm
+Базовый интерфейс для вставки фрагментов и видов другого чертежа.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IInsertionObject
+IInsertionFragment
+IInsertionView
+IPropertyKeeper
+Описание:
+Интерфейс позволяет задавать и получать параметры вставки фрагментов и видов дру"
+гого чертежа.
+Примечание:
+
+1.  Интерфейс можно получить у коллекции вставок фрагментов и видов, используя свой"
+ство IInsertionObjects::InsertionObject или метод IInsertionObjects::Add.
+
+2.  После задания параметров объекта требуется вызвать метод IDrawingObject::Update.
+3.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) у
+
+данного интерфейса можно получить дополнительные интерфейсы:
+▼ IInsertionFragment,
+▼ IInsertionView,
+▼ IPropertyKeeper.
+
+IInsertionObject  свойства
+
+DimensionLineScale  Масштабирование выносных 
+линий
+Интерфейс...
+Тип данных: BOOL
+574
+
+
+
+Значения свойства:
+
+TRUE " выносные линии масштабировать,
+FALSE " не масштабировать.
+
+Синтаксис Automation:
+
+DimensionLineScale = Получить свойство (* )
+Object.DimensionLineScale
+Object.DimensionLineScale = Установить свойство (* )
+DimensionLineScale
+DimensionLineScale = Получить свойство (**)
+Object.GetDimensionLineScale()
+Object.SetDimensionLineScale( Установить свойство (**)
+DimensionLineScale )
+
+Синтаксис COM:
+
+Object.get_DimensionLineScale( Получить свойство
+&DimensionLineScale )
+Object.put_DimensionLineScale( Установить свойство
+DimensionLineScale )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак масштабирования выносных ли"
+ний.
+
+FileName  Имя файла источника
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+FileName = Object.FileName Получить свойство (* )
+FileName = Object.GetFileName() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FileName( &FileName ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать имя файла источника.
+2.  Свойство доступно только для чтения.
+575
+
+
+
+InsertionDefinition  описание вставки фрагмента или 
+вида
+Интерфейс...
+Тип данных: указатель на интерфейс описания вставки IInsertionDefinition
+Синтаксис Automation:
+
+InsertionDefinition = Получить свойство (* )
+Object.InsertionDefinition
+Object.InsertionDefinition = Установить свойство (* )
+InsertionDefinition
+InsertionDefinition = Получить свойство (**)
+Object.GetInsertionDefinition()
+Object.SetInsertionDefinition( Установить свойство (**)
+InsertionDefinition )
+
+Синтаксис COM:
+
+Object.get_InsertionDefinition( Получить свойство
+&InsertionDefinition )
+Object.put_InsertionDefinition( Установить свойство
+InsertionDefinition )
+
+Примечание:
+Свойство позволяет устанавливать и получать интерфейс описания вставки фрагмента
+или вида.
+
+InsertionType  Способ вставки
+Интерфейс...
+Тип данных: из перечисления ksInsertionTypeEnum
+Синтаксис Automation:
+
+InsertionType = Object.InsertionType Получить свойство (* )
+InsertionType = Object.GetInsertionType() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_InsertionType( Получить свойство
+&InsertionType )
+
+Примечание:
+
+1.  Свойство позволяет получать способ вставки.
+2.  Свойство доступно только для чтения.
+576
+
+
+
+Name  Имя вставки
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+Name = Object.Name Получить свойство (* )
+Object.Name = Name Установить свойство (* )
+Name = Object.GetName() Получить свойство (**)
+Object.SetName( Name ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Name( &Name ) Получить свойство
+Object.put_Name(  Name ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать имя вставки фрагмента.
+
+IInsertionObject  методы
+
+GetPlacement  Получить местоположение объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPlacement( double * X,
+double * Y,
+double * Angle,
+BOOL  * MirrorSymmetry )
+Синтаксис COM:
+HRESULT GetPlacement( double * X,
+double * Y,
+double * Angle,
+BOOL  * MirrorSymmetry, 
+BOOL  * Result );
+Выходные параметры:
+
+X, Y " координаты объекта,
+Angle " угол поворота объекта,
+MirrorSym " признак зеркальной симме"
+metry трии объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+577
+
+
+
+FALSE " в случае неудачи.
+Примечание:
+Метод позволяет получить местоположение объекта.
+
+SetPlacement  Установить местоположение объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlacement( double X,
+double Y,
+double Angle,
+BOOL  MirrorSymmetry )
+Синтаксис COM:
+HRESULT SetPlacement( double X,
+double Y,
+double Angle,
+BOOL  MirrorSymmetry, 
+BOOL * Result );
+Входные параметры:
+
+X, Y " координаты объекта,
+Angle " угол поворота объекта,
+MirrorSym " признак зеркальной симме"
+metry трии объекта.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить местоположение объекта.
+
+Интерфейс IInsertionFragment
+Справка системы КОМПАС...
+KOMPAS.chm::/498_Glava_52_Obshchie_svedenija.htm
+Интерфейс вставки фрагментов (локальных и внешних).
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IInsertionObject
+IInsertionFragment
+578
+
+
+
+Описание:
+Интерфейс позволяет задавать и получать параметры вставки локальных и внешних
+фрагментов.
+Примечание:
+Дополнительный интерфейс базового интерфейса вставки фрагмента IInsertionObject.
+Может быть получен с помощью метода IUnknown::QueryInterface.
+
+IInsertionFragment  свойства
+
+BreakObjectsEnabled  Учитывать разрыв вида
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+BreakObjectsEnabled = Получить свойство (* )
+Object.BreakObjectsEnabled
+Object.BreakObjectsEnabled = Установить свойство (* )
+BreakObjectsEnabled
+BreakObjectsEnabled = Получить свойство (**)
+Object.GetBreakObjectsEnabled()
+Object.SetBreakObjectsEnabled( Установить свойство (**)
+BreakObjectsEnabled )
+
+Синтаксис COM:
+
+Object.get_BreakObjectsEnabled Получить свойство
+( &BreakObjectsEnabled )
+Object.put_BreakObjectsEnabled Установить свойство
+(  BreakObjectsEnabled )
+
+Версия Компас v18.1
+
+CreateSpcObjects  Создавать объекты спецификации
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CreateSpcObjects = Получить свойство (* )
+Object.CreateSpcObjects
+Object.CreateSpcObjects = Установить свойство (* )
+CreateSpcObjects
+CreateSpcObjects = Получить свойство (**)
+Object.GetCreateSpcObjects()
+579
+
+
+
+Object.SetCreateSpcObjects( Установить свойство (**)
+CreateSpcObjects )
+
+Синтаксис COM:
+
+Object.get_CreateSpcObjects( Получить свойство
+&CreateSpcObjects )
+Object.put_CreateSpcObjects( Установить свойство
+CreateSpcObjects )
+
+Версия Компас v19
+
+MultiLayer  Многослойность
+Интерфейс...
+Тип данных: BOOL.
+Значения свойства:
+
+TRUE " многослойный объект,
+FALSE " однослойный объект.
+
+Синтаксис Automation:
+
+MultiLayer = Object.MultiLayer Получить свойство (* )
+Object.MultiLayer = MultiLayer Установить свойство (* )
+MultiLayer = Object.GetMultiLayer() Получить свойство (**)
+Object.SetMultiLayer( MultiLayer ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_MultiLayer( Получить свойство
+&MultiLayer )
+Object.put_MultiLayer( Установить свойство
+MultiLayer )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак многослойности объекта.
+
+Scale  Масштаб
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Scale = Object.Scale Получить свойство (* )
+580
+
+
+
+Object.Scale = Scale Установить свойство (* )
+Scale = Object.GetScale() Получить свойство (**)
+Object.SetScale( Scale ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Scale( &Scale ) Получить свойство
+Object.put_Scale(  Scale ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать масштаб вставляемого фрагмента.
+
+Variable  Получить параметрическую переменную 
+по имени, индексу или указателю на размер
+Интерфейс...
+Тип данных: указатель на интерфейс параметрической переменной IVariable7
+Синтаксис Automation:
+
+Variable = Object.Variable ( VARIANT Index ) Получить свойство (* )
+Variable = Object.GetVariable( VARIANT Получить свойство (**)
+Index )
+
+Синтаксис COM:
+
+Object.get_Variable( VARIANT Получить свойство
+Index, &Variable )
+
+Входные параметры:
+
+Index " индекс, имя или указатель на размер параметрической переменной.
+
+Примечание:
+
+1.  Свойство позволяет получать интерфейс параметрической переменной.
+2.  Свойство доступно только для чтения.
+
+Variables  Получить массив параметрических 
+переменных
+Интерфейс...
+Тип данных: массив SAFEARRAY VT_DISPATCH
+Синтаксис Automation:
+581
+
+
+
+Variables = Object.Variables() Получить свойство (* )
+Variables = Object.GetVariables() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Variables( &Variables ) Получить свойство
+
+Примечание:
+
+1.  Свойство позволяет получать массив параметрических переменных.
+2.  Свойство доступно только для чтения.
+
+VariablesCount  Получить количество параметрических 
+переменных
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+VariablesCount = Object.VariablesCount() Получить свойство (* )
+VariablesCount = Получить свойство (**)
+Object.GetVariablesCount()
+
+Синтаксис COM:
+
+Object.get_VariablesCount( Получить свойство
+&VariablesCount )
+
+Примечание:
+
+1.  Свойство позволяет получать количество параметрических переменных.
+2.  Свойство доступно только для чтения.
+
+VariableTable  Таблица переменных
+Интерфейс...
+Тип данных: указатель на интерфейс таблицы переменных IVariableTable
+Синтаксис Automation:
+
+VariableTable = Object.VariableTable() Получить свойство (* )
+VariableTable = Object.GetVariableTable() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_VariableTable( Получить свойство
+&VariableTable )
+582
+
+
+
+Примечание:
+
+1.  Свойство позволяет получать интерфейс таблицы переменных.
+2.  Свойство доступно только для чтения.
+
+Интерфейс IInsertionView
+Справка системы КОМПАС...
+KOMPAS.chm::/498_Glava_52_Obshchie_svedenija.htm
+Интерфейс вставки вида из другого чертежа.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IInsertionObject
+IInsertionView
+
+Описание:
+Интерфейс позволяет задавать и получать параметры вставки вида из другого чертежа.
+Примечание:
+Дополнительный интерфейс базового интерфейса вставки фрагмента IInsertionObject.
+Может быть получен с помощью метода IUnknown::QueryInterface.
+
+IInsertionView  свойства
+
+CreateSpcObjects  Создавать объекты спецификации
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+CreateSpcObjects = Получить свойство (* )
+Object.CreateSpcObjects
+Object.CreateSpcObjects = Установить свойство (* )
+CreateSpcObjects
+CreateSpcObjects = Получить свойство (**)
+Object.GetCreateSpcObjects()
+Object.SetCreateSpcObjects( Установить свойство (**)
+CreateSpcObjects )
+
+Синтаксис COM:
+
+Object.get_CreateSpcObjects( Получить свойство
+&CreateSpcObjects )
+583
+
+
+
+Object.put_CreateSpcObjects( Установить свойство
+CreateSpcObjects )
+
+OwnerDocumentParams  Параметры документа
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " отображать с параметрами документа владельца,
+FALSE " отображать с параметрами документа источника.
+
+Синтаксис Automation:
+
+OwnerDocumentParams = Получить свойство (* )
+Object.OwnerDocumentParams
+Object.OwnerDocumentParams = Установить свойство (* )
+OwnerDocumentParams
+OwnerDocumentParams = Получить свойство (**)
+Object.GetOwnerDocumentParams()
+Object.SetOwnerDocumentParams( Установить свойство (**)
+OwnerDocumentParams )
+
+Синтаксис COM:
+
+Object.get_OwnerDocumentPara Получить свойство
+ms( &OwnerDocumentParams )
+Object.put_OwnerDocumentPara Установить свойство
+ms(  OwnerDocumentParams )
+
+Примечание:
+Свойство позволяет устанавливать и получать способ отображения параметров.
+
+ThinLines  В тонких линиях
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+ThinLines = Object.ThinLines Получить свойство (* )
+Object.ThinLines = ThinLines Установить свойство (* )
+ThinLines = Object.GetThinLines() Получить свойство (**)
+Object.SetThinLines( ThinLines ) Установить свойство (**)
+
+Синтаксис COM:
+584
+
+
+
+Object.get_ThinLines( Получить свойство
+&ThinLines )
+Object.put_ThinLines(  ThinLines Установить свойство
+)
+
+Примечание:
+Свойство позволяет устанавливать и получать признак отрисовки в тонких линиях.
+
+ViewName  Имя вида
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ViewName = Object.ViewName Получить свойство (* )
+ViewName = Object.GetViewName() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ViewName( Получить свойство
+&ViewName )
+
+Примечание:
+
+1.  Свойство позволяет получать имя вида.
+2.  Свойство доступно только для чтения.
+
+ViewNumber  Номер вида
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+ViewNumber = Object.ViewNumber Получить свойство (* )
+Object.ViewNumber = ViewNumber Установить свойство (* )
+ViewNumber = Object.GetViewNumber() Получить свойство (**)
+Object.SetViewNumber( ViewNumber ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ViewNumber( Получить свойство
+&ViewNumber )
+Object.put_ViewNumber( Установить свойство
+ViewNumber )
+585
+
+
+
+Примечание:
+Свойство позволяет устанавливать и получать номер вида.
+
+Интерфейс IOleDrawingObject
+Справка системы КОМПАС...
+KOMPAS.chm::/353_Glava40_Ispolqzovanie_rastr.htm
+Интерфейс OLEобъекта.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IOleDrawingObject
+Описание:
+Интерфейс позволяет задавать параметры OLE"объекта.
+Примечание:
+
+1.  Интерфейс можно получить у коллекции OLE"объектов, используя свойство
+IOleDrawingObjects::OleDrawingObject или метод IOleDrawingObjects::Add.
+
+2.  После задания параметров OLE"объекта требуется вызвать метод
+IDrawingObject::Update.
+
+3.  OLE"объект можно создать двумя способами:
+▼  внедрить телом в документ (для этого требуется задать свойство
+
+IOleDrawingObject::ClassId),
+▼ вставить по ссылке из файла (для этого требуется задать свойство
+
+IOleDrawingObject::FileName).
+
+IOleDrawingObject  свойства
+
+ClassId  Идентификатор объекта
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+ClassId = Object.ClassId Получить свойство (* )
+Object.ClassId = ClassId Установить свойство (* )
+ClassId = Object.GetClassId() Получить свойство (**)
+Object.SetClassId( ClassId ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ClassId( &ClassId ) Получить свойство
+Object.put_ClassId(  ClassId ) Установить свойство
+586
+
+
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать идентификатор OLE"объекта.
+2.  Значение свойства нельзя изменить после создания OLE"объекта.
+3.  Если задано ClassId, объект вставляется телом, тип объекта определяется по ClassId.
+
+FileName  Имя файла объекта
+Интерфейс...
+Тип данных: BSTR
+Синтаксис Automation:
+
+FileName = Object.FileName Получить свойство (* )
+Object.FileName = FileName Установить свойство (* )
+FileName = Object.GetFileName() Получить свойство (**)
+Object.SetFileName( FileName ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FileName( &FileName ) Получить свойство
+Object.put_FileName(  FileName ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать имя файла объекта.
+
+InsertionType  Способ вставки
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " в виде значка,
+FALSE " в виде содержимого.
+
+Синтаксис Automation:
+
+InsertionType = Object.InsertionType Получить свойство (* )
+Object.InsertionType = InsertionType Установить свойство (* )
+InsertionType = Object.GetInsertionType() Получить свойство (**)
+Object.SetInsertionType( InsertionType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_InsertionType( Получить свойство
+&InsertionType )
+587
+
+
+
+Object.put_InsertionType( Установить свойство
+InsertionType )
+
+Примечание:
+Свойство позволяет устанавливать и получать способ вставки OLE"объекта.
+
+Link  Связать файл и объект
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Link = Object.Link Получить свойство (* )
+Object.Link = Link Установить свойство (* )
+Link = Object.GetLink() Получить свойство (**)
+Object.SetLink( Link ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Link( &Link ) Получить свойство
+Object.put_Link(  Link ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать признак связи файла и OLE"объекта.
+
+Scale  Масштаб
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Scale = Object.Scale Получить свойство (* )
+Object.Scale = Scale Установить свойство (* )
+Scale = Object.GetScale() Получить свойство (**)
+Object.SetScale( Scale ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Scale( &Scale ) Получить свойство
+Object.put_Scale(  Scale ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать масштаб OLE"объекта.
+588
+
+
+
+IOleDrawingObject  методы
+
+Close  Завершить редактирование
+Интерфейс...
+Синтаксис Automation:
+BOOL Close( BOOL Save );
+Синтаксис COM:
+HRESULT Close( BOOL Save, BOOL * Result);
+Входные параметры:
+
+Save " сохранить изменения.
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+DoVerb  Запустить редактирование вставки OLE
+объекта
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH DoVerb( long iVerb );
+Синтаксис COM:
+HRESULT DoVerb( long iVerb, IDispatch ** Result);
+Входные параметры:
+
+iVerb " действие, которое должно быть выполне"
+но над OLE"объектом.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс OLE"объекта.
+
+GetPlacement  Получить местоположение объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL GetPlacement( double * X, 
+double * Y,
+589
+
+
+
+double * Angle,
+BOOL * MirrorSymmetry );
+Синтаксис COM:
+HRESULT GetPlacement( double * X,
+double * Y,
+double * Angle,
+BOOL * MirrorSymmetry,
+BOOL * Result );
+Входные параметры:
+
+X, Y " координаты точки привязки,
+Angle " угол поворота объекта,
+MirrorSy " признак зеркальной симметрии объекта.
+mmetry
+
+Возвращаемое значение:
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет получить точку привязки и угол поворота растрового объекта.
+
+SetPlacement  Установить местоположение объекта
+Интерфейс...
+Синтаксис Automation:
+BOOL SetPlacement( double X,
+double Y,
+double Angle,
+BOOL * MirrorSymmetry );
+Синтаксис COM:
+HRESULT SetPlacement( double X,
+double Y,
+double Angle,
+BOOL * MirrorSymmetry,
+BOOL * Result );
+Входные параметры:
+
+X, Y " координаты точки привязки,
+Angle " угол поворота объекта,
+MirrorSy " признак зеркальной симметрии объекта.
+mmetry
+
+Возвращаемое значение:
+590
+
+
+
+TRUE " в случае успешного завершения,
+FALSE " в случае неудачи.
+
+Примечание:
+Метод позволяет установить точку привязки и угол поворота растрового объекта.
+
+Интерфейс IInsertionDefinition
+Справка системы КОМПАС...
+KOMPAS.chm::/498_Glava_52_Obshchie_svedenija.htm
+Описание вставки фрагмента или вида.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IInsertionDefinition
+
+Описание:
+Интерфейс позволяет задавать и получать параметры описания вставки фрагмента или
+вида.
+Примечание:
+Данный интерфейс можно получить следующими способами:
+
+▼ с помощью метода IInsertionObject::InsertionDefinition.
+▼ с помощью метода IInsertionsManager::InsertionDefinition.
+
+IInsertionDefinition  свойства
+
+FileName  Имя файла источника
+Интерфейс..
+Тип данных: BSTR
+Синтаксис Automation:
+
+FileName = Object.FileName Получить свойство (* )
+Object.FileName = FileName Установить свойство (* )
+FileName = Object.GetFileName() Получить свойство (**)
+Object.SetFileName( FileName ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_FileName( &FileName ) Получить свойство
+Object.put_FileName(  FileName ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать имя файла источника.
+591
+
+
+
+InsertionObjectsCount  Количество вставок
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+InsertionObjectsCount = Получить свойство (* )
+Object.InsertionObjectsCount()
+InsertionObjectsCount = Получить свойство (**)
+Object.GetInsertionObjectsCount()
+
+Синтаксис COM:
+
+Object.get_InsertionObjectsCoun Получить свойство

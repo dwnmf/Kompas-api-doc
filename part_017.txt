@@ -1,0 +1,2533 @@
+BrokenLine  Линия обрыва с изломами, заданная по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс линии обрыва с изломами IBrokenLine
+Синтаксис Automation:
+
+BrokenLine = iObject.BrokenLine  ( Index ); Получить свойство(* )
+BrokenLine = iObject.GetBrokenLine( Index Получить свойство (**)
+);
+
+Синтаксис COM:
+
+iObject">get_BrokenLine( Index, Получить свойство
+&BrokenLine )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IBrokenLines  методы
+
+Add  Создать новый элемент и добавить его
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IBrokenLine ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс линии обрыва с 
+изломами IBrokenLine.
+862
+
+
+
+Примечание:
+Метод позволяет добавить волнистую линию.
+
+Интерфейс ICentreMarkers
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_CENTRE_MARKER.htm
+Интерфейс коллекции обозначений центра.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+ICentreMarkers
+Описание:
+Позволяет создавать и получать обозначения центра.
+Примечание:
+Данный интерфейс можно получить у контейнера условных обозначений 2D
+ISymbols2DContainer::CentreMarkers.
+
+ICentreMarkers  свойства
+
+CentreMarker  Обозначение центра, заданное по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс обозначения центра ICentreMarker
+Синтаксис Automation:
+
+CentreMarker = iObject.CentreMarker( Index Получить свойство(* )
+);
+CentreMarker = iObject.GetCentreMarker( Получить свойство (**)
+Index );
+
+Синтаксис COM:
+
+iObject">get_CentreMarker( Получить свойство
+Index, &CentreMarker )
+
+Примечание:
+Свойство доступно только для чтения.
+863
+
+
+
+ICentreMarkers  методы
+
+Add  Создать новый элемент и добавить его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ICentreMarker ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс обозначения центра 
+ICentreMarker.
+
+Интерфейс ICircularsCentries
+Интерфейс коллекции круговых сеток центров.
+
+Справка системы КОМПАС: Команда Круговая сетка центров
+kompas.chm::/CM_CIRCULAR_CENTRES.htm
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IDrawingObjects
+ICircularsCentries
+
+Данный интерфейс можно получить, используя свойство
+ISymbols2DContainer::CircularsCentries.
+Версия Компас v18.1
+
+ICircularsCentries  свойства
+
+CircularCentres  Возвращает элемент, заданный по 
+индексу или по имени
+Интерфейс...
+Тип данных: Указатель на интерфейс ICircularCentres.
+Синтаксис Automation:
+864
+
+
+
+CircularCentres = Object.CircularCentres( Получить свойство(* )
+Index );
+CircularCentres = Object.GetCircularCentres( Получить свойство (**)
+Index );
+
+Синтаксис COM:
+
+Object.get_CircularCentres( Получить свойство
+Index, &CircularCentres )
+
+Входные параметры:
+
+VARIANT Index " индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+ICircularsCentries  методы
+
+Add  Создает новый элемент и добавляет его в 
+коллекцию
+Интерфейс...
+Синтаксис Automation :
+LPDISPATCH Add( VARIANT BaseObjects, BOOL AutoFindOtherObjects, BOOL Closed, BOOL
+WithCenter );
+Синтаксис COM :
+HRESULT Add( VARIANT BaseObjects, BOOL AutoFindOtherObjects, BOOL Closed, BOOL
+WithCenter, ICircularCentres * * Result );
+Возвращаемое значение: 
+
+"   Указатель на интерфейс ICircularCentres..
+
+Входные параметры:
+
+BaseObjects " Базовые окружности.
+AutoFindOtherObjects " Автоматический поиск других подходящих 
+
+окружностей, центры которых лежат на круговой 
+осевой линии.
+
+Closed " Замкнуть осевую.
+WithCenter " С обозначением центра.
+
+Примечание
+Координаты центра осевой линии определяются по координатам центров первых трех
+окружностей.
+865
+
+
+
+Для остальных окружностей выполняется проверка на одинаковое расстояние от точки
+центра осевой линии до центра окружности
+
+AddByPoint  Создает новый элемент и добавляет его
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH AddByPoint( double X0, double Y0, VARIANT BaseObjects, BOOL
+AutoFindOtherObjects, BOOL Closed, BOOL WithCenter );
+Синтаксис COM:
+HRESULT AddByPoint( double X0, double Y0, VARIANT BaseObjects, BOOL
+AutoFindOtherObjects, BOOL Closed, BOOL WithCenter, ICircularCentres * * Result );
+Возвращаемое значение: 
+
+"   Указатель на интерфейс ICircularCentres.
+
+Входные параметры:
+
+X0, Y0 " Координаты цента осевой линии.
+BaseObjects " Базовые окружности.
+AutoFindOtherObjects " Автоматический поиск других подходящих 
+
+окружностей, центры которых лежат на круговой 
+осевой линии.
+
+Closed " Замкнуть осевую.
+WithCenter " С обозначением центра.
+
+Примечание
+Радиус обозначения центра определяется по удалению точки центра первой окружности.
+Для остальных окружностей выполняется проверка на одинаковое расстояние от точки
+центра осевой линии до центра окружности.
+
+Интерфейс IConditionIntersects
+Интерфейс коллекции условных пересечений.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IDrawingObjects
+IConditionIntersects
+
+Примечание:
+866
+
+
+
+Получить интерфейс коллекции условных операций можно, используя свойство контей"
+нера условных обозначений 2D ISymbols2DContainer::ConditionIntersects.
+Версия: KOMPAS v19
+
+IConditionIntersects  свойства
+
+ConditionIntersect  Возвращает элемент, заданный по 
+индексу или по имени
+Интерфейс...
+Тип данных: Указатель на интерфейс IConditionIntersect. 
+Синтаксис Automation:
+
+ConditionIntersect = Object.ConditionIntersect( Index ) Получить свойство (* )
+ConditionIntersect = Object.GetConditionIntersect( Получить свойство (**)
+Index )
+
+Синтаксис COM:
+
+Object.get_ConditionIntersect( Index, Получить свойство (* )
+&ConditionIntersect )
+
+Входные параметры:
+
+ VARIANT Index "    индекс или имя элемента.
+
+Примечание:
+Свойство доступно только для чтения.
+
+IConditionIntersects  методы
+
+Add  Создает новый элемент и добавляет его
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IConditionIntersect * * Result );
+
+Возвращаемое значение: 
+
+"    Указатель на интерфейс IConditionIntersect.
+867
+
+
+
+Примечания:
+
+1. Метод позволяет создать новый интерфейс условного пересечения.
+2. После получения нового интерфейса нужно задать параметры и вызвать метод
+
+IDrawingObject::Update.
+
+Интерфейс ILinearsCentries
+Интерфейс коллекции линейных сеток центров.
+
+Справка системы КОМПАС: Команда Линейная сетка центров
+kompas.chm::/CM_LINEAR_CENTRES.htm
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IDrawingObjects
+ILinearsCentries
+
+Данный интерфейс можно получить, используя свойство контейнера объектов 2D
+ISymbols2DContainer::LinearsCentries
+Версия Компас v18.1
+
+ILinearsCentries  свойства
+
+LinearCentres  Возвращает элемент, заданный по 
+индексу или по имени
+Интерфейс...
+Тип данных: Указатель на интерфейс ILinearCentres.
+Синтаксис Automation:
+
+LinearCentres = Object.LinearCentres( Index Получить свойство(* )
+);
+LinearCentres = Object.GetLinearCentres( Получить свойство (**)
+Index );
+
+Синтаксис COM:
+
+Object.get_LinearCentres( Index, Получить свойство
+&LinearCentres )
+
+Входные параметры:
+
+VARIANT Index " индекс или имя элемента.
+868
+
+
+
+Примечание:
+Свойство доступно только для чтения.
+
+ILinearsCentries  методы
+
+Add  Создает новый элемент и добавляет его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( VARIANT BaseObjects, BOOL AutoFindOtherObjects, BOOL HasBreaks,
+double AxisAngle, double TurnAngle );
+Синтаксис COM:
+HRESULT Add( VARIANT BaseObjects, BOOL AutoFindOtherObjects, BOOL HasBreaks, double
+AxisAngle, double TurnAngle, ILinearCentres * * Result );
+Возвращаемое значение: 
+
+" Указатель на интерфейс ILinearCentres.
+
+Входные параметры:
+
+BaseObjects " Базовые окружности.
+AutoFindOtherObjects " Автоматический поиск других подходящих 
+
+окружностей, центры которых лежат на круговой 
+осевой линии.
+
+HasBreaks " С разрывами.
+AxisAngle " Наклон первой оси.
+TurnAngle " Угол раствора.
+
+Интерфейс ICutLines
+Справка системы КОМПАС: Команда Линия разреза
+kompas.chm::/CM_CUTLINE.htm
+Интерфейс коллекции линий разреза/сечения.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+ICutLines
+Описание:
+Интерфейс позволяет получать и создавать линию разреза/сечения.
+Примечание:
+869
+
+
+
+1.  Интерфейс можно получить, используя свойство контейнера условных обозначений 2D
+ISymbols2DContainer::CutLines.
+
+2.  Кроме того, интерфейс можно получить, используя свойство коллекции линий разреза
+для СПДС IBuildingContainer::BuildingCutLines.
+
+ICutLines  свойства
+
+CutLine  Линия разреза/сечения, заданная по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс линии разреза/сечения ICutLine
+Синтаксис Automation:
+
+CutLine = iObject.CutLine( Index ); Получить свойство(* )
+CutLine = iObject.GetCutLine( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_CutLine( Index, Получить свойство
+&CutLine )
+
+Входные параметры:
+
+Index (Variant) " Индекс узла в коллекции. Поддерживаются 
+следующие типы:
+" VT_I4 " индекс линии разреза/сечения.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса может использоваться индекс в коллекции и reference объекта.
+
+ICutLines  методы
+
+Add  Создать линию разреза/сечения (добавить в 
+коллекцию)
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ICutLine ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс линии разреза/сечения ICutLine.
+870
+
+
+
+Интерфейс IDrawingTables
+Справка системы КОМПАС: общие сведения о таблицах
+kompas.chm::/582_Glava69_Obshchie_svedenija.htm
+Интерфейс коллекции таблиц на чертеже.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IDrawingTables
+Описание:
+Позволяет получать и создавать таблицы на чертеже.
+Примечание:
+Получить интерфейс коллекции можно используя свойство контейнера условных обо"
+значений ISymbols2DContainer::DrawingTables.
+
+IDrawingTables  свойства
+
+DrawingTable  Указатель на таблицу, заданную по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IDrawingTable
+Синтаксис Automation:
+
+DrawingTable = iObject.DrawingTable( Index Получить свойство(* )
+);
+DrawingTable = iObject.GetDrawingTable( Получить свойство (**)
+Index );
+
+Синтаксис COM:
+
+iObject">get_DrawingTable( Получить свойство
+Index, &DrawingTable )
+
+Входные параметры:
+
+Index " VT_I4 " индекс объекта.
+
+Примечание:
+
+1.  В качестве индекса может использоваться индекс в коллекции и reference объекта.
+2.  Свойство доступно только для чтения.
+871
+
+
+
+IDrawingTables  методы
+
+Add  Создать новый элемент и добавить его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( long RowsCount,
+long ColumnsCount,
+double RowHeigh,
+double ColumnsWidth,
+long titlePos);
+Синтаксис COM:
+HRESULT Add( long RowsCount,
+long ColumnsCount,
+double RowHeigh,
+double ColumnsWidth,
+ksTableTileLayoutEnum titlePos,
+IDrawingTable ** Result);
+Входные параметры:
+
+RowsCount " количество строк таблицы,
+ColumnsCount " количество столбцов таблицы,
+RowHeigh " высота строк,
+ColumnsWidth " ширина столбцов,
+titlePos " расположение заголовка таблицы.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс таблицы на чертеже IDrawingTable.
+
+Load  Загрузить таблицу из файла
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Load( BSTR fileName );
+Синтаксис COM:
+HRESULT Load( BSTR fileName, IDrawingTable ** Result )
+Входные параметры:
+
+fileName " имя файла таблицы.
+
+Возвращаемое значение:
+872
+
+
+
+" указатель на интерфейс таблицы на чертеже IDrawingTable.
+
+Интерфейс IDrawingTexts
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_TEXT.htm
+Интерфейс коллекции текстов на чертеже.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IDrawingTexts
+Описание:
+Интерфейс позволяет получить доступ к текстам на чертеже для указанного вида, а так"
+же создавать новые тексты.
+Примечание:
+Данный интерфейс можно получить у интерфейса IDrawingContainer, используя свойст"
+во IDrawingContainer::DrawingTexts.
+
+IDrawingTexts  свойства
+
+DrawingText  Текст на чертеже, заданный по индексу
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_TEXT.htm
+Тип данных: указатель на интерфейс текста на чертеже IDrawingText
+Синтаксис Automation:
+
+DrawingText = iObject.DrawingText(Index); Получить свойство(* )
+DrawingText = Получить свойство (**)
+iObject.GetDrawingText(Index);
+
+Синтаксис COM:
+
+iObject">get_DrawingText(Index, Получить свойство
+&DrawingText);
+
+Входные параметры:
+873
+
+
+
+Index (Variant) " Индекс текста в коллекции. Поддерживаются 
+следующие типы:
+" VT_I4   " индекс объекта,
+" reference объекта.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В случае неудачи получения свойства, возвращаемое значение NULL.
+
+IDrawingTexts  методы
+
+Add  Создать текст на чертеже и добавить его 
+в коллекцию
+Интерфейс...
+
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_TEXT.htm
+Синтаксис Automation:
+LPDISPATCH Add;
+Синтаксис COM:
+HRESULT Add( [out, retval] IDrawingText** Result );
+Возвращаемое значение:
+
+" Указатель на интерфейс текста на чертеже IDrawingText.
+
+Примечание:
+Метод позволяет добавить текст в коллекцию. После получения нового интерфейса нуж"
+но задать параметры текста и вызвать метод IDrawingObject::Update.
+
+Интерфейс ILeaders
+Справка системы КОМПАС...
+KOMPAS.chm::/225_28_4_2_Nastrojka_otrisovki_.htm
+Интерфейс коллекции линийвыносок.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IDrawingObjects
+ILeaders
+
+Описание:
+874
+
+
+
+Позволяет получать и создавать линии"выноски.
+Примечание:
+Получить интерфейс коллекции можно, используя свойство контейнера условных обо"
+значений ISymbols2DContainer::Leaders.
+
+ILeaders  свойства
+
+Leader  Указатель на линиювыноску, заданную по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IBaseLeader
+Синтаксис Automation:
+
+Leader = Object.Leader( Index ) Получить свойство(* )
+Leader = Object.GetLeader( Index ) Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Leader( Index, Получить свойство
+&Leader )
+
+Входные параметры:
+
+Index " Индекс узла в коллекции. Поддерживаются 
+следующие типы:
+" VT_I4 " индекс объекта
+" VT_BSTR " имя объекта.
+
+Примечание:
+
+1.  В качестве индекса может использоваться индекс в коллекции, reference объекта и имя
+объекта.
+
+2.  Свойство доступно только для чтения.
+
+ILeaders  методы
+
+Add  Создать новый элемент и добавить его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add( DrawingObjectTypeEnum DimType );
+Синтаксис COM:
+HRESULT Add( DrawingObjectTypeEnum DimType, IBaseLeader ** Result );
+875
+
+
+
+Входные параметры:
+
+DimType " тип линии"выноски.
+
+Типы линийвыносок:
+
+ksDrLeader 20 Простая линия"выноска,
+ksDrPosLeader 21 Линия"выноска для обозначения 
+
+позиции,
+ksDrBrandLeader 22 Линия"выноска для обозначения 
+
+клеймения,
+ksDrMarkerLeader 23 Линия"выноска для обозначения 
+
+маркирования.
+
+Возвращаемое значение:
+
+" Указатель на интерфейс линии выноски IBaseLeader.
+
+Интерфейс IRemoteElements
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_REMOTE_ELEMENT.htm
+Интерфейс коллекции выносных элементов.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IRemoteElements
+Описание:
+Позволяет создавать и получать выносные элементы.
+Примечание:
+Данный интерфейс можно получить у контейнера условных обозначений 2D
+ISymbols2DContainer::RemoteElements.
+
+IRemoteElements  свойства
+
+RemoteElement  Выносной элемент, заданный по 
+индексу
+Интерфейс...
+Тип данных: указатель на интерфейс выносного элемента IRemoteElement
+Синтаксис Automation:
+876
+
+
+
+RemoteElement = iObject.RemoteElement ( Получить свойство(* )
+Index );
+RemoteElement = Получить свойство (**)
+iObject.GetRemoteElement( Index );
+
+Синтаксис COM:
+
+iObject">get_RemoteElement( Получить свойство
+Index, &RemoteElement )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IRemoteElements  методы
+
+Add  Создать новый элемент и добавить его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IRemoteElement ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс выносного элемента IRemoteElement.
+
+Интерфейс IRoughs
+Справка системы КОМПАС: Команда Шероховатость (графический документ)
+kompas.chm::/CM_ROUGH.htm
+Интерфейс коллекции обозначений шероховатости.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IRoughs
+Описание:
+Позволяет получать и создавать обозначения шероховатости. Данный интерфейс можно
+получить у контейнера условных обозначений 2D, используя свойство
+ISymbols2DContainer::Roughs.
+877
+
+
+
+IRoughs  свойства
+
+Rough  Обозначение шероховатости, заданное по 
+индексу, ссылке или тексту
+Интерфейс...
+Тип данных: указатель на интерфейс обозначения шероховатости IRough
+Синтаксис Automation:
+
+Rough = iObject.Rough( Index ); Получить свойство(* )
+Rough = iObject.GetRough( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Rough( Index, Получить свойство
+&Rough )
+
+Входные параметры:
+
+Index (Variant) " Индекс обозначения узла в коллекции. 
+Поддерживаются следующие типы:
+" VT_I4   " индекс объекта,
+" reference объекта.
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  В качестве индекса может использоваться индекс в коллекции и reference объекта.
+
+IRoughs  методы
+
+Add  Добавить обозначение шероховатости 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add;
+Синтаксис COM:
+HRESULT Add( IRough ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс обозначения шероховатости IRough.
+878
+
+
+
+Интерфейс ITolerances
+Справка системы КОМПАС: Команда Допуск формы (графический документ)
+kompas.chm::/CM_FORMTOLERANCE.htm
+Интерфейс коллекции допусков формы.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+ITolerances
+Описание:
+Позволяет получать и создавать обозначения допуска формы.
+Примечание:
+Получить интерфейс коллекции можно используя свойство контейнера условных обо"
+значений ISymbols2DContainer::Tolerances.
+
+ITolerances  свойства
+
+Tolerance  Указатель на допуск формы, заданный
+по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс ITolerance
+Синтаксис Automation:
+
+Tolerance = iObject.Tolerance( Index ); Получить свойство(* )
+Tolerance = iObject.GetTolerance( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_Tolerance( Index, Получить свойство
+&Tolerance )
+
+Входные параметры:
+
+Index VT_I4 " индекс объекта.
+
+Примечание:
+
+1.  В качестве индекса может использоваться индекс в коллекции и reference объекта.
+2.  Свойство доступно только для чтения.
+879
+
+
+
+ITolerances  методы
+
+Add  Создать новый элемент и добавить его
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ITolerance ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс допуска формы ITolerance.
+
+Интерфейс IViewPointers
+Справка системы КОМПАС...
+kompas.chm::/CM_VIEWPOINTER.htm
+Интерфейс коллекции стрелок взгляда.
+Иерархия:
+IKompasAPIObject
+
+IKompasCollection
+IDrawingObjects
+
+IViewPointers
+Описание:
+Позволяет получать и создавать стрелки взгляда.
+Примечание:
+Получить интерфейс коллекции можно, используя свойство контейнера условных обо"
+значений ISymbols2DContainer::ViewPointers.
+
+IViewPointers  свойства
+
+ViewPointer  Указатель на стрелку взгляда, заданную 
+по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс IViewPointer
+Синтаксис Automation:
+
+ViewPointer = iObject.ViewPointer( Index ); Получить свойство(* )
+ViewPointer = iObject.GetViewPointer( Index Получить свойство (**)
+);
+880
+
+
+
+Синтаксис COM:
+
+iObject">get_ViewPointer( Index, Получить свойство
+&ViewPointer )
+
+Входные параметры:
+
+Index " Индекс узла в коллекции. Поддерживаются 
+следующие типы:
+" VT_I4 " индекс объекта
+" VT_BSTR " имя объекта.
+
+Примечание:
+
+1.  В качестве индекса может использоваться индекс в коллекции, reference объекта и имя
+объекта.
+
+2.  Свойство доступно только для чтения.
+
+IViewPointers  методы
+
+Add  Создать новый элемент и добавить его 
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( ViewPointer ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс стрелки взгляда ViewPointer.
+
+Интерфейс IWaveLines
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_WAVELINE.htm
+Интерфейс коллекции волнистых линий.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IKompasCollection
+
+IDrawingObjects
+IWaveLines
+881
+
+
+
+Описание:
+Интерфейс позволяет создавать и получать волнистые линии линии.
+Примечание:
+Данный интерфейс можно получить у контейнера условных обозначений
+ISymbols2DContainer::WaveLines.
+
+IWaveLines  свойства
+
+WaveLine  Волнистая линия, заданная по индексу
+Интерфейс...
+Тип данных: указатель на интерфейс волнистой линии IWaveLine
+Синтаксис Automation:
+
+WaveLine = iObject.WaveLine  ( Index ); Получить свойство(* )
+WaveLine = iObject.GetWaveLine( Index ); Получить свойство (**)
+
+Синтаксис COM:
+
+iObject">get_WaveLine( Index, Получить свойство
+&WaveLine )
+
+Примечание:
+Свойство доступно только для чтения.
+
+IWaveLines  методы
+
+Add  Создать новый элемент и добавить его
+в коллекцию
+Интерфейс...
+Синтаксис Automation:
+LPDISPATCH Add();
+Синтаксис COM:
+HRESULT Add( IWaveLine ** Result);
+Возвращаемое значение:
+
+" Указатель на интерфейс волнистой линии 
+IWaveLine.
+
+Примечание:
+Метод позволяет добавить волнистую линию.
+882
+
+
+
+Интерфейс IAssociationTable
+Интерфейс ассоциативной таблицы.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IAssociationTable
+
+IAssociationTable  свойства
+
+Actual  Актуальность таблицы
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Actual = Object.Actual Получить свойство(* )
+Actual = Object.GetActual() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Act Получить
+ual( &Actual ) свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Report  Получить интерфейс отчета
+Интерфейс...
+Тип данных: Указатель на интерфейс IReport
+Синтаксис Automation:
+
+Report = Object.Report Получить свойство(* )
+Report = Получить свойство (**)
+Object.GetReport()
+
+Синтаксис COM:
+
+Object.get_Report( Получить свойство
+&Report )
+
+Примечание:
+Свойство доступно только для чтения.
+883
+
+
+
+TablePlaceType  Тип привязки таблицы
+Интерфейс...
+Тип данных: из перечисления ksTablePointEnum
+Синтаксис Automation:
+
+TablePlaceType = Получить свойство(* )
+Object.TablePlaceType
+Object.TablePlaceType = Установить свойство (* )
+TablePlaceType
+TablePlaceType = Получить свойство (**)
+Object.GetTablePlaceType()
+Object.SetTablePlaceType( Установить свойство (**)
+TablePlaceType )
+
+Синтаксис COM:
+
+Object.get_TablePlaceType( Получить свойство
+&TablePlaceType )
+Object.put_TablePlaceType( Установить свойство
+TablePlaceType )
+
+X  Координата точки привязки по Х
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X Получить свойство(* )
+Object.X = X Установить свойство (* )
+X = Object.GetX() Получить свойство (**)
+Object.SetX( X ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ) Получить свойство
+Object.put_X(  X ) Установить свойство
+
+Y  Координата точки привязки по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y Получить свойство(* )
+Object.Y = Y Установить свойство (* )
+Y = Object.GetY() Получить свойство (**)
+884
+
+
+
+Object.SetY( Y ) Установить свойство (**)
+Синтаксис COM:
+
+Object.get_Y( &Y ) Получить свойство
+Object.put_Y(  Y ) Установить свойство
+
+IAssociationTable  методы
+
+Rebuild  Перестроить отчет
+Интерфейс...
+Синтаксис Automation:
+BOOL Rebuild();
+Синтаксис COM:
+HRESULT Rebuild( BOOL * Result );
+Возвращаемое значение:
+
+TRUE " в случае успешного 
+завершения,
+
+FALSE " в случае неудачи.
+
+Интерфейс IAxisLine
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_AXEDLINESEG.htm
+Интерфейс осевой линии.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IAxisLine
+IAxisLineParam
+
+Описание:
+Интерфейс позволяет задавать параметры осевой линии.
+Примечание:
+
+1.  Интерфейс можно получить у коллекции осевых линий, используя свойство
+IAxisLines::AxisLine или метод IAxisLines::Add.
+
+2.  После задания параметров осевой линии требуется вызвать метод
+IDrawingObject::Update.
+
+3.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) у
+данного интерфейса можно получить дополнительный интерфейс IAxisLineParam.
+885
+
+
+
+IAxisLine  свойства
+
+Angle  Угол между осевой и осью OX текущей СК
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство
+Object.put_Angle(  Angle ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать угол между осевой и осью OX текущей СК.
+
+Length  Длина
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Length = Object.Length Получить свойство(* )
+Object.Length = Length Установить свойство (* )
+Length = Object.GetLength() Получить свойство (**)
+Object.SetLength( Length ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Length( &Length ) Получить свойство
+Object.put_Length(  Length ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать длину осевой линии.
+
+X1  Координата первой точки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X1 Получить свойство(* )
+886
+
+
+
+Object.X1 = X1 Установить свойство (* )
+X1 = Object.GetX1() Получить свойство (**)
+Object.SetX1( X1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X1( &X1 ) Получить свойство
+Object.put_X1(  X1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату первой точки осевой линии по
+оси Х.
+
+X2  Координата второй точки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = Object.X2 Получить свойство(* )
+Object.X2 = X2 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX2( X2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X2( &X2 ) Получить свойство
+Object.put_X2(  X2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату второй точки осевой линии по
+оси Х.
+
+Y1  Координата первой точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = Object.Y1 Получить свойство(* )
+Object.Y1 = Y1 Установить свойство (* )
+Y1 = Object.GetY1() Получить свойство (**)
+Object.SetY1( Y1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y1( &Y1 ) Получить свойство
+Object.put_Y1(  Y1 ) Установить свойство
+887
+
+
+
+Примечание:
+Свойство позволяет устанавливать и получать координату первой точки осевой линии по
+оси Y.
+
+Y2  Координата второй точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = Object.Y2 Получить свойство(* )
+Object.Y2 = Y2 Установить свойство (* )
+Y2 = Object.GetY2() Получить свойство (**)
+Object.SetY2( Y2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y2( &Y2 ) Получить свойство
+Object.put_Y2(  Y2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату второй точки осевой линии по
+оси Y.
+
+Интерфейс IBase
+Справка системы КОМПАС: команда База
+KOMPAS.chm::/CM_BASE.htm
+Интерфейс обозначения базы.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IBase
+Примечание:
+
+1.  Интерфейс позволяет получить и задать свойства объекта "база".
+2.  Получить интерфейс можно, используя свойство IBases::Base или метод IBases::Add ин"
+
+терфейса коллекции обозначений базы.
+3.  После задания параметров объекта требуется вызвать метод IDrawingObject::Update.
+888
+
+
+
+IBase  свойства
+
+AutoSorted  Автосортировка
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " включить опцию,
+FALSE " отключить опцию.
+
+Синтаксис Automation:
+
+AutoSorted = Object.AutoSorted Получить свойство(* )
+Object.AutoSorted = AutoSorted Установить свойство (* )
+AutoSorted = Object.GetAutoSorted() Получить свойство (**)
+Object.SetAutoSorted( AutoSorted ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_AutoSorted( Получить свойство
+&AutoSorted )
+Object.put_AutoSorted( Установить свойство
+AutoSorted )
+
+Примечание:
+При отключенной опции доступно редактирование текста базы с помощью свойства
+IBase::Text.
+
+BaseObject  Опорный объект
+Интерфейс...
+Тип данных: указатель на интерфейс IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство(* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Получить свойство (**)
+Object.GetBaseObject()
+Object.SetBaseObject( Установить свойство (**)
+BaseObject )
+
+Синтаксис COM:
+
+Object.get_BaseObject( Получить свойство
+&BaseObject )
+889
+
+
+
+Object.put_BaseObject( Установить свойство
+BaseObject )
+
+Примечание:
+После указания базового объекта все устанавливаемые объекту координаты положения
+знака на поверхности будут проецироваться на базовый объект или его продолжение.
+
+BranchX  Координата X конечной точки выноски
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BranchX = Object.BranchX Получить свойство(* )
+Object.BranchX = BranchX Установить свойство (* )
+BranchX = Object.GetBranchX() Получить свойство (**)
+Object.SetBranchX( BranchX ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BranchX( &BranchX ) Получить свойство
+Object.put_BranchX(  BranchX ) Установить свойство
+
+BranchY  Координата Y конечной точки выноски
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BranchY = Object.BranchY Получить свойство(* )
+Object.BranchY = BranchY Установить свойство (* )
+BranchY = Object.GetBranchY() Получить свойство (**)
+Object.SetBranchY( BranchY ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BranchY( &BranchY ) Получить свойство
+Object.put_BranchY(  BranchY ) Установить свойство
+
+DrawType  Способ отрисовки обозначения базы
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+DrawType = Object.DrawType Получить свойство(* )
+Object.DrawType = DrawType Установить свойство (* )
+890
+
+
+
+DrawType = Object.GetDrawType() Получить свойство (**)
+Object.SetDrawType( DrawType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_DrawType( Получить свойство
+&DrawType )
+Object.put_DrawType( Установить свойство
+DrawType )
+
+Text  Текст базы
+Интерфейс...
+Тип данных: указатель на интерфейс IText
+Синтаксис Automation:
+
+Text = Object.Text Получить свойство(* )
+Text = Object.GetText() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Text( &Text ) Получить свойство
+
+Примечание:
+
+1.  Свойство доступно только для чтения.
+2.  Свойство позволяет получить указатель на интерфейс текста IText для редактирования
+
+текста базы. 
+3.  Указатель на интерфейс IText вернётся только в случае отключенной опции Автосорти"
+
+ровка. Если автосортировка текста включена, свойство вернёт NULL.
+
+X0  Координата X положения знака на поверхности
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X0 = Object.X0 Получить свойство(* )
+Object.X0 = X0 Установить свойство (* )
+X0 = Object.GetX0() Получить свойство (**)
+Object.SetX0( X0 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X0( &X0 ) Получить свойство
+Object.put_X0(  X0 ) Установить свойство
+891
+
+
+
+Y0  Координата Y положения знака на поверхности
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y0 = Object.Y0 Получить свойство(* )
+Object.Y0 = Y0 Установить свойство (* )
+Y0 = Object.GetY0() Получить свойство (**)
+Object.SetY0( Y0 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.put_Y0(  Y0 ) Получить свойство
+Object.put_Y0(  Y0 ) Установить свойство
+
+Интерфейс IBaseLeader
+Справка системы КОМПАС: команда Линия"выноска (графический документ)
+KOMPAS.chm::/CM_LEADER.htm
+
+Общие сведения
+KOMPAS.chm::/223_28_4_Linija-vynoska.htm
+Интерфейс обозначения линиивыноски 2D.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+IBaseLeader
+ILeader
+IPositionLeader
+IBrandLeader
+IMarkLeader
+IBranchs
+IChangeLeader
+Примечание:
+
+1.  Получить интерфейс можно, используя свойство интерфейса коллекции линий"выно"
+сок ILeaders::Leader или метод ILeaders::Add.
+
+2.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) ин"
+терфейс позволяет получить следующие дополнительные интерфейсы:
+892
+
+
+
+Объект DrawingObjectTypeEnum Интерфейс
+Простая линия"выноска ksDrLeader ILeader
+Линия"выноска для обозначения ksDrPosLeader IPositionLeader
+позиции
+Линия"выноска для для ksDrBrandLeader IBrandLeader
+обозначения клеймения
+Линия"выноска для обозначения ksDrMarkLeader IMarkLeader
+маркирования
+Знак изменения ksDrChangeLeader IChangeLeader
+Ответвления IBranchs
+
+3.  После задания параметров объекта требуется вызвать метод IDrawingObject::Update.
+
+IBaseLeader  свойства
+
+ArrowType  Тип стрелки линиивыноски
+Интерфейс...
+Тип данных: из перечисления ksArrowEnum
+Синтаксис Automation:
+
+ArrowType = Object.ArrowType Получить свойство(* )
+Object.ArrowType = ArrowType Установить свойство (* )
+ArrowType = Object.GetArrowType() Получить свойство (**)
+Object.SetArrowType( ArrowType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_ArrowType( Получить свойство
+&ArrowType )
+Object.put_ArrowType( Установить свойство
+ArrowType )
+
+Примечание:
+Свойство позволяет устанавливать и получать тип стрелки линии"выноски.
+
+Интерфейс IBrokenLine
+Справка системы КОМПАС...
+KOMPAS.chm::/263_28_18_Linija_s_izlomami.htm
+Интерфейс линии обрыва с изломами.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+893
+
+
+
+IBrokenLine
+Описание:
+Интерфейс позволяет задавать и получать параметры линии обрыва с изломами.
+Примечание:
+
+1.  Интерфейс можно получить у коллекции линий обрыва с изломами используя свойство
+IBrokenLines::BrokenLine или метод IBrokenLines::Add.
+
+2.  После задания параметров объекта требуется вызвать метод IDrawingObject::Update.
+
+IBrokenLine  свойства
+
+Angle  Угол между линией и осью OX текущей СК
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство
+Object.put_Angle(  Angle ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать угол между линией обрыва с изломами и
+осью ОХ текущей СК.
+
+AutoBreakAmplitude  Использовать значение 
+амплитуды излома из настроек документа
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+AutoBreakAmplitude = Получить свойство(* )
+Object.AutoBreakAmplitude
+Object.AutoBreakAmplitude = Установить свойство (* )
+AutoBreakAmplitude
+AutoBreakAmplitude = Получить свойство (**)
+Object.GetAutoBreakAmplitude()
+894
+
+
+
+Object.SetAutoBreakAmplitude( Установить свойство (**)
+AutoBreakAmplitude )
+
+Синтаксис COM:
+
+Object.get_AutoBreakAmplitude( Получить свойство
+&AutoBreakAmplitude )
+Object.put_AutoBreakAmplitude( Установить свойство
+AutoBreakAmplitude )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак использования амплитуды изло"
+ма из настроек документа.
+
+AutoJutValue  Использовать значение выступа линии из 
+настроек документа
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+AutoJutValue = Получить свойство(* )
+Object.AutoJutValue
+Object.AutoJutValue = Установить свойство (* )
+AutoJutValue
+AutoJutValue = Получить свойство (**)
+Object.GetAutoJutValue()
+Object.SetAutoJutValue( Установить свойство (**)
+AutoJutValue )
+
+Синтаксис COM:
+
+Object.get_AutoJutValue( Получить свойство
+&AutoJutValue )
+Object.put_AutoJutValue( Установить свойство
+AutoJutValue )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак использования значения выступа
+линии из настроек документа.
+
+BreakAmplitude  Амплитуда излома
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+895
+
+
+
+BreakAmplitude = Получить свойство(* )
+Object.BreakAmplitude
+Object.BreakAmplitude = Установить свойство (* )
+BreakAmplitude
+BreakAmplitude = Получить свойство (**)
+Object.GetBreakAmplitude()
+Object.SetBreakAmplitude( Установить свойство (**)
+BreakAmplitude )
+
+Синтаксис COM:
+
+Object.get_BreakAmplitude( Получить свойство
+&BreakAmplitude )
+Object.put_BreakAmplitude( Установить свойство
+BreakAmplitude )
+
+Примечание:
+Свойство позволяет устанавливать и получать амплитуду излома.
+
+BreakDisplacement  Смещение излома
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+BreakDisplacement = Получить свойство(* )
+Object.BreakDisplacement
+Object.BreakDisplacement = Установить свойство (* )
+BreakDisplacement
+BreakDisplacement = Получить свойство (**)
+Object.GetBreakDisplacement()
+Object.SetBreakDisplacement( Установить свойство (**)
+BreakDisplacement )
+
+Синтаксис COM:
+
+Object.get_BreakDisplacement( Получить свойство
+&BreakDisplacement )
+Object.put_BreakDisplacement( Установить свойство
+BreakDisplacement )
+
+Примечание:
+Свойство позволяет устанавливать и получать смещение излома.
+
+BreaksCount  Количество изломов
+Интерфейс...
+896
+
+
+
+Тип данных: long
+Синтаксис Automation:
+
+BreaksCount = Получить свойство(* )
+Object.BreaksCount
+Object.BreaksCount = Установить свойство (* )
+BreaksCount
+BreaksCount = Получить свойство (**)
+Object.GetBreaksCount()
+Object.SetBreaksCount( Установить свойство (**)
+BreaksCount )
+
+Синтаксис COM:
+
+Object.get_BreaksCount( Получить свойство
+&BreaksCount )
+Object.put_BreaksCount( Установить свойство
+BreaksCount )
+
+Примечание:
+Свойство позволяет устанавливать и получать количество изломов.
+
+JutValue  Значение выступа линии
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+JutValue = Object.JutValue Получить свойство(* )
+Object.JutValue = JutValue Установить свойство (* )
+JutValue = Object.GetJutValue() Получить свойство (**)
+Object.SetJutValue( JutValue ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_JutValue( &JutValue ) Получить свойство
+Object.put_JutValue(  JutValue ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать значение выступа линии.
+
+Length  Длина
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+897
+
+
+
+Length = Object.Length Получить свойство(* )
+Object.Length = Length Установить свойство (* )
+Length = Object.GetLength() Получить свойство (**)
+Object.SetLength( Length ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Length( &Length ) Получить свойство
+Object.put_Length(  Length ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать длину линии обрыва с изломами.
+
+Style  Cтиль линии
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+Style = Object.Style Получить свойство(* )
+Object.Style = Style Установить свойство (* )
+Style = Object.GetStyle() Получить свойство (**)
+Object.SetStyle( Style ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Style( &Style ) Получить свойство
+Object.put_Style(  Style ) Установить свойство
+
+Примечание:
+
+1.  Свойство позволяет устанавливать и получать стиль линии.
+2.  Системные стили линий берутся из перечисления ksCurveStyleEnum.
+
+Type1  Тип
+Интерфейс...
+Тип данных: BOOL
+Значения свойства:
+
+TRUE " Тип 1,
+FALSE " Тип 2.
+
+Синтаксис Automation:
+
+Type1 = Object.Type1 Получить свойство(* )
+Object.Type1 = Type1 Установить свойство (* )
+898
+
+
+
+Type1 = Object.GetType1() Получить свойство (**)
+Object.SetType1( Type1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Type1( &Type1 ) Получить свойство
+Object.put_Type1(  Type1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать тип линии обрыва с изломами.
+
+X1  Координата первой точки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X1 = Object.X1 Получить свойство(* )
+Object.X1 = X1 Установить свойство (* )
+X1 = Object.GetX1() Получить свойство (**)
+Object.SetX1( X1 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X1( &X1 ) Получить свойство
+Object.put_X1(  X1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату первой точки по оси Х.
+
+X2  Координата второй точки по оси X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X2 = Object.X2 Получить свойство(* )
+Object.X2 = X2 Установить свойство (* )
+X2 = Object.GetX2() Получить свойство (**)
+Object.SetX2( X2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X2( &X2 ) Получить свойство
+Object.put_X2(  X2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату второй точки по оси Х.
+899
+
+
+
+Y1  Координата первой точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y1 = Object.Y1 Получить свойство(*
+)
+
+Object.Y1 = Y1 Установить свойство
+(* )
+
+Y1 = Object.GetY1() Получить свойство
+(**)
+
+Object.SetY1( Y1 ) Установить свойство
+(**)
+
+Синтаксис COM:
+
+Object.get_Y1( &Y1 ) Получить свойство
+Object.put_Y1(  Y1 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату первой точки по оси Y.
+
+Y2  Координата второй точки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y2 = Object.Y2 Получить свойство(* )
+Object.Y2 = Y2 Установить свойство (* )
+Y2 = Object.GetY2() Получить свойство (**)
+Object.SetY2( Y2 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y2( &Y2 ) Получить свойство
+Object.put_Y2(  Y2 ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату второй точки по оси Y.
+900
+
+
+
+Интерфейс ICentreMarker
+Справка системы КОМПАС...
+KOMPAS.chm::/CM_CENTRE_MARKER.htm
+Интерфейс обозначения центра.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+ICentreMarker
+IAxisLineParam
+
+Описание:
+Интерфейс позволяет задавать параметры обозначения центра.
+Примечание:
+
+1.  Интерфейс можно получить у коллекции обозначений центра, используя свойство
+ICentreMarkers::CentreMarker или метод ICentreMarkers::Add.
+
+2.  После задания параметров обозначения центра требуется вызвать метод
+IDrawingObject::Update.
+
+3.  Посредством вызова метода IUnknown::QueryInterface (const GUID far& iid, void** pif) у
+данного интерфейса можно получить дополнительный интерфейс IAxisLineParam.
+
+CentreMarker  свойства
+
+Angle  Угол наклона обозначения центра
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Angle = Object.Angle Получить свойство(* )
+Object.Angle = Angle Установить свойство (* )
+Angle = Object.GetAngle() Получить свойство (**)
+Object.SetAngle( Angle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Angle( &Angle ) Получить свойство
+Object.put_Angle(  Angle ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать угол наклона обозначения центра.
+901
+
+
+
+BaseObject  Базовая кривая
+Интерфейс...
+Тип данных: указатель на интерфейс графического объекта IDrawingObject
+Синтаксис Automation:
+
+BaseObject = Object.BaseObject Получить свойство(* )
+Object.BaseObject = BaseObject Установить свойство (* )
+BaseObject = Получить свойство (**)
+Object.GetBaseObject()
+Object.SetBaseObject( Установить свойство (**)
+BaseObject )
+
+Синтаксис COM:
+
+Object.get_BaseObject( Получить свойство
+&BaseObject )
+Object.put_BaseObject( Установить свойство
+BaseObject )
+
+Примечание:
+Свойство позволяет устанавливать и получать базовую кривую обозначения центра.
+
+CrosshairSize  Размер обозначения крестика
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+CrosshairSize = Object.CrosshairSize Получить свойство(* )
+Object.CrosshairSize = CrosshairSize Установить свойство (* )
+CrosshairSize = Object.GetCrosshairSize() Получить свойство (**)
+Object.SetCrosshairSize( CrosshairSize ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_CrosshairSize( Получить свойство
+&CrosshairSize )
+Object.put_CrosshairSize( Установить свойство
+CrosshairSize )
+
+Примечание:
+Свойство позволяет устанавливать и получать размер обозначения крестика.
+
+CrosshairSizeModify  Использовать размер обозначения 
+крестика из настроек документа
+Интерфейс...
+902
+
+
+
+Тип данных: BOOL
+Синтаксис Automation:
+
+CrosshairSizeModify = Получить свойство(* )
+Object.CrosshairSizeModify
+Object.CrosshairSizeModify = Установить свойство (* )
+CrosshairSizeModify
+CrosshairSizeModify = Получить свойство (**)
+Object.GetCrosshairSizeModify()
+Object.SetCrosshairSizeModify( Установить свойство (**)
+CrosshairSizeModify )
+
+Синтаксис COM:
+
+Object.get_CrosshairSizeModify( Получить свойство
+&CrosshairSizeModify )
+Object.put_CrosshairSizeModify( Установить свойство
+CrosshairSizeModify )
+
+Примечание:
+Свойство позволяет устанавливать и получать признак использования крестика из на"
+строек документа.
+
+SemiAxisAutoLength  Ассоциативное задание длины 
+полуоси
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SemiAxisAutoLength = Получить свойство(* )
+Object.SemiAxisAutoLength
+Object.SemiAxisAutoLength = Установить свойство (* )
+SemiAxisAutoLength
+SemiAxisAutoLength = Получить свойство (**)
+Object.GetSemiAxisAutoLength()
+Object.SetSemiAxisAutoLength( Установить свойство (**)
+SemiAxisAutoLength )
+
+Синтаксис COM:
+
+Object.get_SemiAxisAutoLength Получить свойство
+( &SemiAxisAutoLength )
+Object.put_SemiAxisAutoLength Установить свойство
+(  SemiAxisAutoLength )
+
+Примечание:
+903
+
+
+
+Свойство позволяет устанавливать и получать признак ассоциативного задания длины
+полуоси.
+
+SemiAxisLength  Длина полуоси
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+SemiAxisLength = Object.SemiAxisLength Получить свойство(* )
+Object.SemiAxisLength = SemiAxisLength Установить свойство (* )
+SemiAxisLength = Получить свойство (**)
+Object.GetSemiAxisLength()
+Object.SetSemiAxisLength( SemiAxisLength Установить свойство (**)
+)
+
+Синтаксис COM:
+
+Object.get_SemiAxisLength( Получить свойство
+&SemiAxisLength )
+Object.put_SemiAxisLength( Установить свойство
+SemiAxisLength )
+
+Примечание:
+Свойство позволяет устанавливать и получать длину полуоси обозначения центра.
+
+SignType  Тип обозначения центра
+Интерфейс...
+Тип данных: из перечисления ksCentreMarkerEnum
+Синтаксис Automation:
+
+SignType = Object.SignType Получить свойство(* )
+Object.SignType = SignType Установить свойство (* )
+SignType = Object.GetSignType() Получить свойство (**)
+Object.SetSignType( SignType ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_SignType( &SignType ) Получить свойство
+Object.put_SignType(  SignType ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать тип обозначения центра.
+
+X  Координата точки вставки по оси X
+Интерфейс...
+904
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+X = Object.X Получить свойство(* )
+Object.X = X Установить свойство (* )
+X = Object.GetX() Получить свойство (**)
+Object.SetX( X ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X( &X ) Получить свойство
+Object.put_X(  X ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату точки вставки по оси Х.
+
+Y  Координата точки вставки по оси Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y = Object.Y Получить свойство(* )
+Object.Y = Y Установить свойство (* )
+Y = Object.GetY() Получить свойство (**)
+Object.SetY( Y ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y( &Y ) Получить свойство
+Object.put_Y(  Y ) Установить свойство
+
+Примечание:
+Свойство позволяет устанавливать и получать координату точки вставки по оси Y.
+
+Интерфейс ICircularCentres
+Интерфейс параметров круговой сетки центров
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+
+ICircularCentres
+905
+
+
+
+Данный интерфейс можно получить с помощью методов коллекции круговых сеток цен"
+тров ICircularsCentries::Add и ICircularsCentries::AddByPoint или свойства
+ICircularsCentries::CircularCentres.
+Версия Компас v18.1
+
+ICircularCentres  cвойства
+
+AxisesCount  Количество осевых линий в обозначении
+Интерфейс...
+Тип данных: long
+Синтаксис Automation:
+
+AxisesCount = Object.AxisesCount( WithCenter ) Получить свойство(* )
+AxisesCount = Object.GetAxisesCount( Получить свойство (**)
+WithCenter )
+
+Синтаксис COM:
+
+Object.get_AxisesCount( WithCenter, Получить свойство
+&AxisesCount )
+
+Примечание:
+ Свойство доступно только для чтения.
+
+BaseObjects  Объекты
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+BaseObjects = Object.BaseObjects Получить свойство(* )
+Object.BaseObjects = BaseObjects Установить свойство (* )
+BaseObjects = Object.GetBaseObjects() Получить свойство (**)
+Object.SetBaseObjects( BaseObjects ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_BaseObjects( Получить свойство
+&BaseObjects )
+Object.put_BaseObjects( Установить свойство
+BaseObjects )
+
+Примечание.
+Позволяет получать и устанавливать опорный объект или массив опорных объектов. 
+906
+
+
+
+Массив объектов возвращается в виде массива SAFEARRAY объектов LPDISPATCH
+(VT_ARRAY | VT_DISPATCH).
+
+Centres  Координаты центров осевых линий
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Centres = Object.Centres Получить свойство(* )
+Centres = Object.GetCentres() Получить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Centres( &Centres ) Получить свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+Closed  Замкнуть осевую
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Closed = Object.Closed Получить свойство(* )
+Object.Closed = Closed Установить свойство (* )
+Closed = Object.GetClosed() Получить свойство (**)
+Object.SetClosed( Closed ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Closed( &Closed ) Получить свойство
+Object.put_Closed(  Closed ) Установить свойство
+
+Radiuses  Радиусы дуг и окружностей
+Интерфейс...
+Тип данных: VARIANT
+Синтаксис Automation:
+
+Radiuses = Object.Radiuses Получить свойство(* )
+Radiuses = Object.GetRadiuses() Получить свойство (**)
+907
+
+
+
+Синтаксис COM:
+
+Object.get_Radiuses( &Radiuses ) Получить
+свойство
+
+Примечание:
+Свойство доступно только для чтения.
+
+SemiAxisAutoLength  TRUE  ассоциативное задание 
+длины полуоси
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+SemiAxisAutoLength = Получить свойство(* )
+Object.SemiAxisAutoLength( WithCenter, 
+Index, AxisType ) 
+Object.SemiAxisAutoLength( WithCenter, Установить свойство (* )
+Index, AxisType ) = SemiAxisAutoLength
+SemiAxisAutoLength = Получить свойство (**)
+Object.GetSemiAxisAutoLength( 
+WithCenter, Index, AxisType )
+Object.SetSemiAxisAutoLength( Установить свойство (**)
+WithCenter, Index, AxisType, 
+SemiAxisAutoLength )
+
+Синтаксис COM:
+
+Object.get_SemiAxisAutoLength Получить свойство
+( WithCenter, Index, AxisType,
+&SemiAxisAutoLength )
+Object.put_SemiAxisAutoLength Установить свойство
+(  WithCenter, Index, AxisType,
+SemiAxisAutoLength )
+
+Входные параметры:
+
+BOOL WithCenter " TRUE, устанавливать параметры центрального 
+обозначения.
+
+long Index " индекс оси.
+ksSemiAxisTypeEnum AxisType " индекс полуоси.
+
+SemiAxisLength  Длина полуоси
+Интерфейс...
+908
+
+
+
+Тип данных: double
+Синтаксис Automation:
+
+SemiAxisLength = Object.SemiAxisLength( Получить свойство(* )
+WithCenter, Index, AxisType ) 
+Object.SemiAxisLength( WithCenter, Index, Установить свойство (* )
+AxisType ) = SemiAxisLength 
+SemiAxisLength = Получить свойство (**)
+Object.GetSemiAxisLength( WithCenter, 
+Index, AxisType )
+Object.SetSemiAxisLength( WithCenter, Установить свойство (**)
+Index, AxisType, SemiAxisLength )
+
+Синтаксис COM:
+
+Object.get_SemiAxisLength( Получить свойство
+WithCenter, Index, AxisType,
+&SemiAxisLength )
+Object.put_SemiAxisLength( Установить свойство
+WithCenter, Index, AxisType,
+SemiAxisLength )
+
+Входные параметры:
+
+BOOL WithCenter " TRUE, устанавливать параметры центрального 
+обозначения.
+
+long Index " индекс оси.
+ksSemiAxisTypeEnum AxisType " индекс полуоси.
+
+X0  Координата центра по X
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+X0 = Object.X0 Получить свойство(* )
+Object.X0 = X0 Установить свойство (* )
+X0 = Object.GetX0() Получить свойство (**)
+Object.SetX0( X0 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_X0( &X0 ) Получить свойство
+Object.put_X0(  X0 ) Установить свойство
+909
+
+
+
+Y0  Координата центра по Y
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+Y0 = Object.Y0 Получить свойство(* )
+Object.Y0 = Y0 Установить свойство (* )
+Y0 = Object.GetY0() Получить свойство (**)
+Object.SetY0( Y0 ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Y0( &Y0 ) Получить свойство
+Object.put_Y0(  Y0 ) Установить свойство
+
+WithCenter  С обозначением центра
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+WithCenter = Object.WithCenter Получить свойство(* )
+Object.WithCenter = WithCenter Установить свойство (* )
+WithCenter = Object.GetWithCenter() Получить свойство (**)
+Object.SetWithCenter( WithCenter ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_WithCenter( Получить свойство
+&WithCenter )
+Object.put_WithCenter( Установить свойство
+WithCenter )
+
+ICircularCentres  методы
+
+AddCentre  Добавить обозначение центра в сетку
+Интерфейс...
+Синтаксис Automation:
+BOOL AddCentre( double X, double Y, double Radius );
+Синтаксис COM :
+HRESULT AddCentre( double X, double Y, double Radius, BOOL * Result );
+Возвращаемое значение: 
+910
+
+
+
+TRUE  " в случае успешного 
+завершения.
+
+Входные параметры:
+
+X, Y " координаты центра 
+окружности.
+
+Radius " радиус.
+
+AddCentreByObject  Добавить обозначение центра 
+в сетку
+Интерфейс...
+Синтаксис Automation:
+BOOL AddCentreByObject( IKompasAPIObject * Object );
+Синтаксис COM :
+HRESULT AddCentreByObject( IKompasAPIObject * Object, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE  " в случае успешного 
+завершения.
+
+Входные параметры:
+
+Object " указатель на окружность.
+
+Clear  Очистить список центров
+Интерфейс...
+Синтаксис Automation :
+BOOL Clear();
+Синтаксис COM :
+HRESULT Clear( BOOL * Result );
+Возвращаемое значение: 
+
+TRUE  " в случае успешно"
+го завершения.
+911
+
+
+
+DeleteCentre  Удалить обозначение центра из сетки
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteCentre( long Index );
+Синтаксис COM:
+HRESULT DeleteCentre( long Index, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE  " в случае успешно"
+го завершения.
+
+Входные параметры:
+
+Index " индекс обозначения центра.
+
+DeleteCentreByPoint  Удалить обозначение центра из 
+сетки по координатам
+Интерфейс...
+Синтаксис Automation:
+BOOL DeleteCentreByPoint( double X, double Y );
+Синтаксис COM :
+HRESULT DeleteCentreByPoint( double X, double Y, BOOL * Result );
+Возвращаемое значение: 
+
+TRUE  " в случае успешного 
+завершения.
+
+Входные параметры:
+
+X, Y " координаты обозначения 
+центра.
+
+Интерфейс IConditionIntersect
+Интерфейс условного пересечения.
+Иерархия:
+IDispatch
+
+IKompasAPIObject
+IDrawingObject
+912
+
+
+
+ IConditionIntersect
+Примечание:
+Интерфейс можно получить с помощью метода коллекции условных пересечений
+IConditionIntersects::Add. 
+KOMPAS v19
+
+IConditionIntersect  свойства
+
+AssociationObject  Получить кривую
+Интерфейс...
+Тип данных: Указатель на интерфейс IDrawingObject.
+Синтаксис Automation:
+
+AssociationObject = Получить свойство (* )
+Object.AssociationObject( First )
+AssociationObject = Получить свойство (**)
+Object.GetAssociationObject( First )
+
+Синтаксис COM:
+
+Object.get_AssociationObject( First, Получить свойство,
+&AssociationObject )
+
+Примечание:
+Свойство доступно только для чтения.
+
+Gap  Зазор или длина выносной линии
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+Gap = Object.Gap Получить свойство (* )
+Object.Gap = Gap Установить свойство (* )
+Gap = Object.GetGap() Получить свойство (**)
+Object.SetGap( Gap ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_Gap( &Gap ) Получить свойство,
+Object.put_Gap(  Gap ) Установить свойство.
+913
+
+
+
+GapValue  Значение зазора или длины
+Интерфейс...
+Тип данных: double
+Синтаксис Automation:
+
+GapValue = Object.GapValue Получить свойство (* )
+Object.GapValue = GapValue Установить свойство (* )
+GapValue = Object.GetGapValue() Получить свойство (**)
+Object.SetGapValue( GapValue ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_GapValue( &GapValue ) Получить свойство,
+Object.put_GapValue(  GapValue ) Установить свойство.
+
+PointStyle  Стиль точки
+Интерфейс...
+Тип данных: из перечисления ksAnnotationSymbolEnum.
+
+Синтаксис Automation:
+
+PointStyle = Object.PointStyle Получить свойство (* )
+Object.PointStyle = PointStyle Установить свойство (* )
+PointStyle = Object.GetPointStyle() Получить свойство (**)
+Object.SetPointStyle( PointStyle ) Установить свойство (**)
+
+Синтаксис COM:
+
+Object.get_PointStyle( &PointStyle ) Получить свойство,
+Object.put_PointStyle(  PointStyle ) Установить свойство.
+
+PointVisible  Отрисовывать точку пересечения
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+PointVisible = Object.PointVisible Получить свойство (* )
+Object.PointVisible = PointVisible Установить свойство (* )
+PointVisible = Object.GetPointVisible() Получить свойство (**)
+Object.SetPointVisible( PointVisible ) Установить свойство (**)
+
+Синтаксис COM:
+914
+
+
+
+Object.get_PointVisible( &PointVisible ) Получить свойство,
+Object.put_PointVisible(  PointVisible ) Установить свойство.
+
+RemoteLine1Visible  Признак отрисовки первой 
+выносной линии
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+RemoteLine1Visible = Object.RemoteLine1Visible Получить свойство (* )
+Object.RemoteLine1Visible = RemoteLine1Visible Установить свойство (* )
+RemoteLine1Visible = Получить свойство (**)
+Object.GetRemoteLine1Visible()
+Object.SetRemoteLine1Visible( Установить свойство (**)
+RemoteLine1Visible )
+
+Синтаксис COM:
+
+Object.get_RemoteLine1Visible( Получить свойство,
+&RemoteLine1Visible )
+Object.put_RemoteLine1Visible( Установить свойство.
+RemoteLine1Visible )
+
+RemoteLine2Visible  Признак отрисовки второй 
+выносной линии
+Интерфейс...
+Тип данных: BOOL
+Синтаксис Automation:
+
+RemoteLine2Visible = Object.RemoteLine2Visible Получить свойство (* )
+Object.RemoteLine2Visible = RemoteLine2Visible Установить свойство (* )
+RemoteLine2Visible = Получить свойство (**)
+Object.GetRemoteLine2Visible()
+Object.SetRemoteLine2Visible( Установить свойство (**)
+RemoteLine2Visible )
+
+Синтаксис COM:
+915
+
+
+
+Object.get_RemoteLine2Visible( Получить свойство,
+&RemoteLine2Visible )
+Object.put_RemoteLine2Visible( Установить свойство.
+RemoteLine2Visible )
+
+IConditionIntersect  методы
+
+GetCurvePoint  Получить точку на кривой
+Интерфейс...
+Синтаксис Automation:
+BOOL GetCurvePoint( BOOL FirstCurve, double * X, double * Y );
+Синтаксис COM :
